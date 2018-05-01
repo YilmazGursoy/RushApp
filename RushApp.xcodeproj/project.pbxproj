@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D258C02F209645EE0090ABB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258C02E209645EE0090ABB5 /* AppDelegate.swift */; };
-		D258C031209645EE0090ABB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258C030209645EE0090ABB5 /* ViewController.swift */; };
 		D258C034209645EE0090ABB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D258C032209645EE0090ABB5 /* Main.storyboard */; };
 		D258C036209645EF0090ABB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D258C035209645EF0090ABB5 /* Assets.xcassets */; };
 		D258C039209645EF0090ABB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D258C037209645EF0090ABB5 /* LaunchScreen.storyboard */; };
+		D258C06F2098F5170090ABB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258C06D2098F5170090ABB5 /* ViewController.swift */; };
+		D258C0702098F5170090ABB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258C06E2098F5170090ABB5 /* AppDelegate.swift */; };
+		D258C074209904690090ABB5 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258C073209904690090ABB5 /* BaseVC.swift */; };
+		D258C076209904790090ABB5 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258C075209904790090ABB5 /* SplashVC.swift */; };
+		D258C0792099061C0090ABB5 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258C0782099061C0090ABB5 /* OnboardingVC.swift */; };
+		D258C07B209906250090ABB5 /* OnboardingVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D258C07A209906250090ABB5 /* OnboardingVC.storyboard */; };
+		D258C07D2099098B0090ABB5 /* BaseVC+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258C07C2099098B0090ABB5 /* BaseVC+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D258C02B209645EE0090ABB5 /* RushApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RushApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D258C02E209645EE0090ABB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D258C030209645EE0090ABB5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D258C033209645EE0090ABB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D258C035209645EF0090ABB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D258C038209645EF0090ABB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D258C03A209645EF0090ABB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D258C06D2098F5170090ABB5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D258C06E2098F5170090ABB5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D258C073209904690090ABB5 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		D258C075209904790090ABB5 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		D258C0782099061C0090ABB5 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		D258C07A209906250090ABB5 /* OnboardingVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingVC.storyboard; sourceTree = "<group>"; };
+		D258C07C2099098B0090ABB5 /* BaseVC+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseVC+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +64,91 @@
 		D258C02D209645EE0090ABB5 /* RushApp */ = {
 			isa = PBXGroup;
 			children = (
-				D258C02E209645EE0090ABB5 /* AppDelegate.swift */,
-				D258C030209645EE0090ABB5 /* ViewController.swift */,
+				D258C06B2098F4FB0090ABB5 /* Controllers */,
+				D258C0672098F4F10090ABB5 /* Managers */,
+				D258C06A2098F4F10090ABB5 /* Models */,
+				D258C0692098F4F10090ABB5 /* Server */,
+				D258C0682098F4F10090ABB5 /* Views */,
+				D258C06C2098F5170090ABB5 /* OtherFiles */,
 				D258C032209645EE0090ABB5 /* Main.storyboard */,
 				D258C035209645EF0090ABB5 /* Assets.xcassets */,
 				D258C037209645EF0090ABB5 /* LaunchScreen.storyboard */,
 				D258C03A209645EF0090ABB5 /* Info.plist */,
 			);
 			path = RushApp;
+			sourceTree = "<group>";
+		};
+		D258C0672098F4F10090ABB5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D258C0682098F4F10090ABB5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D258C0692098F4F10090ABB5 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		D258C06A2098F4F10090ABB5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D258C0722099045E0090ABB5 /* BaseVC */,
+				D258C0712099045E0090ABB5 /* SplashVC */,
+				D258C077209906120090ABB5 /* OnboardingVC */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D258C06C2098F5170090ABB5 /* OtherFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D258C06D2098F5170090ABB5 /* ViewController.swift */,
+				D258C06E2098F5170090ABB5 /* AppDelegate.swift */,
+			);
+			path = OtherFiles;
+			sourceTree = "<group>";
+		};
+		D258C0712099045E0090ABB5 /* SplashVC */ = {
+			isa = PBXGroup;
+			children = (
+				D258C075209904790090ABB5 /* SplashVC.swift */,
+			);
+			path = SplashVC;
+			sourceTree = "<group>";
+		};
+		D258C0722099045E0090ABB5 /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				D258C073209904690090ABB5 /* BaseVC.swift */,
+				D258C07C2099098B0090ABB5 /* BaseVC+Extensions.swift */,
+			);
+			path = BaseVC;
+			sourceTree = "<group>";
+		};
+		D258C077209906120090ABB5 /* OnboardingVC */ = {
+			isa = PBXGroup;
+			children = (
+				D258C0782099061C0090ABB5 /* OnboardingVC.swift */,
+				D258C07A209906250090ABB5 /* OnboardingVC.storyboard */,
+			);
+			path = OnboardingVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +211,7 @@
 			files = (
 				D258C039209645EF0090ABB5 /* LaunchScreen.storyboard in Resources */,
 				D258C036209645EF0090ABB5 /* Assets.xcassets in Resources */,
+				D258C07B209906250090ABB5 /* OnboardingVC.storyboard in Resources */,
 				D258C034209645EE0090ABB5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,8 +223,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D258C031209645EE0090ABB5 /* ViewController.swift in Sources */,
-				D258C02F209645EE0090ABB5 /* AppDelegate.swift in Sources */,
+				D258C0702098F5170090ABB5 /* AppDelegate.swift in Sources */,
+				D258C076209904790090ABB5 /* SplashVC.swift in Sources */,
+				D258C0792099061C0090ABB5 /* OnboardingVC.swift in Sources */,
+				D258C07D2099098B0090ABB5 /* BaseVC+Extensions.swift in Sources */,
+				D258C074209904690090ABB5 /* BaseVC.swift in Sources */,
+				D258C06F2098F5170090ABB5 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
