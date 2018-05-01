@@ -10,7 +10,6 @@
 		D258C034209645EE0090ABB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D258C032209645EE0090ABB5 /* Main.storyboard */; };
 		D258C036209645EF0090ABB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D258C035209645EF0090ABB5 /* Assets.xcassets */; };
 		D258C039209645EF0090ABB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D258C037209645EF0090ABB5 /* LaunchScreen.storyboard */; };
-		D258C06F2098F5170090ABB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258C06D2098F5170090ABB5 /* ViewController.swift */; };
 		D258C0702098F5170090ABB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258C06E2098F5170090ABB5 /* AppDelegate.swift */; };
 		D258C074209904690090ABB5 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258C073209904690090ABB5 /* BaseVC.swift */; };
 		D258C076209904790090ABB5 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258C075209904790090ABB5 /* SplashVC.swift */; };
@@ -25,7 +24,6 @@
 		D258C035209645EF0090ABB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D258C038209645EF0090ABB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D258C03A209645EF0090ABB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D258C06D2098F5170090ABB5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D258C06E2098F5170090ABB5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D258C073209904690090ABB5 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		D258C075209904790090ABB5 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 		D258C06C2098F5170090ABB5 /* OtherFiles */ = {
 			isa = PBXGroup;
 			children = (
-				D258C06D2098F5170090ABB5 /* ViewController.swift */,
 				D258C06E2098F5170090ABB5 /* AppDelegate.swift */,
 			);
 			path = OtherFiles;
@@ -228,7 +225,6 @@
 				D258C0792099061C0090ABB5 /* OnboardingVC.swift in Sources */,
 				D258C07D2099098B0090ABB5 /* BaseVC+Extensions.swift in Sources */,
 				D258C074209904690090ABB5 /* BaseVC.swift in Sources */,
-				D258C06F2098F5170090ABB5 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
