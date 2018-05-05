@@ -12,8 +12,13 @@ class OnboardingVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //TODO:
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+            self.navigationController?.pushViewController(FeedVC.createFromStoryboard(), animated: true)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

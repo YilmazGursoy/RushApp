@@ -7,11 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86244D82A682091A8F8D30C9 /* Pods_RushApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98A0D93FD81810B62D9B303 /* Pods_RushApp.framework */; };
 		D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA2209B858600AC79B6 /* LoginType.swift */; };
 		D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA4209B85D000AC79B6 /* LambdaConstants.swift */; };
 		D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA6209B85D800AC79B6 /* AppConstants.swift */; };
 		D2075DA9209B866500AC79B6 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA8209B866500AC79B6 /* CacheManager.swift */; };
 		D2075DAB209B877200AC79B6 /* CacheConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DAA209B877200AC79B6 /* CacheConstants.swift */; };
+		D2075DB0209CD9CC00AC79B6 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DAF209CD9CC00AC79B6 /* FeedVC.swift */; };
+		D2075DB2209CD9D300AC79B6 /* FeedVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2075DB1209CD9D300AC79B6 /* FeedVC.storyboard */; };
+		D2075DB6209CE3C200AC79B6 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DB5209CE3C200AC79B6 /* BaseRequest.swift */; };
+		D2075DB8209CE44E00AC79B6 /* DummyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DB7209CE44E00AC79B6 /* DummyRequest.swift */; };
+		D2075DBA209DDD8900AC79B6 /* AWSCredentialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DB9209DDD8900AC79B6 /* AWSCredentialManager.swift */; };
+		D2075DBC209DDE8900AC79B6 /* CognitoConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DBB209DDE8900AC79B6 /* CognitoConstants.swift */; };
+		D2075DBE209DE70000AC79B6 /* AWSRegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DBD209DE70000AC79B6 /* AWSRegisterManager.swift */; };
+		D2075DC1209DE93B00AC79B6 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DC0209DE93B00AC79B6 /* RegisterVC.swift */; };
+		D2075DC3209DE94300AC79B6 /* RegisterVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2075DC2209DE94300AC79B6 /* RegisterVC.storyboard */; };
+		D2075DC5209DEA2000AC79B6 /* Extension+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DC4209DEA2000AC79B6 /* Extension+UIButton.swift */; };
+		D2075DC8209DEF2E00AC79B6 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DC7209DEF2E00AC79B6 /* LoginVC.swift */; };
+		D2075DCA209DEF4600AC79B6 /* LoginVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2075DC9209DEF4600AC79B6 /* LoginVC.storyboard */; };
+		D2075DCC209DF34900AC79B6 /* AWSLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DCB209DF34900AC79B6 /* AWSLoginManager.swift */; };
 		D258C034209645EE0090ABB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D258C032209645EE0090ABB5 /* Main.storyboard */; };
 		D258C036209645EF0090ABB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D258C035209645EF0090ABB5 /* Assets.xcassets */; };
 		D258C039209645EF0090ABB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D258C037209645EF0090ABB5 /* LaunchScreen.storyboard */; };
@@ -24,11 +38,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50F43DA57818541C627FFC4E /* Pods-RushApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A6723B34082783938D717BB0 /* Pods-RushApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.release.xcconfig"; sourceTree = "<group>"; };
 		D2075DA2209B858600AC79B6 /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
 		D2075DA4209B85D000AC79B6 /* LambdaConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LambdaConstants.swift; sourceTree = "<group>"; };
 		D2075DA6209B85D800AC79B6 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		D2075DA8209B866500AC79B6 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		D2075DAA209B877200AC79B6 /* CacheConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheConstants.swift; sourceTree = "<group>"; };
+		D2075DAF209CD9CC00AC79B6 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		D2075DB1209CD9D300AC79B6 /* FeedVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedVC.storyboard; sourceTree = "<group>"; };
+		D2075DB5209CE3C200AC79B6 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		D2075DB7209CE44E00AC79B6 /* DummyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyRequest.swift; sourceTree = "<group>"; };
+		D2075DB9209DDD8900AC79B6 /* AWSCredentialManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSCredentialManager.swift; sourceTree = "<group>"; };
+		D2075DBB209DDE8900AC79B6 /* CognitoConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CognitoConstants.swift; sourceTree = "<group>"; };
+		D2075DBD209DE70000AC79B6 /* AWSRegisterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSRegisterManager.swift; sourceTree = "<group>"; };
+		D2075DC0209DE93B00AC79B6 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		D2075DC2209DE94300AC79B6 /* RegisterVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterVC.storyboard; sourceTree = "<group>"; };
+		D2075DC4209DEA2000AC79B6 /* Extension+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIButton.swift"; sourceTree = "<group>"; };
+		D2075DC7209DEF2E00AC79B6 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		D2075DC9209DEF4600AC79B6 /* LoginVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginVC.storyboard; sourceTree = "<group>"; };
+		D2075DCB209DF34900AC79B6 /* AWSLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSLoginManager.swift; sourceTree = "<group>"; };
 		D258C02B209645EE0090ABB5 /* RushApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RushApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D258C033209645EE0090ABB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D258C035209645EF0090ABB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +69,7 @@
 		D258C0782099061C0090ABB5 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		D258C07A209906250090ABB5 /* OnboardingVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingVC.storyboard; sourceTree = "<group>"; };
 		D258C07C2099098B0090ABB5 /* BaseVC+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseVC+Extensions.swift"; sourceTree = "<group>"; };
+		E98A0D93FD81810B62D9B303 /* Pods_RushApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,12 +77,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86244D82A682091A8F8D30C9 /* Pods_RushApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5397A71A012AE15C477D433D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E98A0D93FD81810B62D9B303 /* Pods_RushApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C1FDB7761111FDBCB585F6F7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50F43DA57818541C627FFC4E /* Pods-RushApp.debug.xcconfig */,
+				A6723B34082783938D717BB0 /* Pods-RushApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D2075DA0209B857D00AC79B6 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
@@ -64,8 +112,36 @@
 		D2075DA1209B857D00AC79B6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D2075DC4209DEA2000AC79B6 /* Extension+UIButton.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D2075DAE209CD9C400AC79B6 /* FeedVC */ = {
+			isa = PBXGroup;
+			children = (
+				D2075DAF209CD9CC00AC79B6 /* FeedVC.swift */,
+				D2075DB1209CD9D300AC79B6 /* FeedVC.storyboard */,
+			);
+			path = FeedVC;
+			sourceTree = "<group>";
+		};
+		D2075DBF209DE93100AC79B6 /* RegisterVC */ = {
+			isa = PBXGroup;
+			children = (
+				D2075DC0209DE93B00AC79B6 /* RegisterVC.swift */,
+				D2075DC2209DE94300AC79B6 /* RegisterVC.storyboard */,
+			);
+			path = RegisterVC;
+			sourceTree = "<group>";
+		};
+		D2075DC6209DEF2300AC79B6 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				D2075DC7209DEF2E00AC79B6 /* LoginVC.swift */,
+				D2075DC9209DEF4600AC79B6 /* LoginVC.storyboard */,
+			);
+			path = LoginVC;
 			sourceTree = "<group>";
 		};
 		D258C022209645EE0090ABB5 = {
@@ -73,6 +149,8 @@
 			children = (
 				D258C02D209645EE0090ABB5 /* RushApp */,
 				D258C02C209645EE0090ABB5 /* Products */,
+				C1FDB7761111FDBCB585F6F7 /* Pods */,
+				5397A71A012AE15C477D433D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +185,9 @@
 			isa = PBXGroup;
 			children = (
 				D2075DA8209B866500AC79B6 /* CacheManager.swift */,
+				D2075DB9209DDD8900AC79B6 /* AWSCredentialManager.swift */,
+				D2075DBD209DE70000AC79B6 /* AWSRegisterManager.swift */,
+				D2075DCB209DF34900AC79B6 /* AWSLoginManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -121,6 +202,8 @@
 		D258C0692098F4F10090ABB5 /* Server */ = {
 			isa = PBXGroup;
 			children = (
+				D2075DB5209CE3C200AC79B6 /* BaseRequest.swift */,
+				D2075DB7209CE44E00AC79B6 /* DummyRequest.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -135,6 +218,9 @@
 		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D2075DC6209DEF2300AC79B6 /* LoginVC */,
+				D2075DBF209DE93100AC79B6 /* RegisterVC */,
+				D2075DAE209CD9C400AC79B6 /* FeedVC */,
 				D258C0722099045E0090ABB5 /* BaseVC */,
 				D258C0712099045E0090ABB5 /* SplashVC */,
 				D258C077209906120090ABB5 /* OnboardingVC */,
@@ -149,6 +235,7 @@
 				D2075DA4209B85D000AC79B6 /* LambdaConstants.swift */,
 				D2075DA6209B85D800AC79B6 /* AppConstants.swift */,
 				D2075DAA209B877200AC79B6 /* CacheConstants.swift */,
+				D2075DBB209DDE8900AC79B6 /* CognitoConstants.swift */,
 			);
 			path = OtherFiles;
 			sourceTree = "<group>";
@@ -186,9 +273,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D258C03D209645EF0090ABB5 /* Build configuration list for PBXNativeTarget "RushApp" */;
 			buildPhases = (
+				3D880BB4B1E8660628CFFE68 /* [CP] Check Pods Manifest.lock */,
 				D258C027209645EE0090ABB5 /* Sources */,
 				D258C028209645EE0090ABB5 /* Frameworks */,
 				D258C029209645EE0090ABB5 /* Resources */,
+				7639DA904330C72397F36828 /* [CP] Embed Pods Frameworks */,
+				AC871D39ACEF00E49726D04C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -237,14 +327,95 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2075DC3209DE94300AC79B6 /* RegisterVC.storyboard in Resources */,
 				D258C039209645EF0090ABB5 /* LaunchScreen.storyboard in Resources */,
 				D258C036209645EF0090ABB5 /* Assets.xcassets in Resources */,
 				D258C07B209906250090ABB5 /* OnboardingVC.storyboard in Resources */,
+				D2075DCA209DEF4600AC79B6 /* LoginVC.storyboard in Resources */,
+				D2075DB2209CD9D300AC79B6 /* FeedVC.storyboard in Resources */,
 				D258C034209645EE0090ABB5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D880BB4B1E8660628CFFE68 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RushApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7639DA904330C72397F36828 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RushApp/Pods-RushApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSAuthUI/AWSAuthUI.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProviderASF/AWSCognitoIdentityProviderASF.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSFacebookSignIn/AWSFacebookSignIn.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSLambda/AWSLambda.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSUserPoolsSignIn/AWSUserPoolsSignIn.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthUI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognito.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProvider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProviderASF.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSFacebookSignIn.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSLambda.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSUserPoolsSignIn.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RushApp/Pods-RushApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC871D39ACEF00E49726D04C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RushApp/Pods-RushApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D258C027209645EE0090ABB5 /* Sources */ = {
@@ -253,14 +424,24 @@
 			files = (
 				D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */,
 				D2075DA9209B866500AC79B6 /* CacheManager.swift in Sources */,
+				D2075DB0209CD9CC00AC79B6 /* FeedVC.swift in Sources */,
+				D2075DC8209DEF2E00AC79B6 /* LoginVC.swift in Sources */,
 				D258C0702098F5170090ABB5 /* AppDelegate.swift in Sources */,
+				D2075DC1209DE93B00AC79B6 /* RegisterVC.swift in Sources */,
 				D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */,
 				D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */,
 				D258C076209904790090ABB5 /* SplashVC.swift in Sources */,
+				D2075DBC209DDE8900AC79B6 /* CognitoConstants.swift in Sources */,
 				D258C0792099061C0090ABB5 /* OnboardingVC.swift in Sources */,
+				D2075DCC209DF34900AC79B6 /* AWSLoginManager.swift in Sources */,
+				D2075DB6209CE3C200AC79B6 /* BaseRequest.swift in Sources */,
+				D2075DBA209DDD8900AC79B6 /* AWSCredentialManager.swift in Sources */,
 				D258C07D2099098B0090ABB5 /* BaseVC+Extensions.swift in Sources */,
 				D2075DAB209B877200AC79B6 /* CacheConstants.swift in Sources */,
+				D2075DB8209CE44E00AC79B6 /* DummyRequest.swift in Sources */,
+				D2075DBE209DE70000AC79B6 /* AWSRegisterManager.swift in Sources */,
 				D258C074209904690090ABB5 /* BaseVC.swift in Sources */,
+				D2075DC5209DEA2000AC79B6 /* Extension+UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +583,7 @@
 		};
 		D258C03E209645EF0090ABB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50F43DA57818541C627FFC4E /* Pods-RushApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -420,6 +602,7 @@
 		};
 		D258C03F209645EF0090ABB5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6723B34082783938D717BB0 /* Pods-RushApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

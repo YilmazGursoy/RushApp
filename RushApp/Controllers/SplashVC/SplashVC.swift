@@ -14,7 +14,7 @@ class SplashVC: BaseVC {
         super.viewDidLoad()
         
         DispatchQueue.main.asyncAfter(deadline: .now()+2) {
-            self.navigationController?.pushViewController(OnboardingVC.createFromStoryboard(), animated: true)
+            self.navigationController?.pushViewController(LoginVC.createFromStoryboard(), animated: true)
         }
         
         // Do any additional setup after loading the view.
