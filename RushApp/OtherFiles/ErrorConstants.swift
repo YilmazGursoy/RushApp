@@ -1,5 +1,5 @@
 //
-//  AWSRegisterManager.swift
+//  ErrorConstants.swift
 //  RushApp
 //
 //  Created by Most Wanted on 5.05.2018.
@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct ErrorConstants {
+    static let awsCognitoConfirmEmail       = "UserNotConfirmedException"
+}

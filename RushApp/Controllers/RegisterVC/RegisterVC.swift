@@ -34,7 +34,7 @@ class RegisterVC: BaseVC {
     @IBAction func registerTapped(_ sender: UIButton) {
         
         
-        let registerManager = AWSRegisterManager()
+        let registerManager = RegisterRequest()
         registerManager.register(withUsername: usernameTextField.text!, andPassword: passwordTextField.text!, andEmail: emailTextField.text!, andNickname: nicknameTextField.text!) { (response) in
             
             

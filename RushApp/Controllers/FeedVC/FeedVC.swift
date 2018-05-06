@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class FeedVC: BaseVC {
 
     override func viewDidLoad() {
@@ -31,6 +30,28 @@ class FeedVC: BaseVC {
             
             
         })
+    }
+    
+    @IBAction func isUserLoggedInTapped(_ sender: UIButton) {
+        
+        AWSCredentialManager.shared.isUserLoggedIn { (isLoggedIn) in
+            
+            if isLoggedIn == true {
+                RushLogger.successLog(message: "Already Logged In")
+            } else {
+                RushLogger.errorLog(message: "Not Logged In")
+            }
+            
+        }
+        
+    }
+    
+    @IBAction func logoutButtonTapped(_ sender: UIButton) {
+        AWSCredentialManager.shared.logout()
+    }
+    
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

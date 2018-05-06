@@ -11,9 +11,10 @@ target 'RushApp' do
   #AWS
     pod 'AWSUserPoolsSignIn', '~> 2.6.13'
     pod 'AWSAuthUI', '~> 2.6.13'
-    pod 'AWSMobileClient', '~> 2.6.13'
     pod 'AWSCognito'
-    pod 'AWSFacebookSignIn', '~> 2.6.13'
     pod 'AWSCognitoIdentityProvider'
     pod 'AWSLambda'
+    
+  #Facebook
+    pod 'FacebookLogin'
 end

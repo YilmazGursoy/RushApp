@@ -13,9 +13,11 @@ class BaseVC: UIViewController {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        AWSErrorManager.shared.delegate = self
     }
-
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         

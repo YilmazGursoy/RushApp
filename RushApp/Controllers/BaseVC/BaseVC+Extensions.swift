@@ -22,3 +22,22 @@ extension BaseVC {
         return UIStoryboard(name: storyboardName, bundle: Bundle.main).instantiateInitialViewController() as! T
     }
 }
+
+extension BaseVC : AWSErrorManagerProtocol {
+    
+    func pushViewController(pushViewController: UIViewController?) {
+        if pushViewController != nil {
+            DispatchQueue.main.async {
+                self.navigationController?.pushViewController(pushViewController!, animated: true)
+            }
+        }
+    }
+    
+    func forceOpenViewController(forceViwController: UIViewController?) {
+        if forceViwController != nil {
+            DispatchQueue.main.async {
+                UIApplication.shared.keyWindow?.rootViewController = forceViwController!
+            }
+        }
+    }
+}

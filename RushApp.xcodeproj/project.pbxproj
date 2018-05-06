@@ -26,6 +26,16 @@
 		D2075DC8209DEF2E00AC79B6 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DC7209DEF2E00AC79B6 /* LoginVC.swift */; };
 		D2075DCA209DEF4600AC79B6 /* LoginVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2075DC9209DEF4600AC79B6 /* LoginVC.storyboard */; };
 		D2075DCC209DF34900AC79B6 /* AWSLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DCB209DF34900AC79B6 /* AWSLoginManager.swift */; };
+		D2075DCE209E3CA400AC79B6 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DCD209E3CA400AC79B6 /* RegisterRequest.swift */; };
+		D2075DD0209E3CC600AC79B6 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DCF209E3CC600AC79B6 /* LoginRequest.swift */; };
+		D2075DD2209E3E8C00AC79B6 /* RushErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DD1209E3E8C00AC79B6 /* RushErrorManager.swift */; };
+		D2075DD4209E3FF800AC79B6 /* AWSErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DD3209E3FF800AC79B6 /* AWSErrorManager.swift */; };
+		D2075DD6209E41CA00AC79B6 /* ErrorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DD5209E41CA00AC79B6 /* ErrorConstants.swift */; };
+		D2075DD9209E447E00AC79B6 /* ConfirmEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DD8209E447E00AC79B6 /* ConfirmEmailVC.swift */; };
+		D2075DDB209E449000AC79B6 /* ConfirmEmailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2075DDA209E449000AC79B6 /* ConfirmEmailVC.storyboard */; };
+		D2075DDD209F091C00AC79B6 /* RushLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DDC209F091C00AC79B6 /* RushLogger.swift */; };
+		D2075DDF209F0CC900AC79B6 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DDE209F0CC900AC79B6 /* Extension+UIViewController.swift */; };
+		D2075DE2209F0D1300AC79B6 /* Extension+NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DE1209F0D1300AC79B6 /* Extension+NavigationController.swift */; };
 		D258C034209645EE0090ABB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D258C032209645EE0090ABB5 /* Main.storyboard */; };
 		D258C036209645EF0090ABB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D258C035209645EF0090ABB5 /* Assets.xcassets */; };
 		D258C039209645EF0090ABB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D258C037209645EF0090ABB5 /* LaunchScreen.storyboard */; };
@@ -35,6 +45,8 @@
 		D258C0792099061C0090ABB5 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258C0782099061C0090ABB5 /* OnboardingVC.swift */; };
 		D258C07B209906250090ABB5 /* OnboardingVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D258C07A209906250090ABB5 /* OnboardingVC.storyboard */; };
 		D258C07D2099098B0090ABB5 /* BaseVC+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258C07C2099098B0090ABB5 /* BaseVC+Extensions.swift */; };
+		D2D91088209F7F3D0054F3AA /* FacebookProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D91087209F7F3D0054F3AA /* FacebookProvider.swift */; };
+		D2D9108A209F7F5D0054F3AA /* FacebookLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D91089209F7F5D0054F3AA /* FacebookLoginManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +70,16 @@
 		D2075DC7209DEF2E00AC79B6 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D2075DC9209DEF4600AC79B6 /* LoginVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginVC.storyboard; sourceTree = "<group>"; };
 		D2075DCB209DF34900AC79B6 /* AWSLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSLoginManager.swift; sourceTree = "<group>"; };
+		D2075DCD209E3CA400AC79B6 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		D2075DCF209E3CC600AC79B6 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		D2075DD1209E3E8C00AC79B6 /* RushErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RushErrorManager.swift; sourceTree = "<group>"; };
+		D2075DD3209E3FF800AC79B6 /* AWSErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSErrorManager.swift; sourceTree = "<group>"; };
+		D2075DD5209E41CA00AC79B6 /* ErrorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorConstants.swift; sourceTree = "<group>"; };
+		D2075DD8209E447E00AC79B6 /* ConfirmEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmEmailVC.swift; sourceTree = "<group>"; };
+		D2075DDA209E449000AC79B6 /* ConfirmEmailVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ConfirmEmailVC.storyboard; sourceTree = "<group>"; };
+		D2075DDC209F091C00AC79B6 /* RushLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RushLogger.swift; sourceTree = "<group>"; };
+		D2075DDE209F0CC900AC79B6 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
+		D2075DE1209F0D1300AC79B6 /* Extension+NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NavigationController.swift"; sourceTree = "<group>"; };
 		D258C02B209645EE0090ABB5 /* RushApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RushApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D258C033209645EE0090ABB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D258C035209645EF0090ABB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +91,8 @@
 		D258C0782099061C0090ABB5 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		D258C07A209906250090ABB5 /* OnboardingVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingVC.storyboard; sourceTree = "<group>"; };
 		D258C07C2099098B0090ABB5 /* BaseVC+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseVC+Extensions.swift"; sourceTree = "<group>"; };
+		D2D91087209F7F3D0054F3AA /* FacebookProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookProvider.swift; sourceTree = "<group>"; };
+		D2D91089209F7F5D0054F3AA /* FacebookLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginManager.swift; sourceTree = "<group>"; };
 		E98A0D93FD81810B62D9B303 /* Pods_RushApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				D2075DC4209DEA2000AC79B6 /* Extension+UIButton.swift */,
+				D2075DDE209F0CC900AC79B6 /* Extension+UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -144,6 +169,23 @@
 			path = LoginVC;
 			sourceTree = "<group>";
 		};
+		D2075DD7209E446C00AC79B6 /* ConfirmEmailVC */ = {
+			isa = PBXGroup;
+			children = (
+				D2075DD8209E447E00AC79B6 /* ConfirmEmailVC.swift */,
+				D2075DDA209E449000AC79B6 /* ConfirmEmailVC.storyboard */,
+			);
+			path = ConfirmEmailVC;
+			sourceTree = "<group>";
+		};
+		D2075DE0209F0CF900AC79B6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D2075DE1209F0D1300AC79B6 /* Extension+NavigationController.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		D258C022209645EE0090ABB5 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +207,7 @@
 		D258C02D209645EE0090ABB5 /* RushApp */ = {
 			isa = PBXGroup;
 			children = (
+				D2075DE0209F0CF900AC79B6 /* Helpers */,
 				D2075DA0209B857D00AC79B6 /* Enums */,
 				D2075DA1209B857D00AC79B6 /* Extensions */,
 				D258C06B2098F4FB0090ABB5 /* Controllers */,
@@ -188,6 +231,10 @@
 				D2075DB9209DDD8900AC79B6 /* AWSCredentialManager.swift */,
 				D2075DBD209DE70000AC79B6 /* AWSRegisterManager.swift */,
 				D2075DCB209DF34900AC79B6 /* AWSLoginManager.swift */,
+				D2075DD1209E3E8C00AC79B6 /* RushErrorManager.swift */,
+				D2075DD3209E3FF800AC79B6 /* AWSErrorManager.swift */,
+				D2D91087209F7F3D0054F3AA /* FacebookProvider.swift */,
+				D2D91089209F7F5D0054F3AA /* FacebookLoginManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -204,6 +251,8 @@
 			children = (
 				D2075DB5209CE3C200AC79B6 /* BaseRequest.swift */,
 				D2075DB7209CE44E00AC79B6 /* DummyRequest.swift */,
+				D2075DCD209E3CA400AC79B6 /* RegisterRequest.swift */,
+				D2075DCF209E3CC600AC79B6 /* LoginRequest.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -218,6 +267,7 @@
 		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D2075DD7209E446C00AC79B6 /* ConfirmEmailVC */,
 				D2075DC6209DEF2300AC79B6 /* LoginVC */,
 				D2075DBF209DE93100AC79B6 /* RegisterVC */,
 				D2075DAE209CD9C400AC79B6 /* FeedVC */,
@@ -236,6 +286,8 @@
 				D2075DA6209B85D800AC79B6 /* AppConstants.swift */,
 				D2075DAA209B877200AC79B6 /* CacheConstants.swift */,
 				D2075DBB209DDE8900AC79B6 /* CognitoConstants.swift */,
+				D2075DD5209E41CA00AC79B6 /* ErrorConstants.swift */,
+				D2075DDC209F091C00AC79B6 /* RushLogger.swift */,
 			);
 			path = OtherFiles;
 			sourceTree = "<group>";
@@ -334,6 +386,7 @@
 				D2075DCA209DEF4600AC79B6 /* LoginVC.storyboard in Resources */,
 				D2075DB2209CD9D300AC79B6 /* FeedVC.storyboard in Resources */,
 				D258C034209645EE0090ABB5 /* Main.storyboard in Resources */,
+				D2075DDB209E449000AC79B6 /* ConfirmEmailVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,13 +424,13 @@
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProviderASF/AWSCognitoIdentityProviderASF.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
-				"${BUILT_PRODUCTS_DIR}/AWSFacebookSignIn/AWSFacebookSignIn.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSLambda/AWSLambda.framework",
-				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSUserPoolsSignIn/AWSUserPoolsSignIn.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -387,13 +440,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProvider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProviderASF.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSFacebookSignIn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSLambda.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSUserPoolsSignIn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -424,24 +477,35 @@
 			files = (
 				D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */,
 				D2075DA9209B866500AC79B6 /* CacheManager.swift in Sources */,
+				D2D9108A209F7F5D0054F3AA /* FacebookLoginManager.swift in Sources */,
 				D2075DB0209CD9CC00AC79B6 /* FeedVC.swift in Sources */,
 				D2075DC8209DEF2E00AC79B6 /* LoginVC.swift in Sources */,
 				D258C0702098F5170090ABB5 /* AppDelegate.swift in Sources */,
 				D2075DC1209DE93B00AC79B6 /* RegisterVC.swift in Sources */,
 				D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */,
 				D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */,
+				D2075DDF209F0CC900AC79B6 /* Extension+UIViewController.swift in Sources */,
 				D258C076209904790090ABB5 /* SplashVC.swift in Sources */,
+				D2075DD4209E3FF800AC79B6 /* AWSErrorManager.swift in Sources */,
 				D2075DBC209DDE8900AC79B6 /* CognitoConstants.swift in Sources */,
 				D258C0792099061C0090ABB5 /* OnboardingVC.swift in Sources */,
+				D2075DCE209E3CA400AC79B6 /* RegisterRequest.swift in Sources */,
+				D2D91088209F7F3D0054F3AA /* FacebookProvider.swift in Sources */,
+				D2075DE2209F0D1300AC79B6 /* Extension+NavigationController.swift in Sources */,
 				D2075DCC209DF34900AC79B6 /* AWSLoginManager.swift in Sources */,
+				D2075DDD209F091C00AC79B6 /* RushLogger.swift in Sources */,
 				D2075DB6209CE3C200AC79B6 /* BaseRequest.swift in Sources */,
 				D2075DBA209DDD8900AC79B6 /* AWSCredentialManager.swift in Sources */,
+				D2075DD9209E447E00AC79B6 /* ConfirmEmailVC.swift in Sources */,
 				D258C07D2099098B0090ABB5 /* BaseVC+Extensions.swift in Sources */,
 				D2075DAB209B877200AC79B6 /* CacheConstants.swift in Sources */,
+				D2075DD2209E3E8C00AC79B6 /* RushErrorManager.swift in Sources */,
 				D2075DB8209CE44E00AC79B6 /* DummyRequest.swift in Sources */,
+				D2075DD6209E41CA00AC79B6 /* ErrorConstants.swift in Sources */,
 				D2075DBE209DE70000AC79B6 /* AWSRegisterManager.swift in Sources */,
 				D258C074209904690090ABB5 /* BaseVC.swift in Sources */,
 				D2075DC5209DEA2000AC79B6 /* Extension+UIButton.swift in Sources */,
+				D2075DD0209E3CC600AC79B6 /* LoginRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

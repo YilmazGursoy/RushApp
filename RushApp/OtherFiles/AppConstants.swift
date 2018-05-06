@@ -9,5 +9,6 @@
 import Foundation
 
 struct AppConstants {
-    
+    static let errorHandleAndPushNotification       =   "errorHandlePushNotificationKey"
+    static let errorHandleAndForceOpen              =   "errorHandleAndMakeRootViewController"
 }

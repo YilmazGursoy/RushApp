@@ -33,11 +33,26 @@ class LoginVC: BaseVC {
     
     @IBAction func loginTapped(_ sender: UIButton) {
         
-        var loginManager = AWSLoginManager.init()
+        let loginManager = LoginRequest()
         
         loginManager.login(withUsername: usernameTextField.text!, andPassword: passwordTextField.text!) { (task) in
             
+            if task.error == nil {
+                
+                self.navigationController?.pushVCMainThread(FeedVC.createFromStoryboard())
+                
+            }
             
+        }
+        
+    }
+    @IBAction func facebookLoginTapped(_ sender: UIButton) {
+        let loginManager = LoginRequest()
+        loginManager.facebookLogin(withTarget: self) { (isSuccess) in
+            
+            if isSuccess == true {
+                self.navigationController?.pushVCMainThread(FeedVC.createFromStoryboard())
+            }
             
         }
         

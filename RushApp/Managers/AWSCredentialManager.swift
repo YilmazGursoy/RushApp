@@ -8,7 +8,8 @@
 
 import Foundation
 import AWSCognito
-import AWSMobileClient
+import FacebookCore
+import FacebookLogin
 import AWSCognitoIdentityProvider
 enum CurrentConfigurationType {
     case email
@@ -20,20 +21,7 @@ enum CurrentConfigurationType {
 class AWSCredentialManager {
     static let shared = AWSCredentialManager()
     var currentType:CurrentConfigurationType!
-    
-    func configureDefaultCredentials() {
-        
-        let credentialsProvider = AWSCognitoCredentialsProvider(regionType:CognitoConstants.cognitoFederatedIdentity_CLIENTREGION,
-                                                                identityPoolId:CognitoConstants.cognitoFederatedIdentity_POOLID)
-        
-        let configuration = AWSServiceConfiguration(region:CognitoConstants.cognitoFederatedIdentity_CLIENTREGION,
-                                                    credentialsProvider:credentialsProvider)
-        
-        AWSServiceManager.default().defaultServiceConfiguration = configuration
-        
-        currentType = .guest
-    }
-    
+    var currentCredential:AWSCognitoCredentialsProvider!
     
     //MARK: UserPool Configuration
     func configureUserPool(){
@@ -46,8 +34,6 @@ class AWSCredentialManager {
         AWSCognitoIdentityUserPool.register(with: serviceConfiguration,
                                             userPoolConfiguration: poolConfiguration,
                                             forKey: CognitoConstants.cognitoUserPool_POOLCONFIG)
-        
-        currentType = .email
     }
     
     func getUserPool(pool:@escaping(AWSCognitoIdentityUserPool)->Void) {
@@ -63,15 +49,85 @@ class AWSCredentialManager {
     
     //MARK: Fedarated Identities Configuration
     func configureFederatedIdentitiesForUserPool(){
-        
         let pool = AWSCognitoIdentityUserPool(forKey: CognitoConstants.cognitoUserPool_POOLCONFIG)
+        currentType = .email
+        self.cognitoFederatedIdentitySetup(withProvider: pool)
+        RushLogger.credentialLog(message: "UserPool")
+    }
+    
+    func configureFederatedIdentitiesForFacebook(){
+        let provider = FacebookProvider()
+        currentType = .facebook
+        self.cognitoFederatedIdentitySetup(withProvider: provider)
+        RushLogger.credentialLog(message: "Facebook")
+    }
+    
+    func cognitoFederatedIdentitySetup(withProvider provider:AWSIdentityProviderManager){
+        
         let credentialProvider = AWSCognitoCredentialsProvider(regionType: CognitoConstants.cognitoUserPool_CLIENTREGION,
-                                                               identityPoolId: CognitoConstants.cognitoUserPool_POOLID,
-                                                               identityProviderManager: pool)
+                                                               identityPoolId: CognitoConstants.cognitoFederatedIdentity_POOLID,
+                                                               identityProviderManager: provider)
+        
+        credentialProvider.credentials().continueWith { (credentials) -> Any? in
+            return nil
+        }
+        
         let defaultServiceConfiguration = AWSServiceConfiguration(region: CognitoConstants.cognitoUserPool_CLIENTREGION,
                                                                   credentialsProvider: credentialProvider)
-        
+        currentCredential = credentialProvider
         AWSServiceManager.default().defaultServiceConfiguration = defaultServiceConfiguration
+        
     }
+    
+    func logout(){
+        if let _ = AccessToken.current?.authenticationToken {
+            facebookLogout()
+        } else {
+            getUserPool { (pool) in
+                if ( pool.currentUser()?.isSignedIn == true ) {
+                    self.userpoolLogout()
+                } else {
+                    RushLogger.errorLog(message: "User Not Logged In")
+                }
+            }
+        }
+    }
+    
+    func userpoolLogout(){
+        if currentCredential != nil {
+            let pool = AWSCognitoIdentityUserPool(forKey: CognitoConstants.cognitoUserPool_POOLCONFIG)
+            pool.currentUser()?.signOutAndClearLastKnownUser()
+            pool.clearLastKnownUser()
+            
+            currentCredential.clearKeychain()
+            currentCredential.clearCredentials()
+        }
+    }
+    
+    func facebookLogout(){
+        if currentCredential != nil {
+            let loginManager = LoginManager()
+            loginManager.logOut()
+            
+            currentCredential.clearKeychain()
+            currentCredential.clearCredentials()
+        }
+    }
+    
+    func isUserLoggedIn(completion:@escaping(_ isUserLogin:Bool)->Void){
+        if let _ = AccessToken.current?.authenticationToken {
+            completion(true)
+        } else {
+            getUserPool { (pool) in
+                if ( pool.currentUser()?.isSignedIn == true ) {
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+            }
+        }
+    }
+    
+    
     
 }

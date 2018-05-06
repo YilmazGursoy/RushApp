@@ -18,13 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8g-I6-E8P">
-                                <rect key="frame" x="153.5" y="318" width="67" height="30"/>
-                                <state key="normal" title="Facebook"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwZ-hN-6iP">
-                                <rect key="frame" x="163" y="368" width="48" height="30"/>
+                                <rect key="frame" x="163" y="318.5" width="48" height="30"/>
                                 <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonTapped:" destination="OMz-Bl-HTV" eventType="touchUpInside" id="Lgp-6g-7WY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBv-1m-9fM">
                                 <rect key="frame" x="111.5" y="537" width="152" height="30"/>
@@ -33,15 +32,31 @@
                                     <action selector="requestTapped:" destination="OMz-Bl-HTV" eventType="touchUpInside" id="M6K-kU-dxP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAp-mU-L1L">
+                                <rect key="frame" x="146" y="114" width="84" height="30"/>
+                                <state key="normal" title="Is Logged In"/>
+                                <connections>
+                                    <action selector="isUserLoggedInTapped:" destination="OMz-Bl-HTV" eventType="touchUpInside" id="BxI-iC-T5b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hde-OR-CtY">
+                                <rect key="frame" x="22" y="82" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="OMz-Bl-HTV" eventType="touchUpInside" id="xRb-je-BaN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XwZ-hN-6iP" firstAttribute="centerX" secondItem="lip-EC-PtC" secondAttribute="centerX" id="0VG-De-Ada"/>
                             <constraint firstItem="xBv-1m-9fM" firstAttribute="centerX" secondItem="lip-EC-PtC" secondAttribute="centerX" id="4Ap-Lg-UlR"/>
                             <constraint firstItem="NYY-jz-BmW" firstAttribute="bottom" secondItem="xBv-1m-9fM" secondAttribute="bottom" constant="100" id="6AM-EG-Egy"/>
-                            <constraint firstItem="XwZ-hN-6iP" firstAttribute="top" secondItem="A8g-I6-E8P" secondAttribute="bottom" constant="20" id="8Mk-0o-7Cn"/>
-                            <constraint firstItem="A8g-I6-E8P" firstAttribute="centerX" secondItem="lip-EC-PtC" secondAttribute="centerX" id="CUM-xa-ciQ"/>
-                            <constraint firstItem="A8g-I6-E8P" firstAttribute="centerY" secondItem="lip-EC-PtC" secondAttribute="centerY" id="mWy-ov-JN9"/>
+                            <constraint firstItem="cAp-mU-L1L" firstAttribute="centerX" secondItem="lip-EC-PtC" secondAttribute="centerX" id="ERI-yA-5Ud"/>
+                            <constraint firstItem="XwZ-hN-6iP" firstAttribute="centerY" secondItem="lip-EC-PtC" secondAttribute="centerY" id="FW5-Po-d9E"/>
+                            <constraint firstItem="XwZ-hN-6iP" firstAttribute="centerX" secondItem="lip-EC-PtC" secondAttribute="centerX" id="cHx-35-HF0"/>
+                            <constraint firstItem="XwZ-hN-6iP" firstAttribute="top" secondItem="cAp-mU-L1L" secondAttribute="bottom" constant="174.5" id="g2H-iu-oYT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NYY-jz-BmW"/>
                     </view>
