@@ -62,7 +62,7 @@ class AWSCredentialManager {
         RushLogger.credentialLog(message: "Facebook")
     }
     
-    fileprivate func cognitoFederatedIdentitySetup(withProvider provider:AWSIdentityProviderManager){
+    func cognitoFederatedIdentitySetup(withProvider provider:AWSIdentityProviderManager){
         
         let credentialProvider = AWSCognitoCredentialsProvider(regionType: CognitoConstants.cognitoUserPool_CLIENTREGION,
                                                                identityPoolId: CognitoConstants.cognitoFederatedIdentity_POOLID,
@@ -93,7 +93,7 @@ class AWSCredentialManager {
         }
     }
     
-    fileprivate func userpoolLogout(){
+    func userpoolLogout(){
         if currentCredential != nil {
             let pool = AWSCognitoIdentityUserPool(forKey: CognitoConstants.cognitoUserPool_POOLCONFIG)
             pool.currentUser()?.signOutAndClearLastKnownUser()
@@ -103,7 +103,7 @@ class AWSCredentialManager {
         }
     }
     
-    fileprivate func facebookLogout(){
+    func facebookLogout(){
         if currentCredential != nil {
             let loginManager = LoginManager()
             loginManager.logOut()
