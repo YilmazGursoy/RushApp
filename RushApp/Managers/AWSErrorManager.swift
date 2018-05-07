@@ -22,14 +22,18 @@ class AWSErrorManager {
     func errorControl(error:Error?) {
         
         if let _error = error {
-            if let userInfo = _error._userInfo {
-                if let userInfoType = userInfo["__type"] {
-                    if (userInfoType as! String) == ErrorConstants.awsCognitoConfirmEmail {
-                        if delegate != nil {
-                            delegate.pushViewController(pushViewController: ConfirmEmailVC.createFromStoryboard())
-                        }
-                    }
+            switch _error._code {
+            case ErrorConstants.awsCognitoConfirmEmailCode:
+                if delegate != nil {
+                    delegate.pushViewController(pushViewController: ConfirmEmailVC.createFromStoryboard())
+                    return
                 }
+            case ErrorConstants.awsCognitoSignoutCode:
+                if delegate != nil {
+                    delegate.forceOpenViewController(forceViwController: LoginVC.createFromStoryboard())
+                }
+            default:
+                RushLogger.errorLog(message: "Not defining Error with code \(_error._code)")
             }
         }
     }

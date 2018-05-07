@@ -47,6 +47,8 @@
 		D258C07D2099098B0090ABB5 /* BaseVC+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258C07C2099098B0090ABB5 /* BaseVC+Extensions.swift */; };
 		D2D91088209F7F3D0054F3AA /* FacebookProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D91087209F7F3D0054F3AA /* FacebookProvider.swift */; };
 		D2D9108A209F7F5D0054F3AA /* FacebookLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D91089209F7F5D0054F3AA /* FacebookLoginManager.swift */; };
+		D2D9108D20A070B40054F3AA /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D9108C20A070B40054F3AA /* BaseNavigationController.swift */; };
+		D2D9108F20A070BE0054F3AA /* BaseNavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D9108E20A070BE0054F3AA /* BaseNavigationController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +95,8 @@
 		D258C07C2099098B0090ABB5 /* BaseVC+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseVC+Extensions.swift"; sourceTree = "<group>"; };
 		D2D91087209F7F3D0054F3AA /* FacebookProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookProvider.swift; sourceTree = "<group>"; };
 		D2D91089209F7F5D0054F3AA /* FacebookLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginManager.swift; sourceTree = "<group>"; };
+		D2D9108C20A070B40054F3AA /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		D2D9108E20A070BE0054F3AA /* BaseNavigationController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BaseNavigationController.storyboard; sourceTree = "<group>"; };
 		E98A0D93FD81810B62D9B303 /* Pods_RushApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -267,6 +271,7 @@
 		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D2D9108B20A070A40054F3AA /* BaseNavigationController */,
 				D2075DD7209E446C00AC79B6 /* ConfirmEmailVC */,
 				D2075DC6209DEF2300AC79B6 /* LoginVC */,
 				D2075DBF209DE93100AC79B6 /* RegisterVC */,
@@ -316,6 +321,15 @@
 				D258C07A209906250090ABB5 /* OnboardingVC.storyboard */,
 			);
 			path = OnboardingVC;
+			sourceTree = "<group>";
+		};
+		D2D9108B20A070A40054F3AA /* BaseNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				D2D9108C20A070B40054F3AA /* BaseNavigationController.swift */,
+				D2D9108E20A070BE0054F3AA /* BaseNavigationController.storyboard */,
+			);
+			path = BaseNavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2D9108F20A070BE0054F3AA /* BaseNavigationController.storyboard in Resources */,
 				D2075DC3209DE94300AC79B6 /* RegisterVC.storyboard in Resources */,
 				D258C039209645EF0090ABB5 /* LaunchScreen.storyboard in Resources */,
 				D258C036209645EF0090ABB5 /* Assets.xcassets in Resources */,
@@ -483,6 +498,7 @@
 				D258C0702098F5170090ABB5 /* AppDelegate.swift in Sources */,
 				D2075DC1209DE93B00AC79B6 /* RegisterVC.swift in Sources */,
 				D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */,
+				D2D9108D20A070B40054F3AA /* BaseNavigationController.swift in Sources */,
 				D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */,
 				D2075DDF209F0CC900AC79B6 /* Extension+UIViewController.swift in Sources */,
 				D258C076209904790090ABB5 /* SplashVC.swift in Sources */,

@@ -36,7 +36,9 @@ extension BaseVC : AWSErrorManagerProtocol {
     func forceOpenViewController(forceViwController: UIViewController?) {
         if forceViwController != nil {
             DispatchQueue.main.async {
-                UIApplication.shared.keyWindow?.rootViewController = forceViwController!
+                let navigationController = BaseNavigationController.createFromStoryboard()
+                navigationController.viewControllers = [forceViwController!]
+                UIApplication.shared.keyWindow?.rootViewController = navigationController
             }
         }
     }

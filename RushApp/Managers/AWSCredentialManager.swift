@@ -11,12 +11,12 @@ import AWSCognito
 import FacebookCore
 import FacebookLogin
 import AWSCognitoIdentityProvider
+
 enum CurrentConfigurationType {
     case email
     case facebook
     case guest
 }
-
 
 class AWSCredentialManager {
     static let shared = AWSCredentialManager()
@@ -62,7 +62,7 @@ class AWSCredentialManager {
         RushLogger.credentialLog(message: "Facebook")
     }
     
-    func cognitoFederatedIdentitySetup(withProvider provider:AWSIdentityProviderManager){
+    fileprivate func cognitoFederatedIdentitySetup(withProvider provider:AWSIdentityProviderManager){
         
         let credentialProvider = AWSCognitoCredentialsProvider(regionType: CognitoConstants.cognitoUserPool_CLIENTREGION,
                                                                identityPoolId: CognitoConstants.cognitoFederatedIdentity_POOLID,
@@ -93,22 +93,20 @@ class AWSCredentialManager {
         }
     }
     
-    func userpoolLogout(){
+    fileprivate func userpoolLogout(){
         if currentCredential != nil {
             let pool = AWSCognitoIdentityUserPool(forKey: CognitoConstants.cognitoUserPool_POOLCONFIG)
             pool.currentUser()?.signOutAndClearLastKnownUser()
             pool.clearLastKnownUser()
-            
             currentCredential.clearKeychain()
             currentCredential.clearCredentials()
         }
     }
     
-    func facebookLogout(){
+    fileprivate func facebookLogout(){
         if currentCredential != nil {
             let loginManager = LoginManager()
             loginManager.logOut()
-            
             currentCredential.clearKeychain()
             currentCredential.clearCredentials()
         }

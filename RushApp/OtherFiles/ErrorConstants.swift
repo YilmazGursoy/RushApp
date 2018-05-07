@@ -9,5 +9,6 @@
 import Foundation
 
 struct ErrorConstants {
-    static let awsCognitoConfirmEmail       = "UserNotConfirmedException"
+    static let awsCognitoConfirmEmailCode       = 33
+    static let awsCognitoSignoutCode            = -1000
 }

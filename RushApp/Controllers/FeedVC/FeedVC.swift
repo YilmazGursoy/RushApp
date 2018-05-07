@@ -10,6 +10,7 @@ import UIKit
 
 class FeedVC: BaseVC {
 
+    @IBOutlet weak var credentialIdLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,6 +53,20 @@ class FeedVC: BaseVC {
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func displayCredentialTapped(_ sender: UIButton) {
+        AWSCredentialManager.shared.currentCredential.getIdentityId().continueWith { (task) -> Any? in
+            if task.result! != nil {
+                DispatchQueue.main.async {
+                    self.credentialIdLabel.text = task.result! as String
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.credentialIdLabel.text = "nil"
+                }
+            }
+            return nil
+        }
     }
     
 }

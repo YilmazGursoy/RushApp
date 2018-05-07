@@ -47,6 +47,21 @@
                                     <action selector="backButtonTapped:" destination="OMz-Bl-HTV" eventType="touchUpInside" id="xRb-je-BaN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPf-Qf-s51">
+                                <rect key="frame" x="128" y="206" width="121" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="DisplayCredential"/>
+                                <connections>
+                                    <action selector="displayCredentialTapped:" destination="OMz-Bl-HTV" eventType="touchUpInside" id="o3y-UV-xUy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffa-ep-tyT">
+                                <rect key="frame" x="16" y="148" width="343" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -60,10 +75,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NYY-jz-BmW"/>
                     </view>
+                    <connections>
+                        <outlet property="credentialIdLabel" destination="Ffa-ep-tyT" id="AwE-6h-beF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgk-bo-8GD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162" y="123"/>
+            <point key="canvasLocation" x="160.80000000000001" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>
