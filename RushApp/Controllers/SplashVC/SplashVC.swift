@@ -13,8 +13,12 @@ class SplashVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
-            self.navigationController?.pushViewController(LoginVC.createFromStoryboard(), animated: true)
+        AWSCredentialManager.shared.isUserLoggedIn { (isLoggedIn) in
+            if isLoggedIn == true {
+                self.navigationController?.openForceVCMainThread(FeedVC.createFromStoryboard())
+            } else {
+                self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
+            }
         }
         
         // Do any additional setup after loading the view.

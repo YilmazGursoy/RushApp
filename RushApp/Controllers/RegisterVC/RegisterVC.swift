@@ -36,9 +36,11 @@ class RegisterVC: BaseVC {
         
         let registerManager = RegisterRequest()
         registerManager.register(withUsername: usernameTextField.text!, andPassword: passwordTextField.text!, andEmail: emailTextField.text!, andNickname: nicknameTextField.text!) { (response) in
-            
-            
-            
+            DispatchQueue.main.async {
+                let confirmVC = ConfirmEmailVC.createFromStoryboard()
+                confirmVC.username = self.usernameTextField.text!
+                self.navigationController?.pushVCMainThread(confirmVC)
+            }
         }
         
     }

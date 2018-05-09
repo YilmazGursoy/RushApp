@@ -15,17 +15,16 @@ class ConfirmEmailVC: BaseVC {
     //MARK: IBOutlets
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var confirmationTextField: UITextField!
+    var username:String!
     
     //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
-        
+        if username != nil {
+            self.usernameTextField.text = username
+        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -40,12 +39,12 @@ class ConfirmEmailVC: BaseVC {
                 
                 if task.result != nil {
                     RushLogger.successLog(message: "Confirm Success")
-                    print(task.result)
+                    self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
+                    print(task.result ?? "-")
                     
                 } else {
-                    
                     RushLogger.errorLog(message: "Confirm Email Failed")
-                    print(task.error)
+                    print(task.error ?? "-")
                 }
                 
                 

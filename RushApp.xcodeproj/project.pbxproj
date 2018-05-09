@@ -45,6 +45,8 @@
 		D258C0792099061C0090ABB5 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258C0782099061C0090ABB5 /* OnboardingVC.swift */; };
 		D258C07B209906250090ABB5 /* OnboardingVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D258C07A209906250090ABB5 /* OnboardingVC.storyboard */; };
 		D258C07D2099098B0090ABB5 /* BaseVC+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258C07C2099098B0090ABB5 /* BaseVC+Extensions.swift */; };
+		D2AF692D20A237A500AC40E9 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AF692C20A237A500AC40E9 /* ForgotPasswordVC.swift */; };
+		D2AF692F20A237C200AC40E9 /* ForgotPasswordVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2AF692E20A237C200AC40E9 /* ForgotPasswordVC.storyboard */; };
 		D2D91088209F7F3D0054F3AA /* FacebookProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D91087209F7F3D0054F3AA /* FacebookProvider.swift */; };
 		D2D9108A209F7F5D0054F3AA /* FacebookLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D91089209F7F5D0054F3AA /* FacebookLoginManager.swift */; };
 		D2D9108D20A070B40054F3AA /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D9108C20A070B40054F3AA /* BaseNavigationController.swift */; };
@@ -93,6 +95,8 @@
 		D258C0782099061C0090ABB5 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		D258C07A209906250090ABB5 /* OnboardingVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingVC.storyboard; sourceTree = "<group>"; };
 		D258C07C2099098B0090ABB5 /* BaseVC+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseVC+Extensions.swift"; sourceTree = "<group>"; };
+		D2AF692C20A237A500AC40E9 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		D2AF692E20A237C200AC40E9 /* ForgotPasswordVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPasswordVC.storyboard; sourceTree = "<group>"; };
 		D2D91087209F7F3D0054F3AA /* FacebookProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookProvider.swift; sourceTree = "<group>"; };
 		D2D91089209F7F5D0054F3AA /* FacebookLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginManager.swift; sourceTree = "<group>"; };
 		D2D9108C20A070B40054F3AA /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
@@ -272,11 +276,12 @@
 			isa = PBXGroup;
 			children = (
 				D2D9108B20A070A40054F3AA /* BaseNavigationController */,
+				D258C0722099045E0090ABB5 /* BaseVC */,
 				D2075DD7209E446C00AC79B6 /* ConfirmEmailVC */,
+				D2AF692B20A2378C00AC40E9 /* ForgotPasswordVC */,
 				D2075DC6209DEF2300AC79B6 /* LoginVC */,
 				D2075DBF209DE93100AC79B6 /* RegisterVC */,
 				D2075DAE209CD9C400AC79B6 /* FeedVC */,
-				D258C0722099045E0090ABB5 /* BaseVC */,
 				D258C0712099045E0090ABB5 /* SplashVC */,
 				D258C077209906120090ABB5 /* OnboardingVC */,
 			);
@@ -321,6 +326,15 @@
 				D258C07A209906250090ABB5 /* OnboardingVC.storyboard */,
 			);
 			path = OnboardingVC;
+			sourceTree = "<group>";
+		};
+		D2AF692B20A2378C00AC40E9 /* ForgotPasswordVC */ = {
+			isa = PBXGroup;
+			children = (
+				D2AF692C20A237A500AC40E9 /* ForgotPasswordVC.swift */,
+				D2AF692E20A237C200AC40E9 /* ForgotPasswordVC.storyboard */,
+			);
+			path = ForgotPasswordVC;
 			sourceTree = "<group>";
 		};
 		D2D9108B20A070A40054F3AA /* BaseNavigationController */ = {
@@ -400,6 +414,7 @@
 				D258C07B209906250090ABB5 /* OnboardingVC.storyboard in Resources */,
 				D2075DCA209DEF4600AC79B6 /* LoginVC.storyboard in Resources */,
 				D2075DB2209CD9D300AC79B6 /* FeedVC.storyboard in Resources */,
+				D2AF692F20A237C200AC40E9 /* ForgotPasswordVC.storyboard in Resources */,
 				D258C034209645EE0090ABB5 /* Main.storyboard in Resources */,
 				D2075DDB209E449000AC79B6 /* ConfirmEmailVC.storyboard in Resources */,
 			);
@@ -504,6 +519,7 @@
 				D258C076209904790090ABB5 /* SplashVC.swift in Sources */,
 				D2075DD4209E3FF800AC79B6 /* AWSErrorManager.swift in Sources */,
 				D2075DBC209DDE8900AC79B6 /* CognitoConstants.swift in Sources */,
+				D2AF692D20A237A500AC40E9 /* ForgotPasswordVC.swift in Sources */,
 				D258C0792099061C0090ABB5 /* OnboardingVC.swift in Sources */,
 				D2075DCE209E3CA400AC79B6 /* RegisterRequest.swift in Sources */,
 				D2D91088209F7F3D0054F3AA /* FacebookProvider.swift in Sources */,

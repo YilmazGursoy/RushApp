@@ -46,6 +46,7 @@ class LoginVC: BaseVC {
         }
         
     }
+    
     @IBAction func facebookLoginTapped(_ sender: UIButton) {
         let loginManager = LoginRequest()
         loginManager.facebookLogin(withTarget: self) { (isSuccess) in
@@ -57,5 +58,13 @@ class LoginVC: BaseVC {
         }
         
     }
+    @IBAction func registerTapped(_ sender: UIButton) {
+        self.navigationController?.pushVCMainThread(RegisterVC.createFromStoryboard())
+    }
+    
+    @IBAction func forgotMyPasswordTapped(_ sender: UIButton) {
+        //TODO:
+    }
+    
     
 }

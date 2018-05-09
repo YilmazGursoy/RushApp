@@ -17,8 +17,7 @@ class DummyRequest: BaseRequest {
         let parameters = ["name":"Yilmaz","surname":"Gürsoy"]
         
         self.requestWith(functionName: lambdaName, andParameters: parameters) { (result, error) -> (Void) in
-            completionBlock(result, error)
-            
+            completionBlock(result, error)            
         }
         
     }

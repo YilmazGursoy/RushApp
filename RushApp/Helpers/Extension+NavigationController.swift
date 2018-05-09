@@ -34,4 +34,12 @@ extension UINavigationController {
             self.present(viewController, animated: true, completion: nil)
         }
     }
+    
+    func openForceVCMainThread(_ viewController: UIViewController) {
+        DispatchQueue.main.async {
+            let navigationController = BaseNavigationController.createFromStoryboard()
+            navigationController.viewControllers = [viewController]
+            UIApplication.shared.keyWindow?.rootViewController = navigationController
+        }
+    }
 }

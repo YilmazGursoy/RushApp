@@ -49,6 +49,7 @@ class FeedVC: BaseVC {
     
     @IBAction func logoutButtonTapped(_ sender: UIButton) {
         AWSCredentialManager.shared.logout()
+        self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
