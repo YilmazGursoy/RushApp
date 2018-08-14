@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 
 @UIApplicationMain
@@ -17,11 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        AWSCredentialManager.shared.getUserPool { (pool) in
-            if pool.currentUser()?.isSignedIn == true {
-                print("User already logged in with email/password")
-            }
-        }
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
+        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Tamam"
         
         return true
     }

@@ -12,9 +12,9 @@ import AWSCognito
 struct CognitoConstants {
     
     //MARK: UserPool Ids
-    static let cognitoUserPool_POOLID                               = "eu-central-1_DUOLAxgXK"
-    static let cognitoUserPool_CLIENTID                             = "1h2opv9q6pi68he85asjenjb1r"
-    static let cognitoUserPool_CLIENTSECRET                         = "1v9hmib6ovk12ove5uh6rtm1b23tpkv89lvpicl3od8bl3bo4a65"
+    static let cognitoUserPool_POOLID                               = "eu-central-1_a0JEamQmJ"
+    static let cognitoUserPool_CLIENTID                             = "5qo8aourer7prpc3i8vrpgern2"
+    static let cognitoUserPool_CLIENTSECRET                         = "f94rin2ca1pq1t1d5v9orthn9fc7pggg642u481mot8b3p95b5o"
     static let cognitoUserPool_CLIENTREGION:AWSRegionType           = .EUCentral1
     static let cognitoUserPool_POOLCONFIG                           = "UserPool"
     

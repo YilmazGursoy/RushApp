@@ -1,39 +1,41 @@
 PODS:
-  - AWSAuthCore (2.6.17):
-    - AWSCore (= 2.6.17)
-  - AWSAuthUI (2.6.17):
-    - AWSAuthCore (= 2.6.17)
-    - AWSCore (= 2.6.17)
-  - AWSCognito (2.6.17):
-    - AWSCore (= 2.6.17)
-  - AWSCognitoIdentityProvider (2.6.17):
+  - AWSAuthCore (2.6.26):
+    - AWSCore (= 2.6.26)
+  - AWSAuthUI (2.6.26):
+    - AWSAuthCore (= 2.6.26)
+    - AWSCore (= 2.6.26)
+  - AWSCognito (2.6.26):
+    - AWSCore (= 2.6.26)
+  - AWSCognitoIdentityProvider (2.6.26):
     - AWSCognitoIdentityProviderASF (= 1.0.1)
-    - AWSCore (= 2.6.17)
+    - AWSCore (= 2.6.26)
   - AWSCognitoIdentityProviderASF (1.0.1)
-  - AWSCore (2.6.17)
-  - AWSLambda (2.6.17):
-    - AWSCore (= 2.6.17)
-  - AWSUserPoolsSignIn (2.6.17):
-    - AWSAuthCore (= 2.6.17)
-    - AWSCognitoIdentityProvider (= 2.6.17)
+  - AWSCore (2.6.26)
+  - AWSLambda (2.6.26):
+    - AWSCore (= 2.6.26)
+  - AWSUserPoolsSignIn (2.6.26):
+    - AWSAuthCore (= 2.6.26)
+    - AWSCognitoIdentityProvider (= 2.6.26)
   - Bolts (1.9.0):
     - Bolts/AppLinks (= 1.9.0)
     - Bolts/Tasks (= 1.9.0)
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
-  - FacebookCore (0.3.0):
+  - FacebookCore (0.3.2):
     - Bolts (~> 1.8)
-    - FBSDKCoreKit (~> 4.27)
-  - FacebookLogin (0.3.0):
+    - FBSDKCoreKit (~> 4.35)
+  - FacebookLogin (0.3.2):
     - Bolts (~> 1.8)
-    - FacebookCore (~> 0.3)
-    - FBSDKCoreKit (~> 4.27)
-    - FBSDKLoginKit (~> 4.27)
-  - FBSDKCoreKit (4.33.0):
+    - FacebookCore (~> 0.3.2)
+    - FBSDKCoreKit (~> 4.35)
+    - FBSDKLoginKit (~> 4.35)
+  - FBSDKCoreKit (4.35.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.33.0):
+  - FBSDKLoginKit (4.35.0):
     - FBSDKCoreKit
+  - IQKeyboardManagerSwift (6.1.1)
+  - PMAlertController (3.4.0)
 
 DEPENDENCIES:
   - AWSAuthUI (~> 2.6.13)
@@ -42,22 +44,44 @@ DEPENDENCIES:
   - AWSLambda
   - AWSUserPoolsSignIn (~> 2.6.13)
   - FacebookLogin
+  - IQKeyboardManagerSwift
+  - PMAlertController
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AWSAuthCore
+    - AWSAuthUI
+    - AWSCognito
+    - AWSCognitoIdentityProvider
+    - AWSCognitoIdentityProviderASF
+    - AWSCore
+    - AWSLambda
+    - AWSUserPoolsSignIn
+    - Bolts
+    - FacebookCore
+    - FacebookLogin
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - IQKeyboardManagerSwift
+    - PMAlertController
 
 SPEC CHECKSUMS:
-  AWSAuthCore: 15a48ce8153e6b7b7df763e8df9d993c7797957e
-  AWSAuthUI: c275f3be411076b0aa33237cb9efc596c16aa631
-  AWSCognito: 2a3da30af7d731cfd1032812a052e65099bbe26a
-  AWSCognitoIdentityProvider: 9f15b1d0073c3585d791877c98e1315c368b4f18
+  AWSAuthCore: bc6c8d7320eae8ef18939504d5a8a1588606c3a1
+  AWSAuthUI: 2d597886206772e31273d12e76f642fcddca9616
+  AWSCognito: a478efa37e614803ba4554a29ca1be69d70e0e43
+  AWSCognitoIdentityProvider: 5be311431518b6630de040fbf62e1b4f2a71694b
   AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
-  AWSCore: 82fbb01d73a22cfae77ac2f03f6073a123092452
-  AWSLambda: eabf39017c8193d5d028cca4076fbd07fcfd57f9
-  AWSUserPoolsSignIn: ba2e21e15527ba955194031fd40f02e1490630fe
+  AWSCore: 0177bb7e5616d967277b398e7a05ed7a228e6158
+  AWSLambda: 0de18d2456d935f64c21e995a786b925844d9af1
+  AWSUserPoolsSignIn: dfc849bcd5f965248ec8bb11c37e640bede7e377
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
-  FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
-  FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
-  FBSDKCoreKit: 572b047a7e029bc44542bcf8a59414e7ff2b543e
-  FBSDKLoginKit: 88cb456349cfb3b554427ce4f8b43729d85dfb40
+  FacebookCore: fe93222bb70346730ef33b061d493e9e7a7cb1f5
+  FacebookLogin: a4e225974791c82836765a294582b4778baffc07
+  FBSDKCoreKit: 1a5b2e3ceb5ca827a53c54aa5f4a3480efff80d2
+  FBSDKLoginKit: 00a3d65d1226852f9d76dcddff01981e5e6d9c38
+  IQKeyboardManagerSwift: 977affaeb4d6e971975c7790a6850f31d38f1207
+  PMAlertController: efb781925d741d50e0200018a00c53cecb8b4910
 
-PODFILE CHECKSUM: 6eed88066b708602b93a6f4cd30252e1bbba05d2
+PODFILE CHECKSUM: 157d708108762b7fd06f53ac6f1dce088cacb3f1
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

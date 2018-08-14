@@ -13,15 +13,16 @@ import AWSCognitoIdentityProvider
 
 class ConfirmEmailVC: BaseVC {
     //MARK: IBOutlets
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var confirmationTextField: UITextField!
-    var username:String!
+    
+    @IBOutlet weak var confirmCodeLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    var email:String!
     
     //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        if username != nil {
-            self.usernameTextField.text = username
+        if email != nil {
+            self.emailLabel.text = email
         }
     }
     
@@ -35,8 +36,7 @@ class ConfirmEmailVC: BaseVC {
     @IBAction func confirmTapped(_ sender: UIButton) {
         AWSCredentialManager.shared.getUserPool { (pool) in
             RushLogger.requestLog(message: "Confirm SignUp Request")
-            pool.getUser(self.usernameTextField.text!).confirmSignUp(self.confirmationTextField.text!).continueWith(block: { (task) -> Any? in
-                
+            pool.getUser(self.email).confirmSignUp(self.confirmCodeLabel!.text!).continueWith(block: { (task) -> Any? in
                 if task.result != nil {
                     RushLogger.successLog(message: "Confirm Success")
                     self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
@@ -46,8 +46,6 @@ class ConfirmEmailVC: BaseVC {
                     RushLogger.errorLog(message: "Confirm Email Failed")
                     print(task.error ?? "-")
                 }
-                
-                
                 return nil
             })
         }
@@ -56,17 +54,43 @@ class ConfirmEmailVC: BaseVC {
     @IBAction func resendConfirmationCodeTapped(_ sender: UIButton) {
         AWSCredentialManager.shared.getUserPool { (pool) in
             RushLogger.functionLog(message: "Resend Confirmation Request")
-            pool.getUser(self.usernameTextField.text!).resendConfirmationCode().continueWith(block: { (task) -> Any? in
+            pool.getUser(self.email).resendConfirmationCode().continueWith(block: { (task) -> Any? in
                 if task.result != nil {
                     RushLogger.successLog(message: "Resend Success")
-                    self.showInfoAlert(withTitle: "Uyarı", andMessage: "Doğrulama kodunuz mailinize gönderilmiştir.")
+                    self.showSuccess(title: "", description: "Your new confirmation code has been sending.", doneButtonTapped: {
+                        
+                    })
                 } else {
-                    RushLogger.errorLog(message: "Resend Failed")
-                    self.showInfoAlert(withTitle: "Hata", andMessage: "Doğrulama kodu gönderilirken bir sorun oluştu.")
+                    self.showError(title: "", description: "There is an error sending new confirmation code.", doneButtonTapped: {
+                        
+                    })
                 }
                 return nil
             })
             
+        }
+    }
+    
+    @IBAction func digitTapped(_ sender: UIButton) {
+        if confirmCodeLabel.text!.elementsEqual("Confirmation code") {
+            confirmCodeLabel.text = ""
+        }
+        
+        if (confirmCodeLabel.text?.count)! <= 5 {
+            confirmCodeLabel.text = confirmCodeLabel.text! + sender.currentTitle!
+        } else {
+            confirmTapped(UIButton())
+        }
+    }
+    
+    @IBAction func removeButtonTapped(_ sender: UIButton) {
+        if confirmCodeLabel.text!.elementsEqual("Confirmation code") {
+            return
+        }
+        if (confirmCodeLabel.text?.count)! < 1 {
+            confirmCodeLabel.text = "Confirmation code"
+        } else {
+            confirmCodeLabel.text?.removeLast()
         }
     }
     

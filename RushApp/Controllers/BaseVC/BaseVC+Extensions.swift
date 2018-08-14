@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PMAlertController
 
 //MARK: Create from storyboard
 extension BaseVC {
@@ -21,6 +22,28 @@ extension BaseVC {
     static func createFromStoryboard<T: BaseVC>(storyboardName:String) -> T {
         return UIStoryboard(name: storyboardName, bundle: Bundle.main).instantiateInitialViewController() as! T
     }
+    
+    func showSuccess(title:String, description:String, doneButtonTapped:@escaping()->Void) {
+        let alertVC = PMAlertController(title: title, description: description, image: UIImage(named: "success"), style: .alert)
+        
+        alertVC.addAction(PMAlertAction(title: "Okey", style: .default, action: { () in
+            doneButtonTapped()
+        }))
+        
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    func showError(title:String, description:String, doneButtonTapped:@escaping()->Void) {
+        let alertVC = PMAlertController(title: title, description: description, image: UIImage(named: "error"), style: .alert)
+        
+        alertVC.addAction(PMAlertAction(title: "Okey", style: .default, action: { () in
+            doneButtonTapped()
+        }))
+        
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    
 }
 
 extension BaseVC : AWSErrorManagerProtocol {

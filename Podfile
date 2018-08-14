@@ -17,4 +17,8 @@ target 'RushApp' do
     
   #Facebook
     pod 'FacebookLogin'
+    
+  #TextField
+    pod 'IQKeyboardManagerSwift'
+    pod 'PMAlertController'
 end

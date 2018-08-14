@@ -18,7 +18,7 @@ class LoginVC: BaseVC {
     //MARK: App LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupUI()
         
     }
 
@@ -26,7 +26,13 @@ class LoginVC: BaseVC {
         super.didReceiveMemoryWarning()
         
         
-        
+    }
+    
+    private func setupUI(){
+        usernameTextField.attributedPlaceholder = NSAttributedString(string: "Username or Email Address",
+                                                               attributes: [NSAttributedStringKey.foregroundColor: UIColor.white.withAlphaComponent(0.5)])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password",
+                                                                     attributes: [NSAttributedStringKey.foregroundColor: UIColor.white.withAlphaComponent(0.5)])
     }
     
     //MARK: IBActions
@@ -41,6 +47,10 @@ class LoginVC: BaseVC {
                 
                 self.navigationController?.pushVCMainThread(FeedVC.createFromStoryboard())
                 
+            } else {
+                self.showSuccess(title: "Deneme", description: "Merhaba Ben örnek success mesajıyım", doneButtonTapped: {
+                    
+                })
             }
             
         }

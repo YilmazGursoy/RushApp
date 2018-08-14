@@ -7,7 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		86244D82A682091A8F8D30C9 /* Pods_RushApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98A0D93FD81810B62D9B303 /* Pods_RushApp.framework */; };
+		47829575211F00B200A89394 /* AWSAuthCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829574211F00B200A89394 /* AWSAuthCore.framework */; };
+		47829577211F00B200A89394 /* AWSAuthUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829576211F00B200A89394 /* AWSAuthUI.framework */; };
+		47829579211F00B200A89394 /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829578211F00B200A89394 /* AWSCognito.framework */; };
+		4782957B211F00B200A89394 /* AWSCognitoIdentityProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4782957A211F00B200A89394 /* AWSCognitoIdentityProvider.framework */; };
+		4782957D211F00B200A89394 /* AWSCognitoIdentityProviderASF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4782957C211F00B200A89394 /* AWSCognitoIdentityProviderASF.framework */; };
+		4782957F211F00B200A89394 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4782957E211F00B200A89394 /* AWSCore.framework */; };
+		47829581211F00B200A89394 /* AWSLambda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829580211F00B200A89394 /* AWSLambda.framework */; };
+		47829583211F00B200A89394 /* AWSUserPoolsSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829582211F00B200A89394 /* AWSUserPoolsSignIn.framework */; };
+		47829585211F00B200A89394 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829584211F00B200A89394 /* Bolts.framework */; };
+		47829587211F00B200A89394 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829586211F00B200A89394 /* FacebookCore.framework */; };
+		47829589211F00B200A89394 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829588211F00B200A89394 /* FacebookLogin.framework */; };
+		4782958B211F00B200A89394 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4782958A211F00B200A89394 /* FBSDKCoreKit.framework */; };
+		4782958D211F00B200A89394 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4782958C211F00B200A89394 /* FBSDKLoginKit.framework */; };
+		47829593211F010700A89394 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829592211F010700A89394 /* IQKeyboardManagerSwift.framework */; };
+		47829597211F0D4800A89394 /* PMAlertController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829596211F0D4800A89394 /* PMAlertController.framework */; };
+		47C0B081211EDD9900469883 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C0B080211EDD9900469883 /* GradientView.swift */; };
 		D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA2209B858600AC79B6 /* LoginType.swift */; };
 		D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA4209B85D000AC79B6 /* LambdaConstants.swift */; };
 		D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA6209B85D800AC79B6 /* AppConstants.swift */; };
@@ -51,11 +66,30 @@
 		D2D9108A209F7F5D0054F3AA /* FacebookLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D91089209F7F5D0054F3AA /* FacebookLoginManager.swift */; };
 		D2D9108D20A070B40054F3AA /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D9108C20A070B40054F3AA /* BaseNavigationController.swift */; };
 		D2D9108F20A070BE0054F3AA /* BaseNavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D9108E20A070BE0054F3AA /* BaseNavigationController.storyboard */; };
+		EA85AE193BC1EC3551B07F3C /* Pods_RushApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2AAAC8D513C97D314CFDC9A /* Pods_RushApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		50F43DA57818541C627FFC4E /* Pods-RushApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.debug.xcconfig"; sourceTree = "<group>"; };
-		A6723B34082783938D717BB0 /* Pods-RushApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.release.xcconfig"; sourceTree = "<group>"; };
+		47829574211F00B200A89394 /* AWSAuthCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSAuthCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47829576211F00B200A89394 /* AWSAuthUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSAuthUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47829578211F00B200A89394 /* AWSCognito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSCognito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4782957A211F00B200A89394 /* AWSCognitoIdentityProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSCognitoIdentityProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4782957C211F00B200A89394 /* AWSCognitoIdentityProviderASF.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSCognitoIdentityProviderASF.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4782957E211F00B200A89394 /* AWSCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47829580211F00B200A89394 /* AWSLambda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSLambda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47829582211F00B200A89394 /* AWSUserPoolsSignIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSUserPoolsSignIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47829584211F00B200A89394 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47829586211F00B200A89394 /* FacebookCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47829588211F00B200A89394 /* FacebookLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4782958A211F00B200A89394 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4782958C211F00B200A89394 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4782958E211F00B200A89394 /* IQKeyboardManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47829590211F00B200A89394 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SkyFloatingLabelTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47829592211F010700A89394 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47829596211F0D4800A89394 /* PMAlertController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PMAlertController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47C0B080211EDD9900469883 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		70DD2601FD90336EF49D93DE /* Pods-RushApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.debug.xcconfig"; sourceTree = "<group>"; };
+		C6990D855C60E2F2734172F0 /* Pods-RushApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.release.xcconfig"; sourceTree = "<group>"; };
 		D2075DA2209B858600AC79B6 /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
 		D2075DA4209B85D000AC79B6 /* LambdaConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LambdaConstants.swift; sourceTree = "<group>"; };
 		D2075DA6209B85D800AC79B6 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -101,7 +135,7 @@
 		D2D91089209F7F5D0054F3AA /* FacebookLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginManager.swift; sourceTree = "<group>"; };
 		D2D9108C20A070B40054F3AA /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		D2D9108E20A070BE0054F3AA /* BaseNavigationController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BaseNavigationController.storyboard; sourceTree = "<group>"; };
-		E98A0D93FD81810B62D9B303 /* Pods_RushApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2AAAC8D513C97D314CFDC9A /* Pods_RushApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,28 +143,59 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86244D82A682091A8F8D30C9 /* Pods_RushApp.framework in Frameworks */,
+				47829597211F0D4800A89394 /* PMAlertController.framework in Frameworks */,
+				47829593211F010700A89394 /* IQKeyboardManagerSwift.framework in Frameworks */,
+				47829575211F00B200A89394 /* AWSAuthCore.framework in Frameworks */,
+				47829577211F00B200A89394 /* AWSAuthUI.framework in Frameworks */,
+				47829579211F00B200A89394 /* AWSCognito.framework in Frameworks */,
+				4782957B211F00B200A89394 /* AWSCognitoIdentityProvider.framework in Frameworks */,
+				4782957D211F00B200A89394 /* AWSCognitoIdentityProviderASF.framework in Frameworks */,
+				4782957F211F00B200A89394 /* AWSCore.framework in Frameworks */,
+				47829581211F00B200A89394 /* AWSLambda.framework in Frameworks */,
+				47829583211F00B200A89394 /* AWSUserPoolsSignIn.framework in Frameworks */,
+				47829585211F00B200A89394 /* Bolts.framework in Frameworks */,
+				47829587211F00B200A89394 /* FacebookCore.framework in Frameworks */,
+				47829589211F00B200A89394 /* FacebookLogin.framework in Frameworks */,
+				4782958B211F00B200A89394 /* FBSDKCoreKit.framework in Frameworks */,
+				4782958D211F00B200A89394 /* FBSDKLoginKit.framework in Frameworks */,
+				EA85AE193BC1EC3551B07F3C /* Pods_RushApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47C0B07F211EDD9100469883 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				47C0B080211EDD9900469883 /* GradientView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		5397A71A012AE15C477D433D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E98A0D93FD81810B62D9B303 /* Pods_RushApp.framework */,
+				47829596211F0D4800A89394 /* PMAlertController.framework */,
+				47829592211F010700A89394 /* IQKeyboardManagerSwift.framework */,
+				47829574211F00B200A89394 /* AWSAuthCore.framework */,
+				47829576211F00B200A89394 /* AWSAuthUI.framework */,
+				47829578211F00B200A89394 /* AWSCognito.framework */,
+				4782957A211F00B200A89394 /* AWSCognitoIdentityProvider.framework */,
+				4782957C211F00B200A89394 /* AWSCognitoIdentityProviderASF.framework */,
+				4782957E211F00B200A89394 /* AWSCore.framework */,
+				47829580211F00B200A89394 /* AWSLambda.framework */,
+				47829582211F00B200A89394 /* AWSUserPoolsSignIn.framework */,
+				47829584211F00B200A89394 /* Bolts.framework */,
+				47829586211F00B200A89394 /* FacebookCore.framework */,
+				47829588211F00B200A89394 /* FacebookLogin.framework */,
+				4782958A211F00B200A89394 /* FBSDKCoreKit.framework */,
+				4782958C211F00B200A89394 /* FBSDKLoginKit.framework */,
+				4782958E211F00B200A89394 /* IQKeyboardManager.framework */,
+				47829590211F00B200A89394 /* SkyFloatingLabelTextField.framework */,
+				F2AAAC8D513C97D314CFDC9A /* Pods_RushApp.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C1FDB7761111FDBCB585F6F7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				50F43DA57818541C627FFC4E /* Pods-RushApp.debug.xcconfig */,
-				A6723B34082783938D717BB0 /* Pods-RushApp.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		D2075DA0209B857D00AC79B6 /* Enums */ = {
@@ -199,8 +264,8 @@
 			children = (
 				D258C02D209645EE0090ABB5 /* RushApp */,
 				D258C02C209645EE0090ABB5 /* Products */,
-				C1FDB7761111FDBCB585F6F7 /* Pods */,
 				5397A71A012AE15C477D433D /* Frameworks */,
+				EBAC093C3D9036C88BBAF6C8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -220,9 +285,8 @@
 				D2075DA1209B857D00AC79B6 /* Extensions */,
 				D258C06B2098F4FB0090ABB5 /* Controllers */,
 				D258C0672098F4F10090ABB5 /* Managers */,
-				D258C06A2098F4F10090ABB5 /* Models */,
 				D258C0692098F4F10090ABB5 /* Server */,
-				D258C0682098F4F10090ABB5 /* Views */,
+				47C0B07F211EDD9100469883 /* Views */,
 				D258C06C2098F5170090ABB5 /* OtherFiles */,
 				D258C032209645EE0090ABB5 /* Main.storyboard */,
 				D258C035209645EF0090ABB5 /* Assets.xcassets */,
@@ -247,13 +311,6 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		D258C0682098F4F10090ABB5 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		D258C0692098F4F10090ABB5 /* Server */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,13 +320,6 @@
 				D2075DCF209E3CC600AC79B6 /* LoginRequest.swift */,
 			);
 			path = Server;
-			sourceTree = "<group>";
-		};
-		D258C06A2098F4F10090ABB5 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
@@ -346,6 +396,15 @@
 			path = BaseNavigationController;
 			sourceTree = "<group>";
 		};
+		EBAC093C3D9036C88BBAF6C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70DD2601FD90336EF49D93DE /* Pods-RushApp.debug.xcconfig */,
+				C6990D855C60E2F2734172F0 /* Pods-RushApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -353,12 +412,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D258C03D209645EF0090ABB5 /* Build configuration list for PBXNativeTarget "RushApp" */;
 			buildPhases = (
-				3D880BB4B1E8660628CFFE68 /* [CP] Check Pods Manifest.lock */,
+				55F9F7B8F499D137631FB023 /* [CP] Check Pods Manifest.lock */,
 				D258C027209645EE0090ABB5 /* Sources */,
 				D258C028209645EE0090ABB5 /* Frameworks */,
 				D258C029209645EE0090ABB5 /* Resources */,
-				7639DA904330C72397F36828 /* [CP] Embed Pods Frameworks */,
-				AC871D39ACEF00E49726D04C /* [CP] Copy Pods Resources */,
+				F913ECBF9ED1060CA1BD0FB7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -423,7 +481,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3D880BB4B1E8660628CFFE68 /* [CP] Check Pods Manifest.lock */ = {
+		55F9F7B8F499D137631FB023 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -441,7 +499,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7639DA904330C72397F36828 /* [CP] Embed Pods Frameworks */ = {
+		F913ECBF9ED1060CA1BD0FB7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -461,6 +519,8 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/PMAlertController/PMAlertController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -477,25 +537,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PMAlertController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RushApp/Pods-RushApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AC871D39ACEF00E49726D04C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RushApp/Pods-RushApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -527,6 +574,7 @@
 				D2075DCC209DF34900AC79B6 /* AWSLoginManager.swift in Sources */,
 				D2075DDD209F091C00AC79B6 /* RushLogger.swift in Sources */,
 				D2075DB6209CE3C200AC79B6 /* BaseRequest.swift in Sources */,
+				47C0B081211EDD9900469883 /* GradientView.swift in Sources */,
 				D2075DBA209DDD8900AC79B6 /* AWSCredentialManager.swift in Sources */,
 				D2075DD9209E447E00AC79B6 /* ConfirmEmailVC.swift in Sources */,
 				D258C07D2099098B0090ABB5 /* BaseVC+Extensions.swift in Sources */,
@@ -679,7 +727,7 @@
 		};
 		D258C03E209645EF0090ABB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50F43DA57818541C627FFC4E /* Pods-RushApp.debug.xcconfig */;
+			baseConfigurationReference = 70DD2601FD90336EF49D93DE /* Pods-RushApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -692,13 +740,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yilmaz.RushApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		D258C03F209645EF0090ABB5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6723B34082783938D717BB0 /* Pods-RushApp.release.xcconfig */;
+			baseConfigurationReference = C6990D855C60E2F2734172F0 /* Pods-RushApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -711,7 +759,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yilmaz.RushApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

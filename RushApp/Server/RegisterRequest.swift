@@ -13,7 +13,7 @@ import AWSCognitoIdentityProvider
 
 class RegisterRequest {
     
-    func register(withUsername username:String, andPassword password:String, andEmail email:String, andNickname nickname:String, withCompletionHandler: @escaping(AWSTask<AWSCognitoIdentityUserPoolSignUpResponse>)->Void) {
+    func register(withUsername username:String, andPassword password:String, andEmail email:String, andNickname nickname:String = "nickTest", withCompletionHandler: @escaping(AWSTask<AWSCognitoIdentityUserPoolSignUpResponse>)->Void) {
         
         AWSCredentialManager.shared.configureUserPool()
         AWSCredentialManager.shared.configureFederatedIdentitiesForUserPool()

@@ -29,7 +29,7 @@ extension ForgotPasswordVC {
             pool.getUser("currentUser").changePassword("current", proposedPassword: "new").continueWith(block: { (task) -> Any? in
                 
                 
-                
+                return nil
             })
         }
     }
