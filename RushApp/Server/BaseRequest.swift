@@ -48,7 +48,9 @@ extension BaseRequest {
     private func handleResponse(withError error: Error?, withResult result:Any?, withLambdaName name: String) {
         if error != nil {
             RushLogger.errorLog(message: name)
-            AWSErrorManager.shared.errorControl(error: error!)
+            AWSErrorManager.shared.errorControl(error: error!, completion: {
+                
+            })
             print(error!)
         } else {
             RushLogger.successLog(message: name)

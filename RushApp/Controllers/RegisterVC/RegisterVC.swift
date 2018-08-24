@@ -67,7 +67,7 @@ class RegisterVC: BaseVC {
                         } else {
                             DispatchQueue.main.async {
                                 let confirmVC = ConfirmEmailVC.createFromStoryboard()
-                                confirmVC.email = self.emailTextField.text
+                                confirmVC.email = self.usernameTextField.text
                                 self.navigationController?.pushVCMainThread(confirmVC)
                             }
                         }

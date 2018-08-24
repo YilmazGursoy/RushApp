@@ -39,11 +39,16 @@ class ConfirmEmailVC: BaseVC {
             pool.getUser(self.email).confirmSignUp(self.confirmCodeLabel!.text!).continueWith(block: { (task) -> Any? in
                 if task.result != nil {
                     RushLogger.successLog(message: "Confirm Success")
-                    self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
+                    self.showSuccess(title: "", description: "Confirmation success", doneButtonTapped: {
+                        self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
+                    })
                     print(task.result ?? "-")
-                    
                 } else {
                     RushLogger.errorLog(message: "Confirm Email Failed")
+                    self.showError(title: "", description: "Verification code is invalid.", doneButtonTapped: {
+                        
+                    })
+                    self.confirmCodeLabel.text = "Confirmation code"
                     print(task.error ?? "-")
                 }
                 return nil
@@ -78,9 +83,12 @@ class ConfirmEmailVC: BaseVC {
         
         if (confirmCodeLabel.text?.count)! <= 5 {
             confirmCodeLabel.text = confirmCodeLabel.text! + sender.currentTitle!
-        } else {
+        }
+        
+        if confirmCodeLabel.text?.count == 6 {
             confirmTapped(UIButton())
         }
+        
     }
     
     @IBAction func removeButtonTapped(_ sender: UIButton) {

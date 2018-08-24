@@ -48,8 +48,9 @@ class LoginVC: BaseVC {
                 self.navigationController?.pushVCMainThread(FeedVC.createFromStoryboard())
                 
             } else {
-                self.showSuccess(title: "Deneme", description: "Merhaba Ben örnek success mesajıyım", doneButtonTapped: {
-                    
+                
+                self.showError(title: "", description: "Username or Password incorrect.", doneButtonTapped: {
+                        
                 })
             }
             
@@ -68,6 +69,8 @@ class LoginVC: BaseVC {
         }
         
     }
+    
+    
     @IBAction func registerTapped(_ sender: UIButton) {
         self.navigationController?.pushVCMainThread(RegisterVC.createFromStoryboard())
     }

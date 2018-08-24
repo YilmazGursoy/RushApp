@@ -65,4 +65,8 @@ extension BaseVC : AWSErrorManagerProtocol {
             }
         }
     }
+    
+    func errorMessage(message: String) {
+        self.showError(title: "", description: message) {}
+    }
 }
