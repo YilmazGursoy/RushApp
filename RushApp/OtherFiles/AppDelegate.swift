@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
         IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Tamam"
         
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = UINavigationController(rootViewController: TabBarController())
+        window?.makeKeyAndVisible()
+        
         return true
     }
     
