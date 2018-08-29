@@ -12,11 +12,9 @@ import Foundation
 class DummyRequest: BaseRequest {
     
     func sendDummyRequest(completionBlock: @escaping (Any? ,Error?) -> Void) {
-        let lambdaName = "RushApp-Test"
+        let lambdaName = "RushApp-Configurations"
         
-        let parameters = ["name":"Yilmaz","surname":"Gürsoy"]
-        
-        self.requestWith(functionName: lambdaName, andParameters: parameters) { (result, error) -> (Void) in
+        self.requestWith(functionName: lambdaName, andParameters: [:]) { (result, error) -> (Void) in
             completionBlock(result, error)            
         }
         

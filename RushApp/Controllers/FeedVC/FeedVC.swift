@@ -26,11 +26,10 @@ class FeedVC: BaseVC {
     
     
     @IBAction func requestTapped(_ sender: UIButton) {
-        DummyRequest().sendDummyRequest(completionBlock: { (result, error) in
+        let request = GameListRequest()
+        request.sendGameListRequest { (result, error) in
             
-            
-            
-        })
+        }
     }
     
     @IBAction func isUserLoggedInTapped(_ sender: UIButton) {
