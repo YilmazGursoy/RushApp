@@ -8,17 +8,38 @@
 
 import UIKit
 
-class GameSelectionVC: UIViewController {
+class GameSelectionVC: BaseVC {
 
     @IBOutlet weak var tableView: UITableView!
+    private var gameList:GameListModel! {
+        didSet{
+            DispatchQueue.main.async {
+                self.tableView.delegate = self
+                self.tableView.dataSource = self
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            self.sendGameList()
+        }
     }
     
     private func setupUI(){
         self.tableView.register(UINib.init(nibName: "GameSelectionCell", bundle: .main), forCellReuseIdentifier: "GameSelectionCell")
+    }
+    
+    private func sendGameList(){
+        let request = GameListRequest()
+        request.sendGameListRequest { (games, error) in
+            if games != nil {
+                self.gameList = games!
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,8 +48,6 @@ class GameSelectionVC: UIViewController {
     }
     
     @IBAction func doneButtonTapped(_ sender: UIButton) {
-        
-        
         
     }
 
@@ -41,12 +60,15 @@ extension GameSelectionVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return self.gameList.list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameSelectionCell", for: indexPath) as! GameSelectionCell
-        cell.arrangeCell(imageName: "", title: "")
+        cell.arrangeCell(imageName: self.gameList.list[indexPath.row].thumbImage , title: self.gameList.list[indexPath.row].name, index: indexPath.row, isActive: self.gameList.list[indexPath.row].isActive)
+        cell.changeActiveHandler = {isActive, index in
+            self.gameList.list[index].isActive = isActive
+        }
         return cell
     }
     

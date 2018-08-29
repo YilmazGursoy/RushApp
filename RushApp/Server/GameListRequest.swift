@@ -15,9 +15,18 @@ class GameListRequest: BaseRequest {
         let parameter = ["":""]
         
         self.requestWith(functionName: lambdaName, andParameters: parameter) { (result, error) -> (Void) in
-        
-            
+            if let games = result as? Array<Any> {
+                let gameListModel = GameListModel()
+                gameListModel.list = []
+                games.forEach({ (game) in
+                    if let gameModel = game as? NSDictionary {
+                        let gameObject = Game(id: gameModel["ID"] as! Int, name: gameModel["name"] as! String, thumbImage: gameModel["thumbImage"] as! String, normalImage: gameModel["normalImage"] as! String, isActive: false)
+                        gameListModel.list.append(gameObject)
+                    }
+                })
+                completionBlock(gameListModel, nil)
+            }
+            completionBlock(nil,error);
         }
-        
     }
 }

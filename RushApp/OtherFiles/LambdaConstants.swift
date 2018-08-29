@@ -9,5 +9,6 @@
 import Foundation
 
 struct LambdaConstants {
-    
+    static let UserCreate   =   "Rush-User-Create"
+    static let GetUser      =   ""
 }

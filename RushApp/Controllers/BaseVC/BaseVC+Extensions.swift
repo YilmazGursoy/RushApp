@@ -70,3 +70,21 @@ extension BaseVC : AWSErrorManagerProtocol {
         self.showError(title: "", description: message) {}
     }
 }
+
+extension BaseVC: AWSPopupManagerProtocol {
+    func showSuccess(message: String) {
+        DispatchQueue.main.async {
+            self.showSuccess(title: "Success", description: message) {
+                
+            }
+        }
+    }
+    
+    func showErrorMessage(message: String) {
+        DispatchQueue.main.async {
+            self.showError(title: "Failed", description: message) {
+                
+            }
+        }
+    }
+}

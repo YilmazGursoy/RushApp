@@ -24,13 +24,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhW-t7-AKt" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhW-t7-AKt" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
                         <rect key="frame" x="5" y="5" width="310" height="33.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAX-jv-ifU">
                                 <rect key="frame" x="0.0" y="0.0" width="40" height="33.5"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selectingIcon" translatesAutoresizingMaskIntoConstraints="NO" id="9kK-TE-AcP">
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="9kK-TE-AcP">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="33.5"/>
                                     </imageView>
                                 </subviews>
@@ -44,20 +44,30 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Witcher 3: Wild Hunt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCJ-gL-HKH">
-                                <rect key="frame" x="55" y="7.5" width="240" height="19.5"/>
+                                <rect key="frame" x="55" y="9" width="240" height="16.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXi-PJ-fwJ">
+                                <rect key="frame" x="0.0" y="0.0" width="310" height="33.5"/>
+                                <connections>
+                                    <action selector="addGameTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="iiu-rp-MGF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OAX-jv-ifU" firstAttribute="leading" secondItem="uhW-t7-AKt" secondAttribute="leading" id="5lK-oY-mS3"/>
+                            <constraint firstAttribute="trailing" secondItem="jXi-PJ-fwJ" secondAttribute="trailing" id="7wh-JP-gX0"/>
                             <constraint firstAttribute="bottom" secondItem="OAX-jv-ifU" secondAttribute="bottom" id="CIf-Zz-8I9"/>
+                            <constraint firstItem="jXi-PJ-fwJ" firstAttribute="top" secondItem="uhW-t7-AKt" secondAttribute="top" id="Lm8-75-gzU"/>
+                            <constraint firstAttribute="bottom" secondItem="jXi-PJ-fwJ" secondAttribute="bottom" id="LuQ-Bl-FpB"/>
                             <constraint firstItem="bCJ-gL-HKH" firstAttribute="centerY" secondItem="uhW-t7-AKt" secondAttribute="centerY" id="edN-lg-A7h"/>
                             <constraint firstItem="OAX-jv-ifU" firstAttribute="top" secondItem="uhW-t7-AKt" secondAttribute="top" id="gEQ-1t-5Fs"/>
                             <constraint firstItem="bCJ-gL-HKH" firstAttribute="leading" secondItem="OAX-jv-ifU" secondAttribute="trailing" constant="15" id="qrS-eC-nii"/>
                             <constraint firstAttribute="trailing" secondItem="bCJ-gL-HKH" secondAttribute="trailing" constant="15" id="twD-qe-lqR"/>
+                            <constraint firstItem="jXi-PJ-fwJ" firstAttribute="leading" secondItem="uhW-t7-AKt" secondAttribute="leading" id="xNO-LO-qnX"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -82,9 +92,14 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="gameNameLabel" destination="bCJ-gL-HKH" id="jNL-AG-GDd"/>
+                <outlet property="gradientBackView" destination="uhW-t7-AKt" id="6Vj-oB-EOL"/>
+                <outlet property="selectionImageView" destination="9kK-TE-AcP" id="dMZ-fk-dEM"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="selectingIcon" width="22" height="21"/>
+        <image name="plusIcon" width="23" height="22"/>
     </resources>
 </document>

@@ -8,20 +8,14 @@
 
 import Foundation
 
-class Game: Decodable {
-    var id : Int?
-    var name:String?
-    var thumbImage:String?
-    var normalImage:String?
-    
-    enum CodingKeys: String, CodingKey {
-        case id = "ID"
-        case name = "name"
-        case thumbImage = "thumbImage"
-        case normalImage = "normalImage"
-    }
+struct Game {
+    var id : Int = 0
+    var name:String = ""
+    var thumbImage:String = ""
+    var normalImage:String = ""
+    var isActive:Bool = false
 }
 
-class GameListModel: Decodable {
-    var list: [Game]?
+class GameListModel {
+    var list: [Game] = []
 }

@@ -26,8 +26,8 @@ class FeedVC: BaseVC {
     
     
     @IBAction func requestTapped(_ sender: UIButton) {
-        let request = GameListRequest()
-        request.sendGameListRequest { (result, error) in
+        let userCreate = UserCreateRequest()
+        userCreate.sendUserCreateRequest {
             
         }
     }

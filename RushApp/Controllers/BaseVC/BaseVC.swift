@@ -14,6 +14,7 @@ class BaseVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         AWSErrorManager.shared.delegate = self
+        AWSPopupManager.shared.delegate = self
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
