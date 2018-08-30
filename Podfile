@@ -21,4 +21,7 @@ target 'RushApp' do
   #TextField
     pod 'IQKeyboardManagerSwift'
     pod 'PMAlertController'
+  
+  #Loader
+    pod 'SVProgressHUD'
 end

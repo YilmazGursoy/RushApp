@@ -36,6 +36,7 @@ PODS:
     - FBSDKCoreKit
   - IQKeyboardManagerSwift (6.1.1)
   - PMAlertController (3.4.0)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - AWSAuthUI (~> 2.6.13)
@@ -46,6 +47,7 @@ DEPENDENCIES:
   - FacebookLogin
   - IQKeyboardManagerSwift
   - PMAlertController
+  - SVProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -64,6 +66,7 @@ SPEC REPOS:
     - FBSDKLoginKit
     - IQKeyboardManagerSwift
     - PMAlertController
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   AWSAuthCore: bc6c8d7320eae8ef18939504d5a8a1588606c3a1
@@ -81,7 +84,8 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 00a3d65d1226852f9d76dcddff01981e5e6d9c38
   IQKeyboardManagerSwift: 977affaeb4d6e971975c7790a6850f31d38f1207
   PMAlertController: efb781925d741d50e0200018a00c53cecb8b4910
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 157d708108762b7fd06f53ac6f1dce088cacb3f1
+PODFILE CHECKSUM: cc7c5a5fe3f932cfe5d571c26f42ae2574cc66ba
 
 COCOAPODS: 1.5.3

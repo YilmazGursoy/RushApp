@@ -48,31 +48,8 @@ extension BaseRequest {
     private func handleResponse(withError error: Error?, withResult result:Any?, withLambdaName name: String) {
         if error != nil {
             RushLogger.errorLog(message: name)
-            AWSErrorManager.shared.errorControl(error: error!, completion: {
-                
-            })
-            print(error!)
         } else {
             RushLogger.successLog(message: name)
-            customErrorMessageHandler(result: result)
-            print(result!)
         }
     }
-    
-    private func customErrorMessageHandler(result:Any?) {
-        if result != nil {
-            if let resultDict = result as? Dictionary<String, AnyObject> {
-                if let errorType = resultDict["error"] as? Bool {
-                    if let message = resultDict["message"] as? String {
-                        if errorType {
-                            AWSPopupManager.shared.showErrorMessage(message: message)
-                        } else {
-                            AWSPopupManager.shared.showSuccessMessage(message: message)
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import SVProgressHUD
 
 
 @UIApplicationMain
@@ -18,10 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
-        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Tamam"
-        
+        loadAllSharedInstances()
         return true
     }
     
@@ -49,3 +47,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+extension AppDelegate {
+    private func loadAllSharedInstances(){
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
+        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Tamam"
+        SVProgressHUD.setForegroundColor(#colorLiteral(red: 0.4666666667, green: 0.3529411765, blue: 1, alpha: 1))
+    }
+}

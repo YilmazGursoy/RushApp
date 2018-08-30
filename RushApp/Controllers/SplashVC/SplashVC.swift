@@ -13,9 +13,20 @@ class SplashVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let checkUser = CheckUserRequest()
+        
+        self.navigationController?.openForceVCMainThread(MapVC.createFromStoryboard())
+        
         AWSCredentialManager.shared.isUserLoggedIn { (isLoggedIn) in
             if isLoggedIn == true {
-                self.navigationController?.openForceVCMainThread(FeedVC.createFromStoryboard())
+                checkUser.sendCheckUserRequest(completionBlock: { (result, error) in
+                    if error != nil {
+                        AWSCredentialManager.shared.logout()
+                        self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
+                    } else {
+                        self.navigationController?.openForceVCMainThread(FeedVC.createFromStoryboard())
+                    }
+                })
             } else {
                 self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
             }
@@ -23,7 +34,7 @@ class SplashVC: BaseVC {
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

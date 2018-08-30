@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class GameSelectionVC: BaseVC {
 
@@ -48,7 +49,25 @@ class GameSelectionVC: BaseVC {
     }
     
     @IBAction func doneButtonTapped(_ sender: UIButton) {
+        SVProgressHUD.show()
+        var ids:[Int] = []
+        self.gameList.list.forEach { (game) in
+            if game.isActive {
+                ids.append(game.id)
+            }
+        }
         
+        let createUserRequest = UserCreateRequest()
+        createUserRequest.sendUserCreateRequest(selectingIds: ids) { (result, error) in
+            SVProgressHUD.dismiss()
+            if error != nil {
+                self.showError(title: "Failed", description: "There is an error to creating profile.", doneButtonTapped: {
+                    
+                })
+            } else {
+                self.navigationController?.pushVCMainThread(FeedVC.createFromStoryboard())
+            }
+        }
     }
 
 }

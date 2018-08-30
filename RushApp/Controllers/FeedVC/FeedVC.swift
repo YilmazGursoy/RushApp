@@ -26,10 +26,7 @@ class FeedVC: BaseVC {
     
     
     @IBAction func requestTapped(_ sender: UIButton) {
-        let userCreate = UserCreateRequest()
-        userCreate.sendUserCreateRequest {
-            
-        }
+        
     }
     
     @IBAction func isUserLoggedInTapped(_ sender: UIButton) {

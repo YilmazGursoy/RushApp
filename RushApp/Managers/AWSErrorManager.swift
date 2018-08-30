@@ -40,7 +40,7 @@ class AWSErrorManager {
             default:
                 RushLogger.errorLog(message: "Not defining Error with code \(_error._code)")
                 if delegate != nil {
-                    delegate.errorMessage(message: "Username or Password incorrect.")
+                    
                     return
                 }
             }

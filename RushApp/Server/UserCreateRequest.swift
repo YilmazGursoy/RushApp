@@ -10,13 +10,13 @@ import Foundation
 
 class UserCreateRequest: BaseRequest {
     
-    func sendUserCreateRequest(completionBlock: @escaping () -> Void) {
+    func sendUserCreateRequest(selectingIds:[Int] ,completionBlock: @escaping (AnyObject?, Error?) -> Void) {
         let lambdaName = LambdaConstants.UserCreate
-        let parameter = ["selectingGameIds":[1,2,3,4,5]]
+        let parameter = ["selectingGameIds":selectingIds]
         
         self.requestWith(functionName: lambdaName, andParameters: parameter) { (result, error) -> (Void) in
             
-            completionBlock();
+            completionBlock(result, error);
         }
     }
 }
