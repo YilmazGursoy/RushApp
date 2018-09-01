@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AchivementView" customModule="RushApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="155" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HdY-h9-1Ma" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
+                    <rect key="frame" x="10" y="10" width="135" height="100"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="9"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowX">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowY">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaF-o2-EUF" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
+                    <rect key="frame" x="10" y="10" width="135" height="100"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHk-1y-Kbr">
+                            <rect key="frame" x="0.0" y="70" width="135" height="30"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ky6-xl-Pqr">
+                                    <rect key="frame" x="8" y="6" width="119" height="18"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="ky6-xl-Pqr" firstAttribute="top" secondItem="fHk-1y-Kbr" secondAttribute="top" constant="6" id="7Xd-bU-tLF"/>
+                                <constraint firstAttribute="trailing" secondItem="ky6-xl-Pqr" secondAttribute="trailing" constant="8" id="NyL-SS-z7C"/>
+                                <constraint firstAttribute="bottom" secondItem="ky6-xl-Pqr" secondAttribute="bottom" constant="6" id="VeS-rW-KXw"/>
+                                <constraint firstItem="ky6-xl-Pqr" firstAttribute="leading" secondItem="fHk-1y-Kbr" secondAttribute="leading" constant="8" id="aSR-Ms-y0Z"/>
+                                <constraint firstAttribute="height" constant="30" id="pnX-Sw-bwp"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YMY-gS-FRw">
+                            <rect key="frame" x="0.0" y="0.0" width="135" height="70"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fortnite" translatesAutoresizingMaskIntoConstraints="NO" id="gca-Ci-1B0">
+                                    <rect key="frame" x="0.0" y="0.0" width="135" height="70"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="gca-Ci-1B0" secondAttribute="bottom" id="1wt-a9-4Ux"/>
+                                <constraint firstAttribute="trailing" secondItem="gca-Ci-1B0" secondAttribute="trailing" id="Ebb-Rf-8ko"/>
+                                <constraint firstItem="gca-Ci-1B0" firstAttribute="top" secondItem="YMY-gS-FRw" secondAttribute="top" id="GFY-tX-QHw"/>
+                                <constraint firstItem="gca-Ci-1B0" firstAttribute="leading" secondItem="YMY-gS-FRw" secondAttribute="leading" id="eo8-ws-OxQ"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dY-ZU-TL3">
+                            <rect key="frame" x="0.0" y="0.0" width="135" height="100"/>
+                            <connections>
+                                <action selector="achivementTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="mYE-sL-jBS"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="fHk-1y-Kbr" firstAttribute="leading" secondItem="AaF-o2-EUF" secondAttribute="leading" id="GKg-vU-lcE"/>
+                        <constraint firstAttribute="trailing" secondItem="YMY-gS-FRw" secondAttribute="trailing" id="Jix-hE-SY2"/>
+                        <constraint firstItem="YMY-gS-FRw" firstAttribute="top" secondItem="AaF-o2-EUF" secondAttribute="top" id="KAe-VD-uEt"/>
+                        <constraint firstItem="YMY-gS-FRw" firstAttribute="leading" secondItem="AaF-o2-EUF" secondAttribute="leading" id="Kjn-gN-4Lc"/>
+                        <constraint firstItem="4dY-ZU-TL3" firstAttribute="top" secondItem="AaF-o2-EUF" secondAttribute="top" id="SQT-km-4l8"/>
+                        <constraint firstAttribute="trailing" secondItem="fHk-1y-Kbr" secondAttribute="trailing" id="VxV-GF-YXQ"/>
+                        <constraint firstAttribute="trailing" secondItem="4dY-ZU-TL3" secondAttribute="trailing" id="gfP-0T-QPR"/>
+                        <constraint firstItem="4dY-ZU-TL3" firstAttribute="leading" secondItem="AaF-o2-EUF" secondAttribute="leading" id="mo3-5Y-Pah"/>
+                        <constraint firstItem="fHk-1y-Kbr" firstAttribute="top" secondItem="YMY-gS-FRw" secondAttribute="bottom" id="oiF-S8-CRd"/>
+                        <constraint firstAttribute="bottom" secondItem="fHk-1y-Kbr" secondAttribute="bottom" id="wPX-qO-hqX"/>
+                        <constraint firstAttribute="bottom" secondItem="4dY-ZU-TL3" secondAttribute="bottom" id="wUj-cF-SPn"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="9"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowX">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowY">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="HdY-h9-1Ma" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="4Qf-dO-lOW"/>
+                <constraint firstItem="AaF-o2-EUF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="BKj-I9-e3z"/>
+                <constraint firstItem="HdY-h9-1Ma" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Clf-jS-qAq"/>
+                <constraint firstAttribute="trailing" secondItem="AaF-o2-EUF" secondAttribute="trailing" constant="10" id="I99-yc-9Uu"/>
+                <constraint firstItem="AaF-o2-EUF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="LBf-tN-0N7"/>
+                <constraint firstAttribute="trailing" secondItem="HdY-h9-1Ma" secondAttribute="trailing" constant="10" id="Yfz-cP-pwt"/>
+                <constraint firstAttribute="bottom" secondItem="HdY-h9-1Ma" secondAttribute="bottom" constant="10" id="dAE-ex-tiZ"/>
+                <constraint firstAttribute="bottom" secondItem="AaF-o2-EUF" secondAttribute="bottom" constant="10" id="e6v-Lh-Rcd"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="54"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Fortnite" width="320" height="151"/>
+    </resources>
+</document>

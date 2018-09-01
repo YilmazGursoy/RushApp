@@ -15,23 +15,29 @@ class SplashVC: BaseVC {
         
         let checkUser = CheckUserRequest()
         
-        self.navigationController?.openForceVCMainThread(MapVC.createFromStoryboard())
+        let window = UIApplication.shared.keyWindow
+        let tabbarController = TabBarController()
+        window?.rootViewController = tabbarController
+        window?.makeKeyAndVisible()
         
-        AWSCredentialManager.shared.isUserLoggedIn { (isLoggedIn) in
-            if isLoggedIn == true {
-                checkUser.sendCheckUserRequest(completionBlock: { (result, error) in
-                    if error != nil {
-                        AWSCredentialManager.shared.logout()
-                        self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
-                    } else {
-                        self.navigationController?.openForceVCMainThread(FeedVC.createFromStoryboard())
-                    }
-                })
-            } else {
-                self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
-            }
-        }
-        
+//
+//        //self.navigationController?.openForceVCMainThread(TabBarController.createFromStoryboard())
+//
+//        AWSCredentialManager.shared.isUserLoggedIn { (isLoggedIn) in
+//            if isLoggedIn == true {
+//                checkUser.sendCheckUserRequest(completionBlock: { (result, error) in
+//                    if error != nil {
+//                        AWSCredentialManager.shared.logout()
+//                        self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
+//                    } else {
+//                        self.navigationController?.openForceVCMainThread(FeedVC.createFromStoryboard())
+//                    }
+//                })
+//            } else {
+//                self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
+//            }
+//        }
+//
         // Do any additional setup after loading the view.
     }
     

@@ -14,8 +14,6 @@ class LobbyCollectionCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.gradientView.mask = joinLabel
-        self.gradientView.backgroundColor = .white
     }
 
 }

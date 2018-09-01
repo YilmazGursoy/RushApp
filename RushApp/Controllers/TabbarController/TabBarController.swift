@@ -14,25 +14,28 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         self.delegate = self
         
-        let homeVC = UIViewController()
-        homeVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "homeIcon"), selectedImage: #imageLiteral(resourceName: "homeIcon"))
+        let homeVC = MapVC.createFromStoryboard()
+        homeVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "homeIcon"), selectedImage: #imageLiteral(resourceName: "homeIconSelected"))
+        homeVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
         
-        
-        let searchVC = UIViewController()
-        searchVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "searchIcon"), selectedImage: #imageLiteral(resourceName: "searchIcon"))
+//
+//        let searchVC = UIViewController()
+//        searchVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "searchIcon"), selectedImage: #imageLiteral(resourceName: "searchIcon"))
+//        searchVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
         
         let playVC = UIViewController()
-        playVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "playIcon"), selectedImage: #imageLiteral(resourceName: "playIcon"))
+        playVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "playIcon"), selectedImage: #imageLiteral(resourceName: "playIconSelected"))
+        playVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
         
-        let notificationVC = UIViewController()
-        notificationVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "notificationIcon"), selectedImage: #imageLiteral(resourceName: "notificationIcon"))
+//        let notificationVC = UIViewController()
+//        notificationVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "notificationIcon"), selectedImage: #imageLiteral(resourceName: "notificationIconSelected"))
+//        notificationVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
         
-        let profileVC = UIViewController()
-        profileVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "profileIcon"), selectedImage: #imageLiteral(resourceName: "profileIcon"))
+        let profileVC = ProfileVC.createFromStoryboard()
+        profileVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "profileIcon"), selectedImage: #imageLiteral(resourceName: "profileIconSelected"))
+        profileVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
         
-        
-        
-        viewControllers = [homeVC, searchVC, playVC, notificationVC, profileVC]
+        viewControllers = [homeVC, playVC, profileVC]
     }
     
     override func didReceiveMemoryWarning() {

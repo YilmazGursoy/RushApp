@@ -19,6 +19,7 @@ class MapVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
     }
     
     private func setupUI(){
@@ -30,7 +31,6 @@ class MapVC: BaseVC {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     //MARK: Actions
     @IBAction func filterButtonTapped(_ sender: UIButton) {
