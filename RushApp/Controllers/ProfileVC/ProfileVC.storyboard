@@ -40,7 +40,7 @@
                                         <state key="normal" image="back"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6c7-5i-wOc">
-                                        <rect key="frame" x="49" y="11.666666666666666" width="70" height="20.666666666666671"/>
+                                        <rect key="frame" x="49" y="13.333333333333337" width="67" height="17.666666666666671"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -91,10 +91,20 @@
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePictureTest" translatesAutoresizingMaskIntoConstraints="NO" id="IcI-lI-OLl">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
                                                                             </imageView>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YON-TK-FXK">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                                                                <connections>
+                                                                                    <action selector="profilePictureChangeTapped:" destination="juf-Xr-yfs" eventType="touchUpInside" id="M0c-i7-pZh"/>
+                                                                                </connections>
+                                                                            </button>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
+                                                                            <constraint firstItem="YON-TK-FXK" firstAttribute="top" secondItem="9zQ-ZR-vOE" secondAttribute="top" id="2kH-D8-NAc"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="YON-TK-FXK" secondAttribute="trailing" id="6gn-lP-SMS"/>
                                                                             <constraint firstItem="IcI-lI-OLl" firstAttribute="top" secondItem="9zQ-ZR-vOE" secondAttribute="top" id="C0N-pC-JgX"/>
+                                                                            <constraint firstItem="YON-TK-FXK" firstAttribute="leading" secondItem="9zQ-ZR-vOE" secondAttribute="leading" id="SCl-g7-oYf"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="YON-TK-FXK" secondAttribute="bottom" id="TV3-nu-nEL"/>
                                                                             <constraint firstAttribute="trailing" secondItem="IcI-lI-OLl" secondAttribute="trailing" id="VcU-6f-3Sj"/>
                                                                             <constraint firstAttribute="bottom" secondItem="IcI-lI-OLl" secondAttribute="bottom" id="jbu-Gu-cR3"/>
                                                                             <constraint firstItem="IcI-lI-OLl" firstAttribute="leading" secondItem="9zQ-ZR-vOE" secondAttribute="leading" id="jpi-0E-OGF"/>
@@ -379,7 +389,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvf-Zl-Eus">
-                                                        <rect key="frame" x="13" y="25.333333333333314" width="20" height="16.666666666666671"/>
+                                                        <rect key="frame" x="13" y="26.666666666666686" width="20" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="19.5" id="TaR-x3-zIB"/>
                                                         </constraints>
@@ -419,7 +429,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gameplay Stats / Achievements" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hu-dl-Gf5">
-                                                                <rect key="frame" x="13" y="17.333333333333314" width="297" height="16.666666666666671"/>
+                                                                <rect key="frame" x="13" y="18.666666666666686" width="297" height="14"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -505,6 +515,7 @@
                     </view>
                     <size key="freeformSize" width="320" height="650"/>
                     <connections>
+                        <outlet property="profilePictureImage" destination="IcI-lI-OLl" id="guO-U9-6Dk"/>
                         <outlet property="stackView" destination="4Yy-BQ-Kq3" id="YUD-31-aF4"/>
                     </connections>
                 </viewController>

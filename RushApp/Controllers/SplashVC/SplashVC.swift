@@ -15,30 +15,25 @@ class SplashVC: BaseVC {
         
         let checkUser = CheckUserRequest()
         
-        let window = UIApplication.shared.keyWindow
-        let tabbarController = TabBarController()
-        window?.rootViewController = tabbarController
-        window?.makeKeyAndVisible()
-        
-//
-//        //self.navigationController?.openForceVCMainThread(TabBarController.createFromStoryboard())
-//
-//        AWSCredentialManager.shared.isUserLoggedIn { (isLoggedIn) in
-//            if isLoggedIn == true {
-//                checkUser.sendCheckUserRequest(completionBlock: { (result, error) in
-//                    if error != nil {
-//                        AWSCredentialManager.shared.logout()
-//                        self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
-//                    } else {
-//                        self.navigationController?.openForceVCMainThread(FeedVC.createFromStoryboard())
-//                    }
-//                })
-//            } else {
-//                self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
-//            }
-//        }
-//
-        // Do any additional setup after loading the view.
+        AWSCredentialManager.shared.isUserLoggedIn { (isLoggedIn) in
+            if isLoggedIn == true {
+                checkUser.sendCheckUserRequest(completionBlock: { (result, error) in
+                    if error != nil {
+                        AWSCredentialManager.shared.logout()
+                        self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
+                    } else {
+                        DispatchQueue.main.async {
+                            let window = UIApplication.shared.keyWindow
+                            let tabbarController = TabBarController()
+                            window?.rootViewController = tabbarController
+                            window?.makeKeyAndVisible()
+                        }
+                    }
+                })
+            } else {
+                self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {

@@ -22,5 +22,5 @@ struct CognitoConstants {
     static let cognitoFederatedIdentity_POOLID                      = "eu-central-1:0fa2062d-77b5-4ea9-a63d-2c86c12e8b7b"
     static let cognitoFederatedIdentity_CLIENTREGION:AWSRegionType  = .EUCentral1
     
-    
+    static let awsS3ProfilePictureBucketName                        = "rushappprofilepictures"
 }

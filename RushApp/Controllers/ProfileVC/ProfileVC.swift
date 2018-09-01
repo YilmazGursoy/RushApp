@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import Fusuma
+import SVProgressHUD
+import PMAlertController
 
 class ProfileVC: BaseVC {
 
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var profilePictureImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,5 +33,98 @@ class ProfileVC: BaseVC {
             view.height(constant: 120)
             stackView.addArrangedSubview(view)
         }
+    }
+    
+    
+    @IBAction func profilePictureChangeTapped(_ sender: UIButton) {
+        let alert = PMAlertController.init(title: "Hey!", description: "Do you want to change Profile Picture?", image: nil, style: .alert)
+        alert.addAction(PMAlertAction(title: "Yes!", style: .default, action: {
+            let fusuma = FusumaViewController()
+            fusuma.delegate = self
+            fusuma.cropHeightRatio = 1.0
+            fusuma.allowMultipleSelection = false
+            fusumaSavesImage = true
+            self.present(fusuma, animated: true, completion: nil)
+        }))
+        alert.addAction(PMAlertAction(title: "Cancel", style: .cancel))
+        self.present(alert, animated: true) {
+            
+        }
+    }
+}
+
+extension ProfileVC : FusumaDelegate {
+    func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
+        DispatchQueue.main.async {
+            self.profilePictureImage.image = image
+            let newImageData = UIImageJPEGRepresentation(image, 0.2)
+            let newImage = UIImage.init(data: newImageData!)
+            
+            AWSCredentialManager.shared.currentCredential.getIdentityId().continueWith { (task) -> Any? in
+                if task.result != nil {
+                    DispatchQueue.main.async {
+                        let userId = task.result! as String
+                        
+                        guard let imageURL = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(ConstantUrls.profilePictureName) else {
+                            return
+                        }
+                        do {
+                            
+                            try UIImagePNGRepresentation(newImage!)?.write(to: imageURL)
+                            let changeProfilePictureRequest = ChangeProfilePictureRequest()
+                            changeProfilePictureRequest.changeProfilePicture(userId: userId, requestedImageUrl: imageURL, imageChangeSuccess: {
+                                
+                                
+                                
+                                
+                            }, imageChangeFailed: {
+                                
+                                SVProgressHUD.dismiss()
+                                self.showErrorMessage(message: "There is an error to changing profile picture.")
+                                
+                            }, uploadingStatus: { (percentage) in
+                                if percentage >= 1.0 {
+                                    SVProgressHUD.showSuccess(withStatus: "Profile picture change!")
+                                } else {
+                                    SVProgressHUD.showProgress(percentage)
+                                }
+                            })
+                            
+                        } catch { }
+                        
+                    }
+                } else {
+                    
+                }
+                return nil
+            }
+        }
+        
+    }
+    
+    func fusumaMultipleImageSelected(_ images: [UIImage], source: FusumaMode) {
+        
+    }
+    
+    func fusumaVideoCompleted(withFileURL fileURL: URL) {
+        
+    }
+    
+    
+    // Return the image but called after is dismissed.
+    func fusumaDismissedWithImage(image: UIImage, source: FusumaMode) {
+        
+        print("Called just after FusumaViewController is dismissed.")
+    }
+    
+    // When camera roll is not authorized, this method is called.
+    func fusumaCameraRollUnauthorized() {
+        
+        print("Camera roll unauthorized")
+    }
+    
+    // Return an image and the detailed information.
+    func fusumaImageSelected(_ image: UIImage, source: FusumaMode, metaData: ImageMetadata) {
+        
     }
 }

@@ -14,6 +14,7 @@ target 'RushApp' do
     pod 'AWSCognito'
     pod 'AWSCognitoIdentityProvider'
     pod 'AWSLambda'
+    pod 'AWSS3'
     
   #Facebook
     pod 'FacebookLogin'
@@ -24,4 +25,7 @@ target 'RushApp' do
   
   #Loader
     pod 'SVProgressHUD'
+    
+  #Image Crop and Selector
+    pod 'Fusuma'
 end
