@@ -28,4 +28,7 @@ target 'RushApp' do
     
   #Image Crop and Selector
     pod 'Fusuma'
+
+  #Image download and cache
+    pod 'SDWebImage', '~> 4.0'
 end

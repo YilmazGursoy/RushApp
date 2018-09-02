@@ -39,6 +39,9 @@ PODS:
   - Fusuma (1.2.4)
   - IQKeyboardManagerSwift (6.1.1)
   - PMAlertController (3.4.0)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
@@ -52,6 +55,7 @@ DEPENDENCIES:
   - Fusuma
   - IQKeyboardManagerSwift
   - PMAlertController
+  - SDWebImage (~> 4.0)
   - SVProgressHUD
 
 SPEC REPOS:
@@ -73,6 +77,7 @@ SPEC REPOS:
     - Fusuma
     - IQKeyboardManagerSwift
     - PMAlertController
+    - SDWebImage
     - SVProgressHUD
 
 SPEC CHECKSUMS:
@@ -93,8 +98,9 @@ SPEC CHECKSUMS:
   Fusuma: e85c394878a2e1549c67140ba7c038aff8d7581c
   IQKeyboardManagerSwift: 977affaeb4d6e971975c7790a6850f31d38f1207
   PMAlertController: efb781925d741d50e0200018a00c53cecb8b4910
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 17590f5ab09cf54b072c964ef92d4cb3a53ba756
+PODFILE CHECKSUM: 04b50d964433484db400e8b0937bfd02d3a7bbc8
 
 COCOAPODS: 1.5.3

@@ -8,8 +8,10 @@
 
 import UIKit
 import Fusuma
+import SDWebImage
 import SVProgressHUD
 import PMAlertController
+
 
 class ProfileVC: BaseVC {
 
@@ -20,6 +22,7 @@ class ProfileVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sendAchivementRequest()
+        setupUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +36,13 @@ class ProfileVC: BaseVC {
             view.width(constant: 155)
             view.height(constant: 120)
             stackView.addArrangedSubview(view)
+        }
+    }
+    
+    private func setupUI(){
+        self.titleLabel.text = Rush.shared.currentUser.userName
+        self.profilePictureImage.sd_setImage(with: URL(string: Rush.shared.currentUser.userProfileImageUrl)) { (image, error, cacheType, url) in
+            
         }
     }
     
