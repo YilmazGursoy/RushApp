@@ -10,7 +10,7 @@ import UIKit
 import SVProgressHUD
 
 class GameSelectionVC: BaseVC {
-
+    
     @IBOutlet weak var tableView: UITableView!
     private var gameList:GameListModel! {
         didSet{
@@ -57,19 +57,30 @@ class GameSelectionVC: BaseVC {
             }
         }
         
-        let createUserRequest = UserCreateRequest()
-        createUserRequest.sendUserCreateRequest(selectingIds: ids) { (result, error) in
-            SVProgressHUD.dismiss()
-            if error != nil {
-                self.showError(title: "Failed", description: "There is an error to creating profile.", doneButtonTapped: {
-                    
-                })
-            } else {
-                self.navigationController?.pushVCMainThread(FeedVC.createFromStoryboard())
+        AWSCredentialManager.shared.getUserPool { (pool) in
+            let createUserRequest = UserCreateRequest()
+            guard let username = pool.currentUser()?.username  else {
+                return
             }
+            
+            createUserRequest.sendUserCreateRequest(selectingIds: ids, username: username, completionBlock: { (result, error) in
+                SVProgressHUD.dismiss()
+                if error != nil {
+                    self.showError(title: "Failed", description: "There is an error to creating profile.", doneButtonTapped: {
+                        
+                    })
+                } else {
+                    DispatchQueue.main.async {
+                        let window = UIApplication.shared.keyWindow
+                        let tabbarController = TabBarController()
+                        window?.rootViewController = tabbarController
+                        window?.makeKeyAndVisible()
+                    }
+                }
+            })
         }
     }
-
+    
 }
 
 

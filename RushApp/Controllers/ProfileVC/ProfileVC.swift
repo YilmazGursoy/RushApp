@@ -13,6 +13,7 @@ import PMAlertController
 
 class ProfileVC: BaseVC {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var profilePictureImage: UIImageView!
     
@@ -57,8 +58,8 @@ extension ProfileVC : FusumaDelegate {
     func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
         DispatchQueue.main.async {
             self.profilePictureImage.image = image
-            let newImageData = UIImageJPEGRepresentation(image, 0.2)
-            let newImage = UIImage.init(data: newImageData!)
+            var newImage = image
+            newImage = newImage.resizeImage(targetSize: constantProfilePictureSize)
             
             AWSCredentialManager.shared.currentCredential.getIdentityId().continueWith { (task) -> Any? in
                 if task.result != nil {
@@ -70,12 +71,18 @@ extension ProfileVC : FusumaDelegate {
                         }
                         do {
                             
-                            try UIImagePNGRepresentation(newImage!)?.write(to: imageURL)
+                            try UIImagePNGRepresentation(newImage)?.write(to: imageURL)
                             let changeProfilePictureRequest = ChangeProfilePictureRequest()
                             changeProfilePictureRequest.changeProfilePicture(userId: userId, requestedImageUrl: imageURL, imageChangeSuccess: {
                                 
+                                let s3Url = ConstantUrls.profilePictureS3BaseUrl + userId + "/" + ConstantUrls.profilePictureName
                                 
-                                
+                                ChangeProfilePictureRequest().changeProfilePictureFromDynamo(imageUrl: s3Url, profilePictureChanceSuccess: {
+                                    SVProgressHUD.showSuccess(withStatus: "Profile picture change!")
+                                }, profilePictureChangeFailed: {
+                                    SVProgressHUD.dismiss()
+                                    self.showErrorMessage(message: "There is an error to changing profile picture.")
+                                })
                                 
                             }, imageChangeFailed: {
                                 
@@ -84,7 +91,7 @@ extension ProfileVC : FusumaDelegate {
                                 
                             }, uploadingStatus: { (percentage) in
                                 if percentage >= 1.0 {
-                                    SVProgressHUD.showSuccess(withStatus: "Profile picture change!")
+                                    
                                 } else {
                                     SVProgressHUD.showProgress(percentage)
                                 }

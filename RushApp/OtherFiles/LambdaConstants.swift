@@ -9,7 +9,8 @@
 import Foundation
 
 struct LambdaConstants {
-    static let UserCreate   =   "Rush-User-Create"
-    static let GetUser      =   "RushApp-GetUser"
-    static let GetUserId    =   "RushApp-GetUserId"
+    static let UserCreate               =   "Rush-User-Create"
+    static let GetUser                  =   "RushApp-GetUser"
+    static let GetUserId                =   "RushApp-GetUserId"
+    static let UserProfilePictureUpdate =   "RushApp-UpdateUserProfilePicture"
 }

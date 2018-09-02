@@ -22,6 +22,10 @@ class SplashVC: BaseVC {
                         AWSCredentialManager.shared.logout()
                         self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
                     } else {
+                        
+                        let user = User(userName: (result as! Dictionary<String, Any>)["username"] as! String, userProfileImageUrl: (result as! Dictionary<String, Any>)["profilePicture"] as! String, gameList: nil)
+                        
+                        Rush.shared.currentUser = user
                         DispatchQueue.main.async {
                             let window = UIApplication.shared.keyWindow
                             let tabbarController = TabBarController()
