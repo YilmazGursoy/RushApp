@@ -14,7 +14,7 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         self.delegate = self
         
-        let homeVC = MapVC.createFromStoryboard()
+        let homeVC = UIViewController()
         homeVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "homeIcon"), selectedImage: #imageLiteral(resourceName: "homeIconSelected"))
         homeVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
         
@@ -23,7 +23,7 @@ class TabBarController: UITabBarController {
 //        searchVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "searchIcon"), selectedImage: #imageLiteral(resourceName: "searchIcon"))
 //        searchVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
         
-        let playVC = UIViewController()
+        let playVC = MapVC.createFromStoryboard()
         playVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "playIcon"), selectedImage: #imageLiteral(resourceName: "playIconSelected"))
         playVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
         
