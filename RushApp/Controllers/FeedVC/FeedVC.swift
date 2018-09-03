@@ -9,11 +9,14 @@
 import UIKit
 
 class FeedVC: BaseVC {
-
+    
+    @IBOutlet weak var stackView: UIStackView!
+    
+    
     @IBOutlet weak var credentialIdLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupFeeds()
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,10 +28,6 @@ class FeedVC: BaseVC {
     //MARK: IBActions
     
     
-    @IBAction func requestTapped(_ sender: UIButton) {
-        
-    }
-    
     @IBAction func isUserLoggedInTapped(_ sender: UIButton) {
         
         AWSCredentialManager.shared.isUserLoggedIn { (isLoggedIn) in
@@ -38,7 +37,6 @@ class FeedVC: BaseVC {
             } else {
                 RushLogger.errorLog(message: "Not Logged In")
             }
-            
         }
         
     }
@@ -48,21 +46,11 @@ class FeedVC: BaseVC {
         self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
     }
     
-    @IBAction func backButtonTapped(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    @IBAction func displayCredentialTapped(_ sender: UIButton) {
-        AWSCredentialManager.shared.currentCredential.getIdentityId().continueWith { (task) -> Any? in
-            if task.result! != nil {
-                DispatchQueue.main.async {
-                    self.credentialIdLabel.text = task.result! as String
-                }
-            } else {
-                DispatchQueue.main.async {
-                    self.credentialIdLabel.text = "nil"
-                }
-            }
-            return nil
+    private func setupFeeds(){
+        for _ in 0...10 {
+            let feedView = FeedView.fromNib() as FeedView
+            feedView.height(constant: 318)
+            self.stackView.addArrangedSubview(feedView)
         }
     }
     
