@@ -13,10 +13,13 @@ class FeedVC: BaseVC {
     @IBOutlet weak var stackView: UIStackView!
     
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var credentialIdLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupFeeds()
+        self.tableView.register(UINib.init(nibName: "FeedCell", bundle: .main), forCellReuseIdentifier: "FeedCell")
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 333
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,12 +49,16 @@ class FeedVC: BaseVC {
         self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
     }
     
-    private func setupFeeds(){
-        for _ in 0...10 {
-            let feedView = FeedView.fromNib() as FeedView
-            feedView.height(constant: 318)
-            self.stackView.addArrangedSubview(feedView)
-        }
+}
+
+extension FeedVC : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell") as! FeedCell
+        return cell
     }
     
 }
