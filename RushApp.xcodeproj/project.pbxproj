@@ -62,6 +62,8 @@
 		47829593211F010700A89394 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829592211F010700A89394 /* IQKeyboardManagerSwift.framework */; };
 		47829597211F0D4800A89394 /* PMAlertController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829596211F0D4800A89394 /* PMAlertController.framework */; };
 		47C0B081211EDD9900469883 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C0B080211EDD9900469883 /* GradientView.swift */; };
+		47C3C058213E4EAF00A74171 /* feed.json in Resources */ = {isa = PBXBuildFile; fileRef = 47C3C057213E4EAF00A74171 /* feed.json */; };
+		47C3C05A213E4ECC00A74171 /* lobbies.json in Resources */ = {isa = PBXBuildFile; fileRef = 47C3C059213E4ECC00A74171 /* lobbies.json */; };
 		D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA2209B858600AC79B6 /* LoginType.swift */; };
 		D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA4209B85D000AC79B6 /* LambdaConstants.swift */; };
 		D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA6209B85D800AC79B6 /* AppConstants.swift */; };
@@ -166,6 +168,8 @@
 		47829592211F010700A89394 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47829596211F0D4800A89394 /* PMAlertController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PMAlertController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47C0B080211EDD9900469883 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		47C3C057213E4EAF00A74171 /* feed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = feed.json; sourceTree = "<group>"; };
+		47C3C059213E4ECC00A74171 /* lobbies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lobbies.json; sourceTree = "<group>"; };
 		70DD2601FD90336EF49D93DE /* Pods-RushApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C6990D855C60E2F2734172F0 /* Pods-RushApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.release.xcconfig"; sourceTree = "<group>"; };
 		D2075DA2209B858600AC79B6 /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
@@ -352,6 +356,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		47C3C056213E4E9600A74171 /* Dummies */ = {
+			isa = PBXGroup;
+			children = (
+				47C3C057213E4EAF00A74171 /* feed.json */,
+				47C3C059213E4ECC00A74171 /* lobbies.json */,
+			);
+			path = Dummies;
+			sourceTree = "<group>";
+		};
 		5397A71A012AE15C477D433D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +484,7 @@
 				D258C06B2098F4FB0090ABB5 /* Controllers */,
 				D258C0672098F4F10090ABB5 /* Managers */,
 				D258C0692098F4F10090ABB5 /* Server */,
+				47C3C056213E4E9600A74171 /* Dummies */,
 				47C0B07F211EDD9100469883 /* Views */,
 				D258C06C2098F5170090ABB5 /* OtherFiles */,
 				D258C032209645EE0090ABB5 /* Main.storyboard */,
@@ -672,6 +686,7 @@
 				472DFF0C213849F400FC577A /* LobbyCollectionCell.xib in Resources */,
 				472DFF072138445A00FC577A /* MapVC.storyboard in Resources */,
 				D2075DC3209DE94300AC79B6 /* RegisterVC.storyboard in Resources */,
+				47C3C058213E4EAF00A74171 /* feed.json in Resources */,
 				472DFEE22135D3C900FC577A /* OpenSans-Bold.ttf in Resources */,
 				D258C039209645EF0090ABB5 /* LaunchScreen.storyboard in Resources */,
 				D258C036209645EF0090ABB5 /* Assets.xcassets in Resources */,
@@ -682,6 +697,7 @@
 				472DFEE52135D3C900FC577A /* OpenSans-Regular.ttf in Resources */,
 				D2075DCA209DEF4600AC79B6 /* LoginVC.storyboard in Resources */,
 				472DFEE42135D3C900FC577A /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				47C3C05A213E4ECC00A74171 /* lobbies.json in Resources */,
 				D2075DB2209CD9D300AC79B6 /* FeedVC.storyboard in Resources */,
 				D2AF692F20A237C200AC40E9 /* ForgotPasswordVC.storyboard in Resources */,
 				472DFEF22135DEBD00FC577A /* GameSelectionCell.xib in Resources */,
