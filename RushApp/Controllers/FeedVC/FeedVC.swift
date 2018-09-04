@@ -11,15 +11,25 @@ import UIKit
 class FeedVC: BaseVC {
     
     @IBOutlet weak var stackView: UIStackView!
-    
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var credentialIdLabel: UILabel!
+    
+    private var feedItems:[Feed]! {
+        didSet{
+            DispatchQueue.main.async {
+                self.tableView.delegate = self
+                self.tableView.dataSource = self
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib.init(nibName: "FeedCell", bundle: .main), forCellReuseIdentifier: "FeedCell")
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 333
+        self.sendFeedRequest()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,21 +54,39 @@ class FeedVC: BaseVC {
         
     }
     
-    @IBAction func logoutButtonTapped(_ sender: UIButton) {
-        AWSCredentialManager.shared.logout()
-        self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
+    private func sendFeedRequest(){
+        let feedRequest = FeedsRequest()
+        
+        feedRequest.sendFeedRequest { (feeds, error) in
+            if feeds != nil {
+                self.feedItems = feeds
+            } else {
+                self.showErrorMessage(message: "There is an error to showing Timeline.")
+            }
+        }
     }
+    
+    
     
 }
 
 extension FeedVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.feedItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell") as! FeedCell
+        cell.arrangeCell(feed: self.feedItems[indexPath.row])
         return cell
     }
     
 }
+
+
+//
+//@IBAction func logoutButtonTapped(_ sender: UIButton) {
+//    AWSCredentialManager.shared.logout()
+//    self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
+//}
+

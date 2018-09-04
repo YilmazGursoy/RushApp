@@ -13,8 +13,9 @@ class FeedsRequest: Request {
         return LambdaConstants.GetFeeds
     }
     
-    func sendFeedsRequest(completionBlock: @escaping ()->Void){
-        completionBlock()
+    func sendFeedRequest(completion:@escaping ([Feed]?, Error?)->Void) {
+        self.request(parameters: [:]) { (response:AnyObject?, feeds:[Feed]?, error:Error?) in
+            completion(feeds,error)
+        }
     }
-    
 }
