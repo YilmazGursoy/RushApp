@@ -8,12 +8,13 @@
 
 import Foundation
 
-struct Game {
-    var id : Int = 0
-    var name:String = ""
-    var thumbImage:String = ""
-    var normalImage:String = ""
-    var isActive:Bool = false
+struct Game: Codable {
+    let id: Int
+    let name: String
+    let picture: URL?
+    var isActive:Bool? = false
+    var thumbImage:String? = ""
+    var normalImage:String? = ""
 }
 
 class GameListModel {

@@ -52,7 +52,7 @@ class GameSelectionVC: BaseVC {
         SVProgressHUD.show()
         var ids:[Int] = []
         self.gameList.list.forEach { (game) in
-            if game.isActive {
+            if game.isActive! {
                 ids.append(game.id)
             }
         }
@@ -95,7 +95,7 @@ extension GameSelectionVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameSelectionCell", for: indexPath) as! GameSelectionCell
-        cell.arrangeCell(imageName: self.gameList.list[indexPath.row].thumbImage , title: self.gameList.list[indexPath.row].name, index: indexPath.row, isActive: self.gameList.list[indexPath.row].isActive)
+        cell.arrangeCell(imageName: self.gameList.list[indexPath.row].thumbImage! , title: self.gameList.list[indexPath.row].name, index: indexPath.row, isActive: self.gameList.list[indexPath.row].isActive!)
         cell.changeActiveHandler = {isActive, index in
             self.gameList.list[index].isActive = isActive
         }

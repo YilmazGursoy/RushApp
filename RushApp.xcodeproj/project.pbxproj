@@ -64,6 +64,12 @@
 		47C0B081211EDD9900469883 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C0B080211EDD9900469883 /* GradientView.swift */; };
 		47C3C058213E4EAF00A74171 /* feed.json in Resources */ = {isa = PBXBuildFile; fileRef = 47C3C057213E4EAF00A74171 /* feed.json */; };
 		47C3C05A213E4ECC00A74171 /* lobbies.json in Resources */ = {isa = PBXBuildFile; fileRef = 47C3C059213E4ECC00A74171 /* lobbies.json */; };
+		47C3C05E213E5FFB00A74171 /* FeedsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C05D213E5FFB00A74171 /* FeedsRequest.swift */; };
+		47C3C060213E604800A74171 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C05F213E604800A74171 /* Feed.swift */; };
+		47C3C062213E61B300A74171 /* Lobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C061213E61B300A74171 /* Lobby.swift */; };
+		47C3C064213E623800A74171 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C063213E623800A74171 /* Subscriber.swift */; };
+		47C3C066213E624C00A74171 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C065213E624C00A74171 /* Sender.swift */; };
+		47C3C068213E625D00A74171 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C067213E625D00A74171 /* Message.swift */; };
 		D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA2209B858600AC79B6 /* LoginType.swift */; };
 		D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA4209B85D000AC79B6 /* LambdaConstants.swift */; };
 		D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA6209B85D800AC79B6 /* AppConstants.swift */; };
@@ -170,6 +176,12 @@
 		47C0B080211EDD9900469883 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		47C3C057213E4EAF00A74171 /* feed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = feed.json; sourceTree = "<group>"; };
 		47C3C059213E4ECC00A74171 /* lobbies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lobbies.json; sourceTree = "<group>"; };
+		47C3C05D213E5FFB00A74171 /* FeedsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsRequest.swift; sourceTree = "<group>"; };
+		47C3C05F213E604800A74171 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		47C3C061213E61B300A74171 /* Lobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lobby.swift; sourceTree = "<group>"; };
+		47C3C063213E623800A74171 /* Subscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
+		47C3C065213E624C00A74171 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		47C3C067213E625D00A74171 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		70DD2601FD90336EF49D93DE /* Pods-RushApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C6990D855C60E2F2734172F0 /* Pods-RushApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.release.xcconfig"; sourceTree = "<group>"; };
 		D2075DA2209B858600AC79B6 /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
@@ -287,7 +299,12 @@
 			isa = PBXGroup;
 			children = (
 				472DFEEC2135D58400FC577A /* GameListModel.swift */,
+				47C3C063213E623800A74171 /* Subscriber.swift */,
 				472DFF61213C135000FC577A /* User.swift */,
+				47C3C05F213E604800A74171 /* Feed.swift */,
+				47C3C065213E624C00A74171 /* Sender.swift */,
+				47C3C061213E61B300A74171 /* Lobby.swift */,
+				47C3C067213E625D00A74171 /* Message.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -524,6 +541,7 @@
 				472DFEFE2137E6AF00FC577A /* CheckUserRequest.swift */,
 				472DFF55213B2FA100FC577A /* ChangeProfilePictureRequest.swift */,
 				472DFF59213B413A00FC577A /* GetUserIdRequest.swift */,
+				47C3C05D213E5FFB00A74171 /* FeedsRequest.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -792,9 +810,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				472DFF62213C135000FC577A /* User.swift in Sources */,
+				47C3C068213E625D00A74171 /* Message.swift in Sources */,
 				D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */,
 				D2075DA9209B866500AC79B6 /* CacheManager.swift in Sources */,
 				D2D9108A209F7F5D0054F3AA /* FacebookLoginManager.swift in Sources */,
+				47C3C066213E624C00A74171 /* Sender.swift in Sources */,
 				472DFEF12135DEBD00FC577A /* GameSelectionCell.swift in Sources */,
 				472DFF5A213B413A00FC577A /* GetUserIdRequest.swift in Sources */,
 				D2075DB0209CD9CC00AC79B6 /* FeedVC.swift in Sources */,
@@ -816,10 +836,12 @@
 				472DFEFB213743E100FC577A /* UserCreateRequest.swift in Sources */,
 				472DFF0B213849F400FC577A /* LobbyCollectionCell.swift in Sources */,
 				D2075DD4209E3FF800AC79B6 /* AWSErrorManager.swift in Sources */,
+				47C3C064213E623800A74171 /* Subscriber.swift in Sources */,
 				D2075DBC209DDE8900AC79B6 /* CognitoConstants.swift in Sources */,
 				D2AF692D20A237A500AC40E9 /* ForgotPasswordVC.swift in Sources */,
 				D258C0792099061C0090ABB5 /* OnboardingVC.swift in Sources */,
 				D2075DCE209E3CA400AC79B6 /* RegisterRequest.swift in Sources */,
+				47C3C05E213E5FFB00A74171 /* FeedsRequest.swift in Sources */,
 				472DFF18213AE54500FC577A /* Extension+UIView.swift in Sources */,
 				472DFECF2135D27B00FC577A /* GameSelectionVC.swift in Sources */,
 				D2D91088209F7F3D0054F3AA /* FacebookProvider.swift in Sources */,
@@ -827,10 +849,12 @@
 				D2075DE2209F0D1300AC79B6 /* Extension+NavigationController.swift in Sources */,
 				D2075DCC209DF34900AC79B6 /* AWSLoginManager.swift in Sources */,
 				D2075DDD209F091C00AC79B6 /* RushLogger.swift in Sources */,
+				47C3C060213E604800A74171 /* Feed.swift in Sources */,
 				D2075DB6209CE3C200AC79B6 /* BaseRequest.swift in Sources */,
 				47C0B081211EDD9900469883 /* GradientView.swift in Sources */,
 				472DFF0F2139F4D600FC577A /* ProfileVC.swift in Sources */,
 				D2075DBA209DDD8900AC79B6 /* AWSCredentialManager.swift in Sources */,
+				47C3C062213E61B300A74171 /* Lobby.swift in Sources */,
 				472DFEED2135D58400FC577A /* GameListModel.swift in Sources */,
 				D2075DD9209E447E00AC79B6 /* ConfirmEmailVC.swift in Sources */,
 				D258C07D2099098B0090ABB5 /* BaseVC+Extensions.swift in Sources */,

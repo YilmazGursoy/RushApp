@@ -15,18 +15,19 @@ class GameListRequest: BaseRequest {
         let parameter = ["":""]
         
         self.requestWith(functionName: lambdaName, andParameters: parameter) { (result, error) -> (Void) in
-            if let games = result as? Array<Any> {
-                let gameListModel = GameListModel()
-                gameListModel.list = []
-                games.forEach({ (game) in
-                    if let gameModel = game as? NSDictionary {
-                        let gameObject = Game(id: gameModel["ID"] as! Int, name: gameModel["name"] as! String, thumbImage: gameModel["thumbImage"] as! String, normalImage: gameModel["normalImage"] as! String, isActive: false)
-                        gameListModel.list.append(gameObject)
-                    }
-                })
-                completionBlock(gameListModel, nil)
+            
+            do {
+                if let theJSONData = try? JSONSerialization.data( withJSONObject: result, options: []) {
+                    let myStructArray = try JSONDecoder().decode([Game].self, from: theJSONData)
+                    
+                    print(myStructArray)
+                }
+            } catch {
+                print(error)
             }
             completionBlock(nil,error);
         }
     }
 }
+
+error: Make Dynamic to base request class and formatter ::::::: this is an force stop message
