@@ -8,14 +8,18 @@
 
 import Foundation
 
-class CheckUserRequest: BaseRequest {
+class CheckUserRequest: Request {
+    var lambdaName: String? {
+        return LambdaConstants.GetUser
+    }
+    
     func sendCheckUserRequest(completionBlock: @escaping (Any? ,Error?) -> Void) {
-        let lambdaName = LambdaConstants.GetUser
         
-        self.requestWith(functionName: lambdaName, andParameters: [:]) { (result, error) -> (Void) in
-            
-            completionBlock(result, error)
-            
-        }
+        
+//        self.requestWith(functionName: lambdaName, andParameters: [:]) { (result, error) -> (Void) in
+//
+//            completionBlock(result, error)
+//
+//        }
     }
 }

@@ -9,7 +9,11 @@
 import Foundation
 import AWSS3
 
-class ChangeProfilePictureRequest : BaseRequest {
+class ChangeProfilePictureRequest : Request {
+    var lambdaName: String? {
+        return LambdaConstants.UserProfilePictureUpdate
+    }
+    
     
     func changeProfilePicture(userId:String ,requestedImageUrl:URL, imageChangeSuccess:@escaping ()->Void, imageChangeFailed:@escaping ()->Void, uploadingStatus:@escaping (Float)->Void) {
         let transferManager = AWSS3TransferManager.default()
@@ -41,16 +45,16 @@ class ChangeProfilePictureRequest : BaseRequest {
     }
     
     func changeProfilePictureFromDynamo(imageUrl:String, profilePictureChanceSuccess: @escaping ()->Void, profilePictureChangeFailed: @escaping ()->Void) {
-        let lambdaName = LambdaConstants.UserProfilePictureUpdate
+        
         let parameters = ["profilePictureUrl":imageUrl]
         
-        self.requestWith(functionName: lambdaName, andParameters: parameters) { (result, error) -> (Void) in
-            if result != nil {
-                profilePictureChanceSuccess()
-            } else {
-                profilePictureChangeFailed()
-            }
-        }
+//        self.requestWith(functionName: lambdaName, andParameters: parameters) { (result, error) -> (Void) in
+//            if result != nil {
+//                profilePictureChanceSuccess()
+//            } else {
+//                profilePictureChangeFailed()
+//            }
+//        }
     }
     
 }

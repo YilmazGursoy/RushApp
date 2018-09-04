@@ -1,5 +1,5 @@
 //
-//  BaseRequest.swift
+//  Request.swift
 //  RushApp
 //
 //  Created by Most Wanted on 4.05.2018.
@@ -9,14 +9,36 @@
 import UIKit
 import AWSLambda
 
-class BaseRequest: NSObject {
-    var customErrorMessage: String?
-    var showError = true
-    var showUserInfoError = false
-    
+protocol Request {
+    var lambdaName:String? {get}
 }
 
-extension BaseRequest {
+extension Request {
+    
+    func requestWithParameters<U:Decodable>(completionBlock:@escaping (RushResponse<U>?,Error?)->Void){
+        
+        let lambdaInvoker = AWSLambdaInvoker.default()
+        
+        lambdaInvoker.invokeFunction(lambdaName ?? "", jsonObject: ["parameters",""])
+            .continueWith(block: {(task:AWSTask<AnyObject>) -> Any? in
+                if task.result != nil {
+                    do {
+                        if let theJSONData = try? JSONSerialization.data( withJSONObject: task.result!, options: []) {
+                            let object = try JSONDecoder().decode(RushResponse<U>.self, from: theJSONData)
+                            completionBlock(object,nil)
+                        } else {
+                            completionBlock(nil,nil)
+                        }
+                    } catch {
+                        completionBlock(nil, error)
+                    }
+                } else {
+                    completionBlock(nil, task.error)
+                }
+                return nil
+        })
+    }
+    
     
     func requestWith(functionName name:String, andParameters parameters:Any?, withCompletionBlock completionBlock:@escaping (AnyObject?,Error?) -> (Void))  {
         let lambdaInvoker = AWSLambdaInvoker.default()

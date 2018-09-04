@@ -8,15 +8,19 @@
 
 import Foundation
 
-class UserCreateRequest: BaseRequest {
+class UserCreateRequest: Request {
+    var lambdaName: String? {
+        return LambdaConstants.UserCreate
+    }
+    
     
     func sendUserCreateRequest(selectingIds:[Int], username:String ,completionBlock: @escaping (AnyObject?, Error?) -> Void) {
-        let lambdaName = LambdaConstants.UserCreate
+        
         let parameter = ["selectingGameIds":selectingIds,"username":username] as [String : Any]
         
-        self.requestWith(functionName: lambdaName, andParameters: parameter) { (result, error) -> (Void) in
-            
-            completionBlock(result, error);
-        }
+//        self.requestWith(functionName: lambdaName, andParameters: parameter) { (result, error) -> (Void) in
+//            
+//            completionBlock(result, error);
+//        }
     }
 }

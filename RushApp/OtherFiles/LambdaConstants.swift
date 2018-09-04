@@ -9,6 +9,9 @@
 import Foundation
 
 struct LambdaConstants {
+    
+    static let GetConfiguration         =   "RushApp-Configurations"
+    
     static let UserCreate               =   "Rush-User-Create"
     static let GetUser                  =   "RushApp-GetUser"
     static let GetUserId                =   "RushApp-GetUserId"
@@ -16,5 +19,7 @@ struct LambdaConstants {
     
     static let GetLobbies               =   "RushApp-GetGameLobbies:2"
     static let GetFeeds                 =   "RushApp-GetFeeds"
+    
+    static let GetGameList              =   "RushApp-GameList"
     
 }

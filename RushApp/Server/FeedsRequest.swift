@@ -8,7 +8,10 @@
 
 import Foundation
 
-class FeedsRequest: BaseRequest {
+class FeedsRequest: Request {
+    var lambdaName: String? {
+        return LambdaConstants.GetFeeds
+    }
     
     func sendFeedsRequest(completionBlock: @escaping ()->Void){
         completionBlock()

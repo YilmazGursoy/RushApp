@@ -9,14 +9,16 @@
 import Foundation
 
 
-class DummyRequest: BaseRequest {
+class DummyRequest: Request {
+    var lambdaName: String?
+    
     
     func sendDummyRequest(completionBlock: @escaping (Any? ,Error?) -> Void) {
-        let lambdaName = "RushApp-Configurations"
+        let lambdaName = LambdaConstants.GetConfiguration
         
-        self.requestWith(functionName: lambdaName, andParameters: [:]) { (result, error) -> (Void) in
-            completionBlock(result, error)            
-        }
+//        self.requestWith(functionName: lambdaName, andParameters: [:]) { (result, error) -> (Void) in
+//            completionBlock(result, error)            
+//        }
         
     }
 }

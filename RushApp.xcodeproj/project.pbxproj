@@ -70,6 +70,7 @@
 		47C3C064213E623800A74171 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C063213E623800A74171 /* Subscriber.swift */; };
 		47C3C066213E624C00A74171 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C065213E624C00A74171 /* Sender.swift */; };
 		47C3C068213E625D00A74171 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C067213E625D00A74171 /* Message.swift */; };
+		47C3C0A9213EB8E400A74171 /* RushResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C0A8213EB8E400A74171 /* RushResponse.swift */; };
 		D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA2209B858600AC79B6 /* LoginType.swift */; };
 		D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA4209B85D000AC79B6 /* LambdaConstants.swift */; };
 		D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA6209B85D800AC79B6 /* AppConstants.swift */; };
@@ -182,6 +183,7 @@
 		47C3C063213E623800A74171 /* Subscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
 		47C3C065213E624C00A74171 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
 		47C3C067213E625D00A74171 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		47C3C0A8213EB8E400A74171 /* RushResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RushResponse.swift; sourceTree = "<group>"; };
 		70DD2601FD90336EF49D93DE /* Pods-RushApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C6990D855C60E2F2734172F0 /* Pods-RushApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.release.xcconfig"; sourceTree = "<group>"; };
 		D2075DA2209B858600AC79B6 /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 		472DFEE92135D56400FC577A /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				47C3C0A8213EB8E400A74171 /* RushResponse.swift */,
 				472DFEEC2135D58400FC577A /* GameListModel.swift */,
 				47C3C063213E623800A74171 /* Subscriber.swift */,
 				472DFF61213C135000FC577A /* User.swift */,
@@ -851,6 +854,7 @@
 				D2075DDD209F091C00AC79B6 /* RushLogger.swift in Sources */,
 				47C3C060213E604800A74171 /* Feed.swift in Sources */,
 				D2075DB6209CE3C200AC79B6 /* BaseRequest.swift in Sources */,
+				47C3C0A9213EB8E400A74171 /* RushResponse.swift in Sources */,
 				47C0B081211EDD9900469883 /* GradientView.swift in Sources */,
 				472DFF0F2139F4D600FC577A /* ProfileVC.swift in Sources */,
 				D2075DBA209DDD8900AC79B6 /* AWSCredentialManager.swift in Sources */,

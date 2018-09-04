@@ -8,14 +8,18 @@
 
 import Foundation
 
-class GetUserIdRequest: BaseRequest {
+class GetUserIdRequest: Request {
+    var lambdaName: String? {
+        return LambdaConstants.GetUserId
+    }
+    
     func sendGetUserIdRequest(completionBlock: @escaping (Any? ,Error?) -> Void) {
-        let lambdaName = LambdaConstants.GetUserId
+        
                 
-        self.requestWith(functionName: lambdaName, andParameters: [:]) { (result, error) -> (Void) in
-            completionBlock(result, error)
-
-        }
+//        self.requestWith(functionName: lambdaName, andParameters: [:]) { (result, error) -> (Void) in
+//            completionBlock(result, error)
+//
+//        }
         
     }
 }

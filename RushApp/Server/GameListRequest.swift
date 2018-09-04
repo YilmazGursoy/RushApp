@@ -8,26 +8,31 @@
 
 import Foundation
 
-class GameListRequest: BaseRequest {
+class GameListRequest: Request {
+    
+    var lambdaName: String? {
+        return LambdaConstants.GetGameList
+    }
+    
     
     func sendGameListRequest(completionBlock: @escaping (GameListModel? ,Error?) -> Void) {
-        let lambdaName = "RushApp-GameList"
-        let parameter = ["":""]
         
-        self.requestWith(functionName: lambdaName, andParameters: parameter) { (result, error) -> (Void) in
+        self.requestWithParameters { (response:RushResponse<Game>?, error:Error?) in
             
-            do {
-                if let theJSONData = try? JSONSerialization.data( withJSONObject: result, options: []) {
-                    let myStructArray = try JSONDecoder().decode([Game].self, from: theJSONData)
-                    
-                    print(myStructArray)
-                }
-            } catch {
-                print(error)
-            }
-            completionBlock(nil,error);
         }
+        
+//        self.requestWith(functionName: lambdaName, andParameters: parameter) { (result, error) -> (Void) in
+//
+//            do {
+//                if let theJSONData = try? JSONSerialization.data( withJSONObject: result, options: []) {
+//                    let myStructArray = try JSONDecoder().decode([Game].self, from: theJSONData)
+//
+//                    print(myStructArray)
+//                }
+//            } catch {
+//                print(error)
+//            }
+//            completionBlock(nil,error);
+//        }
     }
 }
-
-error: Make Dynamic to base request class and formatter ::::::: this is an force stop message

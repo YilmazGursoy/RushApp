@@ -11,5 +11,5 @@ import Foundation
 class Rush {
     static let shared = Rush()
     var currentUser:User!
-    var gameList:GameListModel!
+    var gameList:[Game]!
 }
