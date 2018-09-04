@@ -40,7 +40,7 @@ class ProfileVC: BaseVC {
     }
     
     private func setupUI(){
-        self.titleLabel.text = Rush.shared.currentUser.userName
+        self.titleLabel.text = Rush.shared.currentUser.username
         ImageDownloaderManager.downloadImage(imageName: ConstantUrls.profilePictureName) { (url) in
             DispatchQueue.main.async {
                 self.profilePictureImage.sd_setImage(with: url, completed: { (image, error, cacheType, url) in

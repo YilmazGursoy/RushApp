@@ -12,7 +12,7 @@ import SVProgressHUD
 class GameSelectionVC: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
-    private var gameList:GameListModel! {
+    private var gameList:[Game]! {
         didSet{
             DispatchQueue.main.async {
                 self.tableView.delegate = self
@@ -50,10 +50,10 @@ class GameSelectionVC: BaseVC {
     
     @IBAction func doneButtonTapped(_ sender: UIButton) {
         SVProgressHUD.show()
-        var ids:[Int] = []
-        self.gameList.list.forEach { (game) in
+        var ids:[Game] = []
+        self.gameList.forEach { (game) in
             if game.isActive! {
-                ids.append(game.id)
+                ids.append(game)
             }
         }
         
@@ -63,7 +63,7 @@ class GameSelectionVC: BaseVC {
                 return
             }
             
-            createUserRequest.sendUserCreateRequest(selectingIds: ids, username: username, completionBlock: { (result, error) in
+            createUserRequest.sendUserCreateRequest(games: ids, username: username, completionBlock: { (result, error) in
                 SVProgressHUD.dismiss()
                 if error != nil {
                     self.showError(title: "Failed", description: "There is an error to creating profile.", doneButtonTapped: {
@@ -90,14 +90,14 @@ extension GameSelectionVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.gameList.list.count
+        return self.gameList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameSelectionCell", for: indexPath) as! GameSelectionCell
-        cell.arrangeCell(imageName: self.gameList.list[indexPath.row].thumbImage! , title: self.gameList.list[indexPath.row].name, index: indexPath.row, isActive: self.gameList.list[indexPath.row].isActive!)
+        cell.arrangeCell(imageName: self.gameList[indexPath.row].thumbImage! , title: self.gameList[indexPath.row].name, index: indexPath.row, isActive: self.gameList[indexPath.row].isActive!)
         cell.changeActiveHandler = {isActive, index in
-            self.gameList.list[index].isActive = isActive
+            self.gameList[index].isActive = isActive
         }
         return cell
     }

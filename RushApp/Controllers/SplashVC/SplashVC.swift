@@ -17,14 +17,12 @@ class SplashVC: BaseVC {
         
         AWSCredentialManager.shared.isUserLoggedIn { (isLoggedIn) in
             if isLoggedIn == true {
-                checkUser.sendCheckUserRequest(completionBlock: { (result, error) in
+                
+                checkUser.sendCheckUserRequest(completionBlock: { (user, error) in
                     if error != nil {
                         AWSCredentialManager.shared.logout()
                         self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
                     } else {
-                        
-                        let user = User(userName: (result as! Dictionary<String, Any>)["username"] as! String, userProfileImageUrl: (result as! Dictionary<String, Any>)["profilePicture"] as! String, gameList: nil)
-                        
                         Rush.shared.currentUser = user
                         DispatchQueue.main.async {
                             let window = UIApplication.shared.keyWindow

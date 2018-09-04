@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct User{
-    var userName:String
-    var userProfileImageUrl:String
-    var gameList:GameListModel?
+struct User : Decodable {
+    var username:String
+    var profilePicture:String
+    var gameList:[Game]?
 }

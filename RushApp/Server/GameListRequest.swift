@@ -15,24 +15,10 @@ class GameListRequest: Request {
     }
     
     
-    func sendGameListRequest(completionBlock: @escaping (GameListModel? ,Error?) -> Void) {
+    func sendGameListRequest(completionBlock: @escaping ([Game]? ,Error?) -> Void) {
         
-        self.requestWithParameters { (response:RushResponse<Game>?, error:Error?) in
-            
+        self.request(parameters: [:]) { (result:AnyObject? ,response:[Game]?, error:Error?) in
+            completionBlock(response, error)
         }
-        
-//        self.requestWith(functionName: lambdaName, andParameters: parameter) { (result, error) -> (Void) in
-//
-//            do {
-//                if let theJSONData = try? JSONSerialization.data( withJSONObject: result, options: []) {
-//                    let myStructArray = try JSONDecoder().decode([Game].self, from: theJSONData)
-//
-//                    print(myStructArray)
-//                }
-//            } catch {
-//                print(error)
-//            }
-//            completionBlock(nil,error);
-//        }
     }
 }

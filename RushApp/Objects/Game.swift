@@ -9,14 +9,9 @@
 import Foundation
 
 struct Game: Codable {
-    let id: Int
+    let id: String
     let name: String
-    let picture: URL?
-    var isActive:Bool? = false
-    var thumbImage:String? = ""
-    var normalImage:String? = ""
-}
-
-class GameListModel {
-    var list: [Game] = []
+    var thumbImage:String?
+    var normalImage:String?
+    var isActive:Bool?
 }

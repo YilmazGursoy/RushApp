@@ -15,25 +15,27 @@ protocol Request {
 
 extension Request {
     
-    func requestWithParameters<U:Decodable>(completionBlock:@escaping (RushResponse<U>?,Error?)->Void){
+    func request<U:Decodable>(parameters:Dictionary<String, Any>, completionBlock:@escaping (AnyObject?,U?,Error?)->Void){
         
         let lambdaInvoker = AWSLambdaInvoker.default()
-        
-        lambdaInvoker.invokeFunction(lambdaName ?? "", jsonObject: ["parameters",""])
+        RushLogger.requestLog(message: lambdaName!)
+        RushLogger.functionParametersLog(message: parameters)
+        lambdaInvoker.invokeFunction(lambdaName ?? "", jsonObject: parameters)
             .continueWith(block: {(task:AWSTask<AnyObject>) -> Any? in
+                self.handleResponse(withError: task.error, withResult: task.result, withLambdaName: self.lambdaName!)
                 if task.result != nil {
                     do {
                         if let theJSONData = try? JSONSerialization.data( withJSONObject: task.result!, options: []) {
-                            let object = try JSONDecoder().decode(RushResponse<U>.self, from: theJSONData)
-                            completionBlock(object,nil)
+                            let object = try JSONDecoder().decode(U.self, from: theJSONData)
+                            completionBlock(task.result,object,nil)
                         } else {
-                            completionBlock(nil,nil)
+                            completionBlock(task.result,nil,nil)
                         }
                     } catch {
-                        completionBlock(nil, error)
+                        completionBlock(task.result,nil, error)
                     }
                 } else {
-                    completionBlock(nil, task.error)
+                    completionBlock(task.result,nil, task.error)
                 }
                 return nil
         })
