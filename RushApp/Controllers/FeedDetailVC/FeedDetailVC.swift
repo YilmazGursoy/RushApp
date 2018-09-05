@@ -12,7 +12,7 @@ class FeedDetailVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
     }
 

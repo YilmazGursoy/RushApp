@@ -10,6 +10,7 @@ import UIKit
 import SDWebImage
 
 class FeedCell: UITableViewCell {
+    @IBOutlet weak var pictureBackView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -17,6 +18,9 @@ class FeedCell: UITableViewCell {
     @IBOutlet weak var feedImageView: UIImageView!
     @IBOutlet weak var numberOfLikeLabel: UILabel!
     @IBOutlet weak var numberOfShareLabel: UILabel!
+    
+    var didSelectCompletion:((UIView,Int)->Void)?
+    var indexPath:IndexPath!
     
     var isTouched: Bool = false {
         didSet {
@@ -32,25 +36,8 @@ class FeedCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        isTouched = true
-    }
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        isTouched = false
-    }
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesCancelled(touches, with: event)
-        isTouched = false
-    }
-    
-    func arrangeCell(feed:Feed) {
+    func arrangeCell(feed:Feed, indexPath:IndexPath,selectCompletion:@escaping (UIView,Int)->Void) {
         self.usernameLabel.text = feed.sender.username
         self.feedDescriptionLabel.text = feed.text
         self.numberOfLikeLabel.text = "\(feed.numberOfLike)"
@@ -58,6 +45,31 @@ class FeedCell: UITableViewCell {
         
         self.profileImageView.sd_setImage(with: feed.sender.profilePic, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .continueInBackground, completed: nil)
         self.feedImageView.sd_setImage(with: feed.picture, placeholderImage: #imageLiteral(resourceName: "placeholderImage"), options: .continueInBackground, completed: nil)
+        self.didSelectCompletion = selectCompletion
+        self.indexPath = indexPath
     }
 }
 
+//MARK: Custom Animation
+extension FeedCell {
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(false, animated: animated)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        isTouched = true
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        self.didSelectCompletion!(self.pictureBackView,indexPath.row)
+        isTouched = false
+    }
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+        print("Cancel!")
+        isTouched = false
+    }
+    
+}

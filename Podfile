@@ -31,4 +31,7 @@ target 'RushApp' do
 
   #Image download and cache
     pod 'SDWebImage', '~> 4.0'
+    
+  #Custom Transition
+    pod 'Hero', '~> 1.3'
 end
