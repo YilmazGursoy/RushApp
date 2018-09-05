@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Hero
 import SVProgressHUD
 
 class FeedVC: BaseVC {
