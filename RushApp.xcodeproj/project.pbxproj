@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4706B7F6213FAEC300BAC8EA /* FeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4706B7F5213FAEC300BAC8EA /* FeedDetailVC.swift */; };
 		471A6516213023C50065962D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471A6515213023C50065962D /* TabBarController.swift */; };
 		472DFECF2135D27B00FC577A /* GameSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472DFECE2135D27B00FC577A /* GameSelectionVC.swift */; };
 		472DFED12135D28000FC577A /* GameSelectionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472DFED02135D28000FC577A /* GameSelectionVC.storyboard */; };
@@ -119,6 +120,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4706B7F5213FAEC300BAC8EA /* FeedDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailVC.swift; sourceTree = "<group>"; };
 		471A6515213023C50065962D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		472DFECE2135D27B00FC577A /* GameSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectionVC.swift; sourceTree = "<group>"; };
 		472DFED02135D28000FC577A /* GameSelectionVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameSelectionVC.storyboard; sourceTree = "<group>"; };
@@ -264,6 +266,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4706B7F4213FAEB000BAC8EA /* FeedDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				4706B7F5213FAEC300BAC8EA /* FeedDetailVC.swift */,
+			);
+			path = FeedDetailVC;
+			sourceTree = "<group>";
+		};
 		471A6514213023B00065962D /* TabbarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -555,6 +565,7 @@
 		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4706B7F4213FAEB000BAC8EA /* FeedDetailVC */,
 				472DFF0D2139F4C800FC577A /* ProfileVC */,
 				472DFF032138444500FC577A /* MapVC */,
 				472DFECD2135D26600FC577A /* GameSelectionVC */,
@@ -828,6 +839,7 @@
 				D258C0702098F5170090ABB5 /* AppDelegate.swift in Sources */,
 				472DFF64213C13E100FC577A /* Rush.swift in Sources */,
 				472DFEFF2137E6AF00FC577A /* CheckUserRequest.swift in Sources */,
+				4706B7F6213FAEC300BAC8EA /* FeedDetailVC.swift in Sources */,
 				D2075DC1209DE93B00AC79B6 /* RegisterVC.swift in Sources */,
 				D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */,
 				472DFEE82135D4DF00FC577A /* GameListRequest.swift in Sources */,

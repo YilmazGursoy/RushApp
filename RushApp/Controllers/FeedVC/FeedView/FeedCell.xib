@@ -264,25 +264,13 @@
                                     <constraint firstItem="SAr-Ks-KIc" firstAttribute="leading" secondItem="gMj-qV-C1x" secondAttribute="leading" id="sbg-zO-ctF"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXI-NP-vvS">
-                                <rect key="frame" x="0.0" y="0.0" width="355" height="299.5"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="highlighted" backgroundImage="shadowImage"/>
-                                <connections>
-                                    <action selector="feedTapped:" destination="Sqt-qa-R8R" eventType="touchUpInside" id="ie0-6J-L0u"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="lXI-NP-vvS" secondAttribute="bottom" id="99M-fJ-f0t"/>
                             <constraint firstItem="gMj-qV-C1x" firstAttribute="leading" secondItem="b0L-B9-zDS" secondAttribute="leading" id="LBa-jN-Ha5"/>
                             <constraint firstAttribute="trailing" secondItem="gMj-qV-C1x" secondAttribute="trailing" id="MFs-5L-237"/>
                             <constraint firstAttribute="bottom" secondItem="gMj-qV-C1x" secondAttribute="bottom" id="Sml-Gz-fxv"/>
-                            <constraint firstItem="lXI-NP-vvS" firstAttribute="leading" secondItem="b0L-B9-zDS" secondAttribute="leading" id="XiQ-zx-WzR"/>
                             <constraint firstItem="gMj-qV-C1x" firstAttribute="top" secondItem="b0L-B9-zDS" secondAttribute="top" id="aYS-dA-uOq"/>
-                            <constraint firstAttribute="trailing" secondItem="lXI-NP-vvS" secondAttribute="trailing" id="b6L-BB-DNG"/>
-                            <constraint firstItem="lXI-NP-vvS" firstAttribute="top" secondItem="b0L-B9-zDS" secondAttribute="top" id="yy7-UA-uqX"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
