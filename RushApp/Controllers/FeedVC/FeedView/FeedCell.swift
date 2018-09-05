@@ -36,11 +36,11 @@ class FeedCell: UITableViewCell {
         self.numberOfLikeLabel.text = "\(feed.numberOfLike)"
         self.numberOfShareLabel.text = "\(feed.numberOfShare)"
         
-        self.profileImageView.sd_setImage(with: feed.sender.profilePic, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .avoidAutoSetImage, completed: nil)
-        self.feedImageView.sd_setImage(with: feed.picture, placeholderImage: #imageLiteral(resourceName: "placeholderImage"), options: .avoidAutoSetImage, completed: nil)
+        self.profileImageView.sd_setImage(with: feed.sender.profilePic, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .continueInBackground, completed: nil)
+        self.feedImageView.sd_setImage(with: feed.picture, placeholderImage: #imageLiteral(resourceName: "placeholderImage"), options: .continueInBackground, completed: nil)
     }
     @IBAction func feedTapped(_ sender: UIButton) {
         print("Feed")
     }
-    
 }
+

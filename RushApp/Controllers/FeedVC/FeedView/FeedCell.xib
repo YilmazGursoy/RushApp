@@ -264,8 +264,10 @@
                                     <constraint firstItem="SAr-Ks-KIc" firstAttribute="leading" secondItem="gMj-qV-C1x" secondAttribute="leading" id="sbg-zO-ctF"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXI-NP-vvS">
+                            <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXI-NP-vvS">
                                 <rect key="frame" x="0.0" y="0.0" width="355" height="299.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="highlighted" backgroundImage="shadowImage"/>
                                 <connections>
                                     <action selector="feedTapped:" destination="Sqt-qa-R8R" eventType="touchUpInside" id="ie0-6J-L0u"/>
                                 </connections>

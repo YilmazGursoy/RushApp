@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class FeedVC: BaseVC {
     
@@ -37,30 +38,17 @@ class FeedVC: BaseVC {
         
     }
     
-
-    //MARK: IBActions
     
-    
-    @IBAction func isUserLoggedInTapped(_ sender: UIButton) {
-        
-        AWSCredentialManager.shared.isUserLoggedIn { (isLoggedIn) in
-            
-            if isLoggedIn == true {
-                RushLogger.successLog(message: "Already Logged In")
-            } else {
-                RushLogger.errorLog(message: "Not Logged In")
-            }
-        }
-        
-    }
     
     private func sendFeedRequest(){
         let feedRequest = FeedsRequest()
-        
+        SVProgressHUD.show()
         feedRequest.sendFeedRequest { (feeds, error) in
             if feeds != nil {
+                SVProgressHUD.dismiss()
                 self.feedItems = feeds
             } else {
+                SVProgressHUD.dismiss()
                 self.showErrorMessage(message: "There is an error to showing Timeline.")
             }
         }
