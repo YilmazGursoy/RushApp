@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FeedCommentTitleView" customModule="RushApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nul-gs-GB9">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKj-uH-RHQ">
+                            <rect key="frame" x="122" y="14.5" width="130" height="17"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconUp" translatesAutoresizingMaskIntoConstraints="NO" id="RNp-35-e3D">
+                                    <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="17" id="Nrq-PX-Cva"/>
+                                        <constraint firstAttribute="width" constant="17" id="dYd-EP-Zxs"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hide Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9D5-K3-8E1">
+                                    <rect key="frame" x="22" y="0.0" width="103" height="17"/>
+                                    <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="12"/>
+                                    <color key="textColor" red="0.1529411765" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="130" id="3JG-A7-Z2h"/>
+                                <constraint firstAttribute="trailing" secondItem="9D5-K3-8E1" secondAttribute="trailing" constant="5" id="Te3-8h-3mP"/>
+                                <constraint firstAttribute="bottom" secondItem="RNp-35-e3D" secondAttribute="bottom" id="UmZ-yC-NJx"/>
+                                <constraint firstItem="RNp-35-e3D" firstAttribute="top" secondItem="YKj-uH-RHQ" secondAttribute="top" id="WLx-f3-BeZ"/>
+                                <constraint firstItem="9D5-K3-8E1" firstAttribute="leading" secondItem="RNp-35-e3D" secondAttribute="trailing" constant="5" id="hlL-bP-1gi"/>
+                                <constraint firstItem="9D5-K3-8E1" firstAttribute="top" secondItem="YKj-uH-RHQ" secondAttribute="top" id="kzq-px-2PU"/>
+                                <constraint firstAttribute="bottom" secondItem="9D5-K3-8E1" secondAttribute="bottom" id="pr2-0i-Lmy"/>
+                                <constraint firstAttribute="height" constant="17" id="wgh-Pg-fSr"/>
+                                <constraint firstItem="RNp-35-e3D" firstAttribute="leading" secondItem="YKj-uH-RHQ" secondAttribute="leading" id="xWD-dZ-da4"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uz-Ye-qS8">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
+                            <connections>
+                                <action selector="tapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="m22-1n-aHk"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.82352941180000006" green="0.83529411760000005" blue="0.82745098039999998" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="YKj-uH-RHQ" firstAttribute="centerX" secondItem="Nul-gs-GB9" secondAttribute="centerX" id="0YX-ij-JrY"/>
+                        <constraint firstAttribute="height" constant="46" id="594-W6-mrK"/>
+                        <constraint firstAttribute="trailing" secondItem="5uz-Ye-qS8" secondAttribute="trailing" id="5MD-WG-YTf"/>
+                        <constraint firstAttribute="bottom" secondItem="5uz-Ye-qS8" secondAttribute="bottom" id="8gH-Zm-BnN"/>
+                        <constraint firstItem="5uz-Ye-qS8" firstAttribute="top" secondItem="Nul-gs-GB9" secondAttribute="top" id="K2d-tn-UAM"/>
+                        <constraint firstItem="5uz-Ye-qS8" firstAttribute="leading" secondItem="Nul-gs-GB9" secondAttribute="leading" id="Mts-q2-t8G"/>
+                        <constraint firstItem="YKj-uH-RHQ" firstAttribute="centerY" secondItem="Nul-gs-GB9" secondAttribute="centerY" id="O61-2Q-ZQ1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Nul-gs-GB9" secondAttribute="trailing" id="69E-tE-Na5"/>
+                <constraint firstAttribute="bottom" secondItem="Nul-gs-GB9" secondAttribute="bottom" id="6vS-22-6Ut"/>
+                <constraint firstItem="Nul-gs-GB9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="rFR-uo-CKO"/>
+                <constraint firstItem="Nul-gs-GB9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="zEB-f4-VFi"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="commentChangeIcon" destination="RNp-35-e3D" id="bbr-E5-vy9"/>
+                <outlet property="commentsChangeLabel" destination="9D5-K3-8E1" id="Oma-ZH-M4W"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="iconUp" width="12" height="6"/>
+    </resources>
+</document>

@@ -43,8 +43,9 @@ class FeedCell: UITableViewCell {
         self.numberOfLikeLabel.text = "\(feed.numberOfLike)"
         self.numberOfShareLabel.text = "\(feed.numberOfShare)"
         
-        self.profileImageView.sd_setImage(with: feed.sender.profilePic, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .continueInBackground, completed: nil)
-        self.feedImageView.sd_setImage(with: feed.picture, placeholderImage: #imageLiteral(resourceName: "placeholderImage"), options: .continueInBackground, completed: nil)
+        
+        self.profileImageView.sd_setImage(with: feed.sender.profilePic, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .refreshCached, completed: nil)
+        self.feedImageView.sd_setImage(with: feed.picture, placeholderImage: #imageLiteral(resourceName: "placeholderImage"), options: .refreshCached, completed: nil)
         self.didSelectCompletion = selectCompletion
         self.indexPath = indexPath
     }
