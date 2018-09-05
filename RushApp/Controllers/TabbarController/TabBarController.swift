@@ -14,9 +14,12 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         self.delegate = self
         
+        
         let homeVC = FeedVC.createFromStoryboard()
         homeVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "homeIcon"), selectedImage: #imageLiteral(resourceName: "homeIconSelected"))
         homeVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
+        let firstNavigationCOntroller = UINavigationController(rootViewController: homeVC)
+        firstNavigationCOntroller.setNavigationBarHidden(true, animated: false)
         
 //
 //        let searchVC = UIViewController()
@@ -35,7 +38,7 @@ class TabBarController: UITabBarController {
         profileVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "profileIcon"), selectedImage: #imageLiteral(resourceName: "profileIconSelected"))
         profileVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
         
-        viewControllers = [homeVC, playVC, profileVC]
+        viewControllers = [firstNavigationCOntroller, playVC, profileVC]
     }
     
     override func didReceiveMemoryWarning() {

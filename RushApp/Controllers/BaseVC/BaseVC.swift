@@ -33,4 +33,13 @@ class BaseVC: UIViewController {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: testStr)
     }
+    
+    @IBAction func pop(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func dismiss(){
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
 }

@@ -54,9 +54,6 @@ class FeedVC: BaseVC {
             }
         }
     }
-    
-    
-    
 }
 
 extension FeedVC : UITableViewDelegate, UITableViewDataSource {
@@ -67,46 +64,18 @@ extension FeedVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell") as! FeedCell
         cell.arrangeCell(feed: self.feedItems[indexPath.row], indexPath: indexPath) { (view, index) in
-            self.setupAnimatingTransition(transitionView: view, feed: self.feedItems[index], index: index)
+            
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let detail = FeedDetailVC.createFromStoryboard()
+        detail.feed = self.feedItems[indexPath.row]
+        self.navigationController?.pushVCMainThread(detail)
     }
     
 }
-
-//MARK: Did Select Animating Transition Configure
-extension FeedVC {
-    func setupAnimatingTransition(transitionView:UIView, feed:Feed, index:Int) {
-        let cardHeroId = "card\(index)"
-        transitionView.hero.modifiers = [.useNoSnapshot, .spring(stiffness: 250, damping: 25)]
-        transitionView.hero.id = cardHeroId
-        
-        let vc = FeedDetailVC.createFromStoryboard()
-        
-        vc.hero.isEnabled = true
-        vc.hero.modalAnimationType = .none
-        
-        ******code is returning here
-//
-//        vc.cardView.hero.id = cardHeroId
-//        vc.cardView.hero.modifiers = [.useNoSnapshot, .spring(stiffness: 250, damping: 25)]
-//        vc.cardView.imageView.image = UIImage(named: "Unsplash\(data)")
-//
-//        vc.contentCard.hero.modifiers = [.source(heroID: cardHeroId), .spring(stiffness: 250, damping: 25)]
-//
-//        vc.contentView.hero.modifiers = [.useNoSnapshot, .forceAnimate, .spring(stiffness: 250, damping: 25)]
-//
-//        vc.visualEffectView.hero.modifiers = [.fade, .useNoSnapshot]
-//
-//        present(vc, animated: true, completion: nil)
-        
-    }
-}
-
 
 //
 //@IBAction func logoutButtonTapped(_ sender: UIButton) {
