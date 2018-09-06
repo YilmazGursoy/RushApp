@@ -2161,8 +2161,13 @@
     game: {
 		id: '{{objectId()}}',
 		name:'{{lorem(1, "words")}}',
-		picture: 'https://picsum.photos/600/300/?random'
-    }
+		thumbImage: '60 Seconds!-80x107.jpg',
+		normalImage: '60 Seconds!-285x380.jpg'
+    },
+    numberOfNeededUser:'{{integer(0,3)}}',
+    platform:'{{integer(0,3)}}',
+    lobbyHasChat:'{{bool()}}',
+    lobbyStatus:'{{integer(0,2)}}'
   }
 ]
  */
