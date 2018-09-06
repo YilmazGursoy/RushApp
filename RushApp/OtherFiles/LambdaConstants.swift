@@ -17,7 +17,7 @@ struct LambdaConstants {
     static let GetUserId                =   "RushApp-GetUserId"
     static let UserProfilePictureUpdate =   "RushApp-UpdateUserProfilePicture"
     
-    static let GetLobbies               =   "RushApp-GetGameLobbies:2"
+    static let GetLobbies               =   "RushApp-GetGameLobbies"
     static let GetFeeds                 =   "RushApp-GetFeeds"
     
     static let GetGameList              =   "RushApp-GameList"

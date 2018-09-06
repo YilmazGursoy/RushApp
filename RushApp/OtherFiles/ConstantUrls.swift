@@ -11,4 +11,6 @@ import Foundation
 struct ConstantUrls {
     static let profilePictureS3BaseUrl      =   "https://s3.eu-central-1.amazonaws.com/rushappprofilepictures/"
     static let profilePictureName           =   "profilePicture.png"
+    
+    static let rushGameImagesBaseURL        =   "https://s3.eu-central-1.amazonaws.com/rushappgames/GameImages/"
 }

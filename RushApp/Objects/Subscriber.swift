@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Subscriber: Codable {
+struct Subscriber: Decodable {
     let id: Int
     let username: String
     let profilePic: URL

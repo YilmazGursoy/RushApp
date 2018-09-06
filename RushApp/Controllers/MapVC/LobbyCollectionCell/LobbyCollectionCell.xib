@@ -36,13 +36,16 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VnG-sE-Yrw" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
                                         <rect key="frame" x="10" y="10" width="25" height="25"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PLq-ol-Kc6">
-                                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PLq-ol-Kc6">
+                                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="PLq-ol-Kc6" firstAttribute="leading" secondItem="VnG-sE-Yrw" secondAttribute="leading" id="Ewt-Bb-Nhn"/>
+                                            <constraint firstAttribute="trailing" secondItem="PLq-ol-Kc6" secondAttribute="trailing" id="HJu-0K-ZXq"/>
+                                            <constraint firstItem="PLq-ol-Kc6" firstAttribute="top" secondItem="VnG-sE-Yrw" secondAttribute="top" id="HTM-R4-rAh"/>
+                                            <constraint firstAttribute="bottom" secondItem="PLq-ol-Kc6" secondAttribute="bottom" id="I2c-v4-Z68"/>
                                             <constraint firstAttribute="width" constant="25" id="Tzp-BJ-whe"/>
                                             <constraint firstAttribute="height" constant="25" id="x9Y-1M-vDP"/>
                                         </constraints>
@@ -180,8 +183,12 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
+                <outlet property="gameImageView" destination="BMC-fJ-30b" id="28M-nB-VTt"/>
                 <outlet property="gradientView" destination="h9d-Ib-E6f" id="6Ch-at-lbb"/>
-                <outlet property="joinLabel" destination="aDC-CE-f2M" id="Uo6-LK-aJ1"/>
+                <outlet property="joinLabel" destination="aDC-CE-f2M" id="2UP-hB-6Gp"/>
+                <outlet property="numberOfNeededLabel" destination="cMc-Xv-LWS" id="ek9-lW-XcG"/>
+                <outlet property="profileImageView" destination="PLq-ol-Kc6" id="ilS-fg-iwi"/>
+                <outlet property="usernameLabel" destination="ycB-68-8am" id="kbu-ez-dwK"/>
             </connections>
             <point key="canvasLocation" x="2.5" y="54.5"/>
         </collectionViewCell>

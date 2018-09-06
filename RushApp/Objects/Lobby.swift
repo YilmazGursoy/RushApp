@@ -8,7 +8,13 @@
 
 import Foundation
 
-struct Lobby: Codable {
+enum LobbyStatus {
+    case open
+    case gaming
+    case close
+}
+
+struct Lobby: Decodable {
     let id: String
     let isActive: Bool
     let address: String
@@ -16,9 +22,11 @@ struct Lobby: Codable {
     let date: String
     let latitude: Double
     let longitude: Double
-    let messages: [Message]
     let sender: Sender
     let subscribers: [Subscriber]
-    
     let game: Game
+    let platform: Int
+    let lobbyHasChat: Bool
+    let lobbyStatus:Int
+    let numberOfNeededUser:Int
 }

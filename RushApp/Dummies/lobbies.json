@@ -2145,16 +2145,6 @@
     date: '{{date(new Date(2018, 0, 1), new Date(), "YYYY-MM-dd:mm:ss")}}',
     latitude: '{{floating(36.230512 , 41.971875)}}',
     longitude: '{{floating(26.915724, 44.059000)}}',
-    messages: [
-      '{{repeat(integer(1,10))}}',
-      {
-        id: '{{objectId()}}',
-        name: '{{firstName()}} {{surname()}}',
-        message: '{{lorem(integer(1,40), "words")}}',
-        date: '{{date(new Date(2018, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
-		profilePic:'https://picsum.photos/400/?random'
-      }
-    ],
     sender: {
         id: '{{index()}}',
         username: '{{firstName()}} {{surname()}}',

@@ -82,6 +82,7 @@
 		47E2C698214075C900AAD648 /* FeedCommentTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C697214075C900AAD648 /* FeedCommentTitleView.xib */; };
 		47E2C69B2140767900AAD648 /* FeedCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C6992140767900AAD648 /* FeedCommentCell.swift */; };
 		47E2C69C2140767900AAD648 /* FeedCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C69A2140767900AAD648 /* FeedCommentCell.xib */; };
+		47E2C6F52141AAC200AAD648 /* LobbyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C6F42141AAC200AAD648 /* LobbyRequest.swift */; };
 		D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA2209B858600AC79B6 /* LoginType.swift */; };
 		D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA4209B85D000AC79B6 /* LambdaConstants.swift */; };
 		D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA6209B85D800AC79B6 /* AppConstants.swift */; };
@@ -206,6 +207,7 @@
 		47E2C697214075C900AAD648 /* FeedCommentTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCommentTitleView.xib; sourceTree = "<group>"; };
 		47E2C6992140767900AAD648 /* FeedCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCommentCell.swift; sourceTree = "<group>"; };
 		47E2C69A2140767900AAD648 /* FeedCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCommentCell.xib; sourceTree = "<group>"; };
+		47E2C6F42141AAC200AAD648 /* LobbyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyRequest.swift; sourceTree = "<group>"; };
 		70DD2601FD90336EF49D93DE /* Pods-RushApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C6990D855C60E2F2734172F0 /* Pods-RushApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.release.xcconfig"; sourceTree = "<group>"; };
 		D2075DA2209B858600AC79B6 /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
@@ -617,6 +619,7 @@
 				472DFF55213B2FA100FC577A /* ChangeProfilePictureRequest.swift */,
 				472DFF59213B413A00FC577A /* GetUserIdRequest.swift */,
 				47C3C05D213E5FFB00A74171 /* FeedsRequest.swift */,
+				47E2C6F42141AAC200AAD648 /* LobbyRequest.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -893,6 +896,7 @@
 				472DFF62213C135000FC577A /* User.swift in Sources */,
 				47C3C068213E625D00A74171 /* Message.swift in Sources */,
 				D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */,
+				47E2C6F52141AAC200AAD648 /* LobbyRequest.swift in Sources */,
 				D2075DA9209B866500AC79B6 /* CacheManager.swift in Sources */,
 				D2D9108A209F7F5D0054F3AA /* FacebookLoginManager.swift in Sources */,
 				47C3C066213E624C00A74171 /* Sender.swift in Sources */,
