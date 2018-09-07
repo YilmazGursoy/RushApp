@@ -72,8 +72,11 @@ import UIKit
     
     override func layoutSubviews() {
         self.gradientLayer = self.layer as! CAGradientLayer
-        self.gradientLayer.colors = [topColor.cgColor, bottomColor.cgColor]
         
+        self.gradientLayer.startPoint = CGPoint(x:0.0, y:0.5);
+        self.gradientLayer.endPoint = CGPoint(x:1.0, y:0.5);
+        
+        self.gradientLayer.colors = [topColor.cgColor, bottomColor.cgColor]
         if cornerRadius == -1 {
             self.layer.cornerRadius = self.frame.height / 2
         } else {

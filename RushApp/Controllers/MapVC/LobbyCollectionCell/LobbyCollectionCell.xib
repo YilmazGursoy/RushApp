@@ -93,14 +93,24 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvw-2k-F4v">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="27"/>
+                                                <connections>
+                                                    <action selector="joinTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="gJQ-6S-AWo"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="Wvw-2k-F4v" firstAttribute="top" secondItem="h9d-Ib-E6f" secondAttribute="top" id="BqK-Kd-BlR"/>
                                             <constraint firstAttribute="bottom" secondItem="aDC-CE-f2M" secondAttribute="bottom" id="GTb-oS-Qm3"/>
                                             <constraint firstItem="aDC-CE-f2M" firstAttribute="top" secondItem="h9d-Ib-E6f" secondAttribute="top" id="Gh2-s8-Ybr"/>
+                                            <constraint firstAttribute="bottom" secondItem="Wvw-2k-F4v" secondAttribute="bottom" id="Kes-cm-mUS"/>
                                             <constraint firstAttribute="height" constant="27" id="a5m-h0-c03"/>
                                             <constraint firstAttribute="trailing" secondItem="aDC-CE-f2M" secondAttribute="trailing" id="cQQ-mR-fKl"/>
                                             <constraint firstAttribute="width" constant="70" id="dCU-PT-T2x"/>
+                                            <constraint firstItem="Wvw-2k-F4v" firstAttribute="leading" secondItem="h9d-Ib-E6f" secondAttribute="leading" id="h7s-6V-djH"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wvw-2k-F4v" secondAttribute="trailing" id="saU-l4-S5m"/>
                                             <constraint firstItem="aDC-CE-f2M" firstAttribute="leading" secondItem="h9d-Ib-E6f" secondAttribute="leading" id="vSr-cC-0v4"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>

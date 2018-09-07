@@ -81,13 +81,16 @@ extension MapVC : UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LobbyCollectionCell", for: indexPath) as! LobbyCollectionCell
-        cell.arrangeCell(lobby: self.lobbies[indexPath.row])
+        cell.arrangeCell(lobby: self.lobbies[indexPath.row]) { () in
+            print(indexPath.row)
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         DispatchQueue.main.async {
             self.selectingIndex = indexPath.row
+            self.mapView.delegate = self
             self.mapView.setCenter(CLLocationCoordinate2D.init(latitude: self.lobbies[indexPath.row].latitude, longitude: self.lobbies[indexPath.row].longitude), animated: true)
         }
     }
@@ -106,7 +109,6 @@ extension MapVC : MKMapViewDelegate{
             let anno = MKPointAnnotation();
             anno.coordinate = CLLCoordType;
             mapView.addAnnotation(anno);
-            
         }
     }
     

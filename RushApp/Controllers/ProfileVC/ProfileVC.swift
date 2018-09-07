@@ -51,6 +51,10 @@ class ProfileVC: BaseVC {
         
     }
     
+    @IBAction func settingsTapped(_ sender: Any) {
+        let vc = FriendSelectionVC.createFromStoryboard()
+        self.present(vc, animated: false, completion: nil)
+    }
     
     @IBAction func profilePictureChangeTapped(_ sender: UIButton) {
         let alert = PMAlertController.init(title: "Hey!", description: "Do you want to change Profile Picture?", image: nil, style: .alert)

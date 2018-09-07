@@ -83,6 +83,12 @@
 		47E2C69B2140767900AAD648 /* FeedCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C6992140767900AAD648 /* FeedCommentCell.swift */; };
 		47E2C69C2140767900AAD648 /* FeedCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C69A2140767900AAD648 /* FeedCommentCell.xib */; };
 		47E2C6F52141AAC200AAD648 /* LobbyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C6F42141AAC200AAD648 /* LobbyRequest.swift */; };
+		47E2C6F821427DF000AAD648 /* LobbyDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C6F721427DF000AAD648 /* LobbyDetailVC.swift */; };
+		47E2C6FA21427DF700AAD648 /* LobbyDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C6F921427DF700AAD648 /* LobbyDetailVC.storyboard */; };
+		47E2C6FD2142832300AAD648 /* FriendSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C6FC2142832300AAD648 /* FriendSelectionVC.swift */; };
+		47E2C6FF2142832800AAD648 /* FriendSelectionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C6FE2142832800AAD648 /* FriendSelectionVC.storyboard */; };
+		47E2C7092143211E00AAD648 /* FriendSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C7072143211E00AAD648 /* FriendSelectionCell.swift */; };
+		47E2C70A2143211E00AAD648 /* FriendSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C7082143211E00AAD648 /* FriendSelectionCell.xib */; };
 		D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA2209B858600AC79B6 /* LoginType.swift */; };
 		D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA4209B85D000AC79B6 /* LambdaConstants.swift */; };
 		D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA6209B85D800AC79B6 /* AppConstants.swift */; };
@@ -208,6 +214,12 @@
 		47E2C6992140767900AAD648 /* FeedCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCommentCell.swift; sourceTree = "<group>"; };
 		47E2C69A2140767900AAD648 /* FeedCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCommentCell.xib; sourceTree = "<group>"; };
 		47E2C6F42141AAC200AAD648 /* LobbyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyRequest.swift; sourceTree = "<group>"; };
+		47E2C6F721427DF000AAD648 /* LobbyDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyDetailVC.swift; sourceTree = "<group>"; };
+		47E2C6F921427DF700AAD648 /* LobbyDetailVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LobbyDetailVC.storyboard; sourceTree = "<group>"; };
+		47E2C6FC2142832300AAD648 /* FriendSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendSelectionVC.swift; sourceTree = "<group>"; };
+		47E2C6FE2142832800AAD648 /* FriendSelectionVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FriendSelectionVC.storyboard; sourceTree = "<group>"; };
+		47E2C7072143211E00AAD648 /* FriendSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendSelectionCell.swift; sourceTree = "<group>"; };
+		47E2C7082143211E00AAD648 /* FriendSelectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendSelectionCell.xib; sourceTree = "<group>"; };
 		70DD2601FD90336EF49D93DE /* Pods-RushApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C6990D855C60E2F2734172F0 /* Pods-RushApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.release.xcconfig"; sourceTree = "<group>"; };
 		D2075DA2209B858600AC79B6 /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
@@ -458,6 +470,34 @@
 			path = FeedCommentTitleView;
 			sourceTree = "<group>";
 		};
+		47E2C6F621427D5600AAD648 /* LobbyDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				47E2C6F721427DF000AAD648 /* LobbyDetailVC.swift */,
+				47E2C6F921427DF700AAD648 /* LobbyDetailVC.storyboard */,
+			);
+			path = LobbyDetailVC;
+			sourceTree = "<group>";
+		};
+		47E2C6FB2142831800AAD648 /* FriendSelectionVC */ = {
+			isa = PBXGroup;
+			children = (
+				47E2C7002142833900AAD648 /* FriendSelectionCell */,
+				47E2C6FC2142832300AAD648 /* FriendSelectionVC.swift */,
+				47E2C6FE2142832800AAD648 /* FriendSelectionVC.storyboard */,
+			);
+			path = FriendSelectionVC;
+			sourceTree = "<group>";
+		};
+		47E2C7002142833900AAD648 /* FriendSelectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				47E2C7072143211E00AAD648 /* FriendSelectionCell.swift */,
+				47E2C7082143211E00AAD648 /* FriendSelectionCell.xib */,
+			);
+			path = FriendSelectionCell;
+			sourceTree = "<group>";
+		};
 		5397A71A012AE15C477D433D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -627,6 +667,8 @@
 		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				47E2C6FB2142831800AAD648 /* FriendSelectionVC */,
+				47E2C6F621427D5600AAD648 /* LobbyDetailVC */,
 				4706B7F4213FAEB000BAC8EA /* FeedDetailVC */,
 				472DFF0D2139F4C800FC577A /* ProfileVC */,
 				472DFF032138444500FC577A /* MapVC */,
@@ -784,6 +826,7 @@
 				472DFF0C213849F400FC577A /* LobbyCollectionCell.xib in Resources */,
 				472DFF072138445A00FC577A /* MapVC.storyboard in Resources */,
 				D2075DC3209DE94300AC79B6 /* RegisterVC.storyboard in Resources */,
+				47E2C6FA21427DF700AAD648 /* LobbyDetailVC.storyboard in Resources */,
 				47C3C058213E4EAF00A74171 /* feed.json in Resources */,
 				47E2C6932140747300AAD648 /* FeedDetailCell.xib in Resources */,
 				47E2C698214075C900AAD648 /* FeedCommentTitleView.xib in Resources */,
@@ -801,8 +844,10 @@
 				47C3C05A213E4ECC00A74171 /* lobbies.json in Resources */,
 				47E2C68F2140741700AAD648 /* FeedTitleCell.xib in Resources */,
 				D2075DB2209CD9D300AC79B6 /* FeedVC.storyboard in Resources */,
+				47E2C70A2143211E00AAD648 /* FriendSelectionCell.xib in Resources */,
 				D2AF692F20A237C200AC40E9 /* ForgotPasswordVC.storyboard in Resources */,
 				472DFEF22135DEBD00FC577A /* GameSelectionCell.xib in Resources */,
+				47E2C6FF2142832800AAD648 /* FriendSelectionVC.storyboard in Resources */,
 				472DFED12135D28000FC577A /* GameSelectionVC.storyboard in Resources */,
 				D258C034209645EE0090ABB5 /* Main.storyboard in Resources */,
 				D2075DDB209E449000AC79B6 /* ConfirmEmailVC.storyboard in Resources */,
@@ -903,6 +948,7 @@
 				472DFEF12135DEBD00FC577A /* GameSelectionCell.swift in Sources */,
 				472DFF5A213B413A00FC577A /* GetUserIdRequest.swift in Sources */,
 				D2075DB0209CD9CC00AC79B6 /* FeedVC.swift in Sources */,
+				47E2C7092143211E00AAD648 /* FriendSelectionCell.swift in Sources */,
 				D2075DC8209DEF2E00AC79B6 /* LoginVC.swift in Sources */,
 				D258C0702098F5170090ABB5 /* AppDelegate.swift in Sources */,
 				47E2C69B2140767900AAD648 /* FeedCommentCell.swift in Sources */,
@@ -919,6 +965,7 @@
 				472DFF66213C7A9D00FC577A /* ImageDownloaderManager.swift in Sources */,
 				D2075DDF209F0CC900AC79B6 /* Extension+UIViewController.swift in Sources */,
 				D258C076209904790090ABB5 /* SplashVC.swift in Sources */,
+				47E2C6F821427DF000AAD648 /* LobbyDetailVC.swift in Sources */,
 				472DFF72213DC85300FC577A /* FeedCell.swift in Sources */,
 				472DFEFB213743E100FC577A /* UserCreateRequest.swift in Sources */,
 				47E2C696214075C000AAD648 /* FeedCommentTitleView.swift in Sources */,
@@ -938,6 +985,7 @@
 				D2075DCC209DF34900AC79B6 /* AWSLoginManager.swift in Sources */,
 				D2075DDD209F091C00AC79B6 /* RushLogger.swift in Sources */,
 				47C3C060213E604800A74171 /* Feed.swift in Sources */,
+				47E2C6FD2142832300AAD648 /* FriendSelectionVC.swift in Sources */,
 				D2075DB6209CE3C200AC79B6 /* BaseRequest.swift in Sources */,
 				47C3C0AB213F0D1900A74171 /* DefaultResponse.swift in Sources */,
 				47C0B081211EDD9900469883 /* GradientView.swift in Sources */,
