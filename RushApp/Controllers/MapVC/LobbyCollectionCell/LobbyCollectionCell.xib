@@ -20,13 +20,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LobbyCollectionCell" id="gTV-IL-0wX" customClass="LobbyCollectionCell" customModule="RushApp" customModuleProvider="target">
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LobbyCollectionCell" id="gTV-IL-0wX" customClass="LobbyCollectionCell" customModule="RushApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="155" height="183"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="155" height="183"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadowImage" translatesAutoresizingMaskIntoConstraints="NO" id="fLb-Z6-ZG9">
+                        <rect key="frame" x="2" y="2" width="151" height="179"/>
+                    </imageView>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qw-YF-OfD" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
                         <rect key="frame" x="2" y="2" width="151" height="179"/>
                         <subviews>
@@ -58,7 +61,6 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Isabella Stevens" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycB-68-8am">
                                         <rect key="frame" x="45" y="15.5" width="96" height="15"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="11"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -81,16 +83,15 @@
                                             <constraint firstAttribute="height" constant="15" id="zFW-bN-FO7"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="10"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9d-Ib-E6f" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
                                         <rect key="frame" x="40.5" y="28" width="70" height="27"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDC-CE-f2M">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDC-CE-f2M">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="27"/>
                                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvw-2k-F4v">
@@ -116,6 +117,12 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="-1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                                <color key="value" red="0.46666666670000001" green="0.35294117650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                                <color key="value" red="0.81176470590000005" green="0.55294117649999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -159,12 +166,6 @@
                             <constraint firstAttribute="trailing" secondItem="Fh6-Os-wz4" secondAttribute="trailing" id="ziY-Iu-hGQ"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
-                                <color key="value" red="0.46666666670000001" green="0.35294117650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
-                                <color key="value" red="0.81176470590000005" green="0.55294117649999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="9"/>
                             </userDefinedRuntimeAttribute>
@@ -186,6 +187,10 @@
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="fLb-Z6-ZG9" secondAttribute="bottom" constant="2" id="8Ed-mz-OC9"/>
+                <constraint firstItem="fLb-Z6-ZG9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="GKB-yY-6av"/>
+                <constraint firstAttribute="trailing" secondItem="fLb-Z6-ZG9" secondAttribute="trailing" constant="2" id="OCV-Yl-LzX"/>
+                <constraint firstItem="fLb-Z6-ZG9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="Pck-c4-pqC"/>
                 <constraint firstItem="8qw-YF-OfD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="VXa-vo-C7X"/>
                 <constraint firstAttribute="bottom" secondItem="8qw-YF-OfD" secondAttribute="bottom" constant="2" id="jg1-PJ-CuK"/>
                 <constraint firstItem="8qw-YF-OfD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="pkP-s7-o4C"/>
@@ -193,8 +198,10 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
+                <outlet property="cellBackGradientView" destination="8qw-YF-OfD" id="WwD-24-NAc"/>
                 <outlet property="gameImageView" destination="BMC-fJ-30b" id="28M-nB-VTt"/>
                 <outlet property="gradientView" destination="h9d-Ib-E6f" id="6Ch-at-lbb"/>
+                <outlet property="joinButton" destination="Wvw-2k-F4v" id="8Iu-zi-zUB"/>
                 <outlet property="joinLabel" destination="aDC-CE-f2M" id="2UP-hB-6Gp"/>
                 <outlet property="numberOfNeededLabel" destination="cMc-Xv-LWS" id="ek9-lW-XcG"/>
                 <outlet property="profileImageView" destination="PLq-ol-Kc6" id="ilS-fg-iwi"/>
@@ -204,6 +211,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="shadowImage" width="399" height="344"/>
         <image name="test_icon" width="285" height="380"/>
     </resources>
 </document>

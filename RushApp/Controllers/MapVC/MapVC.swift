@@ -37,7 +37,7 @@ class MapVC: BaseVC {
     
     private func setupUI(){
         mapView.showsCompass = false
-        mapView.camera.altitude *= 0.25
+//        mapView.camera.altitude *= 0.25
         mapView.delegate = self
         collectionView.register(UINib.init(nibName: "LobbyCollectionCell", bundle: .main), forCellWithReuseIdentifier: "LobbyCollectionCell")
     }
@@ -56,7 +56,7 @@ class MapVC: BaseVC {
                 self.showErrorMessage(message: "There is an error to fetching lobbies.")
             } else {
                 var locations:[CLLocation] = []
-                
+
                 lobbies?.forEach({ (lobby) in
                     locations.append(CLLocation(latitude: lobby.latitude, longitude: lobby.longitude))
                 })
@@ -72,8 +72,21 @@ class MapVC: BaseVC {
     //MARK: Actions
     @IBAction func filterButtonTapped(_ sender: UIButton) {
     }
+    
+    override func viewDidLayoutSubviews() {
+        self.collectionView.contentInset = UIEdgeInsets.init(top: 0, left: 25, bottom: 0, right: 25)
+    }
+    
+    func centerMapOnLocation(_ location: CLLocation, mapView: MKMapView) {
+        let regionRadius: CLLocationDistance = 100000
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+                                                                  regionRadius * 1.4, regionRadius * 1.4)
+        mapView.setRegion(coordinateRegion, animated: true)
+        mapView.reloadInputViews()
+    }
 }
 
+//MARK: CollectionViewDelegate
 extension MapVC : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.lobbies.count
@@ -82,7 +95,7 @@ extension MapVC : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LobbyCollectionCell", for: indexPath) as! LobbyCollectionCell
         cell.arrangeCell(lobby: self.lobbies[indexPath.row]) { () in
-            print(indexPath.row)
+            
         }
         return cell
     }
@@ -90,14 +103,8 @@ extension MapVC : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         DispatchQueue.main.async {
             self.selectingIndex = indexPath.row
-            self.mapView.delegate = self
             self.mapView.selectAnnotation(self.mapView.annotations[indexPath.row], animated: true)
-            self.mapView.setCenter(CLLocationCoordinate2D.init(latitude: self.lobbies[indexPath.row].latitude, longitude: self.lobbies[indexPath.row].longitude), animated: true)
         }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        self.collectionView.contentInset = UIEdgeInsets.init(top: 0, left: 25, bottom: 0, right: 25)
     }
 }
 
@@ -115,17 +122,18 @@ extension MapVC : MKMapViewDelegate{
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let view = MKAnnotationView.init(annotation: annotation, reuseIdentifier: "")
-        
-        if selectingIndex != nil {
-            if annotation.isEqual(self.mapView.annotations[selectingIndex]) {
-                view.image = #imageLiteral(resourceName: "annotationImageOn")
-            } else {
-                view.image = #imageLiteral(resourceName: "annotationImageOff")
-            }
-        } else {
-            view.image = #imageLiteral(resourceName: "annotationImageOff")
-        }
+        view.image = #imageLiteral(resourceName: "annotationImageOff")
+        view.isUserInteractionEnabled = false
         return view
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        self.centerMapOnLocation(CLLocation(latitude: view.annotation!.coordinate.latitude, longitude: view.annotation!.coordinate.longitude), mapView: self.mapView)
+        view.image = #imageLiteral(resourceName: "annotationImageOn")
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        view.image = #imageLiteral(resourceName: "annotationImageOff")
     }
 }
 
