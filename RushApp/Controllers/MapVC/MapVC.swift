@@ -91,6 +91,7 @@ extension MapVC : UICollectionViewDelegate, UICollectionViewDataSource {
         DispatchQueue.main.async {
             self.selectingIndex = indexPath.row
             self.mapView.delegate = self
+            self.mapView.selectAnnotation(self.mapView.annotations[indexPath.row], animated: true)
             self.mapView.setCenter(CLLocationCoordinate2D.init(latitude: self.lobbies[indexPath.row].latitude, longitude: self.lobbies[indexPath.row].longitude), animated: true)
         }
     }

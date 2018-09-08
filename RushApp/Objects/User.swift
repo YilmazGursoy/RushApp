@@ -20,5 +20,4 @@ struct User : Decodable {
         case gameList = "selectingGameIDs"
         case profilePicture = "profilePicture"
     }
-    
 }
