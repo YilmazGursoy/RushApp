@@ -58,7 +58,6 @@ class LobbyCollectionCell: UICollectionViewCell {
         self.cellBackGradientView.topColor = #colorLiteral(red: 0.4666666667, green: 0.3529411765, blue: 1, alpha: 1)
         self.cellBackGradientView.bottomColor = #colorLiteral(red: 0.8117647059, green: 0.5529411765, blue: 1, alpha: 1)
         self.cellBackGradientView.backgroundColor = .clear
-        self.cellBackGradientView.borderWidth = 0.0
         self.gradientView.topColor = .clear
         self.gradientView.bottomColor = .clear
         self.gradientView.backgroundColor = .white
@@ -72,7 +71,6 @@ class LobbyCollectionCell: UICollectionViewCell {
         self.cellBackGradientView.bottomColor = .clear
         self.cellBackGradientView.backgroundColor = .white
         self.cellBackGradientView.borderColor = #colorLiteral(red: 0.7294117647, green: 0.7294117647, blue: 0.7294117647, alpha: 1)
-        self.cellBackGradientView.borderWidth = 1.0
         self.gradientView.topColor = #colorLiteral(red: 0.4666666667, green: 0.3529411765, blue: 1, alpha: 1)
         self.gradientView.bottomColor = #colorLiteral(red: 0.8117647059, green: 0.5529411765, blue: 1, alpha: 1)
         self.joinLabel.textColor = .white

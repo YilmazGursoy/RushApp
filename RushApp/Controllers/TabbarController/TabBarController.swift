@@ -26,7 +26,7 @@ class TabBarController: UITabBarController {
 //        searchVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "searchIcon"), selectedImage: #imageLiteral(resourceName: "searchIcon"))
 //        searchVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
         
-        let playVC = MapVC.createFromStoryboard()
+        let playVC = LobbyMainVC.createFromStoryboard()
         playVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "playIcon"), selectedImage: #imageLiteral(resourceName: "playIconSelected"))
         playVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
         

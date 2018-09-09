@@ -93,6 +93,13 @@
 		47E2C7522145851E00AAD648 /* FeedDetailFlexView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C7512145851E00AAD648 /* FeedDetailFlexView.xib */; };
 		47E2C75621458ECD00AAD648 /* FeedCommentTitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C75421458ECD00AAD648 /* FeedCommentTitleViewCell.swift */; };
 		47E2C75721458ECD00AAD648 /* FeedCommentTitleViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C75521458ECD00AAD648 /* FeedCommentTitleViewCell.xib */; };
+		47E2C75A2145BC4D00AAD648 /* LobbyMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C7592145BC4D00AAD648 /* LobbyMainVC.swift */; };
+		47E2C75C2145BF4B00AAD648 /* LobbyMainVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C75B2145BF4B00AAD648 /* LobbyMainVC.storyboard */; };
+		47E2C75F2145C1F100AAD648 /* LobbyListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C75E2145C1F100AAD648 /* LobbyListVC.swift */; };
+		47E2C7612145C1F600AAD648 /* LobbyListVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C7602145C1F600AAD648 /* LobbyListVC.storyboard */; };
+		47E2C7642145C24000AAD648 /* LobbyMainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C7632145C24000AAD648 /* LobbyMainPageController.swift */; };
+		47E2C7682145C65F00AAD648 /* LobbyListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C7662145C65F00AAD648 /* LobbyListCell.swift */; };
+		47E2C7692145C65F00AAD648 /* LobbyListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C7672145C65F00AAD648 /* LobbyListCell.xib */; };
 		D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA2209B858600AC79B6 /* LoginType.swift */; };
 		D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA4209B85D000AC79B6 /* LambdaConstants.swift */; };
 		D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA6209B85D800AC79B6 /* AppConstants.swift */; };
@@ -228,6 +235,13 @@
 		47E2C7512145851E00AAD648 /* FeedDetailFlexView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedDetailFlexView.xib; sourceTree = "<group>"; };
 		47E2C75421458ECD00AAD648 /* FeedCommentTitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCommentTitleViewCell.swift; sourceTree = "<group>"; };
 		47E2C75521458ECD00AAD648 /* FeedCommentTitleViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCommentTitleViewCell.xib; sourceTree = "<group>"; };
+		47E2C7592145BC4D00AAD648 /* LobbyMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyMainVC.swift; sourceTree = "<group>"; };
+		47E2C75B2145BF4B00AAD648 /* LobbyMainVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LobbyMainVC.storyboard; sourceTree = "<group>"; };
+		47E2C75E2145C1F100AAD648 /* LobbyListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyListVC.swift; sourceTree = "<group>"; };
+		47E2C7602145C1F600AAD648 /* LobbyListVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LobbyListVC.storyboard; sourceTree = "<group>"; };
+		47E2C7632145C24000AAD648 /* LobbyMainPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyMainPageController.swift; sourceTree = "<group>"; };
+		47E2C7662145C65F00AAD648 /* LobbyListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyListCell.swift; sourceTree = "<group>"; };
+		47E2C7672145C65F00AAD648 /* LobbyListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LobbyListCell.xib; sourceTree = "<group>"; };
 		70DD2601FD90336EF49D93DE /* Pods-RushApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C6990D855C60E2F2734172F0 /* Pods-RushApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.release.xcconfig"; sourceTree = "<group>"; };
 		D2075DA2209B858600AC79B6 /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
@@ -526,6 +540,43 @@
 			path = FeedCommentTitleViewCell;
 			sourceTree = "<group>";
 		};
+		47E2C7582145BC4100AAD648 /* LobbyMainVC */ = {
+			isa = PBXGroup;
+			children = (
+				47E2C7622145C23000AAD648 /* LobbyMainPageController */,
+				47E2C7592145BC4D00AAD648 /* LobbyMainVC.swift */,
+				47E2C75B2145BF4B00AAD648 /* LobbyMainVC.storyboard */,
+			);
+			path = LobbyMainVC;
+			sourceTree = "<group>";
+		};
+		47E2C75D2145C1EA00AAD648 /* LobbyListVC */ = {
+			isa = PBXGroup;
+			children = (
+				47E2C7652145C64F00AAD648 /* LobbyListCell */,
+				47E2C75E2145C1F100AAD648 /* LobbyListVC.swift */,
+				47E2C7602145C1F600AAD648 /* LobbyListVC.storyboard */,
+			);
+			path = LobbyListVC;
+			sourceTree = "<group>";
+		};
+		47E2C7622145C23000AAD648 /* LobbyMainPageController */ = {
+			isa = PBXGroup;
+			children = (
+				47E2C7632145C24000AAD648 /* LobbyMainPageController.swift */,
+			);
+			path = LobbyMainPageController;
+			sourceTree = "<group>";
+		};
+		47E2C7652145C64F00AAD648 /* LobbyListCell */ = {
+			isa = PBXGroup;
+			children = (
+				47E2C7662145C65F00AAD648 /* LobbyListCell.swift */,
+				47E2C7672145C65F00AAD648 /* LobbyListCell.xib */,
+			);
+			path = LobbyListCell;
+			sourceTree = "<group>";
+		};
 		5397A71A012AE15C477D433D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -695,6 +746,8 @@
 		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				47E2C75D2145C1EA00AAD648 /* LobbyListVC */,
+				47E2C7582145BC4100AAD648 /* LobbyMainVC */,
 				47E2C6FB2142831800AAD648 /* FriendSelectionVC */,
 				47E2C6F621427D5600AAD648 /* LobbyDetailVC */,
 				4706B7F4213FAEB000BAC8EA /* FeedDetailVC */,
@@ -844,6 +897,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47E2C7692145C65F00AAD648 /* LobbyListCell.xib in Resources */,
 				472DFEE32135D3C900FC577A /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				47E2C75721458ECD00AAD648 /* FeedCommentTitleViewCell.xib in Resources */,
 				47E2C69C2140767900AAD648 /* FeedCommentCell.xib in Resources */,
@@ -867,12 +921,14 @@
 				472DFF112139F4DB00FC577A /* ProfileVC.storyboard in Resources */,
 				D258C07B209906250090ABB5 /* OnboardingVC.storyboard in Resources */,
 				472DFEE52135D3C900FC577A /* OpenSans-Regular.ttf in Resources */,
+				47E2C7612145C1F600AAD648 /* LobbyListVC.storyboard in Resources */,
 				4706B7F8213FBB7E00BAC8EA /* FeedDetailVC.storyboard in Resources */,
 				D2075DCA209DEF4600AC79B6 /* LoginVC.storyboard in Resources */,
 				47E2C7522145851E00AAD648 /* FeedDetailFlexView.xib in Resources */,
 				472DFEE42135D3C900FC577A /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				47C3C05A213E4ECC00A74171 /* lobbies.json in Resources */,
 				47E2C68F2140741700AAD648 /* FeedTitleCell.xib in Resources */,
+				47E2C75C2145BF4B00AAD648 /* LobbyMainVC.storyboard in Resources */,
 				D2075DB2209CD9D300AC79B6 /* FeedVC.storyboard in Resources */,
 				47E2C70A2143211E00AAD648 /* FriendSelectionCell.xib in Resources */,
 				D2AF692F20A237C200AC40E9 /* ForgotPasswordVC.storyboard in Resources */,
@@ -925,6 +981,7 @@
 				"${BUILT_PRODUCTS_DIR}/AWSUserPoolsSignIn/AWSUserPoolsSignIn.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/CRRefresh/CRRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/DeckTransition/DeckTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
@@ -949,6 +1006,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSUserPoolsSignIn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CRRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeckTransition.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
@@ -993,12 +1051,14 @@
 				D2075DC1209DE93B00AC79B6 /* RegisterVC.swift in Sources */,
 				D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */,
 				472DFEE82135D4DF00FC577A /* GameListRequest.swift in Sources */,
+				47E2C75F2145C1F100AAD648 /* LobbyListVC.swift in Sources */,
 				D2D9108D20A070B40054F3AA /* BaseNavigationController.swift in Sources */,
 				D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */,
 				472DFF58213B3F3E00FC577A /* ConstantUrls.swift in Sources */,
 				472DFF5C213BDD0700FC577A /* Extension+UIImage.swift in Sources */,
 				472DFF66213C7A9D00FC577A /* ImageDownloaderManager.swift in Sources */,
 				D2075DDF209F0CC900AC79B6 /* Extension+UIViewController.swift in Sources */,
+				47E2C75A2145BC4D00AAD648 /* LobbyMainVC.swift in Sources */,
 				D258C076209904790090ABB5 /* SplashVC.swift in Sources */,
 				47E2C6F821427DF000AAD648 /* LobbyDetailVC.swift in Sources */,
 				472DFF72213DC85300FC577A /* FeedCell.swift in Sources */,
@@ -1008,6 +1068,7 @@
 				47C3C064213E623800A74171 /* Subscriber.swift in Sources */,
 				D2075DBC209DDE8900AC79B6 /* CognitoConstants.swift in Sources */,
 				D2AF692D20A237A500AC40E9 /* ForgotPasswordVC.swift in Sources */,
+				47E2C7682145C65F00AAD648 /* LobbyListCell.swift in Sources */,
 				47E2C70E21446D9800AAD648 /* MessageCell.swift in Sources */,
 				D258C0792099061C0090ABB5 /* OnboardingVC.swift in Sources */,
 				D2075DCE209E3CA400AC79B6 /* RegisterRequest.swift in Sources */,
@@ -1045,6 +1106,7 @@
 				D258C074209904690090ABB5 /* BaseVC.swift in Sources */,
 				D2075DC5209DEA2000AC79B6 /* Extension+UIButton.swift in Sources */,
 				472DFF14213ACB9A00FC577A /* AchivementView.swift in Sources */,
+				47E2C7642145C24000AAD648 /* LobbyMainPageController.swift in Sources */,
 				D2075DD0209E3CC600AC79B6 /* LoginRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

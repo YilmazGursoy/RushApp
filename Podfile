@@ -33,4 +33,5 @@ target 'RushApp' do
     pod 'SDWebImage', '~> 4.0'
     pod 'GSKStretchyHeaderView'
     pod 'CRRefresh'
+    pod 'DeckTransition', '~> 2.0'
 end

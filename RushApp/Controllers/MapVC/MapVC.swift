@@ -11,10 +11,8 @@ import MapKit
 import SVProgressHUD
 
 class MapVC: BaseVC {
-    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var titleLabel: UILabel!
     
     var selectingIndex:Int!
     
@@ -32,12 +30,15 @@ class MapVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getLobbyRequest()
     }
     
     private func setupUI(){
         mapView.showsCompass = false
-//        mapView.camera.altitude *= 0.25
         mapView.delegate = self
         collectionView.register(UINib.init(nibName: "LobbyCollectionCell", bundle: .main), forCellWithReuseIdentifier: "LobbyCollectionCell")
     }

@@ -25,6 +25,7 @@ PODS:
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
   - CRRefresh (1.0.9)
+  - DeckTransition (2.0.0)
   - FacebookCore (0.3.2):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.35)
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - AWSS3
   - AWSUserPoolsSignIn (~> 2.6.13)
   - CRRefresh
+  - DeckTransition (~> 2.0)
   - FacebookLogin
   - Fusuma
   - GSKStretchyHeaderView
@@ -75,6 +77,7 @@ SPEC REPOS:
     - AWSUserPoolsSignIn
     - Bolts
     - CRRefresh
+    - DeckTransition
     - FacebookCore
     - FacebookLogin
     - FBSDKCoreKit
@@ -98,6 +101,7 @@ SPEC CHECKSUMS:
   AWSUserPoolsSignIn: dfc849bcd5f965248ec8bb11c37e640bede7e377
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   CRRefresh: b1c53f32bcb3edef8d60ef414a329b06dc6af34f
+  DeckTransition: 2300694f94fbeca2c103f365dc9dc09ffae14a4f
   FacebookCore: fe93222bb70346730ef33b061d493e9e7a7cb1f5
   FacebookLogin: a4e225974791c82836765a294582b4778baffc07
   FBSDKCoreKit: 1a5b2e3ceb5ca827a53c54aa5f4a3480efff80d2
@@ -109,6 +113,6 @@ SPEC CHECKSUMS:
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 33909fc98ad242aa8b090736a3e0e63fe20acc77
+PODFILE CHECKSUM: 6b86cbb3a52d617bfec7a962acbf20d6461669fa
 
 COCOAPODS: 1.5.3

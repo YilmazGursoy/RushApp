@@ -15,6 +15,16 @@ class FeedVC: BaseVC {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var credentialIdLabel: UILabel!
     
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:
+            #selector(handleRefresh(_:)),
+                                 for: UIControlEvents.valueChanged)
+        refreshControl.tintColor = UIColor.red
+        
+        return refreshControl
+    }()
+    
     private var feedItems:[Feed]! {
         didSet{
             DispatchQueue.main.async {
@@ -31,6 +41,7 @@ class FeedVC: BaseVC {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 333
         self.sendFeedRequest()
+        self.tableView.addSubview(refreshControl)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,12 +49,19 @@ class FeedVC: BaseVC {
         
     }
     
-    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        self.sendFeedRequest()
+    }
     
     private func sendFeedRequest(){
         let feedRequest = FeedsRequest()
         SVProgressHUD.show()
         feedRequest.sendFeedRequest { (feeds, error) in
+            DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
+                if self.refreshControl.isRefreshing {
+                    self.refreshControl.endRefreshing()
+                }
+            })
             if feeds != nil {
                 SVProgressHUD.dismiss()
                 self.feedItems = feeds
