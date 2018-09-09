@@ -18,6 +18,12 @@ import UIKit
         }
     }
     
+    @IBInspectable var isGradientTopToBottom:Bool = false {
+        didSet{
+            setNeedsLayout()
+        }
+    }
+    
     @IBInspectable var bottomColor: UIColor = .clear {
         didSet {
             setNeedsLayout()
@@ -73,8 +79,10 @@ import UIKit
     override func layoutSubviews() {
         self.gradientLayer = self.layer as! CAGradientLayer
         
-        self.gradientLayer.startPoint = CGPoint(x:0.0, y:0.5);
-        self.gradientLayer.endPoint = CGPoint(x:1.0, y:0.5);
+        if !isGradientTopToBottom {
+            self.gradientLayer.startPoint = CGPoint(x:0.0, y:0.5);
+            self.gradientLayer.endPoint = CGPoint(x:1.0, y:0.5);
+        }
         
         self.gradientLayer.colors = [topColor.cgColor, bottomColor.cgColor]
         if cornerRadius == -1 {

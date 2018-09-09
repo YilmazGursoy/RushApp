@@ -78,8 +78,6 @@
 		47E2C68F2140741700AAD648 /* FeedTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C68D2140741600AAD648 /* FeedTitleCell.xib */; };
 		47E2C6922140747300AAD648 /* FeedDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C6902140747300AAD648 /* FeedDetailCell.swift */; };
 		47E2C6932140747300AAD648 /* FeedDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C6912140747300AAD648 /* FeedDetailCell.xib */; };
-		47E2C696214075C000AAD648 /* FeedCommentTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C695214075C000AAD648 /* FeedCommentTitleView.swift */; };
-		47E2C698214075C900AAD648 /* FeedCommentTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C697214075C900AAD648 /* FeedCommentTitleView.xib */; };
 		47E2C69B2140767900AAD648 /* FeedCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C6992140767900AAD648 /* FeedCommentCell.swift */; };
 		47E2C69C2140767900AAD648 /* FeedCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C69A2140767900AAD648 /* FeedCommentCell.xib */; };
 		47E2C6F52141AAC200AAD648 /* LobbyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C6F42141AAC200AAD648 /* LobbyRequest.swift */; };
@@ -89,6 +87,12 @@
 		47E2C6FF2142832800AAD648 /* FriendSelectionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C6FE2142832800AAD648 /* FriendSelectionVC.storyboard */; };
 		47E2C7092143211E00AAD648 /* FriendSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C7072143211E00AAD648 /* FriendSelectionCell.swift */; };
 		47E2C70A2143211E00AAD648 /* FriendSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C7082143211E00AAD648 /* FriendSelectionCell.xib */; };
+		47E2C70E21446D9800AAD648 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C70C21446D9800AAD648 /* MessageCell.swift */; };
+		47E2C70F21446D9800AAD648 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C70D21446D9800AAD648 /* MessageCell.xib */; };
+		47E2C7502145851300AAD648 /* FeedDetailFlexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C74F2145851300AAD648 /* FeedDetailFlexView.swift */; };
+		47E2C7522145851E00AAD648 /* FeedDetailFlexView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C7512145851E00AAD648 /* FeedDetailFlexView.xib */; };
+		47E2C75621458ECD00AAD648 /* FeedCommentTitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C75421458ECD00AAD648 /* FeedCommentTitleViewCell.swift */; };
+		47E2C75721458ECD00AAD648 /* FeedCommentTitleViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C75521458ECD00AAD648 /* FeedCommentTitleViewCell.xib */; };
 		D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA2209B858600AC79B6 /* LoginType.swift */; };
 		D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA4209B85D000AC79B6 /* LambdaConstants.swift */; };
 		D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA6209B85D800AC79B6 /* AppConstants.swift */; };
@@ -209,8 +213,6 @@
 		47E2C68D2140741600AAD648 /* FeedTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTitleCell.xib; sourceTree = "<group>"; };
 		47E2C6902140747300AAD648 /* FeedDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailCell.swift; sourceTree = "<group>"; };
 		47E2C6912140747300AAD648 /* FeedDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedDetailCell.xib; sourceTree = "<group>"; };
-		47E2C695214075C000AAD648 /* FeedCommentTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCommentTitleView.swift; sourceTree = "<group>"; };
-		47E2C697214075C900AAD648 /* FeedCommentTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCommentTitleView.xib; sourceTree = "<group>"; };
 		47E2C6992140767900AAD648 /* FeedCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCommentCell.swift; sourceTree = "<group>"; };
 		47E2C69A2140767900AAD648 /* FeedCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCommentCell.xib; sourceTree = "<group>"; };
 		47E2C6F42141AAC200AAD648 /* LobbyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyRequest.swift; sourceTree = "<group>"; };
@@ -220,6 +222,12 @@
 		47E2C6FE2142832800AAD648 /* FriendSelectionVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FriendSelectionVC.storyboard; sourceTree = "<group>"; };
 		47E2C7072143211E00AAD648 /* FriendSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendSelectionCell.swift; sourceTree = "<group>"; };
 		47E2C7082143211E00AAD648 /* FriendSelectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendSelectionCell.xib; sourceTree = "<group>"; };
+		47E2C70C21446D9800AAD648 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		47E2C70D21446D9800AAD648 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		47E2C74F2145851300AAD648 /* FeedDetailFlexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailFlexView.swift; sourceTree = "<group>"; };
+		47E2C7512145851E00AAD648 /* FeedDetailFlexView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedDetailFlexView.xib; sourceTree = "<group>"; };
+		47E2C75421458ECD00AAD648 /* FeedCommentTitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCommentTitleViewCell.swift; sourceTree = "<group>"; };
+		47E2C75521458ECD00AAD648 /* FeedCommentTitleViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCommentTitleViewCell.xib; sourceTree = "<group>"; };
 		70DD2601FD90336EF49D93DE /* Pods-RushApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C6990D855C60E2F2734172F0 /* Pods-RushApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.release.xcconfig"; sourceTree = "<group>"; };
 		D2075DA2209B858600AC79B6 /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
@@ -301,7 +309,9 @@
 		4706B7F4213FAEB000BAC8EA /* FeedDetailVC */ = {
 			isa = PBXGroup;
 			children = (
-				47E2C694214075B500AAD648 /* FeedCommentTitleView */,
+				47E2C75321458EBB00AAD648 /* FeedCommentTitleViewCell */,
+				47E2C74E2145850000AAD648 /* FeedDetailFlexView */,
+				47E2C70B21446BEE00AAD648 /* MessageCell */,
 				47E2C68B2140740300AAD648 /* FeedCommentCell */,
 				47E2C68A2140740300AAD648 /* FeedDetailCell */,
 				47E2C6892140740200AAD648 /* FeedTitleCell */,
@@ -461,15 +471,6 @@
 			path = FeedCommentCell;
 			sourceTree = "<group>";
 		};
-		47E2C694214075B500AAD648 /* FeedCommentTitleView */ = {
-			isa = PBXGroup;
-			children = (
-				47E2C695214075C000AAD648 /* FeedCommentTitleView.swift */,
-				47E2C697214075C900AAD648 /* FeedCommentTitleView.xib */,
-			);
-			path = FeedCommentTitleView;
-			sourceTree = "<group>";
-		};
 		47E2C6F621427D5600AAD648 /* LobbyDetailVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,6 +497,33 @@
 				47E2C7082143211E00AAD648 /* FriendSelectionCell.xib */,
 			);
 			path = FriendSelectionCell;
+			sourceTree = "<group>";
+		};
+		47E2C70B21446BEE00AAD648 /* MessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				47E2C70C21446D9800AAD648 /* MessageCell.swift */,
+				47E2C70D21446D9800AAD648 /* MessageCell.xib */,
+			);
+			path = MessageCell;
+			sourceTree = "<group>";
+		};
+		47E2C74E2145850000AAD648 /* FeedDetailFlexView */ = {
+			isa = PBXGroup;
+			children = (
+				47E2C74F2145851300AAD648 /* FeedDetailFlexView.swift */,
+				47E2C7512145851E00AAD648 /* FeedDetailFlexView.xib */,
+			);
+			path = FeedDetailFlexView;
+			sourceTree = "<group>";
+		};
+		47E2C75321458EBB00AAD648 /* FeedCommentTitleViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				47E2C75421458ECD00AAD648 /* FeedCommentTitleViewCell.swift */,
+				47E2C75521458ECD00AAD648 /* FeedCommentTitleViewCell.xib */,
+			);
+			path = FeedCommentTitleViewCell;
 			sourceTree = "<group>";
 		};
 		5397A71A012AE15C477D433D /* Frameworks */ = {
@@ -817,19 +845,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				472DFEE32135D3C900FC577A /* OpenSans-SemiBoldItalic.ttf in Resources */,
+				47E2C75721458ECD00AAD648 /* FeedCommentTitleViewCell.xib in Resources */,
 				47E2C69C2140767900AAD648 /* FeedCommentCell.xib in Resources */,
 				472DFEDE2135D3C900FC577A /* OpenSans-Light.ttf in Resources */,
 				472DFF16213ACB9F00FC577A /* AchivementView.xib in Resources */,
 				D2D9108F20A070BE0054F3AA /* BaseNavigationController.storyboard in Resources */,
 				472DFEE62135D3C900FC577A /* OpenSans-BoldItalic.ttf in Resources */,
 				472DFF73213DC85300FC577A /* FeedCell.xib in Resources */,
+				47E2C70F21446D9800AAD648 /* MessageCell.xib in Resources */,
 				472DFF0C213849F400FC577A /* LobbyCollectionCell.xib in Resources */,
 				472DFF072138445A00FC577A /* MapVC.storyboard in Resources */,
 				D2075DC3209DE94300AC79B6 /* RegisterVC.storyboard in Resources */,
 				47E2C6FA21427DF700AAD648 /* LobbyDetailVC.storyboard in Resources */,
 				47C3C058213E4EAF00A74171 /* feed.json in Resources */,
 				47E2C6932140747300AAD648 /* FeedDetailCell.xib in Resources */,
-				47E2C698214075C900AAD648 /* FeedCommentTitleView.xib in Resources */,
 				472DFEE22135D3C900FC577A /* OpenSans-Bold.ttf in Resources */,
 				D258C039209645EF0090ABB5 /* LaunchScreen.storyboard in Resources */,
 				D258C036209645EF0090ABB5 /* Assets.xcassets in Resources */,
@@ -840,6 +869,7 @@
 				472DFEE52135D3C900FC577A /* OpenSans-Regular.ttf in Resources */,
 				4706B7F8213FBB7E00BAC8EA /* FeedDetailVC.storyboard in Resources */,
 				D2075DCA209DEF4600AC79B6 /* LoginVC.storyboard in Resources */,
+				47E2C7522145851E00AAD648 /* FeedDetailFlexView.xib in Resources */,
 				472DFEE42135D3C900FC577A /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				47C3C05A213E4ECC00A74171 /* lobbies.json in Resources */,
 				47E2C68F2140741700AAD648 /* FeedTitleCell.xib in Resources */,
@@ -894,11 +924,13 @@
 				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSUserPoolsSignIn/AWSUserPoolsSignIn.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/CRRefresh/CRRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/Fusuma/Fusuma.framework",
+				"${BUILT_PRODUCTS_DIR}/GSKStretchyHeaderView/GSKStretchyHeaderView.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PMAlertController/PMAlertController.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -916,11 +948,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSUserPoolsSignIn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CRRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fusuma.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GSKStretchyHeaderView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PMAlertController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -953,6 +987,7 @@
 				D258C0702098F5170090ABB5 /* AppDelegate.swift in Sources */,
 				47E2C69B2140767900AAD648 /* FeedCommentCell.swift in Sources */,
 				472DFF64213C13E100FC577A /* Rush.swift in Sources */,
+				47E2C75621458ECD00AAD648 /* FeedCommentTitleViewCell.swift in Sources */,
 				472DFEFF2137E6AF00FC577A /* CheckUserRequest.swift in Sources */,
 				4706B7F6213FAEC300BAC8EA /* FeedDetailVC.swift in Sources */,
 				D2075DC1209DE93B00AC79B6 /* RegisterVC.swift in Sources */,
@@ -968,12 +1003,12 @@
 				47E2C6F821427DF000AAD648 /* LobbyDetailVC.swift in Sources */,
 				472DFF72213DC85300FC577A /* FeedCell.swift in Sources */,
 				472DFEFB213743E100FC577A /* UserCreateRequest.swift in Sources */,
-				47E2C696214075C000AAD648 /* FeedCommentTitleView.swift in Sources */,
 				472DFF0B213849F400FC577A /* LobbyCollectionCell.swift in Sources */,
 				D2075DD4209E3FF800AC79B6 /* AWSErrorManager.swift in Sources */,
 				47C3C064213E623800A74171 /* Subscriber.swift in Sources */,
 				D2075DBC209DDE8900AC79B6 /* CognitoConstants.swift in Sources */,
 				D2AF692D20A237A500AC40E9 /* ForgotPasswordVC.swift in Sources */,
+				47E2C70E21446D9800AAD648 /* MessageCell.swift in Sources */,
 				D258C0792099061C0090ABB5 /* OnboardingVC.swift in Sources */,
 				D2075DCE209E3CA400AC79B6 /* RegisterRequest.swift in Sources */,
 				47C3C05E213E5FFB00A74171 /* FeedsRequest.swift in Sources */,
@@ -995,6 +1030,7 @@
 				47C3C062213E61B300A74171 /* Lobby.swift in Sources */,
 				472DFEED2135D58400FC577A /* Game.swift in Sources */,
 				D2075DD9209E447E00AC79B6 /* ConfirmEmailVC.swift in Sources */,
+				47E2C7502145851300AAD648 /* FeedDetailFlexView.swift in Sources */,
 				D258C07D2099098B0090ABB5 /* BaseVC+Extensions.swift in Sources */,
 				D2075DAB209B877200AC79B6 /* CacheConstants.swift in Sources */,
 				D2075DD2209E3E8C00AC79B6 /* RushErrorManager.swift in Sources */,

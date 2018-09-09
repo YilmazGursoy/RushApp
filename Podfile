@@ -31,4 +31,6 @@ target 'RushApp' do
 
   #Image download and cache
     pod 'SDWebImage', '~> 4.0'
+    pod 'GSKStretchyHeaderView'
+    pod 'CRRefresh'
 end
