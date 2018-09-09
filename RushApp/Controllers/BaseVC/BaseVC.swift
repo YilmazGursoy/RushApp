@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import SDWebImage
 
 class BaseVC: UIViewController {
 
@@ -25,7 +26,7 @@ class BaseVC: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
+        SDImageCache.shared().clearMemory()
     }
     
     func isValidEmail(testStr:String) -> Bool {
