@@ -24,6 +24,10 @@ class FilterVC: BaseVC {
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
+    
     private func setupUI(){
         self.tableView.register(UINib.init(nibName: "FilterCellType1", bundle: .main), forCellReuseIdentifier: "FilterCellType1")
         self.tableView.register(UINib.init(nibName: "FilterCellType2", bundle: .main), forCellReuseIdentifier: "FilterCellType2")

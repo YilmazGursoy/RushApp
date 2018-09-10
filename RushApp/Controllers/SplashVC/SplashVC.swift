@@ -13,6 +13,7 @@ class SplashVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         Rush.shared.ages = Array.init(repeating: false, count: 4)
+        Rush.shared.filterPlatform = Platform.empty
         let checkUser = CheckUserRequest()
         
         AWSCredentialManager.shared.isUserLoggedIn { (isLoggedIn) in

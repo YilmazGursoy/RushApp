@@ -112,6 +112,8 @@
 		47E2C7982147013A00AAD648 /* FilterCellType1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C7962147013A00AAD648 /* FilterCellType1.xib */; };
 		47E2C79B2147014F00AAD648 /* FilterCellType2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C7992147014F00AAD648 /* FilterCellType2.swift */; };
 		47E2C79C2147014F00AAD648 /* FilterCellType2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C79A2147014F00AAD648 /* FilterCellType2.xib */; };
+		47E2C79F21471C9A00AAD648 /* FilterDetailListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C79E21471C9A00AAD648 /* FilterDetailListVC.swift */; };
+		47E2C7A121471CA200AAD648 /* FilterDetailListVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C7A021471CA100AAD648 /* FilterDetailListVC.storyboard */; };
 		D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA2209B858600AC79B6 /* LoginType.swift */; };
 		D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA4209B85D000AC79B6 /* LambdaConstants.swift */; };
 		D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA6209B85D800AC79B6 /* AppConstants.swift */; };
@@ -266,6 +268,8 @@
 		47E2C7962147013A00AAD648 /* FilterCellType1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCellType1.xib; sourceTree = "<group>"; };
 		47E2C7992147014F00AAD648 /* FilterCellType2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellType2.swift; sourceTree = "<group>"; };
 		47E2C79A2147014F00AAD648 /* FilterCellType2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCellType2.xib; sourceTree = "<group>"; };
+		47E2C79E21471C9A00AAD648 /* FilterDetailListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDetailListVC.swift; sourceTree = "<group>"; };
+		47E2C7A021471CA100AAD648 /* FilterDetailListVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterDetailListVC.storyboard; sourceTree = "<group>"; };
 		70DD2601FD90336EF49D93DE /* Pods-RushApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C6990D855C60E2F2734172F0 /* Pods-RushApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.release.xcconfig"; sourceTree = "<group>"; };
 		D2075DA2209B858600AC79B6 /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
@@ -632,6 +636,7 @@
 		47E2C78A2146D62A00AAD648 /* FilterVC */ = {
 			isa = PBXGroup;
 			children = (
+				47E2C79D21471C8E00AAD648 /* FilterDetailListVC */,
 				47E2C7942147012C00AAD648 /* FilterCellType1 */,
 				47E2C7932147012B00AAD648 /* FilterCellType2 */,
 				47E2C78B2146D63400AAD648 /* FilterVC.swift */,
@@ -658,6 +663,15 @@
 				47E2C7962147013A00AAD648 /* FilterCellType1.xib */,
 			);
 			path = FilterCellType1;
+			sourceTree = "<group>";
+		};
+		47E2C79D21471C8E00AAD648 /* FilterDetailListVC */ = {
+			isa = PBXGroup;
+			children = (
+				47E2C79E21471C9A00AAD648 /* FilterDetailListVC.swift */,
+				47E2C7A021471CA100AAD648 /* FilterDetailListVC.storyboard */,
+			);
+			path = FilterDetailListVC;
 			sourceTree = "<group>";
 		};
 		5397A71A012AE15C477D433D /* Frameworks */ = {
@@ -999,6 +1013,7 @@
 				47C3C058213E4EAF00A74171 /* feed.json in Resources */,
 				47E2C6932140747300AAD648 /* FeedDetailCell.xib in Resources */,
 				472DFEE22135D3C900FC577A /* OpenSans-Bold.ttf in Resources */,
+				47E2C7A121471CA200AAD648 /* FilterDetailListVC.storyboard in Resources */,
 				D258C039209645EF0090ABB5 /* LaunchScreen.storyboard in Resources */,
 				D258C036209645EF0090ABB5 /* Assets.xcassets in Resources */,
 				472DFEDD2135D3C900FC577A /* OpenSans-SemiBold.ttf in Resources */,
@@ -1158,6 +1173,7 @@
 				47C3C064213E623800A74171 /* Subscriber.swift in Sources */,
 				D2075DBC209DDE8900AC79B6 /* CognitoConstants.swift in Sources */,
 				D2AF692D20A237A500AC40E9 /* ForgotPasswordVC.swift in Sources */,
+				47E2C79F21471C9A00AAD648 /* FilterDetailListVC.swift in Sources */,
 				47E2C7682145C65F00AAD648 /* LobbyListCell.swift in Sources */,
 				47E2C70E21446D9800AAD648 /* MessageCell.swift in Sources */,
 				D258C0792099061C0090ABB5 /* OnboardingVC.swift in Sources */,

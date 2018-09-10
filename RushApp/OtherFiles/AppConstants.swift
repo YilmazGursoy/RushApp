@@ -11,4 +11,6 @@ import Foundation
 struct AppConstants {
     static let errorHandleAndPushNotification       =   "errorHandlePushNotificationKey"
     static let errorHandleAndForceOpen              =   "errorHandleAndMakeRootViewController"
+    
+    static let constantPlatforms                            =   ["Playstation", "Steam", "XBOX Live", "Battle.net", "Epic Games", "Origin", "League of Legends"]
 }

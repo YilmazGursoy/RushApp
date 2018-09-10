@@ -20,11 +20,12 @@ class FilterCellType1: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        super.setSelected(false, animated: animated)
         
     }
     
     func arrangeCell(title:String, index:Int) {
+        self.titleLabel.text = title
         self.currentIndex = index
         if Rush.shared.ages[index] == true {
             checkSelected()

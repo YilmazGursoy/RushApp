@@ -17,6 +17,15 @@ extension FilterVC : UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FilterCellType2") as! FilterCellType2
+            if indexPath.row == 0 {
+                cell.arrangeCell(title: cellTitles[indexPath.section][indexPath.row], isSelected: true, selectedText: Rush.shared.filterPlatform.getPlatformName())
+            } else {
+                if Rush.shared.filterGame != nil {
+                    cell.arrangeCell(title: cellTitles[indexPath.section][indexPath.row], isSelected: true, selectedText: Rush.shared.filterGame!.name)
+                } else {
+                    cell.arrangeCell(title: cellTitles[indexPath.section][indexPath.row], isSelected: false, selectedText: nil)
+                }
+            }
             return cell
         }
     }
@@ -34,7 +43,6 @@ extension FilterVC : UITableViewDelegate, UITableViewDataSource {
             return 2
         }
     }
-    
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -58,6 +66,24 @@ extension FilterVC : UITableViewDelegate, UITableViewDataSource {
         }
         headerView.addSubview(label)
         return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                let platformDetail = FilterDetailListVC.createFromStoryboard()
+                platformDetail.navigationTitle = "Platform"
+                platformDetail.type = .platform
+                platformDetail.cellTitle = "Platformlar"
+                self.navigationController?.pushVCMainThread(platformDetail)
+            } else if indexPath.row == 1 {
+                let platformDetail = FilterDetailListVC.createFromStoryboard()
+                platformDetail.navigationTitle = "Oyun"
+                platformDetail.type = .game
+                platformDetail.cellTitle = "Oyunlar"
+                self.navigationController?.pushVCMainThread(platformDetail)
+            }
+        }
     }
     
 }
