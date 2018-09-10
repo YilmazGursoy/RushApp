@@ -21,7 +21,6 @@ class TabBarController: UITabBarController {
         let firstNavigationCOntroller = UINavigationController(rootViewController: homeVC)
         firstNavigationCOntroller.setNavigationBarHidden(true, animated: false)
         
-//
 //        let searchVC = UIViewController()
 //        searchVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "searchIcon"), selectedImage: #imageLiteral(resourceName: "searchIcon"))
 //        searchVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
@@ -29,6 +28,8 @@ class TabBarController: UITabBarController {
         let playVC = LobbyMainVC.createFromStoryboard()
         playVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "playIcon"), selectedImage: #imageLiteral(resourceName: "playIconSelected"))
         playVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
+        let secondNavigationController = UINavigationController.init(rootViewController: playVC)
+        secondNavigationController.setNavigationBarHidden(true, animated: false)
         
 //        let notificationVC = UIViewController()
 //        notificationVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "notificationIcon"), selectedImage: #imageLiteral(resourceName: "notificationIconSelected"))
@@ -38,7 +39,7 @@ class TabBarController: UITabBarController {
         profileVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "profileIcon"), selectedImage: #imageLiteral(resourceName: "profileIconSelected"))
         profileVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
         
-        viewControllers = [firstNavigationCOntroller, playVC, profileVC]
+        viewControllers = [firstNavigationCOntroller, secondNavigationController, profileVC]
     }
     
     override func didReceiveMemoryWarning() {

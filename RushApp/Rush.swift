@@ -12,4 +12,5 @@ class Rush {
     static let shared = Rush()
     var currentUser:User!
     var gameList:[Game]!
+    var ages:[Bool]!
 }

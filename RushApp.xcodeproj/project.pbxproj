@@ -100,6 +100,18 @@
 		47E2C7642145C24000AAD648 /* LobbyMainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C7632145C24000AAD648 /* LobbyMainPageController.swift */; };
 		47E2C7682145C65F00AAD648 /* LobbyListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C7662145C65F00AAD648 /* LobbyListCell.swift */; };
 		47E2C7692145C65F00AAD648 /* LobbyListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C7672145C65F00AAD648 /* LobbyListCell.xib */; };
+		47E2C7862146D5B000AAD648 /* HalfModalInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C7812146D5B000AAD648 /* HalfModalInteractiveTransition.swift */; };
+		47E2C7872146D5B000AAD648 /* HalfModalTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C7822146D5B000AAD648 /* HalfModalTransitionAnimator.swift */; };
+		47E2C7882146D5B000AAD648 /* HalfModalTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C7832146D5B000AAD648 /* HalfModalTransitioningDelegate.swift */; };
+		47E2C7892146D5B000AAD648 /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C7852146D5B000AAD648 /* HalfModalPresentationController.swift */; };
+		47E2C78C2146D63400AAD648 /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C78B2146D63400AAD648 /* FilterVC.swift */; };
+		47E2C78E2146D63900AAD648 /* FilterVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C78D2146D63900AAD648 /* FilterVC.storyboard */; };
+		47E2C7902146D65E00AAD648 /* FilterNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C78F2146D65E00AAD648 /* FilterNavigationController.swift */; };
+		47E2C7922146FA1C00AAD648 /* Extension+FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C7912146FA1C00AAD648 /* Extension+FilterVC.swift */; };
+		47E2C7972147013A00AAD648 /* FilterCellType1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C7952147013A00AAD648 /* FilterCellType1.swift */; };
+		47E2C7982147013A00AAD648 /* FilterCellType1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C7962147013A00AAD648 /* FilterCellType1.xib */; };
+		47E2C79B2147014F00AAD648 /* FilterCellType2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C7992147014F00AAD648 /* FilterCellType2.swift */; };
+		47E2C79C2147014F00AAD648 /* FilterCellType2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C79A2147014F00AAD648 /* FilterCellType2.xib */; };
 		D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA2209B858600AC79B6 /* LoginType.swift */; };
 		D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA4209B85D000AC79B6 /* LambdaConstants.swift */; };
 		D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA6209B85D800AC79B6 /* AppConstants.swift */; };
@@ -242,6 +254,18 @@
 		47E2C7632145C24000AAD648 /* LobbyMainPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyMainPageController.swift; sourceTree = "<group>"; };
 		47E2C7662145C65F00AAD648 /* LobbyListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyListCell.swift; sourceTree = "<group>"; };
 		47E2C7672145C65F00AAD648 /* LobbyListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LobbyListCell.xib; sourceTree = "<group>"; };
+		47E2C7812146D5B000AAD648 /* HalfModalInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfModalInteractiveTransition.swift; sourceTree = "<group>"; };
+		47E2C7822146D5B000AAD648 /* HalfModalTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfModalTransitionAnimator.swift; sourceTree = "<group>"; };
+		47E2C7832146D5B000AAD648 /* HalfModalTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfModalTransitioningDelegate.swift; sourceTree = "<group>"; };
+		47E2C7852146D5B000AAD648 /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
+		47E2C78B2146D63400AAD648 /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
+		47E2C78D2146D63900AAD648 /* FilterVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterVC.storyboard; sourceTree = "<group>"; };
+		47E2C78F2146D65E00AAD648 /* FilterNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterNavigationController.swift; sourceTree = "<group>"; };
+		47E2C7912146FA1C00AAD648 /* Extension+FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+FilterVC.swift"; sourceTree = "<group>"; };
+		47E2C7952147013A00AAD648 /* FilterCellType1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellType1.swift; sourceTree = "<group>"; };
+		47E2C7962147013A00AAD648 /* FilterCellType1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCellType1.xib; sourceTree = "<group>"; };
+		47E2C7992147014F00AAD648 /* FilterCellType2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellType2.swift; sourceTree = "<group>"; };
+		47E2C79A2147014F00AAD648 /* FilterCellType2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCellType2.xib; sourceTree = "<group>"; };
 		70DD2601FD90336EF49D93DE /* Pods-RushApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C6990D855C60E2F2734172F0 /* Pods-RushApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.release.xcconfig"; sourceTree = "<group>"; };
 		D2075DA2209B858600AC79B6 /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
@@ -577,6 +601,65 @@
 			path = LobbyListCell;
 			sourceTree = "<group>";
 		};
+		47E2C77F2146D57900AAD648 /* FilterVC */ = {
+			isa = PBXGroup;
+			children = (
+				47E2C78A2146D62A00AAD648 /* FilterVC */,
+				47E2C7842146D5B000AAD648 /* Presentation */,
+				47E2C7802146D5B000AAD648 /* Transitioning */,
+			);
+			path = FilterVC;
+			sourceTree = "<group>";
+		};
+		47E2C7802146D5B000AAD648 /* Transitioning */ = {
+			isa = PBXGroup;
+			children = (
+				47E2C7812146D5B000AAD648 /* HalfModalInteractiveTransition.swift */,
+				47E2C7822146D5B000AAD648 /* HalfModalTransitionAnimator.swift */,
+				47E2C7832146D5B000AAD648 /* HalfModalTransitioningDelegate.swift */,
+			);
+			path = Transitioning;
+			sourceTree = "<group>";
+		};
+		47E2C7842146D5B000AAD648 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				47E2C7852146D5B000AAD648 /* HalfModalPresentationController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		47E2C78A2146D62A00AAD648 /* FilterVC */ = {
+			isa = PBXGroup;
+			children = (
+				47E2C7942147012C00AAD648 /* FilterCellType1 */,
+				47E2C7932147012B00AAD648 /* FilterCellType2 */,
+				47E2C78B2146D63400AAD648 /* FilterVC.swift */,
+				47E2C7912146FA1C00AAD648 /* Extension+FilterVC.swift */,
+				47E2C78F2146D65E00AAD648 /* FilterNavigationController.swift */,
+				47E2C78D2146D63900AAD648 /* FilterVC.storyboard */,
+			);
+			path = FilterVC;
+			sourceTree = "<group>";
+		};
+		47E2C7932147012B00AAD648 /* FilterCellType2 */ = {
+			isa = PBXGroup;
+			children = (
+				47E2C7992147014F00AAD648 /* FilterCellType2.swift */,
+				47E2C79A2147014F00AAD648 /* FilterCellType2.xib */,
+			);
+			path = FilterCellType2;
+			sourceTree = "<group>";
+		};
+		47E2C7942147012C00AAD648 /* FilterCellType1 */ = {
+			isa = PBXGroup;
+			children = (
+				47E2C7952147013A00AAD648 /* FilterCellType1.swift */,
+				47E2C7962147013A00AAD648 /* FilterCellType1.xib */,
+			);
+			path = FilterCellType1;
+			sourceTree = "<group>";
+		};
 		5397A71A012AE15C477D433D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -746,6 +829,7 @@
 		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				47E2C77F2146D57900AAD648 /* FilterVC */,
 				47E2C75D2145C1EA00AAD648 /* LobbyListVC */,
 				47E2C7582145BC4100AAD648 /* LobbyMainVC */,
 				47E2C6FB2142831800AAD648 /* FriendSelectionVC */,
@@ -900,6 +984,7 @@
 				47E2C7692145C65F00AAD648 /* LobbyListCell.xib in Resources */,
 				472DFEE32135D3C900FC577A /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				47E2C75721458ECD00AAD648 /* FeedCommentTitleViewCell.xib in Resources */,
+				47E2C79C2147014F00AAD648 /* FilterCellType2.xib in Resources */,
 				47E2C69C2140767900AAD648 /* FeedCommentCell.xib in Resources */,
 				472DFEDE2135D3C900FC577A /* OpenSans-Light.ttf in Resources */,
 				472DFF16213ACB9F00FC577A /* AchivementView.xib in Resources */,
@@ -922,6 +1007,7 @@
 				D258C07B209906250090ABB5 /* OnboardingVC.storyboard in Resources */,
 				472DFEE52135D3C900FC577A /* OpenSans-Regular.ttf in Resources */,
 				47E2C7612145C1F600AAD648 /* LobbyListVC.storyboard in Resources */,
+				47E2C7982147013A00AAD648 /* FilterCellType1.xib in Resources */,
 				4706B7F8213FBB7E00BAC8EA /* FeedDetailVC.storyboard in Resources */,
 				D2075DCA209DEF4600AC79B6 /* LoginVC.storyboard in Resources */,
 				47E2C7522145851E00AAD648 /* FeedDetailFlexView.xib in Resources */,
@@ -938,6 +1024,7 @@
 				D258C034209645EE0090ABB5 /* Main.storyboard in Resources */,
 				D2075DDB209E449000AC79B6 /* ConfirmEmailVC.storyboard in Resources */,
 				472DFEDF2135D3C900FC577A /* OpenSans-Italic.ttf in Resources */,
+				47E2C78E2146D63900AAD648 /* FilterVC.storyboard in Resources */,
 				472DFEE02135D3C900FC577A /* OpenSans-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1036,6 +1123,7 @@
 				47E2C6F52141AAC200AAD648 /* LobbyRequest.swift in Sources */,
 				D2075DA9209B866500AC79B6 /* CacheManager.swift in Sources */,
 				D2D9108A209F7F5D0054F3AA /* FacebookLoginManager.swift in Sources */,
+				47E2C7902146D65E00AAD648 /* FilterNavigationController.swift in Sources */,
 				47C3C066213E624C00A74171 /* Sender.swift in Sources */,
 				472DFEF12135DEBD00FC577A /* GameSelectionCell.swift in Sources */,
 				472DFF5A213B413A00FC577A /* GetUserIdRequest.swift in Sources */,
@@ -1048,10 +1136,12 @@
 				47E2C75621458ECD00AAD648 /* FeedCommentTitleViewCell.swift in Sources */,
 				472DFEFF2137E6AF00FC577A /* CheckUserRequest.swift in Sources */,
 				4706B7F6213FAEC300BAC8EA /* FeedDetailVC.swift in Sources */,
+				47E2C79B2147014F00AAD648 /* FilterCellType2.swift in Sources */,
 				D2075DC1209DE93B00AC79B6 /* RegisterVC.swift in Sources */,
 				D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */,
 				472DFEE82135D4DF00FC577A /* GameListRequest.swift in Sources */,
 				47E2C75F2145C1F100AAD648 /* LobbyListVC.swift in Sources */,
+				47E2C78C2146D63400AAD648 /* FilterVC.swift in Sources */,
 				D2D9108D20A070B40054F3AA /* BaseNavigationController.swift in Sources */,
 				D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */,
 				472DFF58213B3F3E00FC577A /* ConstantUrls.swift in Sources */,
@@ -1080,6 +1170,7 @@
 				D2075DE2209F0D1300AC79B6 /* Extension+NavigationController.swift in Sources */,
 				D2075DCC209DF34900AC79B6 /* AWSLoginManager.swift in Sources */,
 				D2075DDD209F091C00AC79B6 /* RushLogger.swift in Sources */,
+				47E2C7892146D5B000AAD648 /* HalfModalPresentationController.swift in Sources */,
 				47C3C060213E604800A74171 /* Feed.swift in Sources */,
 				47E2C6FD2142832300AAD648 /* FriendSelectionVC.swift in Sources */,
 				D2075DB6209CE3C200AC79B6 /* BaseRequest.swift in Sources */,
@@ -1095,18 +1186,23 @@
 				D258C07D2099098B0090ABB5 /* BaseVC+Extensions.swift in Sources */,
 				D2075DAB209B877200AC79B6 /* CacheConstants.swift in Sources */,
 				D2075DD2209E3E8C00AC79B6 /* RushErrorManager.swift in Sources */,
+				47E2C7882146D5B000AAD648 /* HalfModalTransitioningDelegate.swift in Sources */,
 				472DFEFD2137474F00FC577A /* AWSPopupManager.swift in Sources */,
 				D2075DB8209CE44E00AC79B6 /* DummyRequest.swift in Sources */,
+				47E2C7972147013A00AAD648 /* FilterCellType1.swift in Sources */,
 				47C3C0AD213F0DE400A74171 /* Extension+Json.swift in Sources */,
 				472DFF56213B2FA100FC577A /* ChangeProfilePictureRequest.swift in Sources */,
 				D2075DD6209E41CA00AC79B6 /* ErrorConstants.swift in Sources */,
 				472DFF052138445500FC577A /* MapVC.swift in Sources */,
 				47E2C6922140747300AAD648 /* FeedDetailCell.swift in Sources */,
 				D2075DBE209DE70000AC79B6 /* AWSRegisterManager.swift in Sources */,
+				47E2C7922146FA1C00AAD648 /* Extension+FilterVC.swift in Sources */,
 				D258C074209904690090ABB5 /* BaseVC.swift in Sources */,
 				D2075DC5209DEA2000AC79B6 /* Extension+UIButton.swift in Sources */,
 				472DFF14213ACB9A00FC577A /* AchivementView.swift in Sources */,
+				47E2C7862146D5B000AAD648 /* HalfModalInteractiveTransition.swift in Sources */,
 				47E2C7642145C24000AAD648 /* LobbyMainPageController.swift in Sources */,
+				47E2C7872146D5B000AAD648 /* HalfModalTransitionAnimator.swift in Sources */,
 				D2075DD0209E3CC600AC79B6 /* LoginRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

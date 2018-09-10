@@ -32,4 +32,27 @@ class LobbyMainVC: BaseVC {
             NotificationCenter.default.post(name: Notification.Name(kChangeLobbyTypeNotificationKey), object: 1)
         }
     }
+    
+    @IBAction func filterTapped(_ sender: Any) {
+        let filterNav = FilterVC.createFromStoryboard()
+        filterNav.navigationTitle = "Filter"
+        let navController = FilterNavigationController(rootViewController: filterNav)
+        navController.modalPresentationStyle = .custom
+        let halfModalTransitioningDelegate = HalfModalTransitioningDelegate(viewController: self, presentingViewController: navController)
+        navController.setNavigationBarHidden(true, animated: false)
+        navController.transitioningDelegate = halfModalTransitioningDelegate
+        
+        self.present(navController, animated:true, completion: nil)
+    }
+    @IBAction func sortTapped(_ sender: Any) {
+        let filterNav = FilterVC.createFromStoryboard()
+        filterNav.navigationTitle = "Sort"
+        let navController = FilterNavigationController(rootViewController: filterNav)
+        navController.modalPresentationStyle = .custom
+        let halfModalTransitioningDelegate = HalfModalTransitioningDelegate(viewController: self, presentingViewController: navController)
+        navController.setNavigationBarHidden(true, animated: false)
+        navController.transitioningDelegate = halfModalTransitioningDelegate
+        
+        self.present(navController, animated:true, completion: nil)
+    }
 }
