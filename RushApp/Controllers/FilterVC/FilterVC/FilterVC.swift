@@ -39,10 +39,11 @@ class FilterVC: BaseVC {
     
     
     @IBAction func dismissTapped(_ sender: UIButton) {
+        Rush.resetFilters()
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func pushTapped(_ sender: Any) {
-        
+    @IBAction func applyTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

@@ -17,6 +17,14 @@ class Rush {
     var filterGame:Game?
 }
 
+extension Rush {
+    static func resetFilters(){
+        Rush.shared.filterGame = nil
+        Rush.shared.filterPlatform = .empty
+        Rush.shared.ages = Array.init(repeating: false, count: 4)
+    }
+}
+
 enum Platform : Int {
     case playstation
     case steam
