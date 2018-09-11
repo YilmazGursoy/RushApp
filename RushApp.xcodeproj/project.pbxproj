@@ -76,6 +76,8 @@
 		47C3C0AD213F0DE400A74171 /* Extension+Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C0AC213F0DE400A74171 /* Extension+Json.swift */; };
 		47DE1AF3214823F5006FBFD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47DE1AF2214823F5006FBFD1 /* GoogleService-Info.plist */; };
 		47DE1AF62148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE1AF52148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift */; };
+		47DE1AF9214870B5006FBFD1 /* CreateLobbyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE1AF8214870B5006FBFD1 /* CreateLobbyVC.swift */; };
+		47DE1AFB214870B9006FBFD1 /* CreateLobbyVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47DE1AFA214870B9006FBFD1 /* CreateLobbyVC.storyboard */; };
 		47E2C68E2140741700AAD648 /* FeedTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C68C2140741600AAD648 /* FeedTitleCell.swift */; };
 		47E2C68F2140741700AAD648 /* FeedTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C68D2140741600AAD648 /* FeedTitleCell.xib */; };
 		47E2C6922140747300AAD648 /* FeedDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C6902140747300AAD648 /* FeedDetailCell.swift */; };
@@ -235,6 +237,8 @@
 		47DE1AF2214823F5006FBFD1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		47DE1AF421482432006FBFD1 /* RushApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RushApp.entitlements; sourceTree = "<group>"; };
 		47DE1AF52148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFirebaseTokenRequest.swift; sourceTree = "<group>"; };
+		47DE1AF8214870B5006FBFD1 /* CreateLobbyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLobbyVC.swift; sourceTree = "<group>"; };
+		47DE1AFA214870B9006FBFD1 /* CreateLobbyVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateLobbyVC.storyboard; sourceTree = "<group>"; };
 		47E2C68C2140741600AAD648 /* FeedTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTitleCell.swift; sourceTree = "<group>"; };
 		47E2C68D2140741600AAD648 /* FeedTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTitleCell.xib; sourceTree = "<group>"; };
 		47E2C6902140747300AAD648 /* FeedDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailCell.swift; sourceTree = "<group>"; };
@@ -489,6 +493,15 @@
 				47C3C059213E4ECC00A74171 /* lobbies.json */,
 			);
 			path = Dummies;
+			sourceTree = "<group>";
+		};
+		47DE1AF7214870A3006FBFD1 /* CreateLobbyVC */ = {
+			isa = PBXGroup;
+			children = (
+				47DE1AF8214870B5006FBFD1 /* CreateLobbyVC.swift */,
+				47DE1AFA214870B9006FBFD1 /* CreateLobbyVC.storyboard */,
+			);
+			path = CreateLobbyVC;
 			sourceTree = "<group>";
 		};
 		47E2C6892140740200AAD648 /* FeedTitleCell */ = {
@@ -851,6 +864,7 @@
 		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				47DE1AF7214870A3006FBFD1 /* CreateLobbyVC */,
 				47E2C77F2146D57900AAD648 /* FilterVC */,
 				47E2C75D2145C1EA00AAD648 /* LobbyListVC */,
 				47E2C7582145BC4100AAD648 /* LobbyMainVC */,
@@ -1028,6 +1042,7 @@
 				47E2C6932140747300AAD648 /* FeedDetailCell.xib in Resources */,
 				472DFEE22135D3C900FC577A /* OpenSans-Bold.ttf in Resources */,
 				47E2C7A121471CA200AAD648 /* FilterDetailListVC.storyboard in Resources */,
+				47DE1AFB214870B9006FBFD1 /* CreateLobbyVC.storyboard in Resources */,
 				D258C039209645EF0090ABB5 /* LaunchScreen.storyboard in Resources */,
 				D258C036209645EF0090ABB5 /* Assets.xcassets in Resources */,
 				472DFEDD2135D3C900FC577A /* OpenSans-SemiBold.ttf in Resources */,
@@ -1223,6 +1238,7 @@
 				47DE1AF62148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift in Sources */,
 				D2075DAB209B877200AC79B6 /* CacheConstants.swift in Sources */,
 				D2075DD2209E3E8C00AC79B6 /* RushErrorManager.swift in Sources */,
+				47DE1AF9214870B5006FBFD1 /* CreateLobbyVC.swift in Sources */,
 				47E2C7882146D5B000AAD648 /* HalfModalTransitioningDelegate.swift in Sources */,
 				472DFEFD2137474F00FC577A /* AWSPopupManager.swift in Sources */,
 				D2075DB8209CE44E00AC79B6 /* DummyRequest.swift in Sources */,

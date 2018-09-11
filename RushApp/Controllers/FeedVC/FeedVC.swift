@@ -71,6 +71,12 @@ class FeedVC: BaseVC {
             }
         }
     }
+    
+    @IBAction func postCreateTapped(_ sender: UIButton) {
+        let createLobbyVC = CreateLobbyVC.createFromStoryboard()
+        self.pushViewController(pushViewController: createLobbyVC)
+    }
+    
 }
 
 extension FeedVC : UITableViewDelegate, UITableViewDataSource {

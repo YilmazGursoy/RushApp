@@ -29,12 +29,26 @@
                                             <constraint firstAttribute="width" secondItem="85f-4f-Wpl" secondAttribute="height" multiplier="29:33" id="Wj6-NY-nJp"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adc-hh-Cdg">
+                                        <rect key="frame" x="331" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="KVQ-mW-93Q"/>
+                                            <constraint firstAttribute="height" constant="44" id="wNf-AQ-8gS"/>
+                                        </constraints>
+                                        <state key="normal" image="menuPostIcon"/>
+                                        <connections>
+                                            <action selector="postCreateTapped:" destination="OMz-Bl-HTV" eventType="touchUpInside" id="H8N-bv-psy"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="85f-4f-Wpl" firstAttribute="centerX" secondItem="tNJ-UW-Wad" secondAttribute="centerX" id="4AY-n5-Rhe"/>
                                     <constraint firstAttribute="height" constant="44" id="5lx-VG-Szo"/>
+                                    <constraint firstItem="Adc-hh-Cdg" firstAttribute="top" secondItem="tNJ-UW-Wad" secondAttribute="top" id="83h-8t-TIn"/>
+                                    <constraint firstAttribute="trailing" secondItem="Adc-hh-Cdg" secondAttribute="trailing" id="FCl-Di-Vr4"/>
                                     <constraint firstItem="85f-4f-Wpl" firstAttribute="centerY" secondItem="tNJ-UW-Wad" secondAttribute="centerY" id="hbm-hp-7gn"/>
+                                    <constraint firstAttribute="bottom" secondItem="Adc-hh-Cdg" secondAttribute="bottom" id="ma3-Y2-ljK"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L57-1R-g4X">
@@ -75,5 +89,6 @@
     </scenes>
     <resources>
         <image name="homeLogo" width="29" height="33"/>
+        <image name="menuPostIcon" width="24" height="24"/>
     </resources>
 </document>
