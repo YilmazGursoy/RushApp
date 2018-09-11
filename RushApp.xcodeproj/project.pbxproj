@@ -74,6 +74,8 @@
 		47C3C068213E625D00A74171 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C067213E625D00A74171 /* Message.swift */; };
 		47C3C0AB213F0D1900A74171 /* DefaultResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C0AA213F0D1900A74171 /* DefaultResponse.swift */; };
 		47C3C0AD213F0DE400A74171 /* Extension+Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C0AC213F0DE400A74171 /* Extension+Json.swift */; };
+		47DE1AF3214823F5006FBFD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47DE1AF2214823F5006FBFD1 /* GoogleService-Info.plist */; };
+		47DE1AF62148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE1AF52148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift */; };
 		47E2C68E2140741700AAD648 /* FeedTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C68C2140741600AAD648 /* FeedTitleCell.swift */; };
 		47E2C68F2140741700AAD648 /* FeedTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C68D2140741600AAD648 /* FeedTitleCell.xib */; };
 		47E2C6922140747300AAD648 /* FeedDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C6902140747300AAD648 /* FeedDetailCell.swift */; };
@@ -230,6 +232,9 @@
 		47C3C067213E625D00A74171 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		47C3C0AA213F0D1900A74171 /* DefaultResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultResponse.swift; sourceTree = "<group>"; };
 		47C3C0AC213F0DE400A74171 /* Extension+Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Json.swift"; sourceTree = "<group>"; };
+		47DE1AF2214823F5006FBFD1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		47DE1AF421482432006FBFD1 /* RushApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RushApp.entitlements; sourceTree = "<group>"; };
+		47DE1AF52148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFirebaseTokenRequest.swift; sourceTree = "<group>"; };
 		47E2C68C2140741600AAD648 /* FeedTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTitleCell.swift; sourceTree = "<group>"; };
 		47E2C68D2140741600AAD648 /* FeedTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTitleCell.xib; sourceTree = "<group>"; };
 		47E2C6902140747300AAD648 /* FeedDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailCell.swift; sourceTree = "<group>"; };
@@ -786,6 +791,7 @@
 		D258C02D209645EE0090ABB5 /* RushApp */ = {
 			isa = PBXGroup;
 			children = (
+				47DE1AF421482432006FBFD1 /* RushApp.entitlements */,
 				472DFF63213C13E100FC577A /* Rush.swift */,
 				472DFEE92135D56400FC577A /* Objects */,
 				D2075DE0209F0CF900AC79B6 /* Helpers */,
@@ -800,6 +806,7 @@
 				D258C032209645EE0090ABB5 /* Main.storyboard */,
 				D258C035209645EF0090ABB5 /* Assets.xcassets */,
 				D258C037209645EF0090ABB5 /* LaunchScreen.storyboard */,
+				47DE1AF2214823F5006FBFD1 /* GoogleService-Info.plist */,
 				D258C03A209645EF0090ABB5 /* Info.plist */,
 			);
 			path = RushApp;
@@ -836,6 +843,7 @@
 				472DFF59213B413A00FC577A /* GetUserIdRequest.swift */,
 				47C3C05D213E5FFB00A74171 /* FeedsRequest.swift */,
 				47E2C6F42141AAC200AAD648 /* LobbyRequest.swift */,
+				47DE1AF52148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -969,6 +977,11 @@
 				TargetAttributes = {
 					D258C02A209645EE0090ABB5 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -995,6 +1008,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47DE1AF3214823F5006FBFD1 /* GoogleService-Info.plist in Resources */,
 				47E2C7692145C65F00AAD648 /* LobbyListCell.xib in Resources */,
 				472DFEE32135D3C900FC577A /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				47E2C75721458ECD00AAD648 /* FeedCommentTitleViewCell.xib in Resources */,
@@ -1090,10 +1104,13 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/Fusuma/Fusuma.framework",
 				"${BUILT_PRODUCTS_DIR}/GSKStretchyHeaderView/GSKStretchyHeaderView.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PMAlertController/PMAlertController.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1115,10 +1132,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fusuma.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GSKStretchyHeaderView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PMAlertController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1200,6 +1220,7 @@
 				D2075DD9209E447E00AC79B6 /* ConfirmEmailVC.swift in Sources */,
 				47E2C7502145851300AAD648 /* FeedDetailFlexView.swift in Sources */,
 				D258C07D2099098B0090ABB5 /* BaseVC+Extensions.swift in Sources */,
+				47DE1AF62148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift in Sources */,
 				D2075DAB209B877200AC79B6 /* CacheConstants.swift in Sources */,
 				D2075DD2209E3E8C00AC79B6 /* RushErrorManager.swift in Sources */,
 				47E2C7882146D5B000AAD648 /* HalfModalTransitioningDelegate.swift in Sources */,
@@ -1364,6 +1385,7 @@
 			baseConfigurationReference = 70DD2601FD90336EF49D93DE /* Pods-RushApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RushApp/RushApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3BH3ADD3PS;
 				INFOPLIST_FILE = RushApp/Info.plist;
@@ -1383,6 +1405,7 @@
 			baseConfigurationReference = C6990D855C60E2F2734172F0 /* Pods-RushApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RushApp/RushApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3BH3ADD3PS;
 				INFOPLIST_FILE = RushApp/Info.plist;

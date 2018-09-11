@@ -18,19 +18,32 @@ class SplashVC: BaseVC {
         
         AWSCredentialManager.shared.isUserLoggedIn { (isLoggedIn) in
             if isLoggedIn == true {
-                
                 checkUser.sendCheckUserRequest(completionBlock: { (user, error) in
                     if error != nil {
                         AWSCredentialManager.shared.logout()
                         self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
                     } else {
                         Rush.shared.currentUser = user
-                        DispatchQueue.main.async {
-                            let window = UIApplication.shared.keyWindow
-                            let tabbarController = TabBarController()
-                            window?.rootViewController = tabbarController
-                            window?.makeKeyAndVisible()
-                        }
+                        let updateRequest = UpdateFirebaseTokenRequest()
+                        updateRequest.sendUpdateFirebaseToken(completion: { (response, isFirNil) in
+                            if isFirNil{
+                                DispatchQueue.main.async {
+                                    let window = UIApplication.shared.keyWindow
+                                    let tabbarController = TabBarController()
+                                    window?.rootViewController = tabbarController
+                                    window?.makeKeyAndVisible()
+                                }
+                            } else {
+                                if response != nil {
+                                    DispatchQueue.main.async {
+                                        let window = UIApplication.shared.keyWindow
+                                        let tabbarController = TabBarController()
+                                        window?.rootViewController = tabbarController
+                                        window?.makeKeyAndVisible()
+                                    }
+                                }
+                            }
+                        })
                     }
                 })
             } else {

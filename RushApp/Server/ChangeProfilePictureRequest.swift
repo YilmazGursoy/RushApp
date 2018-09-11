@@ -47,14 +47,15 @@ class ChangeProfilePictureRequest : Request {
     func changeProfilePictureFromDynamo(imageUrl:String, profilePictureChanceSuccess: @escaping ()->Void, profilePictureChangeFailed: @escaping ()->Void) {
         
         let parameters = ["profilePictureUrl":imageUrl]
+         
+        self.request(parameters: parameters) { (result:AnyObject?, decodable:DefaultResponse?, error:Error?)  in
+            if result != nil {
+                profilePictureChanceSuccess()
+            } else {
+                profilePictureChangeFailed()
+            }
+        }
         
-//        self.requestWith(functionName: lambdaName, andParameters: parameters) { (result, error) -> (Void) in
-//            if result != nil {
-//                profilePictureChanceSuccess()
-//            } else {
-//                profilePictureChangeFailed()
-//            }
-//        }
     }
     
 }

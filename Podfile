@@ -34,4 +34,8 @@ target 'RushApp' do
     pod 'GSKStretchyHeaderView'
     pod 'CRRefresh'
     pod 'DeckTransition', '~> 2.0'
+  
+  #Push Notification
+    pod 'Firebase/Core'
+    pod 'Firebase/Messaging'
 end

@@ -70,12 +70,20 @@ class GameSelectionVC: BaseVC {
                         
                     })
                 } else {
-                    DispatchQueue.main.async {
-                        let window = UIApplication.shared.keyWindow
-                        let tabbarController = TabBarController()
-                        window?.rootViewController = tabbarController
-                        window?.makeKeyAndVisible()
-                    }
+                    let checkUserRequest = CheckUserRequest()
+                    checkUserRequest.sendCheckUserRequest(completionBlock: { (response, error) in
+                        if error != nil {
+                            
+                        } else {
+                            Rush.shared.currentUser = response
+                            DispatchQueue.main.async {
+                                let window = UIApplication.shared.keyWindow
+                                let tabbarController = TabBarController()
+                                window?.rootViewController = tabbarController
+                                window?.makeKeyAndVisible()
+                            }
+                        }
+                    })
                 }
             })
         }

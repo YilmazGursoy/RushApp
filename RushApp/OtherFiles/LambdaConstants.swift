@@ -22,4 +22,6 @@ struct LambdaConstants {
     
     static let GetGameList              =   "RushApp-GameList"
     
+    static let UpdateFirebaseToken      =   "RushApp-UpdateFirebaseToken"
+    
 }

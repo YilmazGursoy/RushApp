@@ -15,6 +15,7 @@ class Rush {
     var ages:[Bool]!
     var filterPlatform:Platform!
     var filterGame:Game?
+    var firToken:String?
 }
 
 extension Rush {

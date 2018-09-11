@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 protocol AWSErrorManagerProtocol {
     
@@ -48,7 +49,7 @@ class AWSErrorManager {
     }
     
     func errorControl(error:Error?, userName:String, completion:()->Void) {
-        
+        SVProgressHUD.dismiss()
         if let _error = error {
             switch _error._code {
             case ErrorConstants.awsCognitoConfirmEmailCode:

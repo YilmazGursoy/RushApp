@@ -39,26 +39,24 @@ class LoginVC: BaseVC {
     //MARK: IBActions
     
     @IBAction func loginTapped(_ sender: UIButton) {
-        
         let loginManager = LoginRequest()
         SVProgressHUD.show()
         loginManager.login(withUsername: usernameTextField.text!, andPassword: passwordTextField.text!) { (task) in
-            
+            SVProgressHUD.dismiss()
             if task.error == nil {
-                
                 let checkUserRequest = CheckUserRequest()
                 checkUserRequest.sendCheckUserRequest(completionBlock: { (response, error) in
-                    SVProgressHUD.dismiss()
                     if error != nil {
                         self.navigationController?.pushVCMainThread(GameSelectionVC.createFromStoryboard())
                     } else {
+                        Rush.shared.currentUser = response
                         self.navigationController?.pushVCMainThread(FeedVC.createFromStoryboard())
                     }
                 })
             } else {
                 
                 self.showError(title: "", description: "Username or Password incorrect.", doneButtonTapped: {
-                        
+                    
                 })
             }
             

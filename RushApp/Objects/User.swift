@@ -13,11 +13,13 @@ struct User : Decodable {
     var username:String
     var profilePicture:String
     var gameList:[Game]?
-    
+    var firebaseToken:String?
+
     enum CodingKeys: String, CodingKey {
         case userId = "userId"
         case username = "username"
         case gameList = "selectingGameIDs"
         case profilePicture = "profilePicture"
+        case firebaseToken = "firebaseToken" 
     }
 }

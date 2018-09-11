@@ -95,8 +95,8 @@ extension ProfileVC : FusumaDelegate {
                             changeProfilePictureRequest.changeProfilePicture(userId: userId, requestedImageUrl: imageURL, imageChangeSuccess: {
                                 
                                 let s3Url = ConstantUrls.profilePictureS3BaseUrl + userId + "/" + ConstantUrls.profilePictureName
-                                
                                 ChangeProfilePictureRequest().changeProfilePictureFromDynamo(imageUrl: s3Url, profilePictureChanceSuccess: {
+                                    SVProgressHUD.dismiss()
                                     SVProgressHUD.showSuccess(withStatus: "Profile picture change!")
                                 }, profilePictureChangeFailed: {
                                     SVProgressHUD.dismiss()
@@ -110,7 +110,6 @@ extension ProfileVC : FusumaDelegate {
                                 
                             }, uploadingStatus: { (percentage) in
                                 if percentage >= 1.0 {
-                                    
                                 } else {
                                     SVProgressHUD.showProgress(percentage)
                                 }
