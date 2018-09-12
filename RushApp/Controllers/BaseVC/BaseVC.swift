@@ -49,5 +49,4 @@ class BaseVC: UIViewController {
         window?.rootViewController = tabbarController
         window?.makeKeyAndVisible()
     }
-    
 }

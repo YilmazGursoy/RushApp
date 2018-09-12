@@ -50,8 +50,9 @@ class ProfileVC: BaseVC {
     }
     
     @IBAction func settingsTapped(_ sender: Any) {
-        let vc = FriendSelectionVC.createFromStoryboard()
-        self.present(vc, animated: false, completion: nil)
+        AWSCredentialManager.shared.logout { (isCompleted) in
+            self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
+        }
     }
     
     @IBAction func profilePictureChangeTapped(_ sender: UIButton) {
@@ -78,49 +79,12 @@ extension ProfileVC : FusumaDelegate {
             var newImage = image
             newImage = newImage.resizeImage(targetSize: constantProfilePictureSize)
             
-            AWSCredentialManager.shared.currentCredential.getIdentityId().continueWith { (task) -> Any? in
-                if task.result != nil {
-                    DispatchQueue.main.async {
-                        let userId = task.result! as String
-                        
-                        guard let imageURL = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(ConstantUrls.profilePictureName) else {
-                            return
-                        }
-                        do {
-                            
-                            try UIImagePNGRepresentation(newImage)?.write(to: imageURL)
-                            let changeProfilePictureRequest = ChangeProfilePictureRequest()
-                            changeProfilePictureRequest.changeProfilePicture(userId: userId, requestedImageUrl: imageURL, imageChangeSuccess: {
-                                
-                                let s3Url = ConstantUrls.profilePictureS3BaseUrl + userId + "/" + ConstantUrls.profilePictureName
-                                ChangeProfilePictureRequest().changeProfilePictureFromDynamo(imageUrl: s3Url, profilePictureChanceSuccess: {
-                                    SVProgressHUD.dismiss()
-                                    SVProgressHUD.showSuccess(withStatus: "Profile picture change!")
-                                }, profilePictureChangeFailed: {
-                                    SVProgressHUD.dismiss()
-                                    self.showErrorMessage(message: "There is an error to changing profile picture.")
-                                })
-                                
-                            }, imageChangeFailed: {
-                                
-                                SVProgressHUD.dismiss()
-                                self.showErrorMessage(message: "There is an error to changing profile picture.")
-                                
-                            }, uploadingStatus: { (percentage) in
-                                if percentage >= 1.0 {
-                                } else {
-                                    SVProgressHUD.showProgress(percentage)
-                                }
-                            })
-                            
-                        } catch { }
-                        
-                    }
-                } else {
-                    
-                }
-                return nil
-            }
+            ImageUploadManager.uploadImage(newImage: newImage, completionSuccess: {
+                SVProgressHUD.showSuccess(withStatus: "Profile picture change!")
+            }, completionFailed: {
+                SVProgressHUD.dismiss()
+                SVProgressHUD.showSuccess(withStatus: "There is an error to changing profile picture!")
+            })
         }
         
     }

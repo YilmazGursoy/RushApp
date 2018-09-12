@@ -39,9 +39,5 @@ class ImageDownloaderManager : NSObject {
             })
             return nil
         }
-        
-        
-        
     }
-    
 }

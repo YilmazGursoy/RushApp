@@ -60,30 +60,57 @@ class GameSelectionVC: BaseVC {
         }
         
         AWSCredentialManager.shared.getUserPool { (pool) in
-            let createUserRequest = UserCreateRequest()
+            
             var username:String? = nil
+            var profileImageUrl:URL? = nil
+            SVProgressHUD.show()
             if let fullName = UserProfile.current?.fullName {
                 username = fullName
-            }
-            if username == nil {
+                profileImageUrl = UserProfile.current?.imageURLWith(UserProfile.PictureAspectRatio.square, size: CGSize(width: 600, height: 600))
+                let session = URLSession.init(configuration: URLSessionConfiguration.default)
+                let dataTask = session.dataTask(with: profileImageUrl!, completionHandler: { (data, response, error) in
+                    if let imageData = data {
+                        let image = UIImage.init(data: imageData)
+                        ImageUploadManager.uploadImageOnlyS3(newImage: image!, completionSuccess: { (url) in
+                            self.createUserRequest(username: username!, gameIds: ids, imageUrl: url)
+                        }, completionFailed: {
+                            self.createUserRequest(username: username!, gameIds: ids, imageUrl: nil)
+                        })
+                    } else {
+                        self.createUserRequest(username: username!, gameIds: ids, imageUrl: nil)
+                    }
+                })
+                
+                dataTask.resume()
+            } else {
                 if let poolUserName = pool.currentUser()?.username {
                     username = poolUserName
                 } else {
                     return
                 }
+                self.createUserRequest(username: username!, gameIds: ids, imageUrl: nil)
             }
-            
-            createUserRequest.sendUserCreateRequest(games: ids, username: username!, completionBlock: { (result, error) in
+        }
+    }
+    
+}
+
+//MARK: Private methods
+extension GameSelectionVC {
+    
+    private func createUserRequest(username:String, gameIds:[Game], imageUrl:String?) {
+        let createUserRequest = UserCreateRequest()
+        createUserRequest.sendUserCreateRequest(games: gameIds, username: username, userProfileImageUrl: imageUrl, completionBlock: { (result, error) in
                 SVProgressHUD.dismiss()
                 if error != nil {
                     self.showError(title: "Failed", description: "There is an error to creating profile.", doneButtonTapped: {
-                        
+            
                     })
                 } else {
                     let checkUserRequest = CheckUserRequest()
                     checkUserRequest.sendCheckUserRequest(completionBlock: { (response, error) in
                         if error != nil {
-                            
+            
                         } else {
                             Rush.shared.currentUser = response
                             DispatchQueue.main.async {
@@ -93,7 +120,6 @@ class GameSelectionVC: BaseVC {
                     })
                 }
             })
-        }
     }
     
 }

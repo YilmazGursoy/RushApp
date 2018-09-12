@@ -79,15 +79,17 @@ class AWSCredentialManager {
         
     }
     
-    func logout(){
+    func logout(completion: @escaping (Bool)->Void){
         if let _ = AccessToken.current?.authenticationToken {
             facebookLogout()
+            completion(true)
         } else {
             getUserPool { (pool) in
                 if ( pool.currentUser()?.isSignedIn == true ) {
                     self.userpoolLogout()
+                    completion(true)
                 } else {
-                    RushLogger.errorLog(message: "User Not Logged In")
+                    completion(true)
                 }
             }
         }

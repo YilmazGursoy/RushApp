@@ -14,15 +14,19 @@ class UserCreateRequest: Request {
     }
     
     
-    func sendUserCreateRequest(games:[Game], username:String ,completionBlock: @escaping (AnyObject?, Error?) -> Void) {
+    func sendUserCreateRequest(games:[Game], username:String, userProfileImageUrl:String? ,completionBlock: @escaping (AnyObject?, Error?) -> Void) {
         
         var gamesArray:[[String:String]] = []
         
         games.forEach { (game) in
             gamesArray.append(["id":game.id,"name":game.name,"thumbImage":game.thumbImage!, "normalImage":game.normalImage!])
         }
-        
-        let parameter = ["selectingGameIds":gamesArray,"username":username] as [String : Any]
+        var parameter:[String : Any] = [:]
+        if let profileUrl = userProfileImageUrl {
+            parameter = ["selectingGameIds":gamesArray,"username":username, "profilePicture":profileUrl]
+        } else {
+            parameter = ["selectingGameIds":gamesArray,"username":username]
+        }
         
         self.request(parameters: parameter) { (result:AnyObject? ,response:DefaultResponse?, error:Error?) in
             if error != nil {

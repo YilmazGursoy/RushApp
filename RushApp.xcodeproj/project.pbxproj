@@ -10,6 +10,7 @@
 		4706B7F6213FAEC300BAC8EA /* FeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4706B7F5213FAEC300BAC8EA /* FeedDetailVC.swift */; };
 		4706B7F8213FBB7E00BAC8EA /* FeedDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4706B7F7213FBB7E00BAC8EA /* FeedDetailVC.storyboard */; };
 		471A6516213023C50065962D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471A6515213023C50065962D /* TabBarController.swift */; };
+		472B813D2149196B00C005B2 /* ImageUploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B813C2149196B00C005B2 /* ImageUploadManager.swift */; };
 		472DFECF2135D27B00FC577A /* GameSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472DFECE2135D27B00FC577A /* GameSelectionVC.swift */; };
 		472DFED12135D28000FC577A /* GameSelectionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472DFED02135D28000FC577A /* GameSelectionVC.storyboard */; };
 		472DFEDD2135D3C900FC577A /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 472DFED32135D3C900FC577A /* OpenSans-SemiBold.ttf */; };
@@ -170,6 +171,7 @@
 		4706B7F5213FAEC300BAC8EA /* FeedDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailVC.swift; sourceTree = "<group>"; };
 		4706B7F7213FBB7E00BAC8EA /* FeedDetailVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedDetailVC.storyboard; sourceTree = "<group>"; };
 		471A6515213023C50065962D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		472B813C2149196B00C005B2 /* ImageUploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadManager.swift; sourceTree = "<group>"; };
 		472DFECE2135D27B00FC577A /* GameSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectionVC.swift; sourceTree = "<group>"; };
 		472DFED02135D28000FC577A /* GameSelectionVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameSelectionVC.storyboard; sourceTree = "<group>"; };
 		472DFED32135D3C900FC577A /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -851,6 +853,7 @@
 				D2D91089209F7F5D0054F3AA /* FacebookLoginManager.swift */,
 				472DFEFC2137474F00FC577A /* AWSPopupManager.swift */,
 				472DFF65213C7A9D00FC577A /* ImageDownloaderManager.swift */,
+				472B813C2149196B00C005B2 /* ImageUploadManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1258,6 +1261,7 @@
 				D2075DD2209E3E8C00AC79B6 /* RushErrorManager.swift in Sources */,
 				47DE1AF9214870B5006FBFD1 /* CreateLobbyVC.swift in Sources */,
 				47E2C7882146D5B000AAD648 /* HalfModalTransitioningDelegate.swift in Sources */,
+				472B813D2149196B00C005B2 /* ImageUploadManager.swift in Sources */,
 				472DFEFD2137474F00FC577A /* AWSPopupManager.swift in Sources */,
 				D2075DB8209CE44E00AC79B6 /* DummyRequest.swift in Sources */,
 				47E2C7972147013A00AAD648 /* FilterCellType1.swift in Sources */,

@@ -20,8 +20,9 @@ class SplashVC: BaseVC {
             if isLoggedIn == true {
                 checkUser.sendCheckUserRequest(completionBlock: { (user, error) in
                     if error != nil {
-                        AWSCredentialManager.shared.logout()
-                        self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
+                        AWSCredentialManager.shared.logout(completion: { (isLogout) in
+                            self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
+                        })
                     } else {
                         Rush.shared.currentUser = user
                         let updateRequest = UpdateFirebaseTokenRequest()
