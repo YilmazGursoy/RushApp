@@ -50,11 +50,13 @@ class LoginRequest {
                 print("User cancelled login.")
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 AWSCredentialManager.shared.configureFederatedIdentitiesForFacebook()
-                completion(true)
-                print("Logged in!")
-                print("granted: \(grantedPermissions)")
-                print("declined: \(declinedPermissions)")
-                print("accessToken: \(accessToken)")
+                UserProfile.loadCurrent({ (profile) in
+                    completion(true)
+                    print("Logged in!")
+                    print("granted: \(grantedPermissions)")
+                    print("declined: \(declinedPermissions)")
+                    print("accessToken: \(accessToken)")
+                })
             }
         }
     }

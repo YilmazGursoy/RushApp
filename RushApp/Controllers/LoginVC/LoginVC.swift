@@ -50,7 +50,12 @@ class LoginVC: BaseVC {
                         self.navigationController?.pushVCMainThread(GameSelectionVC.createFromStoryboard())
                     } else {
                         Rush.shared.currentUser = response
-                        self.navigationController?.pushVCMainThread(FeedVC.createFromStoryboard())
+                        DispatchQueue.main.async {
+                            let window = UIApplication.shared.keyWindow
+                            let tabbarController = TabBarController()
+                            window?.rootViewController = tabbarController
+                            window?.makeKeyAndVisible()
+                        }
                     }
                 })
             } else {
@@ -67,9 +72,21 @@ class LoginVC: BaseVC {
     @IBAction func facebookLoginTapped(_ sender: UIButton) {
         let loginManager = LoginRequest()
         loginManager.facebookLogin(withTarget: self) { (isSuccess) in
-            
             if isSuccess == true {
-                self.navigationController?.pushVCMainThread(FeedVC.createFromStoryboard())
+                let checkUserRequest = CheckUserRequest()
+                checkUserRequest.sendCheckUserRequest(completionBlock: { (response, error) in
+                    if error != nil {
+                        self.navigationController?.pushVCMainThread(GameSelectionVC.createFromStoryboard())
+                    } else {
+                        Rush.shared.currentUser = response
+                        DispatchQueue.main.async {
+                            let window = UIApplication.shared.keyWindow
+                            let tabbarController = TabBarController()
+                            window?.rootViewController = tabbarController
+                            window?.makeKeyAndVisible()
+                        }
+                    }
+                })
             }
             
         }

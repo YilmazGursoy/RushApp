@@ -100,8 +100,8 @@
                                                     <constraint firstAttribute="width" constant="50" id="vtq-lL-Dw2"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eo-1h-nT9">
-                                                <rect key="frame" x="60" y="16.5" width="305" height="18"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eo-1h-nT9">
+                                                <rect key="frame" x="60" y="25.5" width="305" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
                                                 <color key="textColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -387,6 +387,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LAR-nB-Yvi"/>
                     </view>
+                    <connections>
+                        <outlet property="locationLabel" destination="3eo-1h-nT9" id="I5T-Mn-Ysc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dHY-90-kf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -78,6 +78,8 @@
 		47DE1AF62148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE1AF52148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift */; };
 		47DE1AF9214870B5006FBFD1 /* CreateLobbyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE1AF8214870B5006FBFD1 /* CreateLobbyVC.swift */; };
 		47DE1AFB214870B9006FBFD1 /* CreateLobbyVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47DE1AFA214870B9006FBFD1 /* CreateLobbyVC.storyboard */; };
+		47DE1AFE21487A32006FBFD1 /* RushAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE1AFD21487A32006FBFD1 /* RushAlertController.swift */; };
+		47DE1B0021487A37006FBFD1 /* RushAlertController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47DE1AFF21487A37006FBFD1 /* RushAlertController.storyboard */; };
 		47E2C68E2140741700AAD648 /* FeedTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C68C2140741600AAD648 /* FeedTitleCell.swift */; };
 		47E2C68F2140741700AAD648 /* FeedTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C68D2140741600AAD648 /* FeedTitleCell.xib */; };
 		47E2C6922140747300AAD648 /* FeedDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C6902140747300AAD648 /* FeedDetailCell.swift */; };
@@ -239,6 +241,8 @@
 		47DE1AF52148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFirebaseTokenRequest.swift; sourceTree = "<group>"; };
 		47DE1AF8214870B5006FBFD1 /* CreateLobbyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLobbyVC.swift; sourceTree = "<group>"; };
 		47DE1AFA214870B9006FBFD1 /* CreateLobbyVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateLobbyVC.storyboard; sourceTree = "<group>"; };
+		47DE1AFD21487A32006FBFD1 /* RushAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RushAlertController.swift; sourceTree = "<group>"; };
+		47DE1AFF21487A37006FBFD1 /* RushAlertController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RushAlertController.storyboard; sourceTree = "<group>"; };
 		47E2C68C2140741600AAD648 /* FeedTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTitleCell.swift; sourceTree = "<group>"; };
 		47E2C68D2140741600AAD648 /* FeedTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTitleCell.xib; sourceTree = "<group>"; };
 		47E2C6902140747300AAD648 /* FeedDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailCell.swift; sourceTree = "<group>"; };
@@ -502,6 +506,15 @@
 				47DE1AFA214870B9006FBFD1 /* CreateLobbyVC.storyboard */,
 			);
 			path = CreateLobbyVC;
+			sourceTree = "<group>";
+		};
+		47DE1AFC21487A29006FBFD1 /* RushAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				47DE1AFD21487A32006FBFD1 /* RushAlertController.swift */,
+				47DE1AFF21487A37006FBFD1 /* RushAlertController.storyboard */,
+			);
+			path = RushAlertController;
 			sourceTree = "<group>";
 		};
 		47E2C6892140740200AAD648 /* FeedTitleCell */ = {
@@ -864,6 +877,7 @@
 		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				47DE1AFC21487A29006FBFD1 /* RushAlertController */,
 				47DE1AF7214870A3006FBFD1 /* CreateLobbyVC */,
 				47E2C77F2146D57900AAD648 /* FilterVC */,
 				47E2C75D2145C1EA00AAD648 /* LobbyListVC */,
@@ -1050,6 +1064,7 @@
 				472DFF112139F4DB00FC577A /* ProfileVC.storyboard in Resources */,
 				D258C07B209906250090ABB5 /* OnboardingVC.storyboard in Resources */,
 				472DFEE52135D3C900FC577A /* OpenSans-Regular.ttf in Resources */,
+				47DE1B0021487A37006FBFD1 /* RushAlertController.storyboard in Resources */,
 				47E2C7612145C1F600AAD648 /* LobbyListVC.storyboard in Resources */,
 				47E2C7982147013A00AAD648 /* FilterCellType1.xib in Resources */,
 				4706B7F8213FBB7E00BAC8EA /* FeedDetailVC.storyboard in Resources */,
@@ -1125,6 +1140,7 @@
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1153,6 +1169,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1233,6 +1250,7 @@
 				47C3C062213E61B300A74171 /* Lobby.swift in Sources */,
 				472DFEED2135D58400FC577A /* Game.swift in Sources */,
 				D2075DD9209E447E00AC79B6 /* ConfirmEmailVC.swift in Sources */,
+				47DE1AFE21487A32006FBFD1 /* RushAlertController.swift in Sources */,
 				47E2C7502145851300AAD648 /* FeedDetailFlexView.swift in Sources */,
 				D258C07D2099098B0090ABB5 /* BaseVC+Extensions.swift in Sources */,
 				47DE1AF62148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift in Sources */,

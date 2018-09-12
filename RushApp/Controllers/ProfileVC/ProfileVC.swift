@@ -57,19 +57,19 @@ class ProfileVC: BaseVC {
     }
     
     @IBAction func profilePictureChangeTapped(_ sender: UIButton) {
-        let alert = PMAlertController.init(title: "Hey!", description: "Do you want to change Profile Picture?", image: nil, style: .alert)
-        alert.addAction(PMAlertAction(title: "Yes!", style: .default, action: {
-            let fusuma = FusumaViewController()
-            fusuma.delegate = self
-            fusuma.cropHeightRatio = 1.0
-            fusuma.allowMultipleSelection = false
-            fusumaSavesImage = true
-            self.present(fusuma, animated: true, completion: nil)
-        }))
-        alert.addAction(PMAlertAction(title: "Cancel", style: .cancel))
-        self.present(alert, animated: true) {
+        
+        let alertVC = RushAlertController.createFromStoryboard()
+        alertVC.createAlert(title: "Hey!", description: "Do you want to change Profile Picture ?", positiveTitle: "Yes!", negativeTitle: "Cancel", positiveButtonTapped: {
+                let fusuma = FusumaViewController()
+                fusuma.delegate = self
+                fusuma.cropHeightRatio = 1.0
+                fusuma.allowMultipleSelection = false
+                fusumaSavesImage = true
+                self.present(fusuma, animated: true, completion: nil)
+        }) {
             
         }
+        self.tabBarController?.present(alertVC, animated: false, completion: nil)
     }
 }
 

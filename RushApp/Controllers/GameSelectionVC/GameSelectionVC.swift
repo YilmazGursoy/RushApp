@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FacebookCore
+import FacebookLogin
 import SVProgressHUD
 
 class GameSelectionVC: BaseVC {
@@ -59,11 +61,19 @@ class GameSelectionVC: BaseVC {
         
         AWSCredentialManager.shared.getUserPool { (pool) in
             let createUserRequest = UserCreateRequest()
-            guard let username = pool.currentUser()?.username  else {
-                return
+            var username:String? = nil
+            if let fullName = UserProfile.current?.fullName {
+                username = fullName
+            }
+            if username == nil {
+                if let poolUserName = pool.currentUser()?.username {
+                    username = poolUserName
+                } else {
+                    return
+                }
             }
             
-            createUserRequest.sendUserCreateRequest(games: ids, username: username, completionBlock: { (result, error) in
+            createUserRequest.sendUserCreateRequest(games: ids, username: username!, completionBlock: { (result, error) in
                 SVProgressHUD.dismiss()
                 if error != nil {
                     self.showError(title: "Failed", description: "There is an error to creating profile.", doneButtonTapped: {

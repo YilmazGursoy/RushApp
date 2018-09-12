@@ -100,6 +100,7 @@ PODS:
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
+  - Spring (1.0.5)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
@@ -119,6 +120,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - PMAlertController
   - SDWebImage (~> 4.0)
+  - Spring (from `https://github.com/MengTo/Spring.git`)
   - SVProgressHUD
 
 SPEC REPOS:
@@ -155,6 +157,15 @@ SPEC REPOS:
     - SDWebImage
     - SVProgressHUD
 
+EXTERNAL SOURCES:
+  Spring:
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: c540239f3590bbaf4a35c3959c329dd5ed4e3eee
+    :git: https://github.com/MengTo/Spring.git
+
 SPEC CHECKSUMS:
   AWSAuthCore: bc6c8d7320eae8ef18939504d5a8a1588606c3a1
   AWSAuthUI: 2d597886206772e31273d12e76f642fcddca9616
@@ -186,8 +197,9 @@ SPEC CHECKSUMS:
   PMAlertController: efb781925d741d50e0200018a00c53cecb8b4910
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  Spring: 3c7666eccefdeb87140008dc81043f89f8dbb787
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 4e6023680fe5c3cc60259c3e65f95d78feed75b2
+PODFILE CHECKSUM: 644a36bb906e1dbabef04e4012cd7be1ea4b2a25
 
 COCOAPODS: 1.5.3
