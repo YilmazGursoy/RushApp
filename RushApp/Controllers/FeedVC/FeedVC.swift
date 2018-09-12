@@ -74,7 +74,9 @@ class FeedVC: BaseVC {
     
     @IBAction func postCreateTapped(_ sender: UIButton) {
         let createLobbyVC = CreateLobbyVC.createFromStoryboard()
-        self.pushViewController(pushViewController: createLobbyVC)
+        let navigationController = BaseNavigationController(rootViewController: createLobbyVC)
+        navigationController.setNavigationBarHidden(true, animated: false)
+        self.present(navigationController, animated: true, completion: nil)
     }
     
 }

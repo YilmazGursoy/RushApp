@@ -51,7 +51,7 @@ extension Platform {
         case .origin:
             return "Origin"
         case .lol:
-            return "League of Legeds"
+            return "League of Legends"
         case .epicGames:
             return "Epic Games"
         case .empty:
@@ -71,7 +71,7 @@ extension Platform {
             return .battleNet
         } else if type == "Origin" {
             return .origin
-        } else if type == "League of Legeds" {
+        } else if type == "League of Legends" {
             return .lol
         } else if type == "Epic Games" {
             return .epicGames
@@ -80,22 +80,4 @@ extension Platform {
         }
     }    
 }
-
-//switch self {
-//case .playstation:
-//    return "Playstation"
-//case .steam:
-//    return "Steam"
-//case .xbox:
-//    return "XBOX Live"
-//case .battleNet:
-//    return "Battle.net"
-//case .origin:
-//    return "Origin"
-//case .lol:
-//    return "League of Legeds"
-//case .epicGames:
-//    return "Epic Games"
-//case .empty:
-//    return ""
 

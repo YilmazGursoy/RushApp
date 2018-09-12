@@ -10,7 +10,20 @@ import UIKit
 import CoreLocation
 
 class CreateLobbyVC: BaseVC {
-    @IBOutlet private weak var locationLabel: UILabel!
+    
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var lobbyNameTextField: UITextField!
+    @IBOutlet weak var lobbyDetailTextField: UITextField!
+    @IBOutlet weak var choosePlatformTextField: UITextField!
+    @IBOutlet weak var chooseGameTextField: UITextField!
+    @IBOutlet weak var lobbyPreviwBackView: GradientView!
+    @IBOutlet weak var lobbyPreviewButtonOutlet: UIButton!
+    
+    
+    var platformType:Platform?
+    var selectingGame:Game?
+    var currentLocation:CLLocation?
+    var currentLocationName:String?
     
     var locationManager = CLLocationManager()
     
@@ -18,143 +31,72 @@ class CreateLobbyVC: BaseVC {
         super.viewDidLoad()
         
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         DispatchQueue.main.async {
             self.checkLocation()
         }
     }
+    @IBAction func selectPlatformTapped(_ sender: UIButton) {
+        let platformVC = PlatformSelectionVC.createFromStoryboard()
+        platformVC.selectedPlatform = { platform in
+            self.platformType = platform
+            self.choosePlatformTextField.text = platform.getPlatformName()
+            self.checkPreviewButton()
+        }
+        self.pushViewController(pushViewController: platformVC)
+    }
+    
+    @IBAction func selectGameTapped(_ sender: UIButton) {
+        let gameVC = LobbyGameSelectionVC.createFromStoryboard()
+        gameVC.selectedGame = { game in
+            self.selectingGame = game
+            self.chooseGameTextField.text = game.name
+            self.checkPreviewButton()
+        }
+        self.pushViewController(pushViewController: gameVC)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
-}
-
-extension CreateLobbyVC {
     
-    private func checkLocation(){
-        self.checkLocalization(completion: { (status) in
-            if status == .notDetermined {
-                let alert = RushAlertController.createFromStoryboard()
-                alert.createAlert(title: "Lobby oluşturmak istiyor musun?", description: "Konumuna yakın bölgelerde istediğin gibi lobby kur", positiveTitle: "Konum Aç", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
-                    
-                    self.locationManager.delegate = self
-                    self.locationManager.requestWhenInUseAuthorization()
-                    
-                }) {
-                    
-                    self.pop()
-                    
-                }
-                self.tabBarController?.present(alert, animated: false, completion: nil)
-            } else if status == .denied {
-                let alert = RushAlertController.createFromStoryboard()
-                alert.createAlert(title: "Hey!", description: "Maalesef ayarlardan konum servislerini açman gerek.", positiveTitle: "Tamam", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
-                    UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
-                    self.pop()
-                }) {
-                    self.pop()
-                }
-                self.tabBarController?.present(alert, animated: false, completion: nil)
-            } else if status == .authorizedWhenInUse {
-                self.setupLocation()
-            }
-        })
-    }
-    
-    
-    private func setupLocation(){
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-        locationManager.startMonitoringSignificantLocationChanges()
-        // Here you can check whether you have allowed the permission or not.
-        if CLLocationManager.locationServicesEnabled()
-        {
-            switch(CLLocationManager.authorizationStatus())
-            {
-            case .authorizedAlways, .authorizedWhenInUse:
-                print("Authorize.")
-                let latitude: CLLocationDegrees = (locationManager.location?.coordinate.latitude)!
-                let longitude: CLLocationDegrees = (locationManager.location?.coordinate.longitude)!
-                let location = CLLocation(latitude: latitude, longitude: longitude) //changed!!!
-                CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
-                    if error != nil {
-                        return
-                    }else if let country = placemarks?.first?.country,
-                        let city = placemarks?.first?.locality {
-                        if let area = placemarks?.first?.administrativeArea {
-                            self.locationLabel.text = "\(city) - \(area) - \(country)"
+    func checkPreviewButton(){
+        if platformType != .empty {
+            if selectingGame != nil {
+                if currentLocation != nil {
+                    if currentLocationName != nil {
+                        if lobbyNameTextField.text!.count > 5 {
+                            if lobbyDetailTextField.text!.count > 5 {
+                                self.lobbyPreviewEnable()
+                                return
+                            }
                         }
-                        }
-                    else {
                     }
-                })
-                break
-                
-            case .notDetermined:
-                let alert = RushAlertController.createFromStoryboard()
-                alert.createAlert(title: "Denem", description: "Deneme dneme", positiveTitle: "1", negativeTitle: "2", positiveButtonTapped: {
-                    
-                }) {
-                    
                 }
-                self.tabBarController?.present(alert, animated: false, completion: nil)
-                break
-                
-            case .restricted:
-                print("Restricted.")
-                break
-                
-            case .denied:
-                print("Denied.")
             }
         }
+        self.lobbyPreviewDisable()
+    }
+    
+    func lobbyPreviewEnable(){
+        self.lobbyPreviewButtonOutlet.isUserInteractionEnabled = true
+        self.lobbyPreviwBackView.topColor = #colorLiteral(red: 0.4666666667, green: 0.3529411765, blue: 1, alpha: 1)
+        self.lobbyPreviwBackView.bottomColor = #colorLiteral(red: 0.8117647059, green: 0.5529411765, blue: 1, alpha: 1)
+    }
+    
+    func lobbyPreviewDisable(){
+        self.lobbyPreviewButtonOutlet.isUserInteractionEnabled = true
+        self.lobbyPreviwBackView.topColor = #colorLiteral(red: 0.6431372549, green: 0.6431372549, blue: 0.6431372549, alpha: 0.5)
+        self.lobbyPreviwBackView.bottomColor = #colorLiteral(red: 0.337254902, green: 0.337254902, blue: 0.337254902, alpha: 0.5)
     }
 }
 
-extension CreateLobbyVC : CLLocationManagerDelegate {
-    func checkLocalization(completion:@escaping (CLAuthorizationStatus)->Void) {
-        switch(CLLocationManager.authorizationStatus())
-        {
-        case .authorizedAlways, .authorizedWhenInUse:
-            completion(.authorizedWhenInUse)
-            
-        case .notDetermined:
-            completion(.notDetermined)
-            
-        case .restricted:
-            completion(.restricted)
-        default:
-            completion(.denied)
-        }
+extension CreateLobbyVC : UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.checkPreviewButton()
     }
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .notDetermined {
-            let alert = RushAlertController.createFromStoryboard()
-            alert.createAlert(title: "Lobby oluşturmak istiyor musun?", description: "Konumuna yakın bölgelerde istediğin gibi lobby kur", positiveTitle: "Konum Aç", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
-                self.locationManager.requestWhenInUseAuthorization()
-            }) {
-                self.pop()
-            }
-            self.tabBarController?.present(alert, animated: false, completion: nil)
-        } else if status == .denied {
-            let alert = RushAlertController.createFromStoryboard()
-            alert.createAlert(title: "Hey!", description: "Maalesef ayarlardan konum servislerini açman gerek.", positiveTitle: "Tamam", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
-                UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
-                self.pop()
-            }) {
-                self.pop()
-            }
-            self.tabBarController?.present(alert, animated: false, completion: nil)
-        } else if status == .authorizedWhenInUse {
-            setupLocation()
-        }
-    }
-    
 }
-
 

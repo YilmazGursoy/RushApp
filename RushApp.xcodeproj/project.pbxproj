@@ -11,6 +11,11 @@
 		4706B7F8213FBB7E00BAC8EA /* FeedDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4706B7F7213FBB7E00BAC8EA /* FeedDetailVC.storyboard */; };
 		471A6516213023C50065962D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471A6515213023C50065962D /* TabBarController.swift */; };
 		472B813D2149196B00C005B2 /* ImageUploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B813C2149196B00C005B2 /* ImageUploadManager.swift */; };
+		472B81402149272100C005B2 /* PlatformSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B813F2149272100C005B2 /* PlatformSelectionVC.swift */; };
+		472B81422149272600C005B2 /* PlatformSelectionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472B81412149272600C005B2 /* PlatformSelectionVC.storyboard */; };
+		472B81442149296900C005B2 /* ExtensionLocation+CreateLobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B81432149296900C005B2 /* ExtensionLocation+CreateLobby.swift */; };
+		472B814821494EB700C005B2 /* LobbyGameSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B814721494EB700C005B2 /* LobbyGameSelectionVC.swift */; };
+		472B814A21494EBC00C005B2 /* LobbyGameSelectionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472B814921494EBC00C005B2 /* LobbyGameSelectionVC.storyboard */; };
 		472DFECF2135D27B00FC577A /* GameSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472DFECE2135D27B00FC577A /* GameSelectionVC.swift */; };
 		472DFED12135D28000FC577A /* GameSelectionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472DFED02135D28000FC577A /* GameSelectionVC.storyboard */; };
 		472DFEDD2135D3C900FC577A /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 472DFED32135D3C900FC577A /* OpenSans-SemiBold.ttf */; };
@@ -172,6 +177,11 @@
 		4706B7F7213FBB7E00BAC8EA /* FeedDetailVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedDetailVC.storyboard; sourceTree = "<group>"; };
 		471A6515213023C50065962D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		472B813C2149196B00C005B2 /* ImageUploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadManager.swift; sourceTree = "<group>"; };
+		472B813F2149272100C005B2 /* PlatformSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSelectionVC.swift; sourceTree = "<group>"; };
+		472B81412149272600C005B2 /* PlatformSelectionVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlatformSelectionVC.storyboard; sourceTree = "<group>"; };
+		472B81432149296900C005B2 /* ExtensionLocation+CreateLobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExtensionLocation+CreateLobby.swift"; sourceTree = "<group>"; };
+		472B814721494EB700C005B2 /* LobbyGameSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyGameSelectionVC.swift; sourceTree = "<group>"; };
+		472B814921494EBC00C005B2 /* LobbyGameSelectionVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LobbyGameSelectionVC.storyboard; sourceTree = "<group>"; };
 		472DFECE2135D27B00FC577A /* GameSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectionVC.swift; sourceTree = "<group>"; };
 		472DFED02135D28000FC577A /* GameSelectionVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameSelectionVC.storyboard; sourceTree = "<group>"; };
 		472DFED32135D3C900FC577A /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -386,6 +396,31 @@
 			path = TabbarController;
 			sourceTree = "<group>";
 		};
+		472B813E2149271400C005B2 /* PlatformSelectionVC */ = {
+			isa = PBXGroup;
+			children = (
+				472B813F2149272100C005B2 /* PlatformSelectionVC.swift */,
+				472B81412149272600C005B2 /* PlatformSelectionVC.storyboard */,
+			);
+			path = PlatformSelectionVC;
+			sourceTree = "<group>";
+		};
+		472B81452149459500C005B2 /* LobbyPreviewVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LobbyPreviewVC;
+			sourceTree = "<group>";
+		};
+		472B814621494EAC00C005B2 /* LobbyGameSelectionVC */ = {
+			isa = PBXGroup;
+			children = (
+				472B814721494EB700C005B2 /* LobbyGameSelectionVC.swift */,
+				472B814921494EBC00C005B2 /* LobbyGameSelectionVC.storyboard */,
+			);
+			path = LobbyGameSelectionVC;
+			sourceTree = "<group>";
+		};
 		472DFECD2135D26600FC577A /* GameSelectionVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,8 +539,10 @@
 		47DE1AF7214870A3006FBFD1 /* CreateLobbyVC */ = {
 			isa = PBXGroup;
 			children = (
+				472B81452149459500C005B2 /* LobbyPreviewVC */,
 				47DE1AF8214870B5006FBFD1 /* CreateLobbyVC.swift */,
 				47DE1AFA214870B9006FBFD1 /* CreateLobbyVC.storyboard */,
+				472B81432149296900C005B2 /* ExtensionLocation+CreateLobby.swift */,
 			);
 			path = CreateLobbyVC;
 			sourceTree = "<group>";
@@ -880,6 +917,8 @@
 		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				472B814621494EAC00C005B2 /* LobbyGameSelectionVC */,
+				472B813E2149271400C005B2 /* PlatformSelectionVC */,
 				47DE1AFC21487A29006FBFD1 /* RushAlertController */,
 				47DE1AF7214870A3006FBFD1 /* CreateLobbyVC */,
 				47E2C77F2146D57900AAD648 /* FilterVC */,
@@ -1048,11 +1087,13 @@
 				472DFEDE2135D3C900FC577A /* OpenSans-Light.ttf in Resources */,
 				472DFF16213ACB9F00FC577A /* AchivementView.xib in Resources */,
 				D2D9108F20A070BE0054F3AA /* BaseNavigationController.storyboard in Resources */,
+				472B81422149272600C005B2 /* PlatformSelectionVC.storyboard in Resources */,
 				472DFEE62135D3C900FC577A /* OpenSans-BoldItalic.ttf in Resources */,
 				472DFF73213DC85300FC577A /* FeedCell.xib in Resources */,
 				47E2C70F21446D9800AAD648 /* MessageCell.xib in Resources */,
 				472DFF0C213849F400FC577A /* LobbyCollectionCell.xib in Resources */,
 				472DFF072138445A00FC577A /* MapVC.storyboard in Resources */,
+				472B814A21494EBC00C005B2 /* LobbyGameSelectionVC.storyboard in Resources */,
 				D2075DC3209DE94300AC79B6 /* RegisterVC.storyboard in Resources */,
 				47E2C6FA21427DF700AAD648 /* LobbyDetailVC.storyboard in Resources */,
 				47C3C058213E4EAF00A74171 /* feed.json in Resources */,
@@ -1205,6 +1246,7 @@
 				472DFF64213C13E100FC577A /* Rush.swift in Sources */,
 				47E2C75621458ECD00AAD648 /* FeedCommentTitleViewCell.swift in Sources */,
 				472DFEFF2137E6AF00FC577A /* CheckUserRequest.swift in Sources */,
+				472B81402149272100C005B2 /* PlatformSelectionVC.swift in Sources */,
 				4706B7F6213FAEC300BAC8EA /* FeedDetailVC.swift in Sources */,
 				47E2C79B2147014F00AAD648 /* FilterCellType2.swift in Sources */,
 				D2075DC1209DE93B00AC79B6 /* RegisterVC.swift in Sources */,
@@ -1237,6 +1279,7 @@
 				472DFF18213AE54500FC577A /* Extension+UIView.swift in Sources */,
 				472DFECF2135D27B00FC577A /* GameSelectionVC.swift in Sources */,
 				D2D91088209F7F3D0054F3AA /* FacebookProvider.swift in Sources */,
+				472B81442149296900C005B2 /* ExtensionLocation+CreateLobby.swift in Sources */,
 				471A6516213023C50065962D /* TabBarController.swift in Sources */,
 				D2075DE2209F0D1300AC79B6 /* Extension+NavigationController.swift in Sources */,
 				D2075DCC209DF34900AC79B6 /* AWSLoginManager.swift in Sources */,
@@ -1272,6 +1315,7 @@
 				47E2C6922140747300AAD648 /* FeedDetailCell.swift in Sources */,
 				D2075DBE209DE70000AC79B6 /* AWSRegisterManager.swift in Sources */,
 				47E2C7922146FA1C00AAD648 /* Extension+FilterVC.swift in Sources */,
+				472B814821494EB700C005B2 /* LobbyGameSelectionVC.swift in Sources */,
 				D258C074209904690090ABB5 /* BaseVC.swift in Sources */,
 				D2075DC5209DEA2000AC79B6 /* Extension+UIButton.swift in Sources */,
 				472DFF14213ACB9A00FC577A /* AchivementView.swift in Sources */,

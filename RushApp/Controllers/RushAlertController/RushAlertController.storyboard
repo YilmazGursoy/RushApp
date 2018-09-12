@@ -30,10 +30,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jok-P7-h3N" customClass="SpringView" customModule="Spring">
-                                <rect key="frame" x="74.666666666666686" y="246.33333333333337" width="265" height="245"/>
+                                <rect key="frame" x="74.666666666666686" y="245.66666666666663" width="265" height="245"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bildirimleri almak istiyor musunuz?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3g-IW-iRn">
-                                        <rect key="frame" x="15" y="24.999999999999975" width="235" height="46.333333333333343"/>
+                                        <rect key="frame" x="15" y="25.000000000000032" width="235" height="46.333333333333343"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@ lobi açıldığında bilgilendirileceksiniz</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X02-Qr-Mfi">
-                                        <rect key="frame" x="13" y="182.99999999999997" width="239" height="49"/>
+                                        <rect key="frame" x="13" y="183.00000000000003" width="239" height="49"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D42-GS-fFN">
                                                 <rect key="frame" x="0.0" y="0.0" width="239" height="49"/>
@@ -70,7 +70,7 @@ lobi açıldığında bilgilendirileceksiniz</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8d-sg-EsD" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
-                                        <rect key="frame" x="13" y="128.99999999999997" width="239" height="49"/>
+                                        <rect key="frame" x="13" y="129.00000000000003" width="239" height="49"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWD-AK-Kgm">
                                                 <rect key="frame" x="0.0" y="0.0" width="239" height="49"/>
