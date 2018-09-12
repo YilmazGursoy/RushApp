@@ -43,9 +43,7 @@ class ProfileVC: BaseVC {
         self.titleLabel.text = Rush.shared.currentUser.username
         ImageDownloaderManager.downloadImage(imageName: ConstantUrls.profilePictureName) { (url) in
             DispatchQueue.main.async {
-                self.profilePictureImage.sd_setImage(with: url, completed: { (image, error, cacheType, url) in
-                    
-                })
+                self.profilePictureImage.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options:.cacheMemoryOnly , completed: nil)
             }
         }
         

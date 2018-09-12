@@ -87,10 +87,7 @@ class GameSelectionVC: BaseVC {
                         } else {
                             Rush.shared.currentUser = response
                             DispatchQueue.main.async {
-                                let window = UIApplication.shared.keyWindow
-                                let tabbarController = TabBarController()
-                                window?.rootViewController = tabbarController
-                                window?.makeKeyAndVisible()
+                                self.pushMainTabBar()
                             }
                         }
                     })

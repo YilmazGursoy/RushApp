@@ -28,18 +28,12 @@ class SplashVC: BaseVC {
                         updateRequest.sendUpdateFirebaseToken(completion: { (response, isFirNil) in
                             if isFirNil{
                                 DispatchQueue.main.async {
-                                    let window = UIApplication.shared.keyWindow
-                                    let tabbarController = TabBarController()
-                                    window?.rootViewController = tabbarController
-                                    window?.makeKeyAndVisible()
+                                    self.pushMainTabBar()
                                 }
                             } else {
                                 if response != nil {
                                     DispatchQueue.main.async {
-                                        let window = UIApplication.shared.keyWindow
-                                        let tabbarController = TabBarController()
-                                        window?.rootViewController = tabbarController
-                                        window?.makeKeyAndVisible()
+                                        self.pushMainTabBar()
                                     }
                                 }
                             }

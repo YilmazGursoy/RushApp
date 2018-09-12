@@ -43,4 +43,11 @@ class BaseVC: UIViewController {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
+    func pushMainTabBar(){
+        let window = UIApplication.shared.keyWindow
+        let tabbarController = TabBarController()
+        window?.rootViewController = tabbarController
+        window?.makeKeyAndVisible()
+    }
+    
 }
