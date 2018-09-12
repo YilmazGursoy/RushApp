@@ -39,7 +39,7 @@ class FeedVC: BaseVC {
         super.viewDidLoad()
         self.tableView.register(UINib.init(nibName: "FeedCell", bundle: .main), forCellReuseIdentifier: "FeedCell")
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 333
+        self.tableView.estimatedRowHeight = 200
         self.sendFeedRequest()
         self.tableView.addSubview(refreshControl)
     }
@@ -79,8 +79,7 @@ class FeedVC: BaseVC {
         self.present(navigationController, animated: true, completion: nil)
     }
     @IBAction func dummy(_ sender: UIButton) {
-        let vc = LobbyDetailVC.createFromStoryboard()
-        self.pushViewController(pushViewController: vc)
+        
     }
     
 }

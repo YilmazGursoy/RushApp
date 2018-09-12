@@ -13,3 +13,4 @@ struct Subscriber: Decodable {
     let username: String
     let profilePic: URL
 }
+

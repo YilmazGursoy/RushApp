@@ -63,6 +63,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="x5x-Fa-Vxx"/>
             <connections>
+                <outlet property="feedImageView" destination="dvl-Sj-ULw" id="OZb-Al-VN1"/>
                 <outlet property="visualEffectView" destination="YQC-fT-rog" id="dTk-yn-l9a"/>
             </connections>
             <point key="canvasLocation" x="636.5" y="-421"/>

@@ -42,10 +42,17 @@ class FeedCell: UITableViewCell {
         self.feedDescriptionLabel.text = feed.text
         self.numberOfLikeLabel.text = "\(feed.numberOfLike)"
         self.numberOfShareLabel.text = "\(feed.numberOfShare)"
-        
-        
-        self.profileImageView.sd_setImage(with: feed.sender.profilePic, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .refreshCached, completed: nil)
-        self.feedImageView.sd_setImage(with: feed.picture, placeholderImage: #imageLiteral(resourceName: "placeholderImage"), options: .refreshCached, completed: nil)
+        if let feedImage = feed.picture {
+            self.pictureBackView.isHidden = false
+            self.feedImageView.sd_setImage(with: feedImage, placeholderImage: #imageLiteral(resourceName: "placeholderImage"), completed: nil)
+        } else{
+            self.pictureBackView.isHidden = true
+        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.init(identifier: "tr_TR")
+        dateFormatter.dateFormat = "dd MMMM, HH:mm"
+        self.dateLabel.text = dateFormatter.string(from: feed.date)
+        self.profileImageView.sd_setImage(with: feed.sender.profilePic, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), completed: nil)
         self.didSelectCompletion = selectCompletion
         self.indexPath = indexPath
     }

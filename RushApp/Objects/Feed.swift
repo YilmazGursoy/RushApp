@@ -10,15 +10,14 @@ import Foundation
 
 struct Feed: Codable {
     let id: String
-    let picture: URL
+    let picture: URL?
     let name: String
     let text: String
-    let date: String
+    let date: Date
     let sender: Sender
     let numberOfLike: Int
     let numberOfShare: Int
 }
-
 
 //MARK: JSON
 /*

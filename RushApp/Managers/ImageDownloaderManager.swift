@@ -12,7 +12,6 @@ import AWSS3
 class ImageDownloaderManager : NSObject {
     
     static func downloadImage(imageName:String, completionBlock:@escaping (URL)->Void) {
-        
         AWSCredentialManager.shared.currentCredential.getIdentityId().continueWith { (task) -> Any? in
             let userId = task.result! as String
             
@@ -37,6 +36,22 @@ class ImageDownloaderManager : NSObject {
                 
                 return nil
             })
+            return nil
+        }
+    }
+    
+    static func downloadProfileImage(imageUrl:URL, completionBlock:@escaping (URL)->Void) {
+        let transferManager = AWSS3TransferManager.default()
+        let downloadRequest = AWSS3TransferManagerDownloadRequest()
+        downloadRequest?.downloadingFileURL = imageUrl
+        transferManager.download(downloadRequest!).continueWith { (task) -> Any? in
+            if let result = task.result {
+                if let downloadOutput = result as? AWSS3TransferManagerDownloadOutput {
+                    if let url = downloadOutput.body as? URL {
+                        completionBlock(url)
+                    }
+                }
+            }
             return nil
         }
     }

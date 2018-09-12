@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 import CoreLocation
 
 class CreateLobbyVC: BaseVC {
@@ -19,7 +20,6 @@ class CreateLobbyVC: BaseVC {
     @IBOutlet weak var neededPlayerTextField: UITextField!
     @IBOutlet weak var lobbyPreviwBackView: GradientView!
     @IBOutlet weak var lobbyPreviewButtonOutlet: UIButton!
-    
     
     var platformType:Platform?
     var selectingGame:Game?
@@ -94,6 +94,19 @@ class CreateLobbyVC: BaseVC {
         self.lobbyPreviewButtonOutlet.isUserInteractionEnabled = true
         self.lobbyPreviwBackView.topColor = #colorLiteral(red: 0.6431372549, green: 0.6431372549, blue: 0.6431372549, alpha: 0.5)
         self.lobbyPreviwBackView.bottomColor = #colorLiteral(red: 0.337254902, green: 0.337254902, blue: 0.337254902, alpha: 0.5)
+    }
+    @IBAction func postPublishTapped(_ sender: UIButton) {
+        let createLobbyRequest = LobbyCreateRequest()
+        SVProgressHUD.show()
+        createLobbyRequest.sendLobbyCreateRequest(lobbyName: self.lobbyNameTextField.text!, address: self.currentLocationName!, numberOfNeededUser: Int((self.neededPlayerTextField.text! as NSString).intValue), description: self.lobbyDetailTextField.text!, latitude: self.currentLocation!.coordinate.latitude, longitude: self.currentLocation!.coordinate.longitude, sender: Rush.shared.currentUser, game: self.selectingGame, platform: self.platformType!, completionSuccess: { (lobby) in
+            SVProgressHUD.dismiss()
+            let vc = LobbyDetailVC.createFromStoryboard()
+            vc.currentLobby = lobby
+            self.navigationController?.pushVCMainThread(vc)
+        }) {
+            SVProgressHUD.dismiss()
+            self.showErrorMessage(message: "There is an error to creating Lobby")
+        }
     }
 }
 

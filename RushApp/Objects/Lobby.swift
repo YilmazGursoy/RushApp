@@ -16,14 +16,16 @@ enum LobbyStatus {
 
 struct Lobby: Decodable {
     let id: String
+    let name:String
+    let userId:String
     let isActive: Bool
     let address: String
     let description: String
-    let date: String
+    let date: Date
     let latitude: Double
     let longitude: Double
     let sender: Sender
-    let subscribers: [Subscriber]
+    let subscribers: [Subscriber]?
     let game: Game
     let platform: Int
     let lobbyHasChat: Bool

@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SDWebImage
 import GSKStretchyHeaderView
 
 class FeedDetailFlexView: GSKStretchyHeaderView {
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
+    @IBOutlet weak var feedImageView: UIImageView!
     
     class func fromNib<T: UIView>() -> T {
         return Bundle.main.loadNibNamed(String(describing:  "FeedDetailFlexView"), owner: nil, options: nil)![0] as! T
@@ -20,6 +22,10 @@ class FeedDetailFlexView: GSKStretchyHeaderView {
     override func didChangeStretchFactor(_ stretchFactor: CGFloat) {
         visualEffectView.alpha = 1.0 - stretchFactor
         print(stretchFactor)
+    }
+    
+    func arrangeDetailFlexTitle(url:URL?) {
+        self.feedImageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "placeholderImage"), options: .continueInBackground, completed: nil)
     }
 
 }

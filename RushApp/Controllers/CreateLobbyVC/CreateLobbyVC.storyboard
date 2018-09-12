@@ -43,7 +43,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4s-8V-gwQ">
-                                        <rect key="frame" x="141" y="6" width="93" height="33"/>
+                                        <rect key="frame" x="142" y="7.5" width="91" height="30"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
                                         <state key="normal" title="Create Lobby">
                                             <color key="titleColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -135,7 +135,7 @@
                                                                     <constraint firstItem="6tc-KR-kJe" firstAttribute="centerX" secondItem="IAE-N4-CsC" secondAttribute="centerX" id="zux-KT-58F"/>
                                                                 </constraints>
                                                             </view>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Lobi Adı (Tercihen oyun ismi)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IyO-JJ-xHb">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="testset" placeholder="Lobi Adı (Tercihen oyun ismi)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IyO-JJ-xHb">
                                                                 <rect key="frame" x="60" y="12.5" width="305" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="Teu-Uh-tqA"/>
@@ -183,7 +183,7 @@
                                                                     <constraint firstAttribute="width" constant="50" id="MCT-Ui-aUo"/>
                                                                 </constraints>
                                                             </view>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Lobi Detayı (Lobi detayı girin)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APP-iT-Xg5">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="testsetse" placeholder="Lobi Detayı (Lobi detayı girin)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APP-iT-Xg5">
                                                                 <rect key="frame" x="60" y="12" width="305" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="jlu-bi-VbO"/>
@@ -231,7 +231,7 @@
                                                                     <constraint firstItem="YNI-Qq-IwV" firstAttribute="centerX" secondItem="iuA-KL-xFh" secondAttribute="centerX" id="Ndx-H8-Pz3"/>
                                                                 </constraints>
                                                             </view>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Gerekli Oyuncu Sayısı ( 1...10)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AAO-7d-e1M">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2" placeholder="Gerekli Oyuncu Sayısı ( 1...10)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AAO-7d-e1M">
                                                                 <rect key="frame" x="60" y="12" width="305" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="vju-AL-OaS"/>
@@ -280,7 +280,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bir Platform Seçiniz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eFr-mN-mbC">
-                                                                <rect key="frame" x="60" y="15.5" width="281" height="18"/>
+                                                                <rect key="frame" x="60" y="16.5" width="281" height="16"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -327,7 +327,7 @@
                                                         <rect key="frame" x="0.0" y="255" width="375" height="50"/>
                                                         <subviews>
                                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bir Oyun Seçiniz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zjo-tP-mrh">
-                                                                <rect key="frame" x="60" y="16" width="281" height="18"/>
+                                                                <rect key="frame" x="60" y="17" width="281" height="16"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -404,6 +404,9 @@
                                                         <state key="normal" title="Post">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="postPublishTapped:" destination="hw9-1b-Kjq" eventType="touchUpInside" id="hBY-2S-YgY"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

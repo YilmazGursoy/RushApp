@@ -40,9 +40,7 @@ class FeedDetailVC: BaseVC {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        get {
-            return .lightContent
-        }
+        return .lightContent
     }
     
     @objc func keyboardWillHide(){
@@ -66,6 +64,7 @@ class FeedDetailVC: BaseVC {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
         let flexView = FeedDetailFlexView.fromNib() as! FeedDetailFlexView
+        flexView.arrangeDetailFlexTitle(url: feed.picture)
         flexView.minimumContentHeight = 64
         flexView.maximumContentHeight = 200
         flexView.contentExpands = false
@@ -75,7 +74,7 @@ class FeedDetailVC: BaseVC {
     }
     
     private func loadUI(){
-        self.navigationTitleLabel.text = "Detay"
+        self.navigationTitleLabel.text = ""
     }
     
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {

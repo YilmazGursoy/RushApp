@@ -24,6 +24,7 @@ class ChangeProfilePictureRequest : Request {
         uploadRequest!.bucket = CognitoConstants.awsS3ProfilePictureBucketName
         uploadRequest!.key = "\(userId)/\(ConstantUrls.profilePictureName)"
         uploadRequest!.body = uploadingFileURL
+        uploadRequest?.acl = .publicReadWrite
         
         transferManager.upload(uploadRequest!).continueWith(executor: AWSExecutor.mainThread(), block: { (task:AWSTask<AnyObject>) -> Any? in
             

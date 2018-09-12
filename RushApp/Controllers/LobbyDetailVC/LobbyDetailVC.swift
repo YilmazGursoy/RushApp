@@ -9,8 +9,9 @@
 import UIKit
 
 class LobbyDetailVC: BaseVC {
-    
+    @IBOutlet weak var lobbyTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    var currentLobby:Lobby!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class LobbyDetailVC: BaseVC {
         self.tableView.register(UINib.init(nibName: "LobbyDetailTitleCell", bundle: .main), forCellReuseIdentifier: "LobbyDetailTitleCell")
         self.tableView.estimatedRowHeight = 400
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.lobbyTitle.text = currentLobby.name + " Lobby"
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +39,7 @@ extension LobbyDetailVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LobbyDetailTitleCell") as! LobbyDetailTitleCell
+        cell.arrangeCell(lobby: currentLobby)
         return cell
     }
     
