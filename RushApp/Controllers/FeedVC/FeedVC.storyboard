@@ -40,6 +40,14 @@
                                             <action selector="postCreateTapped:" destination="OMz-Bl-HTV" eventType="touchUpInside" id="H8N-bv-psy"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyO-Hj-6fU">
+                                        <rect key="frame" x="39" y="5" width="53" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Dummy"/>
+                                        <connections>
+                                            <action selector="dummy:" destination="OMz-Bl-HTV" eventType="touchUpInside" id="lI5-R8-3Yh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>

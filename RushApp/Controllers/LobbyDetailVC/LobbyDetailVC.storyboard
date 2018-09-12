@@ -52,15 +52,30 @@
                                     <constraint firstItem="PsA-fI-cdC" firstAttribute="leading" secondItem="ZLu-RB-C24" secondAttribute="trailing" id="vxc-Tv-h4m"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DNs-Pm-9Sb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7fo-iM-svP" id="RYY-Pg-tCS"/>
+                                    <outlet property="delegate" destination="7fo-iM-svP" id="CAg-3M-Hc2"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="DNs-Pm-9Sb" firstAttribute="top" secondItem="qD6-Jp-48l" secondAttribute="bottom" id="FNx-8v-bwR"/>
+                            <constraint firstItem="yOi-By-lze" firstAttribute="bottom" secondItem="DNs-Pm-9Sb" secondAttribute="bottom" id="SiD-XP-6Ja"/>
                             <constraint firstItem="qD6-Jp-48l" firstAttribute="leading" secondItem="yOi-By-lze" secondAttribute="leading" id="lUS-9o-X9f"/>
                             <constraint firstItem="qD6-Jp-48l" firstAttribute="top" secondItem="yOi-By-lze" secondAttribute="top" id="pG1-vY-6dW"/>
                             <constraint firstItem="yOi-By-lze" firstAttribute="trailing" secondItem="qD6-Jp-48l" secondAttribute="trailing" id="qRt-VE-wkL"/>
+                            <constraint firstItem="DNs-Pm-9Sb" firstAttribute="leading" secondItem="yOi-By-lze" secondAttribute="leading" id="rFJ-0g-GmM"/>
+                            <constraint firstItem="yOi-By-lze" firstAttribute="trailing" secondItem="DNs-Pm-9Sb" secondAttribute="trailing" id="wuc-ly-Don"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yOi-By-lze"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="DNs-Pm-9Sb" id="Fjh-LI-vtp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HSO-sY-3DI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

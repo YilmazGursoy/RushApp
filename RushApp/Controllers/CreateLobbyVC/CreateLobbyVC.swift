@@ -16,6 +16,7 @@ class CreateLobbyVC: BaseVC {
     @IBOutlet weak var lobbyDetailTextField: UITextField!
     @IBOutlet weak var choosePlatformTextField: UITextField!
     @IBOutlet weak var chooseGameTextField: UITextField!
+    @IBOutlet weak var neededPlayerTextField: UITextField!
     @IBOutlet weak var lobbyPreviwBackView: GradientView!
     @IBOutlet weak var lobbyPreviewButtonOutlet: UIButton!
     
@@ -70,8 +71,10 @@ class CreateLobbyVC: BaseVC {
                     if currentLocationName != nil {
                         if lobbyNameTextField.text!.count > 5 {
                             if lobbyDetailTextField.text!.count > 5 {
-                                self.lobbyPreviewEnable()
-                                return
+                                if neededPlayerTextField.text!.count > 0 {
+                                    self.lobbyPreviewEnable()
+                                    return
+                                }
                             }
                         }
                     }

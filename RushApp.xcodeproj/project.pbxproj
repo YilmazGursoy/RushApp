@@ -16,6 +16,8 @@
 		472B81442149296900C005B2 /* ExtensionLocation+CreateLobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B81432149296900C005B2 /* ExtensionLocation+CreateLobby.swift */; };
 		472B814821494EB700C005B2 /* LobbyGameSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B814721494EB700C005B2 /* LobbyGameSelectionVC.swift */; };
 		472B814A21494EBC00C005B2 /* LobbyGameSelectionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472B814921494EBC00C005B2 /* LobbyGameSelectionVC.storyboard */; };
+		472B815221497A0300C005B2 /* LobbyDetailTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B815021497A0300C005B2 /* LobbyDetailTitleCell.swift */; };
+		472B815321497A0300C005B2 /* LobbyDetailTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 472B815121497A0300C005B2 /* LobbyDetailTitleCell.xib */; };
 		472DFECF2135D27B00FC577A /* GameSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472DFECE2135D27B00FC577A /* GameSelectionVC.swift */; };
 		472DFED12135D28000FC577A /* GameSelectionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472DFED02135D28000FC577A /* GameSelectionVC.storyboard */; };
 		472DFEDD2135D3C900FC577A /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 472DFED32135D3C900FC577A /* OpenSans-SemiBold.ttf */; };
@@ -182,6 +184,8 @@
 		472B81432149296900C005B2 /* ExtensionLocation+CreateLobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExtensionLocation+CreateLobby.swift"; sourceTree = "<group>"; };
 		472B814721494EB700C005B2 /* LobbyGameSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyGameSelectionVC.swift; sourceTree = "<group>"; };
 		472B814921494EBC00C005B2 /* LobbyGameSelectionVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LobbyGameSelectionVC.storyboard; sourceTree = "<group>"; };
+		472B815021497A0300C005B2 /* LobbyDetailTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyDetailTitleCell.swift; sourceTree = "<group>"; };
+		472B815121497A0300C005B2 /* LobbyDetailTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LobbyDetailTitleCell.xib; sourceTree = "<group>"; };
 		472DFECE2135D27B00FC577A /* GameSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectionVC.swift; sourceTree = "<group>"; };
 		472DFED02135D28000FC577A /* GameSelectionVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameSelectionVC.storyboard; sourceTree = "<group>"; };
 		472DFED32135D3C900FC577A /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -421,6 +425,15 @@
 			path = LobbyGameSelectionVC;
 			sourceTree = "<group>";
 		};
+		472B814B214979D600C005B2 /* LobbyDetailTitleCell */ = {
+			isa = PBXGroup;
+			children = (
+				472B815021497A0300C005B2 /* LobbyDetailTitleCell.swift */,
+				472B815121497A0300C005B2 /* LobbyDetailTitleCell.xib */,
+			);
+			path = LobbyDetailTitleCell;
+			sourceTree = "<group>";
+		};
 		472DFECD2135D26600FC577A /* GameSelectionVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -586,6 +599,7 @@
 		47E2C6F621427D5600AAD648 /* LobbyDetailVC */ = {
 			isa = PBXGroup;
 			children = (
+				472B814B214979D600C005B2 /* LobbyDetailTitleCell */,
 				47E2C6F721427DF000AAD648 /* LobbyDetailVC.swift */,
 				47E2C6F921427DF700AAD648 /* LobbyDetailVC.storyboard */,
 			);
@@ -1092,6 +1106,7 @@
 				472DFF73213DC85300FC577A /* FeedCell.xib in Resources */,
 				47E2C70F21446D9800AAD648 /* MessageCell.xib in Resources */,
 				472DFF0C213849F400FC577A /* LobbyCollectionCell.xib in Resources */,
+				472B815321497A0300C005B2 /* LobbyDetailTitleCell.xib in Resources */,
 				472DFF072138445A00FC577A /* MapVC.storyboard in Resources */,
 				472B814A21494EBC00C005B2 /* LobbyGameSelectionVC.storyboard in Resources */,
 				D2075DC3209DE94300AC79B6 /* RegisterVC.storyboard in Resources */,
@@ -1230,6 +1245,7 @@
 			files = (
 				472DFF62213C135000FC577A /* User.swift in Sources */,
 				47C3C068213E625D00A74171 /* Message.swift in Sources */,
+				472B815221497A0300C005B2 /* LobbyDetailTitleCell.swift in Sources */,
 				D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */,
 				47E2C6F52141AAC200AAD648 /* LobbyRequest.swift in Sources */,
 				D2075DA9209B866500AC79B6 /* CacheManager.swift in Sources */,

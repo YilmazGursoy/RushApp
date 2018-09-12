@@ -16,6 +16,8 @@ struct Game: Decodable {
     var isActive:Bool?
 }
 
+//7 Days to Die-900x400.jpg
+
 extension Game {
     func getThumbImageURL()->URL {
         let imageUrl = thumbImage?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)

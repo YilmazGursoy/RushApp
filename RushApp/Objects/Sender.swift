@@ -9,7 +9,7 @@
 import Foundation
 
 struct Sender: Codable {
-    let id: Int
-    let username: String
-    let profilePic: URL
+    let id: Int?
+    let username: String?
+    let profilePic: URL?
 }
