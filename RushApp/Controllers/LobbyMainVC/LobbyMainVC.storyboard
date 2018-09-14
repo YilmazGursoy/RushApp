@@ -48,7 +48,7 @@
                                                     <constraint firstAttribute="width" constant="17" id="clG-An-gz9"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconDown" translatesAutoresizingMaskIntoConstraints="NO" id="Rmj-xV-QRu">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rmj-xV-QRu">
                                                 <rect key="frame" x="109" y="19" width="12" height="6"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="6" id="4C5-5h-tC3"/>
@@ -239,6 +239,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ObZ-oo-QeO"/>
                     </view>
+                    <connections>
+                        <outlet property="locationNameLabel" destination="bkx-1B-c0L" id="xTn-wP-dxc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UWP-lV-m5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -254,7 +257,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="iconDown" width="12" height="6"/>
         <image name="menuIcon" width="21" height="17"/>
         <image name="menuMapIcon" width="21" height="22"/>
         <image name="pinIcon" width="17" height="22"/>

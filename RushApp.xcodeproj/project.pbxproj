@@ -19,6 +19,12 @@
 		472B815221497A0300C005B2 /* LobbyDetailTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B815021497A0300C005B2 /* LobbyDetailTitleCell.swift */; };
 		472B815321497A0300C005B2 /* LobbyDetailTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 472B815121497A0300C005B2 /* LobbyDetailTitleCell.xib */; };
 		472B81552149ACA200C005B2 /* LobbyCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B81542149ACA200C005B2 /* LobbyCreateRequest.swift */; };
+		472B8157214AACB200C005B2 /* Extension+LobbyMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B8156214AACB200C005B2 /* Extension+LobbyMainVC.swift */; };
+		472B8159214AB38300C005B2 /* RadialGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B8158214AB38300C005B2 /* RadialGradientView.swift */; };
+		472B815B214AB39300C005B2 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 472B815A214AB39300C005B2 /* View.xib */; };
+		472B815D214AFDCB00C005B2 /* UserAllLobbiesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B815C214AFDCB00C005B2 /* UserAllLobbiesRequest.swift */; };
+		472B815F214B917B00C005B2 /* Extension+MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B815E214B917B00C005B2 /* Extension+MKMapView.swift */; };
+		472B8161214B936A00C005B2 /* GetNearestLobbiesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B8160214B936A00C005B2 /* GetNearestLobbiesRequest.swift */; };
 		472DFECF2135D27B00FC577A /* GameSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472DFECE2135D27B00FC577A /* GameSelectionVC.swift */; };
 		472DFED12135D28000FC577A /* GameSelectionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472DFED02135D28000FC577A /* GameSelectionVC.storyboard */; };
 		472DFEDD2135D3C900FC577A /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 472DFED32135D3C900FC577A /* OpenSans-SemiBold.ttf */; };
@@ -188,6 +194,12 @@
 		472B815021497A0300C005B2 /* LobbyDetailTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyDetailTitleCell.swift; sourceTree = "<group>"; };
 		472B815121497A0300C005B2 /* LobbyDetailTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LobbyDetailTitleCell.xib; sourceTree = "<group>"; };
 		472B81542149ACA200C005B2 /* LobbyCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyCreateRequest.swift; sourceTree = "<group>"; };
+		472B8156214AACB200C005B2 /* Extension+LobbyMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+LobbyMainVC.swift"; sourceTree = "<group>"; };
+		472B8158214AB38300C005B2 /* RadialGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialGradientView.swift; sourceTree = "<group>"; };
+		472B815A214AB39300C005B2 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		472B815C214AFDCB00C005B2 /* UserAllLobbiesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAllLobbiesRequest.swift; sourceTree = "<group>"; };
+		472B815E214B917B00C005B2 /* Extension+MKMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+MKMapView.swift"; sourceTree = "<group>"; };
+		472B8160214B936A00C005B2 /* GetNearestLobbiesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNearestLobbiesRequest.swift; sourceTree = "<group>"; };
 		472DFECE2135D27B00FC577A /* GameSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectionVC.swift; sourceTree = "<group>"; };
 		472DFED02135D28000FC577A /* GameSelectionVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameSelectionVC.storyboard; sourceTree = "<group>"; };
 		472DFED32135D3C900FC577A /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -538,6 +550,8 @@
 			isa = PBXGroup;
 			children = (
 				47C0B080211EDD9900469883 /* GradientView.swift */,
+				472B8158214AB38300C005B2 /* RadialGradientView.swift */,
+				472B815A214AB39300C005B2 /* View.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -658,6 +672,7 @@
 			isa = PBXGroup;
 			children = (
 				47E2C7622145C23000AAD648 /* LobbyMainPageController */,
+				472B8156214AACB200C005B2 /* Extension+LobbyMainVC.swift */,
 				47E2C7592145BC4D00AAD648 /* LobbyMainVC.swift */,
 				47E2C75B2145BF4B00AAD648 /* LobbyMainVC.storyboard */,
 			);
@@ -802,6 +817,7 @@
 				472DFF17213AE54500FC577A /* Extension+UIView.swift */,
 				472DFF5B213BDD0700FC577A /* Extension+UIImage.swift */,
 				47C3C0AC213F0DE400A74171 /* Extension+Json.swift */,
+				472B815E214B917B00C005B2 /* Extension+MKMapView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -927,6 +943,8 @@
 				47E2C6F42141AAC200AAD648 /* LobbyRequest.swift */,
 				47DE1AF52148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift */,
 				472B81542149ACA200C005B2 /* LobbyCreateRequest.swift */,
+				472B815C214AFDCB00C005B2 /* UserAllLobbiesRequest.swift */,
+				472B8160214B936A00C005B2 /* GetNearestLobbiesRequest.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -1105,6 +1123,7 @@
 				472DFF16213ACB9F00FC577A /* AchivementView.xib in Resources */,
 				D2D9108F20A070BE0054F3AA /* BaseNavigationController.storyboard in Resources */,
 				472B81422149272600C005B2 /* PlatformSelectionVC.storyboard in Resources */,
+				472B815B214AB39300C005B2 /* View.xib in Resources */,
 				472DFEE62135D3C900FC577A /* OpenSans-BoldItalic.ttf in Resources */,
 				472DFF73213DC85300FC577A /* FeedCell.xib in Resources */,
 				47E2C70F21446D9800AAD648 /* MessageCell.xib in Resources */,
@@ -1250,6 +1269,7 @@
 				47C3C068213E625D00A74171 /* Message.swift in Sources */,
 				472B815221497A0300C005B2 /* LobbyDetailTitleCell.swift in Sources */,
 				D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */,
+				472B8161214B936A00C005B2 /* GetNearestLobbiesRequest.swift in Sources */,
 				47E2C6F52141AAC200AAD648 /* LobbyRequest.swift in Sources */,
 				D2075DA9209B866500AC79B6 /* CacheManager.swift in Sources */,
 				D2D9108A209F7F5D0054F3AA /* FacebookLoginManager.swift in Sources */,
@@ -1261,6 +1281,7 @@
 				47E2C7092143211E00AAD648 /* FriendSelectionCell.swift in Sources */,
 				D2075DC8209DEF2E00AC79B6 /* LoginVC.swift in Sources */,
 				D258C0702098F5170090ABB5 /* AppDelegate.swift in Sources */,
+				472B815F214B917B00C005B2 /* Extension+MKMapView.swift in Sources */,
 				47E2C69B2140767900AAD648 /* FeedCommentCell.swift in Sources */,
 				472DFF64213C13E100FC577A /* Rush.swift in Sources */,
 				47E2C75621458ECD00AAD648 /* FeedCommentTitleViewCell.swift in Sources */,
@@ -1271,6 +1292,7 @@
 				472B81552149ACA200C005B2 /* LobbyCreateRequest.swift in Sources */,
 				D2075DC1209DE93B00AC79B6 /* RegisterVC.swift in Sources */,
 				D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */,
+				472B815D214AFDCB00C005B2 /* UserAllLobbiesRequest.swift in Sources */,
 				472DFEE82135D4DF00FC577A /* GameListRequest.swift in Sources */,
 				47E2C75F2145C1F100AAD648 /* LobbyListVC.swift in Sources */,
 				47E2C78C2146D63400AAD648 /* FilterVC.swift in Sources */,
@@ -1310,8 +1332,10 @@
 				D2075DB6209CE3C200AC79B6 /* BaseRequest.swift in Sources */,
 				47C3C0AB213F0D1900A74171 /* DefaultResponse.swift in Sources */,
 				47C0B081211EDD9900469883 /* GradientView.swift in Sources */,
+				472B8157214AACB200C005B2 /* Extension+LobbyMainVC.swift in Sources */,
 				47E2C68E2140741700AAD648 /* FeedTitleCell.swift in Sources */,
 				472DFF0F2139F4D600FC577A /* ProfileVC.swift in Sources */,
+				472B8159214AB38300C005B2 /* RadialGradientView.swift in Sources */,
 				D2075DBA209DDD8900AC79B6 /* AWSCredentialManager.swift in Sources */,
 				47C3C062213E61B300A74171 /* Lobby.swift in Sources */,
 				472DFEED2135D58400FC577A /* Game.swift in Sources */,

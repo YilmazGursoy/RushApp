@@ -7,8 +7,9 @@
 //
 
 import UIKit
-import SVProgressHUD
 import SDWebImage
+import CoreLocation
+import SVProgressHUD
 
 class BaseVC: UIViewController {
 
@@ -48,5 +49,23 @@ class BaseVC: UIViewController {
         let tabbarController = TabBarController()
         window?.rootViewController = tabbarController
         window?.makeKeyAndVisible()
+    }
+}
+
+//MARK: Core Location
+extension BaseVC {
+    func checkLocalization(completion:@escaping (CLAuthorizationStatus)->Void) {
+        switch(CLLocationManager.authorizationStatus())
+        {
+        case .authorizedAlways, .authorizedWhenInUse:
+            completion(.authorizedWhenInUse)
+        case .notDetermined:
+            completion(.notDetermined)
+            
+        case .restricted:
+            completion(.restricted)
+        default:
+            completion(.denied)
+        }
     }
 }

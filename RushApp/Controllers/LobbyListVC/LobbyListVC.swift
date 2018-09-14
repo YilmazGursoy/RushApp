@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 import SVProgressHUD
 
 class LobbyListVC: BaseVC {
@@ -25,7 +26,11 @@ class LobbyListVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getLobbyRequest()
+        self.checkLocalization { (status) in
+            if status == CLAuthorizationStatus.authorizedWhenInUse {
+                self.getLobbyRequest()
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -69,6 +74,6 @@ extension LobbyListVC : UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LobbyListCell") as! LobbyListCell
         cell.arrangeCell(lobby: self.lobbies[indexPath.row], index: indexPath.row)
         return cell
-    }
-    
+    }    
 }
+

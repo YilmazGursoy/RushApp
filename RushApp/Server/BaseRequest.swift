@@ -32,6 +32,7 @@ extension Request {
                             completionBlock(task.result,nil,nil)
                         }
                     } catch {
+                        RushLogger.errorLog(message: error.localizedDescription)
                         completionBlock(task.result,nil, error)
                     }
                 } else {

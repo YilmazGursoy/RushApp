@@ -34,7 +34,11 @@ class MapVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getLobbyRequest()
+        self.checkLocalization { (status) in
+            if status == CLAuthorizationStatus.authorizedWhenInUse {
+                self.getLobbyRequest()
+            }
+        }
     }
     
     private func setupUI(){
@@ -49,24 +53,24 @@ class MapVC: BaseVC {
     }
     
     private func getLobbyRequest(){
-        let request = LobbyRequest()
         SVProgressHUD.show()
-        request.sendGameLobbyRequestWithoutParameters { (lobbies, error) in
+        let request = GetNearestLobbiesRequest()
+        request.sendLobbyRequest(longitude: mapView.centerCoordinate.longitude, latitude: mapView.centerCoordinate.latitude, radius: mapView.currentRadius(), successCompletion: { (lobbies) in
             SVProgressHUD.dismiss()
-            if error != nil {
-                self.showErrorMessage(message: "There is an error to fetching lobbies.")
-            } else {
-                var locations:[CLLocation] = []
-
-                lobbies?.forEach({ (lobby) in
-                    locations.append(CLLocation(latitude: lobby.latitude, longitude: lobby.longitude))
-                })
-                self.lobbies = lobbies
-                DispatchQueue.main.async {
-                    self.addAnnotations(coords: locations)
-                }
+            var locations:[CLLocation] = []
+            
+            lobbies.forEach({ (lobby) in
+                locations.append(CLLocation(latitude: lobby.latitude, longitude: lobby.longitude))
+            })
+            self.lobbies = lobbies
+            DispatchQueue.main.async {
+                self.addAnnotations(coords: locations)
             }
+        }) {
+            SVProgressHUD.dismiss()
+            self.showErrorMessage(message: "There is an error to fetching lobbies.")
         }
+        
         
     }
     
@@ -96,7 +100,9 @@ extension MapVC : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LobbyCollectionCell", for: indexPath) as! LobbyCollectionCell
         cell.arrangeCell(lobby: self.lobbies[indexPath.row]) { () in
-            
+            let lobbyDetailVC = LobbyDetailVC.createFromStoryboard()
+            lobbyDetailVC.currentLobby = self.lobbies[indexPath.row]
+            self.navigationController?.pushVCMainThread(lobbyDetailVC)
         }
         return cell
     }
@@ -135,6 +141,6 @@ extension MapVC : MKMapViewDelegate{
     
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
         view.image = #imageLiteral(resourceName: "annotationImageOff")
-    }
+    }    
 }
 

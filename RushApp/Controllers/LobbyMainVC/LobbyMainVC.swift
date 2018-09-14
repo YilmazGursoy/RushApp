@@ -7,15 +7,34 @@
 //
 
 import UIKit
+import CoreLocation
 
 let kChangeLobbyTypeNotificationKey = "changeLobbyTypeNotificationKey"
 
 class LobbyMainVC: BaseVC {
-
+    
+    @IBOutlet weak var locationNameLabel: UILabel!
+    
+    var currentLocation:CLLocation?
+    var currentLocationName:String?
+    var locationManager = CLLocationManager()
+    var locationManagerStatus:Bool! = false {
+        didSet {
+            if locationManagerStatus {
+                
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
 
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            self.checkLocation()
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -1,31 +1,29 @@
 //
-//  ExtensionLocation+CreateLobby.swift
+//  Extension+LobbyMainVC.swift
 //  RushApp
 //
-//  Created by Yilmaz Gursoy on 12.09.2018.
+//  Created by Yilmaz Gursoy on 13.09.2018.
 //  Copyright © 2018 MW. All rights reserved.
 //
 
 import UIKit
 import CoreLocation
 
-extension CreateLobbyVC {
+extension LobbyMainVC {
     
     func checkLocation(){
         self.checkLocalization(completion: { (status) in
             if status == .notDetermined {
                 let alert = RushAlertController.createFromStoryboard()
-                alert.createAlert(title: "Lobby oluşturmak istiyor musun?", description: "Konumuna yakın bölgelerde istediğin gibi lobby kur", positiveTitle: "Konum Aç", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
-                    
+                alert.createAlert(title: "Oyun lobilerini aramak mı istiyorsun?", description: "Konumuna yakın bölgelerde istediğin gibi Lobi ara", positiveTitle: "Konum Aç", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
                     self.locationManager.delegate = self
                     self.locationManager.requestWhenInUseAuthorization()
                     
                 }) {
                     
                     self.pop()
-                    
                 }
-                self.present(alert, animated: false, completion: nil)
+                self.tabBarController?.present(alert, animated: false, completion: nil)
             } else if status == .denied {
                 let alert = RushAlertController.createFromStoryboard()
                 alert.createAlert(title: "Hey!", description: "Maalesef ayarlardan konum servislerini açman gerek.", positiveTitle: "Tamam", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
@@ -34,7 +32,7 @@ extension CreateLobbyVC {
                 }) {
                     self.pop()
                 }
-                self.present(alert, animated: false, completion: nil)
+                self.tabBarController?.present(alert, animated: false, completion: nil)
             } else if status == .authorizedWhenInUse {
                 self.setupLocation()
             }
@@ -65,7 +63,7 @@ extension CreateLobbyVC {
                         return
                     }else if let _ = placemarks?.first?.country,
                         let city = placemarks?.first?.locality {
-                        self.locationLabel.text = "\(city)"
+                        self.locationNameLabel.text = city
                         self.currentLocationName = city
                     }
                     else {
@@ -80,7 +78,7 @@ extension CreateLobbyVC {
                 }) {
                     
                 }
-                self.present(alert, animated: false, completion: nil)
+                self.tabBarController?.present(alert, animated: false, completion: nil)
                 break
                 
             case .restricted:
@@ -94,17 +92,17 @@ extension CreateLobbyVC {
     }
 }
 
-extension CreateLobbyVC : CLLocationManagerDelegate {
+extension LobbyMainVC : CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .notDetermined {
             let alert = RushAlertController.createFromStoryboard()
-            alert.createAlert(title: "Lobby oluşturmak istiyor musun?", description: "Konumuna yakın bölgelerde istediğin gibi lobby kur", positiveTitle: "Konum Aç", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
+            alert.createAlert(title: "Oyun lobilerini aramak mı istiyorsun?", description: "Konumuna yakın bölgelerde istediğin gibi Lobi ara", positiveTitle: "Konum Aç", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
                 self.locationManager.requestWhenInUseAuthorization()
             }) {
                 self.pop()
             }
-            self.present(alert, animated: false, completion: nil)
+            self.tabBarController?.present(alert, animated: false, completion: nil)
         } else if status == .denied {
             let alert = RushAlertController.createFromStoryboard()
             alert.createAlert(title: "Hey!", description: "Maalesef ayarlardan konum servislerini açman gerek.", positiveTitle: "Tamam", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
@@ -113,7 +111,7 @@ extension CreateLobbyVC : CLLocationManagerDelegate {
             }) {
                 self.pop()
             }
-            self.present(alert, animated: false, completion: nil)
+            self.tabBarController?.present(alert, animated: false, completion: nil)
         } else if status == .authorizedWhenInUse {
             setupLocation()
         }

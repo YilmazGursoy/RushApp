@@ -22,6 +22,7 @@ class ProfileVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sendAchivementRequest()
+        sendUserLobbyRequest()
         setupUI()
     }
 
@@ -46,7 +47,15 @@ class ProfileVC: BaseVC {
                 self.profilePictureImage.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options:.cacheMemoryOnly , completed: nil)
             }
         }
-        
+    }
+    
+    private func sendUserLobbyRequest(){
+        let userlobbyRequest = UserAllLobbiesRequest()
+        userlobbyRequest.sendLobbyRequest(userId: nil, successCompletionHandler: { (lobbyList) in
+            print(lobbyList)
+        }) {
+            print("Error")
+        }
     }
     
     @IBAction func settingsTapped(_ sender: Any) {
