@@ -43,7 +43,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4s-8V-gwQ">
-                                        <rect key="frame" x="142" y="7.5" width="91" height="30"/>
+                                        <rect key="frame" x="141" y="6" width="93" height="33"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
                                         <state key="normal" title="Create Lobby">
                                             <color key="titleColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -71,10 +71,10 @@
                                 <rect key="frame" x="0.0" y="65" width="375" height="602"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjt-44-s03">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="477"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="512"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="G30-lb-KmT">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="306"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="341"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pD8-hi-Sf4">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -135,7 +135,7 @@
                                                                     <constraint firstItem="6tc-KR-kJe" firstAttribute="centerX" secondItem="IAE-N4-CsC" secondAttribute="centerX" id="zux-KT-58F"/>
                                                                 </constraints>
                                                             </view>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="testset" placeholder="Lobi Adı (Tercihen oyun ismi)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IyO-JJ-xHb">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Lobi Adı (Tercihen oyun ismi)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IyO-JJ-xHb">
                                                                 <rect key="frame" x="60" y="12.5" width="305" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="Teu-Uh-tqA"/>
@@ -167,7 +167,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AmO-ZX-fap">
-                                                        <rect key="frame" x="0.0" y="102" width="375" height="50"/>
+                                                        <rect key="frame" x="0.0" y="102" width="375" height="85"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mxC-ya-72P">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -180,42 +180,41 @@
                                                                 <constraints>
                                                                     <constraint firstItem="mbg-aI-M3r" firstAttribute="centerX" secondItem="mxC-ya-72P" secondAttribute="centerX" id="0jQ-6g-CYD"/>
                                                                     <constraint firstItem="mbg-aI-M3r" firstAttribute="centerY" secondItem="mxC-ya-72P" secondAttribute="centerY" id="3vo-ea-Xch"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="IqY-ii-HWt"/>
                                                                     <constraint firstAttribute="width" constant="50" id="MCT-Ui-aUo"/>
                                                                 </constraints>
                                                             </view>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="testsetse" placeholder="Lobi Detayı (Lobi detayı girin)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APP-iT-Xg5">
-                                                                <rect key="frame" x="60" y="12" width="305" height="25"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="25" id="jlu-bi-VbO"/>
-                                                                </constraints>
-                                                                <nil key="textColor"/>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lobi detayı..." translatesAutoresizingMaskIntoConstraints="NO" id="HIp-D6-huX">
+                                                                <rect key="frame" x="60" y="10" width="305" height="65"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="textColor" red="0.66666666666666663" green="0.66666668653488159" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 <connections>
-                                                                    <outlet property="delegate" destination="hw9-1b-Kjq" id="GhE-6r-ke8"/>
+                                                                    <outlet property="delegate" destination="hw9-1b-Kjq" id="efv-mH-sBS"/>
                                                                 </connections>
-                                                            </textField>
+                                                            </textView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="APP-iT-Xg5" secondAttribute="trailing" constant="10" id="DXE-2H-VPN"/>
-                                                            <constraint firstAttribute="bottom" secondItem="mxC-ya-72P" secondAttribute="bottom" id="EPw-m7-FYe"/>
-                                                            <constraint firstItem="APP-iT-Xg5" firstAttribute="leading" secondItem="mxC-ya-72P" secondAttribute="trailing" constant="10" id="IFu-Xe-crC"/>
+                                                            <constraint firstItem="HIp-D6-huX" firstAttribute="top" secondItem="AmO-ZX-fap" secondAttribute="top" constant="10" id="IEV-gj-8LR"/>
                                                             <constraint firstItem="mxC-ya-72P" firstAttribute="leading" secondItem="AmO-ZX-fap" secondAttribute="leading" id="PJ0-Z6-EKE"/>
-                                                            <constraint firstAttribute="height" constant="50" id="e7M-cx-V1M"/>
+                                                            <constraint firstAttribute="bottom" secondItem="HIp-D6-huX" secondAttribute="bottom" constant="10" id="Tx4-i7-xMo"/>
+                                                            <constraint firstAttribute="trailing" secondItem="HIp-D6-huX" secondAttribute="trailing" constant="10" id="ZQF-6S-hdq"/>
+                                                            <constraint firstAttribute="height" constant="85" id="e7M-cx-V1M"/>
                                                             <constraint firstItem="mxC-ya-72P" firstAttribute="top" secondItem="AmO-ZX-fap" secondAttribute="top" id="elX-Io-DVg"/>
-                                                            <constraint firstItem="APP-iT-Xg5" firstAttribute="centerY" secondItem="AmO-ZX-fap" secondAttribute="centerY" id="muf-6A-CaI"/>
+                                                            <constraint firstItem="HIp-D6-huX" firstAttribute="leading" secondItem="mxC-ya-72P" secondAttribute="trailing" constant="10" id="eld-Wt-l7K"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2dD-UG-p4W">
-                                                        <rect key="frame" x="0.0" y="152" width="375" height="1"/>
+                                                        <rect key="frame" x="0.0" y="187" width="375" height="1"/>
                                                         <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="Nbb-MA-TtR"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frJ-yX-ebj">
-                                                        <rect key="frame" x="0.0" y="153" width="375" height="50"/>
+                                                        <rect key="frame" x="0.0" y="188" width="375" height="50"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iuA-KL-xFh">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -231,7 +230,7 @@
                                                                     <constraint firstItem="YNI-Qq-IwV" firstAttribute="centerX" secondItem="iuA-KL-xFh" secondAttribute="centerX" id="Ndx-H8-Pz3"/>
                                                                 </constraints>
                                                             </view>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2" placeholder="Gerekli Oyuncu Sayısı ( 1...10)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AAO-7d-e1M">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Gerekli Oyuncu Sayısı ( 1...10)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AAO-7d-e1M">
                                                                 <rect key="frame" x="60" y="12" width="305" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="vju-AL-OaS"/>
@@ -256,14 +255,14 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6E-rf-Gol">
-                                                        <rect key="frame" x="0.0" y="203" width="375" height="1"/>
+                                                        <rect key="frame" x="0.0" y="238" width="375" height="1"/>
                                                         <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="fuo-OI-XCZ"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a78-sn-hh4">
-                                                        <rect key="frame" x="0.0" y="204" width="375" height="50"/>
+                                                        <rect key="frame" x="0.0" y="239" width="375" height="50"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6F-JK-AB4">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -280,7 +279,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bir Platform Seçiniz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eFr-mN-mbC">
-                                                                <rect key="frame" x="60" y="16.5" width="281" height="16"/>
+                                                                <rect key="frame" x="60" y="15.5" width="281" height="18"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -317,17 +316,17 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTC-lR-X6C">
-                                                        <rect key="frame" x="50" y="254" width="325" height="1"/>
+                                                        <rect key="frame" x="50" y="289" width="325" height="1"/>
                                                         <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="V7E-4U-CDK"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jPB-8P-raI">
-                                                        <rect key="frame" x="0.0" y="255" width="375" height="50"/>
+                                                        <rect key="frame" x="0.0" y="290" width="375" height="50"/>
                                                         <subviews>
                                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bir Oyun Seçiniz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zjo-tP-mrh">
-                                                                <rect key="frame" x="60" y="17" width="281" height="16"/>
+                                                                <rect key="frame" x="60" y="16" width="281" height="18"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -361,7 +360,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7h-bP-m7u">
-                                                        <rect key="frame" x="0.0" y="305" width="375" height="1"/>
+                                                        <rect key="frame" x="0.0" y="340" width="375" height="1"/>
                                                         <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="cEe-uE-fdn"/>
@@ -396,7 +395,7 @@
                                                 </constraints>
                                             </stackView>
                                             <view alpha="0.57999998331069946" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ot-b4-lut" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
-                                                <rect key="frame" x="108" y="326" width="158" height="51"/>
+                                                <rect key="frame" x="108" y="361" width="158" height="51"/>
                                                 <subviews>
                                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Io-sc-bGg">
                                                         <rect key="frame" x="0.0" y="0.0" width="158" height="51"/>
@@ -470,7 +469,7 @@
                     <connections>
                         <outlet property="chooseGameTextField" destination="zjo-tP-mrh" id="1HL-Ka-l6M"/>
                         <outlet property="choosePlatformTextField" destination="eFr-mN-mbC" id="Zve-J1-cSg"/>
-                        <outlet property="lobbyDetailTextField" destination="APP-iT-Xg5" id="qUa-8K-Iey"/>
+                        <outlet property="lobbyDetailTextView" destination="HIp-D6-huX" id="biM-ti-mJD"/>
                         <outlet property="lobbyNameTextField" destination="IyO-JJ-xHb" id="Afb-cs-hNk"/>
                         <outlet property="lobbyPreviewButtonOutlet" destination="5Io-sc-bGg" id="whi-Uf-QDc"/>
                         <outlet property="lobbyPreviwBackView" destination="8ot-b4-lut" id="BjC-KX-0WZ"/>
@@ -480,7 +479,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dHY-90-kf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79.200000000000003" y="172.71364317841082"/>
+            <point key="canvasLocation" x="-79.200000000000003" y="172.26386806596702"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="slB-A7-DnF">

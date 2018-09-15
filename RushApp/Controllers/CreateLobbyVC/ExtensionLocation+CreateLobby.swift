@@ -16,7 +16,6 @@ extension CreateLobbyVC {
             if status == .notDetermined {
                 let alert = RushAlertController.createFromStoryboard()
                 alert.createAlert(title: "Lobby oluşturmak istiyor musun?", description: "Konumuna yakın bölgelerde istediğin gibi lobby kur", positiveTitle: "Konum Aç", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
-                    
                     self.locationManager.delegate = self
                     self.locationManager.requestWhenInUseAuthorization()
                     
@@ -119,4 +118,21 @@ extension CreateLobbyVC : CLLocationManagerDelegate {
         }
     }
     
+}
+
+extension CreateLobbyVC : UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor != .black {
+            textView.textColor = .black
+            textView.text = ""
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty || textView.text == "Lobi detayı..." {
+            textView.text = "Lobi detayı..."
+            textView.textColor = UIColor.init(rgb: (r: 170, g: 170, b: 170))
+        }
+    }
 }

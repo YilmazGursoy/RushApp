@@ -14,7 +14,7 @@ class CreateLobbyVC: BaseVC {
     
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var lobbyNameTextField: UITextField!
-    @IBOutlet weak var lobbyDetailTextField: UITextField!
+    @IBOutlet weak var lobbyDetailTextView: UITextView!
     @IBOutlet weak var choosePlatformTextField: UITextField!
     @IBOutlet weak var chooseGameTextField: UITextField!
     @IBOutlet weak var neededPlayerTextField: UITextField!
@@ -70,7 +70,7 @@ class CreateLobbyVC: BaseVC {
                 if currentLocation != nil {
                     if currentLocationName != nil {
                         if lobbyNameTextField.text!.count > 5 {
-                            if lobbyDetailTextField.text!.count > 5 {
+                            if lobbyDetailTextView.text!.count > 5 {
                                 if neededPlayerTextField.text!.count > 0 {
                                     self.lobbyPreviewEnable()
                                     return
@@ -98,7 +98,7 @@ class CreateLobbyVC: BaseVC {
     @IBAction func postPublishTapped(_ sender: UIButton) {
         let createLobbyRequest = LobbyCreateRequest()
         SVProgressHUD.show()
-        createLobbyRequest.sendLobbyCreateRequest(lobbyName: self.lobbyNameTextField.text!, address: self.currentLocationName!, numberOfNeededUser: Int((self.neededPlayerTextField.text! as NSString).intValue), description: self.lobbyDetailTextField.text!, latitude: self.currentLocation!.coordinate.latitude, longitude: self.currentLocation!.coordinate.longitude, sender: Rush.shared.currentUser, game: self.selectingGame, platform: self.platformType!, completionSuccess: { (lobby) in
+        createLobbyRequest.sendLobbyCreateRequest(lobbyName: self.lobbyNameTextField.text!, address: self.currentLocationName!, numberOfNeededUser: Int((self.neededPlayerTextField.text! as NSString).intValue), description: self.lobbyDetailTextView.text!, latitude: self.currentLocation!.coordinate.latitude, longitude: self.currentLocation!.coordinate.longitude, sender: Rush.shared.currentUser, game: self.selectingGame, platform: self.platformType!, completionSuccess: { (lobby) in
             SVProgressHUD.dismiss()
             let vc = LobbyDetailVC.createFromStoryboard()
             vc.currentLobby = lobby
