@@ -34,14 +34,13 @@ class ProfileVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupUI(isCacheRefresh: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         SVProgressHUD.show()
         sendUserLobbyRequest()
-        setupUI()
         registerCollectionViews()
     }
     
@@ -54,11 +53,13 @@ class ProfileVC: BaseVC {
         //TODO:
     }
     
-    private func setupUI(){
-        self.titleLabel.text = Rush.shared.currentUser.username
-        ImageDownloaderManager.downloadImage(imageName: ConstantUrls.profilePictureName) { (url) in
-            DispatchQueue.main.async {
-                self.profilePictureImage.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options:.cacheMemoryOnly , completed: nil)
+    private func setupUI(isCacheRefresh:Bool){
+        DispatchQueue.main.async {
+            self.titleLabel.text = Rush.shared.currentUser.username
+            ImageDownloaderManager.downloadImage(imageName: ConstantUrls.profilePictureName) { (url) in
+                DispatchQueue.main.async {
+                    self.profilePictureImage.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options:(isCacheRefresh ? .refreshCached : .cacheMemoryOnly) , completed: nil)
+                }
             }
         }
     }
@@ -106,18 +107,16 @@ class ProfileVC: BaseVC {
 extension ProfileVC : FusumaDelegate {
     func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
         DispatchQueue.main.async {
-            self.profilePictureImage.image = image
             var newImage = image
             newImage = newImage.resizeImage(targetSize: constantProfilePictureSize)
-            
             ImageUploadManager.uploadImage(newImage: newImage, completionSuccess: {
+                self.setupUI(isCacheRefresh: true)
                 SVProgressHUD.showSuccess(withStatus: "Profile picture change!")
             }, completionFailed: {
                 SVProgressHUD.dismiss()
                 SVProgressHUD.showSuccess(withStatus: "There is an error to changing profile picture!")
             })
         }
-        
     }
     
     func fusumaMultipleImageSelected(_ images: [UIImage], source: FusumaMode) {
@@ -132,13 +131,17 @@ extension ProfileVC : FusumaDelegate {
     // Return the image but called after is dismissed.
     func fusumaDismissedWithImage(image: UIImage, source: FusumaMode) {
         
-        print("Called just after FusumaViewController is dismissed.")
     }
     
-    // When camera roll is not authorized, this method is called.
     func fusumaCameraRollUnauthorized() {
-        
-        print("Camera roll unauthorized")
+        let alert = RushAlertController.createFromStoryboard()
+        alert.createAlert(title: "Hey!", description: "Maalesef ayarlardan fotoğraf erişiminizi açmanız gerekmektedir.", positiveTitle: "Tamam", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
+            UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
+            self.pop()
+        }) {
+            
+        }
+        self.present(alert, animated: false, completion: nil)
     }
     
     // Return an image and the detailed information.
