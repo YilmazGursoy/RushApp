@@ -34,7 +34,6 @@ class LobbyCollectionCell: UICollectionViewCell {
                 }
             }
         }
-        
     }
     
     override func awakeFromNib() {

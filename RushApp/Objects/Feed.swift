@@ -14,7 +14,7 @@ struct Feed: Codable {
     let name: String
     let text: String
     let date: Date
-    let sender: Sender
+    let sender: SimpleUser
     let numberOfLike: Int
     let numberOfShare: Int
 }

@@ -95,7 +95,7 @@
 		47C3C060213E604800A74171 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C05F213E604800A74171 /* Feed.swift */; };
 		47C3C062213E61B300A74171 /* Lobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C061213E61B300A74171 /* Lobby.swift */; };
 		47C3C064213E623800A74171 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C063213E623800A74171 /* Subscriber.swift */; };
-		47C3C066213E624C00A74171 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C065213E624C00A74171 /* Sender.swift */; };
+		47C3C066213E624C00A74171 /* SimpleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C065213E624C00A74171 /* SimpleUser.swift */; };
 		47C3C068213E625D00A74171 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C067213E625D00A74171 /* Message.swift */; };
 		47C3C0AB213F0D1900A74171 /* DefaultResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C0AA213F0D1900A74171 /* DefaultResponse.swift */; };
 		47C3C0AD213F0DE400A74171 /* Extension+Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C0AC213F0DE400A74171 /* Extension+Json.swift */; };
@@ -282,7 +282,7 @@
 		47C3C05F213E604800A74171 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		47C3C061213E61B300A74171 /* Lobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lobby.swift; sourceTree = "<group>"; };
 		47C3C063213E623800A74171 /* Subscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
-		47C3C065213E624C00A74171 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		47C3C065213E624C00A74171 /* SimpleUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleUser.swift; sourceTree = "<group>"; };
 		47C3C067213E625D00A74171 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		47C3C0AA213F0D1900A74171 /* DefaultResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultResponse.swift; sourceTree = "<group>"; };
 		47C3C0AC213F0DE400A74171 /* Extension+Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Json.swift"; sourceTree = "<group>"; };
@@ -539,7 +539,7 @@
 				47C3C063213E623800A74171 /* Subscriber.swift */,
 				472DFF61213C135000FC577A /* User.swift */,
 				47C3C05F213E604800A74171 /* Feed.swift */,
-				47C3C065213E624C00A74171 /* Sender.swift */,
+				47C3C065213E624C00A74171 /* SimpleUser.swift */,
 				47C3C061213E61B300A74171 /* Lobby.swift */,
 				47C3C067213E625D00A74171 /* Message.swift */,
 				47C3C0AA213F0D1900A74171 /* DefaultResponse.swift */,
@@ -1332,7 +1332,7 @@
 				D2D9108A209F7F5D0054F3AA /* FacebookLoginManager.swift in Sources */,
 				472B8169214C65D100C005B2 /* ProfileLobbyCollectionCell.swift in Sources */,
 				47E2C7902146D65E00AAD648 /* FilterNavigationController.swift in Sources */,
-				47C3C066213E624C00A74171 /* Sender.swift in Sources */,
+				47C3C066213E624C00A74171 /* SimpleUser.swift in Sources */,
 				472B8170214C778E00C005B2 /* ProfileRankCollectionCell.swift in Sources */,
 				472DFEF12135DEBD00FC577A /* GameSelectionCell.swift in Sources */,
 				472DFF5A213B413A00FC577A /* GetUserIdRequest.swift in Sources */,
