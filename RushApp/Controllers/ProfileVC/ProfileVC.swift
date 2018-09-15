@@ -33,6 +33,8 @@ class ProfileVC: BaseVC {
         navigationController.pushViewController(vc, animated: true)
     }
     
+    
+    @IBOutlet weak var backButtonOutlet: UIButton!
     @IBOutlet weak var lobbiesBackView: UIView!
     @IBOutlet weak var lobbiesCollectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -55,6 +57,7 @@ class ProfileVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCollectionViews()
+        self.backButtonOutlet.isHidden = isMyProfile ? true : false
     }
     
     override func viewWillAppear(_ animated: Bool) {

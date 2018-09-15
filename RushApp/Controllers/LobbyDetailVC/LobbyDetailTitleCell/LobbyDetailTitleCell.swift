@@ -38,10 +38,15 @@ class LobbyDetailTitleCell: UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.init(identifier: "tr_TR")
         dateFormatter.dateFormat = "dd MMMM, HH:mm"
-        self.lobbyDetailImageView.sd_setImage(with: lobby.game.getNormalImageURL(), placeholderImage: #imageLiteral(resourceName: "placeholderImage"), options: .cacheMemoryOnly, completed: nil)
+        self.lobbyDetailImageView.sd_setImage(with: lobby.game.getNormalImageURL(), placeholderImage: #imageLiteral(resourceName: "placeholderImage"), completed: nil)
         self.gameNameLabel.text = lobby.game.name
         self.descriptionLabel.text = lobby.description
-        self.senderProfileImageView.sd_setImage(with: lobby.sender.profilePic, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .cacheMemoryOnly, completed: nil)
+        ImageDownloaderManager.downloadProfileImage(userId: lobby.sender.id, completionBlock: { (url) in
+            self.senderProfileImageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), completed: nil)
+        }) {
+            self.senderProfileImageView.image = #imageLiteral(resourceName: "profilePlaceholder")
+        }
+        
         self.lobbyCreatingDate.text = dateFormatter.string(from: lobby.date)
         self.senderUsername.text = lobby.sender.username
         self.lobbyCreatingLocation.text = lobby.address
