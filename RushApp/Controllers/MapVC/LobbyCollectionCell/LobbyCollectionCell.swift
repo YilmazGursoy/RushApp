@@ -45,7 +45,7 @@ class LobbyCollectionCell: UICollectionViewCell {
     func arrangeCell(lobby:Lobby, joinTapped:@escaping ()->Void) {
         self.usernameLabel.text = lobby.sender.username
         ImageDownloaderManager.downloadProfileImage(userId: lobby.sender.id, completionBlock: { (url) in
-            self.profileImageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), completed: nil)
+            self.profileImageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"),options:.refreshCached , completed: nil)
         }) {
             self.profileImageView.image = #imageLiteral(resourceName: "profilePlaceholder")
         }

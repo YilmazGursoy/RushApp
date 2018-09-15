@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 //MARK: Helper
 extension ProfileVC {
@@ -37,7 +38,11 @@ extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource {
             if section == 1 {
                 return 1
             } else {
-                return 1
+                if currentUser.profileUrls != nil {
+                    return currentUser.profileUrls!.count
+                } else {
+                    return 0
+                }
             }
         } else {
             return profileLobbyList.count
@@ -52,6 +57,7 @@ extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource {
                 return cell
             } else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileRankCollectionCell", for: indexPath) as! ProfileRankCollectionCell
+                cell.arrangeCell(profileUrls: self.currentUser.profileUrls![indexPath.row])
                 return cell
             }
         } else {
@@ -65,6 +71,10 @@ extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource {
         if collectionView == urlCollectionView {
             if indexPath.section == 1 {
                 let addrankVC = AddRankOrUrlVC.createFromStoryboard()
+                addrankVC.updatedSuccess = {
+                    SVProgressHUD.show()
+                    self.sendCurrentUserRequest()
+                }
                 self.navigationController?.pushVCMainThread(addrankVC)
             }
         } else {

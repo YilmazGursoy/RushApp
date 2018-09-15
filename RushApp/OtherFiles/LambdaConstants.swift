@@ -22,4 +22,6 @@ struct LambdaConstants {
     static let CreateLobbyRequest       =   "RushApp-CreateLobbyRequest"
     static let GetUserAllLobbies        =   "RushApp-UserAllLobbies"
     static let GetNearestLobbyRequest   =   "RushApp-GetNearestLobbies"
+    
+    static let AddURLRequset            =   "RushApp-AddUrlRequest"
 }

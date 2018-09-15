@@ -75,6 +75,10 @@
                 <constraint firstItem="ZJY-YW-fgm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="hhl-4X-MhR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="imageView" destination="xU5-Ah-2ky" id="1Fd-bJ-12G"/>
+                <outlet property="name" destination="0Ct-gb-T3x" id="Jp0-XI-coE"/>
+            </connections>
             <point key="canvasLocation" x="10.5" y="32"/>
         </collectionViewCell>
     </objects>

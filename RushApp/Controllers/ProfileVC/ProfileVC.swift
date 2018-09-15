@@ -50,7 +50,15 @@ class ProfileVC: BaseVC {
         }
     }
     var currentUserId:String!
-    var currentUser:User!
+    var currentUser:User! {
+        didSet {
+            DispatchQueue.main.async {
+                self.urlCollectionView.delegate = self
+                self.urlCollectionView.dataSource = self
+                self.urlCollectionView.reloadData()
+            }
+        }
+    }
     var isMyProfile:Bool = true
     
     
@@ -96,7 +104,7 @@ class ProfileVC: BaseVC {
         }
     }
     
-    private func sendCurrentUserRequest(){
+    func sendCurrentUserRequest(){
         let currentUserRequest = CheckUserRequest()
         currentUserRequest.sendCheckUserRequest(userId: (isMyProfile ? nil : currentUserId)) { (user, error) in
             if self.isMyProfile {
