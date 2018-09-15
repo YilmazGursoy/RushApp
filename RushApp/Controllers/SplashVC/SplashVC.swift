@@ -18,7 +18,7 @@ class SplashVC: BaseVC {
         
         AWSCredentialManager.shared.isUserLoggedIn { (isLoggedIn) in
             if isLoggedIn == true {
-                checkUser.sendCheckUserRequest(completionBlock: { (user, error) in
+                checkUser.sendCheckUserRequest(userId:nil, completionBlock: { (user, error) in
                     if error != nil {
                         AWSCredentialManager.shared.logout(completion: { (isLogout) in
                             self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())

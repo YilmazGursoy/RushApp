@@ -40,19 +40,27 @@ class ImageDownloaderManager : NSObject {
         }
     }
     
-    static func downloadProfileImage(imageUrl:URL, completionBlock:@escaping (URL)->Void) {
-        let transferManager = AWSS3TransferManager.default()
-        let downloadRequest = AWSS3TransferManagerDownloadRequest()
-        downloadRequest?.downloadingFileURL = imageUrl
-        transferManager.download(downloadRequest!).continueWith { (task) -> Any? in
-            if let result = task.result {
-                if let downloadOutput = result as? AWSS3TransferManagerDownloadOutput {
-                    if let url = downloadOutput.body as? URL {
-                        completionBlock(url)
+    static func downloadProfileImage(userId:String?, completionBlock:@escaping (URL)->Void, failedBlock:@escaping ()->Void) {
+        
+        if userId != nil {
+            let transferManager = AWSS3TransferManager.default()
+            let downloadRequest = AWSS3TransferManagerDownloadRequest()
+            downloadRequest?.bucket = CognitoConstants.awsS3ProfilePictureBucketName
+            downloadRequest?.key = userId! + "/" + ConstantUrls.profilePictureName
+            transferManager.download(downloadRequest!).continueWith { (task) -> Any? in
+                if let result = task.result {
+                    if let downloadOutput = result as? AWSS3TransferManagerDownloadOutput {
+                        if let url = downloadOutput.body as? URL {
+                            completionBlock(url)
+                        }
                     }
+                } else {
+                    failedBlock()
                 }
+                return nil
             }
-            return nil
+        } else {
+            failedBlock()
         }
     }
 }

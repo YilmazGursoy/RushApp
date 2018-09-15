@@ -45,7 +45,7 @@ class LoginVC: BaseVC {
             SVProgressHUD.dismiss()
             if task.error == nil {
                 let checkUserRequest = CheckUserRequest()
-                checkUserRequest.sendCheckUserRequest(completionBlock: { (response, error) in
+                checkUserRequest.sendCheckUserRequest(userId:nil, completionBlock: { (response, error) in
                     if error != nil {
                         self.navigationController?.pushVCMainThread(GameSelectionVC.createFromStoryboard())
                     } else {
@@ -71,7 +71,7 @@ class LoginVC: BaseVC {
         loginManager.facebookLogin(withTarget: self) { (isSuccess) in
             if isSuccess == true {
                 let checkUserRequest = CheckUserRequest()
-                checkUserRequest.sendCheckUserRequest(completionBlock: { (response, error) in
+                checkUserRequest.sendCheckUserRequest(userId:nil, completionBlock: { (response, error) in
                     if error != nil {
                         self.navigationController?.pushVCMainThread(GameSelectionVC.createFromStoryboard())
                     } else {

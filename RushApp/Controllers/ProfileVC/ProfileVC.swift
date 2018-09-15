@@ -12,8 +12,26 @@ import SDWebImage
 import SVProgressHUD
 import PMAlertController
 
-class ProfileVC: BaseVC {
 
+
+class ProfileVC: BaseVC {
+    
+    static func push(in navigationController:UINavigationController, userId:String?) {
+        let vc = ProfileVC.createFromStoryboard()
+        if userId != nil {
+            if userId!.elementsEqual(Rush.shared.currentUser.userId) {
+                vc.isMyProfile = true
+                return
+            } else {
+                vc.currentUserId = userId!
+                vc.isMyProfile = false
+            }
+        } else {
+            vc.isMyProfile = true
+            vc.currentUser = Rush.shared.currentUser
+        }
+        navigationController.pushViewController(vc, animated: true)
+    }
     
     @IBOutlet weak var lobbiesBackView: UIView!
     @IBOutlet weak var lobbiesCollectionView: UICollectionView!
@@ -29,19 +47,20 @@ class ProfileVC: BaseVC {
             }
         }
     }
+    var currentUserId:String!
+    var currentUser:User!
     var isMyProfile:Bool = true
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI(isCacheRefresh: false)
+        registerCollectionViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        SVProgressHUD.show()
-        sendUserLobbyRequest()
-        registerCollectionViews()
+        SVProgressHUD.dismiss()
+        sendCurrentUserRequest()
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,18 +74,41 @@ class ProfileVC: BaseVC {
     
     private func setupUI(isCacheRefresh:Bool){
         DispatchQueue.main.async {
-            self.titleLabel.text = Rush.shared.currentUser.username
-            ImageDownloaderManager.downloadImage(imageName: ConstantUrls.profilePictureName) { (url) in
+            self.sendUserLobbyRequest(userId:self.currentUser.userId)
+            self.titleLabel.text = self.currentUser.username
+            
+            ImageDownloaderManager.downloadProfileImage(userId: self.currentUser.userId, completionBlock: { (url) in
+                SVProgressHUD.dismiss()
                 DispatchQueue.main.async {
-                    self.profilePictureImage.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options:(isCacheRefresh ? .refreshCached : .cacheMemoryOnly) , completed: nil)
+                    self.profilePictureImage.sd_setImage(with: url, completed: { (image, error, cacheType, url) in
+                        
+                    })
                 }
-            }
+            }, failedBlock: {
+                DispatchQueue.main.async {
+                    SVProgressHUD.dismiss()
+                    self.profilePictureImage.image = #imageLiteral(resourceName: "profilePlaceholder")
+                }
+            })
         }
     }
     
-    private func sendUserLobbyRequest(){
+    private func sendCurrentUserRequest(){
+        let currentUserRequest = CheckUserRequest()
+        currentUserRequest.sendCheckUserRequest(userId: (isMyProfile ? nil : currentUserId)) { (user, error) in
+            if self.isMyProfile {
+                if user != nil {
+                    Rush.shared.currentUser = user
+                }
+            }
+            self.currentUser = user
+            self.setupUI(isCacheRefresh: false)
+        }
+    }
+    
+    private func sendUserLobbyRequest(userId:String?){
         let userlobbyRequest = UserAllLobbiesRequest()
-        userlobbyRequest.sendLobbyRequest(userId: nil, successCompletionHandler: { (lobbyList) in
+        userlobbyRequest.sendLobbyRequest(userId: userId, successCompletionHandler: { (lobbyList) in
             if lobbyList.count > 0 {
                 self.profileLobbyList = lobbyList
                 self.lobbiesBackView.isHidden = false

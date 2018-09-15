@@ -68,10 +68,10 @@ class MapVC: BaseVC {
             }
         }) {
             SVProgressHUD.dismiss()
+            self.lobbies = []
+            self.collectionView.reloadData()
             self.showErrorMessage(message: "There is an error to fetching lobbies.")
         }
-        
-        
     }
     
     //MARK: Actions

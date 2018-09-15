@@ -39,7 +39,9 @@ extension LobbyDetailVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LobbyDetailTitleCell") as! LobbyDetailTitleCell
-        cell.arrangeCell(lobby: currentLobby)
+        cell.arrangeCell(lobby: currentLobby) { (userId) in
+            ProfileVC.push(in: self.navigationController!, userId: userId)
+        }
         return cell
     }
     

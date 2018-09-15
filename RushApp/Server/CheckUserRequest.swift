@@ -13,9 +13,15 @@ class CheckUserRequest: Request {
         return LambdaConstants.GetUser
     }
     
-    func sendCheckUserRequest(completionBlock: @escaping (User? ,Error?) -> Void) {
+    func sendCheckUserRequest(userId:String?, completionBlock: @escaping (User? ,Error?) -> Void) {
         
-        self.request(parameters: [:]) { (result:AnyObject? ,response:User?, error:Error?)  in
+        var parameters:[String:Any] = [:]
+        
+        if userId != nil {
+            parameters["userId"] = userId!
+        }
+        
+        self.request(parameters: parameters) { (result:AnyObject? ,response:User?, error:Error?)  in
             completionBlock(response, error)
         }
     }

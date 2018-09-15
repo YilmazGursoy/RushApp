@@ -18,6 +18,9 @@ class LobbyDetailTitleCell: UITableViewCell {
     @IBOutlet weak var lobbyCreatingLocation: UILabel!
     @IBOutlet weak var lobbyNumberOfNeededGamersLabel: UILabel!
     
+    private var openProfileTapped:((String)->Void)!
+    private var currentLobby:Lobby!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -29,7 +32,9 @@ class LobbyDetailTitleCell: UITableViewCell {
         
     }
     
-    func arrangeCell(lobby:Lobby) {
+    func arrangeCell(lobby:Lobby, openProfileTapped:@escaping (String)->Void) {
+        self.openProfileTapped = openProfileTapped
+        self.currentLobby = lobby
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.init(identifier: "tr_TR")
         dateFormatter.dateFormat = "dd MMMM, HH:mm"
@@ -41,6 +46,10 @@ class LobbyDetailTitleCell: UITableViewCell {
         self.senderUsername.text = lobby.sender.username
         self.lobbyCreatingLocation.text = lobby.address
         self.lobbyNumberOfNeededGamersLabel.text = "Gamers (max \(lobby.numberOfNeededUser))"
+    }
+    
+    @IBAction func openProfileTapped(_ sender: UIButton) {
+        self.openProfileTapped(self.currentLobby.sender.id)
     }
     
 }

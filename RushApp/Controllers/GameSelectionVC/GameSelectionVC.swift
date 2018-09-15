@@ -108,7 +108,7 @@ extension GameSelectionVC {
                     })
                 } else {
                     let checkUserRequest = CheckUserRequest()
-                    checkUserRequest.sendCheckUserRequest(completionBlock: { (response, error) in
+                    checkUserRequest.sendCheckUserRequest(userId:nil, completionBlock: { (response, error) in
                         if error != nil {
             
                         } else {
