@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-SemiBold.ttf">
+            <string>OpenSans-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfileLobbyCollectionCell" id="gTV-IL-0wX" customClass="ProfileLobbyCollectionCell" customModule="RushApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="135" height="102"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="135" height="102"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileLobbyShadow" translatesAutoresizingMaskIntoConstraints="NO" id="j5u-dI-sJP">
+                        <rect key="frame" x="0.0" y="0.0" width="135" height="102"/>
+                    </imageView>
+                    <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D98-dv-drY" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
+                        <rect key="frame" x="10" y="10" width="115" height="82"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Xz-PP-Aqv">
+                                <rect key="frame" x="0.0" y="52" width="115" height="30"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wba-we-CKO">
+                                        <rect key="frame" x="8" y="6" width="99" height="18"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Lobby" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0N-Dk-fWX">
+                                                <rect key="frame" x="0.0" y="0.0" width="99" height="18"/>
+                                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="q0N-Dk-fWX" secondAttribute="trailing" id="4gw-c0-vcT"/>
+                                            <constraint firstItem="q0N-Dk-fWX" firstAttribute="leading" secondItem="Wba-we-CKO" secondAttribute="leading" id="a7i-cD-nWx"/>
+                                            <constraint firstAttribute="bottom" secondItem="q0N-Dk-fWX" secondAttribute="bottom" id="fB5-kC-7u3"/>
+                                            <constraint firstItem="q0N-Dk-fWX" firstAttribute="top" secondItem="Wba-we-CKO" secondAttribute="top" id="fLm-QQ-LNT"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Wba-we-CKO" secondAttribute="trailing" constant="8" id="3va-yR-yNS"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wba-we-CKO" secondAttribute="bottom" constant="6" id="MDp-E3-RQK"/>
+                                    <constraint firstAttribute="height" constant="30" id="Ph8-Ow-p5e"/>
+                                    <constraint firstItem="Wba-we-CKO" firstAttribute="top" secondItem="1Xz-PP-Aqv" secondAttribute="top" constant="6" id="WwT-pV-yqa"/>
+                                    <constraint firstItem="Wba-we-CKO" firstAttribute="leading" secondItem="1Xz-PP-Aqv" secondAttribute="leading" constant="8" id="l8S-ql-wRh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nge-gn-uzp">
+                                <rect key="frame" x="0.0" y="0.0" width="115" height="52"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lobby template" translatesAutoresizingMaskIntoConstraints="NO" id="RDV-ep-sug">
+                                        <rect key="frame" x="0.0" y="0.0" width="115" height="52"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="RDV-ep-sug" secondAttribute="trailing" id="0qg-6k-QUc"/>
+                                    <constraint firstItem="RDV-ep-sug" firstAttribute="top" secondItem="nge-gn-uzp" secondAttribute="top" id="Obb-oQ-gcW"/>
+                                    <constraint firstAttribute="bottom" secondItem="RDV-ep-sug" secondAttribute="bottom" id="aIb-PC-F2J"/>
+                                    <constraint firstItem="RDV-ep-sug" firstAttribute="leading" secondItem="nge-gn-uzp" secondAttribute="leading" id="qQA-o4-9wB"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgi-DC-Mr2">
+                                <rect key="frame" x="0.0" y="0.0" width="115" height="82"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="1Xz-PP-Aqv" secondAttribute="bottom" id="4qz-gv-ecJ"/>
+                            <constraint firstItem="nge-gn-uzp" firstAttribute="top" secondItem="D98-dv-drY" secondAttribute="top" id="6qO-au-NiG"/>
+                            <constraint firstAttribute="bottom" secondItem="pgi-DC-Mr2" secondAttribute="bottom" id="6wg-7t-PB7"/>
+                            <constraint firstItem="pgi-DC-Mr2" firstAttribute="top" secondItem="D98-dv-drY" secondAttribute="top" id="9UN-tn-hZK"/>
+                            <constraint firstAttribute="trailing" secondItem="pgi-DC-Mr2" secondAttribute="trailing" id="AvX-bY-0SV"/>
+                            <constraint firstAttribute="trailing" secondItem="1Xz-PP-Aqv" secondAttribute="trailing" id="FlS-ny-nHa"/>
+                            <constraint firstItem="pgi-DC-Mr2" firstAttribute="leading" secondItem="D98-dv-drY" secondAttribute="leading" id="PIQ-41-zjo"/>
+                            <constraint firstAttribute="trailing" secondItem="nge-gn-uzp" secondAttribute="trailing" id="bdV-7x-XtJ"/>
+                            <constraint firstItem="nge-gn-uzp" firstAttribute="leading" secondItem="D98-dv-drY" secondAttribute="leading" id="jDx-Sx-iz0"/>
+                            <constraint firstItem="1Xz-PP-Aqv" firstAttribute="leading" secondItem="D98-dv-drY" secondAttribute="leading" id="k2N-bR-5LN"/>
+                            <constraint firstItem="1Xz-PP-Aqv" firstAttribute="top" secondItem="nge-gn-uzp" secondAttribute="bottom" id="tJr-Pq-tcm"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="9"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowX">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowY">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
+                                <real key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="D98-dv-drY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="2ej-dM-cQZ"/>
+                <constraint firstAttribute="bottom" secondItem="j5u-dI-sJP" secondAttribute="bottom" id="Fei-yk-Uxm"/>
+                <constraint firstAttribute="trailing" secondItem="D98-dv-drY" secondAttribute="trailing" constant="10" id="PJj-dZ-Qqo"/>
+                <constraint firstItem="D98-dv-drY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="cyi-TM-HVF"/>
+                <constraint firstItem="j5u-dI-sJP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cyo-0e-0RK"/>
+                <constraint firstItem="j5u-dI-sJP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dMr-Ha-SUt"/>
+                <constraint firstAttribute="trailing" secondItem="j5u-dI-sJP" secondAttribute="trailing" id="oNb-DY-PAI"/>
+                <constraint firstAttribute="bottom" secondItem="D98-dv-drY" secondAttribute="bottom" constant="10" id="zCy-qD-tIM"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="lobbyImageView" destination="RDV-ep-sug" id="FXd-bN-C0S"/>
+                <outlet property="lobbyNameLabel" destination="q0N-Dk-fWX" id="kwD-Ii-DnH"/>
+            </connections>
+            <point key="canvasLocation" x="-69.5" y="-38"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="lobby template" width="802" height="997"/>
+        <image name="profileLobbyShadow" width="159" height="126"/>
+    </resources>
+</document>

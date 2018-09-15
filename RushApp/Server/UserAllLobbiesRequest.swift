@@ -23,9 +23,13 @@ class UserAllLobbiesRequest: Request {
         
         self.request(parameters: parameters) { (response:AnyObject?, lobbyList:[Lobby]?, error:Error?) in
             if lobbyList != nil{
-                successCompletionHandler(lobbyList!)
+                DispatchQueue.main.async {
+                    successCompletionHandler(lobbyList!)
+                }
             } else{
-                errorCompletionHandler()
+                DispatchQueue.main.async {
+                    errorCompletionHandler()
+                }
             }
         }
     }

@@ -25,6 +25,15 @@
 		472B815D214AFDCB00C005B2 /* UserAllLobbiesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B815C214AFDCB00C005B2 /* UserAllLobbiesRequest.swift */; };
 		472B815F214B917B00C005B2 /* Extension+MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B815E214B917B00C005B2 /* Extension+MKMapView.swift */; };
 		472B8161214B936A00C005B2 /* GetNearestLobbiesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B8160214B936A00C005B2 /* GetNearestLobbiesRequest.swift */; };
+		472B8169214C65D100C005B2 /* ProfileLobbyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B8167214C65D100C005B2 /* ProfileLobbyCollectionCell.swift */; };
+		472B816A214C65D100C005B2 /* ProfileLobbyCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 472B8168214C65D100C005B2 /* ProfileLobbyCollectionCell.xib */; };
+		472B816C214C668F00C005B2 /* Extension+ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B816B214C668F00C005B2 /* Extension+ProfileVC.swift */; };
+		472B8170214C778E00C005B2 /* ProfileRankCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B816E214C778E00C005B2 /* ProfileRankCollectionCell.swift */; };
+		472B8171214C778E00C005B2 /* ProfileRankCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 472B816F214C778E00C005B2 /* ProfileRankCollectionCell.xib */; };
+		472B8175214C7A8A00C005B2 /* AddCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B8173214C7A8A00C005B2 /* AddCollectionCell.swift */; };
+		472B8176214C7A8A00C005B2 /* AddCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 472B8174214C7A8A00C005B2 /* AddCollectionCell.xib */; };
+		472B8179214C858100C005B2 /* AddRankOrUrlVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B8178214C858100C005B2 /* AddRankOrUrlVC.swift */; };
+		472B817B214C858500C005B2 /* AddRankOrUrlVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472B817A214C858500C005B2 /* AddRankOrUrlVC.storyboard */; };
 		472DFECF2135D27B00FC577A /* GameSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472DFECE2135D27B00FC577A /* GameSelectionVC.swift */; };
 		472DFED12135D28000FC577A /* GameSelectionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472DFED02135D28000FC577A /* GameSelectionVC.storyboard */; };
 		472DFEDD2135D3C900FC577A /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 472DFED32135D3C900FC577A /* OpenSans-SemiBold.ttf */; };
@@ -51,8 +60,6 @@
 		472DFF0C213849F400FC577A /* LobbyCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 472DFF0A213849F400FC577A /* LobbyCollectionCell.xib */; };
 		472DFF0F2139F4D600FC577A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472DFF0E2139F4D600FC577A /* ProfileVC.swift */; };
 		472DFF112139F4DB00FC577A /* ProfileVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472DFF102139F4DB00FC577A /* ProfileVC.storyboard */; };
-		472DFF14213ACB9A00FC577A /* AchivementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472DFF13213ACB9A00FC577A /* AchivementView.swift */; };
-		472DFF16213ACB9F00FC577A /* AchivementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 472DFF15213ACB9F00FC577A /* AchivementView.xib */; };
 		472DFF18213AE54500FC577A /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472DFF17213AE54500FC577A /* Extension+UIView.swift */; };
 		472DFF56213B2FA100FC577A /* ChangeProfilePictureRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472DFF55213B2FA100FC577A /* ChangeProfilePictureRequest.swift */; };
 		472DFF58213B3F3E00FC577A /* ConstantUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472DFF57213B3F3E00FC577A /* ConstantUrls.swift */; };
@@ -200,6 +207,15 @@
 		472B815C214AFDCB00C005B2 /* UserAllLobbiesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAllLobbiesRequest.swift; sourceTree = "<group>"; };
 		472B815E214B917B00C005B2 /* Extension+MKMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+MKMapView.swift"; sourceTree = "<group>"; };
 		472B8160214B936A00C005B2 /* GetNearestLobbiesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNearestLobbiesRequest.swift; sourceTree = "<group>"; };
+		472B8167214C65D100C005B2 /* ProfileLobbyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLobbyCollectionCell.swift; sourceTree = "<group>"; };
+		472B8168214C65D100C005B2 /* ProfileLobbyCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileLobbyCollectionCell.xib; sourceTree = "<group>"; };
+		472B816B214C668F00C005B2 /* Extension+ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ProfileVC.swift"; sourceTree = "<group>"; };
+		472B816E214C778E00C005B2 /* ProfileRankCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRankCollectionCell.swift; sourceTree = "<group>"; };
+		472B816F214C778E00C005B2 /* ProfileRankCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileRankCollectionCell.xib; sourceTree = "<group>"; };
+		472B8173214C7A8A00C005B2 /* AddCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionCell.swift; sourceTree = "<group>"; };
+		472B8174214C7A8A00C005B2 /* AddCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCollectionCell.xib; sourceTree = "<group>"; };
+		472B8178214C858100C005B2 /* AddRankOrUrlVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRankOrUrlVC.swift; sourceTree = "<group>"; };
+		472B817A214C858500C005B2 /* AddRankOrUrlVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddRankOrUrlVC.storyboard; sourceTree = "<group>"; };
 		472DFECE2135D27B00FC577A /* GameSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSelectionVC.swift; sourceTree = "<group>"; };
 		472DFED02135D28000FC577A /* GameSelectionVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameSelectionVC.storyboard; sourceTree = "<group>"; };
 		472DFED32135D3C900FC577A /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -226,8 +242,6 @@
 		472DFF0A213849F400FC577A /* LobbyCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LobbyCollectionCell.xib; sourceTree = "<group>"; };
 		472DFF0E2139F4D600FC577A /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		472DFF102139F4DB00FC577A /* ProfileVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileVC.storyboard; sourceTree = "<group>"; };
-		472DFF13213ACB9A00FC577A /* AchivementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchivementView.swift; sourceTree = "<group>"; };
-		472DFF15213ACB9F00FC577A /* AchivementView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchivementView.xib; sourceTree = "<group>"; };
 		472DFF17213AE54500FC577A /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		472DFF55213B2FA100FC577A /* ChangeProfilePictureRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfilePictureRequest.swift; sourceTree = "<group>"; };
 		472DFF57213B3F3E00FC577A /* ConstantUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantUrls.swift; sourceTree = "<group>"; };
@@ -448,6 +462,42 @@
 			path = LobbyDetailTitleCell;
 			sourceTree = "<group>";
 		};
+		472B8162214C659000C005B2 /* ProfileLobbyCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				472B8167214C65D100C005B2 /* ProfileLobbyCollectionCell.swift */,
+				472B8168214C65D100C005B2 /* ProfileLobbyCollectionCell.xib */,
+			);
+			path = ProfileLobbyCollectionCell;
+			sourceTree = "<group>";
+		};
+		472B816D214C778500C005B2 /* ProfileRankCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				472B816E214C778E00C005B2 /* ProfileRankCollectionCell.swift */,
+				472B816F214C778E00C005B2 /* ProfileRankCollectionCell.xib */,
+			);
+			path = ProfileRankCollectionCell;
+			sourceTree = "<group>";
+		};
+		472B8172214C7A8000C005B2 /* AddCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				472B8173214C7A8A00C005B2 /* AddCollectionCell.swift */,
+				472B8174214C7A8A00C005B2 /* AddCollectionCell.xib */,
+			);
+			path = AddCollectionCell;
+			sourceTree = "<group>";
+		};
+		472B8177214C857500C005B2 /* AddRankOrUrlVC */ = {
+			isa = PBXGroup;
+			children = (
+				472B8178214C858100C005B2 /* AddRankOrUrlVC.swift */,
+				472B817A214C858500C005B2 /* AddRankOrUrlVC.storyboard */,
+			);
+			path = AddRankOrUrlVC;
+			sourceTree = "<group>";
+		};
 		472DFECD2135D26600FC577A /* GameSelectionVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,20 +571,14 @@
 		472DFF0D2139F4C800FC577A /* ProfileVC */ = {
 			isa = PBXGroup;
 			children = (
-				472DFF12213ACB8900FC577A /* AchivementView */,
+				472B8172214C7A8000C005B2 /* AddCollectionCell */,
+				472B816D214C778500C005B2 /* ProfileRankCollectionCell */,
+				472B8162214C659000C005B2 /* ProfileLobbyCollectionCell */,
 				472DFF0E2139F4D600FC577A /* ProfileVC.swift */,
 				472DFF102139F4DB00FC577A /* ProfileVC.storyboard */,
+				472B816B214C668F00C005B2 /* Extension+ProfileVC.swift */,
 			);
 			path = ProfileVC;
-			sourceTree = "<group>";
-		};
-		472DFF12213ACB8900FC577A /* AchivementView */ = {
-			isa = PBXGroup;
-			children = (
-				472DFF13213ACB9A00FC577A /* AchivementView.swift */,
-				472DFF15213ACB9F00FC577A /* AchivementView.xib */,
-			);
-			path = AchivementView;
 			sourceTree = "<group>";
 		};
 		472DFF6B213DA58600FC577A /* FeedView */ = {
@@ -889,6 +933,7 @@
 			isa = PBXGroup;
 			children = (
 				47DE1AF421482432006FBFD1 /* RushApp.entitlements */,
+				D258C035209645EF0090ABB5 /* Assets.xcassets */,
 				472DFF63213C13E100FC577A /* Rush.swift */,
 				472DFEE92135D56400FC577A /* Objects */,
 				D2075DE0209F0CF900AC79B6 /* Helpers */,
@@ -901,7 +946,6 @@
 				47C0B07F211EDD9100469883 /* Views */,
 				D258C06C2098F5170090ABB5 /* OtherFiles */,
 				D258C032209645EE0090ABB5 /* Main.storyboard */,
-				D258C035209645EF0090ABB5 /* Assets.xcassets */,
 				D258C037209645EF0090ABB5 /* LaunchScreen.storyboard */,
 				47DE1AF2214823F5006FBFD1 /* GoogleService-Info.plist */,
 				D258C03A209645EF0090ABB5 /* Info.plist */,
@@ -952,6 +996,7 @@
 		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				472B8177214C857500C005B2 /* AddRankOrUrlVC */,
 				472B814621494EAC00C005B2 /* LobbyGameSelectionVC */,
 				472B813E2149271400C005B2 /* PlatformSelectionVC */,
 				47DE1AFC21487A29006FBFD1 /* RushAlertController */,
@@ -1120,17 +1165,20 @@
 				47E2C79C2147014F00AAD648 /* FilterCellType2.xib in Resources */,
 				47E2C69C2140767900AAD648 /* FeedCommentCell.xib in Resources */,
 				472DFEDE2135D3C900FC577A /* OpenSans-Light.ttf in Resources */,
-				472DFF16213ACB9F00FC577A /* AchivementView.xib in Resources */,
 				D2D9108F20A070BE0054F3AA /* BaseNavigationController.storyboard in Resources */,
 				472B81422149272600C005B2 /* PlatformSelectionVC.storyboard in Resources */,
+				472B8171214C778E00C005B2 /* ProfileRankCollectionCell.xib in Resources */,
 				472B815B214AB39300C005B2 /* View.xib in Resources */,
 				472DFEE62135D3C900FC577A /* OpenSans-BoldItalic.ttf in Resources */,
+				472B816A214C65D100C005B2 /* ProfileLobbyCollectionCell.xib in Resources */,
 				472DFF73213DC85300FC577A /* FeedCell.xib in Resources */,
 				47E2C70F21446D9800AAD648 /* MessageCell.xib in Resources */,
 				472DFF0C213849F400FC577A /* LobbyCollectionCell.xib in Resources */,
 				472B815321497A0300C005B2 /* LobbyDetailTitleCell.xib in Resources */,
 				472DFF072138445A00FC577A /* MapVC.storyboard in Resources */,
+				472B817B214C858500C005B2 /* AddRankOrUrlVC.storyboard in Resources */,
 				472B814A21494EBC00C005B2 /* LobbyGameSelectionVC.storyboard in Resources */,
+				472B8176214C7A8A00C005B2 /* AddCollectionCell.xib in Resources */,
 				D2075DC3209DE94300AC79B6 /* RegisterVC.storyboard in Resources */,
 				47E2C6FA21427DF700AAD648 /* LobbyDetailVC.storyboard in Resources */,
 				47C3C058213E4EAF00A74171 /* feed.json in Resources */,
@@ -1273,8 +1321,10 @@
 				47E2C6F52141AAC200AAD648 /* LobbyRequest.swift in Sources */,
 				D2075DA9209B866500AC79B6 /* CacheManager.swift in Sources */,
 				D2D9108A209F7F5D0054F3AA /* FacebookLoginManager.swift in Sources */,
+				472B8169214C65D100C005B2 /* ProfileLobbyCollectionCell.swift in Sources */,
 				47E2C7902146D65E00AAD648 /* FilterNavigationController.swift in Sources */,
 				47C3C066213E624C00A74171 /* Sender.swift in Sources */,
+				472B8170214C778E00C005B2 /* ProfileRankCollectionCell.swift in Sources */,
 				472DFEF12135DEBD00FC577A /* GameSelectionCell.swift in Sources */,
 				472DFF5A213B413A00FC577A /* GetUserIdRequest.swift in Sources */,
 				D2075DB0209CD9CC00AC79B6 /* FeedVC.swift in Sources */,
@@ -1286,6 +1336,7 @@
 				472DFF64213C13E100FC577A /* Rush.swift in Sources */,
 				47E2C75621458ECD00AAD648 /* FeedCommentTitleViewCell.swift in Sources */,
 				472DFEFF2137E6AF00FC577A /* CheckUserRequest.swift in Sources */,
+				472B8179214C858100C005B2 /* AddRankOrUrlVC.swift in Sources */,
 				472B81402149272100C005B2 /* PlatformSelectionVC.swift in Sources */,
 				4706B7F6213FAEC300BAC8EA /* FeedDetailVC.swift in Sources */,
 				47E2C79B2147014F00AAD648 /* FilterCellType2.swift in Sources */,
@@ -1316,6 +1367,7 @@
 				47E2C7682145C65F00AAD648 /* LobbyListCell.swift in Sources */,
 				47E2C70E21446D9800AAD648 /* MessageCell.swift in Sources */,
 				D258C0792099061C0090ABB5 /* OnboardingVC.swift in Sources */,
+				472B816C214C668F00C005B2 /* Extension+ProfileVC.swift in Sources */,
 				D2075DCE209E3CA400AC79B6 /* RegisterRequest.swift in Sources */,
 				47C3C05E213E5FFB00A74171 /* FeedsRequest.swift in Sources */,
 				472DFF18213AE54500FC577A /* Extension+UIView.swift in Sources */,
@@ -1332,6 +1384,7 @@
 				D2075DB6209CE3C200AC79B6 /* BaseRequest.swift in Sources */,
 				47C3C0AB213F0D1900A74171 /* DefaultResponse.swift in Sources */,
 				47C0B081211EDD9900469883 /* GradientView.swift in Sources */,
+				472B8175214C7A8A00C005B2 /* AddCollectionCell.swift in Sources */,
 				472B8157214AACB200C005B2 /* Extension+LobbyMainVC.swift in Sources */,
 				47E2C68E2140741700AAD648 /* FeedTitleCell.swift in Sources */,
 				472DFF0F2139F4D600FC577A /* ProfileVC.swift in Sources */,
@@ -1362,7 +1415,6 @@
 				472B814821494EB700C005B2 /* LobbyGameSelectionVC.swift in Sources */,
 				D258C074209904690090ABB5 /* BaseVC.swift in Sources */,
 				D2075DC5209DEA2000AC79B6 /* Extension+UIButton.swift in Sources */,
-				472DFF14213ACB9A00FC577A /* AchivementView.swift in Sources */,
 				47E2C7862146D5B000AAD648 /* HalfModalInteractiveTransition.swift in Sources */,
 				47E2C7642145C24000AAD648 /* LobbyMainPageController.swift in Sources */,
 				47E2C7872146D5B000AAD648 /* HalfModalTransitionAnimator.swift in Sources */,

@@ -12,32 +12,46 @@ import SDWebImage
 import SVProgressHUD
 import PMAlertController
 
-
 class ProfileVC: BaseVC {
 
+    
+    @IBOutlet weak var lobbiesBackView: UIView!
+    @IBOutlet weak var lobbiesCollectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var profilePictureImage: UIImageView!
+    @IBOutlet weak var urlCollectionView: UICollectionView!
+    var profileLobbyList:[Lobby]! {
+        didSet{
+            DispatchQueue.main.async {
+                self.lobbiesCollectionView.delegate = self
+                self.lobbiesCollectionView.dataSource = self
+                self.lobbiesCollectionView.reloadData()
+            }
+        }
+    }
+    var isMyProfile:Bool = true
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.sendAchivementRequest()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        SVProgressHUD.show()
         sendUserLobbyRequest()
         setupUI()
+        registerCollectionViews()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     private func sendAchivementRequest(){
-        for _ in 0...10 {
-            let view = AchivementView.fromNib() as AchivementView
-            view.width(constant: 155)
-            view.height(constant: 120)
-            stackView.addArrangedSubview(view)
-        }
+        //TODO:
     }
     
     private func setupUI(){
@@ -52,9 +66,17 @@ class ProfileVC: BaseVC {
     private func sendUserLobbyRequest(){
         let userlobbyRequest = UserAllLobbiesRequest()
         userlobbyRequest.sendLobbyRequest(userId: nil, successCompletionHandler: { (lobbyList) in
-            print(lobbyList)
+            if lobbyList.count > 0 {
+                self.profileLobbyList = lobbyList
+                self.lobbiesBackView.isHidden = false
+            } else {
+                self.lobbiesBackView.isHidden = true
+            }
+            SVProgressHUD.dismiss()
         }) {
-            print("Error")
+            self.lobbiesBackView.isHidden = true
+            SVProgressHUD.dismiss()
+            self.showErrorMessage(message: "There is an error to fetching Lobbies!")
         }
     }
     

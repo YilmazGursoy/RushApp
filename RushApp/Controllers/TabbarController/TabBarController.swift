@@ -38,8 +38,10 @@ class TabBarController: UITabBarController {
         let profileVC = ProfileVC.createFromStoryboard()
         profileVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "profileIcon"), selectedImage: #imageLiteral(resourceName: "profileIconSelected"))
         profileVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);
+        let thirdNavigationController = UINavigationController.init(rootViewController: profileVC)
+        thirdNavigationController.setNavigationBarHidden(true, animated: false)
         
-        viewControllers = [firstNavigationCOntroller, secondNavigationController, profileVC]
+        viewControllers = [firstNavigationCOntroller, secondNavigationController, thirdNavigationController]
     }
     
     override func didReceiveMemoryWarning() {
