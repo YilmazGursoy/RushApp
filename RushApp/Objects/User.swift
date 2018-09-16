@@ -11,7 +11,6 @@ import Foundation
 struct User : Decodable {
     var userId:String
     var username:String
-    var profilePicture:String
     var gameList:[Game]?
     var firebaseToken:String?
     var profileUrls:[SocialURL]?
@@ -20,8 +19,24 @@ struct User : Decodable {
         case userId = "userId"
         case username = "username"
         case gameList = "selectingGameIDs"
-        case profilePicture = "profilePicture"
         case firebaseToken = "firebaseToken"
         case profileUrls = "profileUrls"
     }
 }
+
+extension User {
+    func getProfilePictureURL()->URL {
+        let imageSpesificURL = userId + "/" + ConstantUrls.profilePictureName
+        let imageUrl = imageSpesificURL.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        let url = ConstantUrls.profilePictureS3BaseUrl + imageUrl!
+        return URL(string: url)!
+    }
+    
+    static func getProfilePictureFrom(userId:String) -> URL {
+        let imageSpesificURL = userId + "/" + ConstantUrls.profilePictureName
+        let imageUrl = imageSpesificURL.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        let url = ConstantUrls.profilePictureS3BaseUrl + imageUrl!
+        return URL(string: url)!
+    }
+}
+

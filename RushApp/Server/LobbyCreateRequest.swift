@@ -24,7 +24,7 @@ class LobbyCreateRequest : Request {
                                       "description":description,
                                       "latitude":latitude,
                                       "longitude":longitude,
-                                      "sender":["username":sender.username, "profilePic":sender.profilePicture],
+                                      "sender":["username":sender.username],
                                       "game":["id":gameid, "name":gameName, "thumbImage": thumbImage, "normalImage":normalImage],
                                       "platform":platform.rawValue,
                                       "numberOfNeededUser":numberOfNeededUser]

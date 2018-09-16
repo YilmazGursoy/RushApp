@@ -26,7 +26,7 @@ extension Rush {
     }
 }
 
-enum Platform : Int {
+enum Platform : Int, Codable {
     case playstation
     case steam
     case xbox
@@ -34,6 +34,8 @@ enum Platform : Int {
     case battleNet
     case epicGames
     case lol
+    case nintendo
+    case discord
     case empty
 }
 
@@ -54,6 +56,10 @@ extension Platform {
             return "League of Legends"
         case .epicGames:
             return "Epic Games"
+        case .nintendo:
+            return "Nintendo"
+        case .discord:
+            return "Discord"
         case .empty:
             return ""
         }
@@ -75,6 +81,10 @@ extension Platform {
             return .lol
         } else if type == "Epic Games" {
             return .epicGames
+        } else if type == "Nintendo" {
+            return .nintendo
+        } else if type == "Discord" {
+            return .discord
         } else {
             return .empty
         }
@@ -95,13 +105,16 @@ extension Platform {
             return .epicGames
         } else if index == 6 {
             return .lol
+        } else if index == 7 {
+            return .nintendo
+        } else if index == 8 {
+            return .discord
         } else {
             return .empty
         }
     }
     
     func getPlatformImage()->UIImage {
-        
         switch self {
         case .playstation:
             return #imageLiteral(resourceName: "psn")
@@ -117,10 +130,38 @@ extension Platform {
             return #imageLiteral(resourceName: "lol")
         case .epicGames:
             return #imageLiteral(resourceName: "epicGames")
+        case .nintendo:
+            return #imageLiteral(resourceName: "nintendoSwitch")
+        case .discord:
+            return #imageLiteral(resourceName: "discord")
         case .empty:
             return #imageLiteral(resourceName: "placeholderImage")
         }
     }
     
+    func getPlatformLobbyImage()->UIImage {
+        switch self {
+        case .playstation:
+            return #imageLiteral(resourceName: "psnWhite")
+        case .steam:
+            return #imageLiteral(resourceName: "steamWhite")
+        case .xbox:
+            return #imageLiteral(resourceName: "xboxWhite")
+        case .battleNet:
+            return #imageLiteral(resourceName: "battleNetWhite")
+        case .origin:
+            return #imageLiteral(resourceName: "originWhite")
+        case .lol:
+            return #imageLiteral(resourceName: "lolWhite")
+        case .epicGames:
+            return #imageLiteral(resourceName: "epicGamesWhite")
+        case .nintendo:
+            return #imageLiteral(resourceName: "nintendoWhite")
+        case .discord:
+            return #imageLiteral(resourceName: "discordWhite")
+        case .empty:
+            return #imageLiteral(resourceName: "placeholderImage")
+        }
+    }
 }
 

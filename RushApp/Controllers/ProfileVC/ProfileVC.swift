@@ -88,19 +88,10 @@ class ProfileVC: BaseVC {
             self.sendUserLobbyRequest(userId:self.currentUser.userId)
             self.titleLabel.text = self.currentUser.username
             DispatchQueue.main.async {
-                self.profilePictureImage.sd_setImage(with: URL.init(string: self.currentUser.profilePicture), completed: { (image, error, cacheType, url) in
+                self.profilePictureImage.sd_setImage(with: self.currentUser.getProfilePictureURL(), completed: { (image, error, cacheType, url) in
                     
                 })
             }
-//            ImageDownloaderManager.downloadProfileImage(userId: self.currentUser.userId, completionBlock: { (url) in
-//                SVProgressHUD.dismiss()
-//
-//            }, failedBlock: {
-//                DispatchQueue.main.async {
-//                    SVProgressHUD.dismiss()
-//                    self.profilePictureImage.image = #imageLiteral(resourceName: "profilePlaceholder")
-//                }
-//            })
         }
     }
     

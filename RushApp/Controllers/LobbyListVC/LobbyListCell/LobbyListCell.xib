@@ -83,7 +83,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NiU-m9-j7l">
                                                         <rect key="frame" x="0.0" y="0.0" width="196" height="29"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xboxWhite" translatesAutoresizingMaskIntoConstraints="NO" id="2mP-an-XLb">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2mP-an-XLb">
                                                                 <rect key="frame" x="0.0" y="0.0" width="29" height="29"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -193,6 +193,5 @@
     <resources>
         <image name="fifaDummyImage" width="75" height="66"/>
         <image name="iconRight" width="6" height="12"/>
-        <image name="xboxWhite" width="43" height="43"/>
     </resources>
 </document>
