@@ -132,10 +132,10 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="firstBackView" destination="yI9-o1-1Ze" id="QmZ-Z3-SVU"/>
-                <outlet property="firstProfileImageView" destination="35o-6Z-8qp" id="4h6-rO-9t8"/>
-                <outlet property="secondBackView" destination="902-CF-O12" id="D5B-yN-nfA"/>
-                <outlet property="secondProfileImageView" destination="QXf-rf-fdJ" id="QwI-Ts-N6r"/>
+                <outlet property="firstBackView" destination="902-CF-O12" id="pGI-ds-70q"/>
+                <outlet property="firstProfileImageView" destination="QXf-rf-fdJ" id="7HS-dK-2OI"/>
+                <outlet property="secondBackView" destination="yI9-o1-1Ze" id="1bU-xO-tcO"/>
+                <outlet property="secondProfileImageView" destination="35o-6Z-8qp" id="VTO-Qj-gUn"/>
                 <outlet property="thirdBackView" destination="ljp-uW-cvK" id="X9Y-FM-tXj"/>
                 <outlet property="thirdProfileImageView" destination="D2E-BQ-JGW" id="mwt-A8-wJb"/>
             </connections>

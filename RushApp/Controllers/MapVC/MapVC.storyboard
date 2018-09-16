@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GKv-vU-DTN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GKv-vU-DTN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--MapVC-->
         <scene sceneID="cQR-cv-ovc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cp1-W8-9WI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MapVC" id="GKv-vU-DTN" customClass="MapVC" customModule="RushApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P29-zu-vEZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -49,23 +54,60 @@
                                     <constraint firstItem="L3H-Rr-0HI" firstAttribute="top" secondItem="sD6-Wb-wqX" secondAttribute="top" id="xOB-CL-N3K"/>
                                 </constraints>
                             </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NK6-l9-XNi" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
+                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="46D-s6-jBt">
+                                        <rect key="frame" x="5" y="50" width="90" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="12"/>
+                                        <color key="textColor" red="0.46666666666666667" green="0.3529411764705882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="46D-s6-jBt" firstAttribute="centerX" secondItem="NK6-l9-XNi" secondAttribute="centerX" id="AWt-rb-EcT"/>
+                                    <constraint firstAttribute="trailing" secondItem="46D-s6-jBt" secondAttribute="trailing" constant="5" id="EgB-iD-UWp"/>
+                                    <constraint firstAttribute="height" constant="100" id="HgV-M1-pSb"/>
+                                    <constraint firstAttribute="width" constant="100" id="OW8-Wc-gbZ"/>
+                                    <constraint firstItem="46D-s6-jBt" firstAttribute="centerY" secondItem="NK6-l9-XNi" secondAttribute="centerY" id="Vdg-XC-ru6"/>
+                                    <constraint firstItem="46D-s6-jBt" firstAttribute="leading" secondItem="NK6-l9-XNi" secondAttribute="leading" constant="5" id="u5j-aw-ryY"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.46666666670000001" green="0.35294117650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="-1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OFn-6P-JC7" firstAttribute="top" secondItem="P29-zu-vEZ" secondAttribute="top" id="7E5-3X-G1c"/>
                             <constraint firstAttribute="bottom" secondItem="sD6-Wb-wqX" secondAttribute="bottom" constant="10" id="8qX-QZ-Wm6"/>
                             <constraint firstItem="sD6-Wb-wqX" firstAttribute="leading" secondItem="P29-zu-vEZ" secondAttribute="leading" id="L08-WP-bOL"/>
+                            <constraint firstItem="NK6-l9-XNi" firstAttribute="centerY" secondItem="P29-zu-vEZ" secondAttribute="centerY" id="a7I-SV-GQN"/>
                             <constraint firstAttribute="trailing" secondItem="OFn-6P-JC7" secondAttribute="trailing" id="g87-w3-SaR"/>
                             <constraint firstAttribute="bottom" secondItem="OFn-6P-JC7" secondAttribute="bottom" id="nlf-Rg-6Gu"/>
                             <constraint firstItem="OFn-6P-JC7" firstAttribute="leading" secondItem="P29-zu-vEZ" secondAttribute="leading" id="o4K-rn-dDt"/>
+                            <constraint firstItem="NK6-l9-XNi" firstAttribute="centerX" secondItem="P29-zu-vEZ" secondAttribute="centerX" id="y2H-xH-jji"/>
                             <constraint firstAttribute="trailing" secondItem="sD6-Wb-wqX" secondAttribute="trailing" id="zkV-1e-Lav"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="udg-KN-Fbi"/>
                     </view>
                     <connections>
+                        <outlet property="centerLocationLabel" destination="46D-s6-jBt" id="IJA-kz-R5b"/>
                         <outlet property="collectionView" destination="L3H-Rr-0HI" id="6sg-bP-HTW"/>
+                        <outlet property="collectionViewBackView" destination="sD6-Wb-wqX" id="EXK-q2-bS7"/>
                         <outlet property="mapView" destination="OFn-6P-JC7" id="HKF-CG-8gz"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cp1-W8-9WI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="999" y="190"/>
         </scene>

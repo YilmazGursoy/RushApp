@@ -25,7 +25,7 @@ extension BaseVC {
     
     func showSuccess(title:String, description:String, doneButtonTapped:@escaping()->Void) {
         let alertVC = PMAlertController(title: title, description: description, image: UIImage(named: "success"), style: .alert)
-        
+        alertVC.gravityDismissAnimation = false
         alertVC.addAction(PMAlertAction(title: "Okay", style: .default, action: { () in
             doneButtonTapped()
         }))
@@ -35,7 +35,7 @@ extension BaseVC {
     
     func showError(title:String, description:String, doneButtonTapped:@escaping()->Void) {
         let alertVC = PMAlertController(title: title, description: description, image: UIImage(named: "error"), style: .alert)
-        
+        alertVC.gravityDismissAnimation = false
         alertVC.addAction(PMAlertAction(title: "Okay", style: .default, action: { () in
             doneButtonTapped()
         }))

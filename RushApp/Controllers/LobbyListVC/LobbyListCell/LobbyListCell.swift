@@ -27,7 +27,7 @@ class LobbyListCell: UITableViewCell {
     
     func arrangeCell(lobby:Lobby, index:Int) {
         self.lobbyGamePlatformImageView.image = lobby.platform.getPlatformLobbyImage()
-        self.lobbyImageView.sd_setImage(with: lobby.game.getThumbImageURL(), placeholderImage: #imageLiteral(resourceName: "placeholderImage"), options: .cacheMemoryOnly, completed: nil)
+        self.lobbyImageView.sd_setImage(with: lobby.game.getLobbyImageURL(), placeholderImage: #imageLiteral(resourceName: "placeholderImage"), options: .cacheMemoryOnly, completed: nil)
         self.lobbyGameName.text = lobby.game.name
         self.lobbyGameNeededPlayerLabel.text = "Gamers (max \(lobby.numberOfNeededUser))"
         

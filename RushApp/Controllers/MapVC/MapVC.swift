@@ -13,7 +13,10 @@ import SVProgressHUD
 class MapVC: BaseVC {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var collectionView: UICollectionView!
-    let lobbyCacher = NSCache<NSString, UICollectionViewCell>()
+    @IBOutlet weak var centerLocationLabel: UILabel!
+    
+    @IBOutlet weak var collectionViewBackView: UIView!
+    var lobbyCacher = NSCache<NSString, UICollectionViewCell>()
     
     var selectingIndex:Int!
     
@@ -58,20 +61,21 @@ class MapVC: BaseVC {
         let request = GetNearestLobbiesRequest()
         request.sendLobbyRequest(longitude: mapView.centerCoordinate.longitude, latitude: mapView.centerCoordinate.latitude, radius: mapView.currentRadius(), successCompletion: { (lobbies) in
             SVProgressHUD.dismiss()
-            var locations:[CLLocation] = []
-            
-            lobbies.forEach({ (lobby) in
-                locations.append(CLLocation(latitude: lobby.latitude, longitude: lobby.longitude))
-            })
+            self.lobbyCacher = NSCache<NSString, UICollectionViewCell>()
             self.lobbies = lobbies
             DispatchQueue.main.async {
-                self.addAnnotations(coords: locations)
+                self.collectionViewBackView.isUserInteractionEnabled = true
+                self.collectionView.reloadData()
             }
         }) {
             SVProgressHUD.dismiss()
-            self.lobbies = []
-            self.collectionView.reloadData()
-            self.showErrorMessage(message: "There is an error to fetching lobbies.")
+            DispatchQueue.main.async {
+                self.lobbyCacher = NSCache<NSString, UICollectionViewCell>()
+                self.lobbies = []
+                self.collectionViewBackView.isUserInteractionEnabled = false
+                self.collectionView.reloadData()
+                self.showErrorMessage(message: "Ne yazık ki yakınlarda bir Lobi yok :(")
+            }
         }
     }
     
@@ -90,64 +94,5 @@ class MapVC: BaseVC {
         mapView.setRegion(coordinateRegion, animated: true)
         mapView.reloadInputViews()
     }
-}
-
-//MARK: CollectionViewDelegate
-extension MapVC : UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.lobbies.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cachedCell = lobbyCacher.object(forKey: NSString.init(string: "\(indexPath.row)")) {
-            return cachedCell
-        } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LobbyCollectionCell", for: indexPath) as! LobbyCollectionCell
-            cell.arrangeCell(lobby: self.lobbies[indexPath.row]) { () in
-                let lobbyDetailVC = LobbyDetailVC.createFromStoryboard()
-                lobbyDetailVC.currentLobby = self.lobbies[indexPath.row]
-                self.navigationController?.pushVCMainThread(lobbyDetailVC)
-            }
-            lobbyCacher.setObject(cell, forKey: NSString.init(string: "\(indexPath.row)"))
-            return cell
-        }
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        DispatchQueue.main.async {
-            self.selectingIndex = indexPath.row
-            self.mapView.selectAnnotation(self.mapView.annotations[indexPath.row], animated: true)
-        }
-    }
-}
-
-//MARK: Helper Methods
-extension MapVC : MKMapViewDelegate{
-    private func addAnnotations(coords: [CLLocation]){
-        for coord in coords{
-            let CLLCoordType = CLLocationCoordinate2D(latitude: coord.coordinate.latitude,
-                                                      longitude: coord.coordinate.longitude);
-            let anno = MKPointAnnotation();
-            anno.coordinate = CLLCoordType;
-            mapView.addAnnotation(anno);
-        }
-    }
-    
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let view = MKAnnotationView.init(annotation: annotation, reuseIdentifier: "")
-        view.image = #imageLiteral(resourceName: "annotationImageOff")
-        view.isUserInteractionEnabled = false
-        return view
-    }
-    
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        self.centerMapOnLocation(CLLocation(latitude: view.annotation!.coordinate.latitude, longitude: view.annotation!.coordinate.longitude), mapView: self.mapView)
-        view.image = #imageLiteral(resourceName: "annotationImageOn")
-    }
-    
-    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-        view.image = #imageLiteral(resourceName: "annotationImageOff")
-    }    
 }
 

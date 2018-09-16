@@ -23,16 +23,13 @@ class LobbyCollectionCell: UICollectionViewCell {
     var completion:(()->Void)!
     var currentLobby:Lobby!
     
-    override var isSelected: Bool {
+    var isTouched: Bool = false {
         didSet {
-            if !isHighlighted {
-                print("isSelected:",isSelected)
-                if isSelected {
-                    self.selectingUIConfigure()
-                } else {
-                    self.unselectedUIConfigure()
-                }
-            }
+            var transform = CGAffineTransform.identity
+            if isTouched { transform = transform.scaledBy(x: 0.96, y: 0.96) }
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [], animations: {
+                self.transform = transform
+            }, completion: nil)
         }
     }
     
@@ -40,16 +37,11 @@ class LobbyCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    
     func arrangeCell(lobby:Lobby, joinTapped:@escaping ()->Void) {
-        self.usernameLabel.text = lobby.sender.username
-        ImageDownloaderManager.downloadProfileImage(userId: lobby.sender.id, completionBlock: { (url) in
-            self.profileImageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"),options:.refreshCached , completed: nil)
-        }) {
-            self.profileImageView.image = #imageLiteral(resourceName: "profilePlaceholder")
-        }
-        self.numberOfNeededLabel.text = "Gamers (max \(lobby.numberOfNeededUser)"
-        self.gameImageView.sd_setImage(with: lobby.game.getNormalImageURL(), placeholderImage:#imageLiteral(resourceName: "placeholderImage"), completed: nil)
+        self.usernameLabel.text = lobby.game.name
+        self.profileImageView.image = lobby.platform.getPlatformLobbyImage()
+        self.numberOfNeededLabel.text = "Gamers (max \(lobby.numberOfNeededUser))"
+        self.gameImageView.sd_setImage(with: lobby.game.getLobbyImageURL(), placeholderImage:#imageLiteral(resourceName: "placeholderImage"), completed: nil)
         self.currentLobby = lobby
         completion = joinTapped
         self.setupSubsView()
@@ -58,35 +50,31 @@ class LobbyCollectionCell: UICollectionViewCell {
         completion()
     }
     
-    private func selectingUIConfigure(){
-        self.cellBackGradientView.topColor = #colorLiteral(red: 0.4666666667, green: 0.3529411765, blue: 1, alpha: 1)
-        self.cellBackGradientView.bottomColor = #colorLiteral(red: 0.8117647059, green: 0.5529411765, blue: 1, alpha: 1)
-        self.cellBackGradientView.backgroundColor = .clear
-        self.gradientView.topColor = .clear
-        self.gradientView.bottomColor = .clear
-        self.gradientView.backgroundColor = .white
-        self.joinLabel.textColor = .black
-        self.usernameLabel.textColor = .white
-        self.numberOfNeededLabel.textColor = .white
-    }
-    
-    private func unselectedUIConfigure(){
-        self.cellBackGradientView.topColor = .clear
-        self.cellBackGradientView.bottomColor = .clear
-        self.cellBackGradientView.backgroundColor = .white
-        self.cellBackGradientView.borderColor = #colorLiteral(red: 0.7294117647, green: 0.7294117647, blue: 0.7294117647, alpha: 1)
-        self.gradientView.topColor = #colorLiteral(red: 0.4666666667, green: 0.3529411765, blue: 1, alpha: 1)
-        self.gradientView.bottomColor = #colorLiteral(red: 0.8117647059, green: 0.5529411765, blue: 1, alpha: 1)
-        self.joinLabel.textColor = .white
-        self.usernameLabel.textColor = .black
-        self.numberOfNeededLabel.textColor = .black
-    }
-    
     private func setupSubsView(){
         let subsView = RoundProfilesView.fromNib() as! RoundProfilesView
         subsView.create(userList: currentLobby.subscribers)
         subsView.frame = self.subsBackView.bounds
         self.subsBackView.addSubview(subsView)
+    }
+    
+}
+
+
+//MARK: Custom Animation
+extension LobbyCollectionCell {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        isTouched = true
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        isTouched = false
+    }
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+        isTouched = false
     }
     
 }

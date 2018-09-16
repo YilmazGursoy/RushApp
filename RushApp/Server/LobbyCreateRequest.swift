@@ -18,6 +18,7 @@ class LobbyCreateRequest : Request {
         guard let gameid = game?.id else {return}
         guard let thumbImage = game?.thumbImage else {return}
         guard let normalImage = game?.normalImage else {return}
+        guard let lobbyImage = game?.lobbyImage else {return}
         
         let parameter:[String:Any] = ["name":lobbyName,
                                       "address":address,
@@ -25,7 +26,7 @@ class LobbyCreateRequest : Request {
                                       "latitude":latitude,
                                       "longitude":longitude,
                                       "sender":["username":sender.username],
-                                      "game":["id":gameid, "name":gameName, "thumbImage": thumbImage, "normalImage":normalImage],
+                                      "game":["id":gameid, "name":gameName, "thumbImage": thumbImage, "normalImage":normalImage, "lobbyImage":lobbyImage],
                                       "platform":platform.rawValue,
                                       "numberOfNeededUser":numberOfNeededUser]
         

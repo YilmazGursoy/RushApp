@@ -28,7 +28,7 @@ class LobbyListVC: BaseVC {
         super.viewWillAppear(animated)
         self.checkLocalization { (status) in
             if status == CLAuthorizationStatus.authorizedWhenInUse {
-                self.getLobbyRequest()
+                self.getLobbyListRequest()
             }
         }
     }
@@ -48,7 +48,7 @@ class LobbyListVC: BaseVC {
         
     }
     
-    private func getLobbyRequest(){
+    private func getLobbyListRequest(){
         let request = LobbyRequest()
         SVProgressHUD.show()
         request.sendGameLobbyRequestWithoutParameters { (lobbies, error) in

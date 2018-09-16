@@ -32,3 +32,4 @@ struct Lobby: Decodable {
     let lobbyStatus:Int
     let numberOfNeededUser:Int
 }
+

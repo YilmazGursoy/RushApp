@@ -40,7 +40,9 @@ class LobbyGameSelectionVC: BaseVC {
         gameListRequest.sendGameListRequest { (gameList, error) in
             SVProgressHUD.dismiss()
             if let newGameList = gameList {
-                self.gameList = newGameList
+                var games = newGameList
+                games = games.sorted{$0.name < $1.name}
+                self.gameList = games
             } else {
                 self.pop()
             }

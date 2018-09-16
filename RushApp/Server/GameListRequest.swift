@@ -14,9 +14,7 @@ class GameListRequest: Request {
         return LambdaConstants.GetGameList
     }
     
-    
     func sendGameListRequest(completionBlock: @escaping ([Game]? ,Error?) -> Void) {
-        
         self.request(parameters: [:]) { (result:AnyObject? ,response:[Game]?, error:Error?) in
             completionBlock(response, error)
         }

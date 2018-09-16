@@ -104,7 +104,7 @@ extension GameSelectionVC {
                 SVProgressHUD.dismiss()
                 if error != nil {
                     self.showError(title: "Failed", description: "There is an error to creating profile.", doneButtonTapped: {
-            
+                        
                     })
                 } else {
                     let checkUserRequest = CheckUserRequest()

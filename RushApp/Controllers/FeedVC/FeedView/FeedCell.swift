@@ -10,6 +10,7 @@ import UIKit
 import SDWebImage
 
 class FeedCell: UITableViewCell {
+    
     @IBOutlet weak var pictureBackView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -48,10 +49,8 @@ class FeedCell: UITableViewCell {
         } else{
             self.pictureBackView.isHidden = true
         }
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale.init(identifier: "tr_TR")
-        dateFormatter.dateFormat = "dd MMMM, HH:mm"
-        self.dateLabel.text = dateFormatter.string(from: feed.date)
+        
+        self.dateLabel.text = Date().offset(from: feed.date)
         self.profileImageView.sd_setImage(with: User.getProfilePictureFrom(userId: feed.sender.id), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), completed: nil)
         self.didSelectCompletion = selectCompletion
         self.indexPath = indexPath

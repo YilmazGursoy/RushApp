@@ -27,8 +27,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="155" height="183"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadowImage" translatesAutoresizingMaskIntoConstraints="NO" id="fLb-Z6-ZG9">
-                        <rect key="frame" x="2" y="2" width="151" height="179"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lobbyMapShadow" translatesAutoresizingMaskIntoConstraints="NO" id="Qr4-fY-IhL">
+                        <rect key="frame" x="0.0" y="0.0" width="155" height="183"/>
                     </imageView>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qw-YF-OfD" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
                         <rect key="frame" x="2" y="2" width="151" height="179"/>
@@ -52,11 +52,6 @@
                                             <constraint firstAttribute="width" constant="25" id="Tzp-BJ-whe"/>
                                             <constraint firstAttribute="height" constant="25" id="x9Y-1M-vDP"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="-1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Isabella Stevens" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="ycB-68-8am">
                                         <rect key="frame" x="45" y="14.5" width="96" height="16.5"/>
@@ -205,13 +200,13 @@
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="fLb-Z6-ZG9" secondAttribute="bottom" constant="2" id="8Ed-mz-OC9"/>
-                <constraint firstItem="fLb-Z6-ZG9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="GKB-yY-6av"/>
-                <constraint firstAttribute="trailing" secondItem="fLb-Z6-ZG9" secondAttribute="trailing" constant="2" id="OCV-Yl-LzX"/>
-                <constraint firstItem="fLb-Z6-ZG9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="Pck-c4-pqC"/>
                 <constraint firstItem="8qw-YF-OfD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="VXa-vo-C7X"/>
+                <constraint firstItem="Qr4-fY-IhL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jN0-2q-NVp"/>
                 <constraint firstAttribute="bottom" secondItem="8qw-YF-OfD" secondAttribute="bottom" constant="2" id="jg1-PJ-CuK"/>
+                <constraint firstItem="Qr4-fY-IhL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mwU-Zg-cvN"/>
                 <constraint firstItem="8qw-YF-OfD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="pkP-s7-o4C"/>
+                <constraint firstAttribute="bottom" secondItem="Qr4-fY-IhL" secondAttribute="bottom" id="qDo-v5-aA4"/>
+                <constraint firstAttribute="trailing" secondItem="Qr4-fY-IhL" secondAttribute="trailing" id="r9N-85-9Zk"/>
                 <constraint firstAttribute="trailing" secondItem="8qw-YF-OfD" secondAttribute="trailing" constant="2" id="saF-UV-f9Y"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -226,11 +221,11 @@
                 <outlet property="subsBackView" destination="rZ9-5u-uI4" id="ZdY-71-vxw"/>
                 <outlet property="usernameLabel" destination="ycB-68-8am" id="kbu-ez-dwK"/>
             </connections>
-            <point key="canvasLocation" x="2.3999999999999999" y="54.422788605697157"/>
+            <point key="canvasLocation" x="-87" y="63"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="shadowImage" width="399" height="344"/>
+        <image name="lobbyMapShadow" width="179" height="207"/>
         <image name="test_icon" width="285" height="380"/>
     </resources>
 </document>

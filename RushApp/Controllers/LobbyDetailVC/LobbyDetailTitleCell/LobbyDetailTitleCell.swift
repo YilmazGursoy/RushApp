@@ -38,7 +38,7 @@ class LobbyDetailTitleCell: UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.init(identifier: "tr_TR")
         dateFormatter.dateFormat = "dd MMMM, HH:mm"
-        self.lobbyDetailImageView.sd_setImage(with: lobby.game.getNormalImageURL(), placeholderImage: #imageLiteral(resourceName: "placeholderImage"), completed: nil)
+        self.lobbyDetailImageView.sd_setImage(with: lobby.game.getLobbyImageURL(), placeholderImage: #imageLiteral(resourceName: "placeholderImage"), completed: nil)
         self.gameNameLabel.text = lobby.game.name
         self.descriptionLabel.text = lobby.description
         

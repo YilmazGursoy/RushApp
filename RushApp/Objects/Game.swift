@@ -13,6 +13,7 @@ struct Game: Decodable {
     let name: String
     var thumbImage:String?
     var normalImage:String?
+    var lobbyImage:String?
     var isActive:Bool?
 }
 
@@ -27,6 +28,12 @@ extension Game {
     
     func getNormalImageURL()->URL {
         let imageUrl = normalImage?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        let baseImage = ConstantUrls.rushGameImagesBaseURL + imageUrl!
+        return URL.init(string: baseImage)!
+    }
+    
+    func getLobbyImageURL()->URL {
+        let imageUrl = lobbyImage?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         let baseImage = ConstantUrls.rushGameImagesBaseURL + imageUrl!
         return URL.init(string: baseImage)!
     }

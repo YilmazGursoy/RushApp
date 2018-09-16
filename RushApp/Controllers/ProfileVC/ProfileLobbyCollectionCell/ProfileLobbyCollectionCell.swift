@@ -29,7 +29,7 @@ class ProfileLobbyCollectionCell: UICollectionViewCell {
     
     func arrangeCell(lobby:Lobby) {
         self.lobbyNameLabel.text = lobby.name
-        self.lobbyImageView.sd_setImage(with: lobby.game.getThumbImageURL(), placeholderImage: #imageLiteral(resourceName: "placeholderImage"), completed: nil)
+        self.lobbyImageView.sd_setImage(with: lobby.game.getLobbyImageURL(), placeholderImage: #imageLiteral(resourceName: "placeholderImage"), completed: nil)
     }
 
 }
