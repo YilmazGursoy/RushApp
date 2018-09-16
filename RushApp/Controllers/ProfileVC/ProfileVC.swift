@@ -88,9 +88,11 @@ class ProfileVC: BaseVC {
             self.sendUserLobbyRequest(userId:self.currentUser.userId)
             self.titleLabel.text = self.currentUser.username
             DispatchQueue.main.async {
-                self.profilePictureImage.sd_setImage(with: self.currentUser.getProfilePictureURL(), completed: { (image, error, cacheType, url) in
-                    
-                })
+                if isCacheRefresh {
+                    self.profilePictureImage.sd_setImage(with: self.currentUser.getProfilePictureURL(), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .refreshCached, completed: nil)
+                } else {
+                    self.profilePictureImage.sd_setImage(with: self.currentUser.getProfilePictureURL(), completed: nil)
+                }
             }
         }
     }

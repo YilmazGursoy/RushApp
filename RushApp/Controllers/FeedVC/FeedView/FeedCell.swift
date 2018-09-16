@@ -50,7 +50,7 @@ class FeedCell: UITableViewCell {
             self.pictureBackView.isHidden = true
         }
         
-        self.dateLabel.text = Date().offset(from: feed.date)
+        self.dateLabel.text = Date().offset(from: Date.init(timeIntervalSince1970: feed.date.timeIntervalSinceReferenceDate))
         self.profileImageView.sd_setImage(with: User.getProfilePictureFrom(userId: feed.sender.id), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), completed: nil)
         self.didSelectCompletion = selectCompletion
         self.indexPath = indexPath

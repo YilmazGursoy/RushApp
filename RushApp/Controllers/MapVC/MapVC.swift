@@ -14,8 +14,8 @@ class MapVC: BaseVC {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var centerLocationLabel: UILabel!
-    
     @IBOutlet weak var collectionViewBackView: UIView!
+    
     var lobbyCacher = NSCache<NSString, UICollectionViewCell>()
     
     var selectingIndex:Int!
@@ -38,6 +38,7 @@ class MapVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.lobbyCacher = NSCache<NSString, UICollectionViewCell>()
         self.checkLocalization { (status) in
             if status == CLAuthorizationStatus.authorizedWhenInUse {
                 self.getLobbyRequest()
@@ -53,7 +54,7 @@ class MapVC: BaseVC {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
     private func getLobbyRequest(){
