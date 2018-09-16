@@ -52,7 +52,7 @@ class FeedCell: UITableViewCell {
         dateFormatter.locale = Locale.init(identifier: "tr_TR")
         dateFormatter.dateFormat = "dd MMMM, HH:mm"
         self.dateLabel.text = dateFormatter.string(from: feed.date)
-        self.profileImageView.sd_setImage(with: feed.sender.profilePic, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), completed: nil)
+        self.profileImageView.sd_setImage(with: User.getProfilePictureFrom(userId: feed.sender.id), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), completed: nil)
         self.didSelectCompletion = selectCompletion
         self.indexPath = indexPath
     }

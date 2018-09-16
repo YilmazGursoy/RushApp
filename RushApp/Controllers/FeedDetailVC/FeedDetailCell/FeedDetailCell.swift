@@ -27,7 +27,7 @@ class FeedDetailCell: UITableViewCell {
     }
     
     func arrangeCell(feed:Feed) {
-        self.profileImageView.sd_setImage(with: feed.sender.profilePic, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .cacheMemoryOnly, completed: nil)
+        self.profileImageView.sd_setImage(with: User.getProfilePictureFrom(userId: feed.sender.id), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .cacheMemoryOnly, completed: nil)
         self.profileUsername.text = feed.sender.username
         self.numberOfLikeLabel.text = "\(feed.numberOfLike)"
         self.numberOfCommentLabel.text = "\(feed.numberOfShare)"

@@ -11,5 +11,4 @@ import Foundation
 struct SimpleUser: Codable {
     let id: String
     let username: String
-    let profilePic: URL
 }

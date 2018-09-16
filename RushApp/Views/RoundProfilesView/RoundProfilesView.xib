@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RoundProfilesView" customModule="RushApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="104" height="33"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lau-cP-kEl">
+                    <rect key="frame" x="2.5" y="0.0" width="99" height="33"/>
+                    <subviews>
+                        <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="902-CF-O12" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
+                            <rect key="frame" x="3" y="0.0" width="33" height="33"/>
+                            <subviews>
+                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="QXf-rf-fdJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="QXf-rf-fdJ" secondAttribute="bottom" id="daO-hr-UMW"/>
+                                <constraint firstItem="QXf-rf-fdJ" firstAttribute="leading" secondItem="902-CF-O12" secondAttribute="leading" id="nMW-6Z-fSk"/>
+                                <constraint firstItem="QXf-rf-fdJ" firstAttribute="top" secondItem="902-CF-O12" secondAttribute="top" id="wVB-TJ-44X"/>
+                                <constraint firstAttribute="trailing" secondItem="QXf-rf-fdJ" secondAttribute="trailing" id="yuv-ZG-G4O"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="-1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yI9-o1-1Ze" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
+                            <rect key="frame" x="33" y="0.0" width="33" height="33"/>
+                            <subviews>
+                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="35o-6Z-8qp">
+                                    <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="35o-6Z-8qp" secondAttribute="trailing" id="JUN-bj-dD3"/>
+                                <constraint firstItem="35o-6Z-8qp" firstAttribute="leading" secondItem="yI9-o1-1Ze" secondAttribute="leading" id="W9m-9i-NSi"/>
+                                <constraint firstAttribute="bottom" secondItem="35o-6Z-8qp" secondAttribute="bottom" id="Zhl-tl-YjI"/>
+                                <constraint firstAttribute="width" secondItem="yI9-o1-1Ze" secondAttribute="height" multiplier="1:1" id="anN-Je-nsq"/>
+                                <constraint firstItem="35o-6Z-8qp" firstAttribute="top" secondItem="yI9-o1-1Ze" secondAttribute="top" id="fyZ-iN-JSh"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="-1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljp-uW-cvK" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
+                            <rect key="frame" x="63" y="0.0" width="33" height="33"/>
+                            <subviews>
+                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="D2E-BQ-JGW">
+                                    <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="D2E-BQ-JGW" firstAttribute="top" secondItem="ljp-uW-cvK" secondAttribute="top" id="DJB-iP-On7"/>
+                                <constraint firstAttribute="trailing" secondItem="D2E-BQ-JGW" secondAttribute="trailing" id="NyB-3J-CGo"/>
+                                <constraint firstItem="D2E-BQ-JGW" firstAttribute="leading" secondItem="ljp-uW-cvK" secondAttribute="leading" id="h2p-B7-FvU"/>
+                                <constraint firstAttribute="bottom" secondItem="D2E-BQ-JGW" secondAttribute="bottom" id="jUS-oB-MFr"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="-1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ljp-uW-cvK" firstAttribute="height" secondItem="yI9-o1-1Ze" secondAttribute="height" id="1aZ-Yw-DNp"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="yI9-o1-1Ze" secondAttribute="bottom" id="7Xn-rH-pnv"/>
+                        <constraint firstItem="yI9-o1-1Ze" firstAttribute="leading" secondItem="902-CF-O12" secondAttribute="trailing" constant="-3" id="DtR-5R-jK1"/>
+                        <constraint firstItem="yI9-o1-1Ze" firstAttribute="centerY" secondItem="lau-cP-kEl" secondAttribute="centerY" id="K69-G9-dif"/>
+                        <constraint firstItem="yI9-o1-1Ze" firstAttribute="centerX" secondItem="lau-cP-kEl" secondAttribute="centerX" id="Pjv-Jd-WMb"/>
+                        <constraint firstItem="902-CF-O12" firstAttribute="height" secondItem="yI9-o1-1Ze" secondAttribute="height" id="QSN-gO-f2l"/>
+                        <constraint firstItem="ljp-uW-cvK" firstAttribute="centerY" secondItem="lau-cP-kEl" secondAttribute="centerY" id="RxV-Hh-OdZ"/>
+                        <constraint firstItem="902-CF-O12" firstAttribute="width" secondItem="yI9-o1-1Ze" secondAttribute="width" id="V3o-lv-8Wn"/>
+                        <constraint firstItem="ljp-uW-cvK" firstAttribute="leading" secondItem="yI9-o1-1Ze" secondAttribute="trailing" constant="-3" id="WHE-N2-ktO"/>
+                        <constraint firstItem="902-CF-O12" firstAttribute="centerY" secondItem="lau-cP-kEl" secondAttribute="centerY" id="dHT-R3-aHf"/>
+                        <constraint firstItem="yI9-o1-1Ze" firstAttribute="top" secondItem="lau-cP-kEl" secondAttribute="top" priority="750" id="f4A-Ih-IHa"/>
+                        <constraint firstItem="ljp-uW-cvK" firstAttribute="width" secondItem="yI9-o1-1Ze" secondAttribute="width" id="ftU-te-7wQ"/>
+                        <constraint firstAttribute="width" secondItem="lau-cP-kEl" secondAttribute="height" multiplier="3:1" id="r8M-rb-7kg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="lau-cP-kEl" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0ce-7S-8X2"/>
+                <constraint firstItem="lau-cP-kEl" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="2Tj-Q0-nWs"/>
+                <constraint firstItem="lau-cP-kEl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Qyx-2a-a9C"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lau-cP-kEl" secondAttribute="trailing" id="c4r-nM-fYZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="lau-cP-kEl" secondAttribute="bottom" id="l4Z-de-stZ"/>
+                <constraint firstItem="lau-cP-kEl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" priority="750" id="xIK-A2-5hZ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="firstBackView" destination="yI9-o1-1Ze" id="QmZ-Z3-SVU"/>
+                <outlet property="firstProfileImageView" destination="35o-6Z-8qp" id="4h6-rO-9t8"/>
+                <outlet property="secondBackView" destination="902-CF-O12" id="D5B-yN-nfA"/>
+                <outlet property="secondProfileImageView" destination="QXf-rf-fdJ" id="QwI-Ts-N6r"/>
+                <outlet property="thirdBackView" destination="ljp-uW-cvK" id="X9Y-FM-tXj"/>
+                <outlet property="thirdProfileImageView" destination="D2E-BQ-JGW" id="mwt-A8-wJb"/>
+            </connections>
+            <point key="canvasLocation" x="276.80000000000001" y="81.409295352323838"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="profilePlaceholder" width="500" height="500"/>
+    </resources>
+</document>

@@ -77,11 +77,14 @@ import UIKit
     }
     
     override func layoutSubviews() {
-        self.gradientLayer = self.layer as! CAGradientLayer
+        self.gradientLayer = self.layer as? CAGradientLayer
         
         if !isGradientTopToBottom {
             self.gradientLayer.startPoint = CGPoint(x:0.0, y:0.5);
             self.gradientLayer.endPoint = CGPoint(x:1.0, y:0.5);
+        } else {
+            self.gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
+            self.gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
         }
         
         self.gradientLayer.colors = [topColor.cgColor, bottomColor.cgColor]

@@ -20,7 +20,7 @@ class FeedVC: BaseVC {
         refreshControl.addTarget(self, action:
             #selector(handleRefresh(_:)),
                                  for: UIControlEvents.valueChanged)
-        refreshControl.tintColor = UIColor.red
+        refreshControl.tintColor = #colorLiteral(red: 0.8117647059, green: 0.5529411765, blue: 1, alpha: 1)
         
         return refreshControl
     }()

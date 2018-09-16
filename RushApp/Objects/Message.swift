@@ -13,5 +13,4 @@ struct Message: Codable {
     let name: String
     let message: String
     let date: String
-    let profilePic: URL
 }

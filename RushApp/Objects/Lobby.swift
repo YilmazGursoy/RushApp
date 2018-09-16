@@ -25,9 +25,9 @@ struct Lobby: Decodable {
     let latitude: Double
     let longitude: Double
     let sender: SimpleUser
-    let subscribers: [Subscriber]?
+    let subscribers: [SimpleUser]
     let game: Game
-    let platform: Int
+    let platform: Platform
     let lobbyHasChat: Bool
     let lobbyStatus:Int
     let numberOfNeededUser:Int

@@ -41,11 +41,8 @@ class LobbyDetailTitleCell: UITableViewCell {
         self.lobbyDetailImageView.sd_setImage(with: lobby.game.getNormalImageURL(), placeholderImage: #imageLiteral(resourceName: "placeholderImage"), completed: nil)
         self.gameNameLabel.text = lobby.game.name
         self.descriptionLabel.text = lobby.description
-        ImageDownloaderManager.downloadProfileImage(userId: lobby.sender.id, completionBlock: { (url) in
-            self.senderProfileImageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), completed: nil)
-        }) {
-            self.senderProfileImageView.image = #imageLiteral(resourceName: "profilePlaceholder")
-        }
+        
+        self.senderProfileImageView.sd_setImage(with: User.getProfilePictureFrom(userId: lobby.sender.id), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options:.cacheMemoryOnly, completed: nil)
         
         self.lobbyCreatingDate.text = dateFormatter.string(from: lobby.date)
         self.senderUsername.text = lobby.sender.username

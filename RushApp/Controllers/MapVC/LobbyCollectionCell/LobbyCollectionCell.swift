@@ -11,7 +11,6 @@ import SDWebImage
 
 class LobbyCollectionCell: UICollectionViewCell {
     @IBOutlet weak var cellBackGradientView: GradientView!
-    @IBOutlet weak var isSelectedView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var joinLabel: UILabel!
     @IBOutlet weak var gradientView: GradientView!
@@ -19,6 +18,7 @@ class LobbyCollectionCell: UICollectionViewCell {
     @IBOutlet weak var gameImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var joinButton: UIButton!
+    @IBOutlet weak var subsBackView: UIView!
     
     var completion:(()->Void)!
     var currentLobby:Lobby!
@@ -52,6 +52,7 @@ class LobbyCollectionCell: UICollectionViewCell {
         self.gameImageView.sd_setImage(with: lobby.game.getNormalImageURL(), placeholderImage:#imageLiteral(resourceName: "placeholderImage"), completed: nil)
         self.currentLobby = lobby
         completion = joinTapped
+        self.setupSubsView()
     }
     @IBAction func joinTapped(_ sender: UIButton) {
         completion()
@@ -79,6 +80,13 @@ class LobbyCollectionCell: UICollectionViewCell {
         self.joinLabel.textColor = .white
         self.usernameLabel.textColor = .black
         self.numberOfNeededLabel.textColor = .black
+    }
+    
+    private func setupSubsView(){
+        let subsView = RoundProfilesView.fromNib() as! RoundProfilesView
+        subsView.create(userList: currentLobby.subscribers)
+        subsView.frame = self.subsBackView.bounds
+        self.subsBackView.addSubview(subsView)
     }
     
 }

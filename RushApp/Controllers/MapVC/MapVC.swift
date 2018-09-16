@@ -13,6 +13,7 @@ import SVProgressHUD
 class MapVC: BaseVC {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var collectionView: UICollectionView!
+    let lobbyCacher = NSCache<NSString, UICollectionViewCell>()
     
     var selectingIndex:Int!
     
@@ -98,13 +99,19 @@ extension MapVC : UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LobbyCollectionCell", for: indexPath) as! LobbyCollectionCell
-        cell.arrangeCell(lobby: self.lobbies[indexPath.row]) { () in
-            let lobbyDetailVC = LobbyDetailVC.createFromStoryboard()
-            lobbyDetailVC.currentLobby = self.lobbies[indexPath.row]
-            self.navigationController?.pushVCMainThread(lobbyDetailVC)
+        if let cachedCell = lobbyCacher.object(forKey: NSString.init(string: "\(indexPath.row)")) {
+            return cachedCell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LobbyCollectionCell", for: indexPath) as! LobbyCollectionCell
+            cell.arrangeCell(lobby: self.lobbies[indexPath.row]) { () in
+                let lobbyDetailVC = LobbyDetailVC.createFromStoryboard()
+                lobbyDetailVC.currentLobby = self.lobbies[indexPath.row]
+                self.navigationController?.pushVCMainThread(lobbyDetailVC)
+            }
+            lobbyCacher.setObject(cell, forKey: NSString.init(string: "\(indexPath.row)"))
+            return cell
         }
-        return cell
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

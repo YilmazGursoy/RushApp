@@ -77,7 +77,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="twe-CH-Yr7">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fortnite" translatesAutoresizingMaskIntoConstraints="NO" id="dQJ-wf-pjt">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pattern" translatesAutoresizingMaskIntoConstraints="NO" id="dQJ-wf-pjt">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2NV-Aw-WN0" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
@@ -351,7 +351,7 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.71999999999999997" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstItem="vxa-cm-MbG" firstAttribute="leading" secondItem="2NV-Aw-WN0" secondAttribute="leading" id="6KF-dk-KrR"/>
                                                     <constraint firstItem="vxa-cm-MbG" firstAttribute="top" secondItem="2NV-Aw-WN0" secondAttribute="top" id="6MQ-Yc-0co"/>
@@ -370,6 +370,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
                                                         <color key="value" white="0.0" alpha="0.74436069540000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isGradientTopToBottom" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
@@ -612,8 +613,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Fortnite" width="320" height="151"/>
         <image name="back" width="17" height="16"/>
+        <image name="pattern" width="480" height="480"/>
         <image name="settings" width="15" height="16"/>
     </resources>
 </document>

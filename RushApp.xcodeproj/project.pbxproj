@@ -73,6 +73,8 @@
 		477CB996214D11B3003CDEEE /* PlatformProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477CB995214D11B3003CDEEE /* PlatformProfile.swift */; };
 		477CB998214D5152003CDEEE /* SocialURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477CB997214D5152003CDEEE /* SocialURL.swift */; };
 		477CB99A214D54A5003CDEEE /* AddRankOrUrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477CB999214D54A5003CDEEE /* AddRankOrUrlRequest.swift */; };
+		477CB99D214E6571003CDEEE /* RoundProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477CB99C214E6571003CDEEE /* RoundProfilesView.swift */; };
+		477CB9A1214E693D003CDEEE /* RoundProfilesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 477CB9A0214E693D003CDEEE /* RoundProfilesView.xib */; };
 		47829575211F00B200A89394 /* AWSAuthCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829574211F00B200A89394 /* AWSAuthCore.framework */; };
 		47829577211F00B200A89394 /* AWSAuthUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829576211F00B200A89394 /* AWSAuthUI.framework */; };
 		47829579211F00B200A89394 /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829578211F00B200A89394 /* AWSCognito.framework */; };
@@ -94,7 +96,6 @@
 		47C3C05E213E5FFB00A74171 /* FeedsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C05D213E5FFB00A74171 /* FeedsRequest.swift */; };
 		47C3C060213E604800A74171 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C05F213E604800A74171 /* Feed.swift */; };
 		47C3C062213E61B300A74171 /* Lobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C061213E61B300A74171 /* Lobby.swift */; };
-		47C3C064213E623800A74171 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C063213E623800A74171 /* Subscriber.swift */; };
 		47C3C066213E624C00A74171 /* SimpleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C065213E624C00A74171 /* SimpleUser.swift */; };
 		47C3C068213E625D00A74171 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C067213E625D00A74171 /* Message.swift */; };
 		47C3C0AB213F0D1900A74171 /* DefaultResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C0AA213F0D1900A74171 /* DefaultResponse.swift */; };
@@ -258,6 +259,8 @@
 		477CB995214D11B3003CDEEE /* PlatformProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformProfile.swift; sourceTree = "<group>"; };
 		477CB997214D5152003CDEEE /* SocialURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialURL.swift; sourceTree = "<group>"; };
 		477CB999214D54A5003CDEEE /* AddRankOrUrlRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRankOrUrlRequest.swift; sourceTree = "<group>"; };
+		477CB99C214E6571003CDEEE /* RoundProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundProfilesView.swift; sourceTree = "<group>"; };
+		477CB9A0214E693D003CDEEE /* RoundProfilesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoundProfilesView.xib; sourceTree = "<group>"; };
 		47829574211F00B200A89394 /* AWSAuthCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSAuthCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47829576211F00B200A89394 /* AWSAuthUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSAuthUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47829578211F00B200A89394 /* AWSCognito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSCognito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -281,7 +284,6 @@
 		47C3C05D213E5FFB00A74171 /* FeedsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsRequest.swift; sourceTree = "<group>"; };
 		47C3C05F213E604800A74171 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		47C3C061213E61B300A74171 /* Lobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lobby.swift; sourceTree = "<group>"; };
-		47C3C063213E623800A74171 /* Subscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
 		47C3C065213E624C00A74171 /* SimpleUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleUser.swift; sourceTree = "<group>"; };
 		47C3C067213E625D00A74171 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		47C3C0AA213F0D1900A74171 /* DefaultResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultResponse.swift; sourceTree = "<group>"; };
@@ -536,7 +538,6 @@
 			children = (
 				472DFEEC2135D58400FC577A /* Game.swift */,
 				477CB995214D11B3003CDEEE /* PlatformProfile.swift */,
-				47C3C063213E623800A74171 /* Subscriber.swift */,
 				472DFF61213C135000FC577A /* User.swift */,
 				47C3C05F213E604800A74171 /* Feed.swift */,
 				47C3C065213E624C00A74171 /* SimpleUser.swift */,
@@ -598,9 +599,19 @@
 			path = FeedView;
 			sourceTree = "<group>";
 		};
+		477CB99B214E655D003CDEEE /* RoundProfilesView */ = {
+			isa = PBXGroup;
+			children = (
+				477CB99C214E6571003CDEEE /* RoundProfilesView.swift */,
+				477CB9A0214E693D003CDEEE /* RoundProfilesView.xib */,
+			);
+			path = RoundProfilesView;
+			sourceTree = "<group>";
+		};
 		47C0B07F211EDD9100469883 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				477CB99B214E655D003CDEEE /* RoundProfilesView */,
 				47C0B080211EDD9900469883 /* GradientView.swift */,
 				472B8158214AB38300C005B2 /* RadialGradientView.swift */,
 				472B815A214AB39300C005B2 /* View.xib */,
@@ -1207,6 +1218,7 @@
 				47E2C7982147013A00AAD648 /* FilterCellType1.xib in Resources */,
 				4706B7F8213FBB7E00BAC8EA /* FeedDetailVC.storyboard in Resources */,
 				D2075DCA209DEF4600AC79B6 /* LoginVC.storyboard in Resources */,
+				477CB9A1214E693D003CDEEE /* RoundProfilesView.xib in Resources */,
 				47E2C7522145851E00AAD648 /* FeedDetailFlexView.xib in Resources */,
 				472DFEE42135D3C900FC577A /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				47C3C05A213E4ECC00A74171 /* lobbies.json in Resources */,
@@ -1355,6 +1367,7 @@
 				D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */,
 				472B815D214AFDCB00C005B2 /* UserAllLobbiesRequest.swift in Sources */,
 				472DFEE82135D4DF00FC577A /* GameListRequest.swift in Sources */,
+				477CB99D214E6571003CDEEE /* RoundProfilesView.swift in Sources */,
 				47E2C75F2145C1F100AAD648 /* LobbyListVC.swift in Sources */,
 				47E2C78C2146D63400AAD648 /* FilterVC.swift in Sources */,
 				D2D9108D20A070B40054F3AA /* BaseNavigationController.swift in Sources */,
@@ -1371,7 +1384,6 @@
 				472DFF0B213849F400FC577A /* LobbyCollectionCell.swift in Sources */,
 				477CB996214D11B3003CDEEE /* PlatformProfile.swift in Sources */,
 				D2075DD4209E3FF800AC79B6 /* AWSErrorManager.swift in Sources */,
-				47C3C064213E623800A74171 /* Subscriber.swift in Sources */,
 				D2075DBC209DDE8900AC79B6 /* CognitoConstants.swift in Sources */,
 				D2AF692D20A237A500AC40E9 /* ForgotPasswordVC.swift in Sources */,
 				47E2C79F21471C9A00AAD648 /* FilterDetailListVC.swift in Sources */,
