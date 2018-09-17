@@ -53,23 +53,25 @@ extension CreateLobbyVC {
             {
             case .authorizedAlways, .authorizedWhenInUse:
                 print("Authorize.")
-                let latitude: CLLocationDegrees = (locationManager.location?.coordinate.latitude)!
-                let longitude: CLLocationDegrees = (locationManager.location?.coordinate.longitude)!
-                let location = CLLocation(latitude: latitude, longitude: longitude)
-                
-                self.currentLocation = location
-                CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
+                if locationManager.location != nil {
+                    let latitude: CLLocationDegrees = (locationManager.location?.coordinate.latitude)!
+                    let longitude: CLLocationDegrees = (locationManager.location?.coordinate.longitude)!
+                    let location = CLLocation(latitude: latitude, longitude: longitude)
                     
-                    if error != nil {
-                        return
-                    }else if let _ = placemarks?.first?.country,
-                        let city = placemarks?.first?.locality {
-                        self.locationLabel.text = "\(city)"
-                        self.currentLocationName = city
-                    }
-                    else {
-                    }
-                })
+                    self.currentLocation = location
+                    CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
+                        
+                        if error != nil {
+                            return
+                        }else if let _ = placemarks?.first?.country,
+                            let city = placemarks?.first?.locality {
+                            self.locationLabel.text = "\(city)"
+                            self.currentLocationName = city
+                        }
+                        else {
+                        }
+                    })
+                }
                 break
                 
             case .notDetermined:
@@ -80,12 +82,8 @@ extension CreateLobbyVC {
                     
                 }
                 self.present(alert, animated: false, completion: nil)
-                break
-                
             case .restricted:
                 print("Restricted.")
-                break
-                
             case .denied:
                 print("Denied.")
             }

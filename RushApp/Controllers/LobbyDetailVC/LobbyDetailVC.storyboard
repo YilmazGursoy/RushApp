@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
         <array key="OpenSans-Regular.ttf">
             <string>OpenSans-Regular</string>
         </array>
@@ -43,14 +46,53 @@
                                         <color key="textColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deX-ju-kep">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fortnite Lobby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Py4-Go-7wr">
+                                                <rect key="frame" x="137" y="11" width="101.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                                                <color key="textColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fn8-ht-ltN">
+                                                <rect key="frame" x="321" y="0.0" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="44" id="CQV-rU-KSE"/>
+                                                    <constraint firstAttribute="height" constant="44" id="xxa-eJ-btg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
+                                                <state key="normal" title="Bitti">
+                                                    <color key="titleColor" red="0.46666666670000001" green="0.35294117650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="dismiss" destination="7fo-iM-svP" eventType="touchUpInside" id="wbJ-AL-0s1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Fn8-ht-ltN" secondAttribute="trailing" constant="10" id="dGa-4b-0BU"/>
+                                            <constraint firstItem="Py4-Go-7wr" firstAttribute="centerY" secondItem="deX-ju-kep" secondAttribute="centerY" id="mpU-P5-YTu"/>
+                                            <constraint firstItem="Py4-Go-7wr" firstAttribute="centerX" secondItem="deX-ju-kep" secondAttribute="centerX" id="pNf-t1-Lmd"/>
+                                            <constraint firstItem="Py4-Go-7wr" firstAttribute="centerX" secondItem="deX-ju-kep" secondAttribute="centerX" id="qWs-wT-0OY"/>
+                                            <constraint firstItem="Py4-Go-7wr" firstAttribute="centerY" secondItem="deX-ju-kep" secondAttribute="centerY" id="qp2-q3-oIB"/>
+                                            <constraint firstAttribute="bottom" secondItem="Fn8-ht-ltN" secondAttribute="bottom" id="s93-8G-CgH"/>
+                                            <constraint firstItem="Fn8-ht-ltN" firstAttribute="top" secondItem="deX-ju-kep" secondAttribute="top" id="zHk-RY-FC6"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="deX-ju-kep" firstAttribute="leading" secondItem="qD6-Jp-48l" secondAttribute="leading" id="32h-GO-mS4"/>
                                     <constraint firstAttribute="bottom" secondItem="ZLu-RB-C24" secondAttribute="bottom" id="7CS-B4-yj5"/>
                                     <constraint firstAttribute="height" constant="44" id="BK1-iK-dgI"/>
                                     <constraint firstAttribute="trailing" secondItem="PsA-fI-cdC" secondAttribute="trailing" constant="44" id="O0E-fG-5Vj"/>
                                     <constraint firstItem="ZLu-RB-C24" firstAttribute="leading" secondItem="qD6-Jp-48l" secondAttribute="leading" id="Rzs-XH-5ld"/>
+                                    <constraint firstAttribute="bottom" secondItem="deX-ju-kep" secondAttribute="bottom" id="a4H-aP-nnY"/>
+                                    <constraint firstItem="deX-ju-kep" firstAttribute="top" secondItem="qD6-Jp-48l" secondAttribute="top" id="eda-qd-CMG"/>
                                     <constraint firstItem="PsA-fI-cdC" firstAttribute="centerY" secondItem="qD6-Jp-48l" secondAttribute="centerY" id="omb-aM-9vx"/>
+                                    <constraint firstAttribute="trailing" secondItem="deX-ju-kep" secondAttribute="trailing" id="u8l-CE-JZd"/>
                                     <constraint firstItem="ZLu-RB-C24" firstAttribute="top" secondItem="qD6-Jp-48l" secondAttribute="top" id="ujC-80-UjY"/>
                                     <constraint firstItem="PsA-fI-cdC" firstAttribute="leading" secondItem="ZLu-RB-C24" secondAttribute="trailing" id="vxc-Tv-h4m"/>
                                 </constraints>
@@ -77,13 +119,15 @@
                         <viewLayoutGuide key="safeArea" id="yOi-By-lze"/>
                     </view>
                     <connections>
+                        <outlet property="isPreviewBackgroundView" destination="deX-ju-kep" id="dO7-ay-hoP"/>
+                        <outlet property="lobbyPreviewTitle" destination="Py4-Go-7wr" id="LFU-tB-bjF"/>
                         <outlet property="lobbyTitle" destination="PsA-fI-cdC" id="tsn-gh-eBD"/>
                         <outlet property="tableView" destination="DNs-Pm-9Sb" id="Fjh-LI-vtp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HSO-sY-3DI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="31" y="201"/>
+            <point key="canvasLocation" x="29.600000000000001" y="200.14992503748127"/>
         </scene>
     </scenes>
     <resources>

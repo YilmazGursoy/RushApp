@@ -101,6 +101,7 @@ class CreateLobbyVC: BaseVC {
         createLobbyRequest.sendLobbyCreateRequest(lobbyName: self.lobbyNameTextField.text!, address: self.currentLocationName!, numberOfNeededUser: Int((self.neededPlayerTextField.text! as NSString).intValue), description: self.lobbyDetailTextView.text!, latitude: self.currentLocation!.coordinate.latitude, longitude: self.currentLocation!.coordinate.longitude, sender: Rush.shared.currentUser, game: self.selectingGame, platform: self.platformType!, completionSuccess: { (lobby) in
             SVProgressHUD.dismiss()
             let vc = LobbyDetailVC.createFromStoryboard()
+            vc.isPreview = true
             vc.currentLobby = lobby
             self.navigationController?.pushVCMainThread(vc)
         }) {

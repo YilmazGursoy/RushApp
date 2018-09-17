@@ -9,9 +9,13 @@
 import UIKit
 
 class LobbyDetailVC: BaseVC {
+    
+    @IBOutlet weak var lobbyPreviewTitle: UILabel!
+    @IBOutlet weak var isPreviewBackgroundView: UIView!
     @IBOutlet weak var lobbyTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var currentLobby:Lobby!
+    var isPreview:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +27,8 @@ class LobbyDetailVC: BaseVC {
         self.tableView.estimatedRowHeight = 400
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.lobbyTitle.text = currentLobby.name + " Lobby"
+        lobbyPreviewTitle.text = currentLobby.name + " Lobby"
+        self.isPreviewBackgroundView.isHidden = !isPreview
     }
 
     override func didReceiveMemoryWarning() {
