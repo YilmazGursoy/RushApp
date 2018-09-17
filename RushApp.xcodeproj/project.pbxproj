@@ -103,6 +103,7 @@
 		47C3C068213E625D00A74171 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C067213E625D00A74171 /* Message.swift */; };
 		47C3C0AB213F0D1900A74171 /* DefaultResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C0AA213F0D1900A74171 /* DefaultResponse.swift */; };
 		47C3C0AD213F0DE400A74171 /* Extension+Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C0AC213F0DE400A74171 /* Extension+Json.swift */; };
+		47DDF0FB2150743D00C8F6D1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DDF0FA2150743D00C8F6D1 /* API.swift */; };
 		47DE1AF3214823F5006FBFD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47DE1AF2214823F5006FBFD1 /* GoogleService-Info.plist */; };
 		47DE1AF62148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE1AF52148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift */; };
 		47DE1AF9214870B5006FBFD1 /* CreateLobbyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE1AF8214870B5006FBFD1 /* CreateLobbyVC.swift */; };
@@ -294,6 +295,7 @@
 		47C3C067213E625D00A74171 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		47C3C0AA213F0D1900A74171 /* DefaultResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultResponse.swift; sourceTree = "<group>"; };
 		47C3C0AC213F0DE400A74171 /* Extension+Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Json.swift"; sourceTree = "<group>"; };
+		47DDF0FA2150743D00C8F6D1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		47DE1AF2214823F5006FBFD1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		47DE1AF421482432006FBFD1 /* RushApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RushApp.entitlements; sourceTree = "<group>"; };
 		47DE1AF52148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFirebaseTokenRequest.swift; sourceTree = "<group>"; };
@@ -636,6 +638,14 @@
 			path = Dummies;
 			sourceTree = "<group>";
 		};
+		47DDF0F92150743600C8F6D1 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				47DDF0FA2150743D00C8F6D1 /* API.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		47DE1AF7214870A3006FBFD1 /* CreateLobbyVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -973,6 +983,7 @@
 				47C3C056213E4E9600A74171 /* Dummies */,
 				47C0B07F211EDD9100469883 /* Views */,
 				D258C06C2098F5170090ABB5 /* OtherFiles */,
+				47DDF0F92150743600C8F6D1 /* API */,
 				D258C032209645EE0090ABB5 /* Main.storyboard */,
 				D258C037209645EF0090ABB5 /* LaunchScreen.storyboard */,
 				47DE1AF2214823F5006FBFD1 /* GoogleService-Info.plist */,
@@ -1275,6 +1286,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RushApp/Pods-RushApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSAppSync/AWSAppSync.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSAuthUI/AWSAuthUI.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognito/AWSCognito.framework",
@@ -1297,13 +1309,16 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PMAlertController/PMAlertController.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAppSync.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthUI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognito.framework",
@@ -1326,7 +1341,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PMAlertController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -1414,6 +1431,7 @@
 				47E2C7892146D5B000AAD648 /* HalfModalPresentationController.swift in Sources */,
 				47C3C060213E604800A74171 /* Feed.swift in Sources */,
 				47E2C6FD2142832300AAD648 /* FriendSelectionVC.swift in Sources */,
+				47DDF0FB2150743D00C8F6D1 /* API.swift in Sources */,
 				D2075DB6209CE3C200AC79B6 /* BaseRequest.swift in Sources */,
 				47C3C0AB213F0D1900A74171 /* DefaultResponse.swift in Sources */,
 				47C0B081211EDD9900469883 /* GradientView.swift in Sources */,

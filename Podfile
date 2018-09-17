@@ -15,6 +15,7 @@ target 'RushApp' do
     pod 'AWSCognitoIdentityProvider'
     pod 'AWSLambda'
     pod 'AWSS3'
+    pod 'AWSAppSync'
     
   #Facebook
     pod 'FacebookLogin'

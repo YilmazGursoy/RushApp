@@ -1,4 +1,8 @@
 PODS:
+  - AWSAppSync (2.6.19):
+    - AWSCore (~> 2.6.6)
+    - ReachabilitySwift (~> 4.0.0)
+    - SQLite.swift (= 0.11.4)
   - AWSAuthCore (2.6.26):
     - AWSCore (= 2.6.26)
   - AWSAuthUI (2.6.26):
@@ -97,13 +101,18 @@ PODS:
   - nanopb/encode (0.3.8)
   - PMAlertController (3.4.0)
   - Protobuf (3.6.1)
+  - ReachabilitySwift (4.0.0)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
   - Spring (1.0.5)
+  - SQLite.swift (0.11.4):
+    - SQLite.swift/standard (= 0.11.4)
+  - SQLite.swift/standard (0.11.4)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
+  - AWSAppSync
   - AWSAuthUI (~> 2.6.13)
   - AWSCognito
   - AWSCognitoIdentityProvider
@@ -125,6 +134,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AWSAppSync
     - AWSAuthCore
     - AWSAuthUI
     - AWSCognito
@@ -154,7 +164,9 @@ SPEC REPOS:
     - nanopb
     - PMAlertController
     - Protobuf
+    - ReachabilitySwift
     - SDWebImage
+    - SQLite.swift
     - SVProgressHUD
 
 EXTERNAL SOURCES:
@@ -167,6 +179,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
+  AWSAppSync: a187ca995d9097b953148b9bdc301b44613dd488
   AWSAuthCore: bc6c8d7320eae8ef18939504d5a8a1588606c3a1
   AWSAuthUI: 2d597886206772e31273d12e76f642fcddca9616
   AWSCognito: a478efa37e614803ba4554a29ca1be69d70e0e43
@@ -196,10 +209,12 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   PMAlertController: efb781925d741d50e0200018a00c53cecb8b4910
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  ReachabilitySwift: e67b2cab4d5386053673d8a7421b5981e5f08259
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   Spring: 3c7666eccefdeb87140008dc81043f89f8dbb787
+  SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 34a8e2e69e5855ba94e46954982de21cf70be4ab
+PODFILE CHECKSUM: ff9c3ebafecccf0c7489054f16824978ebde935a
 
 COCOAPODS: 1.5.3
