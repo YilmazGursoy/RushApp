@@ -10,9 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="OpenSans-Bold.ttf">
-            <string>OpenSans-Bold</string>
-        </array>
         <array key="OpenSans-Regular.ttf">
             <string>OpenSans-Regular</string>
         </array>
@@ -55,38 +52,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hV9-Jt-Cih">
-                                <rect key="frame" x="224" y="14.5" width="50" height="15"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="likeIconOn" translatesAutoresizingMaskIntoConstraints="NO" id="5f8-S9-TSq">
-                                        <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="15" id="KGU-If-U96"/>
-                                            <constraint firstAttribute="height" constant="15" id="LZD-Pl-yKg"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Atx-lV-Krc">
-                                        <rect key="frame" x="20" y="0.0" width="30" height="15"/>
-                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="12"/>
-                                        <color key="textColor" red="0.1529411765" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="15" id="0JH-8m-fpa"/>
-                                    <constraint firstItem="5f8-S9-TSq" firstAttribute="leading" secondItem="hV9-Jt-Cih" secondAttribute="leading" id="FRp-pW-FCN"/>
-                                    <constraint firstItem="Atx-lV-Krc" firstAttribute="leading" secondItem="5f8-S9-TSq" secondAttribute="trailing" constant="5" id="H98-f7-gv6"/>
-                                    <constraint firstItem="Atx-lV-Krc" firstAttribute="top" secondItem="hV9-Jt-Cih" secondAttribute="top" id="TxC-Os-J30"/>
-                                    <constraint firstAttribute="width" constant="50" id="YHj-wu-Pa7"/>
-                                    <constraint firstAttribute="trailing" secondItem="Atx-lV-Krc" secondAttribute="trailing" id="ddL-3x-hCM"/>
-                                    <constraint firstAttribute="bottom" secondItem="5f8-S9-TSq" secondAttribute="bottom" id="j48-c9-7Vf"/>
-                                    <constraint firstItem="5f8-S9-TSq" firstAttribute="top" secondItem="hV9-Jt-Cih" secondAttribute="top" id="odE-8G-q6V"/>
-                                    <constraint firstAttribute="bottom" secondItem="Atx-lV-Krc" secondAttribute="bottom" id="qxY-jS-jYt"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wayne Perkins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJt-VD-FvQ">
-                                <rect key="frame" x="30" y="14.5" width="189" height="15"/>
+                                <rect key="frame" x="30" y="15.5" width="73" height="13"/>
                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -96,11 +63,8 @@
                         <constraints>
                             <constraint firstItem="0Z3-iD-xk9" firstAttribute="leading" secondItem="NuK-dc-8ug" secondAttribute="leading" id="3N4-nf-HY0"/>
                             <constraint firstItem="XJt-VD-FvQ" firstAttribute="centerY" secondItem="NuK-dc-8ug" secondAttribute="centerY" id="6at-n4-Bpn"/>
-                            <constraint firstItem="hV9-Jt-Cih" firstAttribute="leading" secondItem="XJt-VD-FvQ" secondAttribute="trailing" constant="5" id="G7n-sT-GVg"/>
-                            <constraint firstAttribute="trailing" secondItem="hV9-Jt-Cih" secondAttribute="trailing" id="Igb-3J-Wx6"/>
                             <constraint firstAttribute="height" constant="44" id="Z9P-0t-2Fy"/>
                             <constraint firstItem="0Z3-iD-xk9" firstAttribute="centerY" secondItem="NuK-dc-8ug" secondAttribute="centerY" id="fCd-wg-W9h"/>
-                            <constraint firstItem="hV9-Jt-Cih" firstAttribute="centerY" secondItem="NuK-dc-8ug" secondAttribute="centerY" id="kdv-Wi-9OC"/>
                             <constraint firstItem="XJt-VD-FvQ" firstAttribute="leading" secondItem="0Z3-iD-xk9" secondAttribute="trailing" constant="5" id="rBL-sv-TGe"/>
                         </constraints>
                     </view>
@@ -133,11 +97,15 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="messageLabel" destination="vYD-bl-GJj" id="3pt-Pg-UXc"/>
+                <outlet property="userProfilePicImageView" destination="DaR-eJ-8Lz" id="Vef-ar-CLE"/>
+                <outlet property="usernameLabel" destination="XJt-VD-FvQ" id="Elb-bB-Wgt"/>
+            </connections>
             <point key="canvasLocation" x="-32" y="6"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="likeIconOn" width="18" height="16"/>
         <image name="profilePlaceholder" width="500" height="500"/>
     </resources>
 </document>

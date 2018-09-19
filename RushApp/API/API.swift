@@ -10,7 +10,7 @@ import AWSAppSync
 
 public final class AddCommentMutation: GraphQLMutation {
     public static let operationString =
-    "mutation AddComment($baseId: ID!, $createdAt: String!, $message: String!, $senderUserId: String!, $senderUserName: String!) {\n  addComment(baseId: $baseId, createdAt: $createdAt, message: $message, senderUserId: $senderUserId, senderUserName: $senderUserName) {\n    __typename\n    baseId\n    createdAt\n    message\n    senderUserId\n    senderUserName\n  }\n}"
+    "mutation AddComment($baseId: ID!, $createdAt: String!, $message: String!, $senderUserId: String!, $senderUserName: String!) {\n  addComment(baseId: $baseId, createdAt: $createdAt, message: $message, senderUserId: $senderUserId, senderUserName: $senderUserName) {\n    __typename\n    baseId\n    commentId\n    createdAt\n    message\n    senderUserId\n    senderUserName\n  }\n}"
     
     public var baseId: GraphQLID
     public var createdAt: String
@@ -62,6 +62,7 @@ public final class AddCommentMutation: GraphQLMutation {
             public static let selections: [GraphQLSelection] = [
                 GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
                 GraphQLField("baseId", type: .nonNull(.scalar(GraphQLID.self))),
+                GraphQLField("commentId", type: .nonNull(.scalar(String.self))),
                 GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
                 GraphQLField("message", type: .nonNull(.scalar(String.self))),
                 GraphQLField("senderUserId", type: .nonNull(.scalar(String.self))),
@@ -74,8 +75,8 @@ public final class AddCommentMutation: GraphQLMutation {
                 self.snapshot = snapshot
             }
             
-            public init(baseId: GraphQLID, createdAt: String, message: String, senderUserId: String, senderUserName: String) {
-                self.init(snapshot: ["__typename": "Comment", "baseId": baseId, "createdAt": createdAt, "message": message, "senderUserId": senderUserId, "senderUserName": senderUserName])
+            public init(baseId: GraphQLID, commentId: String, createdAt: String, message: String, senderUserId: String, senderUserName: String) {
+                self.init(snapshot: ["__typename": "Comment", "baseId": baseId, "commentId": commentId, "createdAt": createdAt, "message": message, "senderUserId": senderUserId, "senderUserName": senderUserName])
             }
             
             public var __typename: String {
@@ -93,6 +94,15 @@ public final class AddCommentMutation: GraphQLMutation {
                 }
                 set {
                     snapshot.updateValue(newValue, forKey: "baseId")
+                }
+            }
+            
+            public var commentId: String {
+                get {
+                    return snapshot["commentId"]! as! String
+                }
+                set {
+                    snapshot.updateValue(newValue, forKey: "commentId")
                 }
             }
             
@@ -307,7 +317,7 @@ public final class GetCommentQuery: GraphQLQuery {
 
 public final class AddCommentSubscriptionSubscription: GraphQLSubscription {
     public static let operationString =
-    "subscription AddCommentSubscription($baseId: String!) {\n  subscribeToEventComments(baseId: $baseId) {\n    __typename\n    baseId\n    createdAt\n    message\n    senderUserId\n    senderUserName\n  }\n}"
+    "subscription AddCommentSubscription($baseId: String!) {\n  subscribeToEventComments(baseId: $baseId) {\n    __typename\n    baseId\n    commentId\n    createdAt\n    message\n    senderUserId\n    senderUserName\n  }\n}"
     
     public var baseId: String
     
@@ -351,6 +361,7 @@ public final class AddCommentSubscriptionSubscription: GraphQLSubscription {
             public static let selections: [GraphQLSelection] = [
                 GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
                 GraphQLField("baseId", type: .nonNull(.scalar(GraphQLID.self))),
+                GraphQLField("commentId", type: .nonNull(.scalar(String.self))),
                 GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
                 GraphQLField("message", type: .nonNull(.scalar(String.self))),
                 GraphQLField("senderUserId", type: .nonNull(.scalar(String.self))),
@@ -363,8 +374,8 @@ public final class AddCommentSubscriptionSubscription: GraphQLSubscription {
                 self.snapshot = snapshot
             }
             
-            public init(baseId: GraphQLID, createdAt: String, message: String, senderUserId: String, senderUserName: String) {
-                self.init(snapshot: ["__typename": "Comment", "baseId": baseId, "createdAt": createdAt, "message": message, "senderUserId": senderUserId, "senderUserName": senderUserName])
+            public init(baseId: GraphQLID, commentId: String, createdAt: String, message: String, senderUserId: String, senderUserName: String) {
+                self.init(snapshot: ["__typename": "Comment", "baseId": baseId, "commentId": commentId, "createdAt": createdAt, "message": message, "senderUserId": senderUserId, "senderUserName": senderUserName])
             }
             
             public var __typename: String {
@@ -382,6 +393,15 @@ public final class AddCommentSubscriptionSubscription: GraphQLSubscription {
                 }
                 set {
                     snapshot.updateValue(newValue, forKey: "baseId")
+                }
+            }
+            
+            public var commentId: String {
+                get {
+                    return snapshot["commentId"]! as! String
+                }
+                set {
+                    snapshot.updateValue(newValue, forKey: "commentId")
                 }
             }
             

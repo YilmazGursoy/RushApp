@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tra-Tj-BC2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Lobby ChatVC-->
+        <scene sceneID="eTi-ve-I8d">
+            <objects>
+                <viewController storyboardIdentifier="LobbyChatVC" id="Tra-Tj-BC2" customClass="LobbyChatVC" customModule="RushApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rgA-yY-FQM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2H-8v-FAm">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOY-w9-Ar7">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="hfi-Q0-Oqz"/>
+                                            <constraint firstAttribute="height" constant="44" id="v6Y-av-FM3"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lobby Name Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZb-uR-m7z">
+                                        <rect key="frame" x="54" y="12.5" width="267" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                                        <color key="textColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="PZb-uR-m7z" firstAttribute="centerY" secondItem="p2H-8v-FAm" secondAttribute="centerY" id="2SD-dS-jt8"/>
+                                    <constraint firstItem="PZb-uR-m7z" firstAttribute="leading" secondItem="mOY-w9-Ar7" secondAttribute="trailing" constant="10" id="AgQ-ge-Zg7"/>
+                                    <constraint firstItem="mOY-w9-Ar7" firstAttribute="top" secondItem="p2H-8v-FAm" secondAttribute="top" id="M1T-ES-Ooy"/>
+                                    <constraint firstItem="mOY-w9-Ar7" firstAttribute="leading" secondItem="p2H-8v-FAm" secondAttribute="leading" id="SMM-zq-ggj"/>
+                                    <constraint firstAttribute="trailing" secondItem="PZb-uR-m7z" secondAttribute="trailing" constant="54" id="Yrl-EJ-FEA"/>
+                                    <constraint firstAttribute="bottom" secondItem="mOY-w9-Ar7" secondAttribute="bottom" id="lXf-2n-dNN"/>
+                                    <constraint firstItem="PZb-uR-m7z" firstAttribute="centerX" secondItem="p2H-8v-FAm" secondAttribute="centerX" id="uZz-T1-dEe"/>
+                                    <constraint firstAttribute="height" constant="44" id="wmi-Cb-zqc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="p2H-8v-FAm" firstAttribute="top" secondItem="8fc-x5-cbB" secondAttribute="top" id="VLN-ee-aAI"/>
+                            <constraint firstItem="p2H-8v-FAm" firstAttribute="leading" secondItem="8fc-x5-cbB" secondAttribute="leading" id="cE6-qA-lnX"/>
+                            <constraint firstItem="8fc-x5-cbB" firstAttribute="trailing" secondItem="p2H-8v-FAm" secondAttribute="trailing" id="cQO-jJ-lhs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8fc-x5-cbB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2SD-nb-JdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="167" y="183"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="17" height="16"/>
+    </resources>
+</document>

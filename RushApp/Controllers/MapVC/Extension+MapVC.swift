@@ -22,9 +22,18 @@ extension MapVC : UICollectionViewDelegate, UICollectionViewDataSource {
 //        } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LobbyCollectionCell", for: indexPath) as! LobbyCollectionCell
             cell.arrangeCell(lobby: self.lobbies[indexPath.row]) { () in
-                let lobbyDetailVC = LobbyDetailVC.createFromStoryboard()
-                lobbyDetailVC.currentLobby = self.lobbies[indexPath.row]
-                self.navigationController?.pushVCMainThread(lobbyDetailVC)
+                
+                let lobby = self.lobbies[indexPath.row]
+                if lobby.sender.id.elementsEqual(Rush.shared.currentUser.userId) {
+                    let lobbyDetailVC = LobbyDetailVC.createFromStoryboard()
+                    lobbyDetailVC.currentLobby = lobby
+                    self.navigationController?.pushVCMainThread(lobbyDetailVC)
+                } else {
+                    let lobbyTheirs = LobbyDetailVCTheirs.createFromStoryboard()
+                    lobbyTheirs.currentLobby = lobby
+                    self.navigationController?.pushVCMainThread(lobbyTheirs)
+                }
+                
             }
             lobbyCacher.setObject(cell, forKey: NSString.init(string: "\(indexPath.row)"))
             return cell

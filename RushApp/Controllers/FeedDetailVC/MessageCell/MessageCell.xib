@@ -39,6 +39,9 @@
                                         <state key="normal" title="SEND">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sendTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6KF-Km-6iS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,6 +105,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="messageTextField" destination="VUm-KM-fKk" id="Qca-C2-YzA"/>
+            </connections>
             <point key="canvasLocation" x="-18" y="29"/>
         </tableViewCell>
     </objects>

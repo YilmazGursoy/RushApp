@@ -8,9 +8,19 @@
 
 import Foundation
 
-struct Message: Codable {
-    let id: String
-    let name: String
-    let message: String
-    let date: String
+struct Comment: Codable {
+    let baseId:String
+    let commentId:String
+    let createdAt:String
+    let message:String
+    let senderUserId:String
+    let senderUserName:String
+}
+
+struct BaseCommentResponse : Decodable {
+    var items:[Comment]
+    
+    enum CodingKeys : String, CodingKey {
+        case items = "items"
+    }
 }

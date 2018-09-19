@@ -8,7 +8,7 @@
 
 import Foundation
 import AWSCognito
-
+import AWSAppSync
 struct CognitoConstants {
     
     //MARK: UserPool Ids
@@ -23,4 +23,20 @@ struct CognitoConstants {
     static let cognitoFederatedIdentity_CLIENTREGION:AWSRegionType  = .EUCentral1
     
     static let awsS3ProfilePictureBucketName                        = "rushappprofilepictures"
+}
+
+
+// The API Key for authorization
+let StaticAPIKey = "da2-g4xk3qj2qnfojh6jsy7a5wghoa"
+
+// The Endpoint URL for AppSync
+let AppSyncEndpointURL: URL = URL(string: "https://dm7j46xglfbchonvfbm6rdd45q.appsync-api.eu-central-1.amazonaws.com/graphql")!
+
+let AppSyncRegion: AWSRegionType = .EUCentral1
+let database_name = "RushAppComments"
+
+class APIKeyAuthProvider: AWSAPIKeyAuthProvider {
+    func getAPIKey() -> String {
+        return StaticAPIKey
+    }
 }

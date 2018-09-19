@@ -22,6 +22,10 @@ class LobbyDetailVC: BaseVC {
         setupUI()
     }
     
+    private func configurateLobbyDelegatesAndRequest(){
+        
+    }
+    
     private func setupUI(){
         self.tableView.register(UINib.init(nibName: "LobbyDetailTitleCell", bundle: .main), forCellReuseIdentifier: "LobbyDetailTitleCell")
         self.tableView.estimatedRowHeight = 400

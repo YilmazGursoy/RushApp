@@ -18,6 +18,14 @@ class LobbyDetailTitleCell: UITableViewCell {
     @IBOutlet weak var lobbyCreatingLocation: UILabel!
     @IBOutlet weak var lobbyNumberOfNeededGamersLabel: UILabel!
     
+    //MARK: Subs Images
+    
+    @IBOutlet weak var sub1ImageView: UIImageView!
+    @IBOutlet weak var sub2ImageView: UIImageView!
+    @IBOutlet weak var sub3ImageView: UIImageView!
+    @IBOutlet weak var sub4ImageView: UIImageView!
+    @IBOutlet weak var sub5ImageView: UIImageView!
+    
     private var openProfileTapped:((String)->Void)!
     private var currentLobby:Lobby!
     
@@ -48,6 +56,23 @@ class LobbyDetailTitleCell: UITableViewCell {
         self.senderUsername.text = lobby.sender.username
         self.lobbyCreatingLocation.text = lobby.address
         self.lobbyNumberOfNeededGamersLabel.text = "Gamers (max \(lobby.numberOfNeededUser))"
+        self.subsImagesCreate()
+    }
+    
+    private func subsImagesCreate(){
+        for (index, simpleUser) in self.currentLobby.subscribers.enumerated() {
+            if index == 0 {
+                self.sub1ImageView.sd_setImage(with: User.getProfilePictureFrom(userId: simpleUser.id), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .cacheMemoryOnly, completed: nil)
+            } else if index == 1 {
+                self.sub2ImageView.sd_setImage(with: User.getProfilePictureFrom(userId: simpleUser.id), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .cacheMemoryOnly, completed: nil)
+            } else if index == 2 {
+                self.sub3ImageView.sd_setImage(with: User.getProfilePictureFrom(userId: simpleUser.id), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .cacheMemoryOnly, completed: nil)
+            } else if index == 3 {
+                self.sub4ImageView.sd_setImage(with: User.getProfilePictureFrom(userId: simpleUser.id), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .cacheMemoryOnly, completed: nil)
+            }  else if index == 4 {
+                self.sub5ImageView.sd_setImage(with: User.getProfilePictureFrom(userId: simpleUser.id), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .cacheMemoryOnly, completed: nil)
+            }
+        }
     }
     
     @IBAction func openProfileTapped(_ sender: UIButton) {

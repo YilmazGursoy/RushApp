@@ -101,8 +101,8 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="7fo-iM-svP" id="RYY-Pg-tCS"/>
-                                    <outlet property="delegate" destination="7fo-iM-svP" id="CAg-3M-Hc2"/>
+                                    <outlet property="dataSource" destination="7fo-iM-svP" id="a18-y4-bPP"/>
+                                    <outlet property="delegate" destination="7fo-iM-svP" id="pox-QD-hWT"/>
                                 </connections>
                             </tableView>
                         </subviews>

@@ -70,6 +70,19 @@
 		472DFF66213C7A9D00FC577A /* ImageDownloaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472DFF65213C7A9D00FC577A /* ImageDownloaderManager.swift */; };
 		472DFF72213DC85300FC577A /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472DFF70213DC85300FC577A /* FeedCell.swift */; };
 		472DFF73213DC85300FC577A /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 472DFF71213DC85300FC577A /* FeedCell.xib */; };
+		475F61162151A800003E30FC /* LobbyChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475F61152151A800003E30FC /* LobbyChatVC.swift */; };
+		475F61182151A805003E30FC /* LobbyChatVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 475F61172151A805003E30FC /* LobbyChatVC.storyboard */; };
+		475F611B2152D2B3003E30FC /* LobbyDetailVCTheirs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475F611A2152D2B3003E30FC /* LobbyDetailVCTheirs.swift */; };
+		475F611D2152D2C0003E30FC /* LobbyDetailVCTheirs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 475F611C2152D2C0003E30FC /* LobbyDetailVCTheirs.storyboard */; };
+		475F61212152D90E003E30FC /* LobbyDetailOneButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475F611F2152D90E003E30FC /* LobbyDetailOneButtonCell.swift */; };
+		475F61222152D90E003E30FC /* LobbyDetailOneButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 475F61202152D90E003E30FC /* LobbyDetailOneButtonCell.xib */; };
+		475F61242152E53B003E30FC /* Extension+LobbyDetailTheirs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475F61232152E53B003E30FC /* Extension+LobbyDetailTheirs.swift */; };
+		475F61262152F26A003E30FC /* GetLobbyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475F61252152F26A003E30FC /* GetLobbyRequest.swift */; };
+		475F61282152FA61003E30FC /* JoinLobbyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475F61272152FA61003E30FC /* JoinLobbyRequest.swift */; };
+		475F612A2152FDF8003E30FC /* SendCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475F61292152FDF8003E30FC /* SendCommentRequest.swift */; };
+		475F612C21530440003E30FC /* FetchCommentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475F612B21530440003E30FC /* FetchCommentsRequest.swift */; };
+		475F612E2153085E003E30FC /* SubscribeComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475F612D2153085E003E30FC /* SubscribeComments.swift */; };
+		475F613021530C1F003E30FC /* Extension+CommentSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475F612F21530C1F003E30FC /* Extension+CommentSubscription.swift */; };
 		477CB996214D11B3003CDEEE /* PlatformProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477CB995214D11B3003CDEEE /* PlatformProfile.swift */; };
 		477CB998214D5152003CDEEE /* SocialURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477CB997214D5152003CDEEE /* SocialURL.swift */; };
 		477CB99A214D54A5003CDEEE /* AddRankOrUrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477CB999214D54A5003CDEEE /* AddRankOrUrlRequest.swift */; };
@@ -260,6 +273,19 @@
 		472DFF65213C7A9D00FC577A /* ImageDownloaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderManager.swift; sourceTree = "<group>"; };
 		472DFF70213DC85300FC577A /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		472DFF71213DC85300FC577A /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
+		475F61152151A800003E30FC /* LobbyChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyChatVC.swift; sourceTree = "<group>"; };
+		475F61172151A805003E30FC /* LobbyChatVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LobbyChatVC.storyboard; sourceTree = "<group>"; };
+		475F611A2152D2B3003E30FC /* LobbyDetailVCTheirs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyDetailVCTheirs.swift; sourceTree = "<group>"; };
+		475F611C2152D2C0003E30FC /* LobbyDetailVCTheirs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LobbyDetailVCTheirs.storyboard; sourceTree = "<group>"; };
+		475F611F2152D90E003E30FC /* LobbyDetailOneButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyDetailOneButtonCell.swift; sourceTree = "<group>"; };
+		475F61202152D90E003E30FC /* LobbyDetailOneButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LobbyDetailOneButtonCell.xib; sourceTree = "<group>"; };
+		475F61232152E53B003E30FC /* Extension+LobbyDetailTheirs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+LobbyDetailTheirs.swift"; sourceTree = "<group>"; };
+		475F61252152F26A003E30FC /* GetLobbyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLobbyRequest.swift; sourceTree = "<group>"; };
+		475F61272152FA61003E30FC /* JoinLobbyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinLobbyRequest.swift; sourceTree = "<group>"; };
+		475F61292152FDF8003E30FC /* SendCommentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendCommentRequest.swift; sourceTree = "<group>"; };
+		475F612B21530440003E30FC /* FetchCommentsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCommentsRequest.swift; sourceTree = "<group>"; };
+		475F612D2153085E003E30FC /* SubscribeComments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeComments.swift; sourceTree = "<group>"; };
+		475F612F21530C1F003E30FC /* Extension+CommentSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+CommentSubscription.swift"; sourceTree = "<group>"; };
 		477CB995214D11B3003CDEEE /* PlatformProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformProfile.swift; sourceTree = "<group>"; };
 		477CB997214D5152003CDEEE /* SocialURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialURL.swift; sourceTree = "<group>"; };
 		477CB999214D54A5003CDEEE /* AddRankOrUrlRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRankOrUrlRequest.swift; sourceTree = "<group>"; };
@@ -609,6 +635,35 @@
 			path = FeedView;
 			sourceTree = "<group>";
 		};
+		475F61142151A7F5003E30FC /* LobbyChatVC */ = {
+			isa = PBXGroup;
+			children = (
+				475F61152151A800003E30FC /* LobbyChatVC.swift */,
+				475F61172151A805003E30FC /* LobbyChatVC.storyboard */,
+			);
+			path = LobbyChatVC;
+			sourceTree = "<group>";
+		};
+		475F61192152D29A003E30FC /* LobbyDetailVCTheirs */ = {
+			isa = PBXGroup;
+			children = (
+				475F611A2152D2B3003E30FC /* LobbyDetailVCTheirs.swift */,
+				475F611C2152D2C0003E30FC /* LobbyDetailVCTheirs.storyboard */,
+				475F61232152E53B003E30FC /* Extension+LobbyDetailTheirs.swift */,
+				475F612F21530C1F003E30FC /* Extension+CommentSubscription.swift */,
+			);
+			path = LobbyDetailVCTheirs;
+			sourceTree = "<group>";
+		};
+		475F611E2152D8FE003E30FC /* LobbyDetailOneButtonCell */ = {
+			isa = PBXGroup;
+			children = (
+				475F611F2152D90E003E30FC /* LobbyDetailOneButtonCell.swift */,
+				475F61202152D90E003E30FC /* LobbyDetailOneButtonCell.xib */,
+			);
+			path = LobbyDetailOneButtonCell;
+			sourceTree = "<group>";
+		};
 		477CB99B214E655D003CDEEE /* RoundProfilesView */ = {
 			isa = PBXGroup;
 			children = (
@@ -696,6 +751,7 @@
 		47E2C6F621427D5600AAD648 /* LobbyDetailVC */ = {
 			isa = PBXGroup;
 			children = (
+				475F611E2152D8FE003E30FC /* LobbyDetailOneButtonCell */,
 				472B814B214979D600C005B2 /* LobbyDetailTitleCell */,
 				47E2C6F721427DF000AAD648 /* LobbyDetailVC.swift */,
 				47E2C6F921427DF700AAD648 /* LobbyDetailVC.storyboard */,
@@ -1029,6 +1085,11 @@
 				472B815C214AFDCB00C005B2 /* UserAllLobbiesRequest.swift */,
 				472B8160214B936A00C005B2 /* GetNearestLobbiesRequest.swift */,
 				477CB999214D54A5003CDEEE /* AddRankOrUrlRequest.swift */,
+				475F61252152F26A003E30FC /* GetLobbyRequest.swift */,
+				475F61272152FA61003E30FC /* JoinLobbyRequest.swift */,
+				475F61292152FDF8003E30FC /* SendCommentRequest.swift */,
+				475F612B21530440003E30FC /* FetchCommentsRequest.swift */,
+				475F612D2153085E003E30FC /* SubscribeComments.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -1036,6 +1097,8 @@
 		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				475F61192152D29A003E30FC /* LobbyDetailVCTheirs */,
+				475F61142151A7F5003E30FC /* LobbyChatVC */,
 				472B8177214C857500C005B2 /* AddRankOrUrlVC */,
 				472B814621494EAC00C005B2 /* LobbyGameSelectionVC */,
 				472B813E2149271400C005B2 /* PlatformSelectionVC */,
@@ -1216,6 +1279,7 @@
 				472DFF0C213849F400FC577A /* LobbyCollectionCell.xib in Resources */,
 				472B815321497A0300C005B2 /* LobbyDetailTitleCell.xib in Resources */,
 				472DFF072138445A00FC577A /* MapVC.storyboard in Resources */,
+				475F61222152D90E003E30FC /* LobbyDetailOneButtonCell.xib in Resources */,
 				472B817B214C858500C005B2 /* AddRankOrUrlVC.storyboard in Resources */,
 				472B814A21494EBC00C005B2 /* LobbyGameSelectionVC.storyboard in Resources */,
 				472B8176214C7A8A00C005B2 /* AddCollectionCell.xib in Resources */,
@@ -1248,12 +1312,14 @@
 				47E2C70A2143211E00AAD648 /* FriendSelectionCell.xib in Resources */,
 				D2AF692F20A237C200AC40E9 /* ForgotPasswordVC.storyboard in Resources */,
 				472DFEF22135DEBD00FC577A /* GameSelectionCell.xib in Resources */,
+				475F61182151A805003E30FC /* LobbyChatVC.storyboard in Resources */,
 				47E2C6FF2142832800AAD648 /* FriendSelectionVC.storyboard in Resources */,
 				472DFED12135D28000FC577A /* GameSelectionVC.storyboard in Resources */,
 				D258C034209645EE0090ABB5 /* Main.storyboard in Resources */,
 				D2075DDB209E449000AC79B6 /* ConfirmEmailVC.storyboard in Resources */,
 				472DFEDF2135D3C900FC577A /* OpenSans-Italic.ttf in Resources */,
 				47E2C78E2146D63900AAD648 /* FilterVC.storyboard in Resources */,
+				475F611D2152D2C0003E30FC /* LobbyDetailVCTheirs.storyboard in Resources */,
 				472DFEE02135D3C900FC577A /* OpenSans-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1362,10 +1428,13 @@
 			files = (
 				472DFF62213C135000FC577A /* User.swift in Sources */,
 				47C3C068213E625D00A74171 /* Message.swift in Sources */,
+				475F612E2153085E003E30FC /* SubscribeComments.swift in Sources */,
+				475F61212152D90E003E30FC /* LobbyDetailOneButtonCell.swift in Sources */,
 				472B815221497A0300C005B2 /* LobbyDetailTitleCell.swift in Sources */,
 				D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */,
 				472B8161214B936A00C005B2 /* GetNearestLobbiesRequest.swift in Sources */,
 				47E2C6F52141AAC200AAD648 /* LobbyRequest.swift in Sources */,
+				475F61262152F26A003E30FC /* GetLobbyRequest.swift in Sources */,
 				D2075DA9209B866500AC79B6 /* CacheManager.swift in Sources */,
 				D2D9108A209F7F5D0054F3AA /* FacebookLoginManager.swift in Sources */,
 				472B8169214C65D100C005B2 /* ProfileLobbyCollectionCell.swift in Sources */,
@@ -1386,17 +1455,21 @@
 				472B8179214C858100C005B2 /* AddRankOrUrlVC.swift in Sources */,
 				472B81402149272100C005B2 /* PlatformSelectionVC.swift in Sources */,
 				4706B7F6213FAEC300BAC8EA /* FeedDetailVC.swift in Sources */,
+				475F613021530C1F003E30FC /* Extension+CommentSubscription.swift in Sources */,
 				47E2C79B2147014F00AAD648 /* FilterCellType2.swift in Sources */,
 				472B81552149ACA200C005B2 /* LobbyCreateRequest.swift in Sources */,
 				477CB998214D5152003CDEEE /* SocialURL.swift in Sources */,
+				475F612C21530440003E30FC /* FetchCommentsRequest.swift in Sources */,
 				D2075DC1209DE93B00AC79B6 /* RegisterVC.swift in Sources */,
 				D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */,
+				475F61282152FA61003E30FC /* JoinLobbyRequest.swift in Sources */,
 				472B815D214AFDCB00C005B2 /* UserAllLobbiesRequest.swift in Sources */,
 				472DFEE82135D4DF00FC577A /* GameListRequest.swift in Sources */,
 				477CB99D214E6571003CDEEE /* RoundProfilesView.swift in Sources */,
 				47E2C75F2145C1F100AAD648 /* LobbyListVC.swift in Sources */,
 				47E2C78C2146D63400AAD648 /* FilterVC.swift in Sources */,
 				D2D9108D20A070B40054F3AA /* BaseNavigationController.swift in Sources */,
+				475F61162151A800003E30FC /* LobbyChatVC.swift in Sources */,
 				D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */,
 				472DFF58213B3F3E00FC577A /* ConstantUrls.swift in Sources */,
 				472DFF5C213BDD0700FC577A /* Extension+UIImage.swift in Sources */,
@@ -1413,6 +1486,7 @@
 				D2075DBC209DDE8900AC79B6 /* CognitoConstants.swift in Sources */,
 				D2AF692D20A237A500AC40E9 /* ForgotPasswordVC.swift in Sources */,
 				47E2C79F21471C9A00AAD648 /* FilterDetailListVC.swift in Sources */,
+				475F612A2152FDF8003E30FC /* SendCommentRequest.swift in Sources */,
 				47E2C7682145C65F00AAD648 /* LobbyListCell.swift in Sources */,
 				47E2C70E21446D9800AAD648 /* MessageCell.swift in Sources */,
 				D258C0792099061C0090ABB5 /* OnboardingVC.swift in Sources */,
@@ -1441,6 +1515,7 @@
 				472DFF0F2139F4D600FC577A /* ProfileVC.swift in Sources */,
 				472B8159214AB38300C005B2 /* RadialGradientView.swift in Sources */,
 				D2075DBA209DDD8900AC79B6 /* AWSCredentialManager.swift in Sources */,
+				475F611B2152D2B3003E30FC /* LobbyDetailVCTheirs.swift in Sources */,
 				47C3C062213E61B300A74171 /* Lobby.swift in Sources */,
 				472DFEED2135D58400FC577A /* Game.swift in Sources */,
 				477CB9A7214EA285003CDEEE /* FormattedDate.swift in Sources */,
@@ -1452,6 +1527,7 @@
 				D2075DAB209B877200AC79B6 /* CacheConstants.swift in Sources */,
 				D2075DD2209E3E8C00AC79B6 /* RushErrorManager.swift in Sources */,
 				47DE1AF9214870B5006FBFD1 /* CreateLobbyVC.swift in Sources */,
+				475F61242152E53B003E30FC /* Extension+LobbyDetailTheirs.swift in Sources */,
 				47E2C7882146D5B000AAD648 /* HalfModalTransitioningDelegate.swift in Sources */,
 				472B813D2149196B00C005B2 /* ImageUploadManager.swift in Sources */,
 				472DFEFD2137474F00FC577A /* AWSPopupManager.swift in Sources */,

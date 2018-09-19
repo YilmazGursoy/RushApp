@@ -27,4 +27,8 @@ struct LambdaConstants {
     
     static let UserRemoveRequest        =   "RushApp-RemoveUser"
     static let UserAddRequest           =   "RushApp-AddUser"
+    
+    static let GetLobbyRequest          =   "RushApp-GetLobby"
+    static let JoinLobbyRequest         =   "RushApp-JoinLobby"
+    
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import AWSAppSync
 import SVProgressHUD
 import UserNotifications
 import IQKeyboardManagerSwift
@@ -17,7 +18,7 @@ import IQKeyboardManagerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var appSyncClient: AWSAppSyncClient?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -75,6 +76,18 @@ extension AppDelegate {
         IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Tamam"
         SVProgressHUD.setForegroundColor(#colorLiteral(red: 0.4666666667, green: 0.3529411765, blue: 1, alpha: 1))
         SVProgressHUD.setDefaultMaskType(.clear)
+        
+        do {
+            let databaseURL = URL(fileURLWithPath:NSTemporaryDirectory()).appendingPathComponent(database_name)
+            let appSyncConfig = try AWSAppSyncClientConfiguration(url: AppSyncEndpointURL,
+                                                                  serviceRegion: AppSyncRegion,
+                                                                  apiKeyAuthProvider: APIKeyAuthProvider(),
+                                                                  databaseURL:databaseURL)
+            appSyncClient = try AWSAppSyncClient(appSyncConfig: appSyncConfig)
+            appSyncClient?.apolloClient?.cacheKeyForObject = { $0["id"] }
+        } catch {
+            print("Error initializing AppSync client. \(error)")
+        }
     }
 }
 
