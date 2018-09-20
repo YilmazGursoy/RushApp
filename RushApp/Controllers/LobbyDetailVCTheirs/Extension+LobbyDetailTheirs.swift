@@ -43,6 +43,39 @@ extension LobbyDetailVCTheirs : UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 1 {
+            if self.isLobbyHasChat {
+                return 46
+            } else {
+                return 0
+            }
+        } else {
+            return 0
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 1 {
+            if self.isLobbyHasChat {
+                let titleView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.bounds.width, height: 46))
+                titleView.backgroundColor = #colorLiteral(red: 0.9647058824, green: 0.9647058824, blue: 0.9647058824, alpha: 1)
+                
+                let label = UILabel.init(frame: titleView.bounds)
+                label.textAlignment = .center
+                label.font = UIFont.init(name: "OpenSans-Bold", size: 12.0)
+                label.textColor = #colorLiteral(red: 0.1529411765, green: 0.1490196078, blue: 0.1490196078, alpha: 1)
+                label.text = "Lobi Konuşmaları"
+                
+                titleView.addSubview(label)
+                
+                return titleView
+            }
+        }
+        return nil
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "LobbyDetailTitleCell") as! LobbyDetailTitleCell

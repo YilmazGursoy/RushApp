@@ -116,6 +116,8 @@
 		47C3C068213E625D00A74171 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C067213E625D00A74171 /* Message.swift */; };
 		47C3C0AB213F0D1900A74171 /* DefaultResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C0AA213F0D1900A74171 /* DefaultResponse.swift */; };
 		47C3C0AD213F0DE400A74171 /* Extension+Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C0AC213F0DE400A74171 /* Extension+Json.swift */; };
+		47C964B721543703006A4067 /* AppSync+LobbyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C964B621543703006A4067 /* AppSync+LobbyDetail.swift */; };
+		47C964B9215442E1006A4067 /* ChangeLobbyChatStatusRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C964B8215442E1006A4067 /* ChangeLobbyChatStatusRequest.swift */; };
 		47DDF0FB2150743D00C8F6D1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DDF0FA2150743D00C8F6D1 /* API.swift */; };
 		47DE1AF3214823F5006FBFD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47DE1AF2214823F5006FBFD1 /* GoogleService-Info.plist */; };
 		47DE1AF62148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE1AF52148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift */; };
@@ -321,6 +323,8 @@
 		47C3C067213E625D00A74171 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		47C3C0AA213F0D1900A74171 /* DefaultResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultResponse.swift; sourceTree = "<group>"; };
 		47C3C0AC213F0DE400A74171 /* Extension+Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Json.swift"; sourceTree = "<group>"; };
+		47C964B621543703006A4067 /* AppSync+LobbyDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppSync+LobbyDetail.swift"; sourceTree = "<group>"; };
+		47C964B8215442E1006A4067 /* ChangeLobbyChatStatusRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLobbyChatStatusRequest.swift; sourceTree = "<group>"; };
 		47DDF0FA2150743D00C8F6D1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		47DE1AF2214823F5006FBFD1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		47DE1AF421482432006FBFD1 /* RushApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RushApp.entitlements; sourceTree = "<group>"; };
@@ -754,6 +758,7 @@
 				475F611E2152D8FE003E30FC /* LobbyDetailOneButtonCell */,
 				472B814B214979D600C005B2 /* LobbyDetailTitleCell */,
 				47E2C6F721427DF000AAD648 /* LobbyDetailVC.swift */,
+				47C964B621543703006A4067 /* AppSync+LobbyDetail.swift */,
 				47E2C6F921427DF700AAD648 /* LobbyDetailVC.storyboard */,
 			);
 			path = LobbyDetailVC;
@@ -1090,6 +1095,7 @@
 				475F61292152FDF8003E30FC /* SendCommentRequest.swift */,
 				475F612B21530440003E30FC /* FetchCommentsRequest.swift */,
 				475F612D2153085E003E30FC /* SubscribeComments.swift */,
+				47C964B8215442E1006A4067 /* ChangeLobbyChatStatusRequest.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -1434,6 +1440,7 @@
 				D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */,
 				472B8161214B936A00C005B2 /* GetNearestLobbiesRequest.swift in Sources */,
 				47E2C6F52141AAC200AAD648 /* LobbyRequest.swift in Sources */,
+				47C964B721543703006A4067 /* AppSync+LobbyDetail.swift in Sources */,
 				475F61262152F26A003E30FC /* GetLobbyRequest.swift in Sources */,
 				D2075DA9209B866500AC79B6 /* CacheManager.swift in Sources */,
 				D2D9108A209F7F5D0054F3AA /* FacebookLoginManager.swift in Sources */,
@@ -1525,6 +1532,7 @@
 				D258C07D2099098B0090ABB5 /* BaseVC+Extensions.swift in Sources */,
 				47DE1AF62148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift in Sources */,
 				D2075DAB209B877200AC79B6 /* CacheConstants.swift in Sources */,
+				47C964B9215442E1006A4067 /* ChangeLobbyChatStatusRequest.swift in Sources */,
 				D2075DD2209E3E8C00AC79B6 /* RushErrorManager.swift in Sources */,
 				47DE1AF9214870B5006FBFD1 /* CreateLobbyVC.swift in Sources */,
 				475F61242152E53B003E30FC /* Extension+LobbyDetailTheirs.swift in Sources */,

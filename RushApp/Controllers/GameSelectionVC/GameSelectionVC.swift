@@ -121,7 +121,6 @@ extension GameSelectionVC {
                 }
             })
     }
-    
 }
 
 

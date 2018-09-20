@@ -1,5 +1,5 @@
 //
-//  Extension+CommentSubscription.swift
+//  AppSync+LobbyDetail.swift
 //  RushApp
 //
 //  Created by Yilmaz Gursoy on 20.09.2018.
@@ -9,18 +9,13 @@
 import UIKit
 import AWSAppSync
 
-extension LobbyDetailVCTheirs {
+extension LobbyDetailVC {
     
     func configurateLobbyDelegatesAndRequest(){
-        self.currentLobby.subscribers.forEach { (simpleUser) in
-            if simpleUser.id.elementsEqual(Rush.shared.currentUser.userId) {
-                isAlreadySubLobby = true
-            }
-        }
         
         if currentLobby.lobbyHasChat {
-            isLobbyHasChat = true
             let fetchCommentRequest = FetchCommentsRequets()
+            
             fetchCommentRequest.fetchComments(baseId: self.currentLobby.id, commentSuccessBlock: { (baseResponse) in
                 self.comments = baseResponse.items
                 DispatchQueue.main.async {
@@ -30,7 +25,6 @@ extension LobbyDetailVCTheirs {
                 }
                 self.subcribeCommentsRequest()
             }) {
-                self.isLobbyHasChat = false
                 DispatchQueue.main.async {
                     self.tableView.delegate = self
                     self.tableView.dataSource = self

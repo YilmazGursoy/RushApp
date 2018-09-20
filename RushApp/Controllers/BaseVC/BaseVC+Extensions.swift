@@ -29,8 +29,9 @@ extension BaseVC {
         alertVC.addAction(PMAlertAction(title: "Okay", style: .default, action: { () in
             doneButtonTapped()
         }))
-        
-        self.present(alertVC, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.present(alertVC, animated: true, completion: nil)
+        }
     }
     
     func showError(title:String, description:String, doneButtonTapped:@escaping()->Void) {
@@ -39,8 +40,9 @@ extension BaseVC {
         alertVC.addAction(PMAlertAction(title: "Okay", style: .default, action: { () in
             doneButtonTapped()
         }))
-        
-        self.present(alertVC, animated: true, completion: nil)
+        DispatchQueue.main.async {
+         self.present(alertVC, animated: true, completion: nil)
+        }
     }
     
     
