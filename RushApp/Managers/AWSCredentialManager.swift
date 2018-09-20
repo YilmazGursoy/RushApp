@@ -23,6 +23,7 @@ class AWSCredentialManager {
     var currentType:CurrentConfigurationType!
     var currentCredential:AWSCognitoCredentialsProvider!
     
+    
     //MARK: UserPool Configuration
     func configureUserPool(){
         let serviceConfiguration = AWSServiceConfiguration(region: CognitoConstants.cognitoUserPool_CLIENTREGION,
@@ -68,15 +69,21 @@ class AWSCredentialManager {
                                                                identityPoolId: CognitoConstants.cognitoFederatedIdentity_POOLID,
                                                                identityProviderManager: provider)
         
-        credentialProvider.credentials().continueWith { (credentials) -> Any? in
-            return nil
-        }
-        
+        credentialProvider.credentials()
         let defaultServiceConfiguration = AWSServiceConfiguration(region: CognitoConstants.cognitoUserPool_CLIENTREGION,
                                                                   credentialsProvider: credentialProvider)
+        
         currentCredential = credentialProvider
         AWSServiceManager.default().defaultServiceConfiguration = defaultServiceConfiguration
-        
+    }
+    
+    func loadUserCredentials(){
+        if let _ = AccessToken.current?.authenticationToken {
+            configureFederatedIdentitiesForFacebook()
+        } else {
+            configureUserPool()
+            configureFederatedIdentitiesForUserPool()
+        }
     }
     
     func logout(completion: @escaping (Bool)->Void){

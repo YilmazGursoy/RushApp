@@ -176,13 +176,11 @@
 		D2075DB8209CE44E00AC79B6 /* DummyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DB7209CE44E00AC79B6 /* DummyRequest.swift */; };
 		D2075DBA209DDD8900AC79B6 /* AWSCredentialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DB9209DDD8900AC79B6 /* AWSCredentialManager.swift */; };
 		D2075DBC209DDE8900AC79B6 /* CognitoConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DBB209DDE8900AC79B6 /* CognitoConstants.swift */; };
-		D2075DBE209DE70000AC79B6 /* AWSRegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DBD209DE70000AC79B6 /* AWSRegisterManager.swift */; };
 		D2075DC1209DE93B00AC79B6 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DC0209DE93B00AC79B6 /* RegisterVC.swift */; };
 		D2075DC3209DE94300AC79B6 /* RegisterVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2075DC2209DE94300AC79B6 /* RegisterVC.storyboard */; };
 		D2075DC5209DEA2000AC79B6 /* Extension+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DC4209DEA2000AC79B6 /* Extension+UIButton.swift */; };
 		D2075DC8209DEF2E00AC79B6 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DC7209DEF2E00AC79B6 /* LoginVC.swift */; };
 		D2075DCA209DEF4600AC79B6 /* LoginVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2075DC9209DEF4600AC79B6 /* LoginVC.storyboard */; };
-		D2075DCC209DF34900AC79B6 /* AWSLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DCB209DF34900AC79B6 /* AWSLoginManager.swift */; };
 		D2075DCE209E3CA400AC79B6 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DCD209E3CA400AC79B6 /* RegisterRequest.swift */; };
 		D2075DD0209E3CC600AC79B6 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DCF209E3CC600AC79B6 /* LoginRequest.swift */; };
 		D2075DD2209E3E8C00AC79B6 /* RushErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DD1209E3E8C00AC79B6 /* RushErrorManager.swift */; };
@@ -205,7 +203,6 @@
 		D2AF692D20A237A500AC40E9 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AF692C20A237A500AC40E9 /* ForgotPasswordVC.swift */; };
 		D2AF692F20A237C200AC40E9 /* ForgotPasswordVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2AF692E20A237C200AC40E9 /* ForgotPasswordVC.storyboard */; };
 		D2D91088209F7F3D0054F3AA /* FacebookProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D91087209F7F3D0054F3AA /* FacebookProvider.swift */; };
-		D2D9108A209F7F5D0054F3AA /* FacebookLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D91089209F7F5D0054F3AA /* FacebookLoginManager.swift */; };
 		D2D9108D20A070B40054F3AA /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D9108C20A070B40054F3AA /* BaseNavigationController.swift */; };
 		D2D9108F20A070BE0054F3AA /* BaseNavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D9108E20A070BE0054F3AA /* BaseNavigationController.storyboard */; };
 		EA85AE193BC1EC3551B07F3C /* Pods_RushApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2AAAC8D513C97D314CFDC9A /* Pods_RushApp.framework */; };
@@ -386,13 +383,11 @@
 		D2075DB7209CE44E00AC79B6 /* DummyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyRequest.swift; sourceTree = "<group>"; };
 		D2075DB9209DDD8900AC79B6 /* AWSCredentialManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSCredentialManager.swift; sourceTree = "<group>"; };
 		D2075DBB209DDE8900AC79B6 /* CognitoConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CognitoConstants.swift; sourceTree = "<group>"; };
-		D2075DBD209DE70000AC79B6 /* AWSRegisterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSRegisterManager.swift; sourceTree = "<group>"; };
 		D2075DC0209DE93B00AC79B6 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		D2075DC2209DE94300AC79B6 /* RegisterVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterVC.storyboard; sourceTree = "<group>"; };
 		D2075DC4209DEA2000AC79B6 /* Extension+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIButton.swift"; sourceTree = "<group>"; };
 		D2075DC7209DEF2E00AC79B6 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D2075DC9209DEF4600AC79B6 /* LoginVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginVC.storyboard; sourceTree = "<group>"; };
-		D2075DCB209DF34900AC79B6 /* AWSLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSLoginManager.swift; sourceTree = "<group>"; };
 		D2075DCD209E3CA400AC79B6 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		D2075DCF209E3CC600AC79B6 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		D2075DD1209E3E8C00AC79B6 /* RushErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RushErrorManager.swift; sourceTree = "<group>"; };
@@ -417,7 +412,6 @@
 		D2AF692C20A237A500AC40E9 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		D2AF692E20A237C200AC40E9 /* ForgotPasswordVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPasswordVC.storyboard; sourceTree = "<group>"; };
 		D2D91087209F7F3D0054F3AA /* FacebookProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookProvider.swift; sourceTree = "<group>"; };
-		D2D91089209F7F5D0054F3AA /* FacebookLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginManager.swift; sourceTree = "<group>"; };
 		D2D9108C20A070B40054F3AA /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		D2D9108E20A070BE0054F3AA /* BaseNavigationController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BaseNavigationController.storyboard; sourceTree = "<group>"; };
 		F2AAAC8D513C97D314CFDC9A /* Pods_RushApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RushApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1058,12 +1052,9 @@
 			children = (
 				D2075DA8209B866500AC79B6 /* CacheManager.swift */,
 				D2075DB9209DDD8900AC79B6 /* AWSCredentialManager.swift */,
-				D2075DBD209DE70000AC79B6 /* AWSRegisterManager.swift */,
-				D2075DCB209DF34900AC79B6 /* AWSLoginManager.swift */,
 				D2075DD1209E3E8C00AC79B6 /* RushErrorManager.swift */,
 				D2075DD3209E3FF800AC79B6 /* AWSErrorManager.swift */,
 				D2D91087209F7F3D0054F3AA /* FacebookProvider.swift */,
-				D2D91089209F7F5D0054F3AA /* FacebookLoginManager.swift */,
 				472DFEFC2137474F00FC577A /* AWSPopupManager.swift */,
 				472DFF65213C7A9D00FC577A /* ImageDownloaderManager.swift */,
 				472B813C2149196B00C005B2 /* ImageUploadManager.swift */,
@@ -1237,6 +1228,9 @@
 					D258C02A209645EE0090ABB5 = {
 						CreatedOnToolsVersion = 9.3;
 						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -1443,7 +1437,6 @@
 				47C964B721543703006A4067 /* AppSync+LobbyDetail.swift in Sources */,
 				475F61262152F26A003E30FC /* GetLobbyRequest.swift in Sources */,
 				D2075DA9209B866500AC79B6 /* CacheManager.swift in Sources */,
-				D2D9108A209F7F5D0054F3AA /* FacebookLoginManager.swift in Sources */,
 				472B8169214C65D100C005B2 /* ProfileLobbyCollectionCell.swift in Sources */,
 				47E2C7902146D65E00AAD648 /* FilterNavigationController.swift in Sources */,
 				47C3C066213E624C00A74171 /* SimpleUser.swift in Sources */,
@@ -1507,7 +1500,6 @@
 				472B81442149296900C005B2 /* ExtensionLocation+CreateLobby.swift in Sources */,
 				471A6516213023C50065962D /* TabBarController.swift in Sources */,
 				D2075DE2209F0D1300AC79B6 /* Extension+NavigationController.swift in Sources */,
-				D2075DCC209DF34900AC79B6 /* AWSLoginManager.swift in Sources */,
 				D2075DDD209F091C00AC79B6 /* RushLogger.swift in Sources */,
 				47E2C7892146D5B000AAD648 /* HalfModalPresentationController.swift in Sources */,
 				47C3C060213E604800A74171 /* Feed.swift in Sources */,
@@ -1547,7 +1539,6 @@
 				472DFF052138445500FC577A /* MapVC.swift in Sources */,
 				477CB9A3214E815C003CDEEE /* Extension+MapVC.swift in Sources */,
 				47E2C6922140747300AAD648 /* FeedDetailCell.swift in Sources */,
-				D2075DBE209DE70000AC79B6 /* AWSRegisterManager.swift in Sources */,
 				477CB9A5214E98AE003CDEEE /* Extension+Date.swift in Sources */,
 				47E2C7922146FA1C00AAD648 /* Extension+FilterVC.swift in Sources */,
 				472B814821494EB700C005B2 /* LobbyGameSelectionVC.swift in Sources */,

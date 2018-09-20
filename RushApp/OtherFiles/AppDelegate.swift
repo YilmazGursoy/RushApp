@@ -10,9 +10,9 @@ import UIKit
 import Firebase
 import AWSAppSync
 import SVProgressHUD
+import FBSDKCoreKit
 import UserNotifications
 import IQKeyboardManagerSwift
-
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
-        
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
             
@@ -76,7 +76,7 @@ extension AppDelegate {
         IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Tamam"
         SVProgressHUD.setForegroundColor(#colorLiteral(red: 0.4666666667, green: 0.3529411765, blue: 1, alpha: 1))
         SVProgressHUD.setDefaultMaskType(.clear)
-        
+        self.awsConfirm()
         do {
             let databaseURL = URL(fileURLWithPath:NSTemporaryDirectory()).appendingPathComponent(database_name)
             let appSyncConfig = try AWSAppSyncClientConfiguration(url: AppSyncEndpointURL,
@@ -105,7 +105,6 @@ extension AppDelegate:UNUserNotificationCenterDelegate, MessagingDelegate {
     
     func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
         print("Firebase registration token: \(fcmToken)")
-        Rush.shared.firToken = fcmToken
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -154,4 +153,24 @@ extension AppDelegate:UNUserNotificationCenterDelegate, MessagingDelegate {
     
     
     
+}
+
+//MARK:-
+//MARK:-- AWSConfigurations
+extension AppDelegate {
+    
+    @objc func identityDidChange(notification: NSNotification!) {
+        if let userInfo = notification.userInfo as? [String: AnyObject] {
+            print("🍎   identity changed from: \(String(describing: userInfo[AWSCognitoNotificationPreviousId])) to: \(String(describing: userInfo[AWSCognitoNotificationNewId]))  h 🍎")
+        }
+    }
+    
+    
+    func awsConfirm(){
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.identityDidChange(notification:)),
+                                               name: NSNotification.Name.AWSCognitoIdentityIdChanged,
+                                               object: nil)
+        AWSCredentialManager.shared.loadUserCredentials()
+    }
 }

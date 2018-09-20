@@ -17,7 +17,8 @@ class JoinLobbyRequest: Request {
         
         let parameters:[String:String] = ["id":lobbyId,
                                              "userId":userId,
-                                             "newUserName":userName]
+                                             "newUserName":userName,
+                                             "userFirebaseId":Rush.shared.currentUser.firebaseToken ?? "-"]
         
         self.request(parameters: parameters) { (response:AnyObject?, lobby:Lobby?, error:Error?) in
             if lobby != nil {

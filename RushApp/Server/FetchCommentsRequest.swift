@@ -13,14 +13,15 @@ class FetchCommentsRequets: NSObject {
     var appSyncClient:AWSAppSyncClient?
     
     func fetchComments(baseId:String, commentSuccessBlock:@escaping (BaseCommentResponse)->Void, failed:@escaping ()->Void) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appSyncClient = appDelegate.appSyncClient
-        
-        appSyncClient?.fetch(query: GetCommentQuery(baseId: baseId), cachePolicy: .returnCacheDataAndFetch, queue: DispatchQueue.main, resultHandler: { (response, error) in
+        DispatchQueue.main.async {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            self.appSyncClient = appDelegate.appSyncClient
             
+            self.appSyncClient?.fetch(query: GetCommentQuery(baseId: baseId), cachePolicy: .returnCacheDataAndFetch, queue: DispatchQueue.main, resultHandler: { (response, error) in
+                
                 if let comments = response?.data?.getCommentsInBaseId {
                     do {
-            
+                        
                         if let theJSONData = try? JSONSerialization.data( withJSONObject: comments.jsonObject, options: []) {
                             let object = try JSONDecoder().decode(BaseCommentResponse.self, from: theJSONData)
                             commentSuccessBlock(object)
@@ -30,10 +31,11 @@ class FetchCommentsRequets: NSObject {
                     } catch {
                         failed()
                     }
-            
+                    
                 } else {
                     failed()
-            }
-        })
+                }
+            })
+        }
     }
 }

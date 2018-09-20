@@ -48,14 +48,12 @@ class LoginRequest {
             case .cancelled:
                 completion(false)
                 print("User cancelled login.")
-            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
-                AWSCredentialManager.shared.configureFederatedIdentitiesForFacebook()
-                UserProfile.loadCurrent({ (profile) in
-                    completion(true)
-                    print("Logged in!")
-                    print("granted: \(grantedPermissions)")
-                    print("declined: \(declinedPermissions)")
-                    print("accessToken: \(accessToken)")
+            case .success( _, _, _):
+                AWSCredentialManager.shared.loadUserCredentials()
+                DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
+                    UserProfile.loadCurrent({ (profile) in
+                        completion(true)
+                    })
                 })
             }
         }

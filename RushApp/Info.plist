@@ -19,16 +19,18 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb149536402392240</string>
+				<string>fb337488660129436</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>FacebookAppID</key>
-	<string>149536402392240</string>
+	<string>337488660129436</string>
 	<key>FacebookDisplayName</key>
 	<string>RushApp</string>
 	<key>LSApplicationQueriesSchemes</key>

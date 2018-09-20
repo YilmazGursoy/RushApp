@@ -53,6 +53,7 @@ extension LobbyDetailVCTheirs {
             self.comments.append(comment)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.tableView.scrollToRow(at: IndexPath.init(row: self.comments.count, section: 1), at: .bottom, animated: true)
             }
         }
     }

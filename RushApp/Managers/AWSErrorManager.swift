@@ -32,11 +32,9 @@ class AWSErrorManager {
                 } else {
                     completion()
                 }
-            case ErrorConstants.awsCognitoSignoutCode:
+            case ErrorConstants.awsCognitoSignoutCode, ErrorConstants.awsCognitoFacebookCredentialNil:
                 if delegate != nil {
                     delegate.forceOpenViewController(forceViwController: LoginVC.createFromStoryboard())
-                } else {
-                    completion()
                 }
             default:
                 RushLogger.errorLog(message: "Not defining Error with code \(_error._code)")
