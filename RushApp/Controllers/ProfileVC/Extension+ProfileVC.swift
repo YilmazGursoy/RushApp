@@ -9,12 +9,62 @@
 import UIKit
 import SVProgressHUD
 
+private let followingText = "Takip Ediliyor"
+private let notConnectText = "+ Takip Et"
+private let editText = "Düzenle"
+
 //MARK: Helper
 extension ProfileVC {
     func registerCollectionViews(){
         self.lobbiesCollectionView.register(UINib.init(nibName: "ProfileLobbyCollectionCell", bundle: .main), forCellWithReuseIdentifier: "ProfileLobbyCollectionCell")
         self.urlCollectionView.register(UINib.init(nibName: "ProfileRankCollectionCell", bundle: .main), forCellWithReuseIdentifier: "ProfileRankCollectionCell")
         self.urlCollectionView.register(UINib.init(nibName: "AddCollectionCell", bundle: .main), forCellWithReuseIdentifier: "AddCollectionCell")
+    
+    }
+    
+    
+    
+    func sendFollowingReuqest(isSendingFollowing:Bool){
+        SVProgressHUD.show()
+        if isSendingFollowing {
+            let request = SendFollowingRequest()
+            request.sendAddUserRequest(userId: self.currentUser.userId, username: self.currentUser.username, responseSuccess: { (newUser) in
+                let myProfileRequest = CheckUserRequest()
+                self.currentUser = newUser
+                myProfileRequest.sendCheckUserRequest(userId: Rush.shared.currentUser.userId, completionBlock: { (user, error) in
+                    SVProgressHUD.dismiss()
+                    if user != nil {
+                        Rush.shared.currentUser = user!
+                        self.setupUI(isCacheRefresh: false)
+                    } else {
+                        self.showErrorMessage(message: "Bir hata oluştu.")
+                    }
+                })
+            }) {
+                SVProgressHUD.dismiss()
+            }
+            
+        } else {
+            let request = SendRemoveFollowingRequest()
+            request.sendRemoveUserRequest(userId: self.currentUserId, responseSuccess: { (newUser) in
+                self.currentUser = newUser
+                
+                let myProfileRequest = CheckUserRequest()
+                myProfileRequest.sendCheckUserRequest(userId: Rush.shared.currentUser.userId, completionBlock: { (user, error) in
+                    SVProgressHUD.dismiss()
+                    if user != nil {
+                        Rush.shared.currentUser = user
+                        self.setupUI(isCacheRefresh: false)
+                    } else {
+                        self.showErrorMessage(message: "Bir hata oluştu.")
+                    }
+                })
+                
+            }) {
+                SVProgressHUD.dismiss()
+                
+            }
+        }
     }
 }
 

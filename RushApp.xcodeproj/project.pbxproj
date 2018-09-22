@@ -118,6 +118,11 @@
 		47C3C0AD213F0DE400A74171 /* Extension+Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3C0AC213F0DE400A74171 /* Extension+Json.swift */; };
 		47C964B721543703006A4067 /* AppSync+LobbyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C964B621543703006A4067 /* AppSync+LobbyDetail.swift */; };
 		47C964B9215442E1006A4067 /* ChangeLobbyChatStatusRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C964B8215442E1006A4067 /* ChangeLobbyChatStatusRequest.swift */; };
+		47C964EF2156D1B7006A4067 /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C964EE2156D1B7006A4067 /* UserListVC.swift */; };
+		47C964F12156D1BB006A4067 /* UserListVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47C964F02156D1BB006A4067 /* UserListVC.storyboard */; };
+		47C964F52156D276006A4067 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C964F32156D276006A4067 /* UserCell.swift */; };
+		47C964F62156D276006A4067 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47C964F42156D276006A4067 /* UserCell.xib */; };
+		47C964F82156DFB6006A4067 /* SendFollowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C964F72156DFB6006A4067 /* SendFollowRequest.swift */; };
 		47DDF0FB2150743D00C8F6D1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DDF0FA2150743D00C8F6D1 /* API.swift */; };
 		47DE1AF3214823F5006FBFD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47DE1AF2214823F5006FBFD1 /* GoogleService-Info.plist */; };
 		47DE1AF62148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE1AF52148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift */; };
@@ -322,6 +327,11 @@
 		47C3C0AC213F0DE400A74171 /* Extension+Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Json.swift"; sourceTree = "<group>"; };
 		47C964B621543703006A4067 /* AppSync+LobbyDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppSync+LobbyDetail.swift"; sourceTree = "<group>"; };
 		47C964B8215442E1006A4067 /* ChangeLobbyChatStatusRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLobbyChatStatusRequest.swift; sourceTree = "<group>"; };
+		47C964EE2156D1B7006A4067 /* UserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
+		47C964F02156D1BB006A4067 /* UserListVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserListVC.storyboard; sourceTree = "<group>"; };
+		47C964F32156D276006A4067 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		47C964F42156D276006A4067 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		47C964F72156DFB6006A4067 /* SendFollowRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFollowRequest.swift; sourceTree = "<group>"; };
 		47DDF0FA2150743D00C8F6D1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		47DE1AF2214823F5006FBFD1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		47DE1AF421482432006FBFD1 /* RushApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RushApp.entitlements; sourceTree = "<group>"; };
@@ -689,6 +699,25 @@
 				47C3C059213E4ECC00A74171 /* lobbies.json */,
 			);
 			path = Dummies;
+			sourceTree = "<group>";
+		};
+		47C964ED2156D1A6006A4067 /* UserListVC */ = {
+			isa = PBXGroup;
+			children = (
+				47C964F22156D268006A4067 /* UserCell */,
+				47C964EE2156D1B7006A4067 /* UserListVC.swift */,
+				47C964F02156D1BB006A4067 /* UserListVC.storyboard */,
+			);
+			path = UserListVC;
+			sourceTree = "<group>";
+		};
+		47C964F22156D268006A4067 /* UserCell */ = {
+			isa = PBXGroup;
+			children = (
+				47C964F32156D276006A4067 /* UserCell.swift */,
+				47C964F42156D276006A4067 /* UserCell.xib */,
+			);
+			path = UserCell;
 			sourceTree = "<group>";
 		};
 		47DDF0F92150743600C8F6D1 /* API */ = {
@@ -1087,6 +1116,7 @@
 				475F612B21530440003E30FC /* FetchCommentsRequest.swift */,
 				475F612D2153085E003E30FC /* SubscribeComments.swift */,
 				47C964B8215442E1006A4067 /* ChangeLobbyChatStatusRequest.swift */,
+				47C964F72156DFB6006A4067 /* SendFollowRequest.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -1094,6 +1124,7 @@
 		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				47C964ED2156D1A6006A4067 /* UserListVC */,
 				475F61192152D29A003E30FC /* LobbyDetailVCTheirs */,
 				475F61142151A7F5003E30FC /* LobbyChatVC */,
 				472B8177214C857500C005B2 /* AddRankOrUrlVC */,
@@ -1275,11 +1306,13 @@
 				472DFEE62135D3C900FC577A /* OpenSans-BoldItalic.ttf in Resources */,
 				472B816A214C65D100C005B2 /* ProfileLobbyCollectionCell.xib in Resources */,
 				472DFF73213DC85300FC577A /* FeedCell.xib in Resources */,
+				47C964F62156D276006A4067 /* UserCell.xib in Resources */,
 				47E2C70F21446D9800AAD648 /* MessageCell.xib in Resources */,
 				472DFF0C213849F400FC577A /* LobbyCollectionCell.xib in Resources */,
 				472B815321497A0300C005B2 /* LobbyDetailTitleCell.xib in Resources */,
 				472DFF072138445A00FC577A /* MapVC.storyboard in Resources */,
 				475F61222152D90E003E30FC /* LobbyDetailOneButtonCell.xib in Resources */,
+				47C964F12156D1BB006A4067 /* UserListVC.storyboard in Resources */,
 				472B817B214C858500C005B2 /* AddRankOrUrlVC.storyboard in Resources */,
 				472B814A21494EBC00C005B2 /* LobbyGameSelectionVC.storyboard in Resources */,
 				472B8176214C7A8A00C005B2 /* AddCollectionCell.xib in Resources */,
@@ -1454,6 +1487,7 @@
 				472DFEFF2137E6AF00FC577A /* CheckUserRequest.swift in Sources */,
 				472B8179214C858100C005B2 /* AddRankOrUrlVC.swift in Sources */,
 				472B81402149272100C005B2 /* PlatformSelectionVC.swift in Sources */,
+				47C964F52156D276006A4067 /* UserCell.swift in Sources */,
 				4706B7F6213FAEC300BAC8EA /* FeedDetailVC.swift in Sources */,
 				475F613021530C1F003E30FC /* Extension+CommentSubscription.swift in Sources */,
 				47E2C79B2147014F00AAD648 /* FilterCellType2.swift in Sources */,
@@ -1473,6 +1507,7 @@
 				D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */,
 				472DFF58213B3F3E00FC577A /* ConstantUrls.swift in Sources */,
 				472DFF5C213BDD0700FC577A /* Extension+UIImage.swift in Sources */,
+				47C964EF2156D1B7006A4067 /* UserListVC.swift in Sources */,
 				472DFF66213C7A9D00FC577A /* ImageDownloaderManager.swift in Sources */,
 				D2075DDF209F0CC900AC79B6 /* Extension+UIViewController.swift in Sources */,
 				47E2C75A2145BC4D00AAD648 /* LobbyMainVC.swift in Sources */,
@@ -1540,6 +1575,7 @@
 				477CB9A3214E815C003CDEEE /* Extension+MapVC.swift in Sources */,
 				47E2C6922140747300AAD648 /* FeedDetailCell.swift in Sources */,
 				477CB9A5214E98AE003CDEEE /* Extension+Date.swift in Sources */,
+				47C964F82156DFB6006A4067 /* SendFollowRequest.swift in Sources */,
 				47E2C7922146FA1C00AAD648 /* Extension+FilterVC.swift in Sources */,
 				472B814821494EB700C005B2 /* LobbyGameSelectionVC.swift in Sources */,
 				D258C074209904690090ABB5 /* BaseVC.swift in Sources */,

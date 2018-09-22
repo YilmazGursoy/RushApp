@@ -14,6 +14,8 @@ struct User : Decodable {
     var gameList:[Game]?
     var firebaseToken:String?
     var profileUrls:[SocialURL]?
+    var followers:[SimpleUser]?
+    var following:[SimpleUser]?
     
     enum CodingKeys: String, CodingKey {
         case userId = "userId"
@@ -21,6 +23,8 @@ struct User : Decodable {
         case gameList = "selectingGameIDs"
         case firebaseToken = "firebaseToken"
         case profileUrls = "profileUrls"
+        case followers  = "followers"
+        case following = "following"
     }
 }
 

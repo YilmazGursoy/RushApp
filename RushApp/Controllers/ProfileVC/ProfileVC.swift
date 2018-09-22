@@ -12,6 +12,10 @@ import SDWebImage
 import SVProgressHUD
 import PMAlertController
 
+private let followingText = "Takip Ediliyor"
+private let notConnectText = "+ Takip Et"
+private let editText = "Düzenle"
+
 
 
 class ProfileVC: BaseVC {
@@ -34,12 +38,19 @@ class ProfileVC: BaseVC {
     }
     
     
+    @IBOutlet weak var numberOfFollowesLabel: UILabel!
+    @IBOutlet weak var numberOfFollowingLabel: UILabel!
+    @IBOutlet weak var followEditButtonOutlet: UIButton!
+    @IBOutlet weak var folowButtonBackView: GradientView!
     @IBOutlet weak var backButtonOutlet: UIButton!
     @IBOutlet weak var lobbiesBackView: UIView!
     @IBOutlet weak var lobbiesCollectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var profilePictureImage: UIImageView!
     @IBOutlet weak var urlCollectionView: UICollectionView!
+    var currentUserId:String!
+    var isMyProfile:Bool = true
+    
     var profileLobbyList:[Lobby]! {
         didSet{
             DispatchQueue.main.async {
@@ -49,7 +60,7 @@ class ProfileVC: BaseVC {
             }
         }
     }
-    var currentUserId:String!
+    
     var currentUser:User! {
         didSet {
             DispatchQueue.main.async {
@@ -59,7 +70,6 @@ class ProfileVC: BaseVC {
             }
         }
     }
-    var isMyProfile:Bool = true
     
     
     override func viewDidLoad() {
@@ -79,14 +89,55 @@ class ProfileVC: BaseVC {
         // Dispose of any resources that can be recreated.
     }
     
+    func setupFollowEditButtonOutlet(){
+        if isMyProfile {
+            self.folowButtonBackView.topColor = #colorLiteral(red: 0.4666666667, green: 0.3529411765, blue: 1, alpha: 1)
+            self.folowButtonBackView.bottomColor = #colorLiteral(red: 0.8117647059, green: 0.5529411765, blue: 1, alpha: 1)
+            self.folowButtonBackView.borderWidth = 0
+            self.followEditButtonOutlet.setTitle(editText, for: .normal)
+            
+        } else {
+            
+            let followingList = Rush.shared.currentUser.following
+            let value = followingList?.filter({ $0.id == self.currentUserId })
+            if value != nil {
+                if value!.count > 0 {
+                    //Already in list
+                    self.folowButtonBackView.backgroundColor = .clear
+                    self.folowButtonBackView.topColor = .clear
+                    self.folowButtonBackView.bottomColor = .clear
+                    self.folowButtonBackView.borderWidth = 1
+                    self.folowButtonBackView.borderColor = .white
+                    self.followEditButtonOutlet.setTitle(followingText, for: .normal)
+                } else {
+                    self.folowButtonBackView.topColor = #colorLiteral(red: 0.4666666667, green: 0.3529411765, blue: 1, alpha: 1)
+                    self.folowButtonBackView.bottomColor = #colorLiteral(red: 0.8117647059, green: 0.5529411765, blue: 1, alpha: 1)
+                    self.folowButtonBackView.borderWidth = 0
+                    self.followEditButtonOutlet.setTitle(notConnectText, for: .normal)
+                }
+            } else {
+                self.folowButtonBackView.topColor = #colorLiteral(red: 0.4666666667, green: 0.3529411765, blue: 1, alpha: 1)
+                self.folowButtonBackView.bottomColor = #colorLiteral(red: 0.8117647059, green: 0.5529411765, blue: 1, alpha: 1)
+                self.folowButtonBackView.borderWidth = 0
+                self.followEditButtonOutlet.setTitle(notConnectText, for: .normal)
+            }
+        }
+    }
+    
     private func sendAchivementRequest(){
         //TODO:
     }
     
-    private func setupUI(isCacheRefresh:Bool){
+    func setupUI(isCacheRefresh:Bool){
         DispatchQueue.main.async {
             self.sendUserLobbyRequest(userId:self.currentUser.userId)
             self.titleLabel.text = self.currentUser.username
+            self.setupFollowEditButtonOutlet()
+            UILabel.animate(withDuration: 0.1, animations: {
+                self.numberOfFollowesLabel.text = "\(self.currentUser.followers?.count ?? 0)"
+                self.numberOfFollowingLabel.text = "\(self.currentUser.following?.count ?? 0)"
+            })
+            
             DispatchQueue.main.async {
                 if isCacheRefresh {
                     self.profilePictureImage.sd_setImage(with: self.currentUser.getProfilePictureURL(), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .refreshCached, completed: nil)
@@ -106,7 +157,9 @@ class ProfileVC: BaseVC {
                 }
             }
             self.currentUser = user
-            self.setupUI(isCacheRefresh: false)
+            DispatchQueue.main.async {
+                self.setupUI(isCacheRefresh: false)
+            }
         }
     }
     
@@ -147,6 +200,41 @@ class ProfileVC: BaseVC {
                 
             }
             self.tabBarController?.present(alertVC, animated: false, completion: nil)
+        }
+    }
+    @IBAction func followesTapped(_ sender: UIButton) {
+        if currentUser.followers != nil {
+            if currentUser.followers!.count > 0 {
+                let vc = UserListVC.createFromStoryboard()
+                vc.list = currentUser.followers!
+                vc.listType = .followes
+                self.navigationController?.pushVCMainThread(vc)
+            }
+        }
+    }
+    @IBAction func followingTapped(_ sender: Any) {
+        if currentUser.following != nil {
+            if currentUser.following!.count > 0 {
+                let vc = UserListVC.createFromStoryboard()
+                vc.list = currentUser.following!
+                vc.listType = .following
+                self.navigationController?.pushVCMainThread(vc)
+            }
+        }
+    }
+    @IBAction func followEditTapped(_ sender: UIButton) {
+        if sender.titleLabel?.text == followingText {
+            
+            self.sendFollowingReuqest(isSendingFollowing: false)
+            
+        } else if sender.titleLabel?.text == notConnectText {
+            
+            self.sendFollowingReuqest(isSendingFollowing: true)
+            
+        } else if sender.titleLabel?.text == editText {
+            
+            
+            
         }
     }
 }
