@@ -29,7 +29,7 @@ class UserListVC: BaseVC {
         self.tableView.register(UINib.init(nibName: "UserCell", bundle: .main), forCellReuseIdentifier: "UserCell")
         switch listType! {
         case .followes:
-            self.titleLabel.text = "Takip Edenler"
+            self.titleLabel.text = "Takipçiler"
         case .following:
             self.titleLabel.text = "Takip Edilenler"
         }
@@ -51,6 +51,7 @@ extension UserListVC : UITableViewDelegate , UITableViewDataSource {
         let user = list[indexPath.row]
         let profileVC = ProfileVC.createFromStoryboard()
         profileVC.currentUserId = user.id
+        profileVC.isMyProfile = false
         self.navigationController?.pushVCMainThread(profileVC)
     }
     
