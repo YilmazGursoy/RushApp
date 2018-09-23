@@ -17,6 +17,7 @@ struct Feed: Codable {
     let sender: SimpleUser
     let numberOfLike: Int
     let numberOfShare: Int
+    let numberOfComment:Int?
 }
 
 //MARK: JSON

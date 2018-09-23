@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +31,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7MC-y3-pG6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="209"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="209.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h21-Fo-ouH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
@@ -67,15 +67,15 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5XY-oR-gQe">
                                                         <rect key="frame" x="0.0" y="0.0" width="62.5" height="40"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="likeIconOn" translatesAutoresizingMaskIntoConstraints="NO" id="Ea4-DR-15v">
+                                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="likeIconOn" translatesAutoresizingMaskIntoConstraints="NO" id="Ea4-DR-15v">
                                                                 <rect key="frame" x="0.0" y="11.5" width="17" height="17"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="17" id="7q4-CO-Ekj"/>
                                                                     <constraint firstAttribute="width" constant="17" id="eFq-9U-DN5"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgc-6f-bJZ">
-                                                                <rect key="frame" x="22" y="12.5" width="35.5" height="16.5"/>
+                                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgc-6f-bJZ">
+                                                                <rect key="frame" x="22" y="12" width="35.5" height="16.5"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -93,8 +93,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yJj-07-oet">
                                                         <rect key="frame" x="62.5" y="0.0" width="62.5" height="40"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="commentsIconOn" translatesAutoresizingMaskIntoConstraints="NO" id="owL-LN-H6t">
-                                                                <rect key="frame" x="0.0" y="12" width="17" height="17"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="likeIconOn" translatesAutoresizingMaskIntoConstraints="NO" id="owL-LN-H6t">
+                                                                <rect key="frame" x="0.0" y="11.5" width="17" height="17"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="17" id="6SR-HB-qyo"/>
                                                                     <constraint firstAttribute="height" constant="17" id="MyN-Vd-nQV"/>
@@ -132,7 +132,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Henry Warner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6N-Yq-AdZ">
-                                                <rect key="frame" x="50" y="12.5" width="115" height="16.5"/>
+                                                <rect key="frame" x="50" y="12" width="115" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -162,7 +162,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgK-1l-LFW">
-                                <rect key="frame" x="15" y="75" width="290" height="114"/>
+                                <rect key="frame" x="15" y="75" width="290" height="114.5"/>
                                 <string key="text">Cancun is back, better than ever! Over a hundred Mexico resorts have reopened and the state tourism minister predicts Cancun will draw as many visitors in 2006 as it did two years ago. And the travel deals are great! If you haven’t been, now may be the best time to take a vacation to Cancun. Cancun is back, better than ever! Over a hundred Mexico resorts have reopened and the state tourism minister predicts Cancun will draw as many visitors in 2006 as it did two years ago. And the travel deals are great! If you haven’t been, now may be the best time to take a vacation to Cancun.</string>
                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="12"/>
                                 <color key="textColor" red="0.1529411765" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -191,15 +191,13 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="descriptionLabel" destination="dgK-1l-LFW" id="CDj-6D-cLm"/>
-                <outlet property="numberOfCommentLabel" destination="SBc-du-oV6" id="j1c-t9-Szm"/>
-                <outlet property="numberOfLikeLabel" destination="fgc-6f-bJZ" id="2jC-OE-YOK"/>
+                <outlet property="numberOfLikeLabel" destination="SBc-du-oV6" id="AlU-LR-gia"/>
                 <outlet property="profileImageView" destination="eqB-KU-rx3" id="2dh-7X-aFD"/>
                 <outlet property="profileUsername" destination="e6N-Yq-AdZ" id="RiZ-yL-lVh"/>
             </connections>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="commentsIconOn" width="19" height="18"/>
         <image name="likeIconOn" width="18" height="16"/>
         <image name="profilePlaceholder" width="500" height="500"/>
     </resources>

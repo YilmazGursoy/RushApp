@@ -46,5 +46,32 @@ class SendCommentRequet : NSObject {
             }
         })
     }
+    
+    func sendFeedComment(baseId:String, createdAt:String, feedDate:String, message:String, commentSuccessBlock:@escaping (Comment)->Void, failed:@escaping ()->Void) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appSyncClient = appDelegate.appSyncClient
+        
+        appSyncClient?.perform(mutation: AddCommentMutation(baseId: baseId, createdAt: createdAt, feedDate: feedDate, message: message, senderUserId: Rush.shared.currentUser.userId, senderUserName: Rush.shared.currentUser.username), queue: DispatchQueue.main, optimisticUpdate: nil, conflictResolutionBlock: nil, resultHandler: { (result, error) in
+            
+            if let comments = result?.data?.addComment {
+                
+                do {
+                    
+                    if let theJSONData = try? JSONSerialization.data( withJSONObject: comments.jsonObject, options: []) {
+                        let object = try JSONDecoder().decode(Comment.self, from: theJSONData)
+                        commentSuccessBlock(object)
+                    } else {
+                        failed()
+                    }
+                } catch {
+                    failed()
+                }
+                
+            } else {
+                failed()
+            }
+        })
+    }
+    
 }
 

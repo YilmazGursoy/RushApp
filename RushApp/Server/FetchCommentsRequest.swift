@@ -18,7 +18,6 @@ class FetchCommentsRequets: NSObject {
             self.appSyncClient = appDelegate.appSyncClient
             
             self.appSyncClient?.fetch(query: GetCommentQuery(baseId: baseId), cachePolicy: .returnCacheDataAndFetch, queue: DispatchQueue.main, resultHandler: { (response, error) in
-                
                 if let comments = response?.data?.getCommentsInBaseId {
                     do {
                         

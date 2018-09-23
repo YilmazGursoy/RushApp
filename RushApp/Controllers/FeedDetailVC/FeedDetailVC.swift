@@ -8,14 +8,18 @@
 
 import UIKit
 import CRRefresh
+import AWSAppSync
 import IQKeyboardManagerSwift
 
 class FeedDetailVC: BaseVC {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navigationTitleLabel: UILabel!
+    var watcher:AWSAppSyncSubscriptionWatcher<AddCommentSubscriptionSubscription>?
     
     var feed:Feed!
+    var comments = [Comment]()
+    
     private var commentButtonType:HideCommentButtonType!
     
     lazy var refreshControl: UIRefreshControl = {
@@ -34,8 +38,14 @@ class FeedDetailVC: BaseVC {
         loadUI()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        watcher?.cancel()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.configurateFeedComments()
         
     }
     
@@ -95,7 +105,7 @@ extension FeedDetailVC : UITableViewDelegate, UITableViewDataSource {
             if commentButtonType == .hidden {
                 return 1
             } else {
-                return 10 + 1
+                return comments.count + 1
             }
         } else {
             return 1
@@ -126,10 +136,21 @@ extension FeedDetailVC : UITableViewDelegate, UITableViewDataSource {
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCommentCell") as! FeedCommentCell
+                cell.arrange(comment: self.comments[indexPath.row-1])
                 return cell
             }
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell") as! MessageCell
+            cell.arrange { (message) in
+                let commentRequest = SendCommentRequet()
+                commentRequest.sendFeedComment(baseId: self.feed.id, createdAt: "\(Date().timeIntervalSinceReferenceDate)", feedDate: "\(self.feed.date.timeIntervalSinceReferenceDate)", message: message, commentSuccessBlock: { (comment) in
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }, failed: {
+                    self.showErrorMessage(message: "Yorum gönderilirken bir sorun oluştu.")
+                })
+            }
             return cell
         }
     }

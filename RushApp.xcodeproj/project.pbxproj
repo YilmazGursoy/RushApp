@@ -107,6 +107,7 @@
 		47829593211F010700A89394 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829592211F010700A89394 /* IQKeyboardManagerSwift.framework */; };
 		47829597211F0D4800A89394 /* PMAlertController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829596211F0D4800A89394 /* PMAlertController.framework */; };
 		4785611E21581ED7005FEDA4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4785611D21581ED7005FEDA4 /* API.swift */; };
+		47856120215825A6005FEDA4 /* Comments+FeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4785611F215825A6005FEDA4 /* Comments+FeedDetailVC.swift */; };
 		47C0B081211EDD9900469883 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C0B080211EDD9900469883 /* GradientView.swift */; };
 		47C3C058213E4EAF00A74171 /* feed.json in Resources */ = {isa = PBXBuildFile; fileRef = 47C3C057213E4EAF00A74171 /* feed.json */; };
 		47C3C05A213E4ECC00A74171 /* lobbies.json in Resources */ = {isa = PBXBuildFile; fileRef = 47C3C059213E4ECC00A74171 /* lobbies.json */; };
@@ -316,6 +317,7 @@
 		47829592211F010700A89394 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47829596211F0D4800A89394 /* PMAlertController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PMAlertController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4785611D21581ED7005FEDA4 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		4785611F215825A6005FEDA4 /* Comments+FeedDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comments+FeedDetailVC.swift"; sourceTree = "<group>"; };
 		47C0B080211EDD9900469883 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		47C3C057213E4EAF00A74171 /* feed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = feed.json; sourceTree = "<group>"; };
 		47C3C059213E4ECC00A74171 /* lobbies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lobbies.json; sourceTree = "<group>"; };
@@ -465,6 +467,7 @@
 				47E2C68A2140740300AAD648 /* FeedDetailCell */,
 				47E2C6892140740200AAD648 /* FeedTitleCell */,
 				4706B7F5213FAEC300BAC8EA /* FeedDetailVC.swift */,
+				4785611F215825A6005FEDA4 /* Comments+FeedDetailVC.swift */,
 				4706B7F7213FBB7E00BAC8EA /* FeedDetailVC.storyboard */,
 			);
 			path = FeedDetailVC;
@@ -1510,6 +1513,7 @@
 				472DFF5C213BDD0700FC577A /* Extension+UIImage.swift in Sources */,
 				47C964EF2156D1B7006A4067 /* UserListVC.swift in Sources */,
 				472DFF66213C7A9D00FC577A /* ImageDownloaderManager.swift in Sources */,
+				47856120215825A6005FEDA4 /* Comments+FeedDetailVC.swift in Sources */,
 				D2075DDF209F0CC900AC79B6 /* Extension+UIViewController.swift in Sources */,
 				47E2C75A2145BC4D00AAD648 /* LobbyMainVC.swift in Sources */,
 				D258C076209904790090ABB5 /* SplashVC.swift in Sources */,

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H22-1E-nBi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H22-1E-nBi">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,10 +32,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8t7-pU-WdQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="H22-1E-nBi" id="Lx8-di-Omp"/>
-                                    <outlet property="delegate" destination="H22-1E-nBi" id="VpP-hu-wUP"/>
-                                </connections>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="50"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rsx-Lv-zPi">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -173,7 +170,7 @@
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dv-lw-vEO">
-                                                                                <rect key="frame" x="22" y="13.5" width="35.5" height="14"/>
+                                                                                <rect key="frame" x="22" y="12" width="35.5" height="16.5"/>
                                                                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="12"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -192,14 +189,14 @@
                                                                         <rect key="frame" x="62.5" y="0.0" width="62.5" height="40"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:ypy-gj-V1I:image" translatesAutoresizingMaskIntoConstraints="NO" id="ypy-gj-V1I">
-                                                                                <rect key="frame" x="0.0" y="12" width="17" height="17"/>
+                                                                                <rect key="frame" x="0.0" y="11.5" width="17" height="17"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="17" id="CuB-jm-TaP"/>
                                                                                     <constraint firstAttribute="width" constant="17" id="kPt-eG-EGb"/>
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRl-4Q-ukg">
-                                                                                <rect key="frame" x="22" y="14" width="35.5" height="14"/>
+                                                                                <rect key="frame" x="22" y="12" width="35.5" height="16.5"/>
                                                                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="12"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -230,7 +227,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Henry Warner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iY-as-nse">
-                                                                <rect key="frame" x="50" y="13.5" width="170" height="14"/>
+                                                                <rect key="frame" x="50" y="12" width="170" height="16.5"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -283,7 +280,7 @@
                                         <rect key="frame" x="0.0" y="271" width="375" height="46"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HKa-Ri-btY">
-                                                <rect key="frame" x="122" y="14.5" width="130" height="17"/>
+                                                <rect key="frame" x="122.5" y="14.5" width="130" height="17"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:G6X-i3-xrd:image" translatesAutoresizingMaskIntoConstraints="NO" id="G6X-i3-xrd">
                                                         <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
