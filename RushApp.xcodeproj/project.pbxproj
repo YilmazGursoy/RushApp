@@ -106,6 +106,7 @@
 		4782958D211F00B200A89394 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4782958C211F00B200A89394 /* FBSDKLoginKit.framework */; };
 		47829593211F010700A89394 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829592211F010700A89394 /* IQKeyboardManagerSwift.framework */; };
 		47829597211F0D4800A89394 /* PMAlertController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829596211F0D4800A89394 /* PMAlertController.framework */; };
+		4785611E21581ED7005FEDA4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4785611D21581ED7005FEDA4 /* API.swift */; };
 		47C0B081211EDD9900469883 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C0B080211EDD9900469883 /* GradientView.swift */; };
 		47C3C058213E4EAF00A74171 /* feed.json in Resources */ = {isa = PBXBuildFile; fileRef = 47C3C057213E4EAF00A74171 /* feed.json */; };
 		47C3C05A213E4ECC00A74171 /* lobbies.json in Resources */ = {isa = PBXBuildFile; fileRef = 47C3C059213E4ECC00A74171 /* lobbies.json */; };
@@ -123,7 +124,6 @@
 		47C964F52156D276006A4067 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C964F32156D276006A4067 /* UserCell.swift */; };
 		47C964F62156D276006A4067 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47C964F42156D276006A4067 /* UserCell.xib */; };
 		47C964F82156DFB6006A4067 /* SendFollowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C964F72156DFB6006A4067 /* SendFollowRequest.swift */; };
-		47DDF0FB2150743D00C8F6D1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DDF0FA2150743D00C8F6D1 /* API.swift */; };
 		47DE1AF3214823F5006FBFD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47DE1AF2214823F5006FBFD1 /* GoogleService-Info.plist */; };
 		47DE1AF62148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE1AF52148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift */; };
 		47DE1AF9214870B5006FBFD1 /* CreateLobbyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE1AF8214870B5006FBFD1 /* CreateLobbyVC.swift */; };
@@ -315,6 +315,7 @@
 		47829590211F00B200A89394 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SkyFloatingLabelTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47829592211F010700A89394 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47829596211F0D4800A89394 /* PMAlertController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PMAlertController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4785611D21581ED7005FEDA4 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		47C0B080211EDD9900469883 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		47C3C057213E4EAF00A74171 /* feed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = feed.json; sourceTree = "<group>"; };
 		47C3C059213E4ECC00A74171 /* lobbies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lobbies.json; sourceTree = "<group>"; };
@@ -332,7 +333,6 @@
 		47C964F32156D276006A4067 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		47C964F42156D276006A4067 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		47C964F72156DFB6006A4067 /* SendFollowRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFollowRequest.swift; sourceTree = "<group>"; };
-		47DDF0FA2150743D00C8F6D1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		47DE1AF2214823F5006FBFD1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		47DE1AF421482432006FBFD1 /* RushApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RushApp.entitlements; sourceTree = "<group>"; };
 		47DE1AF52148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFirebaseTokenRequest.swift; sourceTree = "<group>"; };
@@ -723,7 +723,7 @@
 		47DDF0F92150743600C8F6D1 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				47DDF0FA2150743D00C8F6D1 /* API.swift */,
+				4785611D21581ED7005FEDA4 /* API.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1503,6 +1503,7 @@
 				47E2C75F2145C1F100AAD648 /* LobbyListVC.swift in Sources */,
 				47E2C78C2146D63400AAD648 /* FilterVC.swift in Sources */,
 				D2D9108D20A070B40054F3AA /* BaseNavigationController.swift in Sources */,
+				4785611E21581ED7005FEDA4 /* API.swift in Sources */,
 				475F61162151A800003E30FC /* LobbyChatVC.swift in Sources */,
 				D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */,
 				472DFF58213B3F3E00FC577A /* ConstantUrls.swift in Sources */,
@@ -1539,7 +1540,6 @@
 				47E2C7892146D5B000AAD648 /* HalfModalPresentationController.swift in Sources */,
 				47C3C060213E604800A74171 /* Feed.swift in Sources */,
 				47E2C6FD2142832300AAD648 /* FriendSelectionVC.swift in Sources */,
-				47DDF0FB2150743D00C8F6D1 /* API.swift in Sources */,
 				D2075DB6209CE3C200AC79B6 /* BaseRequest.swift in Sources */,
 				47C3C0AB213F0D1900A74171 /* DefaultResponse.swift in Sources */,
 				47C0B081211EDD9900469883 /* GradientView.swift in Sources */,

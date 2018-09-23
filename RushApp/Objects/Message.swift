@@ -15,6 +15,7 @@ struct Comment: Codable {
     let message:String
     let senderUserId:String
     let senderUserName:String
+    let feedDate:Int?
 }
 
 struct BaseCommentResponse : Decodable {
