@@ -100,6 +100,7 @@ extension FeedVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detail = FeedDetailVC.createFromStoryboard()
         detail.feed = self.feedItems[indexPath.row]
+        detail.hidesBottomBarWhenPushed = true
         self.navigationController?.pushVCMainThread(detail)
     }
     

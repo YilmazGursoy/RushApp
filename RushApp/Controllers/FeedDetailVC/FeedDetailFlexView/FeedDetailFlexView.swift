@@ -17,11 +17,17 @@ class FeedDetailFlexView: GSKStretchyHeaderView {
     class func fromNib<T: UIView>() -> T {
         return Bundle.main.loadNibNamed(String(describing:  "FeedDetailFlexView"), owner: nil, options: nil)![0] as! T
     }
+
+    override func layoutSubviews() {
+        
+    }
     
+    override func draw(_ rect: CGRect) {
+        
+    }
 
     override func didChangeStretchFactor(_ stretchFactor: CGFloat) {
         visualEffectView.alpha = 1.0 - stretchFactor
-        print(stretchFactor)
     }
     
     func arrangeDetailFlexTitle(url:URL?) {

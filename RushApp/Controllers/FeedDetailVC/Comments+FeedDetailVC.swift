@@ -37,8 +37,14 @@ extension FeedDetailVC {
         self.subscribeComment(baseId: self.feed.id) { (comment) in
             self.comments.append(comment)
             DispatchQueue.main.async {
-                self.tableView.reloadData()
-                //self.tableView.scrollToRow(at: IndexPath.init(row: self.comments.count, section: 2), at: .bottom, animated: true)
+                if self.commentButtonType != .hidden {
+                    self.tableView.beginUpdates()
+                    self.tableView.insertRows(at: [IndexPath.init(row: self.comments.count, section: 3)], with: .none)
+                    self.tableView.endUpdates()
+                    self.tableView.scrollToRow(at: IndexPath.init(row: self.comments.count, section: 3), at: .none, animated: true)
+                } else {
+                    self.tableView.reloadSections(IndexSet.init(integer: 3), with: UITableViewRowAnimation.none)
+                }
             }
         }
     }

@@ -13,6 +13,13 @@ import IQKeyboardManagerSwift
 
 class FeedDetailVC: BaseVC {
 
+    @IBOutlet weak var messageTextField: UITextField!
+    @IBOutlet weak var sendButtonOutlet: UIButton!
+    @IBOutlet weak var sendButtonBackView: GradientView!
+    
+    @IBOutlet weak var titleImageView: UIView!
+    @IBOutlet weak var flexibleHeaderViewHeightConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navigationTitleLabel: UILabel!
     var watcher:AWSAppSyncSubscriptionWatcher<AddCommentSubscriptionSubscription>?
@@ -20,17 +27,7 @@ class FeedDetailVC: BaseVC {
     var feed:Feed!
     var comments = [Comment]()
     
-    private var commentButtonType:HideCommentButtonType!
-    
-    lazy var refreshControl: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action:
-            #selector(handleRefresh(_:)),
-                                 for: UIControlEvents.valueChanged)
-        refreshControl.tintColor = UIColor.red
-        
-        return refreshControl
-    }()
+    var commentButtonType:HideCommentButtonType!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,12 +38,14 @@ class FeedDetailVC: BaseVC {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         watcher?.cancel()
+        sendButtonPassive()
+        self.messageTextField.text = ""
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.configurateFeedComments()
-        
+        sendButtonPassive()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -61,7 +60,7 @@ class FeedDetailVC: BaseVC {
         super.didReceiveMemoryWarning()
         
     }
-
+    
     
     private func setupUI(){
         self.tableView.register(UINib.init(nibName: "FeedTitleCell", bundle: .main), forCellReuseIdentifier: "FeedTitleCell")
@@ -69,39 +68,41 @@ class FeedDetailVC: BaseVC {
         self.tableView.register(UINib.init(nibName: "FeedCommentCell", bundle: .main), forCellReuseIdentifier: "FeedCommentCell")
         self.tableView.register(UINib.init(nibName: "MessageCell", bundle: .main), forCellReuseIdentifier: "MessageCell")
         self.tableView.register(UINib.init(nibName: "FeedCommentTitleViewCell", bundle: .main), forCellReuseIdentifier: "FeedCommentTitleViewCell")
+        self.tableView.register(UINib.init(nibName: "FeedDetailImageCell", bundle: .main), forCellReuseIdentifier: "FeedDetailImageCell")
+        IQKeyboardManager.shared.enableAutoToolbar = false
         commentButtonType = .hidden
         self.tableView.estimatedRowHeight = 400
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        
-        let flexView = FeedDetailFlexView.fromNib() as! FeedDetailFlexView
-        flexView.arrangeDetailFlexTitle(url: feed.picture)
-        flexView.minimumContentHeight = 64
-        flexView.maximumContentHeight = 200
-        flexView.contentExpands = false
-        self.tableView.addSubview(flexView)
-        
-        self.tableView.addSubview(self.refreshControl)
     }
     
     private func loadUI(){
-        self.navigationTitleLabel.text = ""
+        
     }
     
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         self.tableView.reloadData()
         DispatchQueue.main.asyncAfter(deadline: .now()+2) {
-            self.refreshControl.endRefreshing()
         }
     }
   
+    @IBAction func sendCommentButtonTapped(_ sender: UIButton) {
+        let commentRequest = SendCommentRequet()
+        commentRequest.sendFeedComment(baseId: self.feed.id, createdAt: "\(Date().timeIntervalSinceReferenceDate)", feedDate: "\(self.feed.date.timeIntervalSinceReferenceDate)", message: self.messageTextField.text!, commentSuccessBlock: { (comment) in
+            RushLogger.functionParametersLog(message: comment)
+            self.messageTextField.text = ""
+            self.sendButtonPassive()
+        }, failed: {
+            self.showErrorMessage(message: "Yorum gönderilirken bir sorun oluştu.")
+        })
+    }
 }
 
 extension FeedDetailVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 || section == 1 {
+        if section == 0 || section == 1 || section == 2 {
             return 1
-        } else if section == 2 {
+        } else if section == 3 {
             if commentButtonType == .hidden {
                 return 1
             } else {
@@ -118,13 +119,17 @@ extension FeedDetailVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FeedDetailImageCell") as! FeedDetailImageCell
+            cell.arrangeDetailFlexTitle(url: self.feed.picture)
+            return cell
+        }else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FeedTitleCell") as! FeedTitleCell
             return cell
-        } else if indexPath.section == 1 {
+        } else if indexPath.section == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FeedDetailCell") as! FeedDetailCell
             cell.arrangeCell(feed: feed)
             return cell
-        } else if indexPath.section == 2 {
+        } else {
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCommentTitleViewCell") as! FeedCommentTitleViewCell
                 cell.arrangeCell(currentType: self.commentButtonType) { (newType) in
@@ -139,19 +144,71 @@ extension FeedDetailVC : UITableViewDelegate, UITableViewDataSource {
                 cell.arrange(comment: self.comments[indexPath.row-1])
                 return cell
             }
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell") as! MessageCell
-            cell.arrange { (message) in
-                let commentRequest = SendCommentRequet()
-                commentRequest.sendFeedComment(baseId: self.feed.id, createdAt: "\(Date().timeIntervalSinceReferenceDate)", feedDate: "\(self.feed.date.timeIntervalSinceReferenceDate)", message: message, commentSuccessBlock: { (comment) in
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                }, failed: {
-                    self.showErrorMessage(message: "Yorum gönderilirken bir sorun oluştu.")
-                })
+        }
+    }
+}
+
+extension FeedDetailVC : UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let nsString = textField.text as NSString?
+        
+        let newString = nsString?.replacingCharacters(in: range, with: string)
+        
+        if newString != nil {
+            if newString!.count > 0 {
+                self.sendButtonActive()
+            } else {
+                self.sendButtonPassive()
             }
-            return cell
+        } else {
+            self.sendButtonPassive()
+        }
+        
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+}
+
+//MARK: Helpers
+extension FeedDetailVC {
+    private func sendButtonActive(){
+        GradientView.animate(withDuration: 10) {
+            self.sendButtonOutlet.isEnabled = true
+            self.sendButtonBackView.topColor = #colorLiteral(red: 0.4666666667, green: 0.3529411765, blue: 1, alpha: 1)
+            self.sendButtonBackView.bottomColor = #colorLiteral(red: 0.8117647059, green: 0.5529411765, blue: 1, alpha: 1)
+        }
+    }
+    
+    private func sendButtonPassive(){
+        GradientView.animate(withDuration: 10) {
+            self.sendButtonOutlet.isEnabled = false
+            self.sendButtonBackView.topColor = #colorLiteral(red: 0.6431372549, green: 0.6431372549, blue: 0.6431372549, alpha: 0.5)
+            self.sendButtonBackView.bottomColor = #colorLiteral(red: 0.337254902, green: 0.337254902, blue: 0.337254902, alpha: 0.5)
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset)
+        let constatntHeight:CGFloat = 200
+        if (constatntHeight - scrollView.contentOffset.y) > 200 {
+            self.titleImageView.alpha = 0.0
+            self.navigationTitleLabel.alpha = 0.0
+            flexibleHeaderViewHeightConstraint.constant = 200
+        } else if (constatntHeight - scrollView.contentOffset.y) < 60 {
+            self.titleImageView.alpha = 1.0
+            self.navigationTitleLabel.alpha = 1.0
+            flexibleHeaderViewHeightConstraint.constant = 60
+        } else {
+            self.titleImageView.alpha = 1 - ((140 - scrollView.contentOffset.y) / 140)
+            self.navigationTitleLabel.alpha = 1 - ((140 - scrollView.contentOffset.y) / 140)
+            flexibleHeaderViewHeightConstraint.constant = (constatntHeight - scrollView.contentOffset.y)
         }
     }
 }

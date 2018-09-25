@@ -171,6 +171,8 @@
 		47E2C79C2147014F00AAD648 /* FilterCellType2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C79A2147014F00AAD648 /* FilterCellType2.xib */; };
 		47E2C79F21471C9A00AAD648 /* FilterDetailListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2C79E21471C9A00AAD648 /* FilterDetailListVC.swift */; };
 		47E2C7A121471CA200AAD648 /* FilterDetailListVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C7A021471CA100AAD648 /* FilterDetailListVC.storyboard */; };
+		47E6EBD0215AE0B5009845A0 /* FeedDetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E6EBCE215AE0B5009845A0 /* FeedDetailImageCell.swift */; };
+		47E6EBD1215AE0B5009845A0 /* FeedDetailImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E6EBCF215AE0B5009845A0 /* FeedDetailImageCell.xib */; };
 		D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA2209B858600AC79B6 /* LoginType.swift */; };
 		D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA4209B85D000AC79B6 /* LambdaConstants.swift */; };
 		D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA6209B85D800AC79B6 /* AppConstants.swift */; };
@@ -382,6 +384,8 @@
 		47E2C79A2147014F00AAD648 /* FilterCellType2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCellType2.xib; sourceTree = "<group>"; };
 		47E2C79E21471C9A00AAD648 /* FilterDetailListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDetailListVC.swift; sourceTree = "<group>"; };
 		47E2C7A021471CA100AAD648 /* FilterDetailListVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterDetailListVC.storyboard; sourceTree = "<group>"; };
+		47E6EBCE215AE0B5009845A0 /* FeedDetailImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailImageCell.swift; sourceTree = "<group>"; };
+		47E6EBCF215AE0B5009845A0 /* FeedDetailImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedDetailImageCell.xib; sourceTree = "<group>"; };
 		70DD2601FD90336EF49D93DE /* Pods-RushApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C6990D855C60E2F2734172F0 /* Pods-RushApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.release.xcconfig"; sourceTree = "<group>"; };
 		D2075DA2209B858600AC79B6 /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
@@ -823,6 +827,8 @@
 			children = (
 				47E2C74F2145851300AAD648 /* FeedDetailFlexView.swift */,
 				47E2C7512145851E00AAD648 /* FeedDetailFlexView.xib */,
+				47E6EBCE215AE0B5009845A0 /* FeedDetailImageCell.swift */,
+				47E6EBCF215AE0B5009845A0 /* FeedDetailImageCell.xib */,
 			);
 			path = FeedDetailFlexView;
 			sourceTree = "<group>";
@@ -1333,6 +1339,7 @@
 				472DFF112139F4DB00FC577A /* ProfileVC.storyboard in Resources */,
 				D258C07B209906250090ABB5 /* OnboardingVC.storyboard in Resources */,
 				472DFEE52135D3C900FC577A /* OpenSans-Regular.ttf in Resources */,
+				47E6EBD1215AE0B5009845A0 /* FeedDetailImageCell.xib in Resources */,
 				47DE1B0021487A37006FBFD1 /* RushAlertController.storyboard in Resources */,
 				47E2C7612145C1F600AAD648 /* LobbyListVC.storyboard in Resources */,
 				47E2C7982147013A00AAD648 /* FilterCellType1.xib in Resources */,
@@ -1513,6 +1520,7 @@
 				472DFF5C213BDD0700FC577A /* Extension+UIImage.swift in Sources */,
 				47C964EF2156D1B7006A4067 /* UserListVC.swift in Sources */,
 				472DFF66213C7A9D00FC577A /* ImageDownloaderManager.swift in Sources */,
+				47E6EBD0215AE0B5009845A0 /* FeedDetailImageCell.swift in Sources */,
 				47856120215825A6005FEDA4 /* Comments+FeedDetailVC.swift in Sources */,
 				D2075DDF209F0CC900AC79B6 /* Extension+UIViewController.swift in Sources */,
 				47E2C75A2145BC4D00AAD648 /* LobbyMainVC.swift in Sources */,

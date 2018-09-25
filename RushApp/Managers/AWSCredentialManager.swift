@@ -77,6 +77,8 @@ class AWSCredentialManager {
         AWSServiceManager.default().defaultServiceConfiguration = defaultServiceConfiguration
     }
     
+
+    
     func loadUserCredentials(){
         if let _ = AccessToken.current?.authenticationToken {
             configureFederatedIdentitiesForFacebook()
@@ -85,6 +87,7 @@ class AWSCredentialManager {
             configureFederatedIdentitiesForUserPool()
         }
     }
+    
     
     func logout(completion: @escaping (Bool)->Void){
         if let _ = AccessToken.current?.authenticationToken {

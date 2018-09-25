@@ -27,7 +27,7 @@ struct CognitoConstants {
 
 
 // The API Key for authorization
-let StaticAPIKey = "da2-g4xk3qj2qnfojh6jsy7a5wghoa"
+let StaticAPIKey = "da2-cen73xj2k5fppcvy5jqnxgdwnq"
 
 // The Endpoint URL for AppSync
 let AppSyncEndpointURL: URL = URL(string: "https://dm7j46xglfbchonvfbm6rdd45q.appsync-api.eu-central-1.amazonaws.com/graphql")!

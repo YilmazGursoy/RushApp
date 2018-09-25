@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,28 +16,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feedSample" translatesAutoresizingMaskIntoConstraints="NO" id="dvl-Sj-ULw">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feedSample" translatesAutoresizingMaskIntoConstraints="NO" id="dvl-Sj-ULw">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLQ-98-4zd" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                    <subviews>
-                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQC-fT-rog">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3i6-hk-etx">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </view>
-                            <blurEffect style="dark"/>
-                        </visualEffectView>
-                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="YQC-fT-rog" firstAttribute="leading" secondItem="PLQ-98-4zd" secondAttribute="leading" id="hSa-E1-tUz"/>
-                        <constraint firstAttribute="bottom" secondItem="YQC-fT-rog" secondAttribute="bottom" id="mIQ-mt-hVo"/>
-                        <constraint firstItem="YQC-fT-rog" firstAttribute="top" secondItem="PLQ-98-4zd" secondAttribute="top" id="tVy-jp-o9q"/>
-                        <constraint firstAttribute="trailing" secondItem="YQC-fT-rog" secondAttribute="trailing" id="yWr-2m-Yyy"/>
-                    </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="topColor">
                             <color key="value" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,7 +48,6 @@
             <viewLayoutGuide key="safeArea" id="x5x-Fa-Vxx"/>
             <connections>
                 <outlet property="feedImageView" destination="dvl-Sj-ULw" id="OZb-Al-VN1"/>
-                <outlet property="visualEffectView" destination="YQC-fT-rog" id="dTk-yn-l9a"/>
             </connections>
             <point key="canvasLocation" x="636.5" y="-421"/>
         </view>

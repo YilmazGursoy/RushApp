@@ -37,6 +37,7 @@ class BaseVC: UIViewController {
     }
     
     @IBAction func pop(){
+        self.hidesBottomBarWhenPushed = false
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -49,6 +50,9 @@ class BaseVC: UIViewController {
         let tabbarController = TabBarController()
         window?.rootViewController = tabbarController
         window?.makeKeyAndVisible()
+    }
+    @IBAction func closeKeyboard(_ sender: Any) {
+        self.view.endEditing(true)
     }
 }
 
