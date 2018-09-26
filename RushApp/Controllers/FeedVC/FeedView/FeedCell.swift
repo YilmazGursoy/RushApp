@@ -11,17 +11,20 @@ import SDWebImage
 
 class FeedCell: UITableViewCell {
     
-    @IBOutlet weak var pictureBackView: UIView!
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var feedDescriptionLabel: UILabel!
-    @IBOutlet weak var feedImageView: UIImageView!
-    @IBOutlet weak var numberOfLikeLabel: UILabel!
-    @IBOutlet weak var numberOfShareLabel: UILabel!
+    @IBOutlet private weak var likeIconImageView: UIImageView!
+    @IBOutlet private weak var pictureBackView: UIView!
+    @IBOutlet private weak var profileImageView: UIImageView!
+    @IBOutlet private weak var usernameLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var feedDescriptionLabel: UILabel!
+    @IBOutlet private weak var feedImageView: UIImageView!
+    @IBOutlet private weak var numberOfLikeLabel: UILabel!
+    @IBOutlet private weak var numberOfShareLabel: UILabel!
     
-    var didSelectCompletion:((UIView,Int)->Void)?
-    var indexPath:IndexPath!
+    private var didSelectCompletion:((UIView,Int)->Void)?
+    private var sendLike:((Int,Bool)->Void)?
+    private var currentFeed:Feed!
+    private var indexPath:IndexPath!
     
     var isTouched: Bool = false {
         didSet {
@@ -38,7 +41,9 @@ class FeedCell: UITableViewCell {
         // Initialization code
     }
     
-    func arrangeCell(feed:Feed, indexPath:IndexPath,selectCompletion:@escaping (UIView,Int)->Void) {
+    func arrangeCell(feed:Feed, indexPath:IndexPath,selectCompletion:@escaping (UIView,Int)->Void, sendLike:@escaping (Int,Bool)->Void) {
+        self.sendLike = sendLike
+        self.currentFeed = feed
         self.usernameLabel.text = feed.sender.username
         self.feedDescriptionLabel.text = feed.text
         self.numberOfLikeLabel.text = "\(feed.numberOfLike)"
@@ -49,11 +54,27 @@ class FeedCell: UITableViewCell {
         } else{
             self.pictureBackView.isHidden = true
         }
+        var isLike = false
+        Rush.shared.currentUser.likeFeeds?.forEach({ (stepFeed) in
+            if stepFeed.feedId == feed.id {
+                isLike = true
+                self.likeIconImageView.image = #imageLiteral(resourceName: "likeIconOn")
+            }
+        })
+        
+        if isLike == false {
+            self.likeIconImageView.image = #imageLiteral(resourceName: "likeIconOff")
+        }
         
         self.dateLabel.text = Date().offset(from: Date.init(timeIntervalSince1970: feed.date.timeIntervalSinceReferenceDate))
         self.profileImageView.sd_setImage(with: User.getProfilePictureFrom(userId: feed.sender.id), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), completed: nil)
         self.didSelectCompletion = selectCompletion
         self.indexPath = indexPath
+    }
+    @IBAction func likeTapped(_ sender: UIButton) {
+        sendLike?(self.indexPath.row, true)
+        self.likeIconImageView.image = #imageLiteral(resourceName: "likeIconOn")
+        self.numberOfLikeLabel.text = "\(self.currentFeed.numberOfLike+1)"
     }
 }
 

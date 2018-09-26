@@ -16,6 +16,7 @@ struct User : Decodable {
     var profileUrls:[SocialURL]?
     var followers:[SimpleUser]?
     var following:[SimpleUser]?
+    var likeFeeds:[SimpleFeed]?
     
     enum CodingKeys: String, CodingKey {
         case userId = "userId"
@@ -25,6 +26,7 @@ struct User : Decodable {
         case profileUrls = "profileUrls"
         case followers  = "followers"
         case following = "following"
+        case likeFeeds = "likeFeeds"
     }
 }
 

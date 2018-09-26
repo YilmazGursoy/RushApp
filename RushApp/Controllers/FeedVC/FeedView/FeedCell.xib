@@ -170,15 +170,25 @@
                                                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="likeIconOn" translatesAutoresizingMaskIntoConstraints="NO" id="XcU-Wz-1Pi">
                                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                                     </imageView>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNu-dw-iPW">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                                        <connections>
+                                                                            <action selector="likeTapped:" destination="Sqt-qa-R8R" eventType="touchUpInside" id="Tyd-6b-iNo"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="3uQ-Ea-CjW"/>
+                                                                    <constraint firstItem="cNu-dw-iPW" firstAttribute="leading" secondItem="6sf-tj-Gqa" secondAttribute="leading" id="8Fr-vA-1xa"/>
+                                                                    <constraint firstItem="cNu-dw-iPW" firstAttribute="top" secondItem="6sf-tj-Gqa" secondAttribute="top" id="CtC-bn-RZq"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="cNu-dw-iPW" secondAttribute="bottom" id="T9s-hm-1Hn"/>
                                                                     <constraint firstAttribute="trailing" secondItem="XcU-Wz-1Pi" secondAttribute="trailing" id="c0a-yb-JaZ"/>
                                                                     <constraint firstAttribute="bottom" secondItem="XcU-Wz-1Pi" secondAttribute="bottom" id="iIc-DS-0xk"/>
                                                                     <constraint firstAttribute="width" constant="20" id="pZI-1n-ASL"/>
                                                                     <constraint firstItem="XcU-Wz-1Pi" firstAttribute="top" secondItem="6sf-tj-Gqa" secondAttribute="top" id="s1Q-lM-cEi"/>
                                                                     <constraint firstItem="XcU-Wz-1Pi" firstAttribute="leading" secondItem="6sf-tj-Gqa" secondAttribute="leading" id="ttB-kW-x5O"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="cNu-dw-iPW" secondAttribute="trailing" id="zOa-J2-iCH"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1658" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T31-iz-Wzs">
@@ -298,6 +308,7 @@
                 <outlet property="dateLabel" destination="NhS-Aa-d2j" id="w1y-jR-ie9"/>
                 <outlet property="feedDescriptionLabel" destination="cnY-AI-wu2" id="Afd-7Z-hT4"/>
                 <outlet property="feedImageView" destination="aNS-ku-vxG" id="vGY-Rx-1IY"/>
+                <outlet property="likeIconImageView" destination="XcU-Wz-1Pi" id="Nk0-zN-An1"/>
                 <outlet property="numberOfLikeLabel" destination="T31-iz-Wzs" id="FUg-0B-sDB"/>
                 <outlet property="numberOfShareLabel" destination="4W9-NO-DjO" id="Gma-SF-RhL"/>
                 <outlet property="pictureBackView" destination="TgH-FE-riR" id="3OW-ta-bo9"/>

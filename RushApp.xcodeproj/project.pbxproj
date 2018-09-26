@@ -173,6 +173,8 @@
 		47E2C7A121471CA200AAD648 /* FilterDetailListVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47E2C7A021471CA100AAD648 /* FilterDetailListVC.storyboard */; };
 		47E6EBD0215AE0B5009845A0 /* FeedDetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E6EBCE215AE0B5009845A0 /* FeedDetailImageCell.swift */; };
 		47E6EBD1215AE0B5009845A0 /* FeedDetailImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E6EBCF215AE0B5009845A0 /* FeedDetailImageCell.xib */; };
+		47E6EBD3215AFFA3009845A0 /* SimpleFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E6EBD2215AFFA3009845A0 /* SimpleFeed.swift */; };
+		47E6EBD5215AFFF3009845A0 /* SendLikeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E6EBD4215AFFF3009845A0 /* SendLikeRequest.swift */; };
 		D2075DA3209B858600AC79B6 /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA2209B858600AC79B6 /* LoginType.swift */; };
 		D2075DA5209B85D000AC79B6 /* LambdaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA4209B85D000AC79B6 /* LambdaConstants.swift */; };
 		D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2075DA6209B85D800AC79B6 /* AppConstants.swift */; };
@@ -386,6 +388,8 @@
 		47E2C7A021471CA100AAD648 /* FilterDetailListVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterDetailListVC.storyboard; sourceTree = "<group>"; };
 		47E6EBCE215AE0B5009845A0 /* FeedDetailImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailImageCell.swift; sourceTree = "<group>"; };
 		47E6EBCF215AE0B5009845A0 /* FeedDetailImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedDetailImageCell.xib; sourceTree = "<group>"; };
+		47E6EBD2215AFFA3009845A0 /* SimpleFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleFeed.swift; sourceTree = "<group>"; };
+		47E6EBD4215AFFF3009845A0 /* SendLikeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendLikeRequest.swift; sourceTree = "<group>"; };
 		70DD2601FD90336EF49D93DE /* Pods-RushApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C6990D855C60E2F2734172F0 /* Pods-RushApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RushApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RushApp/Pods-RushApp.release.xcconfig"; sourceTree = "<group>"; };
 		D2075DA2209B858600AC79B6 /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
@@ -595,6 +599,7 @@
 				47C3C0AA213F0D1900A74171 /* DefaultResponse.swift */,
 				477CB997214D5152003CDEEE /* SocialURL.swift */,
 				477CB9A6214EA285003CDEEE /* FormattedDate.swift */,
+				47E6EBD2215AFFA3009845A0 /* SimpleFeed.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -1126,6 +1131,7 @@
 				475F612D2153085E003E30FC /* SubscribeComments.swift */,
 				47C964B8215442E1006A4067 /* ChangeLobbyChatStatusRequest.swift */,
 				47C964F72156DFB6006A4067 /* SendFollowRequest.swift */,
+				47E6EBD4215AFFF3009845A0 /* SendLikeRequest.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -1542,6 +1548,7 @@
 				D2075DCE209E3CA400AC79B6 /* RegisterRequest.swift in Sources */,
 				47C3C05E213E5FFB00A74171 /* FeedsRequest.swift in Sources */,
 				472DFF18213AE54500FC577A /* Extension+UIView.swift in Sources */,
+				47E6EBD3215AFFA3009845A0 /* SimpleFeed.swift in Sources */,
 				477CB99A214D54A5003CDEEE /* AddRankOrUrlRequest.swift in Sources */,
 				472DFECF2135D27B00FC577A /* GameSelectionVC.swift in Sources */,
 				D2D91088209F7F3D0054F3AA /* FacebookProvider.swift in Sources */,
@@ -1585,6 +1592,7 @@
 				D2075DD6209E41CA00AC79B6 /* ErrorConstants.swift in Sources */,
 				472DFF052138445500FC577A /* MapVC.swift in Sources */,
 				477CB9A3214E815C003CDEEE /* Extension+MapVC.swift in Sources */,
+				47E6EBD5215AFFF3009845A0 /* SendLikeRequest.swift in Sources */,
 				47E2C6922140747300AAD648 /* FeedDetailCell.swift in Sources */,
 				477CB9A5214E98AE003CDEEE /* Extension+Date.swift in Sources */,
 				47C964F82156DFB6006A4067 /* SendFollowRequest.swift in Sources */,

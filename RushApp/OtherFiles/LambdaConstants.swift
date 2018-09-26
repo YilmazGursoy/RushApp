@@ -32,5 +32,6 @@ struct LambdaConstants {
     static let JoinLobbyRequest         =   "RushApp-JoinLobby"
     
     static let ChangeLobbyChatStatus    =   "RushApp-ChangeLobbyChatStatusRequest"
+    static let LikeFeedRequest          =   "RushApp-LikeFeed"
     
 }
