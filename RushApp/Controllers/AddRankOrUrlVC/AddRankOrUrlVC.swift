@@ -10,6 +10,7 @@ import UIKit
 import SVProgressHUD
 
 class AddRankOrUrlVC: BaseVC {
+    @IBOutlet weak var saveButtonOutlet: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var platformTextField: UITextField!
     @IBOutlet weak var urlTextField: UITextField!
@@ -66,6 +67,41 @@ class AddRankOrUrlVC: BaseVC {
         }
         return false
     }
+    
+    private func saveButtonPassive(){
+        UIButton.animate(withDuration: 0.2) {
+            self.saveButtonOutlet.isUserInteractionEnabled = false
+            self.saveButtonOutlet.setTitleColor(#colorLiteral(red: 0.8470588235, green: 0.8470588235, blue: 0.8470588235, alpha: 1), for: .normal)
+        }
+    }
+    
+    private func saveButtonActive(){
+        UIButton.animate(withDuration: 0.2) {
+            self.saveButtonOutlet.isUserInteractionEnabled = true
+            self.saveButtonOutlet.setTitleColor(#colorLiteral(red: 0.4666666667, green: 0.3529411765, blue: 1, alpha: 1), for: .normal)
+        }
+    }
+    
 }
 
-
+extension AddRankOrUrlVC : UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let nsString = textField.text as NSString?
+        
+        let newString = nsString?.replacingCharacters(in: range, with: string)
+        
+        if newString != nil {
+            if self.verifyUrl(urlString: newString!) {
+                self.saveButtonActive()
+            } else {
+                self.saveButtonPassive()
+            }
+        } else {
+            self.saveButtonPassive()
+        }
+        return true
+    }
+    
+}

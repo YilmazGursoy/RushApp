@@ -55,7 +55,7 @@ class LobbyDetailTitleCell: UITableViewCell {
         self.lobbyCreatingDate.text = dateFormatter.string(from: lobby.date)
         self.senderUsername.text = lobby.sender.username
         self.lobbyCreatingLocation.text = lobby.address
-        self.lobbyNumberOfNeededGamersLabel.text = "Gamers (max \(lobby.numberOfNeededUser))"
+        self.lobbyNumberOfNeededGamersLabel.text = "Oyuncular (max \(lobby.numberOfNeededUser))"
         self.subsImagesCreate()
     }
     

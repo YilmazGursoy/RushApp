@@ -195,20 +195,26 @@ extension FeedDetailVC {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset)
-        let constatntHeight:CGFloat = 200
-        if (constatntHeight - scrollView.contentOffset.y) > 200 {
-            self.titleImageView.alpha = 0.0
-            self.navigationTitleLabel.alpha = 0.0
-            flexibleHeaderViewHeightConstraint.constant = 200
-        } else if (constatntHeight - scrollView.contentOffset.y) < 60 {
-            self.titleImageView.alpha = 1.0
-            self.navigationTitleLabel.alpha = 1.0
-            flexibleHeaderViewHeightConstraint.constant = 60
-        } else {
-            self.titleImageView.alpha = 1 - ((140 - scrollView.contentOffset.y) / 140)
-            self.navigationTitleLabel.alpha = 1 - ((140 - scrollView.contentOffset.y) / 140)
-            flexibleHeaderViewHeightConstraint.constant = (constatntHeight - scrollView.contentOffset.y)
+        
+        if #available(iOS 11.0, *) {
+            let window = UIApplication.shared.keyWindow
+            let topPadding = window?.safeAreaInsets.top
+            
+            let constatntHeight:CGFloat = 200
+            if (constatntHeight - scrollView.contentOffset.y) > 200 {
+                self.titleImageView.alpha = 0.0
+                self.navigationTitleLabel.alpha = 0.0
+                flexibleHeaderViewHeightConstraint.constant = 200
+            } else if (constatntHeight - scrollView.contentOffset.y) < 44 + topPadding! {
+                self.titleImageView.alpha = 1.0
+                self.navigationTitleLabel.alpha = 1.0
+                flexibleHeaderViewHeightConstraint.constant = 44 + topPadding!
+            } else {
+                self.titleImageView.alpha = 1 - (((200-(44 + topPadding!)) - scrollView.contentOffset.y) / (200-(44 + topPadding!)))
+                self.navigationTitleLabel.alpha = 1 - (((200-(44 + topPadding!)) - scrollView.contentOffset.y) / (200-(44 + topPadding!)))
+                flexibleHeaderViewHeightConstraint.constant = (constatntHeight - scrollView.contentOffset.y)
+            }
         }
+        
     }
 }
