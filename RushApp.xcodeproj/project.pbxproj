@@ -108,6 +108,7 @@
 		47829597211F0D4800A89394 /* PMAlertController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829596211F0D4800A89394 /* PMAlertController.framework */; };
 		4785611E21581ED7005FEDA4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4785611D21581ED7005FEDA4 /* API.swift */; };
 		47856120215825A6005FEDA4 /* Comments+FeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4785611F215825A6005FEDA4 /* Comments+FeedDetailVC.swift */; };
+		47A4F5A0215C3CE600CA8E18 /* SendDislikeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A4F59F215C3CE600CA8E18 /* SendDislikeRequest.swift */; };
 		47C0B081211EDD9900469883 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C0B080211EDD9900469883 /* GradientView.swift */; };
 		47C3C058213E4EAF00A74171 /* feed.json in Resources */ = {isa = PBXBuildFile; fileRef = 47C3C057213E4EAF00A74171 /* feed.json */; };
 		47C3C05A213E4ECC00A74171 /* lobbies.json in Resources */ = {isa = PBXBuildFile; fileRef = 47C3C059213E4ECC00A74171 /* lobbies.json */; };
@@ -322,6 +323,7 @@
 		47829596211F0D4800A89394 /* PMAlertController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PMAlertController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4785611D21581ED7005FEDA4 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		4785611F215825A6005FEDA4 /* Comments+FeedDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comments+FeedDetailVC.swift"; sourceTree = "<group>"; };
+		47A4F59F215C3CE600CA8E18 /* SendDislikeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDislikeRequest.swift; sourceTree = "<group>"; };
 		47C0B080211EDD9900469883 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		47C3C057213E4EAF00A74171 /* feed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = feed.json; sourceTree = "<group>"; };
 		47C3C059213E4ECC00A74171 /* lobbies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lobbies.json; sourceTree = "<group>"; };
@@ -1132,6 +1134,7 @@
 				47C964B8215442E1006A4067 /* ChangeLobbyChatStatusRequest.swift */,
 				47C964F72156DFB6006A4067 /* SendFollowRequest.swift */,
 				47E6EBD4215AFFF3009845A0 /* SendLikeRequest.swift */,
+				47A4F59F215C3CE600CA8E18 /* SendDislikeRequest.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -1554,6 +1557,7 @@
 				D2D91088209F7F3D0054F3AA /* FacebookProvider.swift in Sources */,
 				472B81442149296900C005B2 /* ExtensionLocation+CreateLobby.swift in Sources */,
 				471A6516213023C50065962D /* TabBarController.swift in Sources */,
+				47A4F5A0215C3CE600CA8E18 /* SendDislikeRequest.swift in Sources */,
 				D2075DE2209F0D1300AC79B6 /* Extension+NavigationController.swift in Sources */,
 				D2075DDD209F091C00AC79B6 /* RushLogger.swift in Sources */,
 				47E2C7892146D5B000AAD648 /* HalfModalPresentationController.swift in Sources */,

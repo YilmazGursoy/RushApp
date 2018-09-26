@@ -72,9 +72,15 @@ class FeedCell: UITableViewCell {
         self.indexPath = indexPath
     }
     @IBAction func likeTapped(_ sender: UIButton) {
-        sendLike?(self.indexPath.row, true)
-        self.likeIconImageView.image = #imageLiteral(resourceName: "likeIconOn")
-        self.numberOfLikeLabel.text = "\(self.currentFeed.numberOfLike+1)"
+        if self.likeIconImageView.image == #imageLiteral(resourceName: "likeIconOn") {
+            self.likeIconImageView.image = #imageLiteral(resourceName: "likeIconOff")
+            sendLike?(self.indexPath.row, false)
+            self.numberOfLikeLabel.text = "\(self.currentFeed.numberOfLike-1)"
+        } else {
+            self.likeIconImageView.image = #imageLiteral(resourceName: "likeIconOn")
+            sendLike?(self.indexPath.row, true)
+            self.numberOfLikeLabel.text = "\(self.currentFeed.numberOfLike+1)"
+        }
     }
 }
 
