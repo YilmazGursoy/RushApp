@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sgs-OY-6rw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sgs-OY-6rw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Lobby ListVC-->
         <scene sceneID="fQh-Dg-1WG">
@@ -18,6 +23,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ne yazık ki yakınlarda hiç Lobi bulamadık :(" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuD-Qy-B4X">
+                                <rect key="frame" x="30" y="50" width="315" height="41"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="88" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5JB-7K-D0D">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -25,6 +35,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="TuD-Qy-B4X" firstAttribute="leading" secondItem="Vfq-XB-Zv8" secondAttribute="leading" constant="30" id="1Ye-vH-lDR"/>
+                            <constraint firstItem="TuD-Qy-B4X" firstAttribute="centerX" secondItem="0ko-Zx-Dip" secondAttribute="centerX" id="G2Z-dn-dBq"/>
+                            <constraint firstItem="Vfq-XB-Zv8" firstAttribute="trailing" secondItem="TuD-Qy-B4X" secondAttribute="trailing" constant="30" id="Smr-uv-A84"/>
+                            <constraint firstItem="TuD-Qy-B4X" firstAttribute="top" secondItem="Vfq-XB-Zv8" secondAttribute="top" constant="30" id="Trv-gH-PB5"/>
                             <constraint firstItem="Vfq-XB-Zv8" firstAttribute="trailing" secondItem="5JB-7K-D0D" secondAttribute="trailing" id="ex2-rc-Xph"/>
                             <constraint firstItem="5JB-7K-D0D" firstAttribute="leading" secondItem="Vfq-XB-Zv8" secondAttribute="leading" id="yAX-s4-oRl"/>
                             <constraint firstItem="Vfq-XB-Zv8" firstAttribute="bottom" secondItem="5JB-7K-D0D" secondAttribute="bottom" id="yoq-Df-WZx"/>

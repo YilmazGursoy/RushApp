@@ -23,10 +23,35 @@ class MapVC: BaseVC {
     
     var lobbies:[Lobby]! {
         didSet {
-            DispatchQueue.main.async {
-                self.collectionView.delegate = self
-                self.collectionView.dataSource = self
-                self.collectionView.reloadData()
+            var filterLobbies = [Lobby]()
+            if Rush.shared.filterGame != nil {
+                filterLobbies = lobbies.filter{$0.game.id == Rush.shared.filterGame?.id}
+            } else {
+                filterLobbies = lobbies
+            }
+            var lastLobbies = [Lobby]()
+            if Rush.shared.filterPlatform != .empty {
+                lastLobbies = filterLobbies.filter{$0.platform == Rush.shared.filterPlatform}
+            } else {
+                lastLobbies = filterLobbies
+            }
+            filteredLobbies = lastLobbies
+        }
+    }
+    
+    var filteredLobbies:[Lobby]! {
+        didSet{
+            if filteredLobbies.count > 0 {
+                DispatchQueue.main.async {
+                    self.collectionViewBackView.isHidden = false
+                    self.collectionView.delegate = self
+                    self.collectionView.dataSource = self
+                    self.collectionView.reloadData()
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.collectionViewBackView.isHidden = true
+                }
             }
         }
     }
@@ -39,9 +64,24 @@ class MapVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.setupNotifications()
         self.lobbyCacher = NSCache<NSString, UICollectionViewCell>()
         self.sendLocationLobbyRequest()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    private func setupNotifications(){
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateFilters(notification:)), name: NSNotification.Name(rawValue: kUpdateFilter), object: nil)
+    }
+    
+    @objc private func updateFilters(notification:Notification) {
+        self.sendLocationLobbyRequest()
+    }
+    
     
     private func setupUI(){
         mapView.showsCompass = false

@@ -13,8 +13,10 @@ class FilterVC: BaseVC {
     
     var cellTitles = [["10-18","18-22","22-28","28-30+"],["Platform Seçiniz","Oyun Seçiniz"]]
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    
+    var applyTapped:(()->Void)?
     
     var navigationTitle:String!
     
@@ -40,10 +42,12 @@ class FilterVC: BaseVC {
     
     @IBAction func dismissTapped(_ sender: UIButton) {
         Rush.resetFilters()
+        self.applyTapped?()
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func applyTapped(_ sender: Any) {
+        self.applyTapped?()
         self.dismiss(animated: true, completion: nil)
     }
 }

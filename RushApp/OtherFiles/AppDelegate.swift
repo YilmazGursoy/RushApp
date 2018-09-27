@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Fabric
 import Firebase
 import AWSAppSync
+import AWSCognito
+import Crashlytics
 import SVProgressHUD
 import FBSDKCoreKit
 import UserNotifications
@@ -19,10 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var appSyncClient: AWSAppSyncClient?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        Fabric.with([Crashlytics.self, AWSCognito.self])
+        
         FirebaseApp.configure()
+        
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)

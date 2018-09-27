@@ -39,7 +39,10 @@ target 'RushApp' do
   #Push Notification
     pod 'Firebase/Core'
     pod 'Firebase/Messaging'
-
+    
+    pod 'Fabric'
+    pod 'Crashlytics'
+    
   #Animation
     pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
     

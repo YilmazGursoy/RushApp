@@ -26,20 +26,26 @@ extension BaseVC {
     func showSuccess(title:String, description:String, doneButtonTapped:@escaping()->Void) {
         let alertVC = PMAlertController(title: title, description: description, image: UIImage(named: "success"), style: .alert)
         alertVC.gravityDismissAnimation = false
-        alertVC.addAction(PMAlertAction(title: "Okay", style: .default, action: { () in
+        
+        let action = PMAlertAction(title: "Tamam", style: .default) {
             doneButtonTapped()
-        }))
+        }
+        action.setTitleColor(#colorLiteral(red: 0.4666666667, green: 0.3529411765, blue: 1, alpha: 1), for: .normal)
+        
+        alertVC.addAction(action)
         DispatchQueue.main.async {
             self.present(alertVC, animated: true, completion: nil)
         }
     }
     
     func showError(title:String, description:String, doneButtonTapped:@escaping()->Void) {
-        let alertVC = PMAlertController(title: title, description: description, image: UIImage(named: "error"), style: .alert)
+        let alertVC = PMAlertController(title: title, description: description, image: nil, style: .alert)
         alertVC.gravityDismissAnimation = false
-        alertVC.addAction(PMAlertAction(title: "Okay", style: .default, action: { () in
+        let action = PMAlertAction(title: "Tamam", style: .default) {
             doneButtonTapped()
-        }))
+        }
+        action.setTitleColor(#colorLiteral(red: 0.4666666667, green: 0.3529411765, blue: 1, alpha: 1), for: .normal)
+        alertVC.addAction(action)
         DispatchQueue.main.async {
          self.present(alertVC, animated: true, completion: nil)
         }

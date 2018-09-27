@@ -12,7 +12,7 @@ import CoreLocation
 
 extension MapVC : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.lobbies.count
+        return self.filteredLobbies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -21,9 +21,8 @@ extension MapVC : UICollectionViewDelegate, UICollectionViewDataSource {
 //            return cachedCell
 //        } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LobbyCollectionCell", for: indexPath) as! LobbyCollectionCell
-            cell.arrangeCell(lobby: self.lobbies[indexPath.row]) { () in
-                
-                let lobby = self.lobbies[indexPath.row]
+            cell.arrangeCell(lobby: self.filteredLobbies[indexPath.row]) { () in
+                let lobby = self.filteredLobbies[indexPath.row]
                 if lobby.sender.id.elementsEqual(Rush.shared.currentUser.userId) {
                     let lobbyDetailVC = LobbyDetailVC.createFromStoryboard()
                     lobbyDetailVC.currentLobby = lobby
@@ -60,9 +59,7 @@ extension MapVC : MKMapViewDelegate{
                 UIView.animate(withDuration: 0.1, animations: {
                     self.centerBackView.alpha = 1.0
                 })
-                
                 NotificationCenter.default.post(name: NSNotification.Name.init(kChangeLocation), object: area)
-                
             } else {
                 UIView.animate(withDuration: 0.1, animations: {
                     self.centerBackView.alpha = 1.0

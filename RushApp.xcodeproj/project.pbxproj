@@ -1254,6 +1254,7 @@
 				D258C028209645EE0090ABB5 /* Frameworks */,
 				D258C029209645EE0090ABB5 /* Resources */,
 				F913ECBF9ED1060CA1BD0FB7 /* [CP] Embed Pods Frameworks */,
+				47A4F5A1215D7B7400CA8E18 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1379,6 +1380,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		47A4F5A1215D7B7400CA8E18 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 3395134ee0a2c6c1a6eac5ec31558b14e1f9b408 334db30bce2849d5645ceb7c298ceb10685efaa6f64bff4c200bb4fce0bbcfa5\n";
+		};
 		55F9F7B8F499D137631FB023 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1756,6 +1774,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3BH3ADD3PS;
 				INFOPLIST_FILE = RushApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1776,6 +1795,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3BH3ADD3PS;
 				INFOPLIST_FILE = RushApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
