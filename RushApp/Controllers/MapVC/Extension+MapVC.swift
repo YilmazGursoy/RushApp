@@ -53,16 +53,21 @@ extension MapVC : MKMapViewDelegate{
         let location = CLLocation(latitude: centerCoordinate.latitude, longitude: centerCoordinate.longitude)
         
         CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
-            
             if error != nil {
-                self.centerLocationLabel.text = ""
+                NotificationCenter.default.post(name: NSNotification.Name.init(kChangeLocation), object: "")
                 return
-            }else if let _ = placemarks?.first?.country,
-                let city = placemarks?.first?.locality {
-                self.centerLocationLabel.text = city
-            }
-            else {
-                self.centerLocationLabel.text = ""
+            }else if let area = placemarks?.first?.administrativeArea {
+                UIView.animate(withDuration: 0.1, animations: {
+                    self.centerBackView.alpha = 1.0
+                })
+                
+                NotificationCenter.default.post(name: NSNotification.Name.init(kChangeLocation), object: area)
+                
+            } else {
+                UIView.animate(withDuration: 0.1, animations: {
+                    self.centerBackView.alpha = 1.0
+                })
+                NotificationCenter.default.post(name: NSNotification.Name.init(kChangeLocation), object: "")
             }
         })
     }

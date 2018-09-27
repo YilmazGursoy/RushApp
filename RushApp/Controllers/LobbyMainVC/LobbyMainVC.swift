@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 
 let kChangeLobbyTypeNotificationKey = "changeLobbyTypeNotificationKey"
+let kChangeLocation = "changeLobbyLocationKey"
 
 class LobbyMainVC: BaseVC {
     
@@ -32,11 +33,27 @@ class LobbyMainVC: BaseVC {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: NSNotification.Name(rawValue: kChangeLocation), object: nil)
         DispatchQueue.main.async {
             self.checkLocation()
         }
     }
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func methodOfReceivedNotification(notification: Notification){
+        if let object = notification.object as? String {
+            self.locationNameLabel.text = object
+        }
+    }
+    
+    @objc func locationChange(newLocationName:String) {
+        print(newLocationName)        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         

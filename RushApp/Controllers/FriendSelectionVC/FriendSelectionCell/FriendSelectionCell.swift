@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class FriendSelectionCell: UITableViewCell {
 
@@ -15,6 +16,7 @@ class FriendSelectionCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var userAddImageView: UIImageView!
     @IBOutlet weak var userAddBackGradientView: GradientView!
+    @IBOutlet weak var dummyImage: UIImageView!
     
     var currentIndex:Int!
     var tapped:((Int,Bool)->Void)!
@@ -30,9 +32,11 @@ class FriendSelectionCell: UITableViewCell {
         
     }
     //TODO: Make friends to object
-    func arrangeCell(index:Int, friend:String, isSelected:Bool, sendingRequestTapped:@escaping (Int,Bool)->Void) {
+    func arrangeCell(index:Int, simpleUser:SimpleUser, isSelected:Bool, sendingRequestTapped:@escaping (Int,Bool)->Void) {
         self.currentIndex = index
         self.isSendingButtonSelected = isSelected
+        self.usernameLabel.text = simpleUser.username
+        self.profilePictureImageView.sd_setImage(with: User.getProfilePictureFrom(userId: simpleUser.id), completed: nil)
         self.tapped = sendingRequestTapped
         if isSelected {
             self.selectedConfigure()
@@ -40,7 +44,6 @@ class FriendSelectionCell: UITableViewCell {
             self.unselectedConfigure()
         }
     }
-    
     
     @IBAction func addTapped(_ sender: UIButton) {
         self.isSendingButtonSelected = !self.isSendingButtonSelected
@@ -55,7 +58,7 @@ class FriendSelectionCell: UITableViewCell {
     private func selectedConfigure(){
         UIView.animate(withDuration: 0.2) {
             self.userAddBackGradientView.borderWidth = 0
-            self.userAddImageView.image = #imageLiteral(resourceName: "checkIconGreen")
+            self.userAddImageView.image = #imageLiteral(resourceName: "whiteCheckIcon.png")
             self.userAddBackGradientView.backgroundColor = #colorLiteral(red: 0, green: 0.8470588235, blue: 0.06274509804, alpha: 1)
         }
     }

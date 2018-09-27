@@ -15,6 +15,7 @@ class MapVC: BaseVC {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var centerLocationLabel: UILabel!
     @IBOutlet weak var collectionViewBackView: UIView!
+    @IBOutlet weak var centerBackView: GradientView!
     
     var lobbyCacher = NSCache<NSString, UICollectionViewCell>()
     
@@ -39,17 +40,21 @@ class MapVC: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.lobbyCacher = NSCache<NSString, UICollectionViewCell>()
-        self.checkLocalization { (status) in
-            if status == CLAuthorizationStatus.authorizedWhenInUse {
-                self.getLobbyRequest()
-            }
-        }
+        self.sendLocationLobbyRequest()
     }
     
     private func setupUI(){
         mapView.showsCompass = false
         mapView.delegate = self
         collectionView.register(UINib.init(nibName: "LobbyCollectionCell", bundle: .main), forCellWithReuseIdentifier: "LobbyCollectionCell")
+    }
+    
+    func sendLocationLobbyRequest(){
+        self.checkLocalization { (status) in
+            if status == CLAuthorizationStatus.authorizedWhenInUse {
+                self.getLobbyRequest()
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -80,6 +85,12 @@ class MapVC: BaseVC {
         }
     }
     
+    @IBAction func searchHereButtonTapped(_ sender: Any) {
+        UIView.animate(withDuration: 0.1) {
+            self.centerBackView.alpha = 0.0
+            self.sendLocationLobbyRequest()
+        }
+    }
     //MARK: Actions
     @IBAction func filterButtonTapped(_ sender: UIButton) {
     }

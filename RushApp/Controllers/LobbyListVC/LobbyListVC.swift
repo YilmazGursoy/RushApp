@@ -74,6 +74,19 @@ extension LobbyListVC : UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LobbyListCell") as! LobbyListCell
         cell.arrangeCell(lobby: self.lobbies[indexPath.row], index: indexPath.row)
         return cell
-    }    
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let lobby = self.lobbies[indexPath.row]
+        if lobby.sender.id.elementsEqual(Rush.shared.currentUser.userId) {
+            let lobbyDetailVC = LobbyDetailVC.createFromStoryboard()
+            lobbyDetailVC.currentLobby = lobby
+            self.navigationController?.pushVCMainThread(lobbyDetailVC)
+        } else {
+            let lobbyTheirs = LobbyDetailVCTheirs.createFromStoryboard()
+            lobbyTheirs.currentLobby = lobby
+            self.navigationController?.pushVCMainThread(lobbyTheirs)
+        }
+    }
 }
 

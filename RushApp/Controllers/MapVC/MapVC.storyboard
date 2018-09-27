@@ -54,24 +54,28 @@
                                     <constraint firstItem="L3H-Rr-0HI" firstAttribute="top" secondItem="sD6-Wb-wqX" secondAttribute="top" id="xOB-CL-N3K"/>
                                 </constraints>
                             </view>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NK6-l9-XNi" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NK6-l9-XNi" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
                                 <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="46D-s6-jBt">
-                                        <rect key="frame" x="5" y="50" width="90" height="0.0"/>
-                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="12"/>
-                                        <color key="textColor" red="0.46666666666666667" green="0.3529411764705882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81i-Q5-Gd0">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="11"/>
+                                        <state key="normal" title="Burada Lobi Ara">
+                                            <color key="titleColor" red="0.46666666670000001" green="0.35294117650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchHereButtonTapped:" destination="GKv-vU-DTN" eventType="touchUpInside" id="Dkc-Qo-Ngj"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="46D-s6-jBt" firstAttribute="centerX" secondItem="NK6-l9-XNi" secondAttribute="centerX" id="AWt-rb-EcT"/>
-                                    <constraint firstAttribute="trailing" secondItem="46D-s6-jBt" secondAttribute="trailing" constant="5" id="EgB-iD-UWp"/>
+                                    <constraint firstItem="81i-Q5-Gd0" firstAttribute="top" secondItem="NK6-l9-XNi" secondAttribute="top" id="Bpa-Ng-Ejo"/>
+                                    <constraint firstItem="81i-Q5-Gd0" firstAttribute="leading" secondItem="NK6-l9-XNi" secondAttribute="leading" id="DKS-FG-JNK"/>
                                     <constraint firstAttribute="height" constant="100" id="HgV-M1-pSb"/>
                                     <constraint firstAttribute="width" constant="100" id="OW8-Wc-gbZ"/>
-                                    <constraint firstItem="46D-s6-jBt" firstAttribute="centerY" secondItem="NK6-l9-XNi" secondAttribute="centerY" id="Vdg-XC-ru6"/>
-                                    <constraint firstItem="46D-s6-jBt" firstAttribute="leading" secondItem="NK6-l9-XNi" secondAttribute="leading" constant="5" id="u5j-aw-ryY"/>
+                                    <constraint firstAttribute="bottom" secondItem="81i-Q5-Gd0" secondAttribute="bottom" id="dia-IV-7cZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="81i-Q5-Gd0" secondAttribute="trailing" id="fPK-vm-Dg1"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -101,7 +105,7 @@
                         <viewLayoutGuide key="safeArea" id="udg-KN-Fbi"/>
                     </view>
                     <connections>
-                        <outlet property="centerLocationLabel" destination="46D-s6-jBt" id="IJA-kz-R5b"/>
+                        <outlet property="centerBackView" destination="NK6-l9-XNi" id="Swz-91-76R"/>
                         <outlet property="collectionView" destination="L3H-Rr-0HI" id="6sg-bP-HTW"/>
                         <outlet property="collectionViewBackView" destination="sD6-Wb-wqX" id="EXK-q2-bS7"/>
                         <outlet property="mapView" destination="OFn-6P-JC7" id="HKF-CG-8gz"/>

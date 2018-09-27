@@ -89,7 +89,10 @@ extension LobbyDetailVC : UITableViewDelegate, UITableViewDataSource {
                 }
             } else {
                 cell.arrangeCell(type: .addPlayer) {
-                    //MARK: Add Player Request
+                    DispatchQueue.main.asyncAfter(deadline: .now()+0.5, execute: {
+                        let friendSelectionVC = FriendSelectionVC.createFromStoryboard()
+                        self.present(friendSelectionVC, animated: false, completion: nil)
+                    })
                 }
             }
             return cell
