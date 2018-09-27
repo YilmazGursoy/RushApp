@@ -212,6 +212,7 @@ class ProfileVC: BaseVC {
             }
         }
     }
+    
     @IBAction func followingTapped(_ sender: Any) {
         if currentUser.following != nil {
             if currentUser.following!.count > 0 {

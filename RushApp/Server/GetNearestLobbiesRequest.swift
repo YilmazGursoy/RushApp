@@ -26,7 +26,6 @@ class GetNearestLobbiesRequest: Request {
             } else {
                 failedCompletion()
             }
-            
         }
     }
 }

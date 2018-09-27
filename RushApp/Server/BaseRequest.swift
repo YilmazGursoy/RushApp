@@ -42,7 +42,6 @@ extension Request {
         })
     }
     
-    
     func requestWith(functionName name:String, andParameters parameters:Any?, withCompletionBlock completionBlock:@escaping (AnyObject?,Error?) -> (Void))  {
         let lambdaInvoker = AWSLambdaInvoker.default()
         RushLogger.requestLog(message: name)

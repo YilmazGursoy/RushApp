@@ -138,9 +138,16 @@ extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource {
                 
             }
         } else {
-            let lobbyDetailVC = LobbyDetailVC.createFromStoryboard()
-            lobbyDetailVC.currentLobby = self.profileLobbyList[indexPath.row]
-            self.navigationController?.pushVCMainThread(lobbyDetailVC)
+            
+            if currentUser.userId.elementsEqual(Rush.shared.currentUser.userId) {
+                let lobbyDetailVC = LobbyDetailVC.createFromStoryboard()
+                lobbyDetailVC.currentLobby = self.profileLobbyList[indexPath.row]
+                self.navigationController?.pushVCMainThread(lobbyDetailVC)
+            } else {
+                let lobbyDetailTheirs = LobbyDetailVCTheirs.createFromStoryboard()
+                lobbyDetailTheirs.currentLobby = self.profileLobbyList[indexPath.row]
+                self.navigationController?.pushVCMainThread(lobbyDetailTheirs)
+            }
         }
     }
     

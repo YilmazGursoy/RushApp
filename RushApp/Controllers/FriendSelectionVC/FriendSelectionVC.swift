@@ -56,7 +56,6 @@ class FriendSelectionVC: BaseVC {
     @IBAction func doneTapped(_ sender: UIButton) {
         self.dismiss(animated: false, completion: nil)
         
-        
     }
     
 }
