@@ -75,7 +75,7 @@ class FeedCell: UITableViewCell {
         if self.likeIconImageView.image == #imageLiteral(resourceName: "likeIconOn") {
             self.likeIconImageView.image = #imageLiteral(resourceName: "likeIconOff")
             sendLike?(self.indexPath.row, false)
-            self.numberOfLikeLabel.text = "\(self.currentFeed.numberOfLike-1)"
+            self.numberOfLikeLabel.text = "\((self.numberOfLikeLabel.text! as NSString).intValue - 1)"
         } else {
             self.likeIconImageView.image = #imageLiteral(resourceName: "likeIconOn")
             sendLike?(self.indexPath.row, true)
