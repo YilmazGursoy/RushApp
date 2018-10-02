@@ -71,6 +71,7 @@ class FeedCell: UITableViewCell {
         self.didSelectCompletion = selectCompletion
         self.indexPath = indexPath
     }
+    
     @IBAction func likeTapped(_ sender: UIButton) {
         if self.likeIconImageView.image == #imageLiteral(resourceName: "likeIconOn") {
             self.likeIconImageView.image = #imageLiteral(resourceName: "likeIconOff")

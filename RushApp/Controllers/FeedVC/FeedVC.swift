@@ -96,18 +96,21 @@ extension FeedVC : UITableViewDelegate, UITableViewDataSource {
             
         }) { (index, isLike) in
             if isLike {
+                
                 let likeRequest = SendLikeRequest()
                 likeRequest.sendLikeFeedRequest(feedId: self.feedItems[index].id, feedDate: self.feedItems[index].date.timeIntervalSinceReferenceDate, successCompletion: { (user) in
                     
                     Rush.shared.currentUser = user
-                    
+                    self.feedItems[indexPath.row].numberOfLike += 1
                 }, errorCompletion: {
                     self.showErrorMessage(message: "Bir Sorun Oluştu.")
                 })
             } else {
+                
                 let dislikeRequest = SendDislikeRequest()
                 dislikeRequest.sendDislikeFeedRequest(feedId: self.feedItems[index].id, feedDate: self.feedItems[index].date.timeIntervalSinceReferenceDate, successCompletion: { (user) in
                     Rush.shared.currentUser = user
+                    self.feedItems[indexPath.row].numberOfLike -= 1
                 }, errorCompletion: {
                     
                 })
