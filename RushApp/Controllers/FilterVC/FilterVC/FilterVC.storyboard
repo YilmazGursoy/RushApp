@@ -30,12 +30,12 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWX-Fi-Qp6">
-                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <rect key="frame" x="10" y="0.0" width="82" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="9C7-cx-V7I"/>
                                             <constraint firstAttribute="height" constant="44" id="uy5-yZ-Eaw"/>
                                         </constraints>
-                                        <state key="normal" image="crossIcon">
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="12"/>
+                                        <state key="normal" title="Filtreleri Kaldır">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -68,7 +68,7 @@
                                     <constraint firstItem="EWX-Fi-Qp6" firstAttribute="top" secondItem="459-7k-11N" secondAttribute="top" id="OUx-yg-nNj"/>
                                     <constraint firstAttribute="trailing" secondItem="GlV-aC-1y7" secondAttribute="trailing" constant="10" id="Pbp-MZ-tiY"/>
                                     <constraint firstItem="cMq-zB-Osr" firstAttribute="centerY" secondItem="459-7k-11N" secondAttribute="centerY" id="RxU-Kg-i3T"/>
-                                    <constraint firstItem="EWX-Fi-Qp6" firstAttribute="leading" secondItem="459-7k-11N" secondAttribute="leading" id="SAC-TV-DfB"/>
+                                    <constraint firstItem="EWX-Fi-Qp6" firstAttribute="leading" secondItem="459-7k-11N" secondAttribute="leading" constant="10" id="SAC-TV-DfB"/>
                                     <constraint firstItem="cMq-zB-Osr" firstAttribute="centerX" secondItem="459-7k-11N" secondAttribute="centerX" id="Xcm-t4-ymD"/>
                                     <constraint firstAttribute="bottom" secondItem="EWX-Fi-Qp6" secondAttribute="bottom" id="eOa-Gz-AVU"/>
                                     <constraint firstAttribute="height" constant="44" id="eil-lm-EJX"/>
@@ -133,7 +133,4 @@
             <point key="canvasLocation" x="184.80000000000001" y="129.98500749625188"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="crossIcon" width="11" height="10"/>
-    </resources>
 </document>

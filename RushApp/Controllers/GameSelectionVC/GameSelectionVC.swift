@@ -38,9 +38,13 @@ class GameSelectionVC: BaseVC {
     
     private func sendGameList(){
         let request = GameListRequest()
-        request.sendGameListRequest { (games, error) in
-            if games != nil {
-                self.gameList = games!
+        request.sendGameListRequest { (gameList, error) in
+            if let newGameList = gameList {
+                var games = newGameList
+                games = games.sorted{$0.name < $1.name}
+                self.gameList = games
+            } else {
+                self.pop()
             }
         }
     }
