@@ -54,7 +54,7 @@
                                         </constraints>
                                         <state key="normal" image="settings"/>
                                         <connections>
-                                            <action selector="settingsTapped:" destination="juf-Xr-yfs" eventType="touchUpInside" id="vuc-BG-rXp"/>
+                                            <segue destination="bSa-rm-OZL" kind="show" id="tvi-6i-zfa"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -589,6 +589,7 @@
                         <outlet property="numberOfFollowesLabel" destination="LTu-B3-tu8" id="b8N-H5-poT"/>
                         <outlet property="numberOfFollowingLabel" destination="ROw-bM-KWn" id="ie2-J1-tHm"/>
                         <outlet property="profilePictureImage" destination="IcI-lI-OLl" id="guO-U9-6Dk"/>
+                        <outlet property="settingsButtonOutlet" destination="9Cs-bK-1jE" id="Qzr-pt-HHy"/>
                         <outlet property="titleLabel" destination="6c7-5i-wOc" id="dus-9g-aqL"/>
                         <outlet property="urlCollectionView" destination="LuL-Ms-Wve" id="jLg-J2-a9G"/>
                     </connections>
@@ -596,6 +597,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGR-rj-siR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="42.028985507246382" y="159.78260869565219"/>
+        </scene>
+        <!--SettingsVC-->
+        <scene sceneID="1hC-jH-cdj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SettingsVC" referencedIdentifier="SettingsVC" id="bSa-rm-OZL" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aGc-gx-kpv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="561" y="-48"/>
         </scene>
     </scenes>
     <resources>

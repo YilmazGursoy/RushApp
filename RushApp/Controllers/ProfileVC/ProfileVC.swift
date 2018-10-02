@@ -48,6 +48,9 @@ class ProfileVC: BaseVC {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var profilePictureImage: UIImageView!
     @IBOutlet weak var urlCollectionView: UICollectionView!
+    @IBOutlet weak var settingsButtonOutlet: UIButton!
+    
+    
     var currentUserId:String!
     var isMyProfile:Bool = true
     
@@ -95,9 +98,10 @@ class ProfileVC: BaseVC {
             self.folowButtonBackView.bottomColor = #colorLiteral(red: 0.8117647059, green: 0.5529411765, blue: 1, alpha: 1)
             self.folowButtonBackView.borderWidth = 0
             self.followEditButtonOutlet.setTitle(editText, for: .normal)
-            
+            self.settingsButtonOutlet.isHidden = false
         } else {
             
+            self.settingsButtonOutlet.isHidden = true
             let followingList = Rush.shared.currentUser.following
             let value = followingList?.filter({ $0.id == self.currentUserId })
             if value != nil {
@@ -181,9 +185,6 @@ class ProfileVC: BaseVC {
     }
     
     @IBAction func settingsTapped(_ sender: Any) {
-        AWSCredentialManager.shared.logout { (isCompleted) in
-            self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
-        }
     }
     
     @IBAction func profilePictureChangeTapped(_ sender: UIButton) {

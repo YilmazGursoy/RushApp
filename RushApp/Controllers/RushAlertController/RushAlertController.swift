@@ -21,6 +21,9 @@ class RushAlertController: BaseVC {
     private var alertMessage:String!
     private var positiveTitle:String!
     private var negativeTitle:String!
+    private var isOneButton:Bool = false
+    
+    @IBOutlet weak var secondButtonConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,15 @@ class RushAlertController: BaseVC {
         self.descriptionLabel.text = alertMessage
         self.positiveButtonOutlet.setTitle(positiveTitle, for: .normal)
         self.negativeButtonOutlet.setTitle(negativeTitle, for: .normal)
+        self.secondButtonConstraint.constant = isOneButton ? 0 : 49
+    }
+    
+    func createOneButtonAlert(title:String, description:String, buttonTitle:String, buttonTapped:@escaping()->Void) {
+        isOneButton = true
+        self.alertTitle = title
+        self.alertMessage = description
+        self.positiveTitle = buttonTitle
+        self.positiveTapped = buttonTapped
     }
     
     func createAlert(title:String, description:String, positiveTitle:String, negativeTitle:String, positiveButtonTapped:@escaping ()->Void, negativeButtonTapped:@escaping ()->Void) {

@@ -24,34 +24,38 @@ extension BaseVC {
     }
     
     func showSuccess(title:String, description:String, doneButtonTapped:@escaping()->Void) {
-        let alertVC = PMAlertController(title: title, description: description, image: UIImage(named: "success"), style: .alert)
-        alertVC.gravityDismissAnimation = false
-        
-        let action = PMAlertAction(title: "Tamam", style: .default) {
+        let rushAlert = RushAlertController.createFromStoryboard()
+        rushAlert.createOneButtonAlert(title: title, description: description, buttonTitle: "Tamam") {
             doneButtonTapped()
         }
-        action.setTitleColor(#colorLiteral(red: 0.4666666667, green: 0.3529411765, blue: 1, alpha: 1), for: .normal)
         
-        alertVC.addAction(action)
-        DispatchQueue.main.async {
-            self.present(alertVC, animated: true, completion: nil)
+        if self.tabBarController != nil {
+            DispatchQueue.main.async {
+                self.tabBarController?.present(rushAlert, animated: false, completion: nil)
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.present(rushAlert, animated: false, completion: nil)
+            }
         }
     }
     
     func showError(title:String, description:String, doneButtonTapped:@escaping()->Void) {
-        let alertVC = PMAlertController(title: title, description: description, image: nil, style: .alert)
-        alertVC.gravityDismissAnimation = false
-        let action = PMAlertAction(title: "Tamam", style: .default) {
+        
+        let rushAlert = RushAlertController.createFromStoryboard()
+        rushAlert.createOneButtonAlert(title: title, description: description, buttonTitle: "Tamam") {
             doneButtonTapped()
         }
-        action.setTitleColor(#colorLiteral(red: 0.4666666667, green: 0.3529411765, blue: 1, alpha: 1), for: .normal)
-        alertVC.addAction(action)
-        DispatchQueue.main.async {
-         self.present(alertVC, animated: true, completion: nil)
+        if self.tabBarController != nil {
+            DispatchQueue.main.async {
+                self.tabBarController?.present(rushAlert, animated: false, completion: nil)
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.present(rushAlert, animated: false, completion: nil)
+            }
         }
     }
-    
-    
 }
 
 extension BaseVC : AWSErrorManagerProtocol {
@@ -75,14 +79,14 @@ extension BaseVC : AWSErrorManagerProtocol {
     }
     
     func errorMessage(message: String) {
-        self.showError(title: "", description: message) {}
+        self.showError(title: "Hata!", description: message) {}
     }
 }
 
 extension BaseVC: AWSPopupManagerProtocol {
     func showSuccess(message: String) {
         DispatchQueue.main.async {
-            self.showSuccess(title: "Success", description: message) {
+            self.showSuccess(title: "Başarılı!", description: message) {
                 
             }
         }
@@ -90,7 +94,7 @@ extension BaseVC: AWSPopupManagerProtocol {
     
     func showErrorMessage(message: String) {
         DispatchQueue.main.async {
-            self.showError(title: "Failed", description: message) {
+            self.showError(title: "Hata!", description: message) {
                 
             }
         }

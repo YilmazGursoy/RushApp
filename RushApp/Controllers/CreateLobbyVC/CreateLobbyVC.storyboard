@@ -394,7 +394,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="QTC-lR-X6C" secondAttribute="trailing" id="zMg-lH-WN2"/>
                                                 </constraints>
                                             </stackView>
-                                            <view alpha="0.57999998331069946" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ot-b4-lut" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ot-b4-lut" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
                                                 <rect key="frame" x="108.5" y="361" width="158" height="51"/>
                                                 <subviews>
                                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Io-sc-bGg">

@@ -70,6 +70,14 @@
 		472DFF66213C7A9D00FC577A /* ImageDownloaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472DFF65213C7A9D00FC577A /* ImageDownloaderManager.swift */; };
 		472DFF72213DC85300FC577A /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472DFF70213DC85300FC577A /* FeedCell.swift */; };
 		472DFF73213DC85300FC577A /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 472DFF71213DC85300FC577A /* FeedCell.xib */; };
+		4735F49F2163FD4E0013B869 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4735F49E2163FD4E0013B869 /* SettingsVC.swift */; };
+		4735F4A12163FD530013B869 /* SettingsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4735F4A02163FD530013B869 /* SettingsVC.storyboard */; };
+		4735F4A32163FD6B0013B869 /* AccountSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4735F4A22163FD6B0013B869 /* AccountSettingsVC.swift */; };
+		4735F4A52163FD6F0013B869 /* AccountSettingsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4735F4A42163FD6F0013B869 /* AccountSettingsVC.storyboard */; };
+		4735F4A72163FD810013B869 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4735F4A62163FD810013B869 /* ChangePasswordVC.swift */; };
+		4735F4A92163FD880013B869 /* ChangePasswordVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4735F4A82163FD880013B869 /* ChangePasswordVC.storyboard */; };
+		4735F4AC216410360013B869 /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4735F4AB216410360013B869 /* AboutUsVC.swift */; };
+		4735F4AE2164103C0013B869 /* AboutUsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4735F4AD2164103C0013B869 /* AboutUsVC.storyboard */; };
 		475F61162151A800003E30FC /* LobbyChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475F61152151A800003E30FC /* LobbyChatVC.swift */; };
 		475F61182151A805003E30FC /* LobbyChatVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 475F61172151A805003E30FC /* LobbyChatVC.storyboard */; };
 		475F611B2152D2B3003E30FC /* LobbyDetailVCTheirs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475F611A2152D2B3003E30FC /* LobbyDetailVCTheirs.swift */; };
@@ -283,6 +291,14 @@
 		472DFF65213C7A9D00FC577A /* ImageDownloaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderManager.swift; sourceTree = "<group>"; };
 		472DFF70213DC85300FC577A /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		472DFF71213DC85300FC577A /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
+		4735F49E2163FD4E0013B869 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		4735F4A02163FD530013B869 /* SettingsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsVC.storyboard; sourceTree = "<group>"; };
+		4735F4A22163FD6B0013B869 /* AccountSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsVC.swift; sourceTree = "<group>"; };
+		4735F4A42163FD6F0013B869 /* AccountSettingsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountSettingsVC.storyboard; sourceTree = "<group>"; };
+		4735F4A62163FD810013B869 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		4735F4A82163FD880013B869 /* ChangePasswordVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangePasswordVC.storyboard; sourceTree = "<group>"; };
+		4735F4AB216410360013B869 /* AboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
+		4735F4AD2164103C0013B869 /* AboutUsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutUsVC.storyboard; sourceTree = "<group>"; };
 		475F61152151A800003E30FC /* LobbyChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyChatVC.swift; sourceTree = "<group>"; };
 		475F61172151A805003E30FC /* LobbyChatVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LobbyChatVC.storyboard; sourceTree = "<group>"; };
 		475F611A2152D2B3003E30FC /* LobbyDetailVCTheirs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyDetailVCTheirs.swift; sourceTree = "<group>"; };
@@ -655,6 +671,53 @@
 				472DFF71213DC85300FC577A /* FeedCell.xib */,
 			);
 			path = FeedView;
+			sourceTree = "<group>";
+		};
+		4735F49A2163FD020013B869 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4735F4AA2164102A0013B869 /* AboutUsVC */,
+				4735F49C2163FD410013B869 /* AccountSettingsVC */,
+				4735F49D2163FD410013B869 /* ChangePasswordVC */,
+				4735F49B2163FD410013B869 /* SettingsVC */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		4735F49B2163FD410013B869 /* SettingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				4735F49E2163FD4E0013B869 /* SettingsVC.swift */,
+				4735F4A02163FD530013B869 /* SettingsVC.storyboard */,
+			);
+			path = SettingsVC;
+			sourceTree = "<group>";
+		};
+		4735F49C2163FD410013B869 /* AccountSettingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				4735F4A22163FD6B0013B869 /* AccountSettingsVC.swift */,
+				4735F4A42163FD6F0013B869 /* AccountSettingsVC.storyboard */,
+			);
+			path = AccountSettingsVC;
+			sourceTree = "<group>";
+		};
+		4735F49D2163FD410013B869 /* ChangePasswordVC */ = {
+			isa = PBXGroup;
+			children = (
+				4735F4A62163FD810013B869 /* ChangePasswordVC.swift */,
+				4735F4A82163FD880013B869 /* ChangePasswordVC.storyboard */,
+			);
+			path = ChangePasswordVC;
+			sourceTree = "<group>";
+		};
+		4735F4AA2164102A0013B869 /* AboutUsVC */ = {
+			isa = PBXGroup;
+			children = (
+				4735F4AB216410360013B869 /* AboutUsVC.swift */,
+				4735F4AD2164103C0013B869 /* AboutUsVC.storyboard */,
+			);
+			path = AboutUsVC;
 			sourceTree = "<group>";
 		};
 		475F61142151A7F5003E30FC /* LobbyChatVC */ = {
@@ -1142,6 +1205,7 @@
 		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4735F49A2163FD020013B869 /* Settings */,
 				47C964ED2156D1A6006A4067 /* UserListVC */,
 				475F61192152D29A003E30FC /* LobbyDetailVCTheirs */,
 				475F61142151A7F5003E30FC /* LobbyChatVC */,
@@ -1311,6 +1375,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4735F4A52163FD6F0013B869 /* AccountSettingsVC.storyboard in Resources */,
 				47DE1AF3214823F5006FBFD1 /* GoogleService-Info.plist in Resources */,
 				47E2C7692145C65F00AAD648 /* LobbyListCell.xib in Resources */,
 				472DFEE32135D3C900FC577A /* OpenSans-SemiBoldItalic.ttf in Resources */,
@@ -1342,6 +1407,7 @@
 				472DFEE22135D3C900FC577A /* OpenSans-Bold.ttf in Resources */,
 				47E2C7A121471CA200AAD648 /* FilterDetailListVC.storyboard in Resources */,
 				47DE1AFB214870B9006FBFD1 /* CreateLobbyVC.storyboard in Resources */,
+				4735F4A92163FD880013B869 /* ChangePasswordVC.storyboard in Resources */,
 				D258C039209645EF0090ABB5 /* LaunchScreen.storyboard in Resources */,
 				D258C036209645EF0090ABB5 /* Assets.xcassets in Resources */,
 				472DFEDD2135D3C900FC577A /* OpenSans-SemiBold.ttf in Resources */,
@@ -1361,10 +1427,12 @@
 				47C3C05A213E4ECC00A74171 /* lobbies.json in Resources */,
 				47E2C68F2140741700AAD648 /* FeedTitleCell.xib in Resources */,
 				47E2C75C2145BF4B00AAD648 /* LobbyMainVC.storyboard in Resources */,
+				4735F4AE2164103C0013B869 /* AboutUsVC.storyboard in Resources */,
 				D2075DB2209CD9D300AC79B6 /* FeedVC.storyboard in Resources */,
 				47E2C70A2143211E00AAD648 /* FriendSelectionCell.xib in Resources */,
 				D2AF692F20A237C200AC40E9 /* ForgotPasswordVC.storyboard in Resources */,
 				472DFEF22135DEBD00FC577A /* GameSelectionCell.xib in Resources */,
+				4735F4A12163FD530013B869 /* SettingsVC.storyboard in Resources */,
 				475F61182151A805003E30FC /* LobbyChatVC.storyboard in Resources */,
 				47E2C6FF2142832800AAD648 /* FriendSelectionVC.storyboard in Resources */,
 				472DFED12135D28000FC577A /* GameSelectionVC.storyboard in Resources */,
@@ -1496,6 +1564,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4735F4A72163FD810013B869 /* ChangePasswordVC.swift in Sources */,
 				472DFF62213C135000FC577A /* User.swift in Sources */,
 				47C3C068213E625D00A74171 /* Message.swift in Sources */,
 				475F612E2153085E003E30FC /* SubscribeComments.swift in Sources */,
@@ -1606,6 +1675,8 @@
 				475F61242152E53B003E30FC /* Extension+LobbyDetailTheirs.swift in Sources */,
 				47E2C7882146D5B000AAD648 /* HalfModalTransitioningDelegate.swift in Sources */,
 				472B813D2149196B00C005B2 /* ImageUploadManager.swift in Sources */,
+				4735F49F2163FD4E0013B869 /* SettingsVC.swift in Sources */,
+				4735F4AC216410360013B869 /* AboutUsVC.swift in Sources */,
 				472DFEFD2137474F00FC577A /* AWSPopupManager.swift in Sources */,
 				D2075DB8209CE44E00AC79B6 /* DummyRequest.swift in Sources */,
 				47E2C7972147013A00AAD648 /* FilterCellType1.swift in Sources */,
@@ -1624,6 +1695,7 @@
 				D2075DC5209DEA2000AC79B6 /* Extension+UIButton.swift in Sources */,
 				47E2C7862146D5B000AAD648 /* HalfModalInteractiveTransition.swift in Sources */,
 				47E2C7642145C24000AAD648 /* LobbyMainPageController.swift in Sources */,
+				4735F4A32163FD6B0013B869 /* AccountSettingsVC.swift in Sources */,
 				47E2C7872146D5B000AAD648 /* HalfModalTransitionAnimator.swift in Sources */,
 				D2075DD0209E3CC600AC79B6 /* LoginRequest.swift in Sources */,
 			);

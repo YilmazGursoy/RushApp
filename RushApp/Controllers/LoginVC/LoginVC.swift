@@ -57,7 +57,7 @@ class LoginVC: BaseVC {
                 })
             } else {
                 
-                self.showError(title: "", description: "Username or Password incorrect.", doneButtonTapped: {
+                self.showError(title: "Hata!", description: "Kullanıcı adı ya da Şifre yanlış", doneButtonTapped: {
                     
                 })
             }

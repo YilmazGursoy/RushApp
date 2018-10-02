@@ -17,6 +17,8 @@ struct User : Decodable {
     var followers:[SimpleUser]?
     var following:[SimpleUser]?
     var likeFeeds:[SimpleFeed]?
+    var email:String?
+    var phoneNumber:String?
     
     enum CodingKeys: String, CodingKey {
         case userId = "userId"
@@ -27,6 +29,8 @@ struct User : Decodable {
         case followers  = "followers"
         case following = "following"
         case likeFeeds = "likeFeeds"
+        case email = "email"
+        case phoneNumber = "phoneNumber"
     }
 }
 

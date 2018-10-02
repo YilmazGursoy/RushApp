@@ -66,6 +66,7 @@ class GameSelectionVC: BaseVC {
             SVProgressHUD.show()
             if let fullName = UserProfile.current?.fullName {
                 username = fullName
+                
                 profileImageUrl = UserProfile.current?.imageURLWith(UserProfile.PictureAspectRatio.square, size: CGSize(width: 600, height: 600))
                 let session = URLSession.init(configuration: URLSessionConfiguration.default)
                 let dataTask = session.dataTask(with: profileImageUrl!, completionHandler: { (data, response, error) in

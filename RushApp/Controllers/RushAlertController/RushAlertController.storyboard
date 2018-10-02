@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qpB-O8-r2u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qpB-O8-r2u">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,24 +30,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jok-P7-h3N" customClass="SpringView" customModule="Spring">
-                                <rect key="frame" x="74.666666666666686" y="252.33333333333337" width="265" height="232.66666666666663"/>
+                                <rect key="frame" x="74.666666666666686" y="245.66666666666663" width="265" height="245"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bildirimleri almak istiyor musunuz?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3g-IW-iRn">
-                                        <rect key="frame" x="15" y="24.999999999999968" width="235" height="39.666666666666657"/>
+                                        <rect key="frame" x="15" y="25.000000000000032" width="235" height="46.333333333333343"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAr-Nq-GzD">
-                                        <rect key="frame" x="11" y="67.666666666666657" width="243" height="32.666666666666657"/>
+                                        <rect key="frame" x="11" y="74.333333333333343" width="243" height="38.333333333333343"/>
                                         <string key="text">Size yakın lokasyonlarda
 lobi açıldığında bilgilendirileceksiniz</string>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
                                         <color key="textColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X02-Qr-Mfi">
-                                        <rect key="frame" x="13" y="170.66666666666666" width="239" height="49"/>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X02-Qr-Mfi">
+                                        <rect key="frame" x="13" y="183.00000000000003" width="239" height="49"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D42-GS-fFN">
                                                 <rect key="frame" x="0.0" y="0.0" width="239" height="49"/>
@@ -70,7 +70,7 @@ lobi açıldığında bilgilendirileceksiniz</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8d-sg-EsD" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
-                                        <rect key="frame" x="13" y="116.66666666666666" width="239" height="49"/>
+                                        <rect key="frame" x="13" y="129.00000000000003" width="239" height="49"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWD-AK-Kgm">
                                                 <rect key="frame" x="0.0" y="0.0" width="239" height="49"/>
@@ -159,6 +159,7 @@ lobi açıldığında bilgilendirileceksiniz</string>
                         <outlet property="descriptionLabel" destination="kAr-Nq-GzD" id="16l-IK-gwo"/>
                         <outlet property="negativeButtonOutlet" destination="D42-GS-fFN" id="6rI-dp-dcl"/>
                         <outlet property="positiveButtonOutlet" destination="AWD-AK-Kgm" id="EFh-hU-coR"/>
+                        <outlet property="secondButtonConstraint" destination="I6S-EJ-jPQ" id="uf2-zt-i13"/>
                         <outlet property="titleLabel" destination="d3g-IW-iRn" id="o34-Z4-o93"/>
                     </connections>
                 </viewController>
