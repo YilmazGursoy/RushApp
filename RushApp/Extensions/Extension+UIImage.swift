@@ -7,7 +7,7 @@
 //
 
 import UIKit
-let constantProfilePictureSize:CGSize = CGSize(width: 600, height: 600)
+let constantProfilePictureSize:CGSize = CGSize(width: 400, height: 400)
 
 extension UIImage {
     

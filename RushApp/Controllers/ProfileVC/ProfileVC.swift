@@ -37,7 +37,7 @@ class ProfileVC: BaseVC {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    
+    @IBOutlet weak var bioLabel: UILabel!
     @IBOutlet weak var numberOfFollowesLabel: UILabel!
     @IBOutlet weak var numberOfFollowingLabel: UILabel!
     @IBOutlet weak var followEditButtonOutlet: UIButton!
@@ -134,6 +134,7 @@ class ProfileVC: BaseVC {
     
     func setupUI(isCacheRefresh:Bool){
         DispatchQueue.main.async {
+            self.bioLabel.text = self.currentUser.bio ?? "Selamlar!"
             self.sendUserLobbyRequest(userId:self.currentUser.userId)
             self.titleLabel.text = self.currentUser.username
             self.setupFollowEditButtonOutlet()
@@ -144,9 +145,12 @@ class ProfileVC: BaseVC {
             
             DispatchQueue.main.async {
                 if isCacheRefresh {
-                    self.profilePictureImage.sd_setImage(with: self.currentUser.getProfilePictureURL(), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .refreshCached, completed: nil)
+                    let cache = SDImageCache.shared()
+                    cache.removeImage(forKey: User.getProfilePictureFrom(userId: self.currentUser.userId).absoluteString, withCompletion: {
+                        self.profilePictureImage.sd_setImage(with: User.getProfilePictureFrom(userId: self.currentUser.userId), completed: nil)
+                    })
                 } else {
-                    self.profilePictureImage.sd_setImage(with: self.currentUser.getProfilePictureURL(), completed: nil)
+                    self.profilePictureImage.sd_setImage(with: User.getProfilePictureFrom(userId: self.currentUser.userId), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .cacheMemoryOnly, completed: nil)
                 }
             }
         }
@@ -188,20 +192,7 @@ class ProfileVC: BaseVC {
     }
     
     @IBAction func profilePictureChangeTapped(_ sender: UIButton) {
-        if isMyProfile {
-            let alertVC = RushAlertController.createFromStoryboard()
-            alertVC.createAlert(title: "Hey!", description: "Do you want to change Profile Picture ?", positiveTitle: "Yes!", negativeTitle: "Cancel", positiveButtonTapped: {
-                let fusuma = FusumaViewController()
-                fusuma.delegate = self
-                fusuma.cropHeightRatio = 1.0
-                fusuma.allowMultipleSelection = false
-                fusumaSavesImage = true
-                self.present(fusuma, animated: true, completion: nil)
-            }) {
-                
-            }
-            self.tabBarController?.present(alertVC, animated: false, completion: nil)
-        }
+        
     }
     @IBAction func followesTapped(_ sender: UIButton) {
         if currentUser.followers != nil {
@@ -234,9 +225,14 @@ class ProfileVC: BaseVC {
             self.sendFollowingReuqest(isSendingFollowing: true)
             
         } else if sender.titleLabel?.text == editText {
-            
-            
-            
+            let vc = ProfileEditVC.createFromStoryboard()
+            vc.updateProfile = {
+                self.currentUser = Rush.shared.currentUser
+                self.setupUI(isCacheRefresh: true)
+            }
+            let navigationController = BaseNavigationController(rootViewController: vc)
+            navigationController.setNavigationBarHidden(true, animated: false)
+            self.present(navigationController, animated: true, completion: nil)
         }
     }
 }

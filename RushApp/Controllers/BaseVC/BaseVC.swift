@@ -42,7 +42,11 @@ class BaseVC: UIViewController {
     }
     
     @IBAction func dismiss(){
-        self.navigationController?.dismiss(animated: true, completion: nil)
+        if self.navigationController != nil {
+            self.navigationController?.dismiss(animated: true, completion: nil)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     func pushMainTabBar(){

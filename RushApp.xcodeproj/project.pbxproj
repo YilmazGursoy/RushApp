@@ -134,6 +134,9 @@
 		47C964F52156D276006A4067 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C964F32156D276006A4067 /* UserCell.swift */; };
 		47C964F62156D276006A4067 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47C964F42156D276006A4067 /* UserCell.xib */; };
 		47C964F82156DFB6006A4067 /* SendFollowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C964F72156DFB6006A4067 /* SendFollowRequest.swift */; };
+		47DC1FCA21654D56000F815B /* ProfileEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DC1FC921654D56000F815B /* ProfileEditVC.swift */; };
+		47DC1FCC21654D5B000F815B /* ProfileEditVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47DC1FCB21654D5B000F815B /* ProfileEditVC.storyboard */; };
+		47DC1FCE21656490000F815B /* UpdateUserProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DC1FCD21656490000F815B /* UpdateUserProfileRequest.swift */; };
 		47DE1AF3214823F5006FBFD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47DE1AF2214823F5006FBFD1 /* GoogleService-Info.plist */; };
 		47DE1AF62148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE1AF52148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift */; };
 		47DE1AF9214870B5006FBFD1 /* CreateLobbyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DE1AF8214870B5006FBFD1 /* CreateLobbyVC.swift */; };
@@ -357,6 +360,9 @@
 		47C964F32156D276006A4067 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		47C964F42156D276006A4067 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		47C964F72156DFB6006A4067 /* SendFollowRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFollowRequest.swift; sourceTree = "<group>"; };
+		47DC1FC921654D56000F815B /* ProfileEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditVC.swift; sourceTree = "<group>"; };
+		47DC1FCB21654D5B000F815B /* ProfileEditVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileEditVC.storyboard; sourceTree = "<group>"; };
+		47DC1FCD21656490000F815B /* UpdateUserProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserProfileRequest.swift; sourceTree = "<group>"; };
 		47DE1AF2214823F5006FBFD1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		47DE1AF421482432006FBFD1 /* RushApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RushApp.entitlements; sourceTree = "<group>"; };
 		47DE1AF52148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFirebaseTokenRequest.swift; sourceTree = "<group>"; };
@@ -797,6 +803,15 @@
 			path = UserCell;
 			sourceTree = "<group>";
 		};
+		47DC1FC821654D4C000F815B /* ProfileEditVC */ = {
+			isa = PBXGroup;
+			children = (
+				47DC1FC921654D56000F815B /* ProfileEditVC.swift */,
+				47DC1FCB21654D5B000F815B /* ProfileEditVC.storyboard */,
+			);
+			path = ProfileEditVC;
+			sourceTree = "<group>";
+		};
 		47DDF0F92150743600C8F6D1 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -1198,6 +1213,7 @@
 				47C964F72156DFB6006A4067 /* SendFollowRequest.swift */,
 				47E6EBD4215AFFF3009845A0 /* SendLikeRequest.swift */,
 				47A4F59F215C3CE600CA8E18 /* SendDislikeRequest.swift */,
+				47DC1FCD21656490000F815B /* UpdateUserProfileRequest.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -1205,6 +1221,7 @@
 		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				47DC1FC821654D4C000F815B /* ProfileEditVC */,
 				4735F49A2163FD020013B869 /* Settings */,
 				47C964ED2156D1A6006A4067 /* UserListVC */,
 				475F61192152D29A003E30FC /* LobbyDetailVCTheirs */,
@@ -1418,6 +1435,7 @@
 				47E6EBD1215AE0B5009845A0 /* FeedDetailImageCell.xib in Resources */,
 				47DE1B0021487A37006FBFD1 /* RushAlertController.storyboard in Resources */,
 				47E2C7612145C1F600AAD648 /* LobbyListVC.storyboard in Resources */,
+				47DC1FCC21654D5B000F815B /* ProfileEditVC.storyboard in Resources */,
 				47E2C7982147013A00AAD648 /* FilterCellType1.xib in Resources */,
 				4706B7F8213FBB7E00BAC8EA /* FeedDetailVC.storyboard in Resources */,
 				D2075DCA209DEF4600AC79B6 /* LoginVC.storyboard in Resources */,
@@ -1614,6 +1632,7 @@
 				D2075DA7209B85D800AC79B6 /* AppConstants.swift in Sources */,
 				472DFF58213B3F3E00FC577A /* ConstantUrls.swift in Sources */,
 				472DFF5C213BDD0700FC577A /* Extension+UIImage.swift in Sources */,
+				47DC1FCA21654D56000F815B /* ProfileEditVC.swift in Sources */,
 				47C964EF2156D1B7006A4067 /* UserListVC.swift in Sources */,
 				472DFF66213C7A9D00FC577A /* ImageDownloaderManager.swift in Sources */,
 				47E6EBD0215AE0B5009845A0 /* FeedDetailImageCell.swift in Sources */,
@@ -1648,6 +1667,7 @@
 				D2075DE2209F0D1300AC79B6 /* Extension+NavigationController.swift in Sources */,
 				D2075DDD209F091C00AC79B6 /* RushLogger.swift in Sources */,
 				47E2C7892146D5B000AAD648 /* HalfModalPresentationController.swift in Sources */,
+				47DC1FCE21656490000F815B /* UpdateUserProfileRequest.swift in Sources */,
 				47C3C060213E604800A74171 /* Feed.swift in Sources */,
 				47E2C6FD2142832300AAD648 /* FriendSelectionVC.swift in Sources */,
 				D2075DB6209CE3C200AC79B6 /* BaseRequest.swift in Sources */,

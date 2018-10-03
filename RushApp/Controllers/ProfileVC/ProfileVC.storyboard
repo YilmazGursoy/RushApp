@@ -582,6 +582,7 @@
                     </view>
                     <connections>
                         <outlet property="backButtonOutlet" destination="lM4-FZ-9hh" id="MZX-kc-yth"/>
+                        <outlet property="bioLabel" destination="YGO-bc-QrR" id="1UV-h4-7TE"/>
                         <outlet property="followEditButtonOutlet" destination="2Qg-0R-14L" id="PQg-Gw-FiH"/>
                         <outlet property="folowButtonBackView" destination="hmv-eO-BUE" id="POm-IR-eDC"/>
                         <outlet property="lobbiesBackView" destination="ORB-G5-fqM" id="pDp-Ak-cUr"/>
