@@ -13,6 +13,7 @@ class FeedCommentCell: UITableViewCell {
     @IBOutlet weak var userProfilePicImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +30,7 @@ class FeedCommentCell: UITableViewCell {
         self.usernameLabel.text = comment.senderUserName
         self.userProfilePicImageView.sd_setImage(with: User.getProfilePictureFrom(userId: comment.senderUserId), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .cacheMemoryOnly, completed: nil)
         self.messageLabel.text = comment.message
+        self.dateLabel.text = Date().offset(from: Date(timeIntervalSinceReferenceDate: TimeInterval((comment.createdAt as NSString).intValue)))
     }
     
 }

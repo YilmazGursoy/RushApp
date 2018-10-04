@@ -78,5 +78,9 @@ class LobbyDetailTitleCell: UITableViewCell {
     @IBAction func openProfileTapped(_ sender: UIButton) {
         self.openProfileTapped(self.currentLobby.sender.id)
     }
-    
+    @IBAction func openSubProfileTapped(_ sender: UIButton) {
+        if sender.tag < self.currentLobby.subscribers.count {
+            self.openProfileTapped(self.currentLobby.subscribers[sender.tag].id)
+        }
+    }
 }

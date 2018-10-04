@@ -115,9 +115,13 @@ extension LobbyDetailVCTheirs : UITableViewDelegate, UITableViewDataSource {
                     let joinLobbyRequest = JoinLobbyRequest()
                     joinLobbyRequest.sendRequest(lobbyId: self.currentLobby.id, userId: self.currentLobby.userId, userName: Rush.shared.currentUser.username, successCompletion: { (lobby) in
                         SVProgressHUD.dismiss()
-                        self.currentLobby = lobby
-                        self.configurateLobbyDelegatesAndRequest()
-                    
+                        
+                        let rushAlert = RushAlertController.createFromStoryboard()
+                        rushAlert.createOneButtonAlert(title: "Heyy!", description: "Artık lobidesin! Lobide arkadaşların ile konuşabilmen ve oyuna başlamanız lobi sahibi tarafından belirlenmektedir.", buttonTitle: "Tamamdır", buttonTapped: {
+                            self.currentLobby = lobby
+                            self.configurateLobbyDelegatesAndRequest()
+                        })
+                        self.tabBarController?.present(rushAlert, animated: false, completion: nil)
                     }, errorCompletion: {
                         SVProgressHUD.dismiss()
                         self.errorMessage(message: "Lobiye katılırken bir sorun oluştu.")

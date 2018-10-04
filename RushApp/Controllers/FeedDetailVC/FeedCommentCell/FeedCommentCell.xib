@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -53,7 +53,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wayne Perkins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJt-VD-FvQ">
-                                <rect key="frame" x="30" y="15.5" width="73" height="13"/>
+                                <rect key="frame" x="30" y="14.5" width="78.5" height="15"/>
+                                <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJd-Nj-jqL">
+                                <rect key="frame" x="274" y="22" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -61,8 +67,11 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="OJd-Nj-jqL" firstAttribute="centerY" secondItem="NuK-dc-8ug" secondAttribute="centerY" id="0J7-lK-75G"/>
                             <constraint firstItem="0Z3-iD-xk9" firstAttribute="leading" secondItem="NuK-dc-8ug" secondAttribute="leading" id="3N4-nf-HY0"/>
                             <constraint firstItem="XJt-VD-FvQ" firstAttribute="centerY" secondItem="NuK-dc-8ug" secondAttribute="centerY" id="6at-n4-Bpn"/>
+                            <constraint firstItem="OJd-Nj-jqL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XJt-VD-FvQ" secondAttribute="trailing" constant="10" id="Bun-vR-hw0"/>
+                            <constraint firstAttribute="trailing" secondItem="OJd-Nj-jqL" secondAttribute="trailing" id="Xq8-h7-TGy"/>
                             <constraint firstAttribute="height" constant="44" id="Z9P-0t-2Fy"/>
                             <constraint firstItem="0Z3-iD-xk9" firstAttribute="centerY" secondItem="NuK-dc-8ug" secondAttribute="centerY" id="fCd-wg-W9h"/>
                             <constraint firstItem="XJt-VD-FvQ" firstAttribute="leading" secondItem="0Z3-iD-xk9" secondAttribute="trailing" constant="5" id="rBL-sv-TGe"/>
@@ -87,17 +96,18 @@
                     <constraint firstAttribute="trailing" secondItem="vYD-bl-GJj" secondAttribute="trailing" constant="23" id="9EV-vV-SoC"/>
                     <constraint firstItem="vYD-bl-GJj" firstAttribute="top" secondItem="NuK-dc-8ug" secondAttribute="bottom" id="Doh-Uq-d5M"/>
                     <constraint firstItem="NuK-dc-8ug" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="IgJ-Vx-XCh"/>
-                    <constraint firstAttribute="trailing" secondItem="NuK-dc-8ug" secondAttribute="trailing" constant="23" id="M5w-RY-hIk"/>
                     <constraint firstItem="vYD-bl-GJj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="23" id="NmS-4w-LD7"/>
                     <constraint firstAttribute="bottom" secondItem="9jt-4M-EcI" secondAttribute="bottom" id="Uly-z4-gh0"/>
                     <constraint firstAttribute="trailing" secondItem="9jt-4M-EcI" secondAttribute="trailing" id="f4L-8g-ata"/>
                     <constraint firstItem="NuK-dc-8ug" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="23" id="hPe-Cb-Ncn"/>
                     <constraint firstAttribute="bottom" secondItem="vYD-bl-GJj" secondAttribute="bottom" constant="10" id="jM6-rm-6NG"/>
+                    <constraint firstAttribute="trailing" secondItem="NuK-dc-8ug" secondAttribute="trailing" constant="23" id="rGA-a9-hFe"/>
                     <constraint firstItem="9jt-4M-EcI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yOs-Re-YbU"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="dateLabel" destination="OJd-Nj-jqL" id="f5l-Qh-Od5"/>
                 <outlet property="messageLabel" destination="vYD-bl-GJj" id="3pt-Pg-UXc"/>
                 <outlet property="userProfilePicImageView" destination="DaR-eJ-8Lz" id="Vef-ar-CLE"/>
                 <outlet property="usernameLabel" destination="XJt-VD-FvQ" id="Elb-bB-Wgt"/>

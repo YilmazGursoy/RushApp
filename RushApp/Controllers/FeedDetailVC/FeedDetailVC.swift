@@ -73,6 +73,7 @@ class FeedDetailVC: BaseVC {
         commentButtonType = .hidden
         self.tableView.estimatedRowHeight = 400
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.navigationTitleLabel.text = self.feed.title
     }
     
     private func loadUI(){
