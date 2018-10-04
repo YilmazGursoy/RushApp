@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
         <array key="OpenSans-Regular.ttf">
             <string>OpenSans-Regular</string>
         </array>
@@ -37,8 +40,8 @@
                                             <action selector="pop" destination="eqv-IX-wBd" eventType="touchUpInside" id="ymJ-Hw-Y3C"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topluluk İlkeleri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhX-zx-5js">
-                                        <rect key="frame" x="133" y="12" width="109.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hakkımızda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhX-zx-5js">
+                                        <rect key="frame" x="147" y="12" width="81.5" height="20.5"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -61,21 +64,136 @@
                                     <constraint firstAttribute="height" constant="1" id="wFI-Fu-ood"/>
                                 </constraints>
                             </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74A-Ce-sOj">
+                                <rect key="frame" x="20" y="85" width="335" height="452"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Rush, oyuncular ve oyun tutkunları için hazırlanmış sosyal medya platformudur.">
+                                        <attributes>
+                                            <color key="NSColor" red="0.46666666670000001" green="0.35294117650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="OpenSans-Bold"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.46666666670000001" green="0.35294117650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cgo
+</string>
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content">Rush, içerisinde barındırdığı lobi sistemi sayesinde sizi, bambaşka insanlarla tanıştırarak sosyalleşmenizi sağlar. Rush kullanarak kendi takımınızı kurabilir, takımınızla konuşabilir ve aynı zamanda kendi profilinizi oluşturabilirsiniz. 
+
+Rush sizleri ülke bariyerinin ötesine götürerek global bir oyun deneyimi sunmayı amaçlar. Oluşturacağınız lobilerle, dünyanın dört bir yanından insanlar ile oyun oynayabilirsiniz. 
+
+Farkedeceğiniz üzere şu an feed yalnızca bizim paylaşımlarımızdan oluşuyor. Önümüzdeki haftalarda getireceğimiz güncellemeler ile, paylaşım yapma özelliği tüm kullanıcılara sunulacak. 
+
+Beklemede kalın! 
+</mutableString>
+                                        <attributes>
+                                            <color key="NSColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="OpenSans-Light"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMQ-jm-oAR" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="597" width="335" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHX-d1-3I3">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="13"/>
+                                        <state key="normal" title="Destek_support@rushapp.me">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="gHX-d1-3I3" firstAttribute="top" secondItem="rMQ-jm-oAR" secondAttribute="top" id="7mZ-oA-ny3"/>
+                                    <constraint firstItem="gHX-d1-3I3" firstAttribute="leading" secondItem="rMQ-jm-oAR" secondAttribute="leading" id="CHS-xQ-HAm"/>
+                                    <constraint firstAttribute="height" constant="50" id="EgE-HG-C1O"/>
+                                    <constraint firstAttribute="trailing" secondItem="gHX-d1-3I3" secondAttribute="trailing" id="VO3-1q-sfe"/>
+                                    <constraint firstAttribute="bottom" secondItem="gHX-d1-3I3" secondAttribute="bottom" id="u32-zK-Ef7"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" red="0.46666666670000001" green="0.35294117650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" red="0.81176470590000005" green="0.55294117649999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="-1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7Q-TG-5Ra" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="537" width="335" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otg-xj-vLG">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="13"/>
+                                        <state key="normal" title="AppStore' da Puanla">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="otg-xj-vLG" firstAttribute="leading" secondItem="l7Q-TG-5Ra" secondAttribute="leading" id="41J-SO-J1r"/>
+                                    <constraint firstAttribute="trailing" secondItem="otg-xj-vLG" secondAttribute="trailing" id="Soy-6p-vXG"/>
+                                    <constraint firstAttribute="height" constant="50" id="Swn-VA-HHQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="otg-xj-vLG" secondAttribute="bottom" id="nm5-rq-rda"/>
+                                    <constraint firstItem="otg-xj-vLG" firstAttribute="top" secondItem="l7Q-TG-5Ra" secondAttribute="top" id="wF6-jm-u0t"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" red="0.46666666670000001" green="0.35294117650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" red="0.81176470590000005" green="0.55294117649999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="-1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bc7-jg-yEt" firstAttribute="trailing" secondItem="SaW-dZ-dgD" secondAttribute="trailing" id="DTa-QS-v4s"/>
+                            <constraint firstItem="l7Q-TG-5Ra" firstAttribute="leading" secondItem="bc7-jg-yEt" secondAttribute="leading" constant="20" id="FdB-MS-8IC"/>
                             <constraint firstItem="bc7-jg-yEt" firstAttribute="trailing" secondItem="3HC-UW-dlr" secondAttribute="trailing" id="LPi-bR-ksf"/>
+                            <constraint firstItem="bc7-jg-yEt" firstAttribute="trailing" secondItem="74A-Ce-sOj" secondAttribute="trailing" constant="20" id="Mrm-BI-hCO"/>
                             <constraint firstItem="SaW-dZ-dgD" firstAttribute="top" secondItem="bc7-jg-yEt" secondAttribute="top" id="PLv-ce-L2N"/>
                             <constraint firstItem="SaW-dZ-dgD" firstAttribute="leading" secondItem="bc7-jg-yEt" secondAttribute="leading" id="Tm0-CT-tz7"/>
+                            <constraint firstItem="bc7-jg-yEt" firstAttribute="trailing" secondItem="rMQ-jm-oAR" secondAttribute="trailing" constant="20" id="Wuh-6E-9yf"/>
                             <constraint firstItem="3HC-UW-dlr" firstAttribute="leading" secondItem="bc7-jg-yEt" secondAttribute="leading" id="Zhs-Y5-Bt8"/>
                             <constraint firstItem="3HC-UW-dlr" firstAttribute="top" secondItem="SaW-dZ-dgD" secondAttribute="bottom" id="c3H-ym-pQX"/>
+                            <constraint firstItem="bc7-jg-yEt" firstAttribute="trailing" secondItem="l7Q-TG-5Ra" secondAttribute="trailing" constant="20" id="gJX-xR-hsx"/>
+                            <constraint firstItem="74A-Ce-sOj" firstAttribute="top" secondItem="3HC-UW-dlr" secondAttribute="bottom" constant="20" id="j0i-OZ-TRe"/>
+                            <constraint firstItem="rMQ-jm-oAR" firstAttribute="leading" secondItem="bc7-jg-yEt" secondAttribute="leading" constant="20" id="m52-LQ-pAv"/>
+                            <constraint firstItem="bc7-jg-yEt" firstAttribute="bottom" secondItem="rMQ-jm-oAR" secondAttribute="bottom" constant="20" id="nYD-3i-7VQ"/>
+                            <constraint firstItem="rMQ-jm-oAR" firstAttribute="top" secondItem="l7Q-TG-5Ra" secondAttribute="bottom" constant="10" id="sUj-u6-OUP"/>
+                            <constraint firstItem="l7Q-TG-5Ra" firstAttribute="top" secondItem="74A-Ce-sOj" secondAttribute="bottom" id="vGf-6r-hoR"/>
+                            <constraint firstItem="74A-Ce-sOj" firstAttribute="leading" secondItem="bc7-jg-yEt" secondAttribute="leading" constant="20" id="xwR-3b-DuO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bc7-jg-yEt"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBE-j5-74W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="133.5832083958021"/>
         </scene>
     </scenes>
     <resources>
