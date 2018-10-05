@@ -429,6 +429,9 @@
                                                                 <color key="textColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="WNe-iI-o6i" id="pJS-iM-JBV"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -486,6 +489,9 @@
                                                                 <color key="textColor" red="0.066666666669999999" green="0.066666666669999999" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="WNe-iI-o6i" id="ybr-Vo-oG4"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -655,6 +661,7 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="hkI-nT-uR9" firstAttribute="leading" secondItem="2aZ-cs-KjB" secondAttribute="leading" id="5MQ-un-Thn"/>
                             <constraint firstItem="2aZ-cs-KjB" firstAttribute="trailing" secondItem="hkI-nT-uR9" secondAttribute="trailing" id="7LA-Xh-fmz"/>
@@ -669,6 +676,9 @@
                             <constraint firstItem="2aZ-cs-KjB" firstAttribute="bottom" secondItem="hkI-nT-uR9" secondAttribute="bottom" id="y1P-jA-AtK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2aZ-cs-KjB"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="sRd-Pw-JJ8" appends="YES" id="A82-sG-ds7"/>
+                        </connections>
                     </view>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
@@ -683,6 +693,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6NT-Gf-25e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="sRd-Pw-JJ8">
+                    <connections>
+                        <action selector="closeKeyboard:" destination="WNe-iI-o6i" id="OfY-rr-fGj"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="53.600000000000001" y="49.475262368815599"/>
         </scene>

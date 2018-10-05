@@ -161,3 +161,10 @@ extension ProfileEditVC : FusumaDelegate {
         
     }
 }
+
+extension ProfileEditVC : UITextViewDelegate, UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
