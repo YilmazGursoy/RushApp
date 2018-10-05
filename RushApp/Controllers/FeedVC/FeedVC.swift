@@ -34,6 +34,10 @@ class FeedVC: BaseVC {
             }
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.sendFeedRequest()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,10 +100,8 @@ extension FeedVC : UITableViewDelegate, UITableViewDataSource {
             
         }) { (index, isLike) in
             if isLike {
-                
                 let likeRequest = SendLikeRequest()
                 likeRequest.sendLikeFeedRequest(feedId: self.feedItems[index].id, feedDate: self.feedItems[index].date.timeIntervalSinceReferenceDate, successCompletion: { (user) in
-                    
                     Rush.shared.currentUser = user
                     self.feedItems[indexPath.row].numberOfLike += 1
                 }, errorCompletion: {

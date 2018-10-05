@@ -54,6 +54,7 @@ class FeedCell: UITableViewCell {
         } else{
             self.pictureBackView.isHidden = true
         }
+        
         var isLike = false
         Rush.shared.currentUser.likeFeeds?.forEach({ (stepFeed) in
             if stepFeed.feedId == feed.id {

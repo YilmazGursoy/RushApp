@@ -23,9 +23,15 @@ class FeedDetailVC: BaseVC {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navigationTitleLabel: UILabel!
     var watcher:AWSAppSyncSubscriptionWatcher<AddCommentSubscriptionSubscription>?
+    var numberOfComment:Int?
     
     var feed:Feed!
-    var comments = [Comment]()
+    var comments = [Comment]() {
+        didSet{
+            comments = comments.sorted{$0.createdAt > $1.createdAt}
+            numberOfComment = comments.count
+        }
+    }
     
     var commentButtonType:HideCommentButtonType!
     
@@ -80,12 +86,6 @@ class FeedDetailVC: BaseVC {
         
     }
     
-    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
-        self.tableView.reloadData()
-        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
-        }
-    }
-  
     @IBAction func sendCommentButtonTapped(_ sender: UIButton) {
         let commentRequest = SendCommentRequet()
         commentRequest.sendFeedComment(baseId: self.feed.id, createdAt: "\(Date().timeIntervalSinceReferenceDate)", feedDate: "\(self.feed.date.timeIntervalSinceReferenceDate)", message: self.messageTextField.text!, commentSuccessBlock: { (comment) in
@@ -101,9 +101,9 @@ class FeedDetailVC: BaseVC {
 extension FeedDetailVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 || section == 1 || section == 2 {
+        if section == 0 || section == 1 {
             return 1
-        } else if section == 3 {
+        } else if section == 2 {
             if commentButtonType == .hidden {
                 return 1
             } else {
@@ -115,7 +115,7 @@ extension FeedDetailVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -123,12 +123,27 @@ extension FeedDetailVC : UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FeedDetailImageCell") as! FeedDetailImageCell
             cell.arrangeDetailFlexTitle(url: self.feed.picture)
             return cell
-        }else if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FeedTitleCell") as! FeedTitleCell
-            return cell
-        } else if indexPath.section == 2 {
+        } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FeedDetailCell") as! FeedDetailCell
-            cell.arrangeCell(feed: feed)
+            cell.arrangeCell(feed: self.feed, numberOfComments: numberOfComment) { (isLike) in
+                if isLike {
+                    let likeRequest = SendLikeRequest()
+                    likeRequest.sendLikeFeedRequest(feedId: self.feed.id, feedDate: self.feed.date.timeIntervalSinceReferenceDate, successCompletion: { (user) in
+                        Rush.shared.currentUser = user
+                        self.feed.numberOfLike += 1
+                    }, errorCompletion: {
+                        self.showErrorMessage(message: "Bir Sorun Oluştu.")
+                    })
+                } else {
+                    let dislikeRequest = SendDislikeRequest()
+                    dislikeRequest.sendDislikeFeedRequest(feedId: self.feed.id, feedDate: self.feed.date.timeIntervalSinceReferenceDate, successCompletion: { (user) in
+                        Rush.shared.currentUser = user
+                        self.feed.numberOfLike -= 1
+                    }, errorCompletion: {
+                        self.showErrorMessage(message: "Bir Sorun Oluştu.")
+                    })
+                }
+            }
             return cell
         } else {
             if indexPath.row == 0 {

@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
 import AWSAppSync
+import SVProgressHUD
 
 extension FeedDetailVC {
     
@@ -33,17 +33,28 @@ extension FeedDetailVC {
         }
     }
     
+    func sendFeedDetailRequest(){
+        SVProgressHUD.show()
+        let request = GetFeedByIdRequest()
+        request.sendFeedRequest(id: feed.id, date: feed.date.timeIntervalSinceReferenceDate, successCompletion: { (feed) in
+            SVProgressHUD.dismiss()
+            
+        }) {
+            self.showErrorMessage(message: "Bir hata oluştu.")
+        }
+    }
+    
     func subcribeCommentsRequest(){
         self.subscribeComment(baseId: self.feed.id) { (comment) in
             self.comments.append(comment)
             DispatchQueue.main.async {
                 if self.commentButtonType != .hidden {
                     self.tableView.beginUpdates()
-                    self.tableView.insertRows(at: [IndexPath.init(row: self.comments.count, section: 3)], with: .none)
+                    self.tableView.insertRows(at: [IndexPath.init(row: 1, section: 2)], with: .none)
                     self.tableView.endUpdates()
-                    self.tableView.scrollToRow(at: IndexPath.init(row: self.comments.count, section: 3), at: .none, animated: true)
+                    self.tableView.scrollToRow(at: IndexPath.init(row: 1, section: 2), at: .none, animated: true)
                 } else {
-                    self.tableView.reloadSections(IndexSet.init(integer: 3), with: UITableViewRowAnimation.none)
+                    self.tableView.reloadSections(IndexSet.init(integer: 2), with: UITableViewRowAnimation.none)
                 }
             }
         }
@@ -51,7 +62,6 @@ extension FeedDetailVC {
     
     func subscribeComment(baseId:String, commentsUpdate:@escaping (Comment)->Void) {
         do {
-            
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let appSyncClient = appDelegate.appSyncClient
             

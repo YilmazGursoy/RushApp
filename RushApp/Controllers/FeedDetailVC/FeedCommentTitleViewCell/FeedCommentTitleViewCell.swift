@@ -16,9 +16,9 @@ enum HideCommentButtonType {
 extension HideCommentButtonType {
     func getCurrentTypeTitle() -> String{
         if self == .hidden {
-            return "Show Comments"
+            return "Yorumları Göster"
         } else {
-            return "Hide Comments"
+            return "Yorumları Gizle"
         }
     }
     

@@ -18,7 +18,7 @@ struct Feed: Codable {
     var numberOfLike: Int
     let numberOfShare: Int
     let numberOfComment:Int?
-    let likers:[SimpleUser]?
+    var likers:[SimpleUser]?
     let title:String
 }
 
