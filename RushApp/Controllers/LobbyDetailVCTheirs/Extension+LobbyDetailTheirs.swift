@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import FirebaseMessaging
 
 extension LobbyDetailVCTheirs : UITableViewDelegate, UITableViewDataSource {
     
@@ -120,6 +121,8 @@ extension LobbyDetailVCTheirs : UITableViewDelegate, UITableViewDataSource {
                             rushAlert.createOneButtonAlert(title: "Heyy!", description: "Artık lobidesin! Lobide arkadaşların ile konuşabilmen ve oyuna başlamanız lobi sahibi tarafından belirlenmektedir.", buttonTitle: "Tamamdır", buttonTapped: {
                                 self.currentLobby = lobby
                                 self.configurateLobbyDelegatesAndRequest()
+                                let topicID = self.currentLobby.id.replacingOccurrences(of: ":", with: "")
+                                Messaging.messaging().subscribe(toTopic: "\(topicID)")
                             })
                             self.tabBarController?.present(rushAlert, animated: false, completion: nil)
                         }

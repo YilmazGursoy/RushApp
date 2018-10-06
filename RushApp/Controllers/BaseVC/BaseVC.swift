@@ -11,6 +11,8 @@ import SDWebImage
 import CoreLocation
 import SVProgressHUD
 
+let openLobbyFromNotificationKey = "openLobbyFromNotificationKey"
+
 class BaseVC: UIViewController {
 
     //MARK: Lifecycle
@@ -18,12 +20,12 @@ class BaseVC: UIViewController {
         super.viewDidLoad()
         AWSErrorManager.shared.delegate = self
         AWSPopupManager.shared.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(self.openLobbyDetailVC(notification:)), name: NSNotification.Name.init(openLobbyFromNotificationKey), object: nil)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -59,6 +61,50 @@ class BaseVC: UIViewController {
     }
     @IBAction func closeKeyboard(_ sender: Any) {
         self.view.endEditing(true)
+    }
+    
+    @objc private func openLobbyDetailVC(notification:Notification) {
+        if let object = notification.object as? [String:Any] {
+            if let isLobbyReview = object["isLobbyReview"] as? String {
+                if let aps = object["aps"] as? [String:Any] {
+                    if let alertT = aps["alert"] as? [String:Any] {
+                        if isLobbyReview == "true" {
+                            DispatchQueue.main.async {
+                                let alert = RushAlertController.createFromStoryboard()
+                                alert.createAlert(title: alertT["title"] as! String, description: alertT["body"] as! String, positiveTitle: "Tamam", negativeTitle: "Kapat", positiveButtonTapped: {
+                                    self.openLobbyDetail(lobbyId: object["lobbyId"] as! String, userId: object["lobbyUserId"] as! String)
+                                }, negativeButtonTapped: {
+                                    self.showErrorMessage(message: "Bir hata oluştu.")
+                                })
+                                if self.tabBarController != nil {
+                                    self.tabBarController?.present(alert, animated: false, completion: nil)
+                                } else {
+                                    self.navigationController?.present(alert, animated: false, completion: nil)
+                                }
+                            }
+                        } else {
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    private func openLobbyDetail(lobbyId:String, userId:String) {
+        let request = GetLobbyRequest()
+        request.sendRequest(lobbyId: lobbyId, userId: userId, successCompletion: { (lobby) in
+            DispatchQueue.main.async {
+                let lobbyVC = LobbyDetailVCTheirs.createFromStoryboard()
+                lobbyVC.currentLobby = lobby
+                lobbyVC.isShowLobbyAlert = true
+                self.navigationController?.pushVCMainThread(lobbyVC)
+            }
+        }) {
+            DispatchQueue.main.async {
+                self.showErrorMessage(message: "Bir hata oluştu!")
+            }
+        }
     }
 }
 

@@ -11,6 +11,8 @@
 		4706B7F8213FBB7E00BAC8EA /* FeedDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4706B7F7213FBB7E00BAC8EA /* FeedDetailVC.storyboard */; };
 		47152FED2168B70B00BB1C50 /* RushReviewAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47152FEC2168B70B00BB1C50 /* RushReviewAlertController.swift */; };
 		47152FEF2168B71E00BB1C50 /* RushReviewAlertController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47152FEE2168B71E00BB1C50 /* RushReviewAlertController.storyboard */; };
+		47152FF12168CD2400BB1C50 /* ChangeLobbyStatusRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47152FF02168CD2400BB1C50 /* ChangeLobbyStatusRequest.swift */; };
+		47152FF32168CF0700BB1C50 /* Extension+LobbyDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47152FF22168CF0700BB1C50 /* Extension+LobbyDetailVC.swift */; };
 		471A6516213023C50065962D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471A6515213023C50065962D /* TabBarController.swift */; };
 		472B813D2149196B00C005B2 /* ImageUploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B813C2149196B00C005B2 /* ImageUploadManager.swift */; };
 		472B81402149272100C005B2 /* PlatformSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B813F2149272100C005B2 /* PlatformSelectionVC.swift */; };
@@ -238,6 +240,8 @@
 		4706B7F7213FBB7E00BAC8EA /* FeedDetailVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedDetailVC.storyboard; sourceTree = "<group>"; };
 		47152FEC2168B70B00BB1C50 /* RushReviewAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RushReviewAlertController.swift; sourceTree = "<group>"; };
 		47152FEE2168B71E00BB1C50 /* RushReviewAlertController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RushReviewAlertController.storyboard; sourceTree = "<group>"; };
+		47152FF02168CD2400BB1C50 /* ChangeLobbyStatusRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLobbyStatusRequest.swift; sourceTree = "<group>"; };
+		47152FF22168CF0700BB1C50 /* Extension+LobbyDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+LobbyDetailVC.swift"; sourceTree = "<group>"; };
 		471A6515213023C50065962D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		472B813C2149196B00C005B2 /* ImageUploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadManager.swift; sourceTree = "<group>"; };
 		472B813F2149272100C005B2 /* PlatformSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSelectionVC.swift; sourceTree = "<group>"; };
@@ -880,6 +884,7 @@
 			children = (
 				475F611E2152D8FE003E30FC /* LobbyDetailOneButtonCell */,
 				472B814B214979D600C005B2 /* LobbyDetailTitleCell */,
+				47152FF22168CF0700BB1C50 /* Extension+LobbyDetailVC.swift */,
 				47E2C6F721427DF000AAD648 /* LobbyDetailVC.swift */,
 				47C964B621543703006A4067 /* AppSync+LobbyDetail.swift */,
 				47E2C6F921427DF700AAD648 /* LobbyDetailVC.storyboard */,
@@ -1223,6 +1228,7 @@
 				47A4F59F215C3CE600CA8E18 /* SendDislikeRequest.swift */,
 				47DC1FCD21656490000F815B /* UpdateUserProfileRequest.swift */,
 				478A726B21681DCB0005D703 /* GetFeedByIdRequest.swift */,
+				47152FF02168CD2400BB1C50 /* ChangeLobbyStatusRequest.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -1230,35 +1236,35 @@
 		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				47DC1FC821654D4C000F815B /* ProfileEditVC */,
-				4735F49A2163FD020013B869 /* Settings */,
-				47C964ED2156D1A6006A4067 /* UserListVC */,
-				475F61192152D29A003E30FC /* LobbyDetailVCTheirs */,
-				475F61142151A7F5003E30FC /* LobbyChatVC */,
 				472B8177214C857500C005B2 /* AddRankOrUrlVC */,
-				472B814621494EAC00C005B2 /* LobbyGameSelectionVC */,
-				472B813E2149271400C005B2 /* PlatformSelectionVC */,
-				47DE1AFC21487A29006FBFD1 /* RushAlertController */,
-				47DE1AF7214870A3006FBFD1 /* CreateLobbyVC */,
-				47E2C77F2146D57900AAD648 /* FilterVC */,
-				47E2C75D2145C1EA00AAD648 /* LobbyListVC */,
-				47E2C7582145BC4100AAD648 /* LobbyMainVC */,
-				47E2C6FB2142831800AAD648 /* FriendSelectionVC */,
-				47E2C6F621427D5600AAD648 /* LobbyDetailVC */,
-				4706B7F4213FAEB000BAC8EA /* FeedDetailVC */,
-				472DFF0D2139F4C800FC577A /* ProfileVC */,
-				472DFF032138444500FC577A /* MapVC */,
-				472DFECD2135D26600FC577A /* GameSelectionVC */,
-				471A6514213023B00065962D /* TabbarController */,
 				D2D9108B20A070A40054F3AA /* BaseNavigationController */,
 				D258C0722099045E0090ABB5 /* BaseVC */,
 				D2075DD7209E446C00AC79B6 /* ConfirmEmailVC */,
-				D2AF692B20A2378C00AC40E9 /* ForgotPasswordVC */,
-				D2075DC6209DEF2300AC79B6 /* LoginVC */,
-				D2075DBF209DE93100AC79B6 /* RegisterVC */,
+				47DE1AF7214870A3006FBFD1 /* CreateLobbyVC */,
+				4706B7F4213FAEB000BAC8EA /* FeedDetailVC */,
 				D2075DAE209CD9C400AC79B6 /* FeedVC */,
-				D258C0712099045E0090ABB5 /* SplashVC */,
+				47E2C77F2146D57900AAD648 /* FilterVC */,
+				D2AF692B20A2378C00AC40E9 /* ForgotPasswordVC */,
+				47E2C6FB2142831800AAD648 /* FriendSelectionVC */,
+				472DFECD2135D26600FC577A /* GameSelectionVC */,
+				475F61142151A7F5003E30FC /* LobbyChatVC */,
+				47E2C6F621427D5600AAD648 /* LobbyDetailVC */,
+				475F61192152D29A003E30FC /* LobbyDetailVCTheirs */,
+				472B814621494EAC00C005B2 /* LobbyGameSelectionVC */,
+				47E2C75D2145C1EA00AAD648 /* LobbyListVC */,
+				47E2C7582145BC4100AAD648 /* LobbyMainVC */,
+				D2075DC6209DEF2300AC79B6 /* LoginVC */,
+				472DFF032138444500FC577A /* MapVC */,
 				D258C077209906120090ABB5 /* OnboardingVC */,
+				472B813E2149271400C005B2 /* PlatformSelectionVC */,
+				47DC1FC821654D4C000F815B /* ProfileEditVC */,
+				472DFF0D2139F4C800FC577A /* ProfileVC */,
+				D2075DBF209DE93100AC79B6 /* RegisterVC */,
+				47DE1AFC21487A29006FBFD1 /* RushAlertController */,
+				4735F49A2163FD020013B869 /* Settings */,
+				D258C0712099045E0090ABB5 /* SplashVC */,
+				471A6514213023B00065962D /* TabbarController */,
+				47C964ED2156D1A6006A4067 /* UserListVC */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1667,6 +1673,7 @@
 				472B816C214C668F00C005B2 /* Extension+ProfileVC.swift in Sources */,
 				D2075DCE209E3CA400AC79B6 /* RegisterRequest.swift in Sources */,
 				47C3C05E213E5FFB00A74171 /* FeedsRequest.swift in Sources */,
+				47152FF12168CD2400BB1C50 /* ChangeLobbyStatusRequest.swift in Sources */,
 				472DFF18213AE54500FC577A /* Extension+UIView.swift in Sources */,
 				47E6EBD3215AFFA3009845A0 /* SimpleFeed.swift in Sources */,
 				477CB99A214D54A5003CDEEE /* AddRankOrUrlRequest.swift in Sources */,
@@ -1676,6 +1683,7 @@
 				471A6516213023C50065962D /* TabBarController.swift in Sources */,
 				47A4F5A0215C3CE600CA8E18 /* SendDislikeRequest.swift in Sources */,
 				D2075DE2209F0D1300AC79B6 /* Extension+NavigationController.swift in Sources */,
+				47152FF32168CF0700BB1C50 /* Extension+LobbyDetailVC.swift in Sources */,
 				D2075DDD209F091C00AC79B6 /* RushLogger.swift in Sources */,
 				47E2C7892146D5B000AAD648 /* HalfModalPresentationController.swift in Sources */,
 				47DC1FCE21656490000F815B /* UpdateUserProfileRequest.swift in Sources */,

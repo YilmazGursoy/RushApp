@@ -38,5 +38,5 @@ struct LambdaConstants {
     static let UpdateUserProfileRequest =   "RushApp-UpdateUserProfile"
     
     static let GetFeedByIdRequest       =   "RushApp-GetFeedById"
-    
+    static let ChangeLobbyStatusRequest =   "RushApp-ChangeLobbyStatus"
 }

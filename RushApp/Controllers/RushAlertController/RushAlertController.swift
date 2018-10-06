@@ -25,6 +25,7 @@ class RushAlertController: BaseVC {
     
     @IBOutlet weak var secondButtonConstraint: NSLayoutConstraint!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.titleLabel.text = alertTitle

@@ -19,11 +19,13 @@ class LobbyDetailVCTheirs: BaseVC {
     var isLobbyHasChat = false
     var comments:[Comment] = []
     var watcher:AWSAppSyncSubscriptionWatcher<AddCommentSubscriptionSubscription>?
+    var isShowLobbyAlert:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         self.configurateLobbyDelegatesAndRequest()
+        self.checkIsOpenFromAlert()
     }
     
     private func setupUI(){
@@ -42,5 +44,15 @@ class LobbyDetailVCTheirs: BaseVC {
     
     @IBAction func sendComment(_ sender: Any) {
         
+    }
+    
+    private func checkIsOpenFromAlert(){
+        if isShowLobbyAlert == true {
+            if self.currentLobby.lobbyStatus == .close {
+                let rushReview = RushReviewAlertController.createFromStoryboard()
+                rushReview.createReviewAlert(positiveButtonTapped: {}) {}
+                self.tabBarController?.present(rushReview, animated: false, completion: nil)
+            }
+        }
     }
 }

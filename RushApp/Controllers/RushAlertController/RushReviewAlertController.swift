@@ -12,6 +12,8 @@ class RushReviewAlertController: BaseVC {
     
     private var positiveTapped:(()->Void)!
     private var negativeTapped:(()->Void)!
+    @IBOutlet weak var reviewSuccessBackView: GradientView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,13 @@ class RushReviewAlertController: BaseVC {
         self.negativeTapped()
     }
     @IBAction func positiveButtonTapped(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
-        self.positiveTapped()
+        UIView.animate(withDuration: 0.5) {
+            self.reviewSuccessBackView.alpha = 1.0
+            DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
+                self.dismiss(animated: false, completion: nil)
+                self.positiveTapped()
+            })
+        }
+
     }
 }

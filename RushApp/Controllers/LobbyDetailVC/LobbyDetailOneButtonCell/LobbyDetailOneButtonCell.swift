@@ -13,6 +13,7 @@ enum OneButtonType {
     case startTheGame
     case joinGame
     case startGameChat
+    case closeLobby
 }
 
 class LobbyDetailOneButtonCell: UITableViewCell {
@@ -47,6 +48,9 @@ class LobbyDetailOneButtonCell: UITableViewCell {
             button.setTitle("  Lobi Sohbetini Başlat", for: .normal)
             backGradientView.topColor = #colorLiteral(red: 0.6431372549, green: 0.6431372549, blue: 0.6431372549, alpha: 0.5)
             backGradientView.bottomColor = #colorLiteral(red: 0.337254902, green: 0.337254902, blue: 0.337254902, alpha: 0.5)
+        case .closeLobby:
+            button.setImage(nil, for: .normal)
+            button.setTitle("Oyunu Bitir", for: .normal)
         }
     }
     @IBAction func buttonTapped(_ sender: UIButton) {

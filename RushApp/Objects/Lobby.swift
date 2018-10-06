@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum LobbyStatus {
+enum LobbyStatus : Int, Codable {
     case open
     case gaming
     case close
@@ -29,7 +29,7 @@ struct Lobby: Decodable {
     let game: Game
     let platform: Platform
     let lobbyHasChat: Bool
-    let lobbyStatus:Int
+    let lobbyStatus:LobbyStatus
     let numberOfNeededUser:Int
 }
 
