@@ -32,7 +32,11 @@ extension LobbyDetailVCTheirs : UITableViewDelegate, UITableViewDataSource {
         } else if section == 1 {
             if isAlreadySubLobby {
                 if isLobbyHasChat {
-                    return self.comments.count + 1
+                    if self.currentLobby.lobbyStatus != .close {
+                        return self.comments.count + 1
+                    } else {
+                        return self.comments.count
+                    }
                 } else {
                     return 0
                 }

@@ -99,6 +99,7 @@ PODS:
     - GoogleUtilities/Logger
   - GSKStretchyHeaderView (1.0.4)
   - IQKeyboardManagerSwift (6.1.1)
+  - lottie-ios (2.5.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -136,6 +137,7 @@ DEPENDENCIES:
   - Fusuma
   - GSKStretchyHeaderView
   - IQKeyboardManagerSwift
+  - lottie-ios
   - PMAlertController
   - SDWebImage (~> 4.0)
   - Spring (from `https://github.com/MengTo/Spring.git`)
@@ -174,6 +176,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GSKStretchyHeaderView
     - IQKeyboardManagerSwift
+    - lottie-ios
     - nanopb
     - PMAlertController
     - Protobuf
@@ -223,6 +226,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: 06b66f9567769a7958db20a92f0128b2843e49d5
   GSKStretchyHeaderView: 9743704c12bdc9cf7c7947bad3af8bf24f7061e3
   IQKeyboardManagerSwift: 977affaeb4d6e971975c7790a6850f31d38f1207
+  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   PMAlertController: efb781925d741d50e0200018a00c53cecb8b4910
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
@@ -232,6 +236,6 @@ SPEC CHECKSUMS:
   SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 734bc0841be93c6ba05636dadb5ea34abe80da26
+PODFILE CHECKSUM: 31f8ebe6ffb2a6328ccec9ad92756a04ee427959
 
 COCOAPODS: 1.5.3

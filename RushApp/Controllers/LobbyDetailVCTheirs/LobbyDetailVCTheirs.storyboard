@@ -62,27 +62,40 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nr2-9Z-cV2">
                                 <rect key="frame" x="0.0" y="64" width="375" height="35"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lobbyWaitingImage" translatesAutoresizingMaskIntoConstraints="NO" id="EpA-Zw-3Gm">
-                                        <rect key="frame" x="10" y="10" width="14" height="15"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="14" id="T5X-aL-uEG"/>
-                                            <constraint firstAttribute="height" constant="15" id="fLj-WG-Pjq"/>
-                                        </constraints>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lobiye diğer oyuncular bekleniyor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcz-j1-tQ8">
-                                        <rect key="frame" x="39" y="9.5" width="326" height="16.5"/>
+                                        <rect key="frame" x="60" y="9.5" width="305" height="16.5"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="12"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IjN-tj-SKX">
+                                        <rect key="frame" x="10" y="0.0" width="35" height="35"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lobbyEndIcon" translatesAutoresizingMaskIntoConstraints="NO" id="WHI-Gb-HbU">
+                                                <rect key="frame" x="7.5" y="7.5" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="gnu-kg-dNr"/>
+                                                    <constraint firstAttribute="height" constant="20" id="uEZ-55-6nS"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="FUC-4h-zVJ"/>
+                                            <constraint firstItem="WHI-Gb-HbU" firstAttribute="centerY" secondItem="IjN-tj-SKX" secondAttribute="centerY" id="GFD-MQ-Rai"/>
+                                            <constraint firstItem="WHI-Gb-HbU" firstAttribute="centerX" secondItem="IjN-tj-SKX" secondAttribute="centerX" id="P8L-7a-xLE"/>
+                                            <constraint firstAttribute="height" constant="35" id="g9e-J1-Q3e"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.76470588240000004" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="qcz-j1-tQ8" firstAttribute="leading" secondItem="EpA-Zw-3Gm" secondAttribute="trailing" constant="15" id="D7s-8D-H8C"/>
+                                    <constraint firstAttribute="bottom" secondItem="IjN-tj-SKX" secondAttribute="bottom" id="BEX-hb-m94"/>
+                                    <constraint firstItem="qcz-j1-tQ8" firstAttribute="leading" secondItem="IjN-tj-SKX" secondAttribute="trailing" constant="15" id="Bx3-1g-pRM"/>
                                     <constraint firstItem="qcz-j1-tQ8" firstAttribute="centerY" secondItem="nr2-9Z-cV2" secondAttribute="centerY" id="DR8-Z3-pQF"/>
-                                    <constraint firstItem="EpA-Zw-3Gm" firstAttribute="centerY" secondItem="nr2-9Z-cV2" secondAttribute="centerY" id="EfT-89-mcl"/>
+                                    <constraint firstItem="IjN-tj-SKX" firstAttribute="top" secondItem="nr2-9Z-cV2" secondAttribute="top" id="FwL-fO-ozH"/>
                                     <constraint firstAttribute="height" constant="35" id="OHm-SF-hN2"/>
-                                    <constraint firstItem="EpA-Zw-3Gm" firstAttribute="leading" secondItem="nr2-9Z-cV2" secondAttribute="leading" constant="10" id="tgf-O1-2sp"/>
+                                    <constraint firstItem="IjN-tj-SKX" firstAttribute="leading" secondItem="nr2-9Z-cV2" secondAttribute="leading" constant="10" id="nAS-4I-9bo"/>
                                     <constraint firstAttribute="trailing" secondItem="qcz-j1-tQ8" secondAttribute="trailing" constant="10" id="xQf-b0-CHY"/>
                                 </constraints>
                             </view>
@@ -103,6 +116,9 @@
                         <viewLayoutGuide key="safeArea" id="DEs-2f-vdB"/>
                     </view>
                     <connections>
+                        <outlet property="lobbyStatusBackView" destination="nr2-9Z-cV2" id="uLf-ov-4lr"/>
+                        <outlet property="lobbyStatusImage" destination="WHI-Gb-HbU" id="UE7-4i-54a"/>
+                        <outlet property="lobbyStatusTitle" destination="qcz-j1-tQ8" id="Y3s-XV-mba"/>
                         <outlet property="lobbyTitle" destination="Q8V-lu-dWg" id="Mpg-X8-gGK"/>
                         <outlet property="tableView" destination="gdM-T5-Imc" id="7id-Cf-WKo"/>
                     </connections>
@@ -114,6 +130,6 @@
     </scenes>
     <resources>
         <image name="back" width="17" height="16"/>
-        <image name="lobbyWaitingImage" width="11" height="15"/>
+        <image name="lobbyEndIcon" width="90" height="90"/>
     </resources>
 </document>
