@@ -51,6 +51,8 @@ target 'RushApp' do
     
   pod 'Cosmos', '~> 17.0'
   
+  #Lottie
+  pod 'lottie-ios'
 end
 
 

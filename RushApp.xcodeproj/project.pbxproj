@@ -13,6 +13,7 @@
 		47152FEF2168B71E00BB1C50 /* RushReviewAlertController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47152FEE2168B71E00BB1C50 /* RushReviewAlertController.storyboard */; };
 		47152FF12168CD2400BB1C50 /* ChangeLobbyStatusRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47152FF02168CD2400BB1C50 /* ChangeLobbyStatusRequest.swift */; };
 		47152FF32168CF0700BB1C50 /* Extension+LobbyDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47152FF22168CF0700BB1C50 /* Extension+LobbyDetailVC.swift */; };
+		47152FF521694DD700BB1C50 /* waitAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 47152FF421694DD700BB1C50 /* waitAnimation.json */; };
 		471A6516213023C50065962D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471A6515213023C50065962D /* TabBarController.swift */; };
 		472B813D2149196B00C005B2 /* ImageUploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B813C2149196B00C005B2 /* ImageUploadManager.swift */; };
 		472B81402149272100C005B2 /* PlatformSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B813F2149272100C005B2 /* PlatformSelectionVC.swift */; };
@@ -242,6 +243,7 @@
 		47152FEE2168B71E00BB1C50 /* RushReviewAlertController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RushReviewAlertController.storyboard; sourceTree = "<group>"; };
 		47152FF02168CD2400BB1C50 /* ChangeLobbyStatusRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLobbyStatusRequest.swift; sourceTree = "<group>"; };
 		47152FF22168CF0700BB1C50 /* Extension+LobbyDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+LobbyDetailVC.swift"; sourceTree = "<group>"; };
+		47152FF421694DD700BB1C50 /* waitAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitAnimation.json; sourceTree = "<group>"; };
 		471A6515213023C50065962D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		472B813C2149196B00C005B2 /* ImageUploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadManager.swift; sourceTree = "<group>"; };
 		472B813F2149272100C005B2 /* PlatformSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSelectionVC.swift; sourceTree = "<group>"; };
@@ -1272,6 +1274,7 @@
 		D258C06C2098F5170090ABB5 /* OtherFiles */ = {
 			isa = PBXGroup;
 			children = (
+				47152FF421694DD700BB1C50 /* waitAnimation.json */,
 				472DFED22135D3C900FC577A /* Fonts */,
 				D258C06E2098F5170090ABB5 /* AppDelegate.swift */,
 				D2075DA4209B85D000AC79B6 /* LambdaConstants.swift */,
@@ -1439,6 +1442,7 @@
 				472DFEE22135D3C900FC577A /* OpenSans-Bold.ttf in Resources */,
 				47E2C7A121471CA200AAD648 /* FilterDetailListVC.storyboard in Resources */,
 				47DE1AFB214870B9006FBFD1 /* CreateLobbyVC.storyboard in Resources */,
+				47152FF521694DD700BB1C50 /* waitAnimation.json in Resources */,
 				4735F4A92163FD880013B869 /* ChangePasswordVC.storyboard in Resources */,
 				D258C039209645EF0090ABB5 /* LaunchScreen.storyboard in Resources */,
 				D258C036209645EF0090ABB5 /* Assets.xcassets in Resources */,

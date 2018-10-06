@@ -33,7 +33,7 @@ class RushReviewAlertController: BaseVC {
     @IBAction func positiveButtonTapped(_ sender: Any) {
         UIView.animate(withDuration: 0.5) {
             self.reviewSuccessBackView.alpha = 1.0
-            DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now()+4, execute: {
                 self.dismiss(animated: false, completion: nil)
                 self.positiveTapped()
             })

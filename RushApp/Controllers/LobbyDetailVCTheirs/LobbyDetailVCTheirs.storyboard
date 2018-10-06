@@ -56,19 +56,49 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gdM-T5-Imc">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="99" width="375" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nr2-9Z-cV2">
+                                <rect key="frame" x="0.0" y="64" width="375" height="35"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lobbyWaitingImage" translatesAutoresizingMaskIntoConstraints="NO" id="EpA-Zw-3Gm">
+                                        <rect key="frame" x="10" y="10" width="14" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="14" id="T5X-aL-uEG"/>
+                                            <constraint firstAttribute="height" constant="15" id="fLj-WG-Pjq"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lobiye diğer oyuncular bekleniyor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcz-j1-tQ8">
+                                        <rect key="frame" x="39" y="9.5" width="326" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="qcz-j1-tQ8" firstAttribute="leading" secondItem="EpA-Zw-3Gm" secondAttribute="trailing" constant="15" id="D7s-8D-H8C"/>
+                                    <constraint firstItem="qcz-j1-tQ8" firstAttribute="centerY" secondItem="nr2-9Z-cV2" secondAttribute="centerY" id="DR8-Z3-pQF"/>
+                                    <constraint firstItem="EpA-Zw-3Gm" firstAttribute="centerY" secondItem="nr2-9Z-cV2" secondAttribute="centerY" id="EfT-89-mcl"/>
+                                    <constraint firstAttribute="height" constant="35" id="OHm-SF-hN2"/>
+                                    <constraint firstItem="EpA-Zw-3Gm" firstAttribute="leading" secondItem="nr2-9Z-cV2" secondAttribute="leading" constant="10" id="tgf-O1-2sp"/>
+                                    <constraint firstAttribute="trailing" secondItem="qcz-j1-tQ8" secondAttribute="trailing" constant="10" id="xQf-b0-CHY"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DEs-2f-vdB" firstAttribute="trailing" secondItem="gdM-T5-Imc" secondAttribute="trailing" id="7tT-NX-Hbc"/>
                             <constraint firstItem="gdM-T5-Imc" firstAttribute="leading" secondItem="DEs-2f-vdB" secondAttribute="leading" id="NdB-XI-ExV"/>
+                            <constraint firstItem="DEs-2f-vdB" firstAttribute="trailing" secondItem="nr2-9Z-cV2" secondAttribute="trailing" id="RpC-q3-hQm"/>
                             <constraint firstItem="hJK-5z-pYx" firstAttribute="top" secondItem="DEs-2f-vdB" secondAttribute="top" id="TC8-CZ-22A"/>
+                            <constraint firstItem="gdM-T5-Imc" firstAttribute="top" secondItem="nr2-9Z-cV2" secondAttribute="bottom" id="UZl-TU-Tyx"/>
                             <constraint firstItem="hJK-5z-pYx" firstAttribute="leading" secondItem="DEs-2f-vdB" secondAttribute="leading" id="Yij-p3-bTm"/>
+                            <constraint firstItem="nr2-9Z-cV2" firstAttribute="leading" secondItem="DEs-2f-vdB" secondAttribute="leading" id="bqA-XK-ISz"/>
                             <constraint firstItem="DEs-2f-vdB" firstAttribute="trailing" secondItem="hJK-5z-pYx" secondAttribute="trailing" id="cMC-kt-uDy"/>
-                            <constraint firstItem="gdM-T5-Imc" firstAttribute="top" secondItem="hJK-5z-pYx" secondAttribute="bottom" id="d1w-ar-DdM"/>
                             <constraint firstItem="DEs-2f-vdB" firstAttribute="bottom" secondItem="gdM-T5-Imc" secondAttribute="bottom" id="phE-7C-aB8"/>
+                            <constraint firstItem="nr2-9Z-cV2" firstAttribute="top" secondItem="hJK-5z-pYx" secondAttribute="bottom" id="vVt-QC-2yN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DEs-2f-vdB"/>
                     </view>
@@ -79,10 +109,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a92-c1-gAJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="68" y="179"/>
+            <point key="canvasLocation" x="68" y="178.56071964017991"/>
         </scene>
     </scenes>
     <resources>
         <image name="back" width="17" height="16"/>
+        <image name="lobbyWaitingImage" width="11" height="15"/>
     </resources>
 </document>
