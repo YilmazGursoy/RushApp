@@ -83,7 +83,13 @@ class FeedVC: BaseVC {
         self.present(navigationController, animated: true, completion: nil)
     }
     @IBAction func dummy(_ sender: UIButton) {
-        
+        let alert = RushReviewAlertController.createFromStoryboard()
+        alert.createReviewAlert(positiveButtonTapped: {
+            
+        }) {
+            
+        }
+        self.tabBarController?.present(alert, animated: false, completion: nil)
     }
     
 }
