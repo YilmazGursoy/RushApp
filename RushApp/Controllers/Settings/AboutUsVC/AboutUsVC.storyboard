@@ -90,14 +90,14 @@ Cgo
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">Rush, içerisinde barındırdığı lobi sistemi sayesinde sizi, bambaşka insanlarla tanıştırarak sosyalleşmenizi sağlar. Rush kullanarak kendi takımınızı kurabilir, takımınızla konuşabilir ve aynı zamanda kendi profilinizi oluşturabilirsiniz. 
+                                        <string key="content">Rush, içerisinde barındırdığı lobi sistemi sayesinde sizi, bambaşka insanlarla tanıştırarak sosyalleşmenizi sağlar. Rush kullanarak kendi takımınızı kurabilir, takımınızla konuşabilir ve aynı zamanda kendi profilinizi oluşturabilirsiniz. 
 
 Rush sizleri ülke bariyerinin ötesine götürerek global bir oyun deneyimi sunmayı amaçlar. Oluşturacağınız lobilerle, dünyanın dört bir yanından insanlar ile oyun oynayabilirsiniz. 
 
 Farkedeceğiniz üzere şu an feed yalnızca bizim paylaşımlarımızdan oluşuyor. Önümüzdeki haftalarda getireceğimiz güncellemeler ile, paylaşım yapma özelliği tüm kullanıcılara sunulacak. 
 
 Beklemede kalın! 
-</mutableString>
+</string>
                                         <attributes>
                                             <color key="NSColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="14" name="OpenSans-Light"/>
@@ -112,9 +112,12 @@ Beklemede kalın!
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHX-d1-3I3">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="13"/>
-                                        <state key="normal" title="Destek_support@rushapp.me">
+                                        <state key="normal" title="Destek">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="supportTapped:" destination="eqv-IX-wBd" eventType="touchUpInside" id="66Q-II-rZG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -146,6 +149,9 @@ Beklemede kalın!
                                         <state key="normal" title="AppStore' da Puanla">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="reviewTapped:" destination="eqv-IX-wBd" eventType="touchUpInside" id="oCR-sH-yeX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

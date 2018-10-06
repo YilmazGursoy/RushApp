@@ -46,6 +46,10 @@ target 'RushApp' do
   #Animation
     pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
     
+  #Review
+    pod 'AppRating', '>= 0.0.1'
+    
+  pod 'Cosmos', '~> 17.0'
   
 end
 

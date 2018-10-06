@@ -1,4 +1,5 @@
 PODS:
+  - AppRating (1.4.0)
   - AWSAppSync (2.6.19):
     - AWSCore (~> 2.6.6)
     - ReachabilitySwift (~> 4.0.0)
@@ -28,6 +29,7 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
+  - Cosmos (17.0.0)
   - Crashlytics (3.10.7):
     - Fabric (~> 1.7.11)
   - CRRefresh (1.0.9)
@@ -115,6 +117,7 @@ PODS:
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
+  - AppRating (>= 0.0.1)
   - AWSAppSync
   - AWSAuthUI (~> 2.6.13)
   - AWSCognito
@@ -122,6 +125,7 @@ DEPENDENCIES:
   - AWSLambda
   - AWSS3
   - AWSUserPoolsSignIn (~> 2.6.13)
+  - Cosmos (~> 17.0)
   - Crashlytics
   - CRRefresh
   - DeckTransition (~> 2.0)
@@ -139,6 +143,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AppRating
     - AWSAppSync
     - AWSAuthCore
     - AWSAuthUI
@@ -150,6 +155,7 @@ SPEC REPOS:
     - AWSS3
     - AWSUserPoolsSignIn
     - Bolts
+    - Cosmos
     - Crashlytics
     - CRRefresh
     - DeckTransition
@@ -186,6 +192,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
+  AppRating: 0149af52d9c8cc50af0890b7b88584dc8e93d027
   AWSAppSync: a187ca995d9097b953148b9bdc301b44613dd488
   AWSAuthCore: bc6c8d7320eae8ef18939504d5a8a1588606c3a1
   AWSAuthUI: 2d597886206772e31273d12e76f642fcddca9616
@@ -197,6 +204,7 @@ SPEC CHECKSUMS:
   AWSS3: 4d857a223704bd956e91a659aec17ba1896ee0a9
   AWSUserPoolsSignIn: dfc849bcd5f965248ec8bb11c37e640bede7e377
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  Cosmos: 309e489f21ffc91a1eeecfebef7f817cd2fcfba6
   Crashlytics: ccaac42660eb9351b9960c0d66106b0bcf99f4fa
   CRRefresh: b1c53f32bcb3edef8d60ef414a329b06dc6af34f
   DeckTransition: 2300694f94fbeca2c103f365dc9dc09ffae14a4f
@@ -224,6 +232,6 @@ SPEC CHECKSUMS:
   SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: cdc257ce426d0c48cf68dedc1f97094a4333da9b
+PODFILE CHECKSUM: 734bc0841be93c6ba05636dadb5ea34abe80da26
 
 COCOAPODS: 1.5.3

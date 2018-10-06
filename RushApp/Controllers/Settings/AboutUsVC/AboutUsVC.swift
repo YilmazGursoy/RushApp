@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AppRating
 
 class AboutUsVC: BaseVC {
 
@@ -16,15 +17,14 @@ class AboutUsVC: BaseVC {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func reviewTapped(_ sender: Any) {
+        AppRating.showRatingAlert()
     }
-    */
-
+    @IBAction func supportTapped(_ sender: Any) {
+        if let url = URL(string: "mailto:support@rushapp.me") {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+    }
 }

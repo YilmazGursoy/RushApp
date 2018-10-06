@@ -52,6 +52,8 @@ class BaseVC: UIViewController {
     func pushMainTabBar(){
         let window = UIApplication.shared.keyWindow
         let tabbarController = TabBarController()
+        tabbarController.tabBar.backgroundImage = UIImage()
+        tabbarController.tabBar.isTranslucent = true
         window?.rootViewController = tabbarController
         window?.makeKeyAndVisible()
     }

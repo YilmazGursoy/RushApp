@@ -9,6 +9,7 @@
 import UIKit
 import Fabric
 import Firebase
+import AppRating
 import AWSAppSync
 import AWSCognito
 import Crashlytics
@@ -24,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var appSyncClient: AWSAppSyncClient?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        AppRating.appID("1350544652")
+        AppRating.daysUntilPrompt(10)
         
         Fabric.with([Crashlytics.self, AWSCognito.self])
         

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4706B7F6213FAEC300BAC8EA /* FeedDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4706B7F5213FAEC300BAC8EA /* FeedDetailVC.swift */; };
 		4706B7F8213FBB7E00BAC8EA /* FeedDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4706B7F7213FBB7E00BAC8EA /* FeedDetailVC.storyboard */; };
+		47152FED2168B70B00BB1C50 /* RushReviewAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47152FEC2168B70B00BB1C50 /* RushReviewAlertController.swift */; };
+		47152FEF2168B71E00BB1C50 /* RushReviewAlertController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47152FEE2168B71E00BB1C50 /* RushReviewAlertController.storyboard */; };
 		471A6516213023C50065962D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471A6515213023C50065962D /* TabBarController.swift */; };
 		472B813D2149196B00C005B2 /* ImageUploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B813C2149196B00C005B2 /* ImageUploadManager.swift */; };
 		472B81402149272100C005B2 /* PlatformSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B813F2149272100C005B2 /* PlatformSelectionVC.swift */; };
@@ -234,6 +236,8 @@
 /* Begin PBXFileReference section */
 		4706B7F5213FAEC300BAC8EA /* FeedDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailVC.swift; sourceTree = "<group>"; };
 		4706B7F7213FBB7E00BAC8EA /* FeedDetailVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedDetailVC.storyboard; sourceTree = "<group>"; };
+		47152FEC2168B70B00BB1C50 /* RushReviewAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RushReviewAlertController.swift; sourceTree = "<group>"; };
+		47152FEE2168B71E00BB1C50 /* RushReviewAlertController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RushReviewAlertController.storyboard; sourceTree = "<group>"; };
 		471A6515213023C50065962D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		472B813C2149196B00C005B2 /* ImageUploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadManager.swift; sourceTree = "<group>"; };
 		472B813F2149272100C005B2 /* PlatformSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSelectionVC.swift; sourceTree = "<group>"; };
@@ -838,6 +842,8 @@
 			children = (
 				47DE1AFD21487A32006FBFD1 /* RushAlertController.swift */,
 				47DE1AFF21487A37006FBFD1 /* RushAlertController.storyboard */,
+				47152FEC2168B70B00BB1C50 /* RushReviewAlertController.swift */,
+				47152FEE2168B71E00BB1C50 /* RushReviewAlertController.storyboard */,
 			);
 			path = RushAlertController;
 			sourceTree = "<group>";
@@ -1442,6 +1448,7 @@
 				47E2C7982147013A00AAD648 /* FilterCellType1.xib in Resources */,
 				4706B7F8213FBB7E00BAC8EA /* FeedDetailVC.storyboard in Resources */,
 				D2075DCA209DEF4600AC79B6 /* LoginVC.storyboard in Resources */,
+				47152FEF2168B71E00BB1C50 /* RushReviewAlertController.storyboard in Resources */,
 				477CB9A1214E693D003CDEEE /* RoundProfilesView.xib in Resources */,
 				47E2C7522145851E00AAD648 /* FeedDetailFlexView.xib in Resources */,
 				472DFEE42135D3C900FC577A /* OpenSans-ExtraBoldItalic.ttf in Resources */,
@@ -1474,11 +1481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-			);
-			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
@@ -1521,8 +1524,10 @@
 				"${BUILT_PRODUCTS_DIR}/AWSLambda/AWSLambda.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSUserPoolsSignIn/AWSUserPoolsSignIn.framework",
+				"${BUILT_PRODUCTS_DIR}/AppRating/AppRating.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/CRRefresh/CRRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/DeckTransition/DeckTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -1553,8 +1558,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSLambda.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSUserPoolsSignIn.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppRating.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CRRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeckTransition.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -1653,6 +1660,7 @@
 				D2AF692D20A237A500AC40E9 /* ForgotPasswordVC.swift in Sources */,
 				47E2C79F21471C9A00AAD648 /* FilterDetailListVC.swift in Sources */,
 				475F612A2152FDF8003E30FC /* SendCommentRequest.swift in Sources */,
+				47152FED2168B70B00BB1C50 /* RushReviewAlertController.swift in Sources */,
 				47E2C7682145C65F00AAD648 /* LobbyListCell.swift in Sources */,
 				47E2C70E21446D9800AAD648 /* MessageCell.swift in Sources */,
 				D258C0792099061C0090ABB5 /* OnboardingVC.swift in Sources */,

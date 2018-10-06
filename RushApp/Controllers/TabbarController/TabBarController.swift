@@ -13,8 +13,6 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
-        
-        
         let homeVC = FeedVC.createFromStoryboard()
         homeVC.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "homeIcon"), selectedImage: #imageLiteral(resourceName: "homeIconSelected"))
         homeVC.tabBarItem.imageInsets = UIEdgeInsetsMake(6.0, 0.0, -6.0, 0.0);

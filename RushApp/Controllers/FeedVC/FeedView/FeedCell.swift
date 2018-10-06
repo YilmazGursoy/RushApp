@@ -47,7 +47,7 @@ class FeedCell: UITableViewCell {
         self.usernameLabel.text = feed.sender.username
         self.feedDescriptionLabel.text = feed.text
         self.numberOfLikeLabel.text = "\(feed.numberOfLike)"
-        self.numberOfShareLabel.text = "\(feed.numberOfComment ?? 0)"
+//        self.numberOfShareLabel.text = "\(feed.numberOfComment ?? 0)"
         if let feedImage = feed.picture {
             self.pictureBackView.isHidden = false
             self.feedImageView.sd_setImage(with: feedImage, placeholderImage: #imageLiteral(resourceName: "placeholderImage"), completed: nil)
