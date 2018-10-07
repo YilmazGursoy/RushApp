@@ -19,6 +19,7 @@ class HalfModalPresentationController : UIPresentationController {
     var _dimmingView: UIView?
     var panGestureRecognizer: UIPanGestureRecognizer
     var direction: CGFloat = 0
+    var isSort:Bool = false
     var state: ModalScaleState = .normal
     var dimmingView: UIView {
         if let dimmedView = _dimmingView {
@@ -86,8 +87,8 @@ class HalfModalPresentationController : UIPresentationController {
             UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: { () -> Void in
                 presentedView.frame = containerView.frame
                 let containerFrame = containerView.frame
-                let halfFrame = CGRect(origin: CGPoint(x: 0, y: containerFrame.height / 2),
-                                       size: CGSize(width: containerFrame.width, height: containerFrame.height / 2))
+                let halfFrame = CGRect(origin: CGPoint(x: 0, y: (self.isSort == true) ? (containerFrame.height - 200) : (containerFrame.height / 2)),
+                                       size: CGSize(width: containerFrame.width, height: (self.isSort == true) ? (containerFrame.height - 200) : (containerFrame.height / 2)))
                 
                 presentedView.frame = halfFrame
                 
@@ -106,7 +107,7 @@ class HalfModalPresentationController : UIPresentationController {
     }
     
     override var frameOfPresentedViewInContainerView: CGRect {
-        return CGRect(x: 0, y: containerView!.bounds.height / 2 - 50, width: containerView!.bounds.width, height: containerView!.bounds.height / 2 + 50)
+        return CGRect(x: 0, y: (isSort == true) ? containerView!.bounds.height - 200 : containerView!.bounds.height / 2 - 50, width: containerView!.bounds.width, height: (isSort == true) ? 200 : containerView!.bounds.height / 2 + 50)
     }
     
     override func presentationTransitionWillBegin() {

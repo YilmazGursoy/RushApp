@@ -28,6 +28,15 @@ class HalfModalTransitioningDelegate: NSObject, UIViewControllerTransitioningDel
     }
     
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        if let presentinNavigation = presented as? FilterNavigationController {
+            if let viewController = presentinNavigation.viewControllers.last {
+                if viewController.isKind(of: SortVC.self) {
+                    let presentationController = HalfModalPresentationController(presentedViewController: presented, presenting: presenting)
+                    presentationController.isSort = true
+                    return presentationController
+                }
+            }
+        }
         return HalfModalPresentationController(presentedViewController: presented, presenting: presenting)
     }
     

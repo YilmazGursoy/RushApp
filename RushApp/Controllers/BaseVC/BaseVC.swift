@@ -21,6 +21,8 @@ class BaseVC: UIViewController {
         AWSErrorManager.shared.delegate = self
         AWSPopupManager.shared.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(self.openLobbyDetailVC(notification:)), name: NSNotification.Name.init(openLobbyFromNotificationKey), object: nil)
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -106,6 +108,7 @@ class BaseVC: UIViewController {
             }
         }
     }
+    
 }
 
 //MARK: Core Location
@@ -123,5 +126,11 @@ extension BaseVC {
         default:
             completion(.denied)
         }
+    }
+}
+
+extension  BaseVC : UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }

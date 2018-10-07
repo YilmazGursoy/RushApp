@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wi0-ai-fbk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wi0-ai-fbk">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rushLogo" translatesAutoresizingMaskIntoConstraints="NO" id="HTm-B2-Mlu">
-                                                <rect key="frame" x="169.33333333333334" y="30" width="77" height="100"/>
+                                                <rect key="frame" x="168.66666666666666" y="30" width="77" height="100"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="m7k-lq-us8">
                                                 <rect key="frame" x="20" y="150" width="374" height="102"/>
@@ -137,6 +136,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="forgotMyPasswordTapped:" destination="wi0-ai-fbk" eventType="touchUpInside" id="4Xq-UV-0qu"/>
+                                                    <segue destination="9pH-im-XvE" kind="show" id="FoD-vp-f8J"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAs-MM-5eT">
@@ -165,13 +165,13 @@
                                                         <rect key="frame" x="20" y="20" width="374" height="60"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vvx-zN-4z0">
-                                                                <rect key="frame" x="51.666666666666686" y="0.0" width="271" height="60"/>
+                                                                <rect key="frame" x="52" y="0.0" width="270" height="60"/>
                                                                 <subviews>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6X-48-HNl" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="60.666666666666664" height="60"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSa-mt-ty9">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="60.666666666666664" height="60"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                                                 <state key="normal" image="steamicon">
                                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </state>
@@ -198,7 +198,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0u-kp-lDz" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
-                                                                        <rect key="frame" x="70.666666666666671" y="0.0" width="60.000000000000014" height="60"/>
+                                                                        <rect key="frame" x="70" y="0.0" width="60" height="60"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWV-NM-6iL">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -231,10 +231,10 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6pu-cC-u6t" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
-                                                                        <rect key="frame" x="140.66666666666669" y="0.0" width="60.333333333333343" height="60"/>
+                                                                        <rect key="frame" x="140" y="0.0" width="60" height="60"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0t-Ir-Zjv">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="60.333333333333336" height="60"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                                                 <state key="normal" image="googleIcon">
                                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </state>
@@ -261,7 +261,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2h-Ti-V5O" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
-                                                                        <rect key="frame" x="211" y="0.0" width="60" height="60"/>
+                                                                        <rect key="frame" x="210" y="0.0" width="60" height="60"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9f-NM-gnP">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -322,8 +322,8 @@
                                                     <constraint firstAttribute="bottom" secondItem="brw-85-lO0" secondAttribute="bottom" constant="20" id="tqd-yS-sAA"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drX-Dk-Yaj">
-                                                <rect key="frame" x="124.33333333333331" y="577" width="167" height="29"/>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drX-Dk-Yaj">
+                                                <rect key="frame" x="123.66666666666669" y="577" width="167" height="29"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
                                                 <state key="normal" title="Not yet registered? Join here">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -384,7 +384,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I6F-aC-zah" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1.875" y="182.74647887323943"/>
+            <point key="canvasLocation" x="-162" y="174"/>
+        </scene>
+        <!--ForgotPasswordVC-->
+        <scene sceneID="wUX-g6-yXz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ForgotPasswordVC" referencedIdentifier="ForgotPasswordVC" id="9pH-im-XvE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kRH-oN-VG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="456" y="175"/>
         </scene>
     </scenes>
     <resources>

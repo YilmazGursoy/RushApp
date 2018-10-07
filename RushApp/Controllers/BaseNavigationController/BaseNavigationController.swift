@@ -12,8 +12,6 @@ class BaseNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,4 +33,6 @@ extension BaseNavigationController {
     static func createFromStoryboard<T: BaseNavigationController>(storyboardName:String) -> T {
         return UIStoryboard(name: storyboardName, bundle: Bundle.main).instantiateInitialViewController() as! T
     }
+    
+    
 }

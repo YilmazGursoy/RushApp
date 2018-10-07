@@ -32,7 +32,6 @@ extension MapVC : UICollectionViewDelegate, UICollectionViewDataSource {
                     lobbyTheirs.currentLobby = lobby
                     self.navigationController?.pushVCMainThread(lobbyTheirs)
                 }
-                
             }
             lobbyCacher.setObject(cell, forKey: NSString.init(string: "\(indexPath.row)"))
             return cell

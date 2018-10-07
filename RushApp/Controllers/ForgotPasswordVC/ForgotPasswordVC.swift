@@ -9,14 +9,25 @@
 import UIKit
 
 class ForgotPasswordVC: BaseVC {
-
+    @IBOutlet weak var usernameTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupUI()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
+    }
+    
+    private func setupUI(){
+        usernameTextField.attributedPlaceholder = NSAttributedString(string: "Kullanıcı Adı:",
+                                                                     attributes: [NSAttributedStringKey.foregroundColor: UIColor.white.withAlphaComponent(0.5)])
+    }
+    
+    @IBAction func sendConfirmCodeTapped(_ sender: Any) {
+        
         
     }
 }
@@ -25,12 +36,6 @@ class ForgotPasswordVC: BaseVC {
 //MARK: -- ForgotPasswordRequest
 extension ForgotPasswordVC {
     func sendForgotPasswordRequest(){
-        AWSCredentialManager.shared.getUserPool { (pool) in
-            pool.getUser("currentUser").changePassword("current", proposedPassword: "new").continueWith(block: { (task) -> Any? in
-                
-                
-                return nil
-            })
-        }
+        
     }
 }
