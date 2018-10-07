@@ -23,14 +23,14 @@ class RegisterVC: BaseVC {
     }
     
     private func setupUI(){
-        usernameTextField.attributedPlaceholder = NSAttributedString(string: "Username",
+        usernameTextField.attributedPlaceholder = NSAttributedString(string: "Kullanıcı adı",
                                                                      attributes: [NSAttributedStringKey.foregroundColor: UIColor.white.withAlphaComponent(0.5)])
-        emailTextField.attributedPlaceholder = NSAttributedString(string: "Your Email Address",
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "E-Posta adresiniz",
                                                                      attributes: [NSAttributedStringKey.foregroundColor: UIColor.white.withAlphaComponent(0.5)])
         
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedStringKey.foregroundColor:UIColor.white.withAlphaComponent(0.5)])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Şifre", attributes: [NSAttributedStringKey.foregroundColor:UIColor.white.withAlphaComponent(0.5)])
         
-        passwordAgainTextField.attributedPlaceholder = NSAttributedString(string: "Repeat Password", attributes: [NSAttributedStringKey.foregroundColor:UIColor.white.withAlphaComponent(0.5)])
+        passwordAgainTextField.attributedPlaceholder = NSAttributedString(string: "Şifre tekrar", attributes: [NSAttributedStringKey.foregroundColor:UIColor.white.withAlphaComponent(0.5)])
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,11 +51,11 @@ class RegisterVC: BaseVC {
                         if response.error != nil {
                             DispatchQueue.main.async {
                                 if (response.error! as NSError).code == 37 {
-                                    self.showError(title: "", description: "User already exist please enter different username/mail", doneButtonTapped: {
+                                    self.showError(title: "", description: "Kullanıcı zaten mevcut lütfen farklı bir kullanıcı adı / mail giriniz", doneButtonTapped: {
                                         
                                     })
                                 } else if (response.error! as NSError).code == 14 {
-                                    self.showError(title: "", description: "Password must have 1 uppercase, 1 lowercase, 1 special characters and minimum 8 digits.", doneButtonTapped: {
+                                    self.showError(title: "", description: "Şifre minimum 1 küçük karakter 1 büyük karakter 1 özel karakter olmak üzere minimum 8 karakterden oluşmalıdır.", doneButtonTapped: {
                                         
                                     })
                                 } else {
@@ -73,18 +73,18 @@ class RegisterVC: BaseVC {
                         }
                     }
                 } else {
-                    self.showError(title: "", description: "Please enter the same password.") {
+                    self.showError(title: "", description: "Lütfen şifreleri aynı giriniz.") {
                         
                     }
                 }
                 
             } else {
-                self.showError(title: "", description: "Please fill all fields.") {
+                self.showError(title: "", description: "Lütfen tüm alanları doldurunuz.") {
                     
                 }
             }
         } else {
-            self.showError(title: "", description: "Please enter valid Email address") {
+            self.showError(title: "", description: "Lütfen geçerli bir E-Posta adresi giriniz") {
                 
             }
         }

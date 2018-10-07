@@ -37,19 +37,25 @@ class ConfirmEmailVC: BaseVC {
         AWSCredentialManager.shared.getUserPool { (pool) in
             RushLogger.requestLog(message: "Confirm SignUp Request")
             pool.getUser(self.email).confirmSignUp(self.confirmCodeLabel!.text!).continueWith(block: { (task) -> Any? in
-                if task.result != nil {
-                    RushLogger.successLog(message: "Confirm Success")
-                    self.showSuccess(title: "", description: "Confirmation success", doneButtonTapped: {
-                        self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
-                    })
-                    print(task.result ?? "-")
-                } else {
-                    RushLogger.errorLog(message: "Confirm Email Failed")
-                    self.showError(title: "", description: "Verification code is invalid.", doneButtonTapped: {
-                        
-                    })
-                    self.confirmCodeLabel.text = "Confirmation code"
-                    print(task.error ?? "-")
+                DispatchQueue.main.async {
+                    if task.result != nil {
+                        RushLogger.successLog(message: "Confirm Success")
+                        self.showSuccess(title: "", description: "Doğrulama başarılı", doneButtonTapped: {
+                            if self.navigationController != nil {
+                                self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
+                            } else {
+                                self.dismiss()
+                            }
+                        })
+                        print(task.result ?? "-")
+                    } else {
+                        RushLogger.errorLog(message: "Confirm Email Failed")
+                        self.showError(title: "", description: "Doğrulama kodunuz hatalıdır!", doneButtonTapped: {
+                            self.confirmCodeLabel.text = "Doğrulama Kodu"
+                        })
+                        self.confirmCodeLabel.text = "Doğrulama Kodu"
+                        print(task.error ?? "-")
+                    }
                 }
                 return nil
             })
@@ -60,15 +66,17 @@ class ConfirmEmailVC: BaseVC {
         AWSCredentialManager.shared.getUserPool { (pool) in
             RushLogger.functionLog(message: "Resend Confirmation Request")
             pool.getUser(self.email).resendConfirmationCode().continueWith(block: { (task) -> Any? in
-                if task.result != nil {
-                    RushLogger.successLog(message: "Resend Success")
-                    self.showSuccess(title: "", description: "Your new confirmation code has been sending.", doneButtonTapped: {
-                        
-                    })
-                } else {
-                    self.showError(title: "", description: "There is an error sending new confirmation code.", doneButtonTapped: {
-                        
-                    })
+                DispatchQueue.main.async {
+                    if task.result != nil {
+                        RushLogger.successLog(message: "Resend Success")
+                        self.showSuccess(title: "", description: "Yeni doğrulama kodunuz gönderilmiştir.", doneButtonTapped: {
+                            
+                        })
+                    } else {
+                        self.showError(title: "", description: "Yeni doğrulama kodu gönderilirken bir hata oluştu.", doneButtonTapped: {
+                            
+                        })
+                    }
                 }
                 return nil
             })
@@ -77,7 +85,7 @@ class ConfirmEmailVC: BaseVC {
     }
     
     @IBAction func digitTapped(_ sender: UIButton) {
-        if confirmCodeLabel.text!.elementsEqual("Confirmation code") {
+        if confirmCodeLabel.text!.elementsEqual("Doğrulama Kodu") {
             confirmCodeLabel.text = ""
         }
         
@@ -92,11 +100,11 @@ class ConfirmEmailVC: BaseVC {
     }
     
     @IBAction func removeButtonTapped(_ sender: UIButton) {
-        if confirmCodeLabel.text!.elementsEqual("Confirmation code") {
+        if confirmCodeLabel.text!.elementsEqual("Doğrulama Kodu") {
             return
         }
         if (confirmCodeLabel.text?.count)! < 1 {
-            confirmCodeLabel.text = "Confirmation code"
+            confirmCodeLabel.text = "Doğrulama Kodu"
         } else {
             confirmCodeLabel.text?.removeLast()
         }

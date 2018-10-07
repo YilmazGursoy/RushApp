@@ -13,6 +13,7 @@ class LoginVC: BaseVC {
     
     //MARK: IBOutlets
     
+    @IBOutlet weak var loginButtonOutlet: UIButton!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -30,9 +31,9 @@ class LoginVC: BaseVC {
     }
     
     private func setupUI(){
-        usernameTextField.attributedPlaceholder = NSAttributedString(string: "Username or Email Address",
+        usernameTextField.attributedPlaceholder = NSAttributedString(string: "Kullanıcı Adı...",
                                                                attributes: [NSAttributedStringKey.foregroundColor: UIColor.white.withAlphaComponent(0.5)])
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password",
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Şifre...",
                                                                      attributes: [NSAttributedStringKey.foregroundColor: UIColor.white.withAlphaComponent(0.5)])
     }
     
@@ -56,12 +57,11 @@ class LoginVC: BaseVC {
                     }
                 })
             } else {
-                
-                self.showError(title: "Hata!", description: "Kullanıcı adı ya da Şifre yanlış", doneButtonTapped: {
-                    
+                DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
+                    SVProgressHUD.dismiss()
+                    AWSErrorManager.shared.errorControl(error: task.error, userName: self.usernameTextField.text!)
                 })
             }
-            
         }
         
     }
@@ -87,6 +87,20 @@ class LoginVC: BaseVC {
         
     }
     
+    private func loginButtonPassive(){
+        self.loginButtonOutlet.isEnabled = false
+        UIButton.animate(withDuration: 0.2) {
+            self.loginButtonOutlet.alpha = 0.5
+        }
+    }
+    
+    private func loginButtonActive(){
+        self.loginButtonOutlet.isEnabled = true
+        UIButton.animate(withDuration: 0.2) {
+            self.loginButtonOutlet.alpha = 1.0
+        }
+    }
+    
     
     @IBAction func registerTapped(_ sender: UIButton) {
         self.navigationController?.pushVCMainThread(RegisterVC.createFromStoryboard())
@@ -95,6 +109,40 @@ class LoginVC: BaseVC {
     @IBAction func forgotMyPasswordTapped(_ sender: UIButton) {
         //TODO:
     }
+}
+
+extension LoginVC : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let nsString = textField.text as NSString?
+        let newString = nsString?.replacingCharacters(in: range, with: string)
+        
+        if newString != nil {
+            if newString!.count == 0 {
+                self.loginButtonPassive()
+            } else {
+                if textField == usernameTextField {
+                    if passwordTextField.text!.count > 0 {
+                        self.loginButtonActive()
+                    } else {
+                        self.loginButtonPassive()
+                    }
+                } else {
+                    if usernameTextField.text!.count > 0 {
+                        self.loginButtonActive()
+                    } else {
+                        self.loginButtonPassive()
+                    }
+                }
+                
+            }
+        }
+        
+        return true
+    }
     
 }

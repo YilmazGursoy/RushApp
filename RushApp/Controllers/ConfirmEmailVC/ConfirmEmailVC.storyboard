@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sHE-Xn-Kac">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sHE-Xn-Kac">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,18 +22,16 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="198.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Gv-OQ-KLL">
-                                        <rect key="frame" x="10" y="73.5" width="355" height="51"/>
+                                        <rect key="frame" x="10" y="73" width="355" height="52"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fx-wo-Bw2">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lütfen size gönderilmiş olan kodu giriniz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fx-wo-Bw2">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="21"/>
-                                                <string key="text">Please enter the code sent to
-</string>
                                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7t-3L-QR3">
-                                                <rect key="frame" x="0.0" y="30.5" width="355" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="31" width="355" height="21"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -65,8 +62,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nyf-tH-Gzb">
                                 <rect key="frame" x="0.0" y="218.5" width="375" height="52"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmation code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDW-ke-eDP">
-                                        <rect key="frame" x="10" y="14" width="355" height="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doğrulama Kodu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDW-ke-eDP">
+                                        <rect key="frame" x="10" y="13.5" width="355" height="25"/>
                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -98,7 +95,7 @@
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9y1-Rf-fTl">
-                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="81.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="81.5"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
                                                         <state key="normal" title="1">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -123,14 +120,14 @@
                                                 <rect key="frame" x="124.5" y="10" width="94" height="81.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MVa-bO-fwh">
-                                                        <rect key="frame" x="-0.5" y="78.5" width="94.5" height="3"/>
+                                                        <rect key="frame" x="0.0" y="78.5" width="94" height="3"/>
                                                         <color key="backgroundColor" white="1" alpha="0.37" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="3" id="6OC-wu-Qxs"/>
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esZ-4f-BJr">
-                                                        <rect key="frame" x="-0.5" y="0.0" width="94" height="81.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="81.5"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
                                                         <state key="normal" title="2">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -155,7 +152,7 @@
                                                 <rect key="frame" x="233.5" y="10" width="94.5" height="81.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vk6-7u-U93">
-                                                        <rect key="frame" x="-0.5" y="78.5" width="94.5" height="3"/>
+                                                        <rect key="frame" x="0.0" y="78.5" width="94.5" height="3"/>
                                                         <color key="backgroundColor" white="1" alpha="0.37" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="3" id="OKX-xN-gof"/>
@@ -184,17 +181,17 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cEn-IS-9te">
-                                                <rect key="frame" x="15" y="101.5" width="94.5" height="82"/>
+                                                <rect key="frame" x="15" y="101.5" width="94.5" height="81.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="acx-rZ-fSY">
-                                                        <rect key="frame" x="0.0" y="79" width="94.5" height="3"/>
+                                                        <rect key="frame" x="0.0" y="78.5" width="94.5" height="3"/>
                                                         <color key="backgroundColor" white="1" alpha="0.37" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="3" id="XLs-Pk-5vO"/>
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Doa-26-2E8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="82"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="81.5"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
                                                         <state key="normal" title="4">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -216,17 +213,17 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2a2-pv-RP3">
-                                                <rect key="frame" x="124.5" y="101.5" width="94" height="82"/>
+                                                <rect key="frame" x="124.5" y="101.5" width="94" height="81.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkd-dx-LbY">
-                                                        <rect key="frame" x="-0.5" y="79" width="94.5" height="3"/>
+                                                        <rect key="frame" x="0.0" y="78.5" width="94" height="3"/>
                                                         <color key="backgroundColor" white="1" alpha="0.37" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="3" id="M54-EQ-C29"/>
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bJ-jW-B07">
-                                                        <rect key="frame" x="-0.5" y="0.0" width="94" height="82"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="81.5"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
                                                         <state key="normal" title="5">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -248,17 +245,17 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfK-Lt-xy1">
-                                                <rect key="frame" x="233.5" y="101.5" width="94.5" height="82"/>
+                                                <rect key="frame" x="233.5" y="101.5" width="94.5" height="81.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x36-71-not">
-                                                        <rect key="frame" x="-0.5" y="79" width="94.5" height="3"/>
+                                                        <rect key="frame" x="0.0" y="78.5" width="94.5" height="3"/>
                                                         <color key="backgroundColor" white="1" alpha="0.37" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="3" id="4Om-Nc-Llc"/>
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fi5-mX-UFb">
-                                                        <rect key="frame" x="-0.5" y="0.0" width="95" height="82"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="81.5"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
                                                         <state key="normal" title="6">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -280,17 +277,17 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ETj-8a-sTm">
-                                                <rect key="frame" x="15" y="193.5" width="94.5" height="81.5"/>
+                                                <rect key="frame" x="15" y="193" width="94.5" height="82"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suz-uf-Jdb">
-                                                        <rect key="frame" x="0.0" y="78.5" width="94.5" height="3"/>
+                                                        <rect key="frame" x="0.0" y="79" width="94.5" height="3"/>
                                                         <color key="backgroundColor" white="1" alpha="0.37" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="3" id="mB0-eb-wlV"/>
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfh-nP-Q8q">
-                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="81.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="82"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
                                                         <state key="normal" title="7">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -312,17 +309,17 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2b-Fo-hpd">
-                                                <rect key="frame" x="124.5" y="193.5" width="94" height="81.5"/>
+                                                <rect key="frame" x="124.5" y="193" width="94" height="82"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQ1-8j-bNc">
-                                                        <rect key="frame" x="0.0" y="78.5" width="94" height="3"/>
+                                                        <rect key="frame" x="0.0" y="79" width="94" height="3"/>
                                                         <color key="backgroundColor" white="1" alpha="0.37" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="3" id="Odx-Un-siR"/>
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTO-Hu-ezo">
-                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="78.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="79"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
                                                         <state key="normal" title="8">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -344,17 +341,17 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="son-dK-U0h">
-                                                <rect key="frame" x="233.5" y="193.5" width="94.5" height="81.5"/>
+                                                <rect key="frame" x="233.5" y="193" width="94.5" height="82"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAk-jR-XHQ">
-                                                        <rect key="frame" x="-0.5" y="78.5" width="94.5" height="3"/>
+                                                        <rect key="frame" x="0.0" y="79" width="94.5" height="3"/>
                                                         <color key="backgroundColor" white="1" alpha="0.37" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="3" id="yrt-j0-HUU"/>
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBV-7n-JUc">
-                                                        <rect key="frame" x="-0.5" y="0.0" width="95" height="81.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="82"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
                                                         <state key="normal" title="9">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
