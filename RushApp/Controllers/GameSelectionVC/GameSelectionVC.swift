@@ -108,7 +108,7 @@ extension GameSelectionVC {
         createUserRequest.sendUserCreateRequest(games: gameIds, username: username, userProfileImageUrl: imageUrl, completionBlock: { (result, error) in
                 SVProgressHUD.dismiss()
                 if error != nil {
-                    self.showError(title: "Failed", description: "There is an error to creating profile.", doneButtonTapped: {
+                    self.showError(title: "Hata!", description: "Profiliniz oluşturulurken bir hata oluştu.", doneButtonTapped: {
                         
                     })
                 } else {

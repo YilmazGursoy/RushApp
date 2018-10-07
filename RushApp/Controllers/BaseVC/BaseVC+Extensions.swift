@@ -46,14 +46,11 @@ extension BaseVC {
         rushAlert.createOneButtonAlert(title: title, description: description, buttonTitle: "Tamam") {
             doneButtonTapped()
         }
+        
         if self.tabBarController != nil {
-            DispatchQueue.main.async {
-                self.tabBarController?.present(rushAlert, animated: false, completion: nil)
-            }
+            self.tabBarController?.present(rushAlert, animated: false, completion: nil)
         } else {
-            DispatchQueue.main.async {
-                self.present(rushAlert, animated: false, completion: nil)
-            }
+            self.present(rushAlert, animated: false, completion: nil)
         }
     }
 }

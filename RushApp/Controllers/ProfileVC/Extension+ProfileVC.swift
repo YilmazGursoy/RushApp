@@ -128,7 +128,15 @@ extension ProfileVC : UICollectionViewDelegate, UICollectionViewDataSource {
                 self.navigationController?.pushVCMainThread(addrankVC)
             } else {
                 let popUp = RushAlertController.createFromStoryboard()
-                popUp.createAlert(title: "Hey!", description: "Arkadaşının profiline gitmek istediğine emin misin ?", positiveTitle: "Hadi Gidelim!", negativeTitle: "Vazgeç", positiveButtonTapped: {
+                
+                var descriptionMessage:String = ""
+                if isMyProfile {
+                    descriptionMessage = "Profiline gitmek istediğine emin misin ?"
+                } else {
+                    descriptionMessage = "Arkadaşının profiline gitmek istediğine emin misin ?"
+                }
+                
+                popUp.createAlert(title: "Hey!", description: descriptionMessage, positiveTitle: "Hadi Gidelim!", negativeTitle: "Vazgeç", positiveButtonTapped: {
                         guard let url = URL(string: self.currentUser.profileUrls![indexPath.row].url) else { return }
                         UIApplication.shared.open(url)
                 }) {

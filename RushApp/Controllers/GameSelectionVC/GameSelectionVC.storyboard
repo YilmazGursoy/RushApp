@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gcT-cm-2hE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gcT-cm-2hE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,8 +29,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cP-n1-HM3">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJN-Xo-Tjx">
-                                                <rect key="frame" x="170.5" y="12" width="34.5" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Son bir adım" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJN-Xo-Tjx">
+                                                <rect key="frame" x="44" y="10" width="287" height="24"/>
                                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -66,9 +66,11 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="vbZ-bo-O9c" secondAttribute="trailing" id="7jx-DT-8Z3"/>
+                                            <constraint firstItem="kJN-Xo-Tjx" firstAttribute="leading" secondItem="3cP-n1-HM3" secondAttribute="leading" constant="44" id="8Hj-tH-ay2"/>
                                             <constraint firstAttribute="height" constant="44" id="LCK-AY-7YC"/>
                                             <constraint firstItem="kJN-Xo-Tjx" firstAttribute="centerX" secondItem="3cP-n1-HM3" secondAttribute="centerX" id="O2g-aq-Vgd"/>
                                             <constraint firstItem="kJN-Xo-Tjx" firstAttribute="centerY" secondItem="3cP-n1-HM3" secondAttribute="centerY" id="fLE-PX-FTf"/>
+                                            <constraint firstItem="vbZ-bo-O9c" firstAttribute="leading" secondItem="kJN-Xo-Tjx" secondAttribute="trailing" id="m55-oR-969"/>
                                             <constraint firstItem="vbZ-bo-O9c" firstAttribute="top" secondItem="3cP-n1-HM3" secondAttribute="top" id="r98-KN-fql"/>
                                             <constraint firstAttribute="bottom" secondItem="vbZ-bo-O9c" secondAttribute="bottom" id="w50-nz-5XK"/>
                                         </constraints>
@@ -81,11 +83,11 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k1t-nJ-6rc">
-                                        <rect key="frame" x="0.0" y="82.5" width="375" height="564.5"/>
+                                        <rect key="frame" x="0.0" y="86" width="375" height="561"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Your Interests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgj-TH-Ulv">
-                                        <rect key="frame" x="119" y="55" width="138" height="17.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lütfen Beğendiğiniz Oyunları Seçiniz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sgj-TH-Ulv">
+                                        <rect key="frame" x="10" y="55" width="355" height="21"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -97,6 +99,8 @@
                                     <constraint firstItem="Gk2-KV-6YI" firstAttribute="top" secondItem="3cP-n1-HM3" secondAttribute="bottom" id="9Qo-Nj-x0C"/>
                                     <constraint firstItem="3cP-n1-HM3" firstAttribute="top" secondItem="sdf-M8-fIA" secondAttribute="top" id="CK9-I7-kgb"/>
                                     <constraint firstItem="sgj-TH-Ulv" firstAttribute="top" secondItem="Gk2-KV-6YI" secondAttribute="bottom" constant="10" id="EIN-VC-wJK"/>
+                                    <constraint firstItem="sgj-TH-Ulv" firstAttribute="leading" secondItem="sdf-M8-fIA" secondAttribute="leading" constant="10" id="G3s-LN-Ehx"/>
+                                    <constraint firstAttribute="trailing" secondItem="sgj-TH-Ulv" secondAttribute="trailing" constant="10" id="MMx-wO-lbu"/>
                                     <constraint firstAttribute="trailing" secondItem="k1t-nJ-6rc" secondAttribute="trailing" id="OGz-I5-ABa"/>
                                     <constraint firstAttribute="trailing" secondItem="3cP-n1-HM3" secondAttribute="trailing" id="PBM-r9-J97"/>
                                     <constraint firstItem="k1t-nJ-6rc" firstAttribute="leading" secondItem="sdf-M8-fIA" secondAttribute="leading" id="Uga-db-fDd"/>

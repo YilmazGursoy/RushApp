@@ -26,9 +26,7 @@ class LoginRequest {
                 } else {
                     RushLogger.errorLog(message: "Login Failed")
                     print(task.error!)
-                    AWSErrorManager.shared.errorControl(error: task.error, userName: username, completion: {
-                        completion(task)
-                    })
+                    completion(task)
                 }
                 return nil
             })

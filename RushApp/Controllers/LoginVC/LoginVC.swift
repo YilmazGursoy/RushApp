@@ -23,6 +23,10 @@ class LoginVC: BaseVC {
         setupUI()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -40,6 +44,7 @@ class LoginVC: BaseVC {
     //MARK: IBActions
     
     @IBAction func loginTapped(_ sender: UIButton) {
+        self.view.endEditing(true)
         let loginManager = LoginRequest()
         SVProgressHUD.show()
         loginManager.login(withUsername: usernameTextField.text!, andPassword: passwordTextField.text!) { (task) in
@@ -57,9 +62,9 @@ class LoginVC: BaseVC {
                     }
                 })
             } else {
-                DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now()+0, execute: {
                     SVProgressHUD.dismiss()
-                    AWSErrorManager.shared.errorControl(error: task.error, userName: self.usernameTextField.text!)
+                    self.loginErrorChecks(error: task.error, userName: self.usernameTextField.text!)
                 })
             }
         }
@@ -67,6 +72,7 @@ class LoginVC: BaseVC {
     }
     
     @IBAction func facebookLoginTapped(_ sender: UIButton) {
+        self.view.endEditing(true)
         let loginManager = LoginRequest()
         loginManager.facebookLogin(withTarget: self) { (isSuccess) in
             if isSuccess == true {
@@ -109,6 +115,25 @@ class LoginVC: BaseVC {
     @IBAction func forgotMyPasswordTapped(_ sender: UIButton) {
         //TODO:
     }
+    
+    
+    private func loginErrorChecks(error:Error?, userName:String){
+        SVProgressHUD.dismiss()
+        if let _error = error {
+            switch _error._code {
+            case ErrorConstants.awsCognitoConfirmEmailCode:
+                let vc = ConfirmEmailVC.createFromStoryboard()
+                vc.email = userName
+                self.navigationController?.pushVCMainThread(vc)
+            case ErrorConstants.awsCognitoSignoutCode:
+                self.forceOpenViewController(forceViwController: LoginVC.createFromStoryboard())
+            default:
+                RushLogger.errorLog(message: "Not defining Error with code \(_error._code)")
+                self.showErrorMessage(message: "Kullanıcı adı / Şifre yanlış :(")
+            }
+        }
+    }
+    
 }
 
 extension LoginVC : UITextFieldDelegate {
