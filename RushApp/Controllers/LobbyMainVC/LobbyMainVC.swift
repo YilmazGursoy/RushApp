@@ -92,7 +92,7 @@ class LobbyMainVC: BaseVC {
     
     @IBAction func filterTapped(_ sender: Any) {
         let filterNav = FilterVC.createFromStoryboard()
-        filterNav.navigationTitle = "Filter"
+        filterNav.navigationTitle = "Filtrele"
         filterNav.applyTapped = {
             self.setupUI()
             NotificationCenter.default.post(name: NSNotification.Name.init(kUpdateFilter), object: nil)
@@ -105,12 +105,13 @@ class LobbyMainVC: BaseVC {
         self.present(navController, animated:true, completion: nil)
     }
     @IBAction func sortTapped(_ sender: Any) {
-        let filterNav = FilterVC.createFromStoryboard()
-        filterNav.navigationTitle = "Sort"
+        let filterNav = SortVC.createFromStoryboard()
+        
         filterNav.applyTapped = {
             self.setupUI()
             NotificationCenter.default.post(name: NSNotification.Name.init(kUpdateFilter), object: nil)
         }
+        
         let navController = FilterNavigationController(rootViewController: filterNav)
         navController.modalPresentationStyle = .custom
         let halfModalTransitioningDelegate = HalfModalTransitioningDelegate(viewController: self, presentingViewController: navController)

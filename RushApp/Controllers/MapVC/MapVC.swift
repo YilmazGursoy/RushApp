@@ -35,6 +35,14 @@ class MapVC: BaseVC {
             } else {
                 lastLobbies = filterLobbies
             }
+            if Rush.shared.sortType != nil {
+                if Rush.shared.sortType! == .date {
+                    lastLobbies = lastLobbies.sorted{$0.date > $1.date}
+                } else if Rush.shared.sortType == .popular {
+                    lastLobbies = lastLobbies.sorted{$0.numberOfNeededUser < $1.numberOfNeededUser}
+                }
+            }
+            
             filteredLobbies = lastLobbies
         }
     }

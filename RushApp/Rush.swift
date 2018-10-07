@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum SortType {
+    case none
+    case date
+    case popular
+}
+
 class Rush {
     static let shared = Rush()
     var currentUser:User!
@@ -16,6 +22,7 @@ class Rush {
     var filterPlatform:Platform!
     var filterGame:Game?
     var firToken:String?
+    var sortType:SortType?
 }
 
 extension Rush {

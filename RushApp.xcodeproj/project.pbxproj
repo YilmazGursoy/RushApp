@@ -20,6 +20,9 @@
 		47152FFE2169733A00BB1C50 /* LobbyRequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47152FFC2169733A00BB1C50 /* LobbyRequestCell.xib */; };
 		4715300021697B8900BB1C50 /* Extension+FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47152FFF21697B8900BB1C50 /* Extension+FeedVC.swift */; };
 		47153002216982B100BB1C50 /* RemoveLobbyRequest .swift in Sources */ = {isa = PBXBuildFile; fileRef = 47153001216982B100BB1C50 /* RemoveLobbyRequest .swift */; };
+		4715300521698BC300BB1C50 /* SortVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4715300421698BC300BB1C50 /* SortVC.swift */; };
+		4715300721698BC900BB1C50 /* SortVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4715300621698BC900BB1C50 /* SortVC.storyboard */; };
+		4715300A21698CF300BB1C50 /* SortCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4715300921698CF300BB1C50 /* SortCell.swift */; };
 		471A6516213023C50065962D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471A6515213023C50065962D /* TabBarController.swift */; };
 		472B813D2149196B00C005B2 /* ImageUploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B813C2149196B00C005B2 /* ImageUploadManager.swift */; };
 		472B81402149272100C005B2 /* PlatformSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472B813F2149272100C005B2 /* PlatformSelectionVC.swift */; };
@@ -256,6 +259,9 @@
 		47152FFC2169733A00BB1C50 /* LobbyRequestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LobbyRequestCell.xib; sourceTree = "<group>"; };
 		47152FFF21697B8900BB1C50 /* Extension+FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+FeedVC.swift"; sourceTree = "<group>"; };
 		47153001216982B100BB1C50 /* RemoveLobbyRequest .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoveLobbyRequest .swift"; sourceTree = "<group>"; };
+		4715300421698BC300BB1C50 /* SortVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortVC.swift; sourceTree = "<group>"; };
+		4715300621698BC900BB1C50 /* SortVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SortVC.storyboard; sourceTree = "<group>"; };
+		4715300921698CF300BB1C50 /* SortCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortCell.swift; sourceTree = "<group>"; };
 		471A6515213023C50065962D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		472B813C2149196B00C005B2 /* ImageUploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadManager.swift; sourceTree = "<group>"; };
 		472B813F2149272100C005B2 /* PlatformSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSelectionVC.swift; sourceTree = "<group>"; };
@@ -536,6 +542,24 @@
 				47152FFC2169733A00BB1C50 /* LobbyRequestCell.xib */,
 			);
 			path = LobbyRequestCell;
+			sourceTree = "<group>";
+		};
+		4715300321698BB600BB1C50 /* SortVC */ = {
+			isa = PBXGroup;
+			children = (
+				4715300821698CE100BB1C50 /* SortCell */,
+				4715300421698BC300BB1C50 /* SortVC.swift */,
+				4715300621698BC900BB1C50 /* SortVC.storyboard */,
+			);
+			path = SortVC;
+			sourceTree = "<group>";
+		};
+		4715300821698CE100BB1C50 /* SortCell */ = {
+			isa = PBXGroup;
+			children = (
+				4715300921698CF300BB1C50 /* SortCell.swift */,
+			);
+			path = SortCell;
 			sourceTree = "<group>";
 		};
 		471A6514213023B00065962D /* TabbarController */ = {
@@ -1033,6 +1057,7 @@
 		47E2C78A2146D62A00AAD648 /* FilterVC */ = {
 			isa = PBXGroup;
 			children = (
+				4715300321698BB600BB1C50 /* SortVC */,
 				47E2C79D21471C8E00AAD648 /* FilterDetailListVC */,
 				47E2C7942147012C00AAD648 /* FilterCellType1 */,
 				47E2C7932147012B00AAD648 /* FilterCellType2 */,
@@ -1501,6 +1526,7 @@
 				475F61182151A805003E30FC /* LobbyChatVC.storyboard in Resources */,
 				47E2C6FF2142832800AAD648 /* FriendSelectionVC.storyboard in Resources */,
 				472DFED12135D28000FC577A /* GameSelectionVC.storyboard in Resources */,
+				4715300721698BC900BB1C50 /* SortVC.storyboard in Resources */,
 				D258C034209645EE0090ABB5 /* Main.storyboard in Resources */,
 				D2075DDB209E449000AC79B6 /* ConfirmEmailVC.storyboard in Resources */,
 				472DFEDF2135D3C900FC577A /* OpenSans-Italic.ttf in Resources */,
@@ -1645,6 +1671,7 @@
 				D2075DA9209B866500AC79B6 /* CacheManager.swift in Sources */,
 				47152FF921696EF400BB1C50 /* LobbyRequestModel.swift in Sources */,
 				472B8169214C65D100C005B2 /* ProfileLobbyCollectionCell.swift in Sources */,
+				4715300521698BC300BB1C50 /* SortVC.swift in Sources */,
 				47E2C7902146D65E00AAD648 /* FilterNavigationController.swift in Sources */,
 				47C3C066213E624C00A74171 /* SimpleUser.swift in Sources */,
 				472B8170214C778E00C005B2 /* ProfileRankCollectionCell.swift in Sources */,
@@ -1742,6 +1769,7 @@
 				477CB9A7214EA285003CDEEE /* FormattedDate.swift in Sources */,
 				D2075DD9209E447E00AC79B6 /* ConfirmEmailVC.swift in Sources */,
 				47DE1AFE21487A32006FBFD1 /* RushAlertController.swift in Sources */,
+				4715300A21698CF300BB1C50 /* SortCell.swift in Sources */,
 				47E2C7502145851300AAD648 /* FeedDetailFlexView.swift in Sources */,
 				D258C07D2099098B0090ABB5 /* BaseVC+Extensions.swift in Sources */,
 				47DE1AF62148563C006FBFD1 /* UpdateFirebaseTokenRequest.swift in Sources */,

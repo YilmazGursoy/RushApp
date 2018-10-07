@@ -23,22 +23,26 @@ class FilterVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.titleLabel.text = navigationTitle
-        setupUI()
+        self.setupUIForFilter()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
     }
     
-    private func setupUI(){
+    private func setupUIForFilter(){
         self.tableView.register(UINib.init(nibName: "FilterCellType1", bundle: .main), forCellReuseIdentifier: "FilterCellType1")
         self.tableView.register(UINib.init(nibName: "FilterCellType2", bundle: .main), forCellReuseIdentifier: "FilterCellType2")
     }
+    
+    private func setupUIForSort(){
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     @IBAction func dismissTapped(_ sender: UIButton) {
         Rush.resetFilters()
