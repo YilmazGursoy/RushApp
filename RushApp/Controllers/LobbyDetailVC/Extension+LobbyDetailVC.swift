@@ -91,6 +91,25 @@ extension LobbyDetailVC : UITableViewDelegate, UITableViewDataSource {
                 cell.arrangeCell(type: .addPlayer) {
                     DispatchQueue.main.asyncAfter(deadline: .now()+0.5, execute: {
                         let friendSelectionVC = FriendSelectionVC.createFromStoryboard()
+                        friendSelectionVC.selectedFriendsTapped = { users in
+                            
+                            var allUsers = [SimpleUser]()
+                            users.forEach({ (simpleUser) in
+                                if !self.currentLobby.subscribers.contains{$0.id == simpleUser.id} {
+                                    allUsers.append(simpleUser)
+                                }
+                            })
+                            
+                            SVProgressHUD.show()
+                            let request = AddFriendToLobbyRequest()
+                            request.sendFriendRequest(lobbyId: self.currentLobby.id, lobbyDate: self.currentLobby.date.timeIntervalSinceReferenceDate, username: Rush.shared.currentUser.username, userId: Rush.shared.currentUser.userId, users: allUsers, successCompletion: {
+                                SVProgressHUD.dismiss()
+                                self.showSuccess(message: "Davetin arkadaşlarına başarıyla gönderildi :)")
+                            }, errrCompletion: {
+                                SVProgressHUD.dismiss()
+                                
+                            })
+                        }
                         self.present(friendSelectionVC, animated: false, completion: nil)
                     })
                 }

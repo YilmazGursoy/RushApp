@@ -14,10 +14,11 @@ class FriendSelectionVC: BaseVC {
     @IBOutlet private weak var tableView: UITableView!
     private var selectedIndexes:[Bool] = []
     
+    var selectedFriendsTapped:(([SimpleUser])->Void)?
+    
     private var allFriends:[SimpleUser]! {
         didSet{
             self.selectedIndexes = Array.init(repeating: false, count: self.allFriends.count)
-            
             self.tableView.delegate = self
             self.tableView.dataSource = self
             self.tableView.reloadData()
@@ -54,6 +55,15 @@ class FriendSelectionVC: BaseVC {
     
     
     @IBAction func doneTapped(_ sender: UIButton) {
+        var users = [SimpleUser]()
+        
+        for (index, isSelected) in selectedIndexes.enumerated() {
+            if isSelected == true {
+                users.append(allFriends[index])
+            }
+        }
+        
+        selectedFriendsTapped?(users)
         self.dismiss(animated: false, completion: nil)
         
     }

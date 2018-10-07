@@ -23,6 +23,7 @@ struct User : Decodable {
     var bio:String?
     var gender:String?
     var age:Int?
+    var lobbyRequests:[LobbyRequestModel]?
     
     enum CodingKeys: String, CodingKey {
         case userId = "userId"
@@ -39,6 +40,7 @@ struct User : Decodable {
         case bio = "bio"
         case gender = "gender"
         case age = "age"
+        case lobbyRequests = "lobbyRequests"
     }
 }
 
@@ -55,6 +57,16 @@ extension User {
         let imageUrl = imageSpesificURL.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         let url = ConstantUrls.profilePictureS3BaseUrl + imageUrl!
         return URL(string: url)!
+    }
+    
+    func getLobbyRequestList()->[LobbyRequestModel] {
+        var list = [LobbyRequestModel]()
+        lobbyRequests?.forEach({ (model) in
+            if !list.contains(where: {$0.lobbyId == model.lobbyId}) {
+                list.append(model)
+            }
+        })
+        return list
     }
 }
 

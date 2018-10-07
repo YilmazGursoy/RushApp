@@ -25,9 +25,16 @@ class FeedVC: BaseVC {
         return refreshControl
     }()
     
+    private var lobbyRequests:[LobbyRequestModel]!
+    
     private var feedItems:[Feed]! {
         didSet{
             DispatchQueue.main.async {
+                if Rush.shared.currentUser.getLobbyRequestList() != nil {
+                    self.lobbyRequests = Rush.shared.currentUser.getLobbyRequestList()
+                } else {
+                    self.lobbyRequests = []
+                }
                 self.tableView.delegate = self
                 self.tableView.dataSource = self
                 self.tableView.reloadData()
@@ -42,6 +49,7 @@ class FeedVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib.init(nibName: "FeedCell", bundle: .main), forCellReuseIdentifier: "FeedCell")
+        self.tableView.register(UINib.init(nibName: "LobbyRequestCell", bundle: .main), forCellReuseIdentifier: "LobbyRequestCell")
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 200
         self.sendFeedRequest()
@@ -91,55 +99,70 @@ class FeedVC: BaseVC {
         }
         self.tabBarController?.present(alert, animated: false, completion: nil)
     }
-    
 }
 
 extension FeedVC : UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.feedItems.count
+        if section == 1 {
+            return self.feedItems.count
+        } else {
+            return self.lobbyRequests.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell") as! FeedCell
-        
-        cell.arrangeCell(feed: self.feedItems[indexPath.row], indexPath: indexPath, selectCompletion: { (view, index) in
-            
-        }) { (index, isLike) in
-            if isLike {
-                let likeRequest = SendLikeRequest()
-                likeRequest.sendLikeFeedRequest(feedId: self.feedItems[index].id, feedDate: self.feedItems[index].date.timeIntervalSinceReferenceDate, successCompletion: { (user) in
-                    Rush.shared.currentUser = user
-                    self.feedItems[indexPath.row].numberOfLike += 1
-                }, errorCompletion: {
-                    self.showErrorMessage(message: "Bir Sorun Oluştu.")
-                })
-            } else {
-                
-                let dislikeRequest = SendDislikeRequest()
-                dislikeRequest.sendDislikeFeedRequest(feedId: self.feedItems[index].id, feedDate: self.feedItems[index].date.timeIntervalSinceReferenceDate, successCompletion: { (user) in
-                    Rush.shared.currentUser = user
-                    self.feedItems[indexPath.row].numberOfLike -= 1
-                }, errorCompletion: {
-                    
-                })
+        if indexPath.section == 0 {
+            let lobbyRequestCell = tableView.dequeueReusableCell(withIdentifier: "LobbyRequestCell") as! LobbyRequestCell
+            lobbyRequestCell.arrangeCell(lobbyRequest: self.lobbyRequests[indexPath.row], applyTapped: {
+                self.joinLobbyRequest(lobbyRequest: self.lobbyRequests[indexPath.row])
+            }, cancelTapped: {
+                self.deleteLobbyRequest(lobbyRequest: self.lobbyRequests[indexPath.row])
+            }) { (profileId) in
+                ProfileVC.push(in: self.navigationController!, userId: profileId)
             }
+            return lobbyRequestCell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell") as! FeedCell
+            
+            cell.arrangeCell(feed: self.feedItems[indexPath.row], indexPath: indexPath, selectCompletion: { (view, index) in
+                
+            }) { (index, isLike) in
+                if isLike {
+                    let likeRequest = SendLikeRequest()
+                    likeRequest.sendLikeFeedRequest(feedId: self.feedItems[index].id, feedDate: self.feedItems[index].date.timeIntervalSinceReferenceDate, successCompletion: { (user) in
+                        Rush.shared.currentUser = user
+                        self.feedItems[indexPath.row].numberOfLike += 1
+                    }, errorCompletion: {
+                        self.showErrorMessage(message: "Bir Sorun Oluştu.")
+                    })
+                } else {
+                    
+                    let dislikeRequest = SendDislikeRequest()
+                    dislikeRequest.sendDislikeFeedRequest(feedId: self.feedItems[index].id, feedDate: self.feedItems[index].date.timeIntervalSinceReferenceDate, successCompletion: { (user) in
+                        Rush.shared.currentUser = user
+                        self.feedItems[indexPath.row].numberOfLike -= 1
+                    }, errorCompletion: {
+                        
+                    })
+                }
+            }
+            
+            return cell
         }
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detail = FeedDetailVC.createFromStoryboard()
-        detail.feed = self.feedItems[indexPath.row]
-        detail.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushVCMainThread(detail)
+        if indexPath.section == 1 {
+            let detail = FeedDetailVC.createFromStoryboard()
+            detail.feed = self.feedItems[indexPath.row]
+            detail.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushVCMainThread(detail)
+        }
     }
     
 }
-
-//
-//@IBAction func logoutButtonTapped(_ sender: UIButton) {
-//    AWSCredentialManager.shared.logout()
-//    self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
-//}
-
