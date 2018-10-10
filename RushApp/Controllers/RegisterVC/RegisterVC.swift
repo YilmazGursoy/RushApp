@@ -58,6 +58,8 @@ class RegisterVC: BaseVC {
                                     self.showError(title: "", description: "Şifre minimum 1 küçük karakter 1 büyük karakter 1 özel karakter olmak üzere minimum 8 karakterden oluşmalıdır.", doneButtonTapped: {
                                         
                                     })
+                                } else if (response.error! as NSError).code == 13 {
+                                    self.showErrorMessage(message: "Lütfen geçerli bir kullanıcı adı giriniz.")
                                 } else {
                                     self.showError(title: "", description: response.error!.localizedDescription, doneButtonTapped: {
                                         

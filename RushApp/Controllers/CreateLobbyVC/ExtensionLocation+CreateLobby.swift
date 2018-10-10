@@ -18,10 +18,9 @@ extension CreateLobbyVC {
                 alert.createAlert(title: "Lobby oluşturmak istiyor musun?", description: "Konumuna yakın bölgelerde istediğin gibi lobby kur", positiveTitle: "Konum Aç", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
                     self.locationManager.delegate = self
                     self.locationManager.requestWhenInUseAuthorization()
-                    
                 }) {
                     
-                    self.pop()
+                    self.dismiss()
                     
                 }
                 self.present(alert, animated: false, completion: nil)
@@ -29,9 +28,9 @@ extension CreateLobbyVC {
                 let alert = RushAlertController.createFromStoryboard()
                 alert.createAlert(title: "Hey!", description: "Maalesef ayarlardan konum servislerini açman gerek.", positiveTitle: "Tamam", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
                     UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
-                    self.pop()
+                    self.dismiss()
                 }) {
-                    self.pop()
+                    self.dismiss()
                 }
                 self.present(alert, animated: false, completion: nil)
             } else if status == .authorizedWhenInUse {
@@ -75,13 +74,7 @@ extension CreateLobbyVC {
                 break
                 
             case .notDetermined:
-                let alert = RushAlertController.createFromStoryboard()
-                alert.createAlert(title: "Denem", description: "Deneme dneme", positiveTitle: "1", negativeTitle: "2", positiveButtonTapped: {
-                    
-                }) {
-                    
-                }
-                self.present(alert, animated: false, completion: nil)
+                print("Not Determined")
             case .restricted:
                 print("Restricted.")
             case .denied:
@@ -99,16 +92,16 @@ extension CreateLobbyVC : CLLocationManagerDelegate {
             alert.createAlert(title: "Lobby oluşturmak istiyor musun?", description: "Konumuna yakın bölgelerde istediğin gibi lobby kur", positiveTitle: "Konum Aç", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
                 self.locationManager.requestWhenInUseAuthorization()
             }) {
-                self.pop()
+                self.dismiss()
             }
             self.present(alert, animated: false, completion: nil)
         } else if status == .denied {
             let alert = RushAlertController.createFromStoryboard()
             alert.createAlert(title: "Hey!", description: "Maalesef ayarlardan konum servislerini açman gerek.", positiveTitle: "Tamam", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
                 UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
-                self.pop()
+                self.dismiss()
             }) {
-                self.pop()
+                self.dismiss()
             }
             self.present(alert, animated: false, completion: nil)
         } else if status == .authorizedWhenInUse {

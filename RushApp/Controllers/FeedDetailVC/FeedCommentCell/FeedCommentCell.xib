@@ -67,17 +67,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIz-Ql-fvm">
+                                <rect key="frame" x="0.0" y="0.0" width="274" height="44"/>
+                                <connections>
+                                    <action selector="openProfileTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="XTy-Y5-g4M"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OJd-Nj-jqL" firstAttribute="centerY" secondItem="NuK-dc-8ug" secondAttribute="centerY" id="0J7-lK-75G"/>
+                            <constraint firstAttribute="trailing" secondItem="jIz-Ql-fvm" secondAttribute="trailing" id="16h-XC-zWu"/>
                             <constraint firstItem="0Z3-iD-xk9" firstAttribute="leading" secondItem="NuK-dc-8ug" secondAttribute="leading" id="3N4-nf-HY0"/>
                             <constraint firstItem="XJt-VD-FvQ" firstAttribute="centerY" secondItem="NuK-dc-8ug" secondAttribute="centerY" id="6at-n4-Bpn"/>
                             <constraint firstItem="OJd-Nj-jqL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XJt-VD-FvQ" secondAttribute="trailing" constant="10" id="Bun-vR-hw0"/>
+                            <constraint firstItem="jIz-Ql-fvm" firstAttribute="top" secondItem="NuK-dc-8ug" secondAttribute="top" id="Ek9-S2-Eeh"/>
                             <constraint firstAttribute="trailing" secondItem="OJd-Nj-jqL" secondAttribute="trailing" id="Xq8-h7-TGy"/>
                             <constraint firstAttribute="height" constant="44" id="Z9P-0t-2Fy"/>
                             <constraint firstItem="0Z3-iD-xk9" firstAttribute="centerY" secondItem="NuK-dc-8ug" secondAttribute="centerY" id="fCd-wg-W9h"/>
+                            <constraint firstAttribute="bottom" secondItem="jIz-Ql-fvm" secondAttribute="bottom" id="qO4-8q-4BR"/>
                             <constraint firstItem="XJt-VD-FvQ" firstAttribute="leading" secondItem="0Z3-iD-xk9" secondAttribute="trailing" constant="5" id="rBL-sv-TGe"/>
+                            <constraint firstItem="jIz-Ql-fvm" firstAttribute="leading" secondItem="NuK-dc-8ug" secondAttribute="leading" id="zgt-Kg-P8u"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guys, what you think about my stats ? , Guys, what you think about my stats ? , Guys, what you think about my stats ? " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYD-bl-GJj">
@@ -115,7 +125,7 @@
                 <outlet property="userProfilePicImageView" destination="DaR-eJ-8Lz" id="Vef-ar-CLE"/>
                 <outlet property="usernameLabel" destination="XJt-VD-FvQ" id="Elb-bB-Wgt"/>
             </connections>
-            <point key="canvasLocation" x="-32" y="6"/>
+            <point key="canvasLocation" x="-32" y="5.3973013493253381"/>
         </tableViewCell>
     </objects>
     <resources>

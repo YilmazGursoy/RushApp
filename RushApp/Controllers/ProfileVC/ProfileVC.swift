@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 import SDWebImage
 import SVProgressHUD
 import PMAlertController
@@ -19,6 +20,7 @@ private let editText = "Düzenle"
 
 class ProfileVC: BaseVC {
     @IBOutlet weak var followingTextLabel: UILabel!
+    @IBOutlet weak var profileBadgeBackView: UIView!
     
     static func push(in navigationController:UINavigationController, userId:String?) {
         let vc = ProfileVC.createFromStoryboard()
@@ -136,6 +138,11 @@ class ProfileVC: BaseVC {
     
     func setupUI(isCacheRefresh:Bool, isClearAllCache:Bool){
         DispatchQueue.main.async {
+            
+            let lottieView = LOTAnimationView(name: "check_animation")
+            lottieView.frame = self.profileBadgeBackView.bounds
+            self.profileBadgeBackView.addSubview(lottieView)
+            lottieView.play { (finish) in}
             
             if self.currentUser.gameList != nil {
                 var newGameList = self.currentUser.gameList?.shuffled()

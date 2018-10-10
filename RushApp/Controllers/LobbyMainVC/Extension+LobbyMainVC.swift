@@ -21,16 +21,16 @@ extension LobbyMainVC {
                     
                 }) {
                     
-                    self.pop()
+                    self.tabBarController?.selectedIndex = 0
                 }
                 self.tabBarController?.present(alert, animated: false, completion: nil)
             } else if status == .denied {
                 let alert = RushAlertController.createFromStoryboard()
                 alert.createAlert(title: "Hey!", description: "Maalesef ayarlardan konum servislerini açman gerek.", positiveTitle: "Tamam", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
                     UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
-                    self.pop()
+                    self.tabBarController?.selectedIndex = 0
                 }) {
-                    self.pop()
+                    self.tabBarController?.selectedIndex = 0
                 }
                 self.tabBarController?.present(alert, animated: false, completion: nil)
             } else if status == .authorizedWhenInUse {
@@ -75,14 +75,7 @@ extension LobbyMainVC {
                 break
                 
             case .notDetermined:
-                let alert = RushAlertController.createFromStoryboard()
-                alert.createAlert(title: "Denem", description: "Deneme dneme", positiveTitle: "1", negativeTitle: "2", positiveButtonTapped: {
-                    
-                }) {
-                    
-                }
-                self.tabBarController?.present(alert, animated: false, completion: nil)
-                break
+                print("restricted")
                 
             case .restricted:
                 print("Restricted.")
@@ -103,16 +96,16 @@ extension LobbyMainVC : CLLocationManagerDelegate {
             alert.createAlert(title: "Oyun lobilerini aramak mı istiyorsun?", description: "Konumuna yakın bölgelerde istediğin gibi Lobi ara", positiveTitle: "Konum Aç", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
                 self.locationManager.requestWhenInUseAuthorization()
             }) {
-                self.pop()
+                self.tabBarController?.selectedIndex = 0
             }
             self.tabBarController?.present(alert, animated: false, completion: nil)
         } else if status == .denied {
             let alert = RushAlertController.createFromStoryboard()
             alert.createAlert(title: "Hey!", description: "Maalesef ayarlardan konum servislerini açman gerek.", positiveTitle: "Tamam", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
                 UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
-                self.pop()
+                self.tabBarController?.selectedIndex = 0
             }) {
-                self.pop()
+                self.tabBarController?.selectedIndex = 0
             }
             self.tabBarController?.present(alert, animated: false, completion: nil)
         } else if status == .authorizedWhenInUse {

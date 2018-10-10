@@ -15,6 +15,9 @@ class FeedCommentCell: UITableViewCell {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    private var currentUserId:String!
+    private var profileTapped:((String)->Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,11 +29,16 @@ class FeedCommentCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func arrange(comment:Comment) {
+    func arrange(comment:Comment, userProfileTapped:@escaping (String)->Void) {
+        self.profileTapped = userProfileTapped
+        self.currentUserId = comment.senderUserId
         self.usernameLabel.text = comment.senderUserName
         self.userProfilePicImageView.sd_setImage(with: User.getProfilePictureFrom(userId: comment.senderUserId), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .cacheMemoryOnly, completed: nil)
         self.messageLabel.text = comment.message
         self.dateLabel.text = Date().offset(from: Date(timeIntervalSinceReferenceDate: TimeInterval((comment.createdAt as NSString).intValue)))
     }
     
+    @IBAction func openProfileTapped(_ sender: UIButton) {
+        profileTapped?(self.currentUserId)
+    }
 }

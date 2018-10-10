@@ -95,6 +95,7 @@
 		4742C092216DC34E00E33233 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742C090216DC34E00E33233 /* Slide.swift */; };
 		4742C093216DC34E00E33233 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4742C091216DC34E00E33233 /* Slide.xib */; };
 		4742C095216DC5A700E33233 /* Extension+OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742C094216DC5A700E33233 /* Extension+OnboardingVC.swift */; };
+		4742C0D4216E6DDD00E33233 /* check_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4742C0D3216E6DDD00E33233 /* check_animation.json */; };
 		475F61162151A800003E30FC /* LobbyChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475F61152151A800003E30FC /* LobbyChatVC.swift */; };
 		475F61182151A805003E30FC /* LobbyChatVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 475F61172151A805003E30FC /* LobbyChatVC.storyboard */; };
 		475F611B2152D2B3003E30FC /* LobbyDetailVCTheirs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475F611A2152D2B3003E30FC /* LobbyDetailVCTheirs.swift */; };
@@ -337,6 +338,7 @@
 		4742C090216DC34E00E33233 /* Slide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		4742C091216DC34E00E33233 /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		4742C094216DC5A700E33233 /* Extension+OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+OnboardingVC.swift"; sourceTree = "<group>"; };
+		4742C0D3216E6DDD00E33233 /* check_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = check_animation.json; sourceTree = "<group>"; };
 		475F61152151A800003E30FC /* LobbyChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyChatVC.swift; sourceTree = "<group>"; };
 		475F61172151A805003E30FC /* LobbyChatVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LobbyChatVC.storyboard; sourceTree = "<group>"; };
 		475F611A2152D2B3003E30FC /* LobbyDetailVCTheirs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyDetailVCTheirs.swift; sourceTree = "<group>"; };
@@ -1340,6 +1342,7 @@
 		D258C06C2098F5170090ABB5 /* OtherFiles */ = {
 			isa = PBXGroup;
 			children = (
+				4742C0D3216E6DDD00E33233 /* check_animation.json */,
 				47152FF421694DD700BB1C50 /* waitAnimation.json */,
 				472DFED22135D3C900FC577A /* Fonts */,
 				D258C06E2098F5170090ABB5 /* AppDelegate.swift */,
@@ -1499,6 +1502,7 @@
 				472DFF0C213849F400FC577A /* LobbyCollectionCell.xib in Resources */,
 				472B815321497A0300C005B2 /* LobbyDetailTitleCell.xib in Resources */,
 				472DFF072138445A00FC577A /* MapVC.storyboard in Resources */,
+				4742C0D4216E6DDD00E33233 /* check_animation.json in Resources */,
 				475F61222152D90E003E30FC /* LobbyDetailOneButtonCell.xib in Resources */,
 				47C964F12156D1BB006A4067 /* UserListVC.storyboard in Resources */,
 				472B817B214C858500C005B2 /* AddRankOrUrlVC.storyboard in Resources */,

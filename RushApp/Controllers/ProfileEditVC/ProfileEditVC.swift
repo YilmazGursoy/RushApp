@@ -64,6 +64,7 @@ class ProfileEditVC: BaseVC {
         }
         self.navigationController?.present(alertVC, animated: false, completion: nil)
     }
+    
     @IBAction func ageTextField(_ sender: UITextField) {
         sender.resignFirstResponder()
         

@@ -15,4 +15,5 @@ struct ErrorConstants {
     
     static let awsCognitoRegisterValidation         = 13 //Lütfen geçerli alanları doğru doldurunuz == email, telefon ve şifreniz en az 6 karakterden oluşmalıdır.
     static let awsCognitoRegisterNameAlreadyExist   = 37 // Girmiş olduğunuz telefon numarası sistemde mevcuttur lütfen yeni bir numara ile deneyiniz.
+    static let noInternetConnection                 = -1009
 }

@@ -127,6 +127,9 @@ class LoginVC: BaseVC {
                 self.navigationController?.pushVCMainThread(vc)
             case ErrorConstants.awsCognitoSignoutCode:
                 self.forceOpenViewController(forceViwController: LoginVC.createFromStoryboard())
+            case ErrorConstants.noInternetConnection:
+                RushLogger.errorLog(message: "Not defining Error with code \(_error._code)")
+                self.showErrorMessage(message: "İnternet bağlantı hatası.")
             default:
                 RushLogger.errorLog(message: "Not defining Error with code \(_error._code)")
                 self.showErrorMessage(message: "Kullanıcı adı / Şifre yanlış :(")

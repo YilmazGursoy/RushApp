@@ -45,9 +45,7 @@ extension SplashVC {
             if isLoggedIn == true {
                 checkUser.sendCheckUserRequest(userId:nil, completionBlock: { (user, error) in
                     if error != nil {
-                        AWSCredentialManager.shared.logout(completion: { (isLogout) in
-                            self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
-                        })
+                        self.errorChecks(error: error)
                     } else {
                         Rush.shared.currentUser = user
                         let updateRequest = UpdateFirebaseTokenRequest()
@@ -70,6 +68,30 @@ extension SplashVC {
                 AWSCredentialManager.shared.logout(completion: { (isLogout) in
                     self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
                 })
+            }
+        }
+    }
+    
+    private func errorChecks(error:Error?){
+        if let _error = error {
+            switch _error._code {
+            case ErrorConstants.noInternetConnection:
+                RushLogger.errorLog(message: "Not defining Error with code \(_error._code)")
+                DispatchQueue.main.async {
+                    let rushAlert = RushAlertController.createFromStoryboard()
+                    rushAlert.createAlert(title: "Uyarı", description: "İnternet bağlantı hatası", positiveTitle: "Yeniden dene", negativeTitle: "Kapat", positiveButtonTapped: {
+                        self.checkUserAndPushViews()
+                    }) {
+                        exit(0)
+                    }
+                    self.present(rushAlert, animated: false, completion: nil)
+                }
+            default:
+                self.showError(title: "Uyarı", description: "Bağlantı hatası güvenliğiniz için oturumunuz sonlandırılmıştır.") {
+                    AWSCredentialManager.shared.logout(completion: { (isLogout) in
+                        self.checkUserAndPushViews()
+                    })
+                }
             }
         }
     }

@@ -94,7 +94,9 @@ extension LobbyDetailVCTheirs : UITableViewDelegate, UITableViewDataSource {
                     
                     if indexPath.row < self.comments.count {
                         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCommentCell") as! FeedCommentCell
-                        cell.arrange(comment: self.comments[indexPath.row])
+                        cell.arrange(comment: self.comments[indexPath.row]) { (userId) in
+                            ProfileVC.push(in: self.navigationController!, userId: userId)
+                        }
                         return cell
                     } else {
                         let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell") as! MessageCell

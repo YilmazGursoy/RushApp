@@ -57,6 +57,14 @@
                                             <segue destination="bSa-rm-OZL" kind="show" id="tvi-6i-zfa"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k6q-gp-64A">
+                                        <rect key="frame" x="239.33333333333334" y="12" width="20.000000000000028" height="20"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="LhV-gX-pvd"/>
+                                            <constraint firstAttribute="height" constant="20" id="QUJ-v9-nn7"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -69,6 +77,8 @@
                                     <constraint firstItem="6c7-5i-wOc" firstAttribute="centerY" secondItem="fY3-DW-PsF" secondAttribute="centerY" id="han-gS-nFH"/>
                                     <constraint firstAttribute="bottom" secondItem="9Cs-bK-1jE" secondAttribute="bottom" id="iqq-wR-20u"/>
                                     <constraint firstItem="6c7-5i-wOc" firstAttribute="centerX" secondItem="fY3-DW-PsF" secondAttribute="centerX" id="mzH-Jb-5Zy"/>
+                                    <constraint firstItem="k6q-gp-64A" firstAttribute="leading" secondItem="6c7-5i-wOc" secondAttribute="trailing" constant="5" id="ncd-wG-Bjc"/>
+                                    <constraint firstItem="k6q-gp-64A" firstAttribute="centerY" secondItem="fY3-DW-PsF" secondAttribute="centerY" id="zJ7-QQ-6Le"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVU-8y-ftZ">
@@ -92,7 +102,7 @@
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zQ-ZR-vOE" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
                                                                         <rect key="frame" x="5.9999999999999929" y="5.9999999999999929" width="125.33333333333331" height="125.33333333333331"/>
                                                                         <subviews>
-                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IcI-lI-OLl">
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="IcI-lI-OLl">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="125.33333333333333" height="125.33333333333333"/>
                                                                             </imageView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YON-TK-FXK">
@@ -591,6 +601,7 @@
                         <outlet property="numberOfFollowesLabel" destination="LTu-B3-tu8" id="b8N-H5-poT"/>
                         <outlet property="numberOfFollowingLabel" destination="ROw-bM-KWn" id="ie2-J1-tHm"/>
                         <outlet property="profileBackView" destination="dQJ-wf-pjt" id="VvS-rw-ISe"/>
+                        <outlet property="profileBadgeBackView" destination="k6q-gp-64A" id="axX-Tx-CwL"/>
                         <outlet property="profilePictureImage" destination="IcI-lI-OLl" id="guO-U9-6Dk"/>
                         <outlet property="settingsButtonOutlet" destination="9Cs-bK-1jE" id="Qzr-pt-HHy"/>
                         <outlet property="titleLabel" destination="6c7-5i-wOc" id="dus-9g-aqL"/>
@@ -613,6 +624,7 @@
     <resources>
         <image name="back" width="17" height="16"/>
         <image name="pattern" width="480" height="480"/>
+        <image name="profilePlaceholder" width="500" height="500"/>
         <image name="settings" width="15" height="16"/>
     </resources>
 </document>

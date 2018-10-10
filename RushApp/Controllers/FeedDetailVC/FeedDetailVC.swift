@@ -157,7 +157,9 @@ extension FeedDetailVC : UITableViewDelegate, UITableViewDataSource {
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCommentCell") as! FeedCommentCell
-                cell.arrange(comment: self.comments[indexPath.row-1])
+                cell.arrange(comment: self.comments[indexPath.row-1]) { (userId) in
+                    ProfileVC.push(in: self.navigationController!, userId: userId)
+                }
                 return cell
             }
         }

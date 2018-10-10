@@ -74,9 +74,12 @@ class FeedVC: BaseVC {
                     self.refreshControl.endRefreshing()
                 }
             })
+            
             if feeds != nil {
                 SVProgressHUD.dismiss()
-                self.feedItems = feeds
+                var sortedFeeds = feeds
+                sortedFeeds = sortedFeeds!.sorted{$0.date>$1.date}
+                self.feedItems = sortedFeeds
             } else {
                 SVProgressHUD.dismiss()
                 self.showErrorMessage(message: "There is an error to showing Timeline.")

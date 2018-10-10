@@ -239,6 +239,7 @@
                                                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                 <connections>
+                                                                    <action selector="numberOfNeededTapped:" destination="hw9-1b-Kjq" eventType="editingDidBegin" id="670-ZG-RP4"/>
                                                                     <outlet property="delegate" destination="hw9-1b-Kjq" id="dfS-45-CLJ"/>
                                                                 </connections>
                                                             </textField>

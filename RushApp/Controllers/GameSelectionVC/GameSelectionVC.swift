@@ -69,7 +69,8 @@ class GameSelectionVC: BaseVC {
             var profileImageUrl:URL? = nil
             SVProgressHUD.show()
             if let fullName = UserProfile.current?.fullName {
-                username = fullName
+                let trimmedFullName = fullName.trimmingCharacters(in: .whitespacesAndNewlines)
+                username = trimmedFullName
                 
                 profileImageUrl = UserProfile.current?.imageURLWith(UserProfile.PictureAspectRatio.square, size: CGSize(width: 600, height: 600))
                 let session = URLSession.init(configuration: URLSessionConfiguration.default)

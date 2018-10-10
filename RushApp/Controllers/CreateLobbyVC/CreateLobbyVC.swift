@@ -75,14 +75,14 @@ class CreateLobbyVC: BaseVC {
             if selectingGame != nil {
                 if currentLocation != nil {
                     if currentLocationName != nil {
-                        if lobbyNameTextField.text!.count > 5 {
-                            if lobbyDetailTextView.text!.count > 5 {
-                                if neededPlayerTextField.text!.count > 0 {
-                                    self.lobbyPreviewEnable()
-                                    return
-                                }
-                            }
-                        }
+                    /**/if lobbyNameTextField.text!.count > 5 {
+                    /*****/if lobbyDetailTextView.text!.count > 5 {
+                    /*********/if neededPlayerTextField.text!.count > 0 {
+                    /*************/self.lobbyPreviewEnable()
+                    /*************/return
+                    /*********/}
+                    /******/}
+                    /***/}
                     }
                 }
             }
@@ -114,6 +114,19 @@ class CreateLobbyVC: BaseVC {
             SVProgressHUD.dismiss()
             self.showErrorMessage(message: "There is an error to creating Lobby")
         }
+    }
+    @IBAction func numberOfNeededTapped(_ sender: UITextField) {
+        sender.resignFirstResponder()
+        
+        let actionSheet = UIAlertController(title: "Lütfen gerekli oyuncu sayısını seçiniz.", message: nil, preferredStyle: .actionSheet)
+        
+        for value in 1..<11 {
+            actionSheet.addAction(UIAlertAction.init(title: "\(value)", style: .default, handler: { (action) in
+                self.neededPlayerTextField.text = "\(value)"
+            }))
+        }
+        
+        self.present(actionSheet, animated: true, completion: nil)
     }
 }
 
