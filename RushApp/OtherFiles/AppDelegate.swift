@@ -151,6 +151,17 @@ extension AppDelegate:UNUserNotificationCenterDelegate, MessagingDelegate {
         NotificationCenter.default.post(name: NSNotification.Name.init(openLobbyFromNotificationKey), object: userInfo)
     }
     
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        
+        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
+    @available(iOS 9.0, *)
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+        
+        return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: nil)
+    }
+    
 }
 
 //MARK:-
