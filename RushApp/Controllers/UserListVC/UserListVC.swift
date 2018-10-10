@@ -49,10 +49,13 @@ extension UserListVC : UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = list[indexPath.row]
-        let profileVC = ProfileVC.createFromStoryboard()
-        profileVC.currentUserId = user.id
-        profileVC.isMyProfile = false
-        self.navigationController?.pushVCMainThread(profileVC)
+        
+        if user.id != Rush.shared.currentUser.userId {
+            let profileVC = ProfileVC.createFromStoryboard()
+            profileVC.currentUserId = user.id
+            profileVC.isMyProfile = false
+            self.navigationController?.pushVCMainThread(profileVC)
+        }
     }
     
 }

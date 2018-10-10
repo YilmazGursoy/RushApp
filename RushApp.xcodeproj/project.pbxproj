@@ -92,6 +92,9 @@
 		4735F4A92163FD880013B869 /* ChangePasswordVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4735F4A82163FD880013B869 /* ChangePasswordVC.storyboard */; };
 		4735F4AC216410360013B869 /* AboutUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4735F4AB216410360013B869 /* AboutUsVC.swift */; };
 		4735F4AE2164103C0013B869 /* AboutUsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4735F4AD2164103C0013B869 /* AboutUsVC.storyboard */; };
+		4742C092216DC34E00E33233 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742C090216DC34E00E33233 /* Slide.swift */; };
+		4742C093216DC34E00E33233 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4742C091216DC34E00E33233 /* Slide.xib */; };
+		4742C095216DC5A700E33233 /* Extension+OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4742C094216DC5A700E33233 /* Extension+OnboardingVC.swift */; };
 		475F61162151A800003E30FC /* LobbyChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475F61152151A800003E30FC /* LobbyChatVC.swift */; };
 		475F61182151A805003E30FC /* LobbyChatVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 475F61172151A805003E30FC /* LobbyChatVC.storyboard */; };
 		475F611B2152D2B3003E30FC /* LobbyDetailVCTheirs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475F611A2152D2B3003E30FC /* LobbyDetailVCTheirs.swift */; };
@@ -331,6 +334,9 @@
 		4735F4A82163FD880013B869 /* ChangePasswordVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangePasswordVC.storyboard; sourceTree = "<group>"; };
 		4735F4AB216410360013B869 /* AboutUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsVC.swift; sourceTree = "<group>"; };
 		4735F4AD2164103C0013B869 /* AboutUsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutUsVC.storyboard; sourceTree = "<group>"; };
+		4742C090216DC34E00E33233 /* Slide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		4742C091216DC34E00E33233 /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		4742C094216DC5A700E33233 /* Extension+OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+OnboardingVC.swift"; sourceTree = "<group>"; };
 		475F61152151A800003E30FC /* LobbyChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyChatVC.swift; sourceTree = "<group>"; };
 		475F61172151A805003E30FC /* LobbyChatVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LobbyChatVC.storyboard; sourceTree = "<group>"; };
 		475F611A2152D2B3003E30FC /* LobbyDetailVCTheirs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyDetailVCTheirs.swift; sourceTree = "<group>"; };
@@ -782,6 +788,15 @@
 				4735F4AD2164103C0013B869 /* AboutUsVC.storyboard */,
 			);
 			path = AboutUsVC;
+			sourceTree = "<group>";
+		};
+		4742C08F216DC34300E33233 /* Slide */ = {
+			isa = PBXGroup;
+			children = (
+				4742C090216DC34E00E33233 /* Slide.swift */,
+				4742C091216DC34E00E33233 /* Slide.xib */,
+			);
+			path = Slide;
 			sourceTree = "<group>";
 		};
 		475F61142151A7F5003E30FC /* LobbyChatVC */ = {
@@ -1359,8 +1374,10 @@
 		D258C077209906120090ABB5 /* OnboardingVC */ = {
 			isa = PBXGroup;
 			children = (
+				4742C08F216DC34300E33233 /* Slide */,
 				D258C0782099061C0090ABB5 /* OnboardingVC.swift */,
 				D258C07A209906250090ABB5 /* OnboardingVC.storyboard */,
+				4742C094216DC5A700E33233 /* Extension+OnboardingVC.swift */,
 			);
 			path = OnboardingVC;
 			sourceTree = "<group>";
@@ -1466,6 +1483,7 @@
 				47E2C7692145C65F00AAD648 /* LobbyListCell.xib in Resources */,
 				472DFEE32135D3C900FC577A /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				47E2C75721458ECD00AAD648 /* FeedCommentTitleViewCell.xib in Resources */,
+				4742C093216DC34E00E33233 /* Slide.xib in Resources */,
 				47E2C79C2147014F00AAD648 /* FilterCellType2.xib in Resources */,
 				47E2C69C2140767900AAD648 /* FeedCommentCell.xib in Resources */,
 				472DFEDE2135D3C900FC577A /* OpenSans-Light.ttf in Resources */,
@@ -1785,9 +1803,11 @@
 				4735F4AC216410360013B869 /* AboutUsVC.swift in Sources */,
 				472DFEFD2137474F00FC577A /* AWSPopupManager.swift in Sources */,
 				D2075DB8209CE44E00AC79B6 /* DummyRequest.swift in Sources */,
+				4742C095216DC5A700E33233 /* Extension+OnboardingVC.swift in Sources */,
 				47E2C7972147013A00AAD648 /* FilterCellType1.swift in Sources */,
 				47C3C0AD213F0DE400A74171 /* Extension+Json.swift in Sources */,
 				472DFF56213B2FA100FC577A /* ChangeProfilePictureRequest.swift in Sources */,
+				4742C092216DC34E00E33233 /* Slide.swift in Sources */,
 				D2075DD6209E41CA00AC79B6 /* ErrorConstants.swift in Sources */,
 				472DFF052138445500FC577A /* MapVC.swift in Sources */,
 				477CB9A3214E815C003CDEEE /* Extension+MapVC.swift in Sources */,

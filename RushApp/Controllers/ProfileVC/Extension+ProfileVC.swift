@@ -35,7 +35,7 @@ extension ProfileVC {
                     SVProgressHUD.dismiss()
                     if user != nil {
                         Rush.shared.currentUser = user!
-                        self.setupUI(isCacheRefresh: false)
+                        self.setupUI(isCacheRefresh: false, isClearAllCache: false)
                     } else {
                         self.showErrorMessage(message: "Bir hata oluştu.")
                     }
@@ -54,7 +54,7 @@ extension ProfileVC {
                     SVProgressHUD.dismiss()
                     if user != nil {
                         Rush.shared.currentUser = user
-                        self.setupUI(isCacheRefresh: false)
+                        self.setupUI(isCacheRefresh: false, isClearAllCache: false)
                     } else {
                         self.showErrorMessage(message: "Bir hata oluştu.")
                     }

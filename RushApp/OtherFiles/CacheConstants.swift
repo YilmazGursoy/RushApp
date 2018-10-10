@@ -10,5 +10,5 @@ import Foundation
 
 
 struct CacheConstants {
-    
+    static let OnboardingCacheKey = "OnboardingCacheKeyString"
 }

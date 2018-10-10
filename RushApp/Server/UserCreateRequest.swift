@@ -19,8 +19,9 @@ class UserCreateRequest: Request {
         var gamesArray:[[String:String]] = []
         
         games.forEach { (game) in
-            gamesArray.append(["id":game.id,"name":game.name,"thumbImage":game.thumbImage!, "normalImage":game.normalImage!])
+            gamesArray.append(["id":game.id,"name":game.name,"thumbImage":game.thumbImage!, "normalImage":game.normalImage!, "lobbyImage":game.lobbyImage!])
         }
+        
         var parameter:[String : Any] = [:]
         if let profileUrl = userProfileImageUrl {
             parameter = ["selectingGameIds":gamesArray,"username":username, "profilePicture":profileUrl]

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Fusuma
 import SDWebImage
 import SVProgressHUD
 import PMAlertController
@@ -19,6 +18,7 @@ private let editText = "Düzenle"
 
 
 class ProfileVC: BaseVC {
+    @IBOutlet weak var followingTextLabel: UILabel!
     
     static func push(in navigationController:UINavigationController, userId:String?) {
         let vc = ProfileVC.createFromStoryboard()
@@ -44,6 +44,7 @@ class ProfileVC: BaseVC {
     @IBOutlet weak var folowButtonBackView: GradientView!
     @IBOutlet weak var backButtonOutlet: UIButton!
     @IBOutlet weak var lobbiesBackView: UIView!
+    @IBOutlet weak var profileBackView: UIImageView!
     @IBOutlet weak var lobbiesCollectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var profilePictureImage: UIImageView!
@@ -94,13 +95,14 @@ class ProfileVC: BaseVC {
     
     func setupFollowEditButtonOutlet(){
         if isMyProfile {
+            self.followingTextLabel.text = "Takip Ettiklerin"
             self.folowButtonBackView.topColor = #colorLiteral(red: 0.4666666667, green: 0.3529411765, blue: 1, alpha: 1)
             self.folowButtonBackView.bottomColor = #colorLiteral(red: 0.8117647059, green: 0.5529411765, blue: 1, alpha: 1)
             self.folowButtonBackView.borderWidth = 0
             self.followEditButtonOutlet.setTitle(editText, for: .normal)
             self.settingsButtonOutlet.isHidden = false
         } else {
-            
+            self.followingTextLabel.text = "Takip Ettikleri"
             self.settingsButtonOutlet.isHidden = true
             let followingList = Rush.shared.currentUser.following
             let value = followingList?.filter({ $0.id == self.currentUserId })
@@ -132,8 +134,18 @@ class ProfileVC: BaseVC {
         //TODO:
     }
     
-    func setupUI(isCacheRefresh:Bool){
+    func setupUI(isCacheRefresh:Bool, isClearAllCache:Bool){
         DispatchQueue.main.async {
+            
+            if self.currentUser.gameList != nil {
+                var newGameList = self.currentUser.gameList?.shuffled()
+                if let game = newGameList?.first {
+                    if game.lobbyImage != nil {
+                        self.profileBackView.sd_setImage(with: game.getLobbyImageURL(), placeholderImage: nil, options: .cacheMemoryOnly, completed: nil)
+                    }
+                }
+            }
+            
             self.bioLabel.text = self.currentUser.bio ?? "Selamlar!"
             self.sendUserLobbyRequest(userId:self.currentUser.userId)
             self.titleLabel.text = self.currentUser.username
@@ -144,13 +156,17 @@ class ProfileVC: BaseVC {
             })
             
             DispatchQueue.main.async {
-                if isCacheRefresh {
+                if isClearAllCache {
                     let cache = SDImageCache.shared()
                     cache.removeImage(forKey: User.getProfilePictureFrom(userId: self.currentUser.userId).absoluteString, withCompletion: {
                         self.profilePictureImage.sd_setImage(with: User.getProfilePictureFrom(userId: self.currentUser.userId), completed: nil)
                     })
                 } else {
-                    self.profilePictureImage.sd_setImage(with: User.getProfilePictureFrom(userId: self.currentUser.userId), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .cacheMemoryOnly, completed: nil)
+                    if isCacheRefresh {
+                        self.profilePictureImage.sd_setImage(with: User.getProfilePictureFrom(userId: self.currentUser.userId), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .cacheMemoryOnly, completed: nil)
+                    } else {
+                        self.profilePictureImage.sd_setImage(with: User.getProfilePictureFrom(userId: self.currentUser.userId), placeholderImage: #imageLiteral(resourceName: "profilePlaceholder"), options: .cacheMemoryOnly, completed: nil)
+                    }
                 }
             }
         }
@@ -166,7 +182,7 @@ class ProfileVC: BaseVC {
             }
             self.currentUser = user
             DispatchQueue.main.async {
-                self.setupUI(isCacheRefresh: false)
+                self.setupUI(isCacheRefresh: false, isClearAllCache: false)
             }
         }
     }
@@ -215,6 +231,7 @@ class ProfileVC: BaseVC {
             }
         }
     }
+    
     @IBAction func followEditTapped(_ sender: UIButton) {
         if sender.titleLabel?.text == followingText {
             
@@ -228,57 +245,11 @@ class ProfileVC: BaseVC {
             let vc = ProfileEditVC.createFromStoryboard()
             vc.updateProfile = {
                 self.currentUser = Rush.shared.currentUser
-                self.setupUI(isCacheRefresh: true)
+                self.setupUI(isCacheRefresh: true, isClearAllCache: true)
             }
             let navigationController = BaseNavigationController(rootViewController: vc)
             navigationController.setNavigationBarHidden(true, animated: false)
             self.present(navigationController, animated: true, completion: nil)
         }
-    }
-}
-
-extension ProfileVC : FusumaDelegate {
-    func fusumaImageSelected(_ image: UIImage, source: FusumaMode) {
-        DispatchQueue.main.async {
-            var newImage = image
-            newImage = newImage.resizeImage(targetSize: constantProfilePictureSize)
-            ImageUploadManager.uploadImage(newImage: newImage, completionSuccess: {
-                self.setupUI(isCacheRefresh: true)
-                SVProgressHUD.showSuccess(withStatus: "Profile picture change!")
-            }, completionFailed: {
-                SVProgressHUD.dismiss()
-                SVProgressHUD.showSuccess(withStatus: "There is an error to changing profile picture!")
-            })
-        }
-    }
-    
-    func fusumaMultipleImageSelected(_ images: [UIImage], source: FusumaMode) {
-        
-    }
-    
-    func fusumaVideoCompleted(withFileURL fileURL: URL) {
-        
-    }
-    
-    
-    // Return the image but called after is dismissed.
-    func fusumaDismissedWithImage(image: UIImage, source: FusumaMode) {
-        
-    }
-    
-    func fusumaCameraRollUnauthorized() {
-        let alert = RushAlertController.createFromStoryboard()
-        alert.createAlert(title: "Hey!", description: "Maalesef ayarlardan fotoğraf erişiminizi açmanız gerekmektedir.", positiveTitle: "Tamam", negativeTitle: "Şimdi Değil", positiveButtonTapped: {
-            UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
-            self.pop()
-        }) {
-            
-        }
-        self.present(alert, animated: false, completion: nil)
-    }
-    
-    // Return an image and the detailed information.
-    func fusumaImageSelected(_ image: UIImage, source: FusumaMode, metaData: ImageMetadata) {
-        
     }
 }

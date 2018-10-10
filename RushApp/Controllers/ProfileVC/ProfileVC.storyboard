@@ -584,11 +584,13 @@
                         <outlet property="backButtonOutlet" destination="lM4-FZ-9hh" id="MZX-kc-yth"/>
                         <outlet property="bioLabel" destination="YGO-bc-QrR" id="1UV-h4-7TE"/>
                         <outlet property="followEditButtonOutlet" destination="2Qg-0R-14L" id="PQg-Gw-FiH"/>
+                        <outlet property="followingTextLabel" destination="FQi-PP-L2v" id="dB7-l4-apA"/>
                         <outlet property="folowButtonBackView" destination="hmv-eO-BUE" id="POm-IR-eDC"/>
                         <outlet property="lobbiesBackView" destination="ORB-G5-fqM" id="pDp-Ak-cUr"/>
                         <outlet property="lobbiesCollectionView" destination="y65-lU-N5b" id="QEj-oe-dLZ"/>
                         <outlet property="numberOfFollowesLabel" destination="LTu-B3-tu8" id="b8N-H5-poT"/>
                         <outlet property="numberOfFollowingLabel" destination="ROw-bM-KWn" id="ie2-J1-tHm"/>
+                        <outlet property="profileBackView" destination="dQJ-wf-pjt" id="VvS-rw-ISe"/>
                         <outlet property="profilePictureImage" destination="IcI-lI-OLl" id="guO-U9-6Dk"/>
                         <outlet property="settingsButtonOutlet" destination="9Cs-bK-1jE" id="Qzr-pt-HHy"/>
                         <outlet property="titleLabel" destination="6c7-5i-wOc" id="dus-9g-aqL"/>

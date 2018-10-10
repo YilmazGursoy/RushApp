@@ -1,40 +1,19 @@
 //
-//  SplashVC.swift
+//  Extension+OnboardingVC.swift
 //  RushApp
 //
-//  Created by Most Wanted on 1.05.2018.
+//  Created by Yilmaz Gursoy on 10.10.2018.
 //  Copyright © 2018 MW. All rights reserved.
 //
 
 import UIKit
+import SVProgressHUD
 
-class SplashVC: BaseVC {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
+extension OnboardingVC {
     
-    override func viewWillAppear(_ animated: Bool) {
-        if CacheManager.shared.getCachedObject(withKey: CacheConstants.OnboardingCacheKey) == nil {
-            pushOnboardingVC()
-        } else {
-            checkUserAndPushViews()
-        }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-}
-
-
-extension SplashVC {
-    
-    func pushOnboardingVC(){
-        self.navigationController?.pushVCMainThread(OnboardingVC.createFromStoryboard())
+    func registerOnboardingVC(){
+        CacheManager.shared.cache(object: "PASS", withKey: CacheConstants.OnboardingCacheKey)
+        checkUserAndPushViews()
     }
     
     func checkUserAndPushViews(){
