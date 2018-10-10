@@ -67,7 +67,9 @@ extension SplashVC {
                     }
                 })
             } else {
-                self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
+                AWSCredentialManager.shared.logout(completion: { (isLogout) in
+                    self.navigationController?.openForceVCMainThread(LoginVC.createFromStoryboard())
+                })
             }
         }
     }
