@@ -14,7 +14,7 @@ import SVProgressHUD
 let openLobbyFromNotificationKey = "openLobbyFromNotificationKey"
 
 class BaseVC: UIViewController {
-
+    
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,7 +93,8 @@ class BaseVC: UIViewController {
         }
     }
     
-    private func openLobbyDetail(lobbyId:String, userId:String) {
+    
+    func openLobbyDetail(lobbyId:String, userId:String) {
         let request = GetLobbyRequest()
         request.sendRequest(lobbyId: lobbyId, userId: userId, successCompletion: { (lobby) in
             DispatchQueue.main.async {
@@ -101,6 +102,7 @@ class BaseVC: UIViewController {
                 lobbyVC.currentLobby = lobby
                 lobbyVC.isShowLobbyAlert = true
                 self.navigationController?.pushVCMainThread(lobbyVC)
+//                self.tabBarController?.selectedViewController?.navigationController?.pushVCMainThread(lobbyVC)
             }
         }) {
             DispatchQueue.main.async {

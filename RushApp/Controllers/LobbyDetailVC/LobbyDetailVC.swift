@@ -54,4 +54,15 @@ class LobbyDetailVC: BaseVC {
         super.didReceiveMemoryWarning()
         
     }
+    @IBAction func lobbyDismissTapped(_ sender: Any) {
+        if let tabbar = UIApplication.shared.keyWindow?.rootViewController as? TabBarController {
+            tabbar.selectedIndex = 1
+            if let selectedViewController = tabbar.selectedViewController as? UINavigationController {
+                let lobbyDetailVC = LobbyDetailVC.createFromStoryboard()
+                lobbyDetailVC.currentLobby = self.currentLobby
+                selectedViewController.viewControllers.append(lobbyDetailVC)
+            }
+        }
+        self.dismiss()
+    }
 }

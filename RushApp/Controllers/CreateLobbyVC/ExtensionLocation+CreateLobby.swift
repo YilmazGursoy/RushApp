@@ -126,4 +126,9 @@ extension CreateLobbyVC : UITextViewDelegate {
             textView.textColor = UIColor.init(rgb: (r: 170, g: 170, b: 170))
         }
     }
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        textView.resignFirstResponder()
+        return true
+    }
 }

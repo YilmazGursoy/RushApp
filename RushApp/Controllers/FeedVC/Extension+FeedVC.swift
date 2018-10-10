@@ -21,8 +21,12 @@ extension FeedVC {
                     let rushAlert = RushAlertController.createFromStoryboard()
                     rushAlert.createOneButtonAlert(title: "Heyy!", description: "Artık lobidesin! Lobide arkadaşların ile konuşabilmen ve oyuna başlamanız lobi sahibi tarafından belirlenmektedir.", buttonTitle: "Tamamdır", buttonTapped: {
                         let topicID = lobby.id.replacingOccurrences(of: ":", with: "")
+
+                        self.openLobbyDetail(lobbyId: lobbyRequest.lobbyId, userId: lobbyRequest.userId)
                         Messaging.messaging().subscribe(toTopic: "\(topicID)")
-                        self.tableView.reloadData()
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
                     })
                     self.tabBarController?.present(rushAlert, animated: false, completion: nil)
                 }

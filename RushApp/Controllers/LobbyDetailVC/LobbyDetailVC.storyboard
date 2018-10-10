@@ -21,7 +21,7 @@
         <!--Lobby DetailVC-->
         <scene sceneID="m0i-fY-MEJ">
             <objects>
-                <viewController storyboardIdentifier="LobbyDetailVC" id="7fo-iM-svP" customClass="LobbyDetailVC" customModule="RushApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LobbyDetailVC" id="7fo-iM-svP" customClass="LobbyDetailVC" customModule="Rush" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YQK-u1-dmy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,7 +66,7 @@
                                                     <color key="titleColor" red="0.46666666670000001" green="0.35294117650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="dismiss" destination="7fo-iM-svP" eventType="touchUpInside" id="wbJ-AL-0s1"/>
+                                                    <action selector="lobbyDismissTapped:" destination="7fo-iM-svP" eventType="touchUpInside" id="Vtu-PF-g69"/>
                                                 </connections>
                                             </button>
                                         </subviews>

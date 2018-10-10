@@ -24,7 +24,7 @@
         <!--Feed DetailVC-->
         <scene sceneID="3NR-gW-4A7">
             <objects>
-                <viewController storyboardIdentifier="FeedDetailVC" id="H22-1E-nBi" customClass="FeedDetailVC" customModule="RushApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedDetailVC" id="H22-1E-nBi" customClass="FeedDetailVC" customModule="Rush" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RKI-EX-foZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,6 +66,9 @@
                                             <constraint firstAttribute="height" constant="44" id="qoR-P6-hbx"/>
                                         </constraints>
                                         <state key="normal" image="whiteShareIcon"/>
+                                        <connections>
+                                            <action selector="shareTap:" destination="H22-1E-nBi" eventType="touchUpInside" id="RA4-ub-1VY"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grand Theft Auto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uua-PG-vFv">
                                         <rect key="frame" x="54" y="14" width="267" height="16.5"/>
@@ -99,10 +102,10 @@
                                             <constraint firstAttribute="height" constant="1" id="Zb0-dw-6md"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5RV-W3-7jM" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5RV-W3-7jM" customClass="GradientView" customModule="Rush" customModuleProvider="target">
                                         <rect key="frame" x="10" y="5" width="355" height="40.5"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6WF-eQ-QL4" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6WF-eQ-QL4" customClass="GradientView" customModule="Rush" customModuleProvider="target">
                                                 <rect key="frame" x="277" y="3" width="75" height="34.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azs-43-DZq">
@@ -256,7 +259,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDb-tf-Xut">
                                                         <rect key="frame" x="10" y="10" width="355" height="40"/>
                                                         <subviews>
-                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPN-m4-eiW" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
+                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPN-m4-eiW" customClass="GradientView" customModule="Rush" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:HjT-kL-lLz:image" translatesAutoresizingMaskIntoConstraints="NO" id="HjT-kL-lLz">

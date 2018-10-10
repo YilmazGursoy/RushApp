@@ -77,7 +77,7 @@ class CreateLobbyVC: BaseVC {
                     if currentLocationName != nil {
                     /**/if lobbyNameTextField.text!.count > 5 {
                     /*****/if lobbyDetailTextView.text!.count > 5 {
-                    /*********/if neededPlayerTextField.text!.count > 0 {
+                    /*********/if neededPlayerTextField.text!.count >= 1 {
                     /*************/self.lobbyPreviewEnable()
                     /*************/return
                     /*********/}
@@ -97,10 +97,11 @@ class CreateLobbyVC: BaseVC {
     }
     
     func lobbyPreviewDisable(){
-        self.lobbyPreviewButtonOutlet.isUserInteractionEnabled = true
+        self.lobbyPreviewButtonOutlet.isUserInteractionEnabled = false
         self.lobbyPreviwBackView.topColor = #colorLiteral(red: 0.6431372549, green: 0.6431372549, blue: 0.6431372549, alpha: 0.5)
         self.lobbyPreviwBackView.bottomColor = #colorLiteral(red: 0.337254902, green: 0.337254902, blue: 0.337254902, alpha: 0.5)
     }
+    
     @IBAction func postPublishTapped(_ sender: UIButton) {
         let createLobbyRequest = LobbyCreateRequest()
         SVProgressHUD.show()
@@ -116,23 +117,36 @@ class CreateLobbyVC: BaseVC {
         }
     }
     @IBAction func numberOfNeededTapped(_ sender: UITextField) {
-        sender.resignFirstResponder()
-        
-        let actionSheet = UIAlertController(title: "Lütfen gerekli oyuncu sayısını seçiniz.", message: nil, preferredStyle: .actionSheet)
-        
-        for value in 1..<11 {
-            actionSheet.addAction(UIAlertAction.init(title: "\(value)", style: .default, handler: { (action) in
-                self.neededPlayerTextField.text = "\(value)"
+        DispatchQueue.main.async {
+            self.view.endEditing(true)
+            sender.resignFirstResponder()
+            self.lobbyDetailTextView.resignFirstResponder()
+            
+            let actionSheet = UIAlertController(title: "Lütfen gerekli oyuncu sayısını seçiniz.", message: nil, preferredStyle: .actionSheet)
+            
+            for value in 1..<11 {
+                actionSheet.addAction(UIAlertAction.init(title: "\(value)", style: .default, handler: { (action) in
+                    self.neededPlayerTextField.text = "\(value)"
+                }))
+            }
+            
+            actionSheet.addAction(UIAlertAction.init(title: "Kapat", style: .cancel, handler: { (action) in
+                
             }))
+            
+            self.present(actionSheet, animated: true, completion: nil)
+            
         }
-        
-        self.present(actionSheet, animated: true, completion: nil)
     }
 }
 
 extension CreateLobbyVC : UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.checkPreviewButton()
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

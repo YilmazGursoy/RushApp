@@ -96,6 +96,21 @@ class FeedDetailVC: BaseVC {
             self.showErrorMessage(message: "Yorum gönderilirken bir sorun oluştu.")
         })
     }
+    @IBAction func shareTap(_ sender: Any) {
+        DispatchQueue.main.async {
+            self.tableView.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .none, animated: false)
+            UIGraphicsBeginImageContextWithOptions(self.view.frame.size, true, 0.0)
+            self.view.drawHierarchy(in: self.view.frame, afterScreenUpdates: false)
+            let img = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            if let img = img {
+                let objectsToShare = ["Rush",img] as [Any]
+                let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+                activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList]
+                self.present(activityVC, animated: true, completion: nil)
+            }
+        }
+    }
 }
 
 extension FeedDetailVC : UITableViewDelegate, UITableViewDataSource {

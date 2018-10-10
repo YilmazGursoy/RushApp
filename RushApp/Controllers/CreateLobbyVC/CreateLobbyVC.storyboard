@@ -21,7 +21,7 @@
         <!--Create LobbyVC-->
         <scene sceneID="aig-iM-vNd">
             <objects>
-                <viewController storyboardIdentifier="CreateLobbyVC" id="hw9-1b-Kjq" customClass="CreateLobbyVC" customModule="RushApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateLobbyVC" id="hw9-1b-Kjq" customClass="CreateLobbyVC" customModule="Rush" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8i1-4P-rQF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,7 +239,7 @@
                                                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                 <connections>
-                                                                    <action selector="numberOfNeededTapped:" destination="hw9-1b-Kjq" eventType="editingDidBegin" id="670-ZG-RP4"/>
+                                                                    <action selector="numberOfNeededTapped:" destination="hw9-1b-Kjq" eventType="editingDidBegin" id="cPo-EK-kbd"/>
                                                                     <outlet property="delegate" destination="hw9-1b-Kjq" id="dfS-45-CLJ"/>
                                                                 </connections>
                                                             </textField>
@@ -395,7 +395,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="QTC-lR-X6C" secondAttribute="trailing" id="zMg-lH-WN2"/>
                                                 </constraints>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ot-b4-lut" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ot-b4-lut" customClass="GradientView" customModule="Rush" customModuleProvider="target">
                                                 <rect key="frame" x="108.5" y="361" width="158" height="51"/>
                                                 <subviews>
                                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Io-sc-bGg">
@@ -451,6 +451,7 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="z3D-Hk-dzo" firstAttribute="bottom" secondItem="LAR-nB-Yvi" secondAttribute="bottom" id="HFX-t2-aON"/>
                             <constraint firstItem="z3D-Hk-dzo" firstAttribute="leading" secondItem="LAR-nB-Yvi" secondAttribute="leading" id="QJO-iC-rDy"/>
@@ -466,6 +467,9 @@
                             <constraint firstItem="LAR-nB-Yvi" firstAttribute="trailing" secondItem="wIn-LU-05s" secondAttribute="trailing" id="wkG-wU-dSY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LAR-nB-Yvi"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="bsS-qv-Cli" appends="YES" id="HDg-5w-8ok"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="chooseGameTextField" destination="zjo-tP-mrh" id="1HL-Ka-l6M"/>
@@ -479,6 +483,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dHY-90-kf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bsS-qv-Cli">
+                    <connections>
+                        <action selector="closeKeyboard:" destination="hw9-1b-Kjq" id="dgo-wC-xrP"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-79.200000000000003" y="172.26386806596702"/>
         </scene>

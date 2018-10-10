@@ -46,7 +46,7 @@ extension LobbyDetailVC : UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "LobbyDetailOneButtonCell") as! LobbyDetailOneButtonCell
-            if currentLobby.subscribers.count >= currentLobby.numberOfNeededUser {
+            if currentLobby.subscribers.count > currentLobby.numberOfNeededUser {
                 if currentLobby.lobbyStatus == .open {
                     cell.arrangeCell(type: .startTheGame) {
                         let alert = RushAlertController.createFromStoryboard()

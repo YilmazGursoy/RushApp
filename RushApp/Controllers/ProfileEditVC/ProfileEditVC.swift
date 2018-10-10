@@ -75,6 +75,9 @@ class ProfileEditVC: BaseVC {
                 self.ageTextField.text = "\(value)"
             }))
         }
+        actionSheet.addAction(UIAlertAction.init(title: "Kapat", style: .cancel, handler: { (action) in
+            
+        }))
         
         self.present(actionSheet, animated: true, completion: nil)
     }
@@ -87,6 +90,11 @@ class ProfileEditVC: BaseVC {
         actionSheet.addAction(UIAlertAction.init(title: "Kadın", style: .default, handler: { (action) in
             self.sexTextField.text = "Kadın"
         }))
+        
+        actionSheet.addAction(UIAlertAction.init(title: "Kapat", style: .cancel, handler: { (action) in
+            
+        }))
+        
         self.present(actionSheet, animated: true, completion: nil)
     }
     @IBAction func saveButtonTapped(_ sender: UIButton) {
