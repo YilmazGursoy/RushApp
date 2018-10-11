@@ -75,8 +75,8 @@ class CreateLobbyVC: BaseVC {
             if selectingGame != nil {
                 if currentLocation != nil {
                     if currentLocationName != nil {
-                    /**/if lobbyNameTextField.text!.count > 5 {
-                    /*****/if lobbyDetailTextView.text!.count > 5 {
+                    /**/if lobbyNameTextField.text!.count > 0 {
+                    /*****/if lobbyDetailTextView.text!.count > 0 {
                     /*********/if neededPlayerTextField.text!.count >= 1 {
                     /*************/self.lobbyPreviewEnable()
                     /*************/return

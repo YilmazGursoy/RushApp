@@ -12,6 +12,7 @@ import CoreLocation
 import SVProgressHUD
 
 let openLobbyFromNotificationKey = "openLobbyFromNotificationKey"
+let openLobbyFromSplashNotificationKey = "openLobbyFromNotificationKey"
 
 class BaseVC: UIViewController {
     
@@ -54,6 +55,7 @@ class BaseVC: UIViewController {
     }
     
     func pushMainTabBar(){
+        Rush.shared.isTabBarPush = true
         let window = UIApplication.shared.keyWindow
         let tabbarController = TabBarController()
         tabbarController.tabBar.backgroundImage = UIImage()
@@ -101,8 +103,14 @@ class BaseVC: UIViewController {
                 let lobbyVC = LobbyDetailVCTheirs.createFromStoryboard()
                 lobbyVC.currentLobby = lobby
                 lobbyVC.isShowLobbyAlert = true
-                self.navigationController?.pushVCMainThread(lobbyVC)
-//                self.tabBarController?.selectedViewController?.navigationController?.pushVCMainThread(lobbyVC)
+                if let currentNavCon = self.tabBarController?.selectedViewController as? UINavigationController {
+                    guard let topViewController = currentNavCon.topViewController as? UIViewController else {
+                        return
+                    }
+                    topViewController.navigationController?.pushVCMainThread(lobbyVC)
+                } else {
+                    self.navigationController?.pushVCMainThread(lobbyVC)
+                }
             }
         }) {
             DispatchQueue.main.async {

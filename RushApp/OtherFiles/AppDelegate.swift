@@ -126,29 +126,31 @@ extension AppDelegate:UNUserNotificationCenterDelegate, MessagingDelegate {
         Messaging.messaging().apnsToken = deviceToken
     }
     
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-        // If you are receiving a notification message while your app is in the background,
-        // this callback will not be fired till the user taps on the notification launching the application.
-        // TODO: Handle data of notification
-        
-        // With swizzling disabled you must let Messaging know about the message, for Analytics
-        // Messaging.messaging().appDidReceiveMessage(userInfo)
-        
-        // Print message ID.
-        
-        // Print full message.
-        handlePushNotification(userInfo: userInfo)
-    }
-    
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
         handlePushNotification(userInfo: userInfo)
         
         completionHandler(UIBackgroundFetchResult.newData)
     }
+
     
     @objc fileprivate func handlePushNotification(userInfo: [AnyHashable: Any]) {
-        NotificationCenter.default.post(name: NSNotification.Name.init(openLobbyFromNotificationKey), object: userInfo)
+        
+        if let navigation = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
+            if let topViewController = navigation.topViewController {
+                if topViewController.isKind(of: LoginVC.self) || topViewController.isKind(of: OnboardingVC.self) {
+                    return
+                }
+            }
+        }
+        
+
+        if Rush.shared.isTabBarPush == true {
+            NotificationCenter.default.post(name: NSNotification.Name.init(openLobbyFromNotificationKey), object: userInfo)
+        } else {
+            self.perform(#selector(handlePushNotification(userInfo:)), with: userInfo, afterDelay: 0.5)
+        }
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {

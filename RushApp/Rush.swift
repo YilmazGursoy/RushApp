@@ -23,6 +23,7 @@ class Rush {
     var filterGame:Game?
     var firToken:String?
     var sortType:SortType?
+    var isTabBarPush:Bool!
 }
 
 extension Rush {
