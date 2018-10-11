@@ -117,6 +117,7 @@
 		477CB9A3214E815C003CDEEE /* Extension+MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477CB9A2214E815B003CDEEE /* Extension+MapVC.swift */; };
 		477CB9A5214E98AE003CDEEE /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477CB9A4214E98AE003CDEEE /* Extension+Date.swift */; };
 		477CB9A7214EA285003CDEEE /* FormattedDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477CB9A6214EA285003CDEEE /* FormattedDate.swift */; };
+		4781B9F7216FD12200DE760D /* refresh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4781B9F6216FD12200DE760D /* refresh.wav */; };
 		47829575211F00B200A89394 /* AWSAuthCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829574211F00B200A89394 /* AWSAuthCore.framework */; };
 		47829577211F00B200A89394 /* AWSAuthUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829576211F00B200A89394 /* AWSAuthUI.framework */; };
 		47829579211F00B200A89394 /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47829578211F00B200A89394 /* AWSCognito.framework */; };
@@ -360,6 +361,7 @@
 		477CB9A2214E815B003CDEEE /* Extension+MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+MapVC.swift"; sourceTree = "<group>"; };
 		477CB9A4214E98AE003CDEEE /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
 		477CB9A6214EA285003CDEEE /* FormattedDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedDate.swift; sourceTree = "<group>"; };
+		4781B9F6216FD12200DE760D /* refresh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = refresh.wav; sourceTree = "<group>"; };
 		47829574211F00B200A89394 /* AWSAuthCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSAuthCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47829576211F00B200A89394 /* AWSAuthUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSAuthUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47829578211F00B200A89394 /* AWSCognito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSCognito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1342,6 +1344,7 @@
 		D258C06C2098F5170090ABB5 /* OtherFiles */ = {
 			isa = PBXGroup;
 			children = (
+				4781B9F6216FD12200DE760D /* refresh.wav */,
 				4742C0D3216E6DDD00E33233 /* check_animation.json */,
 				47152FF421694DD700BB1C50 /* waitAnimation.json */,
 				472DFED22135D3C900FC577A /* Fonts */,
@@ -1552,6 +1555,7 @@
 				D258C034209645EE0090ABB5 /* Main.storyboard in Resources */,
 				D2075DDB209E449000AC79B6 /* ConfirmEmailVC.storyboard in Resources */,
 				472DFEDF2135D3C900FC577A /* OpenSans-Italic.ttf in Resources */,
+				4781B9F7216FD12200DE760D /* refresh.wav in Resources */,
 				47E2C78E2146D63900AAD648 /* FilterVC.storyboard in Resources */,
 				475F611D2152D2C0003E30FC /* LobbyDetailVCTheirs.storyboard in Resources */,
 				472DFEE02135D3C900FC577A /* OpenSans-ExtraBold.ttf in Resources */,

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+
 import SDWebImage
 import CoreLocation
 import SVProgressHUD
@@ -15,6 +17,7 @@ let openLobbyFromNotificationKey = "openLobbyFromNotificationKey"
 let openLobbyFromSplashNotificationKey = "openLobbyFromNotificationKey"
 
 class BaseVC: UIViewController {
+    var player: AVAudioPlayer?
     
     //MARK: Lifecycle
     override func viewDidLoad() {
@@ -144,4 +147,30 @@ extension  BaseVC : UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
+}
+
+extension BaseVC {
+    func playSound() {
+        guard let url = Bundle.main.url(forResource: "refresh", withExtension: "wav") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            
+            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            /* iOS 10 and earlier require the following line:
+             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
+            
+            guard let player = player else { return }
+            player.volume = 0.3
+            player.play()
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+
 }

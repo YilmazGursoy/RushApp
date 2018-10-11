@@ -62,6 +62,7 @@ class FeedVC: BaseVC {
     }
     
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        self.playSound()
         self.sendFeedRequest()
     }
     

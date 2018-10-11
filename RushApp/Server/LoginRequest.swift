@@ -35,7 +35,7 @@ class LoginRequest {
     }
     
     //MARK: Facebook login
-    func facebookLogin(withTarget target:UIViewController, completion:@escaping(Bool)->Void){
+    func facebookLogin(withTarget target:UIViewController, completion:@escaping(Bool)->Void, loadingStatus:@escaping()->Void){
         
         let loginManager = LoginManager()
         loginManager.logIn(readPermissions: [.publicProfile, .email], viewController: target) { (loginResult) in
@@ -48,6 +48,7 @@ class LoginRequest {
                 print("User cancelled login.")
             case .success( _, _, _):
                 AWSCredentialManager.shared.loadUserCredentials()
+                loadingStatus()
                 DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
                     UserProfile.loadCurrent({ (profile) in
                         completion(true)

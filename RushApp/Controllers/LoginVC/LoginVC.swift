@@ -74,10 +74,11 @@ class LoginVC: BaseVC {
     @IBAction func facebookLoginTapped(_ sender: UIButton) {
         self.view.endEditing(true)
         let loginManager = LoginRequest()
-        loginManager.facebookLogin(withTarget: self) { (isSuccess) in
+        loginManager.facebookLogin(withTarget: self, completion: { (isSuccess) in
             if isSuccess == true {
                 let checkUserRequest = CheckUserRequest()
                 checkUserRequest.sendCheckUserRequest(userId:nil, completionBlock: { (response, error) in
+                    SVProgressHUD.dismiss()
                     if error != nil {
                         self.navigationController?.pushVCMainThread(GameSelectionVC.createFromStoryboard())
                     } else {
@@ -88,7 +89,8 @@ class LoginVC: BaseVC {
                     }
                 })
             }
-            
+        }) {
+            SVProgressHUD.show()
         }
         
     }
