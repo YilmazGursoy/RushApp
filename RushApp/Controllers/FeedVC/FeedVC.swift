@@ -25,7 +25,7 @@ class FeedVC: BaseVC {
         return refreshControl
     }()
     
-    private var lobbyRequests:[LobbyRequestModel]!
+    var lobbyRequests:[LobbyRequestModel]!
     
     private var feedItems:[Feed]! {
         didSet{
@@ -67,7 +67,7 @@ class FeedVC: BaseVC {
     
     private func sendFeedRequest(){
         let feedRequest = FeedsRequest()
-        SVProgressHUD.show()
+//        SVProgressHUD.show()
         feedRequest.sendFeedRequest { (feeds, error) in
             DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
                 if self.refreshControl.isRefreshing {

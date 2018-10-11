@@ -18,10 +18,10 @@ extension FeedVC {
             SVProgressHUD.dismiss()
             self.removeRequest(lobbyId: lobbyRequest.lobbyId, completion: {
                 DispatchQueue.main.async {
+                    self.lobbyRequests = Rush.shared.currentUser.getLobbyRequestList()
                     let rushAlert = RushAlertController.createFromStoryboard()
                     rushAlert.createOneButtonAlert(title: "Heyy!", description: "Artık lobidesin! Lobide arkadaşların ile konuşabilmen ve oyuna başlamanız lobi sahibi tarafından belirlenmektedir.", buttonTitle: "Tamamdır", buttonTapped: {
                         let topicID = lobby.id.replacingOccurrences(of: ":", with: "")
-
                         self.openLobbyDetail(lobbyId: lobbyRequest.lobbyId, userId: lobbyRequest.userId)
                         Messaging.messaging().subscribe(toTopic: "\(topicID)")
                         DispatchQueue.main.async {
@@ -38,9 +38,12 @@ extension FeedVC {
     }
     
     func deleteLobbyRequest(lobbyRequest:LobbyRequestModel) {
+        SVProgressHUD.show()
         self.removeRequest(lobbyId: lobbyRequest.lobbyId) {
+            SVProgressHUD.dismiss()
+            self.lobbyRequests = Rush.shared.currentUser.getLobbyRequestList()
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self.tableView.reloadSections(IndexSet.init(integer: 0), with: UITableViewRowAnimation.automatic)
             }
         }
     }

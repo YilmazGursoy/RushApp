@@ -97,3 +97,16 @@ extension BaseVC: AWSPopupManagerProtocol {
         }
     }
 }
+
+extension BaseVC : UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        guard let navigationCon = viewController as? UINavigationController else {
+            return
+        }
+        
+        guard let feedVC = navigationCon.topViewController as? FeedVC  else{
+            return
+        }
+        feedVC.tableView.setContentOffset(CGPoint(x: 0.0, y: -feedVC.tableView.contentInset.top), animated: true)
+    }
+}

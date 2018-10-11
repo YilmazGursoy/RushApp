@@ -24,6 +24,7 @@ class BaseVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.openLobbyDetailVC(notification:)), name: NSNotification.Name.init(openLobbyFromNotificationKey), object: nil)
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        self.tabBarController?.delegate = self
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

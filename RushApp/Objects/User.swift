@@ -24,6 +24,7 @@ struct User : Decodable {
     var gender:String?
     var age:Int?
     var lobbyRequests:[LobbyRequestModel]?
+    var hasBadge:Bool?
     
     enum CodingKeys: String, CodingKey {
         case userId = "userId"
@@ -41,6 +42,7 @@ struct User : Decodable {
         case gender = "gender"
         case age = "age"
         case lobbyRequests = "lobbyRequests"
+        case hasBadge = "hasBadge"
     }
 }
 

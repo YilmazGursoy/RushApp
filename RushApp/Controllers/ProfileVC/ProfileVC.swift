@@ -139,10 +139,18 @@ class ProfileVC: BaseVC {
     func setupUI(isCacheRefresh:Bool, isClearAllCache:Bool){
         DispatchQueue.main.async {
             
-            let lottieView = LOTAnimationView(name: "check_animation")
-            lottieView.frame = self.profileBadgeBackView.bounds
-            self.profileBadgeBackView.addSubview(lottieView)
-            lottieView.play { (finish) in}
+            if let hasBadge = self.currentUser.hasBadge {
+                if hasBadge == true {
+                    self.profileBadgeBackView.subviews.forEach({ (subView) in
+                        subView.removeFromSuperview()
+                    })
+                    
+                    let lottieView = LOTAnimationView(name: "check_animation")
+                    lottieView.frame = self.profileBadgeBackView.bounds
+                    self.profileBadgeBackView.addSubview(lottieView)
+                    lottieView.play { (finish) in}
+                }
+            }
             
             if self.currentUser.gameList != nil {
                 var newGameList = self.currentUser.gameList?.shuffled()
