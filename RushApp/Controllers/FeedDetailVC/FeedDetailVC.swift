@@ -111,6 +111,9 @@ class FeedDetailVC: BaseVC {
             }
         }
     }
+    @IBAction func reportFeed(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name.init(openReportScreenNotificationKey), object: ("Gönderi Hakkında Sorun Bildir",ReportValue.feed, self.feed))
+    }
 }
 
 extension FeedDetailVC : UITableViewDelegate, UITableViewDataSource {

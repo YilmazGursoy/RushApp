@@ -84,6 +84,9 @@ class FeedCell: UITableViewCell {
             self.numberOfLikeLabel.text = "\(self.currentFeed.numberOfLike+1)"
         }
     }
+    @IBAction func reportType(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name.init(openReportScreenNotificationKey), object: ("Gönderi Hakkında Sorun Bildir",ReportValue.feed, self.currentFeed))
+    }
 }
 
 //MARK: Custom Animation

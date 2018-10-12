@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>103149234586-b52l7dkcu2tt2uiht1ncri5upg9gj9vr.apps.googleusercontent.com</string>
+	<string>103149234586-vc28r10ma1q9j4pi3s0hfrrajjqkmt4o.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.103149234586-b52l7dkcu2tt2uiht1ncri5upg9gj9vr</string>
+	<string>com.googleusercontent.apps.103149234586-vc28r10ma1q9j4pi3s0hfrrajjqkmt4o</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCyx9uLCGyOXQeEIevxYiXNSQXYx2ul84M</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.yilmaz.RushApp</string>
+	<string>com.yilmaz.rush</string>
 	<key>PROJECT_ID</key>
 	<string>rushapp-c1031</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:103149234586:ios:d05976cf5cff6429</string>
+	<string>1:103149234586:ios:c37981c2acc8af54</string>
 	<key>DATABASE_URL</key>
 	<string>https://rushapp-c1031.firebaseio.com</string>
 </dict>

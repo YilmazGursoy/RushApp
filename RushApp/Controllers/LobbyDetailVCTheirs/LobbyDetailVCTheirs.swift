@@ -82,4 +82,7 @@ class LobbyDetailVCTheirs: BaseVC {
             }
         }
     }
+    @IBAction func reportTapped(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name.init(openReportScreenNotificationKey), object: ("Lobi Hakkında Sorun Bildir",ReportValue.lobby, self.currentLobby))
+    }
 }

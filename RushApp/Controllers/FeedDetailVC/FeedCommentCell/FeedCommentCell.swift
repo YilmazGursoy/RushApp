@@ -18,6 +18,8 @@ class FeedCommentCell: UITableViewCell {
     private var currentUserId:String!
     private var profileTapped:((String)->Void)?
     
+    private var currentComment:Comment!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,6 +32,7 @@ class FeedCommentCell: UITableViewCell {
     }
     
     func arrange(comment:Comment, userProfileTapped:@escaping (String)->Void) {
+        self.currentComment = comment
         self.profileTapped = userProfileTapped
         self.currentUserId = comment.senderUserId
         self.usernameLabel.text = comment.senderUserName
@@ -40,5 +43,8 @@ class FeedCommentCell: UITableViewCell {
     
     @IBAction func openProfileTapped(_ sender: UIButton) {
         profileTapped?(self.currentUserId)
+    }
+    @IBAction func reportTapped(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name.init(openReportScreenNotificationKey), object: ("Yorum Hakkında Sorun Bildir",ReportValue.comment, self.currentComment))
     }
 }

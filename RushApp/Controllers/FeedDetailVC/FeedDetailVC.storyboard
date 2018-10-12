@@ -71,24 +71,39 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grand Theft Auto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uua-PG-vFv">
-                                        <rect key="frame" x="54" y="14" width="267" height="16.5"/>
+                                        <rect key="frame" x="88" y="14" width="199" height="16.5"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfF-cg-yCp">
+                                        <rect key="frame" x="287" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="edA-oe-HD6"/>
+                                            <constraint firstAttribute="width" constant="44" id="mPi-KE-Qok"/>
+                                        </constraints>
+                                        <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <state key="normal" image="report_white"/>
+                                        <connections>
+                                            <action selector="reportFeed:" destination="H22-1E-nBi" eventType="touchUpInside" id="ZhV-dJ-DIo"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ZOI-kn-otO" firstAttribute="top" secondItem="Rsx-Lv-zPi" secondAttribute="top" id="1l9-fl-iCv"/>
+                                    <constraint firstItem="bfF-cg-yCp" firstAttribute="top" secondItem="Rsx-Lv-zPi" secondAttribute="top" id="AXP-k3-pP4"/>
                                     <constraint firstItem="uua-PG-vFv" firstAttribute="centerY" secondItem="Rsx-Lv-zPi" secondAttribute="centerY" id="IFy-gm-TPg"/>
                                     <constraint firstAttribute="height" constant="44" id="MEl-OR-yXz"/>
                                     <constraint firstItem="FUe-ps-dgI" firstAttribute="leading" secondItem="Rsx-Lv-zPi" secondAttribute="leading" id="Pwn-1q-JfN"/>
-                                    <constraint firstItem="ZOI-kn-otO" firstAttribute="leading" secondItem="uua-PG-vFv" secondAttribute="trailing" constant="10" id="PxF-SQ-IWu"/>
+                                    <constraint firstItem="ZOI-kn-otO" firstAttribute="leading" secondItem="bfF-cg-yCp" secondAttribute="trailing" id="W2C-mW-GLQ"/>
                                     <constraint firstAttribute="bottom" secondItem="FUe-ps-dgI" secondAttribute="bottom" id="W4j-yM-vY2"/>
-                                    <constraint firstItem="uua-PG-vFv" firstAttribute="leading" secondItem="FUe-ps-dgI" secondAttribute="trailing" constant="10" id="WAw-qX-wAl"/>
+                                    <constraint firstItem="uua-PG-vFv" firstAttribute="leading" secondItem="FUe-ps-dgI" secondAttribute="trailing" constant="44" id="WAw-qX-wAl"/>
+                                    <constraint firstItem="bfF-cg-yCp" firstAttribute="leading" secondItem="uua-PG-vFv" secondAttribute="trailing" id="Z1u-C9-kaY"/>
                                     <constraint firstItem="FUe-ps-dgI" firstAttribute="top" secondItem="Rsx-Lv-zPi" secondAttribute="top" id="bl5-Vc-f74"/>
                                     <constraint firstItem="uua-PG-vFv" firstAttribute="centerX" secondItem="Rsx-Lv-zPi" secondAttribute="centerX" id="cQS-Y0-VOK"/>
                                     <constraint firstAttribute="bottom" secondItem="ZOI-kn-otO" secondAttribute="bottom" id="iPN-9J-AyQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="bfF-cg-yCp" secondAttribute="bottom" id="ixP-0k-vMQ"/>
                                     <constraint firstAttribute="trailing" secondItem="ZOI-kn-otO" secondAttribute="trailing" id="xYe-fZ-RNS"/>
                                 </constraints>
                             </view>
@@ -13511,6 +13526,7 @@ GgocCh4KIAoiCicKLxubG50bohuwG7QbuxvAG80b0BvdG+Ib6hvtG/Ib+hv9HA8cEhwXAAAAAAAAAgEA
 AAAAAAAAWQAAAAAAAAAAAAAAAAAAHBk
 </mutableData>
         </image>
+        <image name="report_white" width="24" height="24"/>
         <image name="whiteShareIcon" width="17" height="16"/>
     </resources>
 </document>

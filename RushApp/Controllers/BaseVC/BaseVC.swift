@@ -15,6 +15,7 @@ import SVProgressHUD
 
 let openLobbyFromNotificationKey = "openLobbyFromNotificationKey"
 let openLobbyFromSplashNotificationKey = "openLobbyFromNotificationKey"
+let openReportScreenNotificationKey = "openReportScreenNotificationKey"
 
 class BaseVC: UIViewController {
     var player: AVAudioPlayer?
@@ -25,6 +26,8 @@ class BaseVC: UIViewController {
         AWSErrorManager.shared.delegate = self
         AWSPopupManager.shared.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(self.openLobbyDetailVC(notification:)), name: NSNotification.Name.init(openLobbyFromNotificationKey), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.openReportScreen(notification:)), name: NSNotification.Name.init(openReportScreenNotificationKey), object: nil)
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         self.tabBarController?.delegate = self
@@ -71,6 +74,83 @@ class BaseVC: UIViewController {
         self.view.endEditing(true)
     }
     
+    @objc private func openReportScreen(notification:Notification) {
+        
+        if let object = notification.object as? (message:String, reportValue:ReportValue, data:Any) {
+            
+            var id:String = "fmekfmslkefmlksemflksemf"
+            
+            switch object.reportValue {
+            case .comment:
+                if let comment = object.data as? Comment {
+                    id = comment.commentId
+                }
+            case .feed:
+                if let feed = object.data as? Feed {
+                    id = feed.id
+                }
+            case .lobby:
+                if let lobby = object.data as? Lobby {
+                    id = lobby.id
+                }
+            case .user:
+                if let user = object.data as? User {
+                    id = user.userId
+                }
+            }
+            
+            DispatchQueue.main.async {
+                let actionSheet = UIAlertController(title: object.message, message: nil, preferredStyle: .actionSheet)
+                
+                actionSheet.addAction(UIAlertAction.init(title: "Bu bir spam", style: .default, handler: { (action) in
+                    SVProgressHUD.show()
+                    self.sendReportRequest(type: .spam, report: id)
+                }))
+                
+                actionSheet.addAction(UIAlertAction.init(title: "Hassas içeriğe sahip bir resim sergiliyor", style: .default, handler: { (action) in
+                    SVProgressHUD.show()
+                    self.sendReportRequest(type: .naked, report: id)
+                }))
+                
+                actionSheet.addAction(UIAlertAction.init(title: "Taciz ediyor veya zarar veriyor", style: .default, handler: { (action) in
+                    SVProgressHUD.show()
+                    self.sendReportRequest(type: .harassing, report: id)
+                }))
+                
+                actionSheet.addAction(UIAlertAction.init(title: "Kapat", style: .cancel, handler: { (action) in
+                    
+                }))
+                
+                self.present(actionSheet, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    
+    private func sendReportRequest(type:ReportType, report:String){
+        let reportRequest = ReportRequest()
+        reportRequest.sendReportRequest(type: type, report: report, reportId: report + Rush.shared.currentUser.userId, completionSuccess: {
+            DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
+                let rushAlert = RushAlertController.createFromStoryboard()
+                rushAlert.createOneButtonAlert(title: "Teşekkürler", description: "Raporunuz işleme alınmıştır en geç 24 saat içinde incelenecektir.", buttonTitle: "Tamam") {
+                    
+                }
+                if self.tabBarController != nil {
+                    self.tabBarController?.present(rushAlert, animated: false, completion: nil)
+                } else {
+                    self.navigationController?.present(rushAlert, animated: false, completion: nil)
+                }
+            }
+            
+        }) {
+            SVProgressHUD.dismiss()
+            self.showError(title: "Hata!", description: "Raporunuz gönderilirken bir sorun oluştu.", doneButtonTapped: {
+                
+            })
+        }
+    }
+    
     @objc private func openLobbyDetailVC(notification:Notification) {
         if let object = notification.object as? [String:Any] {
             if let isLobbyReview = object["isLobbyReview"] as? String {
@@ -91,7 +171,7 @@ class BaseVC: UIViewController {
                                 }
                             }
                         } else {
-                           
+                            
                         }
                     }
                 }
@@ -172,5 +252,5 @@ extension BaseVC {
             print(error.localizedDescription)
         }
     }
-
+    
 }

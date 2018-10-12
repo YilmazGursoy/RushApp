@@ -18,7 +18,7 @@
         <!--Lobby DetailVC Theirs-->
         <scene sceneID="cqI-cK-z9a">
             <objects>
-                <viewController storyboardIdentifier="LobbyDetailVCTheirs" id="lPD-aa-AWB" customClass="LobbyDetailVCTheirs" customModule="RushApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LobbyDetailVCTheirs" id="lPD-aa-AWB" customClass="LobbyDetailVCTheirs" customModule="Rush" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="utk-vW-Wb1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,19 +38,32 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fortnite Lobby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8V-lu-dWg">
-                                        <rect key="frame" x="44" y="11.5" width="301" height="21"/>
+                                        <rect key="frame" x="44" y="11.5" width="101.5" height="21"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fe8-2p-lBW">
+                                        <rect key="frame" x="331" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="FvZ-ny-ipW"/>
+                                            <constraint firstAttribute="width" constant="44" id="o1T-a6-qZz"/>
+                                        </constraints>
+                                        <state key="normal" image="report"/>
+                                        <connections>
+                                            <action selector="reportTapped:" destination="lPD-aa-AWB" eventType="touchUpInside" id="xNR-xr-aqb"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="1T2-SS-I9g"/>
-                                    <constraint firstAttribute="trailing" secondItem="Q8V-lu-dWg" secondAttribute="trailing" constant="30" id="5mR-uD-wpi"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fe8-2p-lBW" secondAttribute="bottom" id="1eb-Ee-bPG"/>
                                     <constraint firstItem="yxD-R5-l0g" firstAttribute="top" secondItem="hJK-5z-pYx" secondAttribute="top" id="8V4-Yi-Rrc"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fe8-2p-lBW" secondAttribute="trailing" id="G9C-Dc-fVE"/>
                                     <constraint firstAttribute="bottom" secondItem="yxD-R5-l0g" secondAttribute="bottom" id="KRw-mw-Yca"/>
                                     <constraint firstItem="Q8V-lu-dWg" firstAttribute="centerY" secondItem="hJK-5z-pYx" secondAttribute="centerY" id="Mzr-Fe-Ei4"/>
+                                    <constraint firstItem="Fe8-2p-lBW" firstAttribute="top" secondItem="hJK-5z-pYx" secondAttribute="top" id="Q1J-AZ-cag"/>
                                     <constraint firstItem="yxD-R5-l0g" firstAttribute="leading" secondItem="hJK-5z-pYx" secondAttribute="leading" id="kuK-aQ-cgy"/>
                                     <constraint firstItem="Q8V-lu-dWg" firstAttribute="leading" secondItem="yxD-R5-l0g" secondAttribute="trailing" id="z8v-KC-BV7"/>
                                 </constraints>
@@ -131,5 +144,6 @@
     <resources>
         <image name="back" width="17" height="16"/>
         <image name="lobbyEndIcon" width="90" height="90"/>
+        <image name="report" width="24" height="24"/>
     </resources>
 </document>

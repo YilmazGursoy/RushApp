@@ -23,7 +23,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCommentCell" id="KGk-i7-Jjw" customClass="FeedCommentCell" customModule="RushApp" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCommentCell" id="KGk-i7-Jjw" customClass="FeedCommentCell" customModule="Rush" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -31,9 +31,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NuK-dc-8ug">
-                        <rect key="frame" x="23" y="0.0" width="274" height="44"/>
+                        <rect key="frame" x="23" y="0.0" width="253" height="44"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Z3-iD-xk9" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Z3-iD-xk9" customClass="GradientView" customModule="Rush" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="9.5" width="25" height="25"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="DaR-eJ-8Lz">
@@ -62,13 +62,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJd-Nj-jqL">
-                                <rect key="frame" x="274" y="22" width="0.0" height="0.0"/>
+                                <rect key="frame" x="253" y="22" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIz-Ql-fvm">
-                                <rect key="frame" x="0.0" y="0.0" width="274" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="253" height="44"/>
                                 <connections>
                                     <action selector="openProfileTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="XTy-Y5-g4M"/>
                                 </connections>
@@ -103,18 +103,32 @@
                             <constraint firstAttribute="height" constant="1" id="fAB-rH-nbw"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wP3-jH-hj5">
+                        <rect key="frame" x="276" y="0.0" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="AuB-sf-K6F"/>
+                            <constraint firstAttribute="width" constant="44" id="mUv-vr-Dci"/>
+                        </constraints>
+                        <state key="normal" image="report"/>
+                        <connections>
+                            <action selector="reportTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ovb-bh-uqp"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="vYD-bl-GJj" secondAttribute="trailing" constant="23" id="9EV-vV-SoC"/>
+                    <constraint firstItem="wP3-jH-hj5" firstAttribute="leading" secondItem="NuK-dc-8ug" secondAttribute="trailing" id="CYM-j8-mB2"/>
                     <constraint firstItem="vYD-bl-GJj" firstAttribute="top" secondItem="NuK-dc-8ug" secondAttribute="bottom" id="Doh-Uq-d5M"/>
+                    <constraint firstItem="wP3-jH-hj5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="FGv-lP-lei"/>
                     <constraint firstItem="NuK-dc-8ug" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="IgJ-Vx-XCh"/>
                     <constraint firstItem="vYD-bl-GJj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="23" id="NmS-4w-LD7"/>
                     <constraint firstAttribute="bottom" secondItem="9jt-4M-EcI" secondAttribute="bottom" id="Uly-z4-gh0"/>
+                    <constraint firstAttribute="trailing" secondItem="wP3-jH-hj5" secondAttribute="trailing" id="aIx-UC-RyE"/>
                     <constraint firstAttribute="trailing" secondItem="9jt-4M-EcI" secondAttribute="trailing" id="f4L-8g-ata"/>
                     <constraint firstItem="NuK-dc-8ug" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="23" id="hPe-Cb-Ncn"/>
                     <constraint firstAttribute="bottom" secondItem="vYD-bl-GJj" secondAttribute="bottom" constant="10" id="jM6-rm-6NG"/>
-                    <constraint firstAttribute="trailing" secondItem="NuK-dc-8ug" secondAttribute="trailing" constant="23" id="rGA-a9-hFe"/>
+                    <constraint firstAttribute="trailing" secondItem="NuK-dc-8ug" secondAttribute="trailing" constant="44" id="rGA-a9-hFe"/>
                     <constraint firstItem="9jt-4M-EcI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yOs-Re-YbU"/>
                 </constraints>
             </tableViewCellContentView>
@@ -130,5 +144,6 @@
     </objects>
     <resources>
         <image name="profilePlaceholder" width="500" height="500"/>
+        <image name="report" width="24" height="24"/>
     </resources>
 </document>
