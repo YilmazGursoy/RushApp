@@ -21,7 +21,7 @@
         <!--SettingsVC-->
         <scene sceneID="7lx-SZ-aQJ">
             <objects>
-                <viewController storyboardIdentifier="SettingsVC" id="6nR-ae-Hzv" customClass="SettingsVC" customModule="RushApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsVC" id="6nR-ae-Hzv" customClass="SettingsVC" customModule="Rush" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K50-UH-Lgb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="e0X-os-rc1">
-                                <rect key="frame" x="0.0" y="65" width="375" height="146"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="195"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8g-Wu-QeT">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -109,8 +109,50 @@
                                             <constraint firstItem="YHG-U3-nV8" firstAttribute="leading" secondItem="p8g-Wu-QeT" secondAttribute="leading" id="mgQ-Qn-kJ2"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FUh-z7-ihA">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWl-rK-NVh">
                                         <rect key="frame" x="0.0" y="49" width="375" height="48"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qV-yO-oja">
+                                                <rect key="frame" x="0.0" y="47" width="375" height="1"/>
+                                                <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="cSx-df-yUT"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Engellenen Kullanıcılar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sr5-My-3Ak">
+                                                <rect key="frame" x="15" y="15" width="148.5" height="18"/>
+                                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconRight" translatesAutoresizingMaskIntoConstraints="NO" id="TNA-2z-1CN">
+                                                <rect key="frame" x="351" y="18" width="6" height="12"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7i-DC-lEO">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
+                                                <connections>
+                                                    <segue destination="fU0-Ul-vz8" kind="show" id="h2K-KG-49G"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="4iK-mF-rr0"/>
+                                            <constraint firstItem="T7i-DC-lEO" firstAttribute="top" secondItem="DWl-rK-NVh" secondAttribute="top" id="F9O-Ub-Xgu"/>
+                                            <constraint firstItem="TNA-2z-1CN" firstAttribute="centerY" secondItem="DWl-rK-NVh" secondAttribute="centerY" id="HDg-td-zz4"/>
+                                            <constraint firstAttribute="bottom" secondItem="1qV-yO-oja" secondAttribute="bottom" id="WQT-AI-Qul"/>
+                                            <constraint firstAttribute="trailing" secondItem="TNA-2z-1CN" secondAttribute="trailing" constant="18" id="Z3u-iE-rhk"/>
+                                            <constraint firstAttribute="trailing" secondItem="T7i-DC-lEO" secondAttribute="trailing" id="ac6-MC-HEA"/>
+                                            <constraint firstAttribute="trailing" secondItem="1qV-yO-oja" secondAttribute="trailing" id="ayL-xR-TjQ"/>
+                                            <constraint firstItem="Sr5-My-3Ak" firstAttribute="leading" secondItem="DWl-rK-NVh" secondAttribute="leading" constant="15" id="jLc-s2-hi3"/>
+                                            <constraint firstItem="Sr5-My-3Ak" firstAttribute="centerY" secondItem="DWl-rK-NVh" secondAttribute="centerY" id="lz9-o9-jlG"/>
+                                            <constraint firstItem="1qV-yO-oja" firstAttribute="leading" secondItem="DWl-rK-NVh" secondAttribute="leading" id="nBN-kU-i6t"/>
+                                            <constraint firstItem="1qV-yO-oja" firstAttribute="top" secondItem="T7i-DC-lEO" secondAttribute="bottom" id="v2Q-7v-ofN"/>
+                                            <constraint firstItem="T7i-DC-lEO" firstAttribute="leading" secondItem="DWl-rK-NVh" secondAttribute="leading" id="wxC-qw-bB1"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FUh-z7-ihA">
+                                        <rect key="frame" x="0.0" y="98" width="375" height="48"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6JL-ha-dkT">
                                                 <rect key="frame" x="0.0" y="47" width="375" height="1"/>
@@ -152,7 +194,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6bc-Ka-Hi8">
-                                        <rect key="frame" x="0.0" y="98" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="147" width="375" height="48"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mf9-An-N2X">
                                                 <rect key="frame" x="0.0" y="47" width="375" height="1"/>
@@ -238,6 +280,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FaA-Lp-L9H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="653" y="92"/>
+        </scene>
+        <!--BlockUserVC-->
+        <scene sceneID="bhV-MR-WKR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BlockUserVC" referencedIdentifier="BlockUserVC" id="fU0-Ul-vz8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SlT-Ro-VWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="717" y="206"/>
         </scene>
     </scenes>
     <resources>

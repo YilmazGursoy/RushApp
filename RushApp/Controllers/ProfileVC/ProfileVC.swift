@@ -17,7 +17,6 @@ private let notConnectText = "+ Takip Et"
 private let editText = "Düzenle"
 
 
-
 class ProfileVC: BaseVC {
     @IBOutlet weak var followingTextLabel: UILabel!
     @IBOutlet weak var profileBadgeBackView: UIView!
@@ -29,6 +28,12 @@ class ProfileVC: BaseVC {
                 vc.isMyProfile = true
                 return
             } else {
+                if let blackList = Rush.shared.currentUser.blackList {
+                    if blackList.contains(where: {$0.id == userId}) {
+                        return
+                    }
+                }
+                
                 vc.currentUserId = userId!
                 vc.isMyProfile = false
             }
@@ -36,6 +41,7 @@ class ProfileVC: BaseVC {
             vc.isMyProfile = true
             vc.currentUser = Rush.shared.currentUser
         }
+        
         navigationController.pushViewController(vc, animated: true)
     }
     
@@ -164,6 +170,15 @@ class ProfileVC: BaseVC {
             self.sendUserLobbyRequest(userId:self.currentUser.userId)
             self.titleLabel.text = self.currentUser.username
             self.setupFollowEditButtonOutlet()
+            
+            if self.currentUser.followers != nil {
+                self.currentUser.followers = User.getFilteredUsers(userList: self.currentUser.followers!)
+            }
+            
+            if self.currentUser.following != nil {
+                self.currentUser.following = User.getFilteredUsers(userList: self.currentUser.following!)
+            }
+            
             UILabel.animate(withDuration: 0.1, animations: {
                 self.numberOfFollowesLabel.text = "\(self.currentUser.followers?.count ?? 0)"
                 self.numberOfFollowingLabel.text = "\(self.currentUser.following?.count ?? 0)"

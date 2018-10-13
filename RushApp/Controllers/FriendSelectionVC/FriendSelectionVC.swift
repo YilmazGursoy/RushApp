@@ -37,7 +37,9 @@ class FriendSelectionVC: BaseVC {
     }
     
     private func sendFriendListRequest(){
-        self.allFriends = Rush.shared.currentUser.followers
+        
+        self.allFriends = User.getFilteredUsers(userList: Rush.shared.currentUser.followers!)
+        
         if self.allFriends.count == 0 {
             self.tableView.isHidden = true
         }

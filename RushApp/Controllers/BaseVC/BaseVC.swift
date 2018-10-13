@@ -126,7 +126,6 @@ class BaseVC: UIViewController {
         }
     }
     
-    
     private func sendReportRequest(type:ReportType, report:String){
         let reportRequest = ReportRequest()
         reportRequest.sendReportRequest(type: type, report: report, reportId: report + Rush.shared.currentUser.userId, completionSuccess: {

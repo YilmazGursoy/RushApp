@@ -25,6 +25,7 @@ struct User : Decodable {
     var age:Int?
     var lobbyRequests:[LobbyRequestModel]?
     var hasBadge:Bool?
+    var blackList:[SimpleUser]?
     
     enum CodingKeys: String, CodingKey {
         case userId = "userId"
@@ -43,6 +44,7 @@ struct User : Decodable {
         case age = "age"
         case lobbyRequests = "lobbyRequests"
         case hasBadge = "hasBadge"
+        case blackList = "blackList"
     }
 }
 
@@ -69,6 +71,25 @@ extension User {
             }
         })
         return list
+    }
+    
+    static func getFilteredUsers(userList:[SimpleUser]) -> [SimpleUser] {
+        if let blackList = Rush.shared.currentUser.blackList {
+            
+            var newUserList = [SimpleUser]()
+            
+            userList.forEach { (simpleUser) in
+                let isContain = blackList.contains{$0.id == simpleUser.id}
+                
+                if isContain == false {
+                    newUserList.append(simpleUser)
+                }
+            }
+            
+            return newUserList
+        } else {
+            return userList
+        }
     }
 }
 

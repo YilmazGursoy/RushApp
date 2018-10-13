@@ -17,7 +17,7 @@ class LobbyRequest: Request {
     func sendGameLobbyRequestWithoutParameters(completionBlock:@escaping ([Lobby]?,Error?)->Void) {
         
         self.request(parameters: ["":""]) { (response:AnyObject?, lobbies:[Lobby]?, error:Error?) in
-            completionBlock(lobbies, error)
+           completionBlock(lobbies, error)
         }
         
     }
