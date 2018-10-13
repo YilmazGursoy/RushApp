@@ -142,6 +142,12 @@
 		47A6AE8B2171484400D536CD /* ReportRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A6AE8A2171484400D536CD /* ReportRequest.swift */; };
 		47A6AE8E2171EA0E00D536CD /* BlockUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A6AE8D2171EA0E00D536CD /* BlockUserVC.swift */; };
 		47A6AE902171EA1300D536CD /* BlockUserVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47A6AE8F2171EA1300D536CD /* BlockUserVC.storyboard */; };
+		47A6AE922171F70400D536CD /* BlockUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A6AE912171F70400D536CD /* BlockUser.swift */; };
+		47A6AE94217270AC00D536CD /* BlockUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A6AE93217270AC00D536CD /* BlockUserRequest.swift */; };
+		47A6AE96217271DC00D536CD /* UnblockUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A6AE95217271DC00D536CD /* UnblockUserRequest.swift */; };
+		47A6AE9A217272FC00D536CD /* ExtensionReport+BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A6AE99217272FC00D536CD /* ExtensionReport+BaseVC.swift */; };
+		47A6AE9D2172876D00D536CD /* ReportPolicyVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47A6AE9C2172876D00D536CD /* ReportPolicyVC.storyboard */; };
+		47A6AE9F2172890000D536CD /* ReportPolicyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A6AE9E2172890000D536CD /* ReportPolicyVC.swift */; };
 		47C0B081211EDD9900469883 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C0B080211EDD9900469883 /* GradientView.swift */; };
 		47C3C058213E4EAF00A74171 /* feed.json in Resources */ = {isa = PBXBuildFile; fileRef = 47C3C057213E4EAF00A74171 /* feed.json */; };
 		47C3C05A213E4ECC00A74171 /* lobbies.json in Resources */ = {isa = PBXBuildFile; fileRef = 47C3C059213E4ECC00A74171 /* lobbies.json */; };
@@ -392,6 +398,12 @@
 		47A6AE8A2171484400D536CD /* ReportRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportRequest.swift; sourceTree = "<group>"; };
 		47A6AE8D2171EA0E00D536CD /* BlockUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserVC.swift; sourceTree = "<group>"; };
 		47A6AE8F2171EA1300D536CD /* BlockUserVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BlockUserVC.storyboard; sourceTree = "<group>"; };
+		47A6AE912171F70400D536CD /* BlockUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUser.swift; sourceTree = "<group>"; };
+		47A6AE93217270AC00D536CD /* BlockUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserRequest.swift; sourceTree = "<group>"; };
+		47A6AE95217271DC00D536CD /* UnblockUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnblockUserRequest.swift; sourceTree = "<group>"; };
+		47A6AE99217272FC00D536CD /* ExtensionReport+BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExtensionReport+BaseVC.swift"; sourceTree = "<group>"; };
+		47A6AE9C2172876D00D536CD /* ReportPolicyVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReportPolicyVC.storyboard; sourceTree = "<group>"; };
+		47A6AE9E2172890000D536CD /* ReportPolicyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPolicyVC.swift; sourceTree = "<group>"; };
 		47C0B080211EDD9900469883 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		47C3C057213E4EAF00A74171 /* feed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = feed.json; sourceTree = "<group>"; };
 		47C3C059213E4ECC00A74171 /* lobbies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lobbies.json; sourceTree = "<group>"; };
@@ -701,6 +713,7 @@
 				47E6EBD2215AFFA3009845A0 /* SimpleFeed.swift */,
 				47152FF821696EF400BB1C50 /* LobbyRequestModel.swift */,
 				47A6AE8821713A6800D536CD /* ReportType.swift */,
+				47A6AE912171F70400D536CD /* BlockUser.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -857,6 +870,15 @@
 				47A6AE8F2171EA1300D536CD /* BlockUserVC.storyboard */,
 			);
 			path = BlockUserVC;
+			sourceTree = "<group>";
+		};
+		47A6AE9B2172876300D536CD /* ReportPolicyVC */ = {
+			isa = PBXGroup;
+			children = (
+				47A6AE9C2172876D00D536CD /* ReportPolicyVC.storyboard */,
+				47A6AE9E2172890000D536CD /* ReportPolicyVC.swift */,
+			);
+			path = ReportPolicyVC;
 			sourceTree = "<group>";
 		};
 		47C0B07F211EDD9100469883 /* Views */ = {
@@ -1320,6 +1342,8 @@
 				47152FF6216967B100BB1C50 /* AddFriendToLobbyRequest.swift */,
 				47153001216982B100BB1C50 /* RemoveLobbyRequest .swift */,
 				47A6AE8A2171484400D536CD /* ReportRequest.swift */,
+				47A6AE93217270AC00D536CD /* BlockUserRequest.swift */,
+				47A6AE95217271DC00D536CD /* UnblockUserRequest.swift */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -1327,6 +1351,7 @@
 		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				47A6AE9B2172876300D536CD /* ReportPolicyVC */,
 				47A6AE8C2171EA0300D536CD /* BlockUserVC */,
 				472B8177214C857500C005B2 /* AddRankOrUrlVC */,
 				D2D9108B20A070A40054F3AA /* BaseNavigationController */,
@@ -1393,6 +1418,7 @@
 			children = (
 				D258C073209904690090ABB5 /* BaseVC.swift */,
 				D258C07C2099098B0090ABB5 /* BaseVC+Extensions.swift */,
+				47A6AE99217272FC00D536CD /* ExtensionReport+BaseVC.swift */,
 			);
 			path = BaseVC;
 			sourceTree = "<group>";
@@ -1509,6 +1535,7 @@
 				472DFEE32135D3C900FC577A /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				47E2C75721458ECD00AAD648 /* FeedCommentTitleViewCell.xib in Resources */,
 				4742C093216DC34E00E33233 /* Slide.xib in Resources */,
+				47A6AE9D2172876D00D536CD /* ReportPolicyVC.storyboard in Resources */,
 				47E2C79C2147014F00AAD648 /* FilterCellType2.xib in Resources */,
 				47E2C69C2140767900AAD648 /* FeedCommentCell.xib in Resources */,
 				472DFEDE2135D3C900FC577A /* OpenSans-Light.ttf in Resources */,
@@ -1706,7 +1733,9 @@
 			files = (
 				4735F4A72163FD810013B869 /* ChangePasswordVC.swift in Sources */,
 				472DFF62213C135000FC577A /* User.swift in Sources */,
+				47A6AE94217270AC00D536CD /* BlockUserRequest.swift in Sources */,
 				47C3C068213E625D00A74171 /* Message.swift in Sources */,
+				47A6AE9F2172890000D536CD /* ReportPolicyVC.swift in Sources */,
 				475F612E2153085E003E30FC /* SubscribeComments.swift in Sources */,
 				475F61212152D90E003E30FC /* LobbyDetailOneButtonCell.swift in Sources */,
 				472B815221497A0300C005B2 /* LobbyDetailTitleCell.swift in Sources */,
@@ -1720,6 +1749,7 @@
 				472B8169214C65D100C005B2 /* ProfileLobbyCollectionCell.swift in Sources */,
 				4715300521698BC300BB1C50 /* SortVC.swift in Sources */,
 				47A6AE8E2171EA0E00D536CD /* BlockUserVC.swift in Sources */,
+				47A6AE922171F70400D536CD /* BlockUser.swift in Sources */,
 				47E2C7902146D65E00AAD648 /* FilterNavigationController.swift in Sources */,
 				47C3C066213E624C00A74171 /* SimpleUser.swift in Sources */,
 				472B8170214C778E00C005B2 /* ProfileRankCollectionCell.swift in Sources */,
@@ -1829,6 +1859,7 @@
 				475F61242152E53B003E30FC /* Extension+LobbyDetailTheirs.swift in Sources */,
 				47152FFD2169733A00BB1C50 /* LobbyRequestCell.swift in Sources */,
 				47E2C7882146D5B000AAD648 /* HalfModalTransitioningDelegate.swift in Sources */,
+				47A6AE9A217272FC00D536CD /* ExtensionReport+BaseVC.swift in Sources */,
 				472B813D2149196B00C005B2 /* ImageUploadManager.swift in Sources */,
 				4735F49F2163FD4E0013B869 /* SettingsVC.swift in Sources */,
 				4735F4AC216410360013B869 /* AboutUsVC.swift in Sources */,
@@ -1839,6 +1870,7 @@
 				47E2C7972147013A00AAD648 /* FilterCellType1.swift in Sources */,
 				47C3C0AD213F0DE400A74171 /* Extension+Json.swift in Sources */,
 				472DFF56213B2FA100FC577A /* ChangeProfilePictureRequest.swift in Sources */,
+				47A6AE96217271DC00D536CD /* UnblockUserRequest.swift in Sources */,
 				4742C092216DC34E00E33233 /* Slide.swift in Sources */,
 				D2075DD6209E41CA00AC79B6 /* ErrorConstants.swift in Sources */,
 				472DFF052138445500FC577A /* MapVC.swift in Sources */,

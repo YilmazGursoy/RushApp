@@ -69,17 +69,17 @@ class FeedVC: BaseVC {
     private func sendFeedRequest(){
         let feedRequest = FeedsRequest()
 //        SVProgressHUD.show()
-        feedRequest.sendFeedRequest { (feeds, error) in
+        feedRequest.sendFeedRequest { (baseFeed, error) in
             DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
                 if self.refreshControl.isRefreshing {
                     self.refreshControl.endRefreshing()
                 }
             })
             
-            if feeds != nil {
+            if baseFeed != nil {
                 SVProgressHUD.dismiss()
-                var sortedFeeds = feeds
-                sortedFeeds = sortedFeeds!.sorted{$0.date>$1.date}
+                var sortedFeeds = baseFeed!.feeds
+                sortedFeeds = sortedFeeds.sorted{$0.date>$1.date}
                 self.feedItems = sortedFeeds
             } else {
                 SVProgressHUD.dismiss()

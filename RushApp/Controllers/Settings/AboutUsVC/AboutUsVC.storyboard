@@ -21,7 +21,7 @@
         <!--About UsVC-->
         <scene sceneID="q3H-s7-CDe">
             <objects>
-                <viewController storyboardIdentifier="AboutUsVC" id="eqv-IX-wBd" customClass="AboutUsVC" customModule="RushApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutUsVC" id="eqv-IX-wBd" customClass="AboutUsVC" customModule="Rush" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x1U-cL-tHc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="74A-Ce-sOj">
-                                <rect key="frame" x="20" y="85" width="335" height="452"/>
+                                <rect key="frame" x="20" y="85" width="335" height="472"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Rush, oyuncular ve oyun tutkunları için hazırlanmış sosyal medya platformudur.">
@@ -106,42 +106,8 @@ Beklemede kalın!
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMQ-jm-oAR" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="597" width="335" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHX-d1-3I3">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
-                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="13"/>
-                                        <state key="normal" title="Destek">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="supportTapped:" destination="eqv-IX-wBd" eventType="touchUpInside" id="66Q-II-rZG"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="gHX-d1-3I3" firstAttribute="top" secondItem="rMQ-jm-oAR" secondAttribute="top" id="7mZ-oA-ny3"/>
-                                    <constraint firstItem="gHX-d1-3I3" firstAttribute="leading" secondItem="rMQ-jm-oAR" secondAttribute="leading" id="CHS-xQ-HAm"/>
-                                    <constraint firstAttribute="height" constant="50" id="EgE-HG-C1O"/>
-                                    <constraint firstAttribute="trailing" secondItem="gHX-d1-3I3" secondAttribute="trailing" id="VO3-1q-sfe"/>
-                                    <constraint firstAttribute="bottom" secondItem="gHX-d1-3I3" secondAttribute="bottom" id="u32-zK-Ef7"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
-                                        <color key="value" red="0.46666666670000001" green="0.35294117650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
-                                        <color key="value" red="0.81176470590000005" green="0.55294117649999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="-1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7Q-TG-5Ra" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="537" width="335" height="50"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7Q-TG-5Ra" customClass="GradientView" customModule="Rush" customModuleProvider="target">
+                                <rect key="frame" x="20" y="577" width="335" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otg-xj-vLG">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
@@ -183,19 +149,19 @@ Beklemede kalın!
                             <constraint firstItem="bc7-jg-yEt" firstAttribute="trailing" secondItem="74A-Ce-sOj" secondAttribute="trailing" constant="20" id="Mrm-BI-hCO"/>
                             <constraint firstItem="SaW-dZ-dgD" firstAttribute="top" secondItem="bc7-jg-yEt" secondAttribute="top" id="PLv-ce-L2N"/>
                             <constraint firstItem="SaW-dZ-dgD" firstAttribute="leading" secondItem="bc7-jg-yEt" secondAttribute="leading" id="Tm0-CT-tz7"/>
-                            <constraint firstItem="bc7-jg-yEt" firstAttribute="trailing" secondItem="rMQ-jm-oAR" secondAttribute="trailing" constant="20" id="Wuh-6E-9yf"/>
+                            <constraint firstItem="bc7-jg-yEt" firstAttribute="bottom" secondItem="l7Q-TG-5Ra" secondAttribute="bottom" constant="40" id="X3n-Iz-EmL"/>
                             <constraint firstItem="3HC-UW-dlr" firstAttribute="leading" secondItem="bc7-jg-yEt" secondAttribute="leading" id="Zhs-Y5-Bt8"/>
                             <constraint firstItem="3HC-UW-dlr" firstAttribute="top" secondItem="SaW-dZ-dgD" secondAttribute="bottom" id="c3H-ym-pQX"/>
                             <constraint firstItem="bc7-jg-yEt" firstAttribute="trailing" secondItem="l7Q-TG-5Ra" secondAttribute="trailing" constant="20" id="gJX-xR-hsx"/>
                             <constraint firstItem="74A-Ce-sOj" firstAttribute="top" secondItem="3HC-UW-dlr" secondAttribute="bottom" constant="20" id="j0i-OZ-TRe"/>
-                            <constraint firstItem="rMQ-jm-oAR" firstAttribute="leading" secondItem="bc7-jg-yEt" secondAttribute="leading" constant="20" id="m52-LQ-pAv"/>
-                            <constraint firstItem="bc7-jg-yEt" firstAttribute="bottom" secondItem="rMQ-jm-oAR" secondAttribute="bottom" constant="20" id="nYD-3i-7VQ"/>
-                            <constraint firstItem="rMQ-jm-oAR" firstAttribute="top" secondItem="l7Q-TG-5Ra" secondAttribute="bottom" constant="10" id="sUj-u6-OUP"/>
-                            <constraint firstItem="l7Q-TG-5Ra" firstAttribute="top" secondItem="74A-Ce-sOj" secondAttribute="bottom" id="vGf-6r-hoR"/>
+                            <constraint firstItem="l7Q-TG-5Ra" firstAttribute="top" secondItem="74A-Ce-sOj" secondAttribute="bottom" constant="20" id="vGf-6r-hoR"/>
                             <constraint firstItem="74A-Ce-sOj" firstAttribute="leading" secondItem="bc7-jg-yEt" secondAttribute="leading" constant="20" id="xwR-3b-DuO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bc7-jg-yEt"/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="74A-Ce-sOj" id="hz7-nf-802"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBE-j5-74W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

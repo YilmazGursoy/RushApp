@@ -10,21 +10,19 @@ import UIKit
 import AppRating
 
 class AboutUsVC: BaseVC {
-
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.textView.setContentOffset(.zero, animated: false)
     }
     
     @IBAction func reviewTapped(_ sender: Any) {
         AppRating.showRatingAlert()
-    }
-    @IBAction func supportTapped(_ sender: Any) {
-        if let url = URL(string: "mailto:support@rushapp.me") {
-            if UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
-        }
     }
 }

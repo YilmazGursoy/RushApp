@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KcB-gO-Tb3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Report PolicyVC-->
+        <scene sceneID="KP4-yi-bPE">
+            <objects>
+                <viewController storyboardIdentifier="ReportPolicyVC" id="KcB-gO-Tb3" customClass="ReportPolicyVC" customModule="Rush" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IlY-by-oCR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M4e-om-jea">
+                                <rect key="frame" x="20" y="85" width="335" height="472"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="İHLALLERİ BİLDİRME">
+                                        <attributes>
+                                            <color key="NSColor" red="0.46666666670000001" green="0.35294117650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="OpenSans-Bold"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+Bu makale, Rush Kuralları ve Hizmet Şartları’nın olası ihlallerini bildirme hakkında genel bir bakış sağlamaktadır.
+
+Belirli bir ihlal için doğrudan bir lobi veya profilden bildirimde bulunabilirsiniz. Bu ihlaller ; spam, hassas içerik, taciz ediyor veya zarar veriyor şeklinde olabilir. 
+
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="OpenSans-Light"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="İHLAL İÇEREN İÇERİĞİ BİLDİRME ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.46666666670000001" green="0.35294117650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="OpenSans-Bold"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content">
+
+İçeriği nasıl Rush ekibine bildireceğinizi öğrenin:
+
+1-Öncelikle bildirmek istediğiniz içeriği veya profili görüntüleyin.
+
+2- Profilin veya gönderinin sağ üst köşesinde bulunan aşağı yönlü ok tuşuna basın. 
+ 
+3- Çıkan menüde “Bu bir spam” “Hassas içeriğe sahip bir resim sergiliyor” “Taciz ediyor veya zarar veriyor” seçeneklerinden, bu ihlal için uygun seçeneği işaretleyin. 
+
+4- Daha sonra belirlediğiniz ihlal ekibimiz tarafından 24 saatlik bir değerlendirmeye tabi tutulacaktır. 
+
+5- Bu ihlal sonucunda size gerekli olduğunda bir dönüş yapılacaktır. 
+
+
+
+Rush ekibi olarak gizliliğiniz ve uyarılarınız bizim için oldukça değerlidir. Bu gibi durumlarda lütfen ekibimiz ile ihlal paylaşmaktan çekinmeyiniz. Rush’ı daha güvenli ve kullanılabilir hale getirmek için bu çok önemlidir.</mutableString>
+                                        <attributes>
+                                            <color key="NSColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="OpenSans-Light"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.066669999999999993" green="0.066669999999999993" blue="0.066669999999999993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="OpenSans-Light"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+CgoKA
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.066669999999999993" green="0.066669999999999993" blue="0.066669999999999993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="OpenSans-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="84">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="112">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="140">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="168">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="196">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="224">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="280">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="308">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="336">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSn-gJ-fD9">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLr-Ig-Zkd">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="6Z0-nh-5p7"/>
+                                            <constraint firstAttribute="width" constant="44" id="P9H-WS-WVr"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="pop" destination="KcB-gO-Tb3" eventType="touchUpInside" id="PE4-Pa-Or8"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İhlalleri Bildirme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXO-29-FlP">
+                                        <rect key="frame" x="44" y="11.5" width="287" height="21"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="cLr-Ig-Zkd" firstAttribute="leading" secondItem="qSn-gJ-fD9" secondAttribute="leading" id="1ZE-K8-cPs"/>
+                                    <constraint firstAttribute="bottom" secondItem="cLr-Ig-Zkd" secondAttribute="bottom" id="HeA-n1-6zX"/>
+                                    <constraint firstAttribute="height" constant="44" id="Htq-2l-M1M"/>
+                                    <constraint firstItem="KXO-29-FlP" firstAttribute="centerX" secondItem="qSn-gJ-fD9" secondAttribute="centerX" id="IAY-ez-eM7"/>
+                                    <constraint firstItem="KXO-29-FlP" firstAttribute="leading" secondItem="cLr-Ig-Zkd" secondAttribute="trailing" id="LIq-hj-Oq8"/>
+                                    <constraint firstAttribute="trailing" secondItem="KXO-29-FlP" secondAttribute="trailing" constant="44" id="an1-uN-6ih"/>
+                                    <constraint firstItem="KXO-29-FlP" firstAttribute="centerY" secondItem="qSn-gJ-fD9" secondAttribute="centerY" id="b2v-Ws-SVp"/>
+                                    <constraint firstItem="cLr-Ig-Zkd" firstAttribute="top" secondItem="qSn-gJ-fD9" secondAttribute="top" id="zRj-OK-Q9y"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QKw-go-4au">
+                                <rect key="frame" x="0.0" y="64" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="T3V-95-h0M"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zwj-GP-GZO" customClass="GradientView" customModule="Rush" customModuleProvider="target">
+                                <rect key="frame" x="20" y="577" width="335" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qf-2S-ivm">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="13"/>
+                                        <state key="normal" title="Destek">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="0Qf-2S-ivm" firstAttribute="leading" secondItem="Zwj-GP-GZO" secondAttribute="leading" id="71v-cH-q7y"/>
+                                    <constraint firstAttribute="height" constant="50" id="C5y-YV-9LO"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Qf-2S-ivm" secondAttribute="trailing" id="d5j-K5-UvY"/>
+                                    <constraint firstItem="0Qf-2S-ivm" firstAttribute="top" secondItem="Zwj-GP-GZO" secondAttribute="top" id="iSW-Gg-8eV"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Qf-2S-ivm" secondAttribute="bottom" id="rbm-vF-cPL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" red="0.46666666670000001" green="0.35294117650000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" red="0.81176470590000005" green="0.55294117649999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="-1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Zwj-GP-GZO" firstAttribute="leading" secondItem="Eyd-cR-41Q" secondAttribute="leading" constant="20" id="5FC-3a-Gag"/>
+                            <constraint firstItem="Eyd-cR-41Q" firstAttribute="trailing" secondItem="QKw-go-4au" secondAttribute="trailing" id="7d5-MZ-Z98"/>
+                            <constraint firstItem="Eyd-cR-41Q" firstAttribute="bottom" secondItem="Zwj-GP-GZO" secondAttribute="bottom" constant="40" id="BHu-ge-S0E"/>
+                            <constraint firstItem="QKw-go-4au" firstAttribute="leading" secondItem="Eyd-cR-41Q" secondAttribute="leading" id="F5e-5B-i0P"/>
+                            <constraint firstItem="Zwj-GP-GZO" firstAttribute="centerX" secondItem="IlY-by-oCR" secondAttribute="centerX" id="IT7-jF-7QT"/>
+                            <constraint firstItem="qSn-gJ-fD9" firstAttribute="top" secondItem="Eyd-cR-41Q" secondAttribute="top" id="KDk-sG-dHh"/>
+                            <constraint firstItem="qSn-gJ-fD9" firstAttribute="leading" secondItem="Eyd-cR-41Q" secondAttribute="leading" id="RKR-TG-oLu"/>
+                            <constraint firstItem="Eyd-cR-41Q" firstAttribute="trailing" secondItem="Zwj-GP-GZO" secondAttribute="trailing" constant="20" id="ayR-xX-EuU"/>
+                            <constraint firstItem="M4e-om-jea" firstAttribute="top" secondItem="QKw-go-4au" secondAttribute="bottom" constant="20" id="qPE-8g-Qrp"/>
+                            <constraint firstItem="QKw-go-4au" firstAttribute="top" secondItem="qSn-gJ-fD9" secondAttribute="bottom" id="tJ8-O8-evK"/>
+                            <constraint firstItem="Eyd-cR-41Q" firstAttribute="trailing" secondItem="M4e-om-jea" secondAttribute="trailing" constant="20" id="uGq-3Q-Izf"/>
+                            <constraint firstItem="M4e-om-jea" firstAttribute="leading" secondItem="Eyd-cR-41Q" secondAttribute="leading" constant="20" id="ufO-Yj-TTo"/>
+                            <constraint firstItem="Eyd-cR-41Q" firstAttribute="trailing" secondItem="qSn-gJ-fD9" secondAttribute="trailing" id="vcy-kG-rFD"/>
+                            <constraint firstItem="Zwj-GP-GZO" firstAttribute="top" secondItem="M4e-om-jea" secondAttribute="bottom" constant="20" id="yFT-TI-MRV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Eyd-cR-41Q"/>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="M4e-om-jea" id="d4U-RW-gub"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="khQ-CT-MEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="17" height="16"/>
+    </resources>
+</document>

@@ -44,4 +44,7 @@ struct LambdaConstants {
     
     static let RemoveLobbyRequestsFromProfile   =   "RushApp-RemoveLobbyRequest"
     static let RushAppReport                    =   "RushApp-Report"
+    
+    static let BlockUserRequest                 =   "RushApp-BlockUserRequest"
+    static let UnblockingUserRequest            =   "RushApp-UnblockUserRequest"
 }

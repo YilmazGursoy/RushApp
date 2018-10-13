@@ -29,7 +29,7 @@ class GetNearestLobbiesRequest: Request {
                     lobbyList?.forEach({ (lobby) in
                         do {
                             let isContain = try blackList.contains(where: { (simpleUser) -> Bool in
-                                if simpleUser.id == lobby.sender.id {
+                                if simpleUser.user.id == lobby.sender.id {
                                     return true
                                 } else {
                                     return false

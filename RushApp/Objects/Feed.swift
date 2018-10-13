@@ -22,6 +22,25 @@ struct Feed: Codable {
     let title:String
 }
 
+struct BaseFeed :Codable {
+    let feeds:[Feed]
+    let count:Int?
+    let scannedCount:Int?
+    let lastEvaluatedKey:LastEvaluatedKey?
+    
+    enum CodingKeys : String, CodingKey {
+        case feeds = "Items"
+        case count = "Count"
+        case scannedCount = "ScannedCount"
+        case lastEvaluatedKey = "LastEvaluatedKey"
+    }
+}
+
+struct LastEvaluatedKey : Codable {
+    let id:String
+    let date:Date
+}
+
 //MARK: JSON
 /*
  {

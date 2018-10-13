@@ -25,7 +25,7 @@ struct User : Decodable {
     var age:Int?
     var lobbyRequests:[LobbyRequestModel]?
     var hasBadge:Bool?
-    var blackList:[SimpleUser]?
+    var blackList:[BlockUser]?
     
     enum CodingKeys: String, CodingKey {
         case userId = "userId"
@@ -79,7 +79,7 @@ extension User {
             var newUserList = [SimpleUser]()
             
             userList.forEach { (simpleUser) in
-                let isContain = blackList.contains{$0.id == simpleUser.id}
+                let isContain = blackList.contains{$0.user.id == simpleUser.id}
                 
                 if isContain == false {
                     newUserList.append(simpleUser)

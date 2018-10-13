@@ -16,7 +16,6 @@ private let followingText = "Takip Ediliyor"
 private let notConnectText = "+ Takip Et"
 private let editText = "Düzenle"
 
-
 class ProfileVC: BaseVC {
     @IBOutlet weak var followingTextLabel: UILabel!
     @IBOutlet weak var profileBadgeBackView: UIView!
@@ -29,7 +28,7 @@ class ProfileVC: BaseVC {
                 return
             } else {
                 if let blackList = Rush.shared.currentUser.blackList {
-                    if blackList.contains(where: {$0.id == userId}) {
+                    if blackList.contains(where: {$0.user.id == userId}) {
                         return
                     }
                 }
