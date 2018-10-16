@@ -82,7 +82,6 @@ class ProfileVC: BaseVC {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCollectionViews()
@@ -142,7 +141,15 @@ class ProfileVC: BaseVC {
     
     func setupUI(isCacheRefresh:Bool, isClearAllCache:Bool){
         DispatchQueue.main.async {
-            
+//            if self.currentUser.gameList != nil {
+//                var newGameList = self.currentUser.gameList?.shuffled()
+//                if let game = newGameList?.first {
+//                    if game.lobbyImage != nil {
+//                        self.profileBackView.sd_setImage(with: game.getLobbyImageURL(), placeholderImage: nil, options: .cacheMemoryOnly, completed: nil)
+//                    }
+//                }
+//            }
+//
             if let hasBadge = self.currentUser.hasBadge {
                 if hasBadge == true {
                     self.profileBadgeBackView.subviews.forEach({ (subView) in
@@ -153,15 +160,6 @@ class ProfileVC: BaseVC {
                     lottieView.frame = self.profileBadgeBackView.bounds
                     self.profileBadgeBackView.addSubview(lottieView)
                     lottieView.play { (finish) in}
-                }
-            }
-            
-            if self.currentUser.gameList != nil {
-                var newGameList = self.currentUser.gameList?.shuffled()
-                if let game = newGameList?.first {
-                    if game.lobbyImage != nil {
-                        self.profileBackView.sd_setImage(with: game.getLobbyImageURL(), placeholderImage: nil, options: .cacheMemoryOnly, completed: nil)
-                    }
                 }
             }
             

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import SVProgressHUD
 
 extension LobbyDetailVC : UITableViewDelegate, UITableViewDataSource {
@@ -54,6 +55,13 @@ extension LobbyDetailVC : UITableViewDelegate, UITableViewDataSource {
                             SVProgressHUD.show()
                             let request = ChangeLobbyStatusRequest()
                             request.sendChangeLobbyStatus(lobbyId: self.currentLobby.id, newStatus: LobbyStatus.gaming, successCompletion: { (lobby) in
+                                
+                                Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+                                    AnalyticsParameterItemID: "LobbyStartGaming",
+                                    AnalyticsParameterItemName: "LobbyStartGaming Tapped",
+                                    AnalyticsParameterContentType: "cont"
+                                    ])
+                                
                                 self.currentLobby = lobby
                                 self.tableView.reloadData()
                                 SVProgressHUD.dismiss()
@@ -73,6 +81,14 @@ extension LobbyDetailVC : UITableViewDelegate, UITableViewDataSource {
                             SVProgressHUD.show()
                             let request = ChangeLobbyStatusRequest()
                             request.sendChangeLobbyStatus(lobbyId: self.currentLobby.id, newStatus: LobbyStatus.close, successCompletion: { (lobby) in
+                                
+                                Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+                                    AnalyticsParameterItemID: "LobbyEndGaming",
+                                    AnalyticsParameterItemName: "LobbyEndGaming Tapped",
+                                    AnalyticsParameterContentType: "cont"
+                                    ])
+                                
+                                
                                 self.currentLobby = lobby
                                 self.tableView.reloadData()
                                 SVProgressHUD.dismiss()
@@ -116,7 +132,6 @@ extension LobbyDetailVC : UITableViewDelegate, UITableViewDataSource {
             }
             return cell
         } else {
-            
             if self.currentLobby.lobbyHasChat {
                 if indexPath.row < self.comments.count {
                     let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCommentCell") as! FeedCommentCell
@@ -145,6 +160,13 @@ extension LobbyDetailVC : UITableViewDelegate, UITableViewDataSource {
                     let request = ChangeLobbyChatStatusRequest()
                     request.sendRequest(lobbyId: self.currentLobby.id, successCompletion: { (lobby) in
                         SVProgressHUD.dismiss()
+                        
+                        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+                            AnalyticsParameterItemID: "LobbyStartChat",
+                            AnalyticsParameterItemName: "LobbyStartChat Tapped",
+                            AnalyticsParameterContentType: "cont"
+                            ])
+                        
                         self.currentLobby = lobby
                         self.configurateLobbyDelegatesAndRequest()
                         

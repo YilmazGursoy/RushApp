@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-
+import Firebase
 import SDWebImage
 import CoreLocation
 import SVProgressHUD
@@ -23,6 +23,13 @@ class BaseVC: UIViewController {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "id-\(type(of: self))",
+            AnalyticsParameterItemName: type(of: self),
+            AnalyticsParameterContentType: "cont"
+            ])
+        
         AWSErrorManager.shared.delegate = self
         AWSPopupManager.shared.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(self.openLobbyDetailVC(notification:)), name: NSNotification.Name.init(openLobbyFromNotificationKey), object: nil)
@@ -157,18 +164,15 @@ extension BaseVC {
         guard let url = Bundle.main.url(forResource: "refresh", withExtension: "wav") else { return }
         
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient, with:[.mixWithOthers])
             try AVAudioSession.sharedInstance().setActive(true)
             
             
-            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
             
-            /* iOS 10 and earlier require the following line:
-             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
             
             guard let player = player else { return }
-            player.volume = 0.3
+            player.volume = 0.4
             player.play()
             
         } catch let error {

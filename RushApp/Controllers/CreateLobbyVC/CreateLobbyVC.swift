@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import SVProgressHUD
 import CoreLocation
 
@@ -103,6 +104,13 @@ class CreateLobbyVC: BaseVC {
     }
     
     @IBAction func postPublishTapped(_ sender: UIButton) {
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "CreateLobby",
+            AnalyticsParameterItemName: "CreateLobbyPressed",
+            AnalyticsParameterContentType: "cont"
+        ])
+        
         let createLobbyRequest = LobbyCreateRequest()
         SVProgressHUD.show()
         createLobbyRequest.sendLobbyCreateRequest(lobbyName: self.lobbyNameTextField.text!, address: self.currentLocationName!, numberOfNeededUser: Int((self.neededPlayerTextField.text! as NSString).intValue), description: self.lobbyDetailTextView.text!, latitude: self.currentLocation!.coordinate.latitude, longitude: self.currentLocation!.coordinate.longitude, sender: Rush.shared.currentUser, game: self.selectingGame, platform: self.platformType!, completionSuccess: { (lobby) in

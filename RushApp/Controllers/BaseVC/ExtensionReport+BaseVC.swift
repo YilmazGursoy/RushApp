@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import SVProgressHUD
 
 extension BaseVC {
@@ -62,6 +63,13 @@ extension BaseVC {
                                 //TODO:
                                 let request = BlockUserRequest()
                                 request.sendRequest(userId: (object.data as! User).userId, username: (object.data as! User).username, successCompletion: { (currentUser) in
+                                    
+                                    Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+                                        AnalyticsParameterItemID: "UserBlock",
+                                        AnalyticsParameterItemName: "UserBlock Tapped",
+                                        AnalyticsParameterContentType: "cont"
+                                    ])
+                                    
                                     Rush.shared.currentUser = currentUser
                                     if let selectedViewController = self.tabBarController?.selectedViewController as? UINavigationController {
                                         selectedViewController.popToRootViewController(animated: true)

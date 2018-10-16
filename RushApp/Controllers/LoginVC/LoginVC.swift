@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import SVProgressHUD
 
 class LoginVC: BaseVC {
@@ -72,26 +73,36 @@ class LoginVC: BaseVC {
     }
     
     @IBAction func facebookLoginTapped(_ sender: UIButton) {
-        self.view.endEditing(true)
-        let loginManager = LoginRequest()
-        loginManager.facebookLogin(withTarget: self, completion: { (isSuccess) in
-            if isSuccess == true {
-                let checkUserRequest = CheckUserRequest()
-                checkUserRequest.sendCheckUserRequest(userId:nil, completionBlock: { (response, error) in
-                    SVProgressHUD.dismiss()
-                    if error != nil {
-                        self.navigationController?.pushVCMainThread(GameSelectionVC.createFromStoryboard())
-                    } else {
-                        Rush.shared.currentUser = response
-                        DispatchQueue.main.async {
-                            self.pushMainTabBar()
+        let vc = TermsVC.createFromStoryboard()
+        vc.readAndAcceptTapped = {
+            self.view.endEditing(true)
+            Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+                AnalyticsParameterItemID: "Facebook_login",
+                AnalyticsParameterItemName: "Facebook login Tapped",
+                AnalyticsParameterContentType: "cont"
+                ])
+            
+            let loginManager = LoginRequest()
+            loginManager.facebookLogin(withTarget: self, completion: { (isSuccess) in
+                if isSuccess == true {
+                    let checkUserRequest = CheckUserRequest()
+                    checkUserRequest.sendCheckUserRequest(userId:nil, completionBlock: { (response, error) in
+                        SVProgressHUD.dismiss()
+                        if error != nil {
+                            self.navigationController?.pushVCMainThread(GameSelectionVC.createFromStoryboard())
+                        } else {
+                            Rush.shared.currentUser = response
+                            DispatchQueue.main.async {
+                                self.pushMainTabBar()
+                            }
                         }
-                    }
-                })
+                    })
+                }
+            }) {
+                SVProgressHUD.show()
             }
-        }) {
-            SVProgressHUD.show()
         }
+        self.navigationController?.presentVCMainThread(vc)
         
     }
     

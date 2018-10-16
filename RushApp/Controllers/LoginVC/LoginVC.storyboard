@@ -21,12 +21,12 @@
         <!--LoginVC-->
         <scene sceneID="26F-Tj-CgP">
             <objects>
-                <viewController id="wi0-ai-fbk" customClass="LoginVC" customModule="RushApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wi0-ai-fbk" customClass="LoginVC" customModule="Rush" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wBp-Od-wcs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehf-xw-fGC" customClass="GradientView" customModule="RushApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehf-xw-fGC" customClass="GradientView" customModule="Rush" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKy-1S-uIa">
@@ -331,6 +331,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRH-oN-VG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="456" y="175"/>
+        </scene>
+        <!--TermsVC-->
+        <scene sceneID="iUH-ne-Nk4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TermsVC" referencedIdentifier="TermsVC" id="W2i-by-flp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wvO-5b-vMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="382" y="360"/>
         </scene>
     </scenes>
     <resources>

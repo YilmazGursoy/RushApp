@@ -148,6 +148,9 @@
 		47A6AE9A217272FC00D536CD /* ExtensionReport+BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A6AE99217272FC00D536CD /* ExtensionReport+BaseVC.swift */; };
 		47A6AE9D2172876D00D536CD /* ReportPolicyVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47A6AE9C2172876D00D536CD /* ReportPolicyVC.storyboard */; };
 		47A6AE9F2172890000D536CD /* ReportPolicyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A6AE9E2172890000D536CD /* ReportPolicyVC.swift */; };
+		47B21F87217690A100C5D66D /* terms.html in Resources */ = {isa = PBXBuildFile; fileRef = 47B21F86217690A100C5D66D /* terms.html */; };
+		47B21F8A217690D600C5D66D /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B21F89217690D600C5D66D /* TermsVC.swift */; };
+		47B21F8C217690DB00C5D66D /* TermsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B21F8B217690DB00C5D66D /* TermsVC.storyboard */; };
 		47C0B081211EDD9900469883 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C0B080211EDD9900469883 /* GradientView.swift */; };
 		47C3C058213E4EAF00A74171 /* feed.json in Resources */ = {isa = PBXBuildFile; fileRef = 47C3C057213E4EAF00A74171 /* feed.json */; };
 		47C3C05A213E4ECC00A74171 /* lobbies.json in Resources */ = {isa = PBXBuildFile; fileRef = 47C3C059213E4ECC00A74171 /* lobbies.json */; };
@@ -404,6 +407,9 @@
 		47A6AE99217272FC00D536CD /* ExtensionReport+BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExtensionReport+BaseVC.swift"; sourceTree = "<group>"; };
 		47A6AE9C2172876D00D536CD /* ReportPolicyVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReportPolicyVC.storyboard; sourceTree = "<group>"; };
 		47A6AE9E2172890000D536CD /* ReportPolicyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPolicyVC.swift; sourceTree = "<group>"; };
+		47B21F86217690A100C5D66D /* terms.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = terms.html; sourceTree = "<group>"; };
+		47B21F89217690D600C5D66D /* TermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
+		47B21F8B217690DB00C5D66D /* TermsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsVC.storyboard; sourceTree = "<group>"; };
 		47C0B080211EDD9900469883 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		47C3C057213E4EAF00A74171 /* feed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = feed.json; sourceTree = "<group>"; };
 		47C3C059213E4ECC00A74171 /* lobbies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lobbies.json; sourceTree = "<group>"; };
@@ -881,6 +887,15 @@
 			path = ReportPolicyVC;
 			sourceTree = "<group>";
 		};
+		47B21F88217690CB00C5D66D /* TermsVC */ = {
+			isa = PBXGroup;
+			children = (
+				47B21F89217690D600C5D66D /* TermsVC.swift */,
+				47B21F8B217690DB00C5D66D /* TermsVC.storyboard */,
+			);
+			path = TermsVC;
+			sourceTree = "<group>";
+		};
 		47C0B07F211EDD9100469883 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1351,6 +1366,7 @@
 		D258C06B2098F4FB0090ABB5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				47B21F88217690CB00C5D66D /* TermsVC */,
 				47A6AE9B2172876300D536CD /* ReportPolicyVC */,
 				47A6AE8C2171EA0300D536CD /* BlockUserVC */,
 				472B8177214C857500C005B2 /* AddRankOrUrlVC */,
@@ -1389,6 +1405,7 @@
 		D258C06C2098F5170090ABB5 /* OtherFiles */ = {
 			isa = PBXGroup;
 			children = (
+				47B21F86217690A100C5D66D /* terms.html */,
 				4781B9F6216FD12200DE760D /* refresh.wav */,
 				4742C0D3216E6DDD00E33233 /* check_animation.json */,
 				47152FF421694DD700BB1C50 /* waitAnimation.json */,
@@ -1586,12 +1603,14 @@
 				477CB9A1214E693D003CDEEE /* RoundProfilesView.xib in Resources */,
 				47E2C7522145851E00AAD648 /* FeedDetailFlexView.xib in Resources */,
 				472DFEE42135D3C900FC577A /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				47B21F87217690A100C5D66D /* terms.html in Resources */,
 				47C3C05A213E4ECC00A74171 /* lobbies.json in Resources */,
 				47E2C68F2140741700AAD648 /* FeedTitleCell.xib in Resources */,
 				47E2C75C2145BF4B00AAD648 /* LobbyMainVC.storyboard in Resources */,
 				4735F4AE2164103C0013B869 /* AboutUsVC.storyboard in Resources */,
 				D2075DB2209CD9D300AC79B6 /* FeedVC.storyboard in Resources */,
 				47E2C70A2143211E00AAD648 /* FriendSelectionCell.xib in Resources */,
+				47B21F8C217690DB00C5D66D /* TermsVC.storyboard in Resources */,
 				D2AF692F20A237C200AC40E9 /* ForgotPasswordVC.storyboard in Resources */,
 				472DFEF22135DEBD00FC577A /* GameSelectionCell.xib in Resources */,
 				4735F4A12163FD530013B869 /* SettingsVC.storyboard in Resources */,
@@ -1863,6 +1882,7 @@
 				472B813D2149196B00C005B2 /* ImageUploadManager.swift in Sources */,
 				4735F49F2163FD4E0013B869 /* SettingsVC.swift in Sources */,
 				4735F4AC216410360013B869 /* AboutUsVC.swift in Sources */,
+				47B21F8A217690D600C5D66D /* TermsVC.swift in Sources */,
 				472DFEFD2137474F00FC577A /* AWSPopupManager.swift in Sources */,
 				47A6AE8B2171484400D536CD /* ReportRequest.swift in Sources */,
 				D2075DB8209CE44E00AC79B6 /* DummyRequest.swift in Sources */,

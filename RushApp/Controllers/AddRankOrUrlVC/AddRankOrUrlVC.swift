@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import SVProgressHUD
 
 class AddRankOrUrlVC: BaseVC {
@@ -38,6 +39,13 @@ class AddRankOrUrlVC: BaseVC {
             let addUrlRequest = AddRankOrUrlRequest()
             addUrlRequest.sendUrlRequest(platform: currentPlatform!.rawValue, url: urlTextField.text!, successCompletion: {
                 SVProgressHUD.dismiss()
+                
+                Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+                    AnalyticsParameterItemID: "AddAccountURL",
+                    AnalyticsParameterItemName: "AddAccountURL Tapped",
+                    AnalyticsParameterContentType: "cont"
+                    ])
+                
                 DispatchQueue.main.async {
                     self.updatedSuccess()
                     self.pop()

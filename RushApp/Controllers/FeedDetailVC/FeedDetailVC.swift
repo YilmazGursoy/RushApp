@@ -8,6 +8,7 @@
 
 import UIKit
 import CRRefresh
+import Firebase
 import AWSAppSync
 import IQKeyboardManagerSwift
 
@@ -97,6 +98,13 @@ class FeedDetailVC: BaseVC {
         })
     }
     @IBAction func shareTap(_ sender: Any) {
+    
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "Share_Feed",
+            AnalyticsParameterItemName: "Share_feed tapped",
+            AnalyticsParameterContentType: "cont"
+        ])
+        
         DispatchQueue.main.async {
             self.tableView.scrollToRow(at: IndexPath.init(row: 0, section: 0), at: .none, animated: false)
             UIGraphicsBeginImageContextWithOptions(self.view.frame.size, true, 0.0)
